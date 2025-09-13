@@ -278,7 +278,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Average 2-hour emergency response across Melbourne metro</span>
+                  <span className="text-gray-700">24/7 emergency response across Melbourne metro</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="h-6 w-6 text-blue-600" />

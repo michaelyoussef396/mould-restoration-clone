@@ -111,7 +111,7 @@ const Index = () => {
                     Technicians available now
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Get Emergency Help</h3>
-                  <p className="text-gray-600">Average response time: 15 minutes</p>
+                  <p className="text-gray-600">24/7 emergency service available</p>
                 </div>
                 
                 <div className="space-y-4">

@@ -317,25 +317,25 @@ export const Services = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Serving All Melbourne Metro
             </h2>
-            <p className="text-xl text-gray-600">Average response times by area</p>
+            <p className="text-xl text-gray-600">Professional mold remediation across all Melbourne suburbs</p>
           </div>
           
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { area: 'CBD & Inner Melbourne', time: '45 min', popular: true },
-              { area: 'Eastern Suburbs', time: '90 min', popular: true },
-              { area: 'Northern Suburbs', time: '75 min', popular: false },
-              { area: 'Western Suburbs', time: '105 min', popular: false },
-              { area: 'Southern Suburbs', time: '60 min', popular: true },
-              { area: 'Outer Melbourne', time: '120 min', popular: false },
+              { area: 'CBD & Inner Melbourne', coverage: 'Full Coverage', popular: true },
+              { area: 'Eastern Suburbs', coverage: 'Same Day', popular: true },
+              { area: 'Northern Suburbs', coverage: 'Full Coverage', popular: false },
+              { area: 'Western Suburbs', coverage: 'Same Day', popular: false },
+              { area: 'Southern Suburbs', coverage: 'Full Coverage', popular: true },
+              { area: 'Outer Melbourne', coverage: 'Next Day', popular: false },
             ].map((location, index) => (
               <Card key={index} className={`p-4 text-center ${location.popular ? 'border-blue-200 bg-blue-50' : ''}`}>
                 <div className="flex items-center justify-center gap-1 mb-2">
                   <MapPin className="h-4 w-4 text-blue-600" />
                   <h3 className="font-semibold text-gray-900">{location.area}</h3>
                 </div>
-                <div className="text-2xl font-bold text-blue-600">{location.time}</div>
-                <div className="text-sm text-gray-600">avg response</div>
+                <div className="text-lg font-bold text-blue-600">{location.coverage}</div>
+                <div className="text-sm text-gray-600">service available</div>
                 {location.popular && (
                   <div className="mt-2 text-xs bg-blue-600 text-white px-2 py-1 rounded-full">
                     Popular Area
@@ -348,7 +348,7 @@ export const Services = () => {
           <div className="text-center mt-8">
             <Button size="lg" asChild>
               <a href="/contact">
-                Check Your Area Response Time
+                Schedule Service in Your Area
                 <MapPin className="ml-2 h-5 w-5" />
               </a>
             </Button>
