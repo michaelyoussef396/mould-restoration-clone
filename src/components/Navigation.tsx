@@ -1,10 +1,34 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import mouldLogo from '@/assets/mould-restoration-logo.png';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const services = [
+    { title: 'Professional Mould Inspections', href: '/services/professional-mould-inspections' },
+    { title: 'Comprehensive Mould Removal', href: '/services/comprehensive-mould-removal' },
+    { title: 'Complete Material Removal', href: '/services/complete-material-removal' },
+    { title: 'Advanced Fogging Sanitisation', href: '/services/advanced-fogging-sanitisation' },
+    { title: 'Subfloor Mould Remediation', href: '/services/subfloor-mould-remediation' },
+  ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-md border-b border-primary-dark shadow-lg">
@@ -33,9 +57,42 @@ export const Navigation = () => {
               <a href="/about" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
                 About Us
               </a>
-              <a href="/services" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
-                Services
-              </a>
+              
+              {/* Services Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium flex items-center gap-1"
+                >
+                  Services
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isServicesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div className="py-2">
+                      <a
+                        href="/services"
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 font-medium border-b border-gray-100"
+                        onClick={() => setIsServicesDropdownOpen(false)}
+                      >
+                        View All Services
+                      </a>
+                      {services.map((service, index) => (
+                        <a
+                          key={index}
+                          href={service.href}
+                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent-blue transition-colors"
+                          onClick={() => setIsServicesDropdownOpen(false)}
+                        >
+                          {service.title}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+              
               <a href="#contact" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
                 Contact
               </a>
@@ -84,13 +141,46 @@ export const Navigation = () => {
               >
                 About Us
               </a>
-              <a
-                href="/services"
-                className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </a>
+              
+              {/* Mobile Services Section */}
+              <div>
+                <button
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                  className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between"
+                >
+                  Services
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isServicesDropdownOpen && (
+                  <div className="bg-primary-dark/50 rounded-lg mx-3 mt-2 mb-2">
+                    <a
+                      href="/services"
+                      className="block px-4 py-2 text-sm text-primary-foreground/90 hover:text-accent-teal font-medium border-b border-primary-foreground/10"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsServicesDropdownOpen(false);
+                      }}
+                    >
+                      View All Services
+                    </a>
+                    {services.map((service, index) => (
+                      <a
+                        key={index}
+                        href={service.href}
+                        className="block px-4 py-2 text-sm text-primary-foreground/80 hover:text-accent-teal"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsServicesDropdownOpen(false);
+                        }}
+                      >
+                        {service.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
               <a
                 href="#contact"
                 className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium"
