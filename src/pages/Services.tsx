@@ -2,7 +2,7 @@ import { Navigation } from '@/components/Navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone, Shield, Award, Clock, CheckCircle, Star, MapPin } from 'lucide-react';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
 import servicesHero from '@/assets/services-hero.jpg';
@@ -15,39 +15,74 @@ import designConsultation from '@/assets/design-consultation.jpg';
 export const Services = () => {
   const services = [
     {
+      title: 'Emergency Mold Removal',
+      description: 'Immediate response for health hazards and property damage. Our certified team arrives within 2 hours.',
+      features: ['On-site within 2 hours', 'Immediate containment', 'Health hazard assessment'],
+      image: commercialRemoval,
+      link: '/services/comprehensive-mould-removal',
+      emergency: true,
+      startingPrice: 'Call for pricing',
+    },
+    {
       title: 'Professional Mould Inspections',
-      description: 'Early detection for lasting protection – identify and prevent mould issues before they escalate.',
+      description: 'Comprehensive mold detection and air quality testing to identify problems before they escalate.',
+      features: ['Thermal imaging detection', 'Air quality testing', 'Detailed written report'],
       image: residentialInspection,
       link: '/services/professional-mould-inspections',
+      emergency: false,
+      startingPrice: 'From $299',
+      badge: 'FREE Assessment',
     },
     {
       title: 'Complete Material Removal',
-      description: 'For severe mould infestations, we offer the removal of plaster walls, insulation, ceilings, skirting, wardrobes, and more to ensure complete eradication and lasting solutions.',
+      description: 'For severe mould infestations, complete removal of contaminated materials with safe disposal.',
+      features: ['Safe material removal', 'Proper disposal', 'Structural assessment'],
       image: commercialRemoval,
       link: '/services/complete-material-removal',
+      emergency: false,
+      startingPrice: 'From $800',
     },
     {
       title: 'Advanced Fogging Sanitisation',
-      description: 'Thoroughly sanitize mould-affected areas with advanced ULV fogging technology. Penetrate hard-to-reach spaces and ensure long-lasting mould prevention.',
+      description: 'Penetrate hard-to-reach spaces with ULV fogging technology for comprehensive sanitization.',
+      features: ['ULV fogging technology', 'Hard-to-reach areas', 'Long-lasting protection'],
       image: architectureFogging,
       link: '/services/advanced-fogging-sanitisation',
-    },
-    {
-      title: 'Comprehensive Mould Removal',
-      description: 'Eliminate mould at its source with our deep and thorough removal services. We ensure long-term solutions to protect your health and property.',
-      image: officeDesign,
-      link: '/services/comprehensive-mould-removal',
+      emergency: false,
+      startingPrice: 'From $450',
     },
     {
       title: 'Subfloor Mould Remediation',
-      description: 'Protect your property\'s foundation with thorough subfloor mould remediation. We eliminate mould, improve ventilation, and prevent future growth.',
+      description: 'Protect your property\'s foundation with thorough subfloor remediation and ventilation.',
+      features: ['Foundation protection', 'Ventilation improvement', 'Moisture control'],
       image: designConsultation,
       link: '/services/subfloor-mould-remediation',
+      emergency: false,
+      startingPrice: 'From $650',
     },
+  ];
+
+  const processSteps = [
+    { number: '1', title: 'Initial Assessment', description: 'Free property evaluation and quote' },
+    { number: '2', title: 'Service Planning', description: 'Customized remediation strategy' },
+    { number: '3', title: 'Professional Treatment', description: 'IICRC-certified removal and restoration' },
+    { number: '4', title: 'Quality Assurance', description: 'Final testing and documentation' },
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Emergency Bar */}
+      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+        <div className="container mx-auto flex items-center justify-between">
+          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
+          <span className="sm:hidden">Emergency Available 24/7</span>
+          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
+            <Phone className="h-4 w-4" />
+            1800 954 117
+          </a>
+        </div>
+      </div>
+
       <Navigation />
       
       {/* Hero Section */}
@@ -63,76 +98,266 @@ export const Services = () => {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         
-        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-hero font-black text-white mb-8 leading-tight">
-              Expert Mould Remediation Services Tailored to Your Needs
-            </h1>
-          </div>
-        </div>
-
-        {/* Breadcrumb positioned in top right */}
-        <div className="absolute top-32 right-8 z-30 hidden lg:block">
-          <div className="text-right">
-            <h2 className="text-6xl font-black text-white/20 mb-4">SERVICES</h2>
-            <Breadcrumb 
-              items={[
-                { label: 'Home', href: '/' },
-                { label: 'Services', href: '/services', current: true },
-              ]} 
-            />
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            {/* Left: Main Content */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="mb-8 lg:mb-4">
+                <Breadcrumb 
+                  items={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Services', href: '/services', current: true },
+                  ]} 
+                />
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                Comprehensive Mold Solutions for 
+                <span className="text-blue-300"> Melbourne Properties</span>
+              </h1>
+              
+              <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
+                From emergency response to prevention, we protect your property and health with certified expertise.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <Button 
+                  variant="emergency" 
+                  size="lg" 
+                  className="text-lg px-8 py-4 h-auto"
+                  asChild
+                >
+                  <a href="tel:1800954117">
+                    Emergency Service - Call Now
+                    <Phone className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="text-lg px-8 py-4 h-auto bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  asChild
+                >
+                  <a href="#services-grid">
+                    View All Services
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-yellow-400">
+                {[1,2,3,4,5].map((star) => (
+                  <Star key={star} className="h-5 w-5 fill-current" />
+                ))}
+                <span className="text-white ml-2">4.9/5 (247 reviews)</span>
+              </div>
+            </div>
+            
+            {/* Right: Service Overview Card */}
+            <div className="w-full lg:w-96">
+              <Card className="p-6 bg-white/95 backdrop-blur-sm">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Why Choose Our Services?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                    <Clock className="h-5 w-5 text-orange-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">2-Hour Response</div>
+                      <div className="text-orange-600 text-sm">Emergency availability</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                    <Award className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">IICRC Certified</div>
+                      <div className="text-blue-600 text-sm">Industry-leading standards</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                    <Shield className="h-5 w-5 text-green-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">Fully Insured</div>
+                      <div className="text-green-600 text-sm">Complete protection</div>
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full mt-4" asChild>
+                  <a href="/contact">Schedule Free Assessment</a>
+                </Button>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 bg-background">
+      {/* Services Matrix */}
+      <section id="services-grid" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Complete Mold Solutions Tailored to Your Needs
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Professional remediation services with transparent pricing and guaranteed results
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <a key={index} href={service.link} className="block">
-                <Card className="service-card overflow-hidden group cursor-pointer">
+              <div key={index} className="relative">
+                <Card className={`service-card overflow-hidden group cursor-pointer h-full ${service.emergency ? 'border-l-4 border-l-emergency-orange' : ''}`}>
+                  {service.emergency && (
+                    <div className="absolute top-4 left-4 z-10 bg-emergency-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      Emergency 24/7
+                    </div>
+                  )}
+                  {service.badge && (
+                    <div className="absolute top-4 right-4 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {service.badge}
+                    </div>
+                  )}
+                  
                   <div className="aspect-video overflow-hidden relative">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    {/* Arrow overlay */}
                     <div className="absolute bottom-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
                       <ArrowRight className="h-5 w-5 text-primary-foreground" />
                     </div>
                   </div>
+                  
                   <div className="p-6">
-                    <h3 className="text-card font-bold text-card-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-xl font-bold text-card-foreground">
+                        {service.title}
+                      </h3>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-blue-600">{service.startingPrice}</div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-muted-foreground leading-relaxed mb-4">
                       {service.description}
                     </p>
+                    
+                    <ul className="text-sm text-gray-600 space-y-1 mb-4">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <div className="flex gap-2">
+                      {service.emergency ? (
+                        <>
+                          <Button variant="emergency" className="flex-1" asChild>
+                            <a href="tel:1800954117">Call Emergency Line</a>
+                          </Button>
+                          <Button variant="outline" className="flex-1" asChild>
+                            <a href={service.link}>Learn More</a>
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button className="flex-1" asChild>
+                            <a href={service.link}>Learn More</a>
+                          </Button>
+                          <Button variant="outline" asChild>
+                            <a href="/contact">Quote</a>
+                          </Button>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </Card>
-              </a>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Overview */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Universal 4-Step Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Consistent, proven methodology across all our services
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 right-0 w-8 h-0.5 bg-blue-200 transform translate-x-4"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area Coverage */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Serving All Melbourne Metro
+            </h2>
+            <p className="text-xl text-gray-600">Average response times by area</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { area: 'CBD & Inner Melbourne', time: '45 min', popular: true },
+              { area: 'Eastern Suburbs', time: '90 min', popular: true },
+              { area: 'Northern Suburbs', time: '75 min', popular: false },
+              { area: 'Western Suburbs', time: '105 min', popular: false },
+              { area: 'Southern Suburbs', time: '60 min', popular: true },
+              { area: 'Outer Melbourne', time: '120 min', popular: false },
+            ].map((location, index) => (
+              <Card key={index} className={`p-4 text-center ${location.popular ? 'border-blue-200 bg-blue-50' : ''}`}>
+                <div className="flex items-center justify-center gap-1 mb-2">
+                  <MapPin className="h-4 w-4 text-blue-600" />
+                  <h3 className="font-semibold text-gray-900">{location.area}</h3>
+                </div>
+                <div className="text-2xl font-bold text-blue-600">{location.time}</div>
+                <div className="text-sm text-gray-600">avg response</div>
+                {location.popular && (
+                  <div className="mt-2 text-xs bg-blue-600 text-white px-2 py-1 rounded-full">
+                    Popular Area
+                  </div>
+                )}
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button size="lg" asChild>
+              <a href="/contact">
+                Check Your Area Response Time
+                <MapPin className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <FAQSection />
-
-      {/* Bottom Message */}
-      <section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              At Mould & Restoration, we bring expertise and care to every project. 
-              Trust us to safeguard your environment, ensuring clean, mould-free spaces 
-              for you and your loved ones.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <ContactSection />
