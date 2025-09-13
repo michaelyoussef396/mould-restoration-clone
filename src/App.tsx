@@ -12,6 +12,8 @@ import { CompleteMaterialRemoval } from "./pages/CompleteMaterialRemoval";
 import { AdvancedFoggingSanitisation } from "./pages/AdvancedFoggingSanitisation";
 import { ComprehensiveMouldRemoval } from "./pages/ComprehensiveMouldRemoval";
 import { SubfloorMouldRemediation } from "./pages/SubfloorMouldRemediation";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/contact" element={<ContactOptimized />} />
           <Route path="/services/professional-mould-inspections" element={<ProfessionalMouldInspections />} />
           <Route path="/services/complete-material-removal" element={<CompleteMaterialRemoval />} />

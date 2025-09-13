@@ -93,8 +93,12 @@ export const Navigation = () => {
                 )}
               </div>
               
-              <a href="#contact" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
-                Contact
+              <a href="/case-studies" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
+                Case Studies
+              </a>
+              
+              <a href="/contact" className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium">
+                Contact Us
               </a>
             </div>
           </div>
@@ -182,11 +186,19 @@ export const Navigation = () => {
               </div>
               
               <a
-                href="#contact"
+                href="/case-studies"
                 className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                Case Studies
+              </a>
+              
+              <a
+                href="/contact"
+                className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
               </a>
               <div className="px-3 py-2 border-t border-primary-dark mt-2">
                 <div className="text-sm text-primary-foreground/80">
