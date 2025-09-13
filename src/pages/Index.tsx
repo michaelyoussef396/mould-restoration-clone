@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
           <span className="sm:hidden">Emergency Available 24/7</span>
@@ -27,7 +27,7 @@ const Index = () => {
       <Navigation />
       
       {/* Optimized Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[106px]">
         {/* Background Image with Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"

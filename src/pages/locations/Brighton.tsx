@@ -29,7 +29,7 @@ export const Brighton = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground">
+      <section className="relative py-20 bg-primary text-primary-foreground pt-[104px]">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80"></div>
         <div className="container mx-auto px-4 relative">
           <div className="mb-6">

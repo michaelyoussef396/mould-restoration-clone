@@ -57,7 +57,7 @@ export const ProfessionalMouldInspections = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">🚨 Suspected Mold Emergency? We respond within 2 hours</span>
           <span className="sm:hidden">Emergency Response Available</span>
@@ -72,7 +72,7 @@ export const ProfessionalMouldInspections = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-[106px]"
         style={{
           backgroundImage: `url(${professionalMouldHero})`,
           backgroundSize: 'cover',

@@ -125,7 +125,7 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen">
       {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
           <span className="sm:hidden">Emergency Available 24/7</span>
@@ -139,7 +139,7 @@ const CaseStudies = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary via-primary-dark to-accent-dark py-24 sm:py-32">
+      <section className="relative bg-gradient-to-r from-primary via-primary-dark to-accent-dark py-24 sm:py-32 pt-[106px]">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

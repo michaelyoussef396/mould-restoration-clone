@@ -28,7 +28,7 @@ export const ContactOptimized = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-[104px]"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
