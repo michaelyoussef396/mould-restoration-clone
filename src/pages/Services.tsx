@@ -199,7 +199,7 @@ export const Services = () => {
               Complete Mold Solutions Tailored to Your Needs
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Professional remediation services with transparent pricing and guaranteed results
+              Professional remediation services with guaranteed results and complete satisfaction
             </p>
           </div>
           
@@ -235,7 +235,7 @@ export const Services = () => {
                         {service.title}
                       </h3>
                       <div className="text-right">
-                        <div className="text-lg font-bold text-blue-600">{service.startingPrice}</div>
+                        <div className="text-lg font-bold text-blue-600">Get Quote</div>
                       </div>
                     </div>
                     

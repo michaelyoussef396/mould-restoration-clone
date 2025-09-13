@@ -44,31 +44,9 @@ export const ComprehensiveMouldRemoval = () => {
     }
   ];
 
-  const pricingTiers = [
-    {
-      title: 'Small Area Removal',
-      price: 'From $800',
-      features: ['Up to 50 sq ft', 'Basic containment', 'Standard sanitization', 'Same-day completion'],
-      ideal: 'Bathroom, closet areas',
-    },
-    {
-      title: 'Standard Remediation',
-      price: 'From $1,500',
-      features: ['Up to 200 sq ft', 'Full containment', 'Advanced equipment', 'Air quality testing'],
-      ideal: 'Multiple rooms',
-      popular: true,
-    },
-    {
-      title: 'Extensive Removal',
-      price: 'Custom Quote',
-      features: ['Whole house scope', 'Emergency response', 'Material replacement', 'Insurance coordination'],
-      ideal: 'Major infestations',
-    },
-  ];
-
   const testimonials = [
     {
-      text: "They transformed our mold-infested basement in 3 days. The air quality testing showed complete elimination. Professional team, fair pricing.",
+      text: "They transformed our mold-infested basement in 3 days. The air quality testing showed complete elimination. Professional team, excellent service.",
       name: "Michael Robertson",
       location: "Malvern",
       rating: 5,
@@ -209,7 +187,7 @@ export const ComprehensiveMouldRemoval = () => {
                   </div>
                 </div>
                 <div className="text-center mt-6 p-4 bg-blue-50 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">From $800</div>
+                  <div className="text-2xl font-bold text-blue-600">Custom Quote</div>
                   <div className="text-sm text-gray-600">Free assessment included</div>
                 </div>
               </Card>
@@ -307,40 +285,79 @@ export const ComprehensiveMouldRemoval = () => {
         </div>
       </section>
 
-      {/* Pricing & Booking */}
+      {/* Benefits & Booking */}
       <section id="booking-form" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Investment in Your Property's Health
+              Why Choose Our Comprehensive Mould Removal?
             </h2>
-            <p className="text-xl text-gray-600">Transparent pricing based on affected area size</p>
+            <p className="text-xl text-gray-600">Professional service guarantees and value for Melbourne homes</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`p-6 text-center ${tier.popular ? 'border-2 border-blue-500 relative' : ''}`}>
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Common
-                  </div>
-                )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.title}</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-4">{tier.price}</div>
-                <div className="text-gray-600 mb-6">{tier.ideal}</div>
-                <ul className="space-y-2 mb-6">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button className={`w-full ${tier.popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`} asChild>
-                  <a href="/contact">Get Quote</a>
-                </Button>
-              </Card>
-            ))}
+            <Card className="p-6 text-center">
+              <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Complete Elimination</h3>
+              <p className="text-gray-600 mb-4">IICRC-certified process removes all mould contamination</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Professional containment setup
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Safe mould removal process
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Deep sanitization treatment
+                </li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6 text-center border-2 border-blue-500 relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Most Popular
+              </div>
+              <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Guaranteed Results</h3>
+              <p className="text-gray-600 mb-4">Air quality testing confirms complete mould elimination</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Independent air quality testing
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Clearance certification provided
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  100% satisfaction guarantee
+                </li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6 text-center">
+              <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Comprehensive Service</h3>
+              <p className="text-gray-600 mb-4">Complete solution from assessment to final clearance</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Free initial assessment
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Insurance documentation
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Post-service support
+                </li>
+              </ul>
+            </Card>
           </div>
           
           {/* Emergency Response Availability */}

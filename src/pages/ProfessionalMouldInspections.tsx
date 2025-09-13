@@ -2,7 +2,7 @@ import { Navigation } from '@/components/Navigation';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Phone, Clock, Shield, CheckCircle, Star, AlertTriangle, Thermometer } from 'lucide-react';
+import { ArrowRight, Phone, Clock, Shield, CheckCircle, Star, AlertTriangle, Thermometer, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
 import professionalMouldHero from '@/assets/professional-mould-hero.jpg';
 import thermalImagingDevice from '@/assets/thermal-imaging-device.jpg';
@@ -35,30 +35,8 @@ export const ProfessionalMouldInspections = () => {
     },
     {
       title: 'Detailed Action Plan',
-      description: 'Receive a comprehensive written report with prioritized recommendations, cost estimates, and timeline for complete remediation.'
+      description: 'Receive a comprehensive written report with prioritized recommendations, action plan, and timeline for complete remediation.'
     }
-  ];
-
-  const pricingTiers = [
-    {
-      title: 'Basic Inspection',
-      price: 'FREE',
-      features: ['Visual assessment', 'Moisture detection', 'Basic report', 'Verbal recommendations'],
-      ideal: 'Small residential properties',
-    },
-    {
-      title: 'Comprehensive Assessment',
-      price: 'From $299',
-      features: ['Thermal imaging', 'Air quality testing', '20-page written report', 'Follow-up consultation'],
-      ideal: 'Most properties',
-      popular: true,
-    },
-    {
-      title: 'Commercial Inspection',
-      price: 'From $599',
-      features: ['Multi-zone testing', 'Detailed lab analysis', 'Compliance documentation', 'Priority scheduling'],
-      ideal: 'Commercial properties',
-    },
   ];
 
   const testimonials = [
@@ -129,7 +107,7 @@ export const ProfessionalMouldInspections = () => {
                   <AlertTriangle className="h-6 w-6 text-yellow-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-yellow-100 font-medium mb-2">Mold can spread within 24-72 hours</p>
-                    <p className="text-yellow-200 text-sm">Early detection prevents costly damage and health risks. Get professional assessment before it's too late.</p>
+                    <p className="text-yellow-200 text-sm">Early detection prevents expensive damage and health risks. Get professional assessment before it's too late.</p>
                   </div>
                 </div>
               </div>
@@ -300,40 +278,79 @@ export const ProfessionalMouldInspections = () => {
         </div>
       </section>
 
-      {/* Pricing & Booking */}
+      {/* Benefits & Booking */}
       <section id="booking-form" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Investment in Your Property's Health
+              Why Choose Our Professional Inspections?
             </h2>
-            <p className="text-xl text-gray-600">Transparent pricing with no hidden fees</p>
+            <p className="text-xl text-gray-600">Comprehensive assessment services for Melbourne properties</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`p-6 text-center ${tier.popular ? 'border-2 border-blue-500 relative' : ''}`}>
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
-                  </div>
-                )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.title}</h3>
-                <div className="text-4xl font-bold text-blue-600 mb-4">{tier.price}</div>
-                <div className="text-gray-600 mb-6">{tier.ideal}</div>
-                <ul className="space-y-2 mb-6">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button className={`w-full ${tier.popular ? 'bg-blue-600 hover:bg-blue-700' : ''}`} asChild>
-                  <a href="/contact">Book This Inspection</a>
-                </Button>
-              </Card>
-            ))}
+            <Card className="p-6 text-center">
+              <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Free Visual Assessment</h3>
+              <p className="text-gray-600 mb-4">Initial inspection at no cost to identify potential issues</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Visual mould assessment
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Moisture level detection
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Basic recommendations
+                </li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6 text-center border-2 border-blue-500 relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Most Comprehensive
+              </div>
+              <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Advanced Inspection</h3>
+              <p className="text-gray-600 mb-4">Thermal imaging and air quality testing for complete assessment</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Thermal imaging technology
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Air quality sampling
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Detailed written report
+                </li>
+              </ul>
+            </Card>
+            
+            <Card className="p-6 text-center">
+              <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Commercial Assessment</h3>
+              <p className="text-gray-600 mb-4">Specialized inspections for commercial and large properties</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Multi-zone testing
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Laboratory analysis
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Insurance documentation
+                </li>
+              </ul>
+            </Card>
           </div>
           
           {/* Urgency Indicators */}
