@@ -11,23 +11,23 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center space-x-2">
+            <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">MRC</span>
               </div>
               <span className="text-foreground font-semibold text-lg hidden sm:block">
                 Mould & Restoration Co
               </span>
-            </div>
+            </a>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#home" className="text-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
+              <a href="/" className="text-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
                 Home
               </a>
-              <a href="#about" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
+              <a href="/about" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
                 About Us
               </a>
               <a href="#services" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
@@ -68,14 +68,14 @@ export const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md border-t border-border">
               <a
-                href="#home"
+                href="/"
                 className="text-foreground hover:text-highlight block px-3 py-2 text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="text-muted-foreground hover:text-highlight block px-3 py-2 text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
