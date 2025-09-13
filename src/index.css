@@ -7,58 +7,68 @@ All colors MUST be HSL for proper theme integration.
 */
 
 @layer base {
+  /* Theme Variables - Final Brand Colors */
   :root {
-    /* Primary Brand Colors - Blue Palette */
-    --primary: 240 100% 59%;        /* Blue 500 */
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 240 100% 47%;   /* Blue 600 */
-    --primary-light: 218 100% 95%;  /* Blue 50 */
+    /* Base Colors - Using specified brand palette */
+    --background: 0 0% 100%;          /* White background */
+    --foreground: 32 10% 40%;         /* #6A655E - Neutral Mid for body text */
+    
+    /* Primary Brand Colors - Dark Theme */
+    --primary: 245 43% 15%;           /* #141228 - Primary Dark for headers, navbar */
+    --primary-foreground: 0 0% 100%;  /* White text on dark backgrounds */
+    --primary-dark: 245 43% 12%;      /* Darker variant */
+    --primary-light: 27 7% 69%;       /* #B1AEA9 - Primary Light for secondary backgrounds */
     
     /* Secondary Colors */
-    --secondary: 218 100% 95%;      /* Blue 50 */
-    --secondary-foreground: 244 66% 37%; /* Blue 950 */
+    --secondary: 27 7% 69%;           /* #B1AEA9 - Primary Light */
+    --secondary-foreground: 245 43% 15%;
     
-    /* Accent Colors */
-    --accent: 225 100% 82%;         /* Blue 300 */
-    --accent-foreground: 244 66% 37%;
-    --accent-blue: 240 100% 59%;    /* Blue 500 */
-    --accent-teal: 189 41% 51%;     /* Keep teal for contrast */
-    --accent-dark: 244 66% 37%;     /* Blue 950 */
+    /* Muted Colors */
+    --muted: 27 7% 69%;               /* #B1AEA9 - Primary Light */
+    --muted-foreground: 32 10% 40%;   /* #6A655E - Neutral Mid */
     
-    /* Blue Palette Extended */
-    --blue-50: 218 100% 95%;
-    --blue-100: 214 100% 92%;
-    --blue-200: 218 100% 85%;
-    --blue-300: 225 100% 82%;
-    --blue-400: 234 100% 75%;
-    --blue-500: 240 100% 59%;
-    --blue-600: 243 100% 54%;
-    --blue-700: 240 100% 47%;
-    --blue-800: 243 58% 42%;
-    --blue-900: 246 46% 32%;
-    --blue-950: 244 66% 37%;
+    /* Accent Colors - New Brand Palette */
+    --accent: 27 7% 69%;              /* #B1AEA9 - Primary Light */
+    --accent-foreground: 245 43% 15%;
+    --accent-blue: 233 39% 45%;       /* #4B5A9C - Links, secondary CTAs */
+    --accent-teal: 184 15% 48%;       /* #6C8F92 - Trust signals, success states */
+    --accent-dark: 196 12% 30%;       /* #43555A - Icons, subtle details */
     
-    /* Functional Colors */
-    --neutral-mid: 32 15% 39%;
-    --emergency-orange: 24 95% 53%;
-    --success-green: 142 76% 36%;
-    --warning-yellow: 45 93% 47%;
-    --error-red: 0 84% 60%;
-
-    /* Theme mapping for shadcn compatibility */
-    --background: 0 0% 100%;          /* White background */
-    --foreground: 244 66% 37%;        /* Blue 950 text */
-    --card: 0 0% 100%;                /* White cards */
-    --card-foreground: 244 66% 37%;   /* Blue 950 card text */
+    /* UI Element Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 32 10% 40%;    /* #6A655E - Neutral Mid */
     --popover: 0 0% 100%;
-    --popover-foreground: 244 66% 37%;
-    --muted: 218 100% 95%;            /* Blue 50 */
-    --muted-foreground: 246 46% 32%;  /* Blue 900 */
-    --destructive: 0 84% 60%;         /* error-red */
-    --destructive-foreground: 0 0% 100%;
-    --border: 218 100% 85%;           /* Blue 200 */
-    --input: 218 100% 85%;            /* Blue 200 */
-    --ring: 240 100% 59%;             /* Blue 500 */
+    --popover-foreground: 32 10% 40%;
+    --border: 32 10% 50%;             /* Slightly lighter neutral */
+    --input: 27 7% 95%;               /* Very light variant of primary light */
+    --ring: 233 39% 45%;              /* Accent Blue for focus rings */
+    
+    /* State Colors */
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Brand Specific Colors - Final Palette */
+    --neutral-mid: 32 10% 40%;        /* #6A655E - Body text, borders, subtle accents */
+    --emergency-orange: 26 98% 54%;   /* #FD7E14 - Emergency CTAs ONLY */
+    --success-green: 142 76% 47%;     /* #22c55e - Completion indicators */
+    --warning-yellow: 45 93% 58%;     /* Warning states */
+    --error-red: 0 62% 50%;           /* Error states */
+    
+    /* Extended Blue Palette - Updated to match Accent Blue */
+    --blue-50: 233 100% 97%;
+    --blue-100: 233 95% 93%;
+    --blue-200: 233 87% 85%;
+    --blue-300: 233 78% 75%;
+    --blue-400: 233 59% 65%;
+    --blue-500: 233 39% 45%;          /* #4B5A9C - Main accent blue */
+    --blue-600: 233 39% 35%;
+    --blue-700: 233 39% 25%;
+    --blue-800: 233 39% 20%;
+    --blue-900: 233 39% 15%;
+    --blue-950: 233 39% 10%;
+    
+    /* Highlight Color - Using Accent Blue */
+    --highlight: 233 39% 45%;         /* #4B5A9C - Used for links and hover states */
 
     /* Component styling */
     --radius: 0.75rem;
