@@ -10,6 +10,7 @@ import { ProfessionalMouldInspections } from "./pages/ProfessionalMouldInspectio
 import { CompleteMaterialRemoval } from "./pages/CompleteMaterialRemoval";
 import { AdvancedFoggingSanitisation } from "./pages/AdvancedFoggingSanitisation";
 import { ComprehensiveMouldRemoval } from "./pages/ComprehensiveMouldRemoval";
+import { SubfloorMouldRemediation } from "./pages/SubfloorMouldRemediation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/services/complete-material-removal" element={<CompleteMaterialRemoval />} />
           <Route path="/services/advanced-fogging-sanitisation" element={<AdvancedFoggingSanitisation />} />
           <Route path="/services/comprehensive-mould-removal" element={<ComprehensiveMouldRemoval />} />
+          <Route path="/services/subfloor-mould-remediation" element={<SubfloorMouldRemediation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

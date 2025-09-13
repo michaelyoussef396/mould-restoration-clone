@@ -42,7 +42,7 @@ export const Services = () => {
       title: 'Subfloor Mould Remediation',
       description: 'Protect your property\'s foundation with thorough subfloor mould remediation. We eliminate mould, improve ventilation, and prevent future growth.',
       image: designConsultation,
-      link: '/service/subfloor-mould-remediation',
+      link: '/services/subfloor-mould-remediation',
     },
   ];
 
