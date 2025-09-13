@@ -54,18 +54,18 @@ All colors MUST be HSL for proper theme integration.
     --warning-yellow: 45 93% 58%;     /* Warning states */
     --error-red: 0 62% 50%;           /* Error states */
     
-    /* Extended Blue Palette - Updated to match Accent Blue */
-    --blue-50: 233 100% 97%;
-    --blue-100: 233 95% 93%;
-    --blue-200: 233 87% 85%;
-    --blue-300: 233 78% 75%;
-    --blue-400: 233 59% 65%;
-    --blue-500: 233 39% 45%;          /* #4B5A9C - Main accent blue */
-    --blue-600: 233 39% 35%;
-    --blue-700: 233 39% 25%;
-    --blue-800: 233 39% 20%;
-    --blue-900: 233 39% 15%;
-    --blue-950: 233 39% 10%;
+    /* Extended Blue Palette - Updated to user specification */
+    --blue-50: 223 100% 96%;          /* #e8f1ff */
+    --blue-100: 223 100% 91%;         /* #d5e4ff */
+    --blue-200: 223 100% 85%;         /* #b3ccff */
+    --blue-300: 223 100% 76%;         /* #85a8ff */
+    --blue-400: 223 100% 67%;         /* #5676ff */
+    --blue-500: 232 100% 59%;         /* #2f45ff */
+    --blue-600: 240 100% 53%;         /* #0c0eff */
+    --blue-700: 240 100% 47%;         /* #0000ee */
+    --blue-800: 238 95% 42%;          /* #0609cd */
+    --blue-900: 234 84% 35%;          /* #10169f */
+    --blue-950: 238 82% 21%;          /* #0a0b5c */
     
     /* Highlight Color - Using Accent Blue */
     --highlight: 233 39% 45%;         /* #4B5A9C - Used for links and hover states */
