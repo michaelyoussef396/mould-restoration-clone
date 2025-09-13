@@ -18,7 +18,7 @@ export const Services = () => {
       title: 'Professional Mould Inspections',
       description: 'Early detection for lasting protection – identify and prevent mould issues before they escalate.',
       image: residentialInspection,
-      link: '/service/professional-mould-inspections',
+      link: '/services/professional-mould-inspections',
     },
     {
       title: 'Complete Material Removal',
@@ -90,27 +90,29 @@ export const Services = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="service-card overflow-hidden group cursor-pointer">
-                <div className="aspect-video overflow-hidden relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  {/* Arrow overlay */}
-                  <div className="absolute bottom-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
-                    <ArrowRight className="h-5 w-5 text-primary-foreground" />
+              <a key={index} href={service.link} className="block">
+                <Card className="service-card overflow-hidden group cursor-pointer">
+                  <div className="aspect-video overflow-hidden relative">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    {/* Arrow overlay */}
+                    <div className="absolute bottom-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+                      <ArrowRight className="h-5 w-5 text-primary-foreground" />
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-card font-bold text-card-foreground mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </Card>
+                  <div className="p-6">
+                    <h3 className="text-card font-bold text-card-foreground mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
