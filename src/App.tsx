@@ -15,6 +15,14 @@ import { SubfloorMouldRemediation } from "./pages/SubfloorMouldRemediation";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import NotFound from "./pages/NotFound";
+import { Carlton } from "./pages/locations/Carlton";
+import { Toorak } from "./pages/locations/Toorak";
+import { Brighton } from "./pages/locations/Brighton";
+import { SouthYarra } from "./pages/locations/SouthYarra";
+import { Richmond } from "./pages/locations/Richmond";
+import { Fitzroy } from "./pages/locations/Fitzroy";
+import { Prahran } from "./pages/locations/Prahran";
+import { Malvern } from "./pages/locations/Malvern";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +44,14 @@ const App = () => (
           <Route path="/services/advanced-fogging-sanitisation" element={<AdvancedFoggingSanitisation />} />
           <Route path="/services/comprehensive-mould-removal" element={<ComprehensiveMouldRemoval />} />
           <Route path="/services/subfloor-mould-remediation" element={<SubfloorMouldRemediation />} />
+          <Route path="/services/mold-removal-carlton" element={<Carlton />} />
+          <Route path="/services/mold-removal-toorak" element={<Toorak />} />
+          <Route path="/services/mold-removal-brighton" element={<Brighton />} />
+          <Route path="/services/mold-removal-south-yarra" element={<SouthYarra />} />
+          <Route path="/services/mold-removal-richmond" element={<Richmond />} />
+          <Route path="/services/mold-removal-fitzroy" element={<Fitzroy />} />
+          <Route path="/services/mold-removal-prahran" element={<Prahran />} />
+          <Route path="/services/mold-removal-malvern" element={<Malvern />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
