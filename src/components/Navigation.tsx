@@ -6,7 +6,9 @@ import mouldLogo from '@/assets/mould-restoration-logo.png';
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const locationsDropdownRef = useRef<HTMLDivElement>(null);
 
   const services = [
     { title: 'Professional Mould Inspections', href: '/services/professional-mould-inspections' },
@@ -27,11 +29,14 @@ export const Navigation = () => {
     { title: 'Malvern Mold Removal', href: '/services/mold-removal-malvern' },
   ];
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsServicesDropdownOpen(false);
+      }
+      if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(event.target as Node)) {
+        setIsLocationsDropdownOpen(false);
       }
     };
 
@@ -80,7 +85,7 @@ export const Navigation = () => {
                 </button>
                 
                 {isServicesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-[60]">
                     <div className="py-2">
                       <a
                         href="/services"
@@ -99,21 +104,37 @@ export const Navigation = () => {
                           {service.title}
                         </a>
                       ))}
-                      <div className="border-t border-gray-100 mt-2 pt-2">
-                        <div className="px-4 py-2 text-xs text-gray-500 font-medium uppercase tracking-wide">
-                          Melbourne Service Areas
-                        </div>
-                        {locations.map((location, index) => (
-                          <a
-                            key={`location-${index}`}
-                            href={location.href}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent-blue transition-colors"
-                            onClick={() => setIsServicesDropdownOpen(false)}
-                          >
-                            {location.title}
-                          </a>
-                        ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              {/* Service Areas Dropdown */}
+              <div className="relative" ref={locationsDropdownRef}>
+                <button
+                  onClick={() => setIsLocationsDropdownOpen(!isLocationsDropdownOpen)}
+                  className="text-primary-foreground/80 hover:text-accent-teal transition-colors px-3 py-2 text-sm font-medium flex items-center gap-1"
+                >
+                  Service Areas
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isLocationsDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isLocationsDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-[60]">
+                    <div className="py-2">
+                      <div className="px-4 py-2 text-xs text-gray-500 font-medium uppercase tracking-wide border-b border-gray-100">
+                        Melbourne Suburbs
                       </div>
+                      {locations.map((location, index) => (
+                        <a
+                          key={`location-${index}`}
+                          href={location.href}
+                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent-blue transition-colors"
+                          onClick={() => setIsLocationsDropdownOpen(false)}
+                        >
+                          {location.title}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 )}
@@ -183,7 +204,7 @@ export const Navigation = () => {
                 </button>
                 
                 {isServicesDropdownOpen && (
-                  <div className="bg-primary-dark/50 rounded-lg mx-3 mt-2 mb-2">
+                  <div className="bg-primary-dark/90 backdrop-blur-sm rounded-lg mx-3 mt-2 mb-2">
                     <a
                       href="/services"
                       className="block px-4 py-2 text-sm text-primary-foreground/90 hover:text-accent-teal font-medium border-b border-primary-foreground/10"
@@ -207,24 +228,38 @@ export const Navigation = () => {
                         {service.title}
                       </a>
                     ))}
-                    <div className="border-t border-primary-foreground/10 mt-2 pt-2">
-                      <div className="px-4 py-2 text-xs text-primary-foreground/60 font-medium uppercase tracking-wide">
-                        Melbourne Service Areas
-                      </div>
-                      {locations.map((location, index) => (
-                        <a
-                          key={`location-mobile-${index}`}
-                          href={location.href}
-                          className="block px-4 py-2 text-sm text-primary-foreground/80 hover:text-accent-teal"
-                          onClick={() => {
-                            setIsOpen(false);
-                            setIsServicesDropdownOpen(false);
-                          }}
-                        >
-                          {location.title}
-                        </a>
-                      ))}
+                  </div>
+                )}
+              </div>
+              
+              {/* Mobile Service Areas Section */}
+              <div>
+                <button
+                  onClick={() => setIsLocationsDropdownOpen(!isLocationsDropdownOpen)}
+                  className="text-primary-foreground/80 hover:text-accent-teal block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between"
+                >
+                  Service Areas
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isLocationsDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isLocationsDropdownOpen && (
+                  <div className="bg-primary-dark/90 backdrop-blur-sm rounded-lg mx-3 mt-2 mb-2">
+                    <div className="px-4 py-2 text-xs text-primary-foreground/60 font-medium uppercase tracking-wide border-b border-primary-foreground/10">
+                      Melbourne Suburbs
                     </div>
+                    {locations.map((location, index) => (
+                      <a
+                        key={`location-mobile-${index}`}
+                        href={location.href}
+                        className="block px-4 py-2 text-sm text-primary-foreground/80 hover:text-accent-teal"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsLocationsDropdownOpen(false);
+                        }}
+                      >
+                        {location.title}
+                      </a>
+                    ))}
                   </div>
                 )}
               </div>
