@@ -19,17 +19,17 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6">
             <p className="text-lg sm:text-xl text-muted-foreground font-medium tracking-wide">
-              Expert mould removal & restoration
+              Professional Mould Inspections & Remediation
             </p>
           </div>
           
           <h1 className="text-hero font-bold text-foreground mb-8 leading-tight">
-            <span className="block">Restoring Your Spaces,</span>
-            <span className="block">Protecting Your Health</span>
+            <span className="block">Restoring Healthier, Safer Spaces</span>
+            <span className="block">with Expert Mould Restorations</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Let us bring your home back to safety and comfort.
+            Trusted solutions, advanced technology, and a commitment to your well-being. Serving Melbourne and beyond with care.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
+import { Footer } from '@/components/Footer';
 import { Check, Phone, Award, Users, Clock, Shield, MapPin, Star, ArrowRight } from 'lucide-react';
 import aboutHero from '@/assets/about-hero.jpg';
 import visionInterior from '@/assets/vision-interior.jpg';
@@ -17,16 +18,16 @@ const About = () => {
   ];
 
   const credentials = [
-    { number: '2,500+', label: 'Properties Restored', icon: Users },
-    { number: '15+', label: 'Years Experience', icon: Award },  
-    { number: '2hr', label: 'Average Response', icon: Clock },
-    { number: '4.9/5', label: 'Customer Rating', icon: Star },
+    { number: '100+', label: 'Properties Restored', icon: Users },
+    { number: '5+', label: 'Years Experience', icon: Award },  
+    { number: 'Same Day', label: 'Inspection Available', icon: Clock },
+    { number: '5.0/5', label: 'Customer Rating', icon: Star },
   ];
 
   const processSteps = [
     {
       number: '1',
-      title: 'Immediate Assessment',
+      title: 'Professional Assessment',
       description: 'Comprehensive moisture mapping and air quality testing using thermal imaging technology',
     },
     {
@@ -37,7 +38,7 @@ const About = () => {
     {
       number: '3',
       title: 'Safe Removal',
-      description: 'IICRC-certified removal techniques with proper disposal of contaminated materials',
+      description: 'Professional removal techniques with proper disposal of contaminated materials',
     },
     {
       number: '4',
@@ -48,21 +49,21 @@ const About = () => {
 
   const testimonials = [
     {
-      text: "Removed extensive mold from our Toorak basement in just 2 days. Professional, thorough, and my daughter's asthma symptoms disappeared within a week.",
-      name: "Sarah Johnson",
-      location: "Toorak",
+      text: "A fantastic experience with Mould & Restoration Co. Their team were professional, knowledgeable, and truly cared about getting rid of mould the right way. Everything was handled efficiently and they explained the process clearly from start to finish. Would recommend!",
+      name: "Michael Youssef",
+      location: "Melbourne",
       rating: 5,
     },
     {
-      text: "Emergency response was incredible - they arrived within 90 minutes on a Sunday night. The team was professional and the work quality exceeded expectations.",
-      name: "Michael Chen", 
-      location: "Brighton",
+      text: "Clayton attended our home for mould treatment and clean. He did a fantastic job! He was very informative and made sure we understood exactly what it was that he would be doing. He ensured our safety and completed the job with attention to detail.",
+      name: "Mummaofmany", 
+      location: "Melbourne",
       rating: 5,
     },
     {
-      text: "After trying 3 other companies without success, Mould & Restoration finally solved our recurring mold problem. It's been 18 months with no issues.",
-      name: "Emma Wilson",
-      location: "Malvern",
+      text: "A very professional company run by energetic entrepreneurial young people. Website is very easy to understand. 1st visit (free quote) was an assessment of the mould issue and recommendations. Next a report with photos - excellent service!",
+      name: "Roz Dalton",
+      location: "Melbourne",
       rating: 5,
     },
   ];
@@ -72,8 +73,8 @@ const About = () => {
       {/* Emergency Bar */}
       <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
-          <span className="sm:hidden">Emergency Available 24/7</span>
+          <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
+          <span className="sm:hidden">7am-7pm Everyday</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -103,12 +104,12 @@ const About = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                Melbourne's Most Trusted 
-                <span className="text-blue-300"> Mold Removal Experts</span>
+                Melbourne's Trusted 
+                <span className="text-blue-300"> Mould Restoration Experts</span>
               </h1>
               
               <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
-                Family-owned business with 15+ years protecting Melbourne homes. Our IICRC-certified team has remediated over 2,500 properties across Victoria.
+                Professional mould restoration company with 5+ years protecting Melbourne homes. Our skilled team has restored over 100 properties across Victoria.
               </p>
               
               {/* CTA Buttons */}
@@ -120,7 +121,7 @@ const About = () => {
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Response - Call Now
+                    Same-day Inspections - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -131,7 +132,7 @@ const About = () => {
                   asChild
                 >
                   <a href="#contact">
-                    Schedule Free Inspection
+                    Schedule Professional Inspection
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -142,7 +143,7 @@ const About = () => {
                 {[1,2,3,4,5].map((star) => (
                   <Star key={star} className="h-5 w-5 fill-current" />
                 ))}
-                <span className="text-white ml-2">4.9/5 (247 reviews)</span>
+                <span className="text-white ml-2">5.0/5 ⭐ (50+ reviews)</span>
               </div>
             </div>
             
@@ -175,10 +176,10 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              IICRC-Certified Excellence Since 2008
+              Professional Excellence Since 2019
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our certified technicians combine industry-leading training with local Melbourne expertise to deliver safe, effective mold remediation solutions.
+              Our professional technicians combine industry training with local Melbourne expertise to deliver safe, effective mould remediation solutions.
             </p>
           </div>
           
@@ -232,7 +233,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by 2,500+ Melbourne Property Owners
+              Trusted by 100+ Melbourne Property Owners
             </h2>
             <p className="text-xl text-gray-600">Real results from real customers across Melbourne</p>
           </div>
@@ -265,20 +266,20 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Proudly Serving Melbourne for Over 15 Years
+                Proudly Serving Melbourne for Over 5 Years
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                As a family-owned Melbourne business, we understand the unique challenges of our local climate and building styles. From heritage homes in Toorak to modern apartments in Southbank, we've protected thousands of properties across all Melbourne suburbs.
+                As a Melbourne-based business, we understand the unique challenges of our local climate and building styles. From heritage homes in Toorak to modern apartments in Southbank, we've protected over 100 properties across all Melbourne suburbs.
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <Shield className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">Fully licensed and insured in Victoria</span>
+                  <span className="text-gray-700">Fully insured in Victoria</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="h-6 w-6 text-blue-600" />
-                  <span className="text-gray-700">24/7 emergency response across Melbourne metro</span>
+                  <span className="text-gray-700">7am-7pm professional service across Melbourne metro</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="h-6 w-6 text-blue-600" />
@@ -288,7 +289,7 @@ const About = () => {
               
               <Button size="lg" asChild>
                 <a href="/contact">
-                  Schedule Your Free Assessment
+                  Schedule Your Professional Assessment
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -316,6 +317,9 @@ const About = () => {
 
       {/* Contact Section */}
       <ContactSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

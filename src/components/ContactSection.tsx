@@ -50,7 +50,7 @@ export const ContactSection = () => {
               <Clock className="w-6 h-6 text-highlight" />
             </div>
             <h3 className="font-semibold text-card-foreground mb-2">Hours</h3>
-            <p className="text-muted-foreground text-sm">Monday - Sunday: 7 AM - 7 PM</p>
+            <p className="text-muted-foreground text-sm">Everyday: 7am - 7pm</p>
           </Card>
         </div>
 
@@ -65,7 +65,7 @@ export const ContactSection = () => {
         {/* Additional Info */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Ready to restore your space? Contact Mould & Restoration Co today for a free consultation 
+            Ready to restore your space? Contact Mould & Restoration Co today for a professional inspection 
             and let our experienced team help you create a healthier, safer environment.
           </p>
         </div>

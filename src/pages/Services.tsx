@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Shield, Award, Clock, CheckCircle, Star, MapPin } from 'lucide-react';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
+import { Footer } from '@/components/Footer';
 import servicesHero from '@/assets/services-hero.jpg';
 import residentialInspection from '@/assets/residential-inspection.jpg';
 import commercialRemoval from '@/assets/commercial-removal.jpg';
@@ -15,23 +16,23 @@ import designConsultation from '@/assets/design-consultation.jpg';
 export const Services = () => {
   const services = [
     {
-      title: 'Emergency Mold Removal',
-      description: 'Immediate response for health hazards and property damage. Our certified team arrives within 2 hours.',
-      features: ['On-site within 2 hours', 'Immediate containment', 'Health hazard assessment'],
-      image: commercialRemoval,
-      link: '/services/comprehensive-mould-removal',
-      emergency: true,
-      startingPrice: 'Call for pricing',
-    },
-    {
       title: 'Professional Mould Inspections',
-      description: 'Comprehensive mold detection and air quality testing to identify problems before they escalate.',
+      description: 'Same-day inspections and air quality testing to identify problems before they escalate.',
       features: ['Thermal imaging detection', 'Air quality testing', 'Detailed written report'],
       image: residentialInspection,
       link: '/services/professional-mould-inspections',
       emergency: false,
       startingPrice: 'From $299',
-      badge: 'FREE Assessment',
+      badge: 'Professional Assessment',
+    },
+    {
+      title: 'Comprehensive Mould Removal',
+      description: 'Professional mould remediation using advanced techniques for complete elimination.',
+      features: ['Safe material removal', 'Professional containment', 'Health-focused approach'],
+      image: commercialRemoval,
+      link: '/services/comprehensive-mould-removal',
+      emergency: false,
+      startingPrice: 'Get Quote',
     },
     {
       title: 'Complete Material Removal',
@@ -63,9 +64,9 @@ export const Services = () => {
   ];
 
   const processSteps = [
-    { number: '1', title: 'Initial Assessment', description: 'Free property evaluation and quote' },
+    { number: '1', title: 'Initial Assessment', description: 'Professional property evaluation and quote' },
     { number: '2', title: 'Service Planning', description: 'Customized remediation strategy' },
-    { number: '3', title: 'Professional Treatment', description: 'IICRC-certified removal and restoration' },
+    { number: '3', title: 'Professional Treatment', description: 'Safe removal and restoration' },
     { number: '4', title: 'Quality Assurance', description: 'Final testing and documentation' },
   ];
 
@@ -74,8 +75,8 @@ export const Services = () => {
       {/* Emergency Bar */}
       <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
-          <span className="sm:hidden">Emergency Available 24/7</span>
+          <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
+          <span className="sm:hidden">7am-7pm Everyday</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -112,12 +113,12 @@ export const Services = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                Comprehensive Mold Solutions for 
+                Professional Mould Solutions for 
                 <span className="text-blue-300"> Melbourne Properties</span>
               </h1>
               
               <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
-                From emergency response to prevention, we protect your property and health with certified expertise.
+                From same-day inspections to complete remediation, we protect your property and health with professional expertise.
               </p>
               
               {/* CTA Buttons */}
@@ -129,7 +130,7 @@ export const Services = () => {
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Service - Call Now
+                    Same-day Service - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -151,7 +152,7 @@ export const Services = () => {
                 {[1,2,3,4,5].map((star) => (
                   <Star key={star} className="h-5 w-5 fill-current" />
                 ))}
-                <span className="text-white ml-2">4.9/5 (247 reviews)</span>
+                <span className="text-white ml-2">5.0/5 ⭐ (50+ reviews)</span>
               </div>
             </div>
             
@@ -163,15 +164,15 @@ export const Services = () => {
                   <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
                     <Clock className="h-5 w-5 text-orange-600" />
                     <div>
-                      <div className="font-semibold text-gray-900">2-Hour Response</div>
-                      <div className="text-orange-600 text-sm">Emergency availability</div>
+                      <div className="font-semibold text-gray-900">Same-day Available</div>
+                      <div className="text-orange-600 text-sm">Professional service</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
                     <Award className="h-5 w-5 text-blue-600" />
                     <div>
-                      <div className="font-semibold text-gray-900">IICRC Certified</div>
-                      <div className="text-blue-600 text-sm">Industry-leading standards</div>
+                      <div className="font-semibold text-gray-900">Professional Team</div>
+                      <div className="text-blue-600 text-sm">Industry standards</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
@@ -183,7 +184,7 @@ export const Services = () => {
                   </div>
                 </div>
                 <Button className="w-full mt-4" asChild>
-                  <a href="/contact">Schedule Free Assessment</a>
+                  <a href="/contact">Schedule Professional Assessment</a>
                 </Button>
               </Card>
             </div>
@@ -196,10 +197,10 @@ export const Services = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Complete Mold Solutions Tailored to Your Needs
+              Complete Mould Solutions Tailored to Your Needs
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Professional remediation services with guaranteed results and complete satisfaction
+              Professional remediation services with quality results and complete satisfaction
             </p>
           </div>
           
@@ -361,6 +362,9 @@ export const Services = () => {
 
       {/* Contact Section */}
       <ContactSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

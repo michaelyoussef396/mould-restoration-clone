@@ -15,8 +15,8 @@ const Index = () => {
       {/* Emergency Bar */}
       <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-center sm:justify-between">
-          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
-          <span className="sm:hidden text-xs">Emergency 24/7</span>
+          <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
+          <span className="sm:hidden text-xs">7am-7pm Everyday</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1 ml-2 sm:ml-0">
             <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
             <span className="text-xs sm:text-sm">1800 954 117</span>
