@@ -8,40 +8,57 @@ All colors MUST be HSL for proper theme integration.
 
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --primary-dark: 248 25% 18%;        /* #141228 - Headers, navigation, footer */
-    --primary-light: 32 14% 69%;        /* #B1AEA9 - Secondary text, backgrounds */
-    --neutral-mid: 33 11% 40%;          /* #6A655E - Body text, borders */
-    --accent-blue: 230 36% 44%;         /* #4B5A9C - Links, secondary CTAs */
-    --accent-teal: 186 19% 50%;         /* #6C8F92 - Trust signals, highlights */
-    --accent-dark: 196 16% 31%;         /* #43555A - Subtle accents, icons */
+    /* Primary Brand Colors - Blue Palette */
+    --primary: 240 100% 59%;        /* Blue 500 */
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 240 100% 47%;   /* Blue 600 */
+    --primary-light: 218 100% 95%;  /* Blue 50 */
+    
+    /* Secondary Colors */
+    --secondary: 218 100% 95%;      /* Blue 50 */
+    --secondary-foreground: 244 66% 37%; /* Blue 950 */
+    
+    /* Accent Colors */
+    --accent: 225 100% 82%;         /* Blue 300 */
+    --accent-foreground: 244 66% 37%;
+    --accent-blue: 240 100% 59%;    /* Blue 500 */
+    --accent-teal: 189 41% 51%;     /* Keep teal for contrast */
+    --accent-dark: 244 66% 37%;     /* Blue 950 */
+    
+    /* Blue Palette Extended */
+    --blue-50: 218 100% 95%;
+    --blue-100: 214 100% 92%;
+    --blue-200: 218 100% 85%;
+    --blue-300: 225 100% 82%;
+    --blue-400: 234 100% 75%;
+    --blue-500: 240 100% 59%;
+    --blue-600: 243 100% 54%;
+    --blue-700: 240 100% 47%;
+    --blue-800: 243 58% 42%;
+    --blue-900: 246 46% 32%;
+    --blue-950: 244 66% 37%;
     
     /* Functional Colors */
-    --emergency-orange: 25 95% 53%;     /* #FD7E14 - Emergency CTAs only */
-    --success-green: 142 76% 36%;       /* #22c55e - Completion states */
-    --warning-yellow: 38 92% 50%;       /* #f59e0b - Caution messaging */
-    --error-red: 0 84% 60%;            /* #ef4444 - Error states */
+    --neutral-mid: 32 15% 39%;
+    --emergency-orange: 24 95% 53%;
+    --success-green: 142 76% 36%;
+    --warning-yellow: 45 93% 47%;
+    --error-red: 0 84% 60%;
 
     /* Theme mapping for shadcn compatibility */
-    --background: 248 25% 18%;          /* primary-dark */
-    --foreground: 32 14% 95%;           /* light variant of primary-light */
-    --card: 248 25% 22%;                /* slightly lighter than background */
-    --card-foreground: 32 14% 85%;      /* primary-light variant */
-    --popover: 248 25% 22%;
-    --popover-foreground: 32 14% 85%;
-    --primary: 230 36% 44%;             /* accent-blue */
-    --primary-foreground: 32 14% 95%;
-    --secondary: 186 19% 50%;           /* accent-teal */
-    --secondary-foreground: 248 25% 18%;
-    --muted: 196 16% 31%;               /* accent-dark */
-    --muted-foreground: 32 14% 69%;     /* primary-light */
-    --accent: 186 19% 50%;              /* accent-teal */
-    --accent-foreground: 248 25% 18%;
-    --destructive: 0 84% 60%;           /* error-red */
-    --destructive-foreground: 32 14% 95%;
-    --border: 196 16% 31%;              /* accent-dark */
-    --input: 196 16% 25%;               /* darker variant */
-    --ring: 230 36% 44%;                /* accent-blue */
+    --background: 0 0% 100%;          /* White background */
+    --foreground: 244 66% 37%;        /* Blue 950 text */
+    --card: 0 0% 100%;                /* White cards */
+    --card-foreground: 244 66% 37%;   /* Blue 950 card text */
+    --popover: 0 0% 100%;
+    --popover-foreground: 244 66% 37%;
+    --muted: 218 100% 95%;            /* Blue 50 */
+    --muted-foreground: 246 46% 32%;  /* Blue 900 */
+    --destructive: 0 84% 60%;         /* error-red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 100% 85%;           /* Blue 200 */
+    --input: 218 100% 85%;            /* Blue 200 */
+    --ring: 240 100% 59%;             /* Blue 500 */
 
     /* Component styling */
     --radius: 0.75rem;

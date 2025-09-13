@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import mouldLogo from '@/assets/mould-restoration-logo.png';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +12,12 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">MRC</span>
-              </div>
+            <a href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+              <img 
+                src={mouldLogo} 
+                alt="Mould & Restoration Co" 
+                className="h-10 w-auto"
+              />
               <span className="text-foreground font-semibold text-lg hidden sm:block">
                 Mould & Restoration Co
               </span>
