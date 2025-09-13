@@ -16,6 +16,17 @@ export const Navigation = () => {
     { title: 'Subfloor Mould Remediation', href: '/services/subfloor-mould-remediation' },
   ];
 
+  const locations = [
+    { title: 'Carlton Mold Removal', href: '/services/mold-removal-carlton' },
+    { title: 'Toorak Mold Removal', href: '/services/mold-removal-toorak' },
+    { title: 'Brighton Mold Removal', href: '/services/mold-removal-brighton' },
+    { title: 'South Yarra Mold Removal', href: '/services/mold-removal-south-yarra' },
+    { title: 'Richmond Mold Removal', href: '/services/mold-removal-richmond' },
+    { title: 'Fitzroy Mold Removal', href: '/services/mold-removal-fitzroy' },
+    { title: 'Prahran Mold Removal', href: '/services/mold-removal-prahran' },
+    { title: 'Malvern Mold Removal', href: '/services/mold-removal-malvern' },
+  ];
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -88,6 +99,21 @@ export const Navigation = () => {
                           {service.title}
                         </a>
                       ))}
+                      <div className="border-t border-gray-100 mt-2 pt-2">
+                        <div className="px-4 py-2 text-xs text-gray-500 font-medium uppercase tracking-wide">
+                          Melbourne Service Areas
+                        </div>
+                        {locations.map((location, index) => (
+                          <a
+                            key={`location-${index}`}
+                            href={location.href}
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-accent-blue transition-colors"
+                            onClick={() => setIsServicesDropdownOpen(false)}
+                          >
+                            {location.title}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -181,6 +207,24 @@ export const Navigation = () => {
                         {service.title}
                       </a>
                     ))}
+                    <div className="border-t border-primary-foreground/10 mt-2 pt-2">
+                      <div className="px-4 py-2 text-xs text-primary-foreground/60 font-medium uppercase tracking-wide">
+                        Melbourne Service Areas
+                      </div>
+                      {locations.map((location, index) => (
+                        <a
+                          key={`location-mobile-${index}`}
+                          href={location.href}
+                          className="block px-4 py-2 text-sm text-primary-foreground/80 hover:text-accent-teal"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setIsServicesDropdownOpen(false);
+                          }}
+                        >
+                          {location.title}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
