@@ -24,7 +24,7 @@ export const Services = () => {
       title: 'Complete Material Removal',
       description: 'For severe mould infestations, we offer the removal of plaster walls, insulation, ceilings, skirting, wardrobes, and more to ensure complete eradication and lasting solutions.',
       image: commercialRemoval,
-      link: '/service/complete-material-removal',
+      link: '/services/complete-material-removal',
     },
     {
       title: 'Advanced Fogging Sanitisation',
