@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          dark: "hsl(var(--primary-dark))",
+          light: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -38,6 +40,9 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          blue: "hsl(var(--accent-blue))",
+          teal: "hsl(var(--accent-teal))",
+          dark: "hsl(var(--accent-dark))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -57,8 +62,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        /* Brand Colors */
+        "neutral-mid": "hsl(var(--neutral-mid))",
+        "emergency-orange": "hsl(var(--emergency-orange))",
+        "success-green": "hsl(var(--success-green))",
+        "warning-yellow": "hsl(var(--warning-yellow))",
+        "error-red": "hsl(var(--error-red))",
         /* Custom project colors */
-        highlight: "hsl(var(--service-highlight))",
+        highlight: "hsl(var(--highlight))",
       },
       borderRadius: {
         lg: "var(--radius)",

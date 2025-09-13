@@ -17,6 +17,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         cta: "cta-button bg-primary text-primary-foreground hover:bg-primary/90",
         hero: "cta-button bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-glow",
+        emergency: "emergency-cta bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 font-semibold",
+        trust: "trust-signals bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100",
       },
       size: {
         default: "h-10 px-4 py-2",
