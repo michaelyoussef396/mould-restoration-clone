@@ -30,7 +30,7 @@ export const Services = () => {
       title: 'Advanced Fogging Sanitisation',
       description: 'Thoroughly sanitize mould-affected areas with advanced ULV fogging technology. Penetrate hard-to-reach spaces and ensure long-lasting mould prevention.',
       image: architectureFogging,
-      link: '/service/advanced-fogging-sanitisation',
+      link: '/services/advanced-fogging-sanitisation',
     },
     {
       title: 'Comprehensive Mould Removal',
