@@ -9,6 +9,7 @@ import { Services } from "./pages/Services";
 import { ProfessionalMouldInspections } from "./pages/ProfessionalMouldInspections";
 import { CompleteMaterialRemoval } from "./pages/CompleteMaterialRemoval";
 import { AdvancedFoggingSanitisation } from "./pages/AdvancedFoggingSanitisation";
+import { ComprehensiveMouldRemoval } from "./pages/ComprehensiveMouldRemoval";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/services/professional-mould-inspections" element={<ProfessionalMouldInspections />} />
           <Route path="/services/complete-material-removal" element={<CompleteMaterialRemoval />} />
           <Route path="/services/advanced-fogging-sanitisation" element={<AdvancedFoggingSanitisation />} />
+          <Route path="/services/comprehensive-mould-removal" element={<ComprehensiveMouldRemoval />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

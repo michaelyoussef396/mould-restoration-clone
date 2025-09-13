@@ -36,7 +36,7 @@ export const Services = () => {
       title: 'Comprehensive Mould Removal',
       description: 'Eliminate mould at its source with our deep and thorough removal services. We ensure long-term solutions to protect your health and property.',
       image: officeDesign,
-      link: '/service/comprehensive-mould-removal',
+      link: '/services/comprehensive-mould-removal',
     },
     {
       title: 'Subfloor Mould Remediation',
