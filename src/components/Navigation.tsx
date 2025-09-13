@@ -30,7 +30,7 @@ export const Navigation = () => {
               <a href="/about" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
                 About Us
               </a>
-              <a href="#services" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
+              <a href="/services" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
                 Services
               </a>
               <a href="#contact" className="text-muted-foreground hover:text-highlight transition-colors px-3 py-2 text-sm font-medium">
@@ -82,7 +82,7 @@ export const Navigation = () => {
                 About Us
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="text-muted-foreground hover:text-highlight block px-3 py-2 text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
