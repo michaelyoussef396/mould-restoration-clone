@@ -57,11 +57,29 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        /* Custom project colors */
+        highlight: "hsl(var(--service-highlight))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      fontSize: {
+        'hero': 'var(--font-size-hero)',
+        'section': 'var(--font-size-section)',
+        'card': 'var(--font-size-card)',
+      },
+      boxShadow: {
+        'elevation': 'var(--shadow-elevation)',
+        'glow': 'var(--glow-effect)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       keyframes: {
         "accordion-down": {
