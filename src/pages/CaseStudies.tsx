@@ -221,7 +221,7 @@ const CaseStudies = () => {
                 <div className="relative">
                   <img
                     src={study.image}
-                    alt={study.title}
+                    alt={`${study.title} - Melbourne mould restoration case study showing professional IICRC certified treatment results`}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">

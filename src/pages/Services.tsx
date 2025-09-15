@@ -218,7 +218,7 @@ export const Services = () => {
                   <div className="aspect-video overflow-hidden relative">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} Melbourne - Professional IICRC certified mould restoration service`}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute bottom-4 right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">

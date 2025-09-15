@@ -229,7 +229,7 @@ export const CompleteMaterialRemoval = () => {
               <div className="relative">
                 <img
                   src={wallRemovalProgress}
-                  alt="Wall removal progress showing exposed framing"
+                  alt="Complete material removal progress Melbourne showing safe mould-affected plasterboard removal with exposed framing preservation"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
@@ -240,7 +240,7 @@ export const CompleteMaterialRemoval = () => {
               <div className="relative">
                 <img
                   src={commercialRemovalWork}
-                  alt="Commercial material removal project"
+                  alt="Commercial material removal project Melbourne with IICRC certified containment and professional demolition equipment"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">

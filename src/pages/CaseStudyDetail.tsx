@@ -658,7 +658,7 @@ const CaseStudyDetail = () => {
             <div className="relative">
               <img
                 src={caseStudy.heroImage}
-                alt={caseStudy.title}
+                alt={`${caseStudy.title} - Melbourne mould restoration case study showing professional IICRC certified treatment process and results`}
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -723,7 +723,7 @@ const CaseStudyDetail = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Before</h3>
                   <img
                     src={comparison.before}
-                    alt="Before remediation"
+                    alt="Before professional mould remediation Melbourne showing extensive contamination requiring IICRC certified treatment"
                     className="w-full h-64 object-cover rounded-lg shadow-lg"
                   />
                 </div>
@@ -731,7 +731,7 @@ const CaseStudyDetail = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">After</h3>
                   <img
                     src={comparison.after}
-                    alt="After remediation"
+                    alt="After professional mould remediation Melbourne showing complete restoration with clean healthy surfaces and excellent air quality"
                     className="w-full h-64 object-cover rounded-lg shadow-lg"
                   />
                 </div>

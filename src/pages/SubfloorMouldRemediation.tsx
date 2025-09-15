@@ -245,7 +245,7 @@ export const SubfloorMouldRemediation = () => {
               <div className="relative">
                 <img
                   src={subfloorVentilation}
-                  alt="Improved subfloor ventilation system installation"
+                  alt="Improved subfloor ventilation system installation Melbourne preventing future mould growth with professional moisture control"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
