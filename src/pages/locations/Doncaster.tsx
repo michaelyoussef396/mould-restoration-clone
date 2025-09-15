@@ -22,6 +22,7 @@ export const Doncaster = () => {
         emergency={false}
         title="Mould Removal Doncaster Melbourne - Shopping Hub & Multicultural Family Specialists"
         description="Expert mould removal Doncaster Melbourne. Shopping hub specialists treating multicultural family homes and Westfield proximity properties. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-doncaster"
       />
       <LocalBusinessSchema
         pageName="Doncaster Mould Removal"

@@ -17,7 +17,7 @@ export const SouthYarra = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal South Yarra Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in South Yarra Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day South Yarra mould inspection & removal."
+        description="South Yarra apartment & high-rise mould specialists. Domain precinct professionals treating luxury towers & heritage terraces. Expert service. Call 1800 954 117"
         suburb="South Yarra"
         postcode="3141"
         canonical="https://mouldrestoration.com.au/mould-removal-south-yarra-melbourne"

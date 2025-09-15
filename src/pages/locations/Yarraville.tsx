@@ -13,6 +13,7 @@ const YarravilleMouldRemoval = () => {
         title="Professional Mould Removal Yarraville | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Yarraville 3013. Village atmosphere specialists, heritage workers cottage expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal yarraville, yarraville mould inspection, yarraville village mould, workers cottage mould removal, yarraville 3013"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-yarraville"
       />
 
       <LocalBusinessSchema

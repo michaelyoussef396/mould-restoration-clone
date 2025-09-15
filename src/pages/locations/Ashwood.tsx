@@ -20,6 +20,7 @@ const AshwoodPage = () => {
         title="Professional Mould Removal Ashwood Melbourne | Mould & Restoration Co."
         description="Expert mould removal services in Ashwood Melbourne. 5+ years experience, 100+ properties restored. Call 1800 954 117 for professional mould inspection and remediation."
         suburb="Ashwood"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-ashwood"
       />
 
       <LocalBusinessSchema

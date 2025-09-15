@@ -14,6 +14,7 @@ export default function CroydonMouldRemoval() {
         suburb="Croydon"
         postcode="3136"
         keywords="mould removal croydon, mould inspection croydon melbourne, family suburb mould treatment, mountain proximity moisture control 3136"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-croydon"
       />
 
       <LocalBusinessSchema

@@ -17,7 +17,7 @@ export const Springvale = () => {
       <LocationPageSEO
         suburb="Springvale"
         title="Mould Removal Springvale - Diverse Community Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Springvale Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Springvale mould inspection & removal."
+        description="Springvale multicultural community & shopping district mould experts. Springvale Road specialists treating diverse family homes & established residential areas. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-springvale"
       />
 

@@ -17,7 +17,7 @@ export const Prahran = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Prahran Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Prahran Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Prahran mould inspection & removal."
+        description="Prahran Chapel Street & commercial district mould experts. Retail space specialists treating nightlife venues & mixed-use properties. Expert service. Call 1800 954 117"
         suburb="Prahran"
         postcode="3181"
         canonicalUrl="https://mouldrestorationco.com.au/locations/prahran"

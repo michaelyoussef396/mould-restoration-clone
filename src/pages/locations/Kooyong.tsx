@@ -22,6 +22,7 @@ export const Kooyong = () => {
         emergency={false}
         title="Mould Removal Kooyong Melbourne - Premium Residential Specialists"
         description="Expert mould removal Kooyong Melbourne. Premium residential specialists treating tennis precinct moisture issues. Leafy streets expertise, luxury home restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-kooyong"
       />
       <LocalBusinessSchema
         pageName="Kooyong Mould Removal"

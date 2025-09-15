@@ -17,7 +17,7 @@ export const HoppersCrossing = () => {
       <LocationPageSEO
         suburb="Hoppers Crossing"
         title="Mould Removal Hoppers Crossing - Growth Corridor Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Hoppers Crossing Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Hoppers Crossing mould inspection & removal."
+        description="Hoppers Crossing family suburb & shopping centre mould specialists. Pacific Werribee area experts treating modern homes & established residential neighbourhoods. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-hoppers-crossing"
       />
 

@@ -14,6 +14,7 @@ export default function HeidelbergMouldRemoval() {
         suburb="Heidelberg"
         postcode="3084"
         keywords="mould removal heidelberg, mould inspection heidelberg melbourne, historic suburb mould treatment, established home moisture control 3084"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-heidelberg"
       />
 
       <LocalBusinessSchema

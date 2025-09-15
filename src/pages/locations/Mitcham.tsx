@@ -14,6 +14,7 @@ export default function MitchamMouldRemoval() {
         suburb="Mitcham"
         postcode="3132"
         keywords="mould removal mitcham, mould inspection mitcham melbourne, family home mould treatment, heritage property moisture control 3132"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-mitcham"
       />
 
       <LocalBusinessSchema

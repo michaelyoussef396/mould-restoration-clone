@@ -14,6 +14,7 @@ export default function AltonaMouldRemoval() {
         suburb="Altona"
         postcode="3018"
         keywords="mould removal altona, mould inspection altona melbourne, coastal family mould treatment, industrial area moisture control 3018"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-altona"
       />
 
       <LocalBusinessSchema

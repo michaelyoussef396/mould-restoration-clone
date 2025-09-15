@@ -13,6 +13,7 @@ const SpotswoodMouldRemoval = () => {
         title="Professional Mould Removal Spotswood | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Spotswood 3015. Waterfront community specialists, Yarra River proximity expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal spotswood, spotswood mould inspection, spotswood waterfront, yarra river mould removal, spotswood 3015"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-spotswood"
       />
 
       <LocalBusinessSchema

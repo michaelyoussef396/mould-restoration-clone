@@ -17,7 +17,7 @@ export const WheelersHillSE = () => {
       <LocationPageSEO
         suburb="Wheelers Hill"
         title="Mould Removal Wheelers Hill - Hillside Estate Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Wheelers Hill Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Wheelers Hill mould inspection & removal."
+        description="Wheelers Hill SE established residential & parkland mould specialists. Family suburb experts treating quality homes & mature neighbourhood properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-wheelers-hill-se"
       />
 

@@ -22,6 +22,7 @@ export const Hughesdale = () => {
         emergency={false}
         title="Mould Removal Hughesdale Melbourne - Railway Corridor Specialists"
         description="Expert mould removal Hughesdale Melbourne. Railway corridor specialists treating established property moisture issues. Convenient location expertise, family community restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-hughesdale"
       />
       <LocalBusinessSchema
         pageName="Hughesdale Mould Removal"

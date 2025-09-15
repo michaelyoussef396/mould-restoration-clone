@@ -13,6 +13,7 @@ const ThomastownMouldRemoval = () => {
         title="Professional Mould Removal Thomastown | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Thomastown 3074. Growth area specialists, multicultural community expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal thomastown, thomastown mould inspection, thomastown growth area, multicultural mould removal, thomastown 3074"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-thomastown"
       />
 
       <LocalBusinessSchema

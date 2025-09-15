@@ -17,7 +17,7 @@ export const MelbourneCBD = () => {
       <LocationPageSEO
         suburb="Melbourne CBD"
         title="Mould Removal Melbourne CBD - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Melbourne CBD. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day CBD mould inspection & removal."
+        description="Melbourne CBD commercial & high-rise apartment mould experts. Business district specialists treating office buildings & luxury residential towers. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-melbourne-cbd"
       />
 

@@ -13,6 +13,7 @@ const MaribyrnongMouldRemoval = () => {
         title="Professional Mould Removal Maribyrnong | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Maribyrnong 3032. River-adjacent expertise, waterfront property specialists. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal maribyrnong, maribyrnong mould inspection, maribyrnong river mould, waterfront mould removal, maribyrnong 3032"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-maribyrnong"
       />
 
       <LocalBusinessSchema

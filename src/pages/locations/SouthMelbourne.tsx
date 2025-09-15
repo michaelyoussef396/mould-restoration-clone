@@ -17,7 +17,7 @@ export const SouthMelbourne = () => {
       <LocationPageSEO
         suburb="South Melbourne"
         title="Mould Removal South Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in South Melbourne Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day South Melbourne mould inspection & removal."
+        description="South Melbourne market district & heritage precinct mould experts. Clarendon Street specialists treating period terraces & converted warehouse apartments. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-south-melbourne"
       />
 

@@ -17,7 +17,7 @@ export const Aspendale = () => {
       <LocationPageSEO
         suburb="Aspendale"
         title="Mould Removal Aspendale - Seaside Family Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Aspendale Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Aspendale mould inspection & removal."
+        description="Aspendale beachside & pier precinct mould specialists. Waterfront professionals treating coastal homes & holiday properties near the beach. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-aspendale"
       />
 

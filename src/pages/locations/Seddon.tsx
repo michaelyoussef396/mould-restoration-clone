@@ -13,6 +13,7 @@ const SeddonMouldRemoval = () => {
         title="Professional Mould Removal Seddon | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Seddon 3011. Industrial heritage specialists, gentrified area expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal seddon, seddon mould inspection, seddon industrial heritage, gentrification mould removal, seddon 3011"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-seddon"
       />
 
       <LocalBusinessSchema

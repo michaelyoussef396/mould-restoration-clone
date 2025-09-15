@@ -22,6 +22,7 @@ export const Templestowe = () => {
         emergency={false}
         title="Mould Removal Templestowe Melbourne - Premium Family Estate Specialists"
         description="Expert mould removal Templestowe Melbourne. Premium family estate specialists treating Yarra River proximity properties and leafy environment homes. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-templestowe"
       />
       <LocalBusinessSchema
         pageName="Templestowe Mould Removal"

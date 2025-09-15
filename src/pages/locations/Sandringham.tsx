@@ -17,7 +17,7 @@ export const Sandringham = () => {
       <LocationPageSEO
         suburb="Sandringham"
         title="Mould Removal Sandringham - Beachside Living Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Sandringham Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Sandringham mould inspection & removal."
+        description="Sandringham beach & station precinct mould experts. Bay Road professionals treating coastal homes & family properties near the foreshore. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-sandringham"
       />
 

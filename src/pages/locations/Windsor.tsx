@@ -17,7 +17,7 @@ export const Windsor = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Windsor Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Windsor Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Windsor mould inspection & removal."
+        description="Windsor heritage terrace & Chapel Street precinct mould experts. Inner-city specialists treating period properties & converted apartments. Professional service. Call 1800 954 117"
         suburb="Windsor"
         postcode="3181"
         canonicalUrl="https://mouldrestorationco.com.au/locations/windsor"

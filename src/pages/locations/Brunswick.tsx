@@ -14,6 +14,7 @@ export default function BrunswickMouldRemoval() {
         suburb="Brunswick"
         postcode="3056"
         keywords="mould removal brunswick, mould inspection brunswick melbourne, victorian terrace mould treatment, warehouse conversion moisture control 3056"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-brunswick"
       />
 
       <LocalBusinessSchema

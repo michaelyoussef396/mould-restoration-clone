@@ -17,7 +17,7 @@ export const MalvernEast = () => {
       <LocationPageSEO
         suburb="Malvern East"
         title="Mould Removal Malvern East - Prestigious Residential Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Malvern East Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Malvern East mould inspection & removal."
+        description="Malvern East period home & garden suburb mould experts. Wattletree Road professionals treating heritage properties & established family homes. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-malvern-east"
       />
 

@@ -20,6 +20,7 @@ const MountWaverleyPage = () => {
         title="Professional Mould Removal Mount Waverley Melbourne | Mould & Restoration Co."
         description="Expert mould removal services in Mount Waverley Melbourne. 5+ years experience, 100+ properties restored. Call 1800 954 117 for professional mould inspection and remediation."
         suburb="Mount Waverley"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-mount-waverley"
       />
 
       <LocalBusinessSchema

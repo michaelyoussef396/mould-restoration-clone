@@ -17,7 +17,7 @@ export const Fitzroy = () => {
       <LocationPageSEO
         suburb="Fitzroy"
         title="Mould Removal Fitzroy Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Fitzroy Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Fitzroy mould inspection & removal."
+        description="Fitzroy heritage warehouse & creative studio mould specialists. Brunswick Street professionals treating converted lofts & artist spaces. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-fitzroy"
       />
 

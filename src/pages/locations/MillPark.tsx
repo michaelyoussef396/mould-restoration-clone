@@ -13,6 +13,7 @@ const MillParkMouldRemoval = () => {
         title="Professional Mould Removal Mill Park | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Mill Park 3082. Outer north specialists, family estate expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal mill park, mill park mould inspection, mill park family estates, outer north mould removal, mill park 3082"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-mill-park"
       />
 
       <LocalBusinessSchema

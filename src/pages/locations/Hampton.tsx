@@ -17,7 +17,7 @@ export const Hampton = () => {
       <LocationPageSEO
         suburb="Hampton"
         title="Mould Removal Hampton - Bayside Family Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Hampton Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Hampton mould inspection & removal."
+        description="Hampton bayside village & heritage home mould specialists. Coastal proximity experts treating weatherboard cottages & beachside properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-hampton"
       />
 

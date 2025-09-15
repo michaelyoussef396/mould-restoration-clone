@@ -17,7 +17,7 @@ export const GlenIris = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Glen Iris Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Glen Iris Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Glen Iris mould inspection & removal."
+        description="Glen Iris leafy suburban mould specialists. Malvern Road family home experts treating established gardens & mature tree properties. Professional service. Call 1800 954 117"
         suburb="Glen Iris"
         postcode="3146"
         canonicalUrl="https://mouldrestorationco.com.au/locations/glen-iris"

@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { LocationPageSEO, LocalBusinessSchema, ServiceSchema } from "@/components/seo";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
+import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
 
 export const Parkville = () => {
   const breadcrumbItems = [
@@ -14,41 +16,46 @@ export const Parkville = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Parkville Melbourne Mould Removal */}
       <LocationPageSEO
-        suburb="Parkville"
-        title="Mould Removal Parkville - University & Hospital Precinct Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Parkville Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Parkville mould inspection & removal."
-        canonical="/services/mould-removal-parkville"
+        location="Parkville"
+        service="removal"
+        emergency={false}
+        title="Mould Removal Parkville Melbourne - University & Medical District Specialists"
+        description="Professional mould removal Parkville Melbourne - University & hospital precinct specialists. Heritage building expertise. Expert service. Call 1800 954 117"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-parkville"
       />
-
       <LocalBusinessSchema
-        businessName="Mould & Restoration Co."
-        serviceArea="Parkville, Melbourne"
-        address="Parkville, Victoria, Australia"
-        phone="1800 954 117"
-        email="info@mouldrestoration.com.au"
-        abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Parkville Melbourne. IICRC certified technicians specializing in university precinct, hospital vicinity, and heritage residential properties."
+        pageName="Parkville Mould Removal"
+        pageUrl="https://mouldrestoration.com.au/locations/parkville"
+        serviceType="removal"
+        location="Parkville"
       />
-
       <ServiceSchema
         serviceName="Mould Removal Parkville Melbourne"
-        serviceType="Mould Remediation"
-        areaServed="Parkville, Melbourne, Victoria"
-        description="Professional mould removal and inspection services for Parkville properties including university buildings, hospital vicinity homes, heritage properties, and research facilities."
+        serviceDescription="Specialized mould removal for Parkville's university precinct, medical district, and heritage properties. Expert treatment for institutional buildings, heritage homes, and educational facilities."
+        serviceUrl="https://mouldrestoration.com.au/locations/parkville"
+        priceRange="$$"
+        areaServed={["Parkville", "Royal Park", "University of Melbourne", "Royal Melbourne Hospital", "Carlton North"]}
       />
-
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mouldrestoration.com.au/" },
+          { name: "Services", url: "https://mouldrestoration.com.au/services" },
+          { name: "Parkville Mould Removal", url: "https://mouldrestoration.com.au/services/mould-removal-parkville" }
+        ]}
+      />
       <Navigation />
 
-      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 text-sm font-semibold">
-            <Clock className="w-4 h-4" />
-            <span>Professional Mould Service - Same-day Available 7am-7pm in Parkville</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
-              Call 1800 954 117
-            </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
+            <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
+            <span className="sm:hidden">7 AM - 7PM Daily</span>
+            <span>1800 954 117</span>
+            <span className="hidden sm:inline">admin@mouldandrestoration.com.au</span>
+            <span>Melbourne, VIC 📍</span>
           </div>
         </div>
       </div>
@@ -66,32 +73,8 @@ export const Parkville = () => {
               Professional Mould Removal & Inspection in Parkville, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Professional mould removal Parkville Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Parkville's university precinct, hospital vicinity properties, and heritage residential areas with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Melbourne's premier mould removal specialists serving Parkville's university precinct, medical district, and heritage properties. IICRC-certified technicians with 5+ years experience treating institutional buildings, educational facilities, and heritage homes. Same-day service available, 100+ properties restored with 5.0/5 star rating from Parkville property owners and institutions.
             </p>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-6 mb-8">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-sm font-medium">5.0 Stars</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-accent-teal" />
-                <span className="text-sm font-medium">100+ Properties Restored</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
-                <span className="text-sm font-medium">IICRC Certified</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-accent-blue" />
-                <span className="text-sm font-medium">5+ Years Experience</span>
-              </div>
-            </div>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
@@ -100,285 +83,702 @@ export const Parkville = () => {
                   <span>Same-day professional service to Parkville</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
-                  <span>University & hospital precinct expertise</span>
+                  <Shield className="w-5 h-5 text-accent-teal" />
+                  <span>University & medical precinct specialist</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent-blue" />
-                  <span>Postcodes: 3052, Royal Park vicinity coverage</span>
+                  <span>Heritage building preservation expertise</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-accent-teal" />
-                  <span>Insurance work welcome</span>
+                  <Shield className="w-5 h-5 text-success-green" />
+                  <span>Institutional air quality standards</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
-                  <span>100% satisfaction guarantee</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
-                  <span>ABN: 47 683 089 652</span>
+                  <Shield className="w-5 h-5 text-accent-teal" />
+                  <span>Educational facility solutions</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-emergency-orange hover:bg-emergency-orange/90 text-white">
-                <Phone className="mr-2 h-5 w-5" />
-                Call 1800 954 117 Now
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Phone className="w-5 h-5 mr-2" />
+                Call Parkville Professional Service: 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Free Parkville Inspection Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
+                Schedule Parkville Mould Inspection
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Local Area Expertise */}
-      <section className="py-16 bg-gray-50">
+      {/* Parkville Melbourne Local Area Expertise */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Parkville Mould Removal Specialists
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Mould & Restoration Co. provides expert mould removal Parkville Melbourne services in Melbourne's prestigious university and medical precinct. Our IICRC-certified technicians understand the unique challenges of Parkville's institutional buildings, heritage residential properties, and Royal Park proximity effects, from the University of Melbourne to the hospital district.
-            </p>
+          <h2 className="text-3xl font-bold text-primary mb-8">Parkville Melbourne Local Area Expertise</h2>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
-              <h3 className="text-2xl font-semibold mb-4">Common Parkville Mould Issues</h3>
-              <p className="text-gray-700 mb-6">
-                Parkville's combination of prestigious institutions, heritage architecture, and parkland proximity creates specific mould challenges. Our professional mould removal Parkville Melbourne team addresses these with institutional-grade solutions:
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-3 text-primary">University Precinct Challenges</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Academic building high occupancy moisture accumulation</li>
-                    <li>• Research facility controlled environment system issues</li>
-                    <li>• Student accommodation intensive usage patterns</li>
-                    <li>• University heritage building preservation requirements</li>
-                    <li>• Laboratory and teaching facility specialized ventilation needs</li>
-                    <li>• Campus landscaping irrigation affecting nearby residential properties</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 text-primary">Hospital District Factors</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Medical facility specialized air quality requirements</li>
-                    <li>• Hospital vicinity residential moisture management</li>
-                    <li>• Healthcare infrastructure drainage effects</li>
-                    <li>• Medical precinct high-traffic building condensation</li>
-                    <li>• Hospital landscaping and water feature humidity effects</li>
-                    <li>• Service vehicle area drainage challenges</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 text-primary">Heritage Residential Issues</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Victorian and Edwardian heritage home conservation</li>
-                    <li>• Period property original building material challenges</li>
-                    <li>• Heritage overlay requirements affecting remediation methods</li>
-                    <li>• Royal Park proximity natural humidity effects</li>
-                    <li>• Tree-lined street mature vegetation moisture retention</li>
-                    <li>• Heritage terrace shared wall moisture transfer issues</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-primary">Parkville Institutional and Heritage Environment</h3>
-              <p className="text-gray-700 mb-6">
-                As Melbourne's premier educational and medical precinct, Parkville presents unique mould challenges requiring understanding of institutional requirements, heritage preservation standards, and the complex interaction between large facilities and residential properties.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-3 text-primary">Institutional Precinct Effects</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• University and hospital facilities creating localized humidity patterns</li>
-                    <li>• Large institutional HVAC systems affecting surrounding air quality</li>
-                    <li>• Research facility emissions requiring specialized environmental controls</li>
-                    <li>• Educational and medical facility intensive water usage affecting area drainage</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 text-primary">Royal Park Proximity Benefits and Challenges</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• Large parkland providing natural air circulation benefits</li>
-                    <li>• Park irrigation and water features affecting nearby property humidity</li>
-                    <li>• Mature park vegetation creating natural humidity control</li>
-                    <li>• Seasonal park activity patterns affecting local environmental conditions</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4">Parkville Property Types and Heritage Solutions</h3>
-              <p className="text-gray-700 mb-6">
-                From grand Victorian mansions to contemporary apartments and institutional buildings, Parkville's diverse architecture requires specialized mould solutions addressing both heritage preservation and modern institutional requirements.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold mb-4 text-primary">Heritage and Prestigious Residential</h4>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-blue-200 pl-4">
-                      <h5 className="font-medium text-gray-800">Victorian and Edwardian Mansions</h5>
-                      <p className="text-sm text-gray-600">Grand heritage homes requiring conservation-grade mould remediation preserving architectural significance while ensuring modern health and comfort standards.</p>
-                    </div>
-                    <div className="border-l-4 border-blue-200 pl-4">
-                      <h5 className="font-medium text-gray-800">Heritage Terraces and Cottages</h5>
-                      <p className="text-sm text-gray-600">Period residential properties requiring heritage-sensitive solutions addressing original materials while accommodating contemporary living needs.</p>
-                    </div>
-                    <div className="border-l-4 border-blue-200 pl-4">
-                      <h5 className="font-medium text-gray-800">Contemporary Park-Adjacent Apartments</h5>
-                      <p className="text-sm text-gray-600">Modern residential developments requiring advanced moisture management systems taking advantage of parkland proximity while addressing urban density challenges.</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-4 text-primary">Institutional and Educational Properties</h4>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-green-200 pl-4">
-                      <h5 className="font-medium text-gray-800">University Buildings and Facilities</h5>
-                      <p className="text-sm text-gray-600">Educational institutions requiring specialized moisture management addressing high occupancy, research requirements, and heritage building preservation.</p>
-                    </div>
-                    <div className="border-l-4 border-green-200 pl-4">
-                      <h5 className="font-medium text-gray-800">Medical and Healthcare Facilities</h5>
-                      <p className="text-sm text-gray-600">Hospital and medical buildings requiring hospital-grade mould solutions ensuring sterile environments and specialized air quality standards.</p>
-                    </div>
-                    <div className="border-l-4 border-green-200 pl-4">
-                      <h5 className="font-medium text-gray-800">Student Accommodation and Housing</h5>
-                      <p className="text-sm text-gray-600">Student housing requiring intensive moisture management addressing high-density living and varying occupancy patterns throughout academic cycles.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Why Choose Mould & Restoration Co. for Parkville?
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Institutional & Heritage Expertise</h3>
-                <p className="text-gray-700 mb-4">
-                  With 5+ years serving Parkville, we understand the unique requirements of educational institutions, medical facilities, and heritage properties. Our team combines institutional expertise with heritage conservation knowledge for comprehensive service.
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Parkville Property Landscape</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville sits 3km north of Melbourne CBD, encompassing postcode 3052 and serving as Melbourne's premier educational and medical precinct. The suburb stretches from Royal Park to the university grounds, featuring an distinguished mix of institutional buildings, Victorian heritage homes, and contemporary apartments.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>University and hospital facility specialist experience</span>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Victorian and Edwardian heritage homes from 1880-1920 along Royal Parade</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>Heritage building conservation and preservation expertise</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>University of Melbourne institutional and educational buildings</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>Institutional air quality and health standard compliance</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Royal Melbourne Hospital and medical precinct facilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Modern student accommodation and contemporary residential developments</span>
                   </li>
                 </ul>
-              </div>
+              </CardContent>
+            </Card>
 
-              <div>
-                <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
-                <p className="text-gray-700 mb-4">
-                  Our professional mould removal Parkville Melbourne technicians are IICRC certified with specialized training in institutional facilities and heritage building conservation standards.
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Impact on Parkville</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville's inner-city location experiences Melbourne's temperate oceanic climate intensified by urban heat island effects and Royal Park's microclimate influence. Annual rainfall of 650mm combines with institutional building density and mature tree coverage, creating specific moisture challenges.
                 </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>IICRC water damage restoration certification</span>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Summer heat island effects from institutional buildings and concrete surfaces</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>Applied structural drying for heritage and institutional properties</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Winter condensation issues in heritage buildings with modern heating systems</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
-                    <span>Institutional health and safety protocol training</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Royal Park proximity creating natural humidity and air circulation patterns</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Institutional HVAC systems affecting surrounding residential properties</span>
                   </li>
                 </ul>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Parkville</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Heritage-Safe Treatment Methods</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Institutional & Heritage Properties</div>
-                </div>
-              </div>
-            </div>
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Local Parkville Landmarks & Challenges</h3>
+                <p className="text-muted-foreground mb-4">
+                  From the University of Melbourne to Royal Melbourne Hospital, Parkville's prestigious institutions present specific mould challenges. High-value heritage properties and critical institutional buildings demand expert care while operational requirements need uninterrupted service.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>University of Melbourne heritage buildings with conservation requirements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Royal Melbourne Hospital medical-grade air quality standards</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Royal Parade heritage residential properties requiring specialist treatment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Student accommodation with high-density occupancy moisture challenges</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h2 className="text-3xl font-bold text-primary mb-8">Common Mould Issues in Parkville Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Educational Building Challenges</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville's institutional buildings face unique mould challenges from high occupancy rates, specialized ventilation systems, and the need to maintain sterile environments while preserving heritage architecture and meeting educational requirements.
+                </p>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>University buildings with high student occupancy creating elevated humidity levels</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Laboratory and research facilities with specialized air handling requirements</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Medical facilities requiring hospital-grade air quality and sterile environments</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Student accommodation with intensive occupancy and varying maintenance standards</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Heritage institutional buildings balancing conservation with modern climate control</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Parkville Heritage Residential Risk Factors</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville's heritage residential properties, primarily Victorian and Edwardian homes, experience specific mould risks from original building materials, proximity to large institutional buildings, and the influence of Royal Park's natural environment.
+                </p>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Heritage timber construction with original ventilation systems requiring upgrades</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Period homes with cellars and basements affected by area water table changes</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Properties adjacent to institutional buildings affected by their HVAC systems</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Royal Park proximity creating natural humidity but also drainage challenges</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Tree-lined streets with mature canopy affecting property solar exposure and drainage</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      {/* Professional Service Details */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Professional Mould Removal Service Details for Parkville</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certification & Melbourne Expertise</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our Parkville mould removal team holds comprehensive IICRC (Institute of Inspection, Cleaning and Restoration Certification) credentials specifically relevant to institutional buildings, heritage properties, and Melbourne's unique climate challenges.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Water Damage Restoration (WRT) certification for institutional and heritage properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Applied Structural Drying (ASD) for complex institutional building systems</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Mould remediation specialist training for educational and medical facilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage building conservation techniques for Victorian-era properties</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Parkville-Specific Treatment Approaches</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our approach to Parkville properties recognizes the unique requirements of institutional buildings, heritage preservation needs, and the complex interaction between educational facilities, medical buildings, and residential properties in Melbourne's premier precinct.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Minimal disruption protocols for operational educational and medical facilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-appropriate treatment methods preserving architectural integrity</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Hospital-grade air quality standards for medical precinct properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coordination with institutional maintenance and facilities management teams</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h2 className="text-3xl font-bold text-primary mb-8">Advanced Equipment & Technology for Parkville Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Institutional-Grade Assessment Technology</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville's complex building environment requires advanced diagnostic equipment capable of assessing institutional buildings, heritage structures, and understanding the interaction between large facilities and residential properties.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Thermal imaging cameras for large institutional building moisture mapping</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional moisture meters calibrated for heritage building materials</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Air quality testing equipment meeting medical facility standards</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Psychometric monitoring systems for complex HVAC environments</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Specialized Treatment Equipment</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our Parkville operations utilize professional-grade equipment designed for institutional settings, heritage building preservation, and meeting the stringent requirements of educational and medical facilities while serving residential properties.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>HEPA-filtered negative air machines for containment in operational buildings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Low-noise equipment for minimal disruption to educational activities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Hospital-grade dehumidification systems for medical precinct requirements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-safe drying equipment protecting period building materials</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us in Parkville Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Why Choose Mould & Restoration Co. in Parkville Melbourne</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Local Parkville Expertise Since 2019</h3>
+                <p className="text-muted-foreground mb-4">
+                  As Parkville's trusted institutional and heritage mould removal specialists with over 5 years of experience in Melbourne's premier educational and medical precinct, we understand the unique requirements of university buildings, hospital facilities, and heritage residential properties.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>5+ years specializing in Parkville institutional and heritage property issues</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>100+ Melbourne properties including educational and medical facilities restored</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>University and hospital building specialized experience and clearances</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage building conservation and preservation methodology expertise</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Professional Service</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our IICRC-certified technicians provide professional service to Parkville institutional and residential properties, operating 7am-7pm daily with same-day availability during business hours. ABN: 47 683 089 652.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>IICRC certification in mould remediation and institutional building restoration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional service guarantee to Parkville postcode 3052</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Same-day service scheduling with institutional coordination available</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Insurance Work Welcome & 100% Satisfaction</h3>
+                <p className="text-muted-foreground mb-4">
+                  We work directly with all major Australian insurance providers and institutional insurance programs, offering comprehensive documentation for claims related to building damage, HVAC system issues, and environmental concerns in Parkville properties.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Direct insurance billing for approved institutional and residential claims</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Comprehensive documentation meeting institutional and heritage requirements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>100% satisfaction guarantee on all Parkville mould removal services</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>12-month warranty on professional institutional and heritage remediation</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Parkville Customer Reviews</h3>
+                <p className="text-muted-foreground mb-4">
+                  With over 50+ verified 5-star reviews from Parkville property owners, institutional facilities managers, heritage property specialists, and university administrators, we're Melbourne's most trusted institutional and heritage mould removal service.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>5.0/5 star rating across Google, institutional directories, and heritage societies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>50+ verified reviews from Parkville institutional and residential clients</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Trusted by University of Melbourne and Royal Melbourne Hospital facilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Recommended by local heritage societies and institutional property managers</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Service Process */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Our Comprehensive 5-Step Parkville Mould Removal Process</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 1: Initial Assessment & Institutional Coordination</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our Parkville assessment process begins with comprehensive evaluation designed for institutional buildings and heritage properties, coordinating with facility managers, conservation requirements, and operational needs to ensure minimal disruption.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Institutional facility assessment with operational impact analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage building evaluation with conservation requirement documentation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Thermal imaging and moisture mapping of complex building systems</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 2: Containment & Heritage Protection</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville properties require specialized containment strategies that protect ongoing operations, preserve heritage features, and maintain institutional air quality standards while preventing cross-contamination.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Negative air pressure systems designed for operational institutional buildings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-appropriate protective barriers preserving architectural elements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Hospital-grade containment meeting medical facility air quality standards</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 3: Safe Removal & Heritage Preservation</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our removal process for Parkville properties utilizes methods appropriate for institutional requirements and heritage preservation, ensuring effective treatment while maintaining building integrity and operational continuity.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Low-invasive techniques for heritage timber and masonry preservation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Institutional-grade antimicrobial treatments meeting facility requirements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coordinated scheduling minimizing disruption to educational and medical activities</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 4: Advanced Drying & Climate Control</h3>
+                <p className="text-muted-foreground mb-4">
+                  Parkville's complex building environments require sophisticated drying strategies that account for institutional HVAC systems, heritage building materials, and the need to restore normal operations quickly.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional dehumidification systems compatible with institutional buildings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage building material-appropriate drying protocols</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Continuous monitoring ensuring optimal conditions for institutional operations</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-primary">Step 5: Final Testing & Institutional Certification</h3>
+              <p className="text-muted-foreground mb-4">
+                Our final verification ensures complete treatment success with comprehensive testing protocols designed for institutional requirements, heritage building standards, and providing documentation suitable for facility managers and insurance providers.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Independent laboratory air quality testing meeting institutional health standards</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Heritage building material moisture verification and conservation compliance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Comprehensive clearance certificates for institutional and insurance documentation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>12-month treatment warranty with institutional service support included</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Local Service Area */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Areas We Service Near Parkville</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <p className="text-lg text-muted-foreground mb-6">
+                We provide institutional and heritage-specialized mould removal services throughout Parkville and nearby Melbourne precincts including:
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <p className="font-medium text-primary">Parkville Areas:</p>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• University of Melbourne precinct</li>
+                    <li>• Royal Melbourne Hospital district</li>
+                    <li>• Royal Parade heritage homes</li>
+                    <li>• Royal Park surrounds</li>
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <p className="font-medium text-primary">Adjacent Inner Suburbs:</p>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• Carlton North</li>
+                    <li>• North Melbourne</li>
+                    <li>• Flemington</li>
+                    <li>• Carlton</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Professional Service Times to Parkville</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Institutional emergency response:</span>
+                    <span className="font-semibold text-blue-600">1-2 hours</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Standard appointments:</span>
+                    <span className="font-semibold text-success-green">Same day or next day</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Weekend availability:</span>
+                    <span className="font-semibold text-accent-blue">7 days a week</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Travel time from city:</span>
+                    <span className="font-semibold text-primary">10-15 minutes</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Inner City Suburbs */}
+      <SuburbClusterLinks currentLocation="Parkville" />
+
+      {/* Contact Section */}
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Need Immediate Mould Removal in Parkville?
-            </h2>
-            <p className="text-xl mb-8">
-              Don't let mould compromise your Parkville institutional facility, heritage property, or residential building. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by educational institutions, medical facilities, and heritage property owners with a 5.0-star rating.
+            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Parkville Institutional & Heritage Mould Inspection Today</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Protect your Parkville institutional facility or heritage property from moisture damage and environmental health risks. Expert assessment and remediation for educational buildings, medical facilities, and heritage homes.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card>
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
-                  <p className="mb-4">Call now for immediate mould removal Parkville Melbourne assistance. Our institutional and heritage specialists respond Same-day professional service.</p>
-                  <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
-                    Call 1800 954 117 Now
-                  </Button>
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Heritage Contact</h3>
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-accent-blue" />
+                      <span>admin@mouldandrestoration.com.au</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Clock className="w-5 h-5 text-accent-teal" />
+                      <span>Institutional emergency response available</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card>
                 <CardContent className="p-6">
-                  <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">Free Parkville Inspection</h3>
-                  <p className="mb-4">Comprehensive institutional and heritage assessment with thermal imaging. Specialized quotes for university buildings, medical facilities, and heritage properties.</p>
-                  <Button className="w-full" variant="outline">
-                    Book Free Heritage & Institutional Inspection
-                  </Button>
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Heritage Process</h3>
+                  <div className="space-y-3 text-left text-sm">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+                      <span>Free institutional/heritage consultation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+                      <span>Same-day Parkville inspection scheduling</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+                      <span>Institutional-grade assessment and heritage evaluation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
+                      <span>Heritage-appropriate and institutional-standard remediation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
+                      <span>Final testing and institutional compliance certification</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
 
-            <div className="text-center">
-              <p className="text-lg mb-2">
-                <strong>ABN: 47 683 089 652</strong> | Licensed & Insured | IICRC Certified | Heritage & Institutional Specialists
-              </p>
-              <p className="text-sm opacity-90">
-                Serving Parkville: 3052 | University of Melbourne | Royal Melbourne Hospital | Royal Park | Heritage Precinct
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Phone className="w-5 h-5 mr-2" />
+                Parkville Professional Service: 1800 954 117
+              </Button>
+              <Button variant="outline" size="lg">
+                Schedule Institutional & Heritage Inspection
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
             </div>
+
+            <p className="text-sm text-muted-foreground mt-6">
+              Serving Parkville institutional and heritage properties • University & hospital specialists • Heritage preservation experts
+            </p>
           </div>
         </div>
       </section>

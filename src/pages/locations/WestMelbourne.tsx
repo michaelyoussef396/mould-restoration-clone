@@ -17,7 +17,7 @@ export const WestMelbourne = () => {
       <LocationPageSEO
         suburb="West Melbourne"
         title="Mould Removal West Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in West Melbourne Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day West Melbourne mould inspection & removal."
+        description="West Melbourne warehouse district & CBD fringe mould specialists. Business precinct experts treating industrial conversions & urban mixed-use properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-west-melbourne"
       />
 

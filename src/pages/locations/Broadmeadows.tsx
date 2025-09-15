@@ -13,6 +13,7 @@ const BroadmeadowsMouldRemoval = () => {
         title="Professional Mould Removal Broadmeadows | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Broadmeadows 3047. Shopping centre area specialists, multicultural community expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal broadmeadows, broadmeadows mould inspection, broadmeadows shopping centre, multicultural mould removal, broadmeadows 3047"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-broadmeadows"
       />
 
       <LocalBusinessSchema

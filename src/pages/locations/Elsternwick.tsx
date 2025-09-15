@@ -22,6 +22,7 @@ export const Elsternwick = () => {
         emergency={false}
         title="Mould Removal Elsternwick Melbourne - Heritage Precinct Specialists"
         description="Expert mould removal Elsternwick Melbourne. Heritage precinct specialists treating period architecture moisture issues. Art Deco restoration, character area expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-elsternwick"
       />
       <LocalBusinessSchema
         pageName="Elsternwick Mould Removal"

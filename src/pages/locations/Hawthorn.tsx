@@ -22,6 +22,7 @@ export const Hawthorn = () => {
         emergency={false}
         title="Mould Removal Hawthorn Melbourne - Period Home Specialists"
         description="Expert mould removal Hawthorn Melbourne. Period home specialists treating Edwardian and Federation properties. Glenferrie Road area, established families. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-hawthorn"
       />
       <LocalBusinessSchema
         pageName="Hawthorn Mould Removal"

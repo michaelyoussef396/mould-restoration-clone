@@ -22,6 +22,7 @@ export const Truganina = () => {
         emergency={false}
         title="Mould Removal Truganina Melbourne - New Development Growth Corridor & Modern Estate Specialists"
         description="Expert mould removal Truganina Melbourne. New development growth corridor specialists treating modern estates and contemporary family homes. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-truganina"
       />
       <LocalBusinessSchema
         pageName="Truganina Mould Removal"

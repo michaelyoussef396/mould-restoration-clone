@@ -22,6 +22,7 @@ export const AlbertPark = () => {
         emergency={false}
         title="Mould Removal Albert Park Melbourne - Lakeside Living Specialists"
         description="Expert mould removal Albert Park Melbourne. Lakeside living specialists treating lakefront properties and grand Prix circuit homes. Sports precinct expertise. Call 1800 954 117 for premium service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-albert-park"
       />
       <LocalBusinessSchema
         pageName="Albert Park Mould Removal"

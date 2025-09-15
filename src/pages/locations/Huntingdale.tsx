@@ -22,6 +22,7 @@ export const Huntingdale = () => {
         emergency={false}
         title="Mould Removal Huntingdale Melbourne - Golf Course Proximity Specialists"
         description="Expert mould removal Huntingdale Melbourne. Golf course proximity specialists treating established suburb moisture issues. Family community expertise, established property restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-huntingdale"
       />
       <LocalBusinessSchema
         pageName="Huntingdale Mould Removal"

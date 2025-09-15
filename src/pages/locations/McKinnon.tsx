@@ -22,6 +22,7 @@ export const McKinnon = () => {
         emergency={false}
         title="Mould Removal McKinnon Melbourne - Quiet Residential Specialists"
         description="Expert mould removal McKinnon Melbourne. Quiet residential specialists treating family home moisture issues. Post-war property expertise, community-focused service. Call 1800 954 117 for professional care."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-mc-kinnon"
       />
       <LocalBusinessSchema
         pageName="McKinnon Mould Removal"

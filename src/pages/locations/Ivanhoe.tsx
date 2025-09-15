@@ -14,6 +14,7 @@ export default function IvanhoeMouldRemoval() {
         suburb="Ivanhoe"
         postcode="3079"
         keywords="mould removal ivanhoe, mould inspection ivanhoe melbourne, leafy suburb mould treatment, heritage home moisture control 3079"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-ivanhoe"
       />
 
       <LocalBusinessSchema

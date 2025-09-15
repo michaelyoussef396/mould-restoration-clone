@@ -13,6 +13,7 @@ const LavertonMouldRemoval = () => {
         title="Professional Mould Removal Laverton | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Laverton 3028. Industrial transition specialists, aviation precinct expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal laverton, laverton mould inspection, laverton aviation precinct, industrial mould removal, laverton 3028"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-laverton"
       />
 
       <LocalBusinessSchema

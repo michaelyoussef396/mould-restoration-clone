@@ -14,6 +14,7 @@ export default function AscotValeMouldRemoval() {
         suburb="Ascot Vale"
         postcode="3032"
         keywords="mould removal ascot vale, mould inspection ascot vale melbourne, period homes mould treatment, racing precinct moisture control 3032"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-ascot-vale"
       />
 
       <LocalBusinessSchema

@@ -22,6 +22,7 @@ export const Tarneit = () => {
         emergency={false}
         title="Mould Removal Tarneit Melbourne - Rapid Growth Suburb & New Community Specialists"
         description="Expert mould removal Tarneit Melbourne. Rapid growth suburb specialists treating family developments and new community properties. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-tarneit"
       />
       <LocalBusinessSchema
         pageName="Tarneit Mould Removal"

@@ -22,6 +22,7 @@ export const Murrumbeena = () => {
         emergency={false}
         title="Mould Removal Murrumbeena Melbourne - Family Suburb Specialists"
         description="Expert mould removal Murrumbeena Melbourne. Family suburb specialists treating established home moisture issues. Community-focused expertise, period residential restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-murrumbeena"
       />
       <LocalBusinessSchema
         pageName="Murrumbeena Mould Removal"

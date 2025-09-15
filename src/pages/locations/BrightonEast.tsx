@@ -17,7 +17,7 @@ export const BrightonEast = () => {
       <LocationPageSEO
         suburb="Brighton East"
         title="Mould Removal Brighton East - Coastal Property Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Brighton East Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Brighton East mould inspection & removal."
+        description="Brighton East residential & school zone mould experts. Boundary Road specialists treating family homes & established neighbourhood properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-brighton-east"
       />
 

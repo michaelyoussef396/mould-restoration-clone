@@ -14,6 +14,7 @@ export default function LilydaleMouldRemoval() {
         suburb="Lilydale"
         postcode="3140"
         keywords="mould removal lilydale, mould inspection lilydale melbourne, winery property mould treatment, semi rural moisture control 3140"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-lilydale"
       />
 
       <LocalBusinessSchema

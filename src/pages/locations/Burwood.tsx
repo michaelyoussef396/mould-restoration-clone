@@ -17,7 +17,7 @@ export const Burwood = () => {
       <LocationPageSEO
         suburb="Burwood"
         title="Mould Removal Burwood Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Burwood Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Burwood mould inspection & removal."
+        description="Burwood shopping & transport hub mould specialists. Deakin University area experts treating student properties & family homes. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-burwood"
       />
 

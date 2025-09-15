@@ -13,6 +13,7 @@ const PointCookMouldRemoval = () => {
         title="Professional Mould Removal Point Cook | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Point Cook 3030. New estate specialists, modern family home expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal point cook, point cook mould inspection, point cook estates, modern home mould removal, point cook 3030"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-point-cook"
       />
 
       <LocalBusinessSchema

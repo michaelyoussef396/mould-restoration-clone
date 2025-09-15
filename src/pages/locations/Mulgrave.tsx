@@ -17,7 +17,7 @@ export const Mulgrave = () => {
       <LocationPageSEO
         suburb="Mulgrave"
         title="Mould Removal Mulgrave - Family Suburb Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Mulgrave Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Mulgrave mould inspection & removal."
+        description="Mulgrave industrial & residential precinct mould experts. Wellington Road specialists treating family estates & established suburban neighbourhoods. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-mulgrave"
       />
 

@@ -17,7 +17,7 @@ export const Caulfield = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Caulfield Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Caulfield Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Caulfield mould inspection & removal."
+        description="Caulfield racecourse & university precinct mould experts. Station area specialists treating student housing & established family homes. Professional service. Call 1800 954 117"
         suburb="Caulfield"
         postcode="3162"
         canonicalUrl="https://mouldrestorationco.com.au/locations/caulfield"

@@ -17,7 +17,7 @@ export const EastMelbourne = () => {
       <LocationPageSEO
         suburb="East Melbourne"
         title="Mould Removal East Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in East Melbourne Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day East Melbourne mould inspection & removal."
+        description="East Melbourne heritage precinct & MCG area mould specialists. Sports district professionals treating period terraces & heritage buildings. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-east-melbourne"
       />
 

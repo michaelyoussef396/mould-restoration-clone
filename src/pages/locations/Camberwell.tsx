@@ -22,6 +22,7 @@ export const Camberwell = () => {
         emergency={false}
         title="Mould Removal Camberwell Melbourne - Shopping Hub Period Property Specialists"
         description="Expert mould removal Camberwell Melbourne. Period property specialists treating Burke Road area homes. Shopping hub expertise, family properties. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-camberwell"
       />
       <LocalBusinessSchema
         pageName="Camberwell Mould Removal"

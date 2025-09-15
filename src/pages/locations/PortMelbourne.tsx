@@ -22,6 +22,7 @@ export const PortMelbourne = () => {
         emergency={false}
         title="Mould Removal Port Melbourne - Waterfront Industrial Specialists"
         description="Expert mould removal Port Melbourne. Waterfront industrial specialists treating docklands properties and warehouse conversions. Bay Street area expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-port-melbourne"
       />
       <LocalBusinessSchema
         pageName="Port Melbourne Mould Removal"

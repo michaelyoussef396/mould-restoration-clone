@@ -22,6 +22,7 @@ export const Balaclava = () => {
         emergency={false}
         title="Mould Removal Balaclava Melbourne - Heritage Precinct Specialists"
         description="Expert mould removal Balaclava Melbourne. Heritage precinct specialists treating period home moisture issues. Community diversity expertise, cultural quarter restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-balaclava"
       />
       <LocalBusinessSchema
         pageName="Balaclava Mould Removal"

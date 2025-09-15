@@ -22,6 +22,7 @@ export const Bentleigh = () => {
         emergency={false}
         title="Mould Removal Bentleigh Melbourne - Garden Suburb Specialists"
         description="Expert mould removal Bentleigh Melbourne. Garden suburb specialists treating period home moisture issues. Weatherboard restoration, brick veneer expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-bentleigh"
       />
       <LocalBusinessSchema
         pageName="Bentleigh Mould Removal"

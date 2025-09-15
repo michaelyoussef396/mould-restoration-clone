@@ -14,6 +14,7 @@ export default function NorthcoteMouldRemoval() {
         suburb="Northcote"
         postcode="3070"
         keywords="mould removal northcote, mould inspection northcote melbourne, music venue mould treatment, heritage terrace moisture control 3070"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-northcote"
       />
 
       <LocalBusinessSchema

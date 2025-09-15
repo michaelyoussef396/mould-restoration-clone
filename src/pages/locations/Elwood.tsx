@@ -22,6 +22,7 @@ export const Elwood = () => {
         emergency={false}
         title="Mould Removal Elwood Melbourne - Beachside Community Specialists"
         description="Expert mould removal Elwood Melbourne. Beachside community specialists treating coastal moisture issues. Canal area expertise, period apartment restoration. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-elwood"
       />
       <LocalBusinessSchema
         pageName="Elwood Mould Removal"

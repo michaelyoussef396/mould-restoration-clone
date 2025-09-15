@@ -22,6 +22,7 @@ export const Kew = () => {
         emergency={false}
         title="Mould Removal Kew Melbourne - Leafy Suburb Heritage Home Specialists"
         description="Expert mould removal Kew Melbourne. Heritage home specialists treating established leafy suburb properties. Family area expertise, Studley Park proximity. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-kew"
       />
       <LocalBusinessSchema
         pageName="Kew Mould Removal"

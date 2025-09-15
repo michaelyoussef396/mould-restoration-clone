@@ -14,6 +14,7 @@ export default function FlemingtonMouldRemoval() {
         suburb="Flemington"
         postcode="3031"
         keywords="mould removal flemington, mould inspection flemington melbourne, racecourse area mould treatment, industrial residential moisture control 3031"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-flemington"
       />
 
       <LocalBusinessSchema

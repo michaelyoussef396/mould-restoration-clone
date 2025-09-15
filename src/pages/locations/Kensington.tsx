@@ -14,6 +14,7 @@ export default function KensingtonMouldRemoval() {
         suburb="Kensington"
         postcode="3031"
         keywords="mould removal kensington, mould inspection kensington melbourne, gentrification area mould treatment, small suburb moisture control 3031"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-kensington"
       />
 
       <LocalBusinessSchema

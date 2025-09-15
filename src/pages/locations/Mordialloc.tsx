@@ -17,7 +17,7 @@ export const Mordialloc = () => {
       <LocationPageSEO
         suburb="Mordialloc"
         title="Mould Removal Mordialloc - Creek & Beach Living Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Mordialloc Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Mordialloc mould inspection & removal."
+        description="Mordialloc creek & bayside village mould experts. Main Street professionals treating waterfront homes & established coastal community properties. Expert service. Call 1800 954 117"
         canonical="/services/mould-removal-mordialloc"
       />
 

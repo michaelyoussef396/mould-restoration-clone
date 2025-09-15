@@ -14,6 +14,7 @@ export default function NewportMouldRemoval() {
         suburb="Newport"
         postcode="3015"
         keywords="mould removal newport, mould inspection newport melbourne, industrial heritage mould treatment, rail hub moisture control 3015"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-newport"
       />
 
       <LocalBusinessSchema

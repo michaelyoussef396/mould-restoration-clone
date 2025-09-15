@@ -14,6 +14,7 @@ export default function EssendonMouldRemoval() {
         suburb="Essendon"
         postcode="3040"
         keywords="mould removal essendon, mould inspection essendon melbourne, established suburb mould treatment, airport proximity moisture control 3040"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-essendon"
       />
 
       <LocalBusinessSchema

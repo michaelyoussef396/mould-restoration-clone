@@ -14,6 +14,7 @@ export default function SunshineMouldRemoval() {
         suburb="Sunshine"
         postcode="3020"
         keywords="mould removal sunshine, mould inspection sunshine melbourne, multicultural area mould treatment, transport hub moisture control 3020"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-sunshine"
       />
 
       <LocalBusinessSchema

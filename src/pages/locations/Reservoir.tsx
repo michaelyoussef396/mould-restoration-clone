@@ -13,6 +13,7 @@ const ReservoirMouldRemoval = () => {
         title="Professional Mould Removal Reservoir | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Reservoir 3073. Multicultural community specialists, established family home expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal reservoir, reservoir mould inspection, reservoir multicultural community, established family mould removal, reservoir 3073"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-reservoir"
       />
 
       <LocalBusinessSchema

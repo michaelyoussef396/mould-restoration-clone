@@ -17,7 +17,7 @@ export const Dandenong = () => {
       <LocationPageSEO
         suburb="Dandenong"
         title="Mould Removal Dandenong - Multicultural Community Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Dandenong Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Dandenong mould inspection & removal."
+        description="Dandenong CBD & multicultural precinct mould experts. Central shopping district specialists treating diverse community homes & commercial properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-dandenong"
       />
 

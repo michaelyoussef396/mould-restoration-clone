@@ -17,7 +17,7 @@ export const Carrum = () => {
       <LocationPageSEO
         suburb="Carrum"
         title="Mould Removal Carrum - Station & Beach Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Carrum Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Carrum mould inspection & removal."
+        description="Carrum foreshore & shopping strip mould specialists. Patterson River experts treating waterfront properties & established residential coastal homes. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-carrum"
       />
 

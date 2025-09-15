@@ -20,6 +20,7 @@ const WheelersHillPage = () => {
         title="Professional Mould Removal Wheelers Hill Melbourne | Mould & Restoration Co."
         description="Expert mould removal services in Wheelers Hill Melbourne. 5+ years experience, 100+ properties restored. Call 1800 954 117 for professional mould inspection and remediation."
         suburb="Wheelers Hill"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-wheelers-hill"
       />
 
       <LocalBusinessSchema

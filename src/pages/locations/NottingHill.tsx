@@ -17,7 +17,7 @@ export const NottingHill = () => {
       <LocationPageSEO
         suburb="Notting Hill"
         title="Mould Removal Notting Hill - Established Suburb Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Notting Hill Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Notting Hill mould inspection & removal."
+        description="Notting Hill family residential & parkland precinct mould experts. Clayton Road specialists treating established homes & leafy neighbourhood properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-notting-hill"
       />
 

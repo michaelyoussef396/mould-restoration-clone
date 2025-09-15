@@ -13,6 +13,7 @@ const WerribeeMouldRemoval = () => {
         title="Professional Mould Removal Werribee | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Werribee 3030. Growth corridor specialists, diverse property expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal werribee, werribee mould inspection, werribee growth corridor, diverse property mould removal, werribee 3030"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-werribee"
       />
 
       <LocalBusinessSchema

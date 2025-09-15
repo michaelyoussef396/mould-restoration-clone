@@ -17,7 +17,7 @@ export const Malvern = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Malvern Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Malvern Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Malvern mould inspection & removal."
+        description="Malvern prestigious residential & tram route mould specialists. High Street experts treating luxury period homes & established garden properties. Professional service. Call 1800 954 117"
         suburb="Malvern"
         postcode="3144"
         canonical="https://mouldrestoration.com.au/mould-removal-malvern-melbourne"

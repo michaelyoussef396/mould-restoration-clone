@@ -13,6 +13,7 @@ const BundooraMouldRemoval = () => {
         title="Professional Mould Removal Bundoora | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Bundoora 3083. University area specialists, student accommodation expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal bundoora, bundoora mould inspection, bundoora rmit university, student accommodation mould removal, bundoora 3083"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-bundoora"
       />
 
       <LocalBusinessSchema

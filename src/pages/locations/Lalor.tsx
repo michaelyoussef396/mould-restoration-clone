@@ -13,6 +13,7 @@ const LalorMouldRemoval = () => {
         title="Professional Mould Removal Lalor | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Lalor 3075. Family area specialists, multicultural community expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal lalor, lalor mould inspection, lalor family area, multicultural community mould removal, lalor 3075"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-lalor"
       />
 
       <LocalBusinessSchema

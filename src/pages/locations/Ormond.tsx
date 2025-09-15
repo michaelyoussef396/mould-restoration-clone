@@ -22,6 +22,7 @@ export const Ormond = () => {
         emergency={false}
         title="Mould Removal Ormond Melbourne - Village Atmosphere Specialists"
         description="Expert mould removal Ormond Melbourne. Village atmosphere specialists treating period property moisture issues. Heritage home expertise, established suburb care. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-ormond"
       />
       <LocalBusinessSchema
         pageName="Ormond Mould Removal"

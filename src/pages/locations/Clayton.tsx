@@ -17,7 +17,7 @@ export const Clayton = () => {
       <LocationPageSEO
         suburb="Clayton"
         title="Mould Removal Clayton - University Precinct Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Clayton Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Clayton mould inspection & removal."
+        description="Clayton university & research precinct mould specialists. Monash University area experts treating student accommodation & multicultural family homes. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-clayton"
       />
 

@@ -17,7 +17,7 @@ export const Southbank = () => {
       <LocationPageSEO
         suburb="Southbank"
         title="Mould Removal Southbank Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Southbank Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Southbank mould inspection & removal."
+        description="Southbank luxury tower & riverside apartment mould specialists. Crown precinct experts treating high-rise living & waterfront properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-southbank"
       />
 

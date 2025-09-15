@@ -17,7 +17,7 @@ export const NoblePark = () => {
       <LocationPageSEO
         suburb="Noble Park"
         title="Mould Removal Noble Park - Residential Community Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Noble Park Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Noble Park mould inspection & removal."
+        description="Noble Park multicultural community & transport hub mould specialists. Princes Highway experts treating diverse family homes & established residential areas. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-noble-park"
       />
 

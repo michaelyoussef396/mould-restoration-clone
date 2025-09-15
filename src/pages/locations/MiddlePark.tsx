@@ -22,6 +22,7 @@ export const MiddlePark = () => {
         emergency={false}
         title="Mould Removal Middle Park Melbourne - Beachside Living Specialists"
         description="Expert mould removal Middle Park Melbourne. Beachside living specialists treating coastal properties and beach proximity homes. Port Philip Bay area expertise. Call 1800 954 117 for premium service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-middle-park"
       />
       <LocalBusinessSchema
         pageName="Middle Park Mould Removal"

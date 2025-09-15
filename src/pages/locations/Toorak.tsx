@@ -22,6 +22,7 @@ export const Toorak = () => {
         emergency={false}
         title="Mould Removal Toorak Melbourne - Luxury Property Specialists"
         description="Expert mould removal Toorak Melbourne. Luxury property specialists treating heritage mansions and premium homes. Discreet professional service. Call 1800 954 117 for same-day response."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-toorak"
       />
       <LocalBusinessSchema
         pageName="Toorak Mould Removal"

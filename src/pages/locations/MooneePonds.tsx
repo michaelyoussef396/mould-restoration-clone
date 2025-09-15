@@ -14,6 +14,7 @@ export default function MooneePondsMouldRemoval() {
         suburb="Moonee Ponds"
         postcode="3039"
         keywords="mould removal moonee ponds, mould inspection moonee ponds melbourne, trendy suburb mould treatment, young families moisture control 3039"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-moonee-ponds"
       />
 
       <LocalBusinessSchema

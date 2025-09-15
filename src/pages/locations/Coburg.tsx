@@ -14,6 +14,7 @@ export default function CoburgMouldRemoval() {
         suburb="Coburg"
         postcode="3058"
         keywords="mould removal coburg, mould inspection coburg melbourne, period home mould treatment, northern suburbs moisture control 3058"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-coburg"
       />
 
       <LocalBusinessSchema

@@ -17,7 +17,7 @@ export const Docklands = () => {
       <LocationPageSEO
         suburb="Docklands"
         title="Mould Removal Docklands Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Docklands Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Docklands mould inspection & removal."
+        description="Docklands waterfront & modern precinct mould specialists. NewQuay experts treating luxury apartments & high-density waterfront developments. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-docklands"
       />
 

@@ -20,6 +20,7 @@ const OakleighPage = () => {
         title="Professional Mould Removal Oakleigh Melbourne | Mould & Restoration Co."
         description="Expert mould removal services in Oakleigh Melbourne. 5+ years experience, 100+ properties restored. Call 1800 954 117 for professional mould inspection and remediation."
         suburb="Oakleigh"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-oakleigh"
       />
 
       <LocalBusinessSchema

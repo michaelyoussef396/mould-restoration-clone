@@ -13,6 +13,7 @@ const EppingMouldRemoval = () => {
         title="Professional Mould Removal Epping | 1800 954 117 | Mould & Restoration Co."
         description="Expert mould removal services in Epping 3076. Outer north specialists, family community expertise. 5.0 stars, 100+ Melbourne properties restored. Call 1800 954 117"
         keywords="mould removal epping, epping mould inspection, epping outer north, family community mould removal, epping 3076"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-epping"
       />
 
       <LocalBusinessSchema

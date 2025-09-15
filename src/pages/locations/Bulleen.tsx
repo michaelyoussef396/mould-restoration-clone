@@ -22,6 +22,7 @@ export const Bulleen = () => {
         emergency={false}
         title="Mould Removal Bulleen Melbourne - Riverside Community & Established Suburb Specialists"
         description="Expert mould removal Bulleen Melbourne. Riverside community specialists treating Yarra parklands proximity and established suburb properties. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-bulleen"
       />
       <LocalBusinessSchema
         pageName="Bulleen Mould Removal"

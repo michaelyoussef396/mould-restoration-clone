@@ -17,7 +17,7 @@ export const Bonbeach = () => {
       <LocationPageSEO
         suburb="Bonbeach"
         title="Mould Removal Bonbeach - Beachfront Living Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Bonbeach Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Bonbeach mould inspection & removal."
+        description="Bonbeach coastal village & railway line mould experts. Beach access specialists treating weatherboard homes & seaside community properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-bonbeach"
       />
 

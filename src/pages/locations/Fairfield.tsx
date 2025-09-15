@@ -14,6 +14,7 @@ export default function FairfieldMouldRemoval() {
         suburb="Fairfield"
         postcode="3078"
         keywords="mould removal fairfield, mould inspection fairfield melbourne, riverside property mould treatment, heritage home moisture control 3078"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-fairfield"
       />
 
       <LocalBusinessSchema

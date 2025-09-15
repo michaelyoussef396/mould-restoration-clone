@@ -14,6 +14,7 @@ export default function ThornburyMouldRemoval() {
         suburb="Thornbury"
         postcode="3071"
         keywords="mould removal thornbury, mould inspection thornbury melbourne, heritage home mould treatment, hipster suburb moisture control 3071"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-thornbury"
       />
 
       <LocalBusinessSchema

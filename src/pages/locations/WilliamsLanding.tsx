@@ -22,6 +22,7 @@ export const WilliamsLanding = () => {
         emergency={false}
         title="Mould Removal Williams Landing Melbourne - Transport Hub Community Specialists"
         description="Expert mould removal Williams Landing Melbourne. Transport hub community specialists treating modern development moisture issues. Railway station precinct expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-williams-landing"
       />
       <LocalBusinessSchema
         pageName="Williams Landing Mould Removal"

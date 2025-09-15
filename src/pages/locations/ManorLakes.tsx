@@ -22,6 +22,7 @@ export const ManorLakes = () => {
         emergency={false}
         title="Mould Removal Manor Lakes Melbourne - Premium Estate Specialists"
         description="Expert mould removal Manor Lakes Melbourne. Premium estate specialists treating lake precinct moisture issues. Luxury home protection, waterfront expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-manor-lakes"
       />
       <LocalBusinessSchema
         pageName="Manor Lakes Mould Removal"

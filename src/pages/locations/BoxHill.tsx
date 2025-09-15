@@ -22,6 +22,7 @@ export const BoxHill = () => {
         emergency={false}
         title="Mould Removal Box Hill Melbourne - Transport Hub Multicultural Specialists"
         description="Expert mould removal Box Hill Melbourne. Transport hub specialists treating apartments, multicultural community homes. Box Hill Central area expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-box-hill"
       />
       <LocalBusinessSchema
         pageName="Box Hill Mould Removal"

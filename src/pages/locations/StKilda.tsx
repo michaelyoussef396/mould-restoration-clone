@@ -17,7 +17,7 @@ export const StKilda = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal St Kilda Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in St Kilda Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day St Kilda mould inspection & removal."
+        description="St Kilda beachside & entertainment district mould specialists. Acland Street professionals treating heritage apartments & coastal entertainment venues. Expert service. Call 1800 954 117"
         suburb="St Kilda"
         postcode="3182"
         canonicalUrl="https://mouldrestorationco.com.au/locations/st-kilda"

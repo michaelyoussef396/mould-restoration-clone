@@ -14,6 +14,7 @@ export default function PrestonMouldRemoval() {
         suburb="Preston"
         postcode="3072"
         keywords="mould removal preston, mould inspection preston melbourne, heritage home mould treatment, cultural precinct moisture control 3072"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-preston"
       />
 
       <LocalBusinessSchema

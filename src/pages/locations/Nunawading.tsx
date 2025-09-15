@@ -14,6 +14,7 @@ export default function NunawadingMouldRemoval() {
         suburb="Nunawading"
         postcode="3131"
         keywords="mould removal nunawading, mould inspection nunawading melbourne, family home mould treatment, residential moisture control 3131"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-nunawading"
       />
 
       <LocalBusinessSchema

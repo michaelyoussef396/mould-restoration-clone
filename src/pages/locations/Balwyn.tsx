@@ -22,6 +22,7 @@ export const Balwyn = () => {
         emergency={false}
         title="Mould Removal Balwyn Melbourne - Prestigious Residential & Grammar School Area Specialists"
         description="Expert mould removal Balwyn Melbourne. Prestigious residential specialists treating grammar school area properties and heritage home preservation. Call 1800 954 117 for same-day service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-balwyn"
       />
       <LocalBusinessSchema
         pageName="Balwyn Mould Removal"

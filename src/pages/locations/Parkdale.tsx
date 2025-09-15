@@ -17,7 +17,7 @@ export const Parkdale = () => {
       <LocationPageSEO
         suburb="Parkdale"
         title="Mould Removal Parkdale - Coastal Suburban Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Parkdale Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Parkdale mould inspection & removal."
+        description="Parkdale coastal suburban & community hub mould specialists. Warrigal Road experts treating seaside family homes & established residential streets. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-parkdale"
       />
 

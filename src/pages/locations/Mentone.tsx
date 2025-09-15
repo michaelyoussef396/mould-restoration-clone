@@ -17,7 +17,7 @@ export const Mentone = () => {
       <LocationPageSEO
         suburb="Mentone"
         title="Mould Removal Mentone - Family Beach Living Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Mentone Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Mentone mould inspection & removal."
+        description="Mentone beach & shopping village mould specialists. Charman Road experts treating coastal families & beachside heritage properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-mentone"
       />
 

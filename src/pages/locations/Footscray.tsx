@@ -14,6 +14,7 @@ export default function FootscrayMouldRemoval() {
         suburb="Footscray"
         postcode="3011"
         keywords="mould removal footscray, mould inspection footscray melbourne, multicultural area mould treatment, university precinct moisture control 3011"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-footscray"
       />
 
       <LocalBusinessSchema

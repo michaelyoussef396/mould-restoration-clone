@@ -22,6 +22,7 @@ export const GlenWaverley = () => {
         emergency={false}
         title="Mould Removal Glen Waverley Melbourne - Family Area Asian Community Specialists"
         description="Expert mould removal Glen Waverley Melbourne. Family area specialists treating newer homes, Asian community properties. Multicultural expertise, quality schools. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-glen-waverley"
       />
       <LocalBusinessSchema
         pageName="Glen Waverley Mould Removal"

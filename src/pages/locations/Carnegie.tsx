@@ -17,7 +17,7 @@ export const Carnegie = () => {
       <LocationPageSEO
         suburb="Carnegie"
         title="Mould Removal Carnegie - Village Community Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Carnegie Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Carnegie mould inspection & removal."
+        description="Carnegie shopping & community hub mould specialists. Koornang Road experts treating diverse family homes & multicultural neighbourhood properties. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-carnegie"
       />
 

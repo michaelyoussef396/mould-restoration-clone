@@ -20,6 +20,7 @@ const BlackburnPage = () => {
         title="Professional Mould Removal Blackburn Melbourne | Mould & Restoration Co."
         description="Expert mould removal services in Blackburn Melbourne. 5+ years experience, 100+ properties restored. Call 1800 954 117 for professional mould inspection and remediation."
         suburb="Blackburn"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-blackburn"
       />
 
       <LocalBusinessSchema

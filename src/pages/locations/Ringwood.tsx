@@ -14,6 +14,7 @@ export default function RingwoodMouldRemoval() {
         suburb="Ringwood"
         postcode="3134"
         keywords="mould removal ringwood, mould inspection ringwood melbourne, shopping centre moisture control, transport hub mould treatment 3134"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-ringwood"
       />
 
       <LocalBusinessSchema

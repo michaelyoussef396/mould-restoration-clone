@@ -17,7 +17,7 @@ export const NorthMelbourne = () => {
       <LocationPageSEO
         suburb="North Melbourne"
         title="Mould Removal North Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in North Melbourne Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day North Melbourne mould inspection & removal."
+        description="North Melbourne industrial heritage & apartment living mould experts. Errol Street precinct specialists treating converted warehouses & modern apartments. Professional service. Call 1800 954 117"
         canonical="/services/mould-removal-north-melbourne"
       />
 

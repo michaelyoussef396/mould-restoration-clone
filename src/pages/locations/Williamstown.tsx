@@ -14,6 +14,7 @@ export default function WilliamstownMouldRemoval() {
         suburb="Williamstown"
         postcode="3016"
         keywords="mould removal williamstown, mould inspection williamstown melbourne, coastal property mould treatment, heritage maritime moisture control 3016"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-williamstown"
       />
 
       <LocalBusinessSchema

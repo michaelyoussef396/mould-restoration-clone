@@ -22,6 +22,7 @@ export const WyndhamVale = () => {
         emergency={false}
         title="Mould Removal Wyndham Vale Melbourne - Master-Planned Community Specialists"
         description="Expert mould removal Wyndham Vale Melbourne. Master-planned community specialists treating modern estate moisture issues. New build protection, growth area expertise. Call 1800 954 117 for professional service."
+        canonical="https://mouldrestoration.com.au/services/mould-removal-wyndham-vale"
       />
       <LocalBusinessSchema
         pageName="Wyndham Vale Mould Removal"

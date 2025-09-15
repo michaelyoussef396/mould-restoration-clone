@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
 import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
+import { LocationOptimizedImage } from "@/components/OptimizedImage";
 
 export const Brighton = () => {
   const breadcrumbItems = [

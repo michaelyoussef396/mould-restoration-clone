@@ -17,7 +17,7 @@ export const Armadale = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         title="Mould Removal Armadale Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-        description="Professional mould removal in Armadale Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Armadale mould inspection & removal."
+        description="Armadale High Street heritage & luxury home mould experts. Established suburb specialists treating period properties & prestigious estates. Professional service. Call 1800 954 117"
         suburb="Armadale"
         postcode="3143"
         canonicalUrl="https://mouldrestorationco.com.au/locations/armadale"
