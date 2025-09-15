@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Clock, Shield, CheckCircle, Star, AlertTriangle, Thermometer, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 import professionalMouldHero from '@/assets/professional-mould-hero.jpg';
 import thermalImagingDevice from '@/assets/thermal-imaging-device.jpg';
 import cleanResidentialInterior from '@/assets/clean-residential-interior.jpg';
@@ -56,6 +58,24 @@ export const ProfessionalMouldInspections = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Melbourne Professional Mould Inspections */}
+      <ServicePageSEO
+        service="inspection"
+        title="Professional Mould Inspection Melbourne - Free Thermal Imaging Assessment"
+        description="Expert mould inspection Melbourne. Free thermal imaging assessment, air quality testing, same-day detailed reports. IICRC certified technicians. Call 1800 954 117 for professional service."
+      />
+      <LocalBusinessSchema
+        pageName="Professional Mould Inspections"
+        pageUrl="https://mouldrestoration.com.au/services/professional-mould-inspections"
+        serviceType="inspection"
+        location="Melbourne"
+      />
+      <ServiceSchema
+        serviceName="Professional Mould Inspection Melbourne"
+        serviceDescription="Comprehensive mould detection and air quality testing using thermal imaging technology. IICRC-certified technicians provide same-day detailed reports for Melbourne properties."
+        serviceUrl="https://mouldrestoration.com.au/services/professional-mould-inspections"
+        priceRange="$$"
+      />
       {/* Emergency Bar */}
       <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">

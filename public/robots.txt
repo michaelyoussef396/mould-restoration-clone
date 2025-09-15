@@ -1,14 +1,58 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Robots.txt for Mould & Restoration Co. - Melbourne's Premier Mould Inspection & Remediation Service
+# Optimized for search engine crawling and local Melbourne SEO
 
 User-agent: *
 Allow: /
+
+# Block unnecessary files and directories
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /*.env
+Disallow: /*.map$
+Disallow: /.vite/
+Disallow: /src/
+Disallow: /*.config.*
+Disallow: /build/
+Disallow: /temp/
+Disallow: /logs/
+
+# Allow important assets and pages
+Allow: /assets/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.svg
+
+# XML Sitemaps for Melbourne mould removal services
+Sitemap: https://mouldrestoration.com.au/sitemap.xml
+Sitemap: https://mouldrestoration.com.au/sitemap-locations.xml
+Sitemap: https://mouldrestoration.com.au/sitemap-services.xml
+Sitemap: https://mouldrestoration.com.au/sitemap-images.xml
+
+# Crawl settings optimized for Melbourne local business
+Crawl-delay: 1
+
+# Specific search engine directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Block known bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

@@ -3,16 +3,47 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 
 export const Malvern = () => {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Malvern Mold Removal", href: "/services/mold-removal-malvern", current: true }
+    { label: "Malvern Mould Removal", href: "/services/mould-removal-malvern", current: true }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <LocationPageSEO
+        title="Mould Removal Malvern Melbourne - Emergency Response | Mould & Restoration Co"
+        description="Professional mould removal in Malvern Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Malvern mould inspection & removal."
+        suburb="Malvern"
+        postcode="3144"
+        canonical="https://mouldrestoration.com.au/mould-removal-malvern-melbourne"
+        keywords="mould removal Malvern Melbourne, mould inspection Malvern, emergency mould removal Malvern, mould treatment Malvern Melbourne"
+      />
+
+      <LocalBusinessSchema
+        businessName="Mould & Restoration Co - Malvern"
+        description="Professional mould removal and inspection services in Malvern Melbourne. IICRC certified technicians, emergency response, family-safe methods."
+        address="Malvern, Melbourne, VIC 3144"
+        phone="1800 954 117"
+        email="info@mouldrestoration.com.au"
+        areaServed="Malvern Melbourne"
+        openingHours="Mo,Tu,We,Th,Fr,Sa,Su 07:00-19:00"
+        aggregateRating="5.0"
+        reviewCount="100"
+      />
+
+      <ServiceSchema
+        serviceName="Mould Removal Malvern"
+        serviceType="Mould Inspection and Remediation"
+        provider="Mould & Restoration Co"
+        areaServed="Malvern Melbourne VIC 3144"
+        description="Emergency mould removal services in Malvern Melbourne. Professional assessment, family-safe treatment, and complete remediation for Federation homes and modern properties."
+      />
+
       <Navigation />
       
       {/* Emergency Response Bar */}
@@ -20,9 +51,9 @@ export const Malvern = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mold Response in Malvern</span>
+            <span>24/7 Emergency Mould Response in Malvern</span>
             <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
-              Call (03) 9012-3456
+              Call 1800 954 117
             </Button>
           </div>
         </div>
@@ -38,10 +69,10 @@ export const Malvern = () => {
           
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Mold Removal & Inspection in Malvern, Melbourne
+              Professional Mould Removal & Inspection in Malvern, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              IICRC-certified mold removal specialists serving Malvern's established residential areas. Expert service for Federation homes, family properties, and quality apartments.
+              Emergency mould removal in Malvern Melbourne with same-day response. IICRC-certified technicians specializing in established residential areas, Federation homes, and family properties. 5.0 stars, 100+ properties restored.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -74,7 +105,7 @@ export const Malvern = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="emergency-cta">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Malvern Mold Emergency: (03) 9012-3456
+                Call Now for Malvern Mould Emergency: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Malvern Inspection
@@ -88,7 +119,17 @@ export const Malvern = () => {
       {/* Local Area Information */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8">Mold Issues Common in Malvern, Melbourne</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Mould Removal Malvern Melbourne - Local Area Expertise</h2>
+
+          <div className="mb-12">
+            <p className="text-lg text-muted-foreground mb-6">
+              Our mould removal Malvern Melbourne team understands the unique challenges facing this established residential suburb. Located in postcode 3144, Malvern sits between Toorak and Glen Iris in Melbourne's prestigious eastern suburbs. With mature tree-lined streets, Federation and Edwardian period homes, and well-established family properties, Malvern presents specific mould risks that require local expertise.
+            </p>
+
+            <p className="text-lg text-muted-foreground mb-6">
+              The suburb's elevated position on the Malvern Hills, combined with Melbourne's humid climate, creates unique moisture management challenges. Properties around Glenferrie Road, near Malvern Central shopping precinct, and surrounding Lloyd Park often experience different humidity patterns due to mature landscaping and varied building orientations. Our emergency mould removal Malvern service responds within 2 hours to protect your family home.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
@@ -139,11 +180,204 @@ export const Malvern = () => {
               </CardContent>
             </Card>
           </div>
+
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-primary mb-6">Why Choose Our Mould Inspection Malvern Service</h3>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Local Melbourne Knowledge</h4>
+                <p className="text-muted-foreground mb-4">
+                  Our mould treatment Malvern Melbourne specialists have extensive experience with the suburb's unique building types and climate challenges. From Federation cottages near Central Park to modern family homes around Malvern East border, we understand how Melbourne's weather patterns affect different property styles across postcodes 3144 and surrounding areas.
+                </p>
+
+                <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Family-Safe Service</h4>
+                <p className="text-muted-foreground mb-4">
+                  All our technicians are IICRC certified with extensive training in family-safe mould remediation techniques. We understand Malvern families need discrete, professional service that protects children and pets while preserving the character of heritage homes. Our mould removal Malvern Melbourne service includes comprehensive insurance work assistance.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Emergency Response Excellence</h4>
+                <p className="text-muted-foreground mb-4">
+                  When you need urgent mould removal Malvern, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment. Our 100% satisfaction guarantee ensures complete family peace of mind.
+                </p>
+
+                <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
+                <p className="text-muted-foreground mb-4">
+                  From initial thermal imaging inspection to final clearance testing, our mould inspection Malvern service covers every aspect of property protection. We provide detailed reports for insurance claims and ongoing maintenance recommendations specific to your property type and Malvern's climate conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Mould Removal Process */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Professional Mould Removal Process for Malvern Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Advanced Assessment Technology</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Thermal Imaging Inspection</h4>
+                    <p className="text-muted-foreground text-sm">Our mould inspection Malvern service uses advanced thermal imaging to detect hidden moisture in Federation home walls, period property subfloors, and modern family home building cavities without damage.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-teal rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Air Quality Testing</h4>
+                    <p className="text-muted-foreground text-sm">Comprehensive air sampling throughout your Malvern property to identify mould spore concentrations and ensure family health safety. Results compared against Australian indoor air quality standards.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-emergency-orange rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Moisture Mapping</h4>
+                    <p className="text-muted-foreground text-sm">Detailed moisture level documentation across your property to identify source patterns and create targeted treatment plans specific to Malvern's established residential architecture.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Family-Safe Remediation Methods</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Containment and Safety Protocols</h4>
+                    <p className="text-muted-foreground text-sm">Professional containment systems protect your family during treatment. Child and pet safe protocols ensure minimal disruption to your Malvern family home routine.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Heritage-Conscious Treatment</h4>
+                    <p className="text-muted-foreground text-sm">Specialized techniques for Malvern's Federation and Edwardian homes that preserve architectural features while eliminating mould. Expert restoration of period property elements.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-teal rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Final Verification and Clearance</h4>
+                    <p className="text-muted-foreground text-sm">Post-treatment air quality testing and visual inspection ensures complete mould removal. Comprehensive reporting for insurance claims and family health records.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention and Maintenance */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Malvern Property Mould Prevention Tips</h2>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Management</h3>
+                <p className="text-muted-foreground mb-4">Understanding how Melbourne's humid subtropical climate affects your Malvern property throughout the year.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>November-April: High humidity monitoring</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Winter ventilation strategies</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Seasonal moisture pattern awareness</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Malvern elevation effects on humidity</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Federation Home Maintenance</h3>
+                <p className="text-muted-foreground mb-4">Specific maintenance strategies for Malvern's heritage and period properties to prevent moisture issues.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Period property ventilation upgrades</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Heritage-appropriate moisture barriers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Original building material preservation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Subfloor moisture management</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Family Home Warning Signs</h3>
+                <p className="text-muted-foreground mb-4">Early detection signs specific to Malvern family properties and established residential buildings.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Musty odors in bedrooms or bathrooms</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Water stains on period property walls</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Increased family allergy symptoms</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Peeling paint or wallpaper</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Property Types & Services */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary mb-8">Malvern Property Types We Service</h2>
           
@@ -401,7 +635,7 @@ export const Malvern = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving Malvern and all established Melbourne suburbs • Family property specialists • Child and pet safe methods
+              Mould & Restoration Co. • ABN: 47 683 089 652 • 5.0 stars, 100+ properties restored • 7am-7pm Every Day
             </p>
           </div>
         </div>

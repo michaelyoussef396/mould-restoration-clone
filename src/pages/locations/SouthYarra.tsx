@@ -3,16 +3,47 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 
 export const SouthYarra = () => {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "South Yarra Mold Removal", href: "/services/mold-removal-south-yarra", current: true }
+    { label: "South Yarra Mould Removal", href: "/services/mould-removal-south-yarra", current: true }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <LocationPageSEO
+        title="Mould Removal South Yarra Melbourne - Emergency Response | Mould & Restoration Co"
+        description="Professional mould removal in South Yarra Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day South Yarra mould inspection & removal."
+        suburb="South Yarra"
+        postcode="3141"
+        canonical="https://mouldrestoration.com.au/mould-removal-south-yarra-melbourne"
+        keywords="mould removal South Yarra Melbourne, mould inspection South Yarra, emergency mould removal South Yarra, mould treatment South Yarra Melbourne"
+      />
+
+      <LocalBusinessSchema
+        businessName="Mould & Restoration Co - South Yarra"
+        description="Professional mould removal and inspection services in South Yarra Melbourne. IICRC certified technicians, emergency response, apartment specialist methods."
+        address="South Yarra, Melbourne, VIC 3141"
+        phone="1800 954 117"
+        email="info@mouldrestoration.com.au"
+        areaServed="South Yarra Melbourne"
+        openingHours="Mo,Tu,We,Th,Fr,Sa,Su 07:00-19:00"
+        aggregateRating="5.0"
+        reviewCount="100"
+      />
+
+      <ServiceSchema
+        serviceName="Mould Removal South Yarra"
+        serviceType="Mould Inspection and Remediation"
+        provider="Mould & Restoration Co"
+        areaServed="South Yarra Melbourne VIC 3141"
+        description="Emergency mould removal services in South Yarra Melbourne. Professional assessment, apartment-safe treatment, and complete remediation for high-density living environments."
+      />
+
       <Navigation />
       
       {/* Emergency Response Bar */}
@@ -20,9 +51,9 @@ export const SouthYarra = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mold Response in South Yarra</span>
+            <span>24/7 Emergency Mould Response in South Yarra</span>
             <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
-              Call (03) 9012-3456
+              Call 1800 954 117
             </Button>
           </div>
         </div>
@@ -38,10 +69,10 @@ export const SouthYarra = () => {
           
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Mold Removal & Inspection in South Yarra, Melbourne
+              Professional Mould Removal & Inspection in South Yarra, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              IICRC-certified mold removal specialists serving South Yarra's apartments and townhouses. Expert service for high-density living environments.
+              Emergency mould removal in South Yarra Melbourne with same-day response. IICRC-certified technicians specializing in apartments, townhouses, and high-density living environments. 5.0 stars, 100+ properties restored.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -62,7 +93,7 @@ export const SouthYarra = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-success-green" />
-                  <span>Modern apartment mold solutions</span>
+                  <span>Modern apartment mould solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -74,7 +105,7 @@ export const SouthYarra = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="emergency-cta">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for South Yarra Mold Emergency: (03) 9012-3456
+                Call Now for South Yarra Mould Emergency: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free South Yarra Inspection
@@ -88,7 +119,17 @@ export const SouthYarra = () => {
       {/* Local Area Information */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8">Mold Issues Common in South Yarra, Melbourne</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Mould Removal South Yarra Melbourne - Local Area Expertise</h2>
+
+          <div className="mb-12">
+            <p className="text-lg text-muted-foreground mb-6">
+              Our mould removal South Yarra Melbourne team understands the unique challenges facing this vibrant inner-city suburb. Located in postcode 3141, South Yarra sits between the Yarra River and Toorak Road, creating a distinctive urban microclimate. With high-density apartment living, contemporary townhouses, and Chapel Street's bustling commercial precinct, South Yarra presents specific mould risks that require specialized local expertise.
+            </p>
+
+            <p className="text-lg text-muted-foreground mb-6">
+              The suburb's proximity to the Yarra River increases ambient humidity, while modern sealed building envelopes in apartments can trap moisture. Properties near Chapel Street, around South Yarra Station, and along Toorak Road experience different humidity patterns due to urban heat island effects and varying building orientations. Our emergency mould removal South Yarra service responds within 2 hours to protect your apartment or townhouse.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
@@ -139,11 +180,204 @@ export const SouthYarra = () => {
               </CardContent>
             </Card>
           </div>
+
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-primary mb-6">Why Choose Our Mould Inspection South Yarra Service</h3>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-primary">High-Density Living Specialists</h4>
+                <p className="text-muted-foreground mb-4">
+                  Our mould treatment South Yarra Melbourne specialists have extensive experience with the suburb's unique high-density living challenges. From modern apartments near Chapel Street to contemporary townhouses along Toorak Road, we understand how Melbourne's urban climate affects different property types across postcode 3141 and surrounding areas.
+                </p>
+
+                <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Apartment-Safe Service</h4>
+                <p className="text-muted-foreground mb-4">
+                  All our technicians are IICRC certified with specialized training in apartment and strata-title property remediation techniques. We understand South Yarra residents need discrete, professional service that works seamlessly with body corporate requirements. Our mould removal South Yarra Melbourne service includes comprehensive strata management liaison.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Inner-City Emergency Response</h4>
+                <p className="text-muted-foreground mb-4">
+                  When you need urgent mould removal South Yarra, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to neighbors. Our 100% satisfaction guarantee ensures complete peace of mind.
+                </p>
+
+                <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
+                <p className="text-muted-foreground mb-4">
+                  From initial thermal imaging inspection to final clearance testing, our mould inspection South Yarra service covers every aspect of property protection. We provide detailed reports for strata committees and insurance claims, plus ongoing maintenance recommendations specific to your property type and South Yarra's urban climate conditions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Mould Removal Process */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Professional Mould Removal Process for South Yarra Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Advanced Assessment Technology</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Apartment-Specific Thermal Imaging</h4>
+                    <p className="text-muted-foreground text-sm">Our mould inspection South Yarra service uses advanced thermal imaging to detect hidden moisture in apartment walls, shared building elements, and townhouse party walls without damage to finishes or disruption to neighbors.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-teal rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Multi-Unit Air Quality Testing</h4>
+                    <p className="text-muted-foreground text-sm">Comprehensive air sampling throughout your South Yarra property and adjacent areas to identify mould spore concentrations and cross-contamination risks. Results compared against Australian apartment living standards.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-emergency-orange rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Shared System Moisture Mapping</h4>
+                    <p className="text-muted-foreground text-sm">Detailed moisture level documentation across your property and shared building systems to identify source patterns and create targeted treatment plans specific to South Yarra's high-density architecture.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-primary">Apartment-Safe Remediation Methods</h3>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Containment and Neighbor Protection</h4>
+                    <p className="text-muted-foreground text-sm">Professional containment systems protect neighbors and shared areas during treatment. Quiet, courteous protocols ensure minimal disruption to your South Yarra apartment building community.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-blue rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Strata-Compliant Treatment</h4>
+                    <p className="text-muted-foreground text-sm">Specialized techniques for South Yarra's apartment buildings that meet body corporate requirements while eliminating mould. Expert coordination with strata management and building maintenance teams.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-accent-teal rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Final Verification and Documentation</h4>
+                    <p className="text-muted-foreground text-sm">Post-treatment air quality testing and visual inspection ensures complete mould removal. Comprehensive reporting for body corporate records and insurance claims with apartment-specific clearance protocols.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prevention and Maintenance */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">South Yarra Property Mould Prevention Tips</h2>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Urban Climate Management</h3>
+                <p className="text-muted-foreground mb-4">Understanding how Melbourne's urban microclimate affects your South Yarra apartment or townhouse throughout the year.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Yarra River humidity impact monitoring</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Urban heat island effect awareness</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>High-density ventilation strategies</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
+                    <span>Chapel Street commercial area effects</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Apartment Building Maintenance</h3>
+                <p className="text-muted-foreground mb-4">Specific maintenance strategies for South Yarra's apartment buildings and strata properties to prevent moisture issues.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Sealed building envelope management</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Shared ventilation system maintenance</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Body corporate moisture reporting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full"></div>
+                    <span>Common area humidity control</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">High-Density Warning Signs</h3>
+                <p className="text-muted-foreground mb-4">Early detection signs specific to South Yarra apartment and townhouse properties with shared building systems.</p>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Musty odors in bathrooms or laundries</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Condensation on apartment windows</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Shared wall moisture stains</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full"></div>
+                    <span>Increased respiratory symptoms indoors</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Property Types & Services */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary mb-8">South Yarra Property Types We Service</h2>
           
@@ -200,7 +434,7 @@ export const SouthYarra = () => {
             </Card>
           </div>
 
-          <h2 className="text-3xl font-bold text-primary mb-8">Our South Yarra Mold Removal Services</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Our South Yarra Mould Removal Services</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -278,7 +512,7 @@ export const SouthYarra = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide apartment and high-density property mold removal services throughout South Yarra and nearby areas including:
+                We provide apartment and high-density property mould removal services throughout South Yarra and nearby areas including:
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -334,9 +568,9 @@ export const SouthYarra = () => {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free South Yarra Mold Inspection Today</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free South Yarra Mould Inspection Today</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Protect your South Yarra apartment or townhouse from mold damage. Expert service designed for high-density living environments.
+              Protect your South Yarra apartment or townhouse from mould damage. Expert service designed for high-density living environments and strata properties.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -346,7 +580,7 @@ export const SouthYarra = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>(03) 9012-3456 (24/7 apartment emergency)</span>
+                      <span>1800 954 117 (24/7 apartment emergency)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -392,7 +626,7 @@ export const SouthYarra = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="emergency-cta">
                 <Phone className="w-5 h-5 mr-2" />
-                South Yarra Apartment Emergency: (03) 9012-3456
+                South Yarra Apartment Emergency: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Apartment Inspection
@@ -401,7 +635,7 @@ export const SouthYarra = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving South Yarra and all inner Melbourne suburbs • Apartment specialists • Body corporate liaison included
+              Mould & Restoration Co. • ABN: 47 683 089 652 • 5.0 stars, 100+ properties restored • 7am-7pm Every Day
             </p>
           </div>
         </div>

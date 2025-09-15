@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://mouldrestoration.com.au/</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/hero-background.jpg</image:loc>
+      <image:caption>Emergency mould removal Melbourne - Professional team responding within 2 hours</image:caption>
+      <image:title>Melbourne Mould Removal Emergency Response</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/mould-restoration-logo.png</image:loc>
+      <image:caption>Mould & Restoration Co. - Melbourne's premier mould inspection specialists</image:caption>
+      <image:title>Melbourne Mould Restoration Company Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- Professional Mould Inspections -->
+  <url>
+    <loc>https://mouldrestoration.com.au/services/professional-mould-inspections</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/professional-mould-hero.jpg</image:loc>
+      <image:caption>Professional mould inspection Melbourne - IICRC certified technicians with thermal imaging</image:caption>
+      <image:title>Melbourne Professional Mould Inspection Service</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/thermal-imaging-device.jpg</image:loc>
+      <image:caption>Thermal imaging mould detection Melbourne - Advanced technology for hidden moisture</image:caption>
+      <image:title>Melbourne Thermal Imaging Mould Detection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/clean-residential-interior.jpg</image:loc>
+      <image:caption>Melbourne home after professional mould inspection and clearance testing</image:caption>
+      <image:title>Melbourne Mould Inspection Results - Clean Home</image:title>
+    </image:image>
+  </url>
+
+  <!-- Comprehensive Mould Removal -->
+  <url>
+    <loc>https://mouldrestoration.com.au/services/comprehensive-mould-removal</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/comprehensive-mould-hero.jpg</image:loc>
+      <image:caption>Comprehensive mould removal Melbourne - IICRC certified safe elimination process</image:caption>
+      <image:title>Melbourne Comprehensive Mould Removal Service</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/mould-removal-equipment.jpg</image:loc>
+      <image:caption>Professional mould removal equipment Melbourne - Industrial containment systems</image:caption>
+      <image:title>Melbourne Professional Mould Removal Equipment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/mould-removal-transformation.jpg</image:loc>
+      <image:caption>Melbourne mould removal before and after - Complete restoration results</image:caption>
+      <image:title>Melbourne Mould Removal Transformation Results</image:title>
+    </image:image>
+  </url>
+
+  <!-- Subfloor Mould Remediation -->
+  <url>
+    <loc>https://mouldrestoration.com.au/services/subfloor-mould-remediation</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/subfloor-remediation-hero.jpg</image:loc>
+      <image:caption>Subfloor mould remediation Melbourne - Under house mould removal specialists</image:caption>
+      <image:title>Melbourne Subfloor Mould Remediation Service</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/subfloor-inspection.jpg</image:loc>
+      <image:caption>Melbourne subfloor mould inspection - Professional moisture detection under houses</image:caption>
+      <image:title>Melbourne Subfloor Mould Inspection Process</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/subfloor-ventilation.jpg</image:loc>
+      <image:caption>Melbourne subfloor ventilation improvement - Moisture control and airflow systems</image:caption>
+      <image:title>Melbourne Subfloor Ventilation Installation</image:title>
+    </image:image>
+  </url>
+
+  <!-- Location-Specific Images -->
+  <url>
+    <loc>https://mouldrestoration.com.au/locations/brighton</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/brighton-mould-removal.jpg</image:loc>
+      <image:caption>Brighton mould removal Melbourne - Coastal property mould specialists</image:caption>
+      <image:title>Brighton Melbourne Mould Removal Service</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mouldrestoration.com.au/locations/richmond</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/richmond-heritage-mould.jpg</image:loc>
+      <image:caption>Richmond mould removal Melbourne - Heritage property and warehouse conversion specialists</image:caption>
+      <image:title>Richmond Melbourne Heritage Mould Treatment</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services Overview -->
+  <url>
+    <loc>https://mouldrestoration.com.au/services</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/services-hero.jpg</image:loc>
+      <image:caption>Melbourne mould removal services - Professional inspection, removal and restoration</image:caption>
+      <image:title>Melbourne Mould Removal Services Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/residential-inspection.jpg</image:loc>
+      <image:caption>Melbourne residential mould inspection - Professional home assessment service</image:caption>
+      <image:title>Melbourne Residential Mould Inspection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/commercial-removal.jpg</image:loc>
+      <image:caption>Melbourne commercial mould removal - Business property restoration services</image:caption>
+      <image:title>Melbourne Commercial Mould Removal</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://mouldrestoration.com.au/about</loc>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/about-hero.jpg</image:loc>
+      <image:caption>Melbourne mould restoration experts - 5+ years experience, 100+ properties restored</image:caption>
+      <image:title>Melbourne Trusted Mould Restoration Experts</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mouldrestoration.com.au/assets/story-space.jpg</image:loc>
+      <image:caption>Melbourne property restoration - Professional mould remediation team at work</image:caption>
+      <image:title>Melbourne Property Restoration Professionals</image:title>
+    </image:image>
+  </url>
+
+</urlset>

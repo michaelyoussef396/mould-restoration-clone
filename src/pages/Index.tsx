@@ -7,11 +7,45 @@ import { ServicesSection } from '@/components/ServicesSection';
 import { ProcessSection } from '@/components/ProcessSection';
 import { WhyChooseUsSection } from '@/components/WhyChooseUsSection';
 import { ContactSection } from '@/components/ContactSection';
+import { HomePageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, OrganizationSchema, ReviewSchema } from '@/components/seo/SchemaMarkup';
 import heroBackground from '@/assets/hero-background.jpg';
 
 const Index = () => {
+  // Sample review data from your Google reviews
+  const customerReviews = [
+    {
+      author: "Michael Youssef",
+      rating: 5,
+      reviewBody: "A fantastic experience with Mould & Restoration Co. Their team were professional, knowledgeable, and truly cared about getting rid of mould the right way. Everything was handled efficiently and they explained the process clearly from start to finish. Would recommend!",
+      datePublished: "2024-01-10"
+    },
+    {
+      author: "Mummaofmany",
+      rating: 5,
+      reviewBody: "Clayton attended our home for mold treatment and clean. He did a fantastic job! He was very informative and made sure we understood exactly what it was that he would be doing. He ensured our safety and completed the job with attention to detail.",
+      datePublished: "2024-01-08"
+    },
+    {
+      author: "Roz Dalton",
+      rating: 5,
+      reviewBody: "A very professional company run by energetic entrepreneurial young people. Website is very easy to understand. 1st visit (free quote) was an assessment of the mould issue and recommendations for a dehumidifier. Next a report with photos - excellent service!",
+      datePublished: "2024-01-05"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
+      {/* SEO Optimization for Melbourne Emergency Mould Removal */}
+      <HomePageSEO />
+      <LocalBusinessSchema
+        pageName="Home"
+        pageUrl="https://mouldrestoration.com.au"
+        serviceType="emergency"
+        location="Melbourne"
+      />
+      <OrganizationSchema />
+      <ReviewSchema reviews={customerReviews} />
       {/* Emergency Bar */}
       <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-center sm:justify-between">

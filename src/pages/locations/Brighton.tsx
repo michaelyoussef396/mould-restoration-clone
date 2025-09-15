@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 
 export const Brighton = () => {
   const breadcrumbItems = [
@@ -13,6 +15,27 @@ export const Brighton = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Brighton Melbourne Mould Removal */}
+      <LocationPageSEO
+        location="Brighton"
+        service="removal"
+        emergency={false}
+        title="Mould Removal Brighton Melbourne - Coastal Property Specialists"
+        description="Expert mould removal Brighton Melbourne. Coastal property specialists treating salt air and humidity issues. Federation homes, weatherboard treatment. Call 1800 954 117 for professional service."
+      />
+      <LocalBusinessSchema
+        pageName="Brighton Mould Removal"
+        pageUrl="https://mouldrestoration.com.au/locations/brighton"
+        serviceType="removal"
+        location="Brighton"
+      />
+      <ServiceSchema
+        serviceName="Mould Removal Brighton Melbourne"
+        serviceDescription="Specialized mould removal for Brighton's coastal properties. Expert treatment for salt air corrosion, weatherboard moisture issues, and Federation home preservation."
+        serviceUrl="https://mouldrestoration.com.au/locations/brighton"
+        priceRange="$$"
+        areaServed={["Brighton", "Brighton East", "Hampton", "Sandringham", "Bentleigh"]}
+      />
       <Navigation />
       
       {/* Emergency Response Bar */}
@@ -20,9 +43,9 @@ export const Brighton = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mold Response in Brighton</span>
+            <span>24/7 Emergency Mould Response in Brighton</span>
             <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
-              Call (03) 9012-3456
+              Call 1800 954 117
             </Button>
           </div>
         </div>
@@ -38,10 +61,10 @@ export const Brighton = () => {
           
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Mold Removal & Inspection in Brighton, Melbourne
+              Professional Mould Removal & Inspection in Brighton, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              IICRC-certified mold removal specialists serving Brighton's coastal properties. Expert treatment for salt air and humidity-related mold issues.
+              Melbourne's premier mould removal specialists serving Brighton's coastal properties and bayside estates. IICRC-certified technicians with 5+ years experience treating salt air damage, humidity issues, and Federation home preservation. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Brighton homeowners.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -74,10 +97,10 @@ export const Brighton = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="emergency-cta">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Brighton Mold Emergency: (03) 9012-3456
+                Call Now for Brighton Mould Emergency: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
-                Schedule Free Brighton Mold Inspection
+                Schedule Free Brighton Mould Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
@@ -85,31 +108,34 @@ export const Brighton = () => {
         </div>
       </section>
 
-      {/* Local Area Information */}
+      {/* Brighton Melbourne Local Area Expertise */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8">Mold Issues Common in Brighton, Melbourne</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <h2 className="text-3xl font-bold text-primary mb-8">Brighton Melbourne Local Area Expertise</h2>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Environment Challenges</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Coastal moisture affecting older homes</span>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Brighton Property Landscape</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton sits 11km southeast of Melbourne CBD along Port Phillip Bay, encompassing postcodes 3186 and parts of 3187. The suburb stretches from Bay Street shopping precinct to Brighton Beach foreshore, featuring an elegant mix of Federation homes, Art Deco residences, and contemporary coastal developments.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Federation and Edwardian homes from 1900-1920 along Middle Brighton area</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Beach suburb humidity contributing to mold growth</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Weatherboard beach houses and worker cottages near Brighton Beach station</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Federation homes with weatherboard moisture issues</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Art Deco apartments and townhouses along New Street and Were Street</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Salt air corrosion affecting building seals</span>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Modern luxury developments between Bay Street and the beach</span>
                   </li>
                 </ul>
               </CardContent>
@@ -117,23 +143,119 @@ export const Brighton = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Brighton-Specific Risk Factors</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Impact on Brighton</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's bayside location exposes properties to Melbourne's temperate oceanic climate intensified by coastal conditions. Annual rainfall of 650mm combines with salt air and sea breezes, creating unique challenges for heritage properties and modern builds alike.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Summer sea breezes carrying salt moisture inland affecting weatherboard homes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Winter storm surge and heavy rains impacting beach-adjacent properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coastal humidity year-round affecting properties within 1km of the bay</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Sand and salt deposits affecting building seals and ventilation systems</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Local Brighton Landmarks & Challenges</h3>
+                <p className="text-muted-foreground mb-4">
+                  From Brighton Beach with its iconic bathing boxes to Brighton Grammar School, the suburb's prestigious locations present specific mould challenges. High-value properties demand expert care while heritage restrictions require specialized approaches.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Brighton Beach foreshore properties with extreme salt air exposure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Church Street shopping precinct mixed-use buildings with ventilation issues</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Brighton Grammar School area heritage properties requiring preservation methods</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Dendy Park surrounds with mature tree canopy affecting property drainage</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h2 className="text-3xl font-bold text-primary mb-8">Common Mould Issues in Brighton Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Federation & Edwardian Coastal Home Challenges</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's Federation homes (1900-1920) and Edwardian residences face unique coastal challenges with their weatherboard construction, timber window frames, and original building materials exposed to constant salt air and sea moisture.
+                </p>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Weatherboard cladding deterioration from salt air corrosion and moisture penetration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Original timber window frames swelling and gaps allowing moisture intrusion</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Suspended timber floors with inadequate ventilation in coastal humidity</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Heritage roofing materials (slate, terracotta) with age-related water penetration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
+                    <span>Original lime mortar joints failing under coastal weather conditions</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Brighton Beachside Specific Risk Factors</h3>
+                <p className="text-muted-foreground mb-4">
+                  Properties within Brighton's coastal zone (0-2km from Port Phillip Bay) experience intensified mould risks from salt spray, sandy soil conditions, and seasonal weather patterns affecting drainage and building performance.
+                </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Seasonal sea breeze carrying moisture inland</span>
+                    <span>Salt spray damage to building seals creating moisture entry points</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Period properties with aging weatherproofing</span>
+                    <span>Sandy soil drainage issues affecting foundation moisture levels</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Beach house design with increased ventilation needs</span>
+                    <span>Sea breeze moisture penetration through aging weather seals and caulking</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Sandy soil drainage affecting foundations</span>
+                    <span>Beach house design features (large windows, open plans) lacking moisture control</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <span>Holiday rental property maintenance gaps during peak summer occupancy</span>
                   </li>
                 </ul>
               </CardContent>
@@ -141,6 +263,7 @@ export const Brighton = () => {
           </div>
         </div>
       </section>
+
 
       {/* Property Types & Services */}
       <section className="py-16 bg-muted/50">
@@ -200,7 +323,123 @@ export const Brighton = () => {
             </Card>
           </div>
 
-          <h2 className="text-3xl font-bold text-primary mb-8">Our Brighton Mold Removal Services</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Our Brighton Mould Removal Process</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Initial Assessment & Coastal Property Evaluation</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our Brighton mould removal process begins with comprehensive coastal property assessment using advanced thermal imaging technology specifically calibrated for salt air exposure, heritage building materials, and beachside moisture conditions.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Salt air damage assessment for weatherboard and building seals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage Federation home structural moisture mapping</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coastal foundation moisture penetration analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Beach proximity impact evaluation on building materials</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Containment & Heritage Protection</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's coastal properties require specialized containment strategies that protect heritage features while preventing mould spore migration. Our approach preserves architectural integrity while ensuring effective treatment.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Negative air pressure systems designed for coastal properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-appropriate protective barriers and coverings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Salt-resistant equipment and materials for coastal conditions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Neighbouring property protection in dense Brighton residential areas</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h2 className="text-3xl font-bold text-primary mb-8">Professional Brighton Mould Remediation Techniques</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Coastal-Safe Mould Removal Methods</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's coastal properties demand specialized removal techniques that account for salt air corrosion, heritage material preservation, and ongoing moisture management in the marine environment.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Low-invasive techniques for heritage weatherboard and timber features</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Salt-resistant antimicrobial treatments designed for coastal exposure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Federation-era lime plaster and timber preservation during treatment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coastal building material compatibility testing before application</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Post-Treatment Verification & Warranty</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our Brighton post-treatment verification ensures complete mould elimination with comprehensive testing protocols designed for Melbourne's coastal conditions and heritage building requirements.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Independent laboratory air quality testing certified for coastal properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Moisture content verification in heritage building materials</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Clearance certificates for insurance claims and property sales</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>12-month treatment warranty with coastal condition considerations</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <h2 className="text-3xl font-bold text-primary mb-8">Our Brighton Mould Removal Services</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -266,6 +505,244 @@ export const Brighton = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us in Brighton Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Why Choose Mould & Restoration Co. in Brighton Melbourne</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Local Brighton Knowledge Since 2019</h3>
+                <p className="text-muted-foreground mb-4">
+                  As Brighton's trusted coastal mould removal specialists with over 5 years of experience in Melbourne's bayside suburbs, we understand the unique challenges of salt air exposure, heritage Federation homes, and beachside property maintenance.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>5+ years specializing in Brighton coastal property mould issues</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>100+ Brighton properties successfully restored and protected</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Federation and weatherboard home preservation expertise</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Salt air damage assessment and prevention strategies</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our IICRC-certified technicians provide emergency response within 2 hours to Brighton coastal properties, operating 7am-7pm daily with 24/7 emergency availability. ABN: 47 683 089 652.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>IICRC certification in mould remediation and water damage restoration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>2-hour emergency response guarantee to Brighton postcode 3186</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>24/7 emergency hotline: 1800 954 117</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Same-day service scheduling 7 days per week</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Insurance Work Welcome & 100% Satisfaction</h3>
+                <p className="text-muted-foreground mb-4">
+                  We work directly with all major Australian insurance providers and offer comprehensive documentation for claims related to storm damage, salt air corrosion, and mould growth in Brighton coastal properties.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Direct insurance billing available for approved coastal property claims</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Comprehensive salt air damage documentation and photo evidence</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>100% satisfaction guarantee on all Brighton mould removal work</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>12-month warranty on professional coastal remediation services</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Brighton Customer Reviews</h3>
+                <p className="text-muted-foreground mb-4">
+                  With over 50+ verified 5-star reviews from Brighton property owners, Federation home specialists, and bayside residents, we're the most trusted coastal mould removal service in Melbourne's southeast.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>5.0/5 star rating across Google, Facebook, and industry directories</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>50+ verified customer reviews from Brighton coastal property owners</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Trusted by Brighton Grammar School families and Bay Street businesses</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Recommended by local Brighton real estate agents and property managers</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Mould Prevention Tips for Brighton */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Local Mould Prevention Tips for Brighton Properties</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Coastal Climate Considerations for Brighton</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's bayside location 11km from Melbourne CBD experiences intensified coastal weather patterns. Properties face salt air year-round, with seasonal variations affecting heritage buildings and modern coastal developments differently.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Summer (Dec-Feb):</strong> Monitor sea breeze moisture impact on weatherboard and window seals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Autumn (Mar-May):</strong> Clear coastal debris from gutters and check salt air damage to building materials</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Winter (Jun-Aug):</strong> Protect heritage timber from storm surge moisture and condensation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Spring (Sep-Nov):</strong> Assess weatherboard condition and reseal coastal-facing building elements</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Brighton Salt Air & Ventilation Management</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's coastal properties require specialized ventilation strategies that account for constant salt air exposure while managing moisture levels. Heritage constraints and modern efficiency demands require balanced approaches.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Federation Homes:</strong> Install salt-resistant exhaust fans while preserving heritage character</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Beach Houses:</strong> Ensure cross-ventilation while protecting from salt spray intrusion</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Modern Coastal Homes:</strong> Service HVAC systems with salt-air filters annually</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Basement Areas:</strong> Use marine-grade dehumidifiers during humid summer months</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Seasonal Maintenance for Brighton Coastal Buildings</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's heritage Federation homes and modern coastal developments require tailored seasonal maintenance schedules that account for salt air damage, storm exposure, and Melbourne's variable weather patterns.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Quarterly gutter cleaning to prevent salt-laden debris causing overflow onto weatherboard</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Annual weatherboard and window seal inspection for salt air corrosion damage</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Spring roof and gutter assessment after winter storms affecting coastal properties</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage timber treatment with marine-grade sealants before peak summer exposure</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Warning Signs Specific to Brighton Coastal Properties</h3>
+                <p className="text-muted-foreground mb-4">
+                  Brighton's coastal properties display unique mould warning signs due to salt air exposure, heritage building materials, and constant moisture from Port Phillip Bay proximity.
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Federation Homes:</strong> White salt crystallization on brick, paint peeling on weatherboard, musty odors in under-floor areas</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Beach Houses:</strong> Black spots around coastal-facing windows, timber window frame swelling and warping</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>Modern Coastal Homes:</strong> HVAC system salt corrosion odors, bathroom exhaust fan salt buildup</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong>All Property Types:</strong> Increased allergies during sea breeze conditions, salt residue on interior surfaces near windows</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -346,7 +823,7 @@ export const Brighton = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>(03) 9012-3456 (24/7 coastal emergency line)</span>
+                      <span>1800 954 117 (24/7 coastal emergency line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -392,7 +869,7 @@ export const Brighton = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="emergency-cta">
                 <Phone className="w-5 h-5 mr-2" />
-                Brighton Coastal Emergency: (03) 9012-3456
+                Brighton Coastal Emergency: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Coastal Inspection
