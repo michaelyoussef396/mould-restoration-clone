@@ -14,7 +14,9 @@ export {
   LocalBusinessSchema,
   ServiceSchema,
   OrganizationSchema,
-  ReviewSchema
+  ReviewSchema,
+  BreadcrumbSchema,
+  FAQSchema
 } from './SchemaMarkup';
 
 // Performance Optimization

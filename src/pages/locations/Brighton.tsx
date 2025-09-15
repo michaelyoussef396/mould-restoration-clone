@@ -4,7 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
-import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
+import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
 
 export const Brighton = () => {
   const breadcrumbItems = [
@@ -21,7 +22,8 @@ export const Brighton = () => {
         service="removal"
         emergency={false}
         title="Mould Removal Brighton Melbourne - Coastal Property Specialists"
-        description="Expert mould removal Brighton Melbourne. Coastal property specialists treating salt air and humidity issues. Federation homes, weatherboard treatment. Call 1800 954 117 for professional service."
+        description="Mould removal Brighton Melbourne - Coastal property specialists. Salt air & humidity solutions for Federation homes. Expert service. Call 1800 954 117"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-brighton"
       />
       <LocalBusinessSchema
         pageName="Brighton Mould Removal"
@@ -36,17 +38,24 @@ export const Brighton = () => {
         priceRange="$$"
         areaServed={["Brighton", "Brighton East", "Hampton", "Sandringham", "Bentleigh"]}
       />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mouldrestoration.com.au/" },
+          { name: "Services", url: "https://mouldrestoration.com.au/services" },
+          { name: "Brighton Mould Removal", url: "https://mouldrestoration.com.au/services/mould-removal-brighton" }
+        ]}
+      />
       <Navigation />
       
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-3 px-4 text-center">
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 text-sm font-semibold">
-            <Clock className="w-4 h-4" />
-            <span>Professional Mould Service in Brighton - Same-day Available 7am-7pm</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-blue-50">
-              Call 1800 954 117
-            </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
+            <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
+            <span className="sm:hidden">7 AM - 7PM Daily</span>
+            <span>1800 954 117</span>
+            <span className="hidden sm:inline">admin@mouldandrestoration.com.au</span>
+            <span>Melbourne, VIC 📍</span>
           </div>
         </div>
       </div>
@@ -807,6 +816,9 @@ export const Brighton = () => {
         </div>
       </section>
 
+      {/* Related Coastal Suburbs */}
+      <SuburbClusterLinks currentLocation="Brighton" />
+
       {/* Contact Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
@@ -827,7 +839,7 @@ export const Brighton = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
-                      <span>info@mouldrestoration.com.au</span>
+                      <span>admin@mouldandrestoration.com.au</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent-teal" />

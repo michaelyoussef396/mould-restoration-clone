@@ -19,9 +19,9 @@ interface ServiceSchemaProps {
 // Melbourne business data constants
 const BUSINESS_DATA = {
   name: "Mould & Restoration Co.",
-  description: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored, serving all Melbourne metro areas with professional same-day service available.",
+  description: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored, serving all Melbourne metro areas with professional service 7am-7pm daily.",
   telephone: "1800954117",
-  email: "info@mouldrestoration.com.au",
+  email: "admin@mouldandrestoration.com.au",
   url: "https://mouldrestoration.com.au",
   logo: "https://mouldrestoration.com.au/assets/mould-restoration-logo.png",
   image: "https://mouldrestoration.com.au/assets/hero-background.jpg",
@@ -51,7 +51,7 @@ const BUSINESS_DATA = {
 
   aggregateRating: {
     ratingValue: "5.0",
-    reviewCount: "50",
+    reviewCount: "51",
     bestRating: "5",
     worstRating: "1"
   },
@@ -384,4 +384,64 @@ export const ReviewSchema: React.FC<ReviewSchemaProps> = ({ reviews = [] }) => {
   );
 };
 
-export default { LocalBusinessSchema, ServiceSchema, OrganizationSchema, ReviewSchema };
+// Breadcrumb Schema for navigation structure
+interface BreadcrumbSchemaProps {
+  items: Array<{
+    name: string;
+    url: string;
+  }>;
+}
+
+export const BreadcrumbSchema: React.FC<BreadcrumbSchemaProps> = ({ items }) => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    </Helmet>
+  );
+};
+
+// FAQ Schema for service pages
+interface FAQSchemaProps {
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+export const FAQSchema: React.FC<FAQSchemaProps> = ({ faqs }) => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
+    </Helmet>
+  );
+};
+
+export default { LocalBusinessSchema, ServiceSchema, OrganizationSchema, ReviewSchema, BreadcrumbSchema, FAQSchema };

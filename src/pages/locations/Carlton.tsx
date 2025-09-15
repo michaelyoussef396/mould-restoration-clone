@@ -21,7 +21,8 @@ export const Carlton = () => {
         service="removal"
         emergency={false}
         title="Mould Removal Carlton Melbourne - Victorian Heritage Property Specialists"
-        description="Expert mould removal Carlton Melbourne. Heritage property specialists treating Victorian terraces and student housing. University precinct professionals. Call 1800 954 117 for same-day service."
+        description="Mould removal Carlton Melbourne - Victorian heritage property specialists. University precinct & terrace house experts. Call 1800 954 117"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-carlton"
       />
       <LocalBusinessSchema
         pageName="Carlton Mould Removal"

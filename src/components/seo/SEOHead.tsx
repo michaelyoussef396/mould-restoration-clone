@@ -137,7 +137,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
   const finalKeywords = keywords || generateMelbourneKeywords(location, service, emergency);
 
-  const finalCanonicalUrl = canonicalUrl || `${DEFAULT_SEO.baseUrl}${window.location.pathname}`;
+  const finalCanonicalUrl = canonicalUrl || `${DEFAULT_SEO.baseUrl}${typeof window !== 'undefined' ? window.location.pathname : ''}`;
 
   // Open Graph optimizations
   const finalOgTitle = ogTitle || finalTitle;

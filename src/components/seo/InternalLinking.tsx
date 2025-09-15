@@ -65,65 +65,44 @@ const SERVICES_DATA = [
   }
 ];
 
-// Melbourne locations data
-const LOCATIONS_DATA = [
-  {
-    name: 'Brighton',
-    slug: 'brighton',
-    description: 'Coastal property mould specialists',
-    features: ['Federation homes', 'Salt air treatment', 'Weatherboard expertise'],
-    priority: 'high'
+// Melbourne suburb clusters for internal linking
+const SUBURB_CLUSTERS = {
+  innerMelbourne: {
+    name: 'Inner Melbourne',
+    suburbs: [
+      { name: 'Carlton', slug: 'carlton', description: 'Heritage property & university precinct specialists', features: ['Victorian terraces', 'Student housing', 'Heritage preservation'] },
+      { name: 'Fitzroy', slug: 'fitzroy', description: 'Creative quarter & warehouse conversion experts', features: ['Artist studios', 'Converted warehouses', 'Heritage protection'] },
+      { name: 'Richmond', slug: 'richmond', description: 'Industrial heritage & Swan Street precinct', features: ['Warehouse conversions', 'Victorian cottages', 'Rental properties'] },
+      { name: 'South Yarra', slug: 'south-yarra', description: 'Premium apartments & heritage buildings', features: ['Apartment blocks', 'Mixed development', 'Commercial spaces'] },
+      { name: 'Prahran', slug: 'prahran', description: 'Mixed residential & commercial properties', features: ['Shopping precincts', 'Apartments', 'Commercial spaces'] }
+    ]
   },
-  {
-    name: 'Carlton',
-    slug: 'carlton',
-    description: 'Inner Melbourne heritage properties',
-    features: ['Heritage buildings', 'Terrace houses', 'Student accommodation'],
-    priority: 'high'
+  coastalSuburbs: {
+    name: 'Coastal Suburbs',
+    suburbs: [
+      { name: 'Brighton', slug: 'brighton', description: 'Coastal property & Federation home specialists', features: ['Federation homes', 'Salt air treatment', 'Weatherboard expertise'] },
+      { name: 'Hampton', slug: 'hampton', description: 'Bayside family homes & coastal moisture', features: ['Family properties', 'Coastal exposure', 'Salt air protection'] },
+      { name: 'Sandringham', slug: 'sandringham', description: 'Beach community & retirement living', features: ['Beach houses', 'Retirement villages', 'Coastal humidity'] },
+      { name: 'Mentone', slug: 'mentone', description: 'Established beachside community', features: ['Beach cottages', 'Family homes', 'Coastal conditions'] },
+      { name: 'Edithvale', slug: 'edithvale', description: 'Bayside beach community specialists', features: ['Beach cottages', 'Retirement living', 'Salt air exposure'] }
+    ]
   },
-  {
-    name: 'Richmond',
-    slug: 'richmond',
-    description: 'Warehouse conversions and heritage homes',
-    features: ['Industrial conversions', 'Victorian cottages', 'Rental properties'],
-    priority: 'high'
-  },
-  {
-    name: 'Toorak',
-    slug: 'toorak',
-    description: 'Premium property restoration',
-    features: ['Luxury homes', 'Heritage preservation', 'High-end finishes'],
-    priority: 'high'
-  },
-  {
-    name: 'South Yarra',
-    slug: 'south-yarra',
-    description: 'Modern apartments and heritage buildings',
-    features: ['Apartment blocks', 'Mixed development', 'Commercial spaces'],
-    priority: 'medium'
-  },
-  {
-    name: 'Fitzroy',
-    slug: 'fitzroy',
-    description: 'Creative quarter property solutions',
-    features: ['Artist studios', 'Converted warehouses', 'Heritage protection'],
-    priority: 'medium'
-  },
-  {
-    name: 'Malvern',
-    slug: 'malvern',
-    description: 'Established family homes',
-    features: ['Family properties', 'Established gardens', 'Period features'],
-    priority: 'medium'
-  },
-  {
-    name: 'Prahran',
-    slug: 'prahran',
-    description: 'Mixed residential and commercial',
-    features: ['Shopping precincts', 'Apartments', 'Commercial spaces'],
-    priority: 'medium'
+  easternSuburbs: {
+    name: 'Eastern Suburbs',
+    suburbs: [
+      { name: 'Burwood', slug: 'burwood', description: 'Family homes & established properties', features: ['Family properties', 'Brick homes', 'Established gardens'] },
+      { name: 'Caulfield', slug: 'caulfield', description: 'Mixed housing & commercial areas', features: ['Apartments', 'Commercial spaces', 'Mixed development'] },
+      { name: 'Glen Iris', slug: 'glen-iris', description: 'Established residential & heritage homes', features: ['Heritage properties', 'Family homes', 'Period features'] },
+      { name: 'Armadale', slug: 'armadale', description: 'Premium residential & heritage properties', features: ['Luxury homes', 'Heritage preservation', 'High-end finishes'] },
+      { name: 'Malvern', slug: 'malvern', description: 'Established family homes & gardens', features: ['Family properties', 'Established gardens', 'Period features'] }
+    ]
   }
-];
+};
+
+// Flatten suburb clusters for compatibility
+const LOCATIONS_DATA = Object.values(SUBURB_CLUSTERS)
+  .flatMap(cluster => cluster.suburbs)
+  .map(suburb => ({ ...suburb, priority: 'high' }));
 
 // SEO-optimized internal link component
 export const SEOInternalLink: React.FC<InternalLinkProps> = ({
@@ -341,7 +320,7 @@ export const ServiceLocationLinks: React.FC<{
           {topLocations.map((location) => (
             <SEOInternalLink
               key={location.slug}
-              href={`/locations/${location.slug}`}
+              href={`/services/mould-removal-${location.slug}`}
               anchor={`${serviceName} ${location.name} Melbourne`}
               location={location.name}
               service={serviceName}
@@ -366,10 +345,98 @@ export const ServiceLocationLinks: React.FC<{
   );
 };
 
+// Suburb cluster linking component
+interface SuburbClusterLinksProps {
+  currentLocation?: string;
+  maxClusters?: number;
+}
+
+export const SuburbClusterLinks: React.FC<SuburbClusterLinksProps> = ({
+  currentLocation,
+  maxClusters = 3
+}) => {
+  // Get cluster for current location
+  const currentCluster = Object.entries(SUBURB_CLUSTERS).find(([, cluster]) =>
+    cluster.suburbs.some(suburb => suburb.slug === currentLocation?.toLowerCase())
+  );
+
+  // If current location is in a cluster, show other suburbs from same cluster and nearby clusters
+  const clustersToShow = currentCluster
+    ? Object.entries(SUBURB_CLUSTERS).filter(([key]) => key === currentCluster[0]).slice(0, 1)
+    : Object.entries(SUBURB_CLUSTERS).slice(0, maxClusters);
+
+  return (
+    <div className="py-12 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          {currentLocation
+            ? `Other Suburbs Near ${currentLocation}`
+            : 'Melbourne Suburb Clusters We Service'
+          }
+        </h2>
+
+        {clustersToShow.map(([clusterKey, cluster]) => (
+          <div key={clusterKey} className="mb-8">
+            <h3 className="text-xl font-semibold text-primary mb-4">{cluster.name}</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {cluster.suburbs
+                .filter(suburb => suburb.slug !== currentLocation?.toLowerCase())
+                .map((suburb) => (
+                  <Card key={suburb.slug} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <MapPin className="h-4 w-4 text-blue-600" />
+                        <h4 className="font-bold text-gray-900">
+                          <SEOInternalLink
+                            href={`/services/mould-removal-${suburb.slug}`}
+                            anchor={`Mould removal ${suburb.name} Melbourne`}
+                            location={suburb.name}
+                            service="mould removal"
+                            className="text-gray-900 hover:text-blue-600 no-underline"
+                          >
+                            {suburb.name}
+                          </SEOInternalLink>
+                        </h4>
+                      </div>
+
+                      <p className="text-gray-600 text-sm mb-3">{suburb.description}</p>
+
+                      <ul className="text-xs text-gray-500 space-y-1">
+                        {suburb.features.slice(0, 2).map((feature, index) => (
+                          <li key={index} className="flex items-center gap-1">
+                            <div className="w-1 h-1 bg-blue-600 rounded-full"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+            </div>
+          </div>
+        ))}
+
+        <div className="text-center mt-8">
+          <p className="text-gray-600 mb-4">
+            Professional mould removal services available across all Melbourne metropolitan areas
+          </p>
+          <Button variant="outline" asChild>
+            <Link to="/contact">
+              Find Your Suburb
+              <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default {
   SEOInternalLink,
   RelatedServices,
   RelatedLocations,
   EmergencyContactLinks,
-  ServiceLocationLinks
+  ServiceLocationLinks,
+  SuburbClusterLinks
 };

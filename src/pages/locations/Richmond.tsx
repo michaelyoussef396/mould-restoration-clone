@@ -21,7 +21,8 @@ export const Richmond = () => {
         service="removal"
         emergency={false}
         title="Mould Removal Richmond Melbourne - Warehouse Conversion & Heritage Specialists"
-        description="Expert mould removal Richmond Melbourne. Warehouse conversion specialists treating industrial heritage and modern apartment developments. Swan Street precinct professionals. Call 1800 954 117 for same-day service."
+        description="Mould removal Richmond Melbourne - Warehouse conversion specialists. Industrial heritage & Swan Street precinct experts. Call 1800 954 117"
+        canonical="https://mouldrestoration.com.au/services/mould-removal-richmond"
       />
       <LocalBusinessSchema
         pageName="Richmond Mould Removal"
