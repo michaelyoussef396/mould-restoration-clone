@@ -1,18 +1,21 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { HeroOptimizedImage } from '@/components/OptimizedImage';
 import heroBackground from '@/assets/hero-background.jpg';
 
 export const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
-        <div className="absolute inset-0 hero-bg"></div>
-        <div className="absolute inset-0 texture-overlay"></div>
-      </div>
+      {/* Optimized Background Image with Overlay */}
+      <HeroOptimizedImage
+        src={heroBackground}
+        alt="Professional mould removal Melbourne hero showing IICRC certified restoration specialists treating residential property with advanced equipment"
+        className="absolute inset-0"
+        backgroundImage={true}
+        priority={true}
+      />
+      <div className="absolute inset-0 hero-bg"></div>
+      <div className="absolute inset-0 texture-overlay"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">

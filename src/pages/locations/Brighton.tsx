@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
-import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
+import { SuburbClusterLinks, StrategicLocationLinks } from "@/components/seo/InternalLinking";
 import { LocationOptimizedImage } from "@/components/OptimizedImage";
 
 export const Brighton = () => {
@@ -816,6 +816,13 @@ export const Brighton = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Brighton"
+        maxServiceLinks={5}
+        maxLocationLinks={6}
+      />
 
       {/* Related Coastal Suburbs */}
       <SuburbClusterLinks currentLocation="Brighton" />

@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { ServiceOptimizedImage } from '@/components/OptimizedImage';
 import { FAQSection } from '@/components/FAQSection';
 import { Phone, ArrowRight, Clock, Users, Award, Star, Filter, MapPin, Calendar, CheckCircle } from 'lucide-react';
 import mouldRemovalTransformation from '@/assets/mould-removal-transformation.jpg';
@@ -124,7 +126,15 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Professional Service Bar */}
+            {/* SEO Optimization for CaseStudies */}
+      <ServicePageSEO
+        service=""
+        title="Mould Removal Case Studies Melbourne - Real Results & Testimonials"
+        description="Melbourne mould removal case studies. Real before/after results, customer testimonials, successful restoration projects. 100+ properties restored. Professional service."
+        canonicalUrl="https://mouldrestoration.com.au/case-studies"
+      />
+
+      {/* {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">🚨 Professional Service - Same-day Available 7am-7pm</span>

@@ -9,6 +9,7 @@ import { WhyChooseUsSection } from '@/components/WhyChooseUsSection';
 import { ContactSection } from '@/components/ContactSection';
 import { HomePageSEO } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema, OrganizationSchema, ReviewSchema } from '@/components/seo/SchemaMarkup';
+import { HomePageStrategicLinks } from '@/components/seo/InternalLinking';
 import heroBackground from '@/assets/hero-background.jpg';
 
 const Index = () => {
@@ -284,6 +285,10 @@ const Index = () => {
 
       <AboutSection />
       <ServicesSection />
+
+      {/* Strategic Internal Linking for SEO Authority Distribution */}
+      <HomePageStrategicLinks />
+
       <ProcessSection />
       <WhyChooseUsSection />
       <ContactSection />

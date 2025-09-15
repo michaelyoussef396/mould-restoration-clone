@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
+import { ServiceOptimizedImage } from '@/components/OptimizedImage';
 import mouldInspection from '@/assets/mould-inspection.jpg';
 import materialRemoval from '@/assets/material-removal.jpg';
 import foggingSanitisation from '@/assets/fogging-sanitisation.jpg';
@@ -12,26 +13,36 @@ export const ServicesSection = () => {
       title: 'Professional Mould Inspections',
       description: 'Early detection for lasting protection – identify and prevent mould issues before they escalate.',
       image: mouldInspection,
+      service: 'mould inspection',
+      equipment: 'thermal imaging technology',
     },
     {
       title: 'Complete Material Removal',
       description: 'For severe mould infestations, we offer the removal of plaster walls, insulation, ceilings, skirting, wardrobes, and more to ensure complete eradication and lasting solutions.',
       image: materialRemoval,
+      service: 'material removal',
+      stage: 'safe demolition process',
     },
     {
       title: 'Advanced Fogging Sanitisation',
       description: 'Thoroughly sanitize mould-affected areas with advanced ULV fogging technology. Penetrate hard-to-reach spaces and ensure long-lasting mould prevention.',
       image: foggingSanitisation,
+      service: 'fogging sanitisation',
+      equipment: 'ULV fogging technology',
     },
     {
       title: 'Comprehensive Mould Removal',
       description: 'Eliminate mould at its source with our deep and thorough removal services. We ensure long-term solutions to protect your health and property.',
       image: mouldRemoval,
+      service: 'mould removal',
+      stage: 'complete remediation process',
     },
     {
       title: 'Subfloor Mould Remediation',
       description: 'Protect your property\'s foundation with thorough subfloor mould remediation. We eliminate mould, improve ventilation, and prevent future growth.',
       image: subfloorRemediation,
+      service: 'subfloor remediation',
+      stage: 'foundation treatment',
     },
   ];
 
@@ -53,10 +64,14 @@ export const ServicesSection = () => {
           {services.map((service, index) => (
             <Card key={index} className="service-card overflow-hidden group cursor-pointer">
               <div className="aspect-video overflow-hidden">
-                <img
+                <ServiceOptimizedImage
                   src={service.image}
-                  alt={`${service.title} Melbourne - IICRC certified mould restoration process`}
+                  service={service.service}
+                  stage={service.stage}
+                  equipment={service.equipment}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="p-6">

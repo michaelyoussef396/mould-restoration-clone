@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Clock, CheckCircle, Star, AlertTriangle, Shield, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { StrategicServiceLinks } from '@/components/seo/InternalLinking';
 import comprehensiveMouldHero from '@/assets/comprehensive-mould-hero.jpg';
 import mouldRemovalEquipment from '@/assets/mould-removal-equipment.jpg';
 import mouldRemovalTransformation from '@/assets/mould-removal-transformation.jpg';
@@ -61,6 +63,14 @@ export const ComprehensiveMouldRemoval = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Comprehensive Mould Removal */}
+      <ServicePageSEO
+        service="removal"
+        title="Comprehensive Mould Removal Melbourne - IICRC Certified Service"
+        description="Professional comprehensive mould removal Melbourne. IICRC certified technicians, safe elimination processes, complete restoration. Same-day service available. Call 1800 954 117."
+        canonicalUrl="https://mouldrestoration.com.au/services/comprehensive-mould-removal"
+      />
+
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
@@ -564,6 +574,13 @@ export const ComprehensiveMouldRemoval = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Service to Location SEO */}
+      <StrategicServiceLinks
+        currentService="comprehensive-mould-removal"
+        maxLocationLinks={12}
+        maxServiceLinks={4}
+      />
 
       {/* Contact Section */}
       <ContactSection />

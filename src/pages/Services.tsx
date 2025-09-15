@@ -6,6 +6,7 @@ import { ArrowRight, Phone, Shield, Award, Clock, CheckCircle, Star, MapPin } fr
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
+import { SEOHead } from '@/components/seo/SEOHead';
 import servicesHero from '@/assets/services-hero.jpg';
 import residentialInspection from '@/assets/residential-inspection.jpg';
 import commercialRemoval from '@/assets/commercial-removal.jpg';
@@ -72,6 +73,15 @@ export const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Services Page */}
+      <SEOHead
+        title="Professional Mould Removal Services Melbourne - IICRC Certified"
+        description="Complete mould removal services Melbourne. Professional inspections, comprehensive removal, subfloor remediation & advanced fogging. Same-day service available. Call 1800 954 117."
+        keywords="mould removal services melbourne, professional mould inspection melbourne, comprehensive mould removal, subfloor mould remediation, mould fogging services"
+        canonicalUrl="https://mouldrestoration.com.au/services"
+        ogType="website"
+      />
+
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">

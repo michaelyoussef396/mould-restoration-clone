@@ -7,12 +7,21 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { ArrowRight, Phone, Mail, MapPin, Clock, Star, CheckCircle, AlertCircle, Users, Shield, Award } from 'lucide-react';
 import { Footer } from '@/components/Footer';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
 import heroBackground from '@/assets/hero-background.jpg';
 
 export const ContactOptimized = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Professional Service Bar */}
+            {/* SEO Optimization for ContactOptimized */}
+      <ServicePageSEO
+        service=""
+        title="Contact Mould & Restoration Co Melbourne - Professional Service"
+        description="Contact Melbourne's trusted mould restoration experts. Professional service 7am-7pm every day. Call 1800 954 117 for immediate assistance."
+        canonicalUrl="https://mouldrestoration.com.au/contact"
+      />
+
+      {/* {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <span className="text-sm font-medium">Professional Mould Inspections - 7am-7pm Everyday</span>

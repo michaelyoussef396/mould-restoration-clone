@@ -137,7 +137,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
   const finalKeywords = keywords || generateMelbourneKeywords(location, service, emergency);
 
-  const finalCanonicalUrl = canonicalUrl || `${DEFAULT_SEO.baseUrl}${typeof window !== 'undefined' ? window.location.pathname : ''}`;
+  // Generate canonical URL with proper SSR handling
+  const finalCanonicalUrl = canonicalUrl ?
+    (canonicalUrl.startsWith('http') ? canonicalUrl : `${DEFAULT_SEO.baseUrl}${canonicalUrl}`) :
+    `${DEFAULT_SEO.baseUrl}/`;
 
   // Open Graph optimizations
   const finalOgTitle = ogTitle || finalTitle;
@@ -245,19 +248,22 @@ export const HomePageSEO: React.FC = () => (
     title="Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
     description="Melbourne's premier mould removal service. Same-day professional service, IICRC certified technicians, 5+ years experience, 100+ properties restored. Call 1800 954 117 now."
     keywords="emergency mould removal melbourne, professional mould inspection melbourne, same day mould removal, IICRC mould removal melbourne, melbourne mould experts"
+    canonicalUrl="https://mouldrestoration.com.au/"
     emergency={true}
   />
 );
 
-export const ServicePageSEO: React.FC<{ service: string; title?: string; description?: string }> = ({
+export const ServicePageSEO: React.FC<{ service: string; title?: string; description?: string; canonicalUrl?: string }> = ({
   service,
   title,
-  description
+  description,
+  canonicalUrl
 }) => (
   <SEOHead
     title={title}
     description={description}
     service={service}
+    canonicalUrl={canonicalUrl}
     ogType="service"
   />
 );

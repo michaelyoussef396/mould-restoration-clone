@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 import { LocationOptimizedImage } from "@/components/OptimizedImage";
 
 export const Carlton = () => {
@@ -1094,6 +1095,13 @@ export const Carlton = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Carlton"
+        maxServiceLinks={5}
+        maxLocationLinks={6}
+      />
     </div>
   );
 };

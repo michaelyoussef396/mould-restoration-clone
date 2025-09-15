@@ -6,6 +6,7 @@ import { ArrowRight, Phone, Clock, Shield, CheckCircle, Star, AlertTriangle, The
 import { ContactSection } from '@/components/ContactSection';
 import { ServicePageSEO } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
+import { StrategicServiceLinks } from '@/components/seo/InternalLinking';
 import professionalMouldHero from '@/assets/professional-mould-hero.jpg';
 import thermalImagingDevice from '@/assets/thermal-imaging-device.jpg';
 import cleanResidentialInterior from '@/assets/clean-residential-interior.jpg';
@@ -63,6 +64,7 @@ export const ProfessionalMouldInspections = () => {
         service="inspection"
         title="Professional Mould Inspection Melbourne - Free Thermal Imaging Assessment"
         description="Expert mould inspection Melbourne. Free thermal imaging assessment, air quality testing, professional detailed reports. IICRC certified technicians. Call 1800 954 117 for professional service."
+        canonicalUrl="https://mouldrestoration.com.au/services/professional-mould-inspections"
       />
       <LocalBusinessSchema
         pageName="Professional Mould Inspections"
@@ -542,6 +544,13 @@ export const ProfessionalMouldInspections = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Service to Location SEO */}
+      <StrategicServiceLinks
+        currentService="professional-mould-inspections"
+        maxLocationLinks={12}
+        maxServiceLinks={4}
+      />
 
       {/* Contact Section */}
       <ContactSection />

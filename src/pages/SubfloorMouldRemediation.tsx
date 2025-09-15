@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, CheckCircle, Star, AlertTriangle, Shield, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { StrategicServiceLinks } from '@/components/seo/InternalLinking';
 import subfloorRemediationHero from '@/assets/subfloor-remediation-hero.jpg';
 import subfloorInspection from '@/assets/subfloor-inspection.jpg';
 import subfloorVentilation from '@/assets/subfloor-ventilation.jpg';
@@ -66,6 +68,14 @@ export const SubfloorMouldRemediation = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* SEO Optimization for Subfloor Mould Remediation */}
+      <ServicePageSEO
+        service="remediation"
+        title="Subfloor Mould Remediation Melbourne - Under House Specialists"
+        description="Expert subfloor mould remediation Melbourne. Under house moisture control, ventilation improvement, foundation protection. Professional Melbourne service. Call 1800 954 117."
+        canonicalUrl="https://mouldrestoration.com.au/services/subfloor-mould-remediation"
+      />
+
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
@@ -650,6 +660,13 @@ export const SubfloorMouldRemediation = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Service to Location SEO */}
+      <StrategicServiceLinks
+        currentService="subfloor-mould-remediation"
+        maxLocationLinks={10}
+        maxServiceLinks={4}
+      />
 
       {/* Contact Section */}
       <ContactSection />

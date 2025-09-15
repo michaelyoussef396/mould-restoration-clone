@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FAQSection } from '@/components/FAQSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Check, Phone, Award, Users, Clock, Shield, MapPin, Star, ArrowRight } from 'lucide-react';
 import aboutHero from '@/assets/about-hero.jpg';
 import visionInterior from '@/assets/vision-interior.jpg';
@@ -70,6 +71,15 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      {/* SEO Optimization for About Page */}
+      <SEOHead
+        title="About Mould & Restoration Co - Melbourne's Professional Mould Experts"
+        description="Learn about Melbourne's trusted mould restoration experts. 5+ years experience, 100+ properties restored, IICRC certified technicians. Professional service 7am-7pm every day."
+        keywords="about mould restoration melbourne, melbourne mould experts, IICRC certified mould removal, professional mould restoration company"
+        canonicalUrl="https://mouldrestoration.com.au/about"
+        ogType="website"
+      />
+
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">

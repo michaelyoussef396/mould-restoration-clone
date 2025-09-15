@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Clock, CheckCircle, Star, AlertTriangle, Shield, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { HeroOptimizedImage, ServiceOptimizedImage } from '@/components/OptimizedImage';
 import materialRemovalHero from '@/assets/material-removal-hero.jpg';
 import wallRemovalProgress from '@/assets/wall-removal-progress.jpg';
 import commercialRemovalWork from '@/assets/commercial-removal-work.jpg';
@@ -61,7 +63,15 @@ export const CompleteMaterialRemoval = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Professional Service Bar */}
+            {/* SEO Optimization for CompleteMaterialRemoval */}
+      <ServicePageSEO
+        service="removal"
+        title="Complete Material Removal Melbourne - Total Mould Elimination"
+        description="Complete material removal Melbourne. Total mould elimination, structural restoration, comprehensive replacement. Professional Melbourne service. Call 1800 954 117."
+        canonicalUrl="https://mouldrestoration.com.au/services/complete-material-removal"
+      />
+
+      {/* {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
@@ -227,10 +237,14 @@ export const CompleteMaterialRemoval = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Recent Material Removal Projects</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="relative">
-                <img
+                <ServiceOptimizedImage
                   src={wallRemovalProgress}
+                  service="material removal"
+                  stage="safe demolition process"
                   alt="Complete material removal progress Melbourne showing safe mould-affected plasterboard removal with exposed framing preservation"
                   className="w-full h-64 object-cover rounded-lg"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
                   <div className="text-sm font-semibold text-gray-900">Safe material removal</div>
@@ -238,10 +252,14 @@ export const CompleteMaterialRemoval = () => {
                 </div>
               </div>
               <div className="relative">
-                <img
+                <ServiceOptimizedImage
                   src={commercialRemovalWork}
+                  service="commercial material removal"
+                  equipment="IICRC certified containment"
                   alt="Commercial material removal project Melbourne with IICRC certified containment and professional demolition equipment"
                   className="w-full h-64 object-cover rounded-lg"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
                   <div className="text-sm font-semibold text-gray-900">Complete restoration</div>

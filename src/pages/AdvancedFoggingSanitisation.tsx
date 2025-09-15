@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Clock, CheckCircle, Star, AlertTriangle, Shield, Award } from 'lucide-react';
 import { ContactSection } from '@/components/ContactSection';
+import { ServicePageSEO } from '@/components/seo/SEOHead';
 import advancedFoggingHero from '@/assets/advanced-fogging-hero.jpg';
 import ulvFoggingEquipment from '@/assets/ulv-fogging-equipment.jpg';
 import sanitisationProcess from '@/assets/sanitisation-process.jpg';
@@ -61,7 +62,15 @@ export const AdvancedFoggingSanitisation = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Professional Service Bar */}
+            {/* SEO Optimization for AdvancedFoggingSanitisation */}
+      <ServicePageSEO
+        service="fogging"
+        title="Advanced Fogging Sanitisation Melbourne - ULV Professional Treatment"
+        description="Advanced ULV fogging sanitisation Melbourne. Penetrates hard-to-reach spaces, comprehensive treatment, professional equipment. Expert Melbourne service. Call 1800 954 117."
+        canonicalUrl="https://mouldrestoration.com.au/services/advanced-fogging-sanitisation"
+      />
+
+      {/* {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>

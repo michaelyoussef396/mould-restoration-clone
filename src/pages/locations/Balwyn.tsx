@@ -1,10 +1,11 @@
-import { ArrowRight, Clock, Shield, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Clock, Shield, MapPin, Phone, Star, Award, CheckCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
-import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
+import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
 
 export const Balwyn = () => {
   const breadcrumbItems = [
@@ -20,8 +21,8 @@ export const Balwyn = () => {
         location="Balwyn"
         service="removal"
         emergency={false}
-        title="Mould Removal Balwyn Melbourne - Prestigious Residential & Grammar School Area Specialists"
-        description="Expert mould removal Balwyn Melbourne. Prestigious residential specialists treating grammar school area properties and heritage home preservation. Call 1800 954 117 for same-day service."
+        title="Mould Removal Balwyn Melbourne - Established Eastern Suburbs Period Home Specialists"
+        description="Professional mould removal Balwyn Melbourne - Established eastern suburbs specialists. Period home expertise. Expert service. Call 1800 954 117"
         canonical="https://mouldrestoration.com.au/services/mould-removal-balwyn"
       />
       <LocalBusinessSchema
@@ -32,22 +33,29 @@ export const Balwyn = () => {
       />
       <ServiceSchema
         serviceName="Mould Removal Balwyn Melbourne"
-        serviceDescription="Specialized mould removal for Balwyn's prestigious residential properties. Expert treatment for grammar school area homes, heritage property preservation, and established family estates."
+        serviceDescription="Specialized mould removal for Balwyn's established eastern suburbs properties, period homes, and leafy street residences. Expert treatment for heritage homes, period properties, and established family estates."
         serviceUrl="https://mouldrestoration.com.au/locations/balwyn"
         priceRange="$$"
         areaServed={["Balwyn", "Balwyn North", "Canterbury", "Camberwell", "Kew"]}
       />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://mouldrestoration.com.au/" },
+          { name: "Services", url: "https://mouldrestoration.com.au/services" },
+          { name: "Balwyn Mould Removal", url: "https://mouldrestoration.com.au/services/mould-removal-balwyn" }
+        ]}
+      />
       <Navigation />
 
-      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-4 text-sm font-semibold">
-            <Clock className="w-4 h-4" />
-            <span>Professional Mould Service - Same-day Available 7am-7pm in Balwyn</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
-              Call 1800 954 117
-            </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
+            <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
+            <span className="sm:hidden">7 AM - 7PM Daily</span>
+            <span>1800 954 117</span>
+            <span className="hidden sm:inline">admin@mouldandrestoration.com.au</span>
+            <span>Melbourne, VIC 📍</span>
           </div>
         </div>
       </div>
@@ -65,7 +73,7 @@ export const Balwyn = () => {
               Professional Mould Removal & Inspection in Balwyn, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Balwyn's prestigious residential area and grammar school precinct. IICRC-certified technicians with 5+ years experience treating heritage homes, family estates, and established residential properties. same-day professional service, 100+ properties restored with 5.0/5 star rating.
+              Melbourne's premier mould removal specialists serving Balwyn's established eastern suburbs properties, period homes, and leafy street residences. IICRC-certified technicians with 5+ years experience treating heritage homes, Victorian-era properties, and established family estates. Same-day service available, 100+ properties restored with 5.0/5 star rating from Balwyn homeowners.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -76,21 +84,21 @@ export const Balwyn = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
-                  <span>Prestigious residential specialists</span>
+                  <span>Established eastern suburbs specialist</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent-blue" />
-                  <span>Grammar school area expertise</span>
+                  <span>Period home preservation expertise</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-success-green" />
-                  <span>Heritage home preservation</span>
+                  <span>Heritage home treatment</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
-                  <span>Family estate protection</span>
+                  <span>Leafy street property solutions</span>
                 </div>
               </div>
             </div>
@@ -98,10 +106,10 @@ export const Balwyn = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Professional Mould Service - Call Now: 1800 954 117
+                Call Balwyn Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
-                Schedule Free Balwyn Mould Inspection
+                Schedule Balwyn Mould Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
@@ -109,7 +117,7 @@ export const Balwyn = () => {
         </div>
       </section>
 
-      {/* Local Area Expertise Section */}
+      {/* Balwyn Melbourne Local Area Expertise */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary mb-8">Balwyn Melbourne Local Area Expertise</h2>
@@ -119,24 +127,24 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Balwyn Property Landscape</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn sits 10km east of Melbourne CBD, bordered by Whitehorse Road, Burke Road, and Cotham Road. Known for its prestigious residential character, excellent schools, and heritage-listed properties, Balwyn presents unique mould challenges across different architectural eras and property types.
+                  Balwyn sits 10km east of Melbourne CBD, encompassing postcode 3103 and renowned as one of Melbourne's most established and prestigious eastern suburbs. The suburb features tree-lined streets with Victorian and Edwardian homes, post-war family residences, and contemporary developments, all set within mature leafy environments.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Edwardian and Federation homes from 1900s-1920s with period features</span>
+                    <span>Victorian and Edwardian heritage homes from 1890s-1920s along main avenues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Art Deco apartments and homes from 1930s-1940s in central Balwyn</span>
+                    <span>Post-war brick family homes from 1940s-1960s in established neighborhoods</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>1960s-1980s family homes with brick construction near schools</span>
+                    <span>Contemporary luxury developments respecting heritage streetscape character</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Contemporary luxury developments along Burke Road corridor</span>
+                    <span>Period apartment buildings and modern unit developments in shopping precincts</span>
                   </li>
                 </ul>
               </CardContent>
@@ -146,20 +154,24 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Impact on Balwyn</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn experiences Melbourne's temperate oceanic climate with specific challenges from elevated topography, mature tree canopies around heritage properties, and the microclimate effects of established residential density.
+                  Balwyn's eastern suburbs location experiences Melbourne's temperate oceanic climate with continental influences, enhanced by extensive mature tree coverage creating natural microclimates. Annual rainfall of 650mm combines with established canopy coverage to create complex moisture management challenges.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Elevated position creating temperature variations affecting heritage properties</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Summer shade from mature tree canopy reducing direct solar drying effects</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Mature garden environments reducing air circulation around homes</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Winter moisture retention in established gardens and under tree coverage</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Established tree root systems affecting foundation drainage</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Leafy street drainage patterns affected by root systems and garden beds</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Period home heating and cooling systems interacting with natural humidity</span>
                   </li>
                 </ul>
               </CardContent>
@@ -169,20 +181,24 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Balwyn Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Balwyn Park to the prestigious grammar schools corridor, Balwyn's heritage significance and educational excellence requires specialized mould treatment approaches that preserve architectural integrity while maintaining family-friendly environments.
+                  From Balwyn Shopping Village to the prestigious schools precinct including Balwyn High School and private colleges, Balwyn's established community presents specific mould challenges. Period properties and mature landscapes require expert moisture management while preserving neighborhood character.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage overlay restrictions requiring approved preservation methods</span>
+                    <span>Whitehorse Road heritage properties with original building materials requiring preservation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Grammar school proximity requiring child-safe treatment protocols</span>
+                    <span>Balwyn Shopping Village proximity commercial and residential moisture interactions</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Burke Road shopping precinct affecting commercial property ventilation</span>
+                    <span>Schools precinct established homes with educational facility vicinity considerations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Maranoa Gardens and parklands proximity affecting natural drainage patterns</span>
                   </li>
                 </ul>
               </CardContent>
@@ -194,30 +210,30 @@ export const Balwyn = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage and Period Property Challenges</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Period & Heritage Home Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's heritage properties, including Edwardian, Federation, and Art Deco homes built between 1900-1950, present unique mould challenges due to their period construction methods, original materials, and preservation requirements.
+                  Balwyn's Victorian and Edwardian heritage homes face unique mould challenges from original building materials, period construction methods, and the need to balance heritage preservation with modern comfort and moisture management requirements.
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Original timber features with poor ventilation behind wall cavities</span>
+                    <span>Victorian-era timber framing and weatherboard with original ventilation systems</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Period plaster and lath construction susceptible to moisture penetration</span>
+                    <span>Period slate and terracotta roofing with age-related deterioration and leak risks</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Heritage-listed restrictions limiting modern ventilation installations</span>
+                    <span>Heritage brick and mortar work affected by Melbourne's freeze-thaw cycles</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Original roofing materials with age-related water ingress issues</span>
+                    <span>Original timber window frames and sashes requiring moisture-appropriate maintenance</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Period bathroom and laundry areas lacking modern extraction systems</span>
+                    <span>Period home cellars and basements in naturally moist established garden environments</span>
                   </li>
                 </ul>
               </CardContent>
@@ -225,30 +241,30 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Grammar School Area Specific Risk Factors</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Balwyn Leafy Environment Risk Factors</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's role as Melbourne's premier grammar school precinct creates specific mould challenges in family homes with study areas, multi-generational living arrangements, and properties requiring pristine indoor air quality for children's health.
+                  Balwyn's established leafy streets and mature gardens create beautiful but challenging environments for moisture management, with established trees, extensive gardens, and natural drainage patterns affecting building performance and mould risk.
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Family homes with dedicated study and homework areas requiring optimal air quality</span>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Mature street trees creating canopy humidity and affecting natural building drying</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Multi-generational properties with varying humidity tolerance levels</span>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Established garden beds with extensive irrigation affecting foundation moisture</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>High-investment properties requiring immediate mould response to protect values</span>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Tree root systems affecting traditional drainage and creating moisture pockets</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Established gardens creating moisture retention around period properties</span>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Autumn leaf fall creating moisture retention around building foundations</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Premium renovation work requiring protection during mould treatment</span>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <span>Natural shelter belts reducing air circulation and moisture evaporation</span>
                   </li>
                 </ul>
               </CardContent>
@@ -257,122 +273,34 @@ export const Balwyn = () => {
         </div>
       </section>
 
-      {/* Property Types & Services */}
+      {/* Professional Service Details */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8">Balwyn Property Types We Service</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-primary">Heritage Homes</h3>
-                <p className="text-muted-foreground mb-4">Edwardian and Federation properties from 1900s-1920s featuring period details, original timber, heritage plaster, and preservation requirements.</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Heritage-sensitive techniques</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Period feature preservation</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Council approval liaison</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-primary">Family Estates</h3>
-                <p className="text-muted-foreground mb-4">Established family homes in the grammar school precinct with multiple bedrooms, study areas, and premium finishes requiring child-safe treatment.</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Child-safe treatment protocols</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Study area air quality priority</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>School term scheduling</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-primary">Art Deco Properties</h3>
-                <p className="text-muted-foreground mb-4">1930s-1940s Art Deco apartments and homes with distinctive architectural features, original fixtures, and unique ventilation challenges.</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Period-appropriate restoration</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Original feature protection</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Vintage material compatibility</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold mb-3 text-primary">Contemporary Luxury</h3>
-                <p className="text-muted-foreground mb-4">Modern luxury homes and renovated properties with high-end finishes, integrated systems, and premium indoor air quality requirements.</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Luxury finish preservation</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Integrated HVAC coordination</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
-                    <span>Premium treatment standards</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <h2 className="text-3xl font-bold text-primary mb-8">Our Balwyn Mould Removal Process</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Professional Mould Removal Service Details for Balwyn</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage-Focused Assessment & Documentation</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certification & Melbourne Expertise</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Balwyn mould removal process begins with heritage-sensitive assessment using advanced detection technology specifically calibrated for period properties and modern requirements in Melbourne's prestigious residential areas.
+                  Our Balwyn mould removal team holds comprehensive IICRC (Institute of Inspection, Cleaning and Restoration Certification) credentials specifically relevant to period homes, heritage properties, and Melbourne's eastern suburbs established residential environments.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage property moisture mapping with preservation priorities</span>
+                    <span>Water Damage Restoration (WRT) certification for heritage and period home environments</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Grammar school area air quality assessment for children's health</span>
+                    <span>Applied Structural Drying (ASD) for period building materials and established homes</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Period construction material analysis and compatibility testing</span>
+                    <span>Mould remediation specialist training for heritage and established residential properties</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Council heritage compliance documentation preparation</span>
+                    <span>Eastern suburbs and leafy environment property expertise with character preservation</span>
                   </li>
                 </ul>
               </CardContent>
@@ -380,57 +308,57 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Family-Safe Containment & Protection</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Balwyn-Specific Treatment Approaches</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's prestigious residential character requires specialized containment strategies that protect family members, preserve heritage features, and maintain the educational environment standards expected in the grammar school precinct.
+                  Our approach to Balwyn properties recognizes the unique requirements of heritage preservation, established garden environments, and the specific challenges of maintaining period homes in Melbourne's leafy eastern suburbs while respecting neighborhood character.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Child and family-safe barrier systems for educational households</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-appropriate treatment methods preserving period home character and value</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage feature protection during remediation processes</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Leafy environment techniques accounting for ongoing natural moisture sources</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Study area isolation to maintain educational activities</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coordinated scheduling respecting established neighborhood quiet periods</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Premium property preservation with minimal disruption protocols</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Garden and landscape moisture integration with building treatment planning</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
-          <h2 className="text-3xl font-bold text-primary mb-8">Professional Remediation Techniques</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Advanced Equipment & Technology for Balwyn Properties</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage-Appropriate Mould Removal</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Home Assessment Technology</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's heritage and period properties require specialized techniques that eliminate mould colonies while preserving architectural significance, original materials, and historical integrity.
+                  Balwyn's period home environment requires advanced diagnostic equipment capable of sensitive assessment of heritage materials, original building systems, and natural moisture patterns while protecting valuable architectural features and established character.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Conservation-grade techniques for period plaster and timber features</span>
+                    <span>Thermal imaging cameras for heritage building comprehensive moisture assessment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Original material preservation during mould colony elimination</span>
+                    <span>Professional moisture meters calibrated for period building materials and finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage overlay compliance with approved restoration methods</span>
+                    <span>Heritage-safe air quality testing equipment with precision results for period homes</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Period-appropriate ventilation integration solutions</span>
+                    <span>Garden and natural environment moisture impact assessment with seasonal monitoring</span>
                   </li>
                 </ul>
               </CardContent>
@@ -438,26 +366,26 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Post-Treatment Verification</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage-Safe Treatment Equipment</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Balwyn post-treatment verification ensures complete mould elimination with comprehensive testing protocols designed for grammar school area families and Melbourne's heritage property standards.
+                  Our Balwyn operations utilize professional-grade equipment designed for period home environments, ensuring effective treatment while protecting heritage features, original materials, and maintaining established neighborhood standards throughout remediation.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Independent laboratory air quality certification for children's health</span>
+                    <span>HEPA-filtered air systems ensuring heritage home air quality during treatment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage material moisture content verification</span>
+                    <span>Quiet-operation equipment respecting established neighborhood tranquility</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Educational environment clearance for study areas</span>
+                    <span>Heritage material-compatible dehumidification systems for period home contents</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>12-month premium treatment warranty with heritage protection</span>
+                    <span>Period building-safe drying equipment protecting original architectural elements</span>
                   </li>
                 </ul>
               </CardContent>
@@ -474,26 +402,26 @@ export const Balwyn = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Local Melbourne Knowledge Since 2019</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Local Balwyn Heritage & Period Home Expertise Since 2019</h3>
                 <p className="text-muted-foreground mb-4">
-                  As Balwyn's trusted mould removal specialists with over 5 years of experience in Melbourne's prestigious eastern suburbs, we understand the unique challenges of heritage properties, grammar school area requirements, and family home preservation.
+                  As Balwyn's trusted heritage and period home mould removal specialists with over 5 years of experience in Melbourne's established eastern suburbs, we understand the unique requirements of heritage properties, leafy environments, and established residential communities.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Balwyn heritage and period property mould issues</span>
+                    <span>5+ years specializing in Balwyn heritage and period home property issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>100+ Balwyn prestigious residential properties successfully restored</span>
+                    <span>100+ Melbourne heritage and established properties successfully restored</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Grammar school precinct family home expertise</span>
+                    <span>Eastern suburbs leafy environment and mature landscape specialized experience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage preservation and council compliance specialists</span>
+                    <span>Heritage preservation-focused service approach with character protection priorities</span>
                   </li>
                 </ul>
               </CardContent>
@@ -501,26 +429,26 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Same-Day Response</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Professional Service</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide professional service Same-day professional service to Balwyn properties, operating 7am-7pm daily with Professional service line availability. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide professional service to Balwyn heritage and residential properties, operating 7am-7pm daily with same-day availability during business hours. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>IICRC certification in mould remediation and heritage restoration</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>IICRC certification in mould remediation and heritage property restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Same-day professional service guarantee to Balwyn postcodes 3103, 3104</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional service guarantee to Balwyn postcode 3103</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Professional service line: 1800 954 117</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>School term-aware scheduling for grammar school families</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Same-day service scheduling with heritage property consultation available</span>
                   </li>
                 </ul>
               </CardContent>
@@ -532,24 +460,24 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Insurance Work Welcome & 100% Satisfaction</h3>
                 <p className="text-muted-foreground mb-4">
-                  We work directly with all major Australian insurance providers and offer comprehensive documentation for claims related to water damage, heritage property issues, and mould growth in Balwyn's prestigious properties.
+                  We work directly with all major Australian insurance providers and heritage property insurance programs, offering comprehensive documentation for claims related to weather events, period building issues, and established property maintenance concerns.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Direct insurance billing available for approved heritage property claims</span>
+                    <span>Direct insurance billing for approved heritage and established property claims</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Heritage-specific damage documentation and photo evidence</span>
+                    <span>Comprehensive documentation for period home insurance requirements</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>100% satisfaction guarantee on all Balwyn mould removal work</span>
+                    <span>100% satisfaction guarantee on all Balwyn heritage and period home services</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>12-month warranty on professional heritage-appropriate services</span>
+                    <span>12-month warranty on professional heritage property remediation services</span>
                   </li>
                 </ul>
               </CardContent>
@@ -557,26 +485,26 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Customer Reviews</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Balwyn Heritage Community Reviews</h3>
                 <p className="text-muted-foreground mb-4">
-                  With over 50+ verified 5-star reviews from Balwyn property owners, families in the grammar school precinct, and heritage home specialists, we're the most trusted mould removal service in prestigious eastern Melbourne.
+                  With over 50+ verified 5-star reviews from Balwyn heritage property owners, established families, and eastern suburbs residents, we're Melbourne's most trusted heritage and period home mould removal service specializing in leafy established areas.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5.0/5 star rating across Google, Facebook, and heritage property directories</span>
+                    <span>5.0/5 star rating across Google, heritage directories, and established community networks</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>50+ verified customer reviews from Balwyn family homeowners</span>
+                    <span>50+ verified reviews from Balwyn heritage property owners and established residents</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Trusted by grammar school community families and heritage societies</span>
+                    <span>Trusted by local heritage builders and established property maintenance companies</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Recommended by prestige real estate agents and heritage consultants</span>
+                    <span>Recommended by eastern suburbs real estate agents specializing in period properties</span>
                   </li>
                 </ul>
               </CardContent>
@@ -585,34 +513,30 @@ export const Balwyn = () => {
         </div>
       </section>
 
-      {/* Local Mould Prevention Tips for Balwyn */}
+      {/* Comprehensive Service Process */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8">Local Mould Prevention Tips for Balwyn Properties</h2>
+          <h2 className="text-3xl font-bold text-primary mb-8">Our Comprehensive 5-Step Balwyn Heritage Home Mould Removal Process</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Considerations for Balwyn</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 1: Initial Assessment & Heritage Consultation</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's elevated position experiences Melbourne's temperate oceanic climate with specific challenges from established gardens, heritage property materials, and the microclimate effects of the grammar school precinct's mature tree canopy.
+                  Our Balwyn assessment process begins with comprehensive evaluation designed for heritage properties, considering original building materials, period construction methods, and the specific moisture challenges of established leafy environments.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Summer (Dec-Feb):</strong> Monitor heritage properties for heat expansion affecting period materials</span>
+                    <span>Heritage property assessment with character protection and preservation analysis</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Autumn (Mar-May):</strong> Clear established garden debris from heritage guttering systems</span>
+                    <span>Period building evaluation with original material and construction documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Winter (Jun-Aug):</strong> Ensure adequate ventilation in period properties during heating season</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Spring (Sep-Nov):</strong> Check heritage roofing and original timber for weather damage</span>
+                    <span>Established garden and mature landscape moisture impact comprehensive assessment</span>
                   </li>
                 </ul>
               </CardContent>
@@ -620,26 +544,22 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Balwyn Humidity & Ventilation Management</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 2: Heritage-Safe Containment & Character Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's prestigious properties require specific ventilation strategies that respect heritage constraints while managing moisture from established gardens, family living requirements, and educational environment standards.
+                  Balwyn heritage properties require specialized containment strategies that protect original features, period details, and established home character while maintaining property functionality and neighborhood standards throughout treatment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Heritage Homes:</strong> Install conservation-approved exhaust systems preserving period features</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage property negative air systems protecting period features and finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Family Homes:</strong> Ensure study areas have optimal air quality for educational activities</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Original feature protection with conservation-grade protective barriers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Period Properties:</strong> Balance original ventilation with modern humidity control needs</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Garden Proximity:</strong> Manage moisture from established landscaping affecting foundations</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Neighborhood character maintenance ensuring continued property functionality</span>
                   </li>
                 </ul>
               </CardContent>
@@ -649,26 +569,22 @@ export const Balwyn = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Seasonal Maintenance for Balwyn Buildings</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 3: Safe Removal & Heritage Preservation</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's heritage and period properties require specialized seasonal maintenance addressing conservation requirements, family living needs, and Melbourne's variable weather impacts on prestigious residential areas.
+                  Our removal process for Balwyn properties utilizes heritage-appropriate methods suitable for period homes, ensuring effective treatment while maintaining property value, character features, and established neighborhood standards.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Inspect heritage roofing annually with conservation-approved contractors</span>
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage-safe techniques suitable for period properties with original materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Service period ventilation systems respecting heritage overlay requirements</span>
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Period home-appropriate antimicrobial treatments preserving character elements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Monitor established garden moisture impact on period foundations</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Maintain original timber features with conservation-grade treatments</span>
+                    <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Coordinated scheduling respecting established neighborhood patterns and quiet periods</span>
                   </li>
                 </ul>
               </CardContent>
@@ -676,72 +592,193 @@ export const Balwyn = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Warning Signs Specific to Balwyn Properties</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Step 4: Advanced Drying & Period Home Environment Restoration</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn's unique combination of heritage properties, family homes, and established gardens presents distinct warning signs that require immediate attention to preserve property values and family health.
+                  Balwyn heritage homes require sophisticated drying strategies that account for leafy environment moisture, original building materials, and the need to restore period home environments to optimal condition while preserving character.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Heritage Homes:</strong> Period plaster discolouration, original timber softening, heritage feature deterioration</span>
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Heritage home dehumidification systems suitable for original materials and contents</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Family Homes:</strong> Study area air quality decline, children's allergy symptoms, educational space odours</span>
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Period building material-appropriate drying protecting character features</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Garden Proximity:</strong> Foundation moisture staining, external wall dampness, landscaping over-watering effects</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span><strong>Prestigious Properties:</strong> Premium finish degradation, luxury bathroom humidity issues, investment property concerns</span>
+                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Continuous monitoring ensuring optimal heritage living environment conditions</span>
                   </li>
                 </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-primary">Step 5: Final Testing & Heritage Property Certification</h3>
+              <p className="text-muted-foreground mb-4">
+                Our final verification ensures complete treatment success with comprehensive testing protocols designed for heritage property standards, providing documentation suitable for period home requirements and established property insurance compliance.
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Independent laboratory air quality testing meeting heritage property health standards</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Period building material moisture verification and character feature preservation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Comprehensive clearance certificates for heritage property insurance documentation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <span>12-month treatment warranty with heritage property service support included</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Local Service Area */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-primary mb-8">Areas We Service Near Balwyn</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <p className="text-lg text-muted-foreground mb-6">
+                We provide heritage property-specialized mould removal services throughout Balwyn and nearby eastern suburbs Melbourne areas including:
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <p className="font-medium text-primary">Balwyn Areas:</p>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• Whitehorse Road heritage precinct</li>
+                    <li>• Balwyn Shopping Village surrounds</li>
+                    <li>• Schools precinct established homes</li>
+                    <li>• Maranoa Gardens vicinity</li>
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <p className="font-medium text-primary">Adjacent Eastern Suburbs:</p>
+                  <ul className="text-sm space-y-1 text-muted-foreground">
+                    <li>• Balwyn North</li>
+                    <li>• Canterbury</li>
+                    <li>• Camberwell</li>
+                    <li>• Kew</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Professional Service Times to Balwyn</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Heritage property emergency:</span>
+                    <span className="font-semibold text-blue-600">Same-day available</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Standard heritage appointments:</span>
+                    <span className="font-semibold text-success-green">Same day or next day</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Weekend availability:</span>
+                    <span className="font-semibold text-accent-blue">7 days a week</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Travel time from city:</span>
+                    <span className="font-semibold text-primary">20-30 minutes</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* Related Eastern Suburbs */}
+      <SuburbClusterLinks currentLocation="Balwyn" />
+
       {/* Contact Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-6 text-center">Get Your Free Balwyn Mould Inspection Today</h2>
-            <p className="text-lg text-muted-foreground mb-8 text-center">
-              Protect your Balwyn heritage property or family home from mould damage. Our IICRC-certified specialists provide same-day response with over 5 years of grammar school precinct and heritage preservation experience.
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Balwyn Heritage Property Mould Inspection Today</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Protect your Balwyn heritage or period home from moisture damage and environmental health risks. Expert assessment and remediation for established properties, period homes, and leafy street residences.
             </p>
 
-            <div className="bg-gradient-to-r from-primary/10 to-accent-blue/10 rounded-lg p-8 mb-8">
-              <h3 className="text-2xl font-bold text-primary mb-4 text-center">Balwyn Melbourne Mould Professional Service - Same-day Available 7am-7pm</h3>
-              <p className="text-center text-muted-foreground mb-6">
-                Serving Balwyn's heritage homes, grammar school families, and prestigious residential properties with Melbourne's most trusted heritage-sensitive mould removal specialists.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Professional Service - Same-day Available 7am-7pm: 1800 954 117
-                </Button>
-                <Button variant="outline" size="lg" className="bg-white text-primary border-primary hover:bg-primary hover:text-white">
-                  Schedule Balwyn Heritage Property Inspection
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Contact</h3>
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-accent-blue" />
+                      <span>admin@mouldandrestoration.com.au</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Clock className="w-5 h-5 text-accent-teal" />
+                      <span>Heritage property emergency response available</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Process</h3>
+                  <div className="space-y-3 text-left text-sm">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+                      <span>Free heritage property consultation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+                      <span>Same-day Balwyn inspection scheduling</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+                      <span>Heritage-safe assessment and period home evaluation</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
+                      <span>Character-preserving remediation methods</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
+                      <span>Final testing and heritage property certification</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 text-sm">
-              <div className="text-center">
-                <p className="text-muted-foreground">
-                  <strong>Balwyn Service Areas:</strong> Grammar school precinct, Balwyn Park surrounds, Burke Road corridor, heritage overlay areas, established residential estates
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Balwyn postcodes 3103, 3104 • Heritage-sensitive treatment • School term scheduling available
-                </p>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Phone className="w-5 h-5 mr-2" />
+                Balwyn Professional Service: 1800 954 117
+              </Button>
+              <Button variant="outline" size="lg">
+                Schedule Heritage Property Inspection
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
             </div>
+
+            <p className="text-sm text-muted-foreground mt-6">
+              Serving Balwyn heritage and established properties • Eastern suburbs specialists • Period home preservation experts
+            </p>
           </div>
         </div>
       </section>
