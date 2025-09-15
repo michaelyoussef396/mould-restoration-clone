@@ -61,7 +61,7 @@ export default function BrunswickMouldRemoval() {
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Clock className="h-4 w-4 text-blue-600 mr-2" />
-                  <span className="font-medium">2-Hour Emergency Response Brunswick</span>
+                  <span className="font-medium">2-Hour Professional Service - Same-day Available 7am-7pm Brunswick</span>
                 </div>
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Star className="h-4 w-4 text-yellow-500 mr-2" />
@@ -106,7 +106,7 @@ export default function BrunswickMouldRemoval() {
                     <Clock className="h-5 w-5 text-blue-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">Response Time</h4>
-                      <p className="text-gray-600 text-sm">2-hour emergency response to Brunswick</p>
+                      <p className="text-gray-600 text-sm">Same-day professional service to Brunswick</p>
                     </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function BrunswickMouldRemoval() {
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">2-hour emergency response to Brunswick and surrounding suburbs</span>
+                        <span className="text-gray-700">Same-day professional service to Brunswick and surrounding suburbs</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
@@ -358,7 +358,7 @@ export default function BrunswickMouldRemoval() {
               Need Emergency Mould Removal in Brunswick?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Don't let mould compromise your Brunswick property. Our IICRC certified technicians provide 24/7 emergency response with 2-hour arrival time.
+              Don't let mould compromise your Brunswick property. Our IICRC certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival time.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200">

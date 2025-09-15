@@ -130,7 +130,7 @@ const LOCAL_SEO_TRACKING_SCRIPT = `
         if (target.textContent.includes('Emergency') || target.textContent.includes('emergency')) {
           gtag('event', '${ANALYTICS_CONFIG.LOCAL_SEO_EVENTS.EMERGENCY_CALL}', {
             event_category: 'Emergency',
-            event_label: 'Melbourne Emergency Response',
+            event_label: 'Melbourne Professional Service - Same-day Available 7am-7pm',
             value: 1
           });
         }

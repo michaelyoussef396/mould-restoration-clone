@@ -76,11 +76,11 @@ export const ProfessionalMouldInspections = () => {
         serviceUrl="https://mouldrestoration.com.au/services/professional-mould-inspections"
         priceRange="$$"
       />
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 Suspected Mold Emergency? We respond within 2 hours</span>
-          <span className="sm:hidden">Emergency Response Available</span>
+          <span className="hidden sm:block">Professional Mould Service - Same-day Available 7am-7pm</span>
+          <span className="sm:hidden">Same-day Service Available</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -139,16 +139,15 @@ export const ProfessionalMouldInspections = () => {
                 IICRC-certified thermal imaging and air quality testing identifies hidden mold before it becomes a major problem.
               </p>
               
-              {/* Emergency vs. Scheduled CTAs */}
+              {/* Professional Service CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  variant="emergency" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-4 h-auto bg-blue-600 hover:bg-blue-700 text-white"
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Inspection - Call Now
+                    Professional Inspection - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -268,32 +267,183 @@ export const ProfessionalMouldInspections = () => {
         </div>
       </section>
 
-      {/* Process Detail */}
+      {/* Process Detail - Comprehensive Explanation */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Professional Inspection Process
+              Our Professional Inspection Process - Complete Transparency
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive 5-step assessment using advanced technology and industry expertise
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Every Melbourne mould inspection follows our IICRC-certified 5-step process using state-of-the-art equipment.
+              Here's exactly what happens during your assessment and why each step matters for accurate results.
             </p>
           </div>
-          
-          <div className="space-y-8">
+
+          <div className="space-y-12">
             {assessmentSteps.map((step, index) => (
-              <div key={index} className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg">
-                    {index + 1}
+              <div key={index} className="bg-gray-50 rounded-lg p-8">
+                <div className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl">
+                      {index + 1}
+                    </div>
                   </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{step.description}</p>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                    <p className="text-gray-700 leading-relaxed text-lg mb-6">{step.description}</p>
+
+                    {/* Detailed breakdown for each step */}
+                    {index === 0 && (
+                      <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                        <h4 className="font-bold text-gray-900 mb-3">What This Includes:</h4>
+                        <ul className="space-y-2 text-gray-700">
+                          <li>• Visual examination of all accessible areas including walls, ceilings, floors, and concealed spaces</li>
+                          <li>• Photography documentation of all findings with detailed captions</li>
+                          <li>• Moisture meter readings at multiple points to identify water activity levels</li>
+                          <li>• Assessment of HVAC systems, plumbing areas, and potential moisture sources</li>
+                          <li>• Initial mould species identification based on visual characteristics and growth patterns</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-gray-600 italic">
+                          Equipment Used: Professional moisture meters (pin-type and pinless), digital cameras with macro lenses,
+                          flashlights, and inspection mirrors for hard-to-reach areas.
+                        </p>
+                      </div>
+                    )}
+
+                    {index === 1 && (
+                      <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                        <h4 className="font-bold text-gray-900 mb-3">Our Advanced Technology:</h4>
+                        <ul className="space-y-2 text-gray-700">
+                          <li>• FLIR thermal imaging cameras detect temperature variations as small as 0.1°C</li>
+                          <li>• Identify moisture behind walls, under floors, and in ceiling cavities without damage</li>
+                          <li>• Thermal signatures reveal patterns invisible to visual inspection</li>
+                          <li>• Digital thermal images included in your comprehensive report</li>
+                          <li>• Cross-reference thermal findings with moisture readings for accuracy</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-gray-600 italic">
+                          Why This Matters: 40% of mould growth occurs in hidden areas. Thermal imaging prevents costly surprises
+                          by finding problems before they become visible to the naked eye.
+                        </p>
+                      </div>
+                    )}
+
+                    {index === 2 && (
+                      <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                        <h4 className="font-bold text-gray-900 mb-3">Scientific Air Quality Assessment:</h4>
+                        <ul className="space-y-2 text-gray-700">
+                          <li>• Air samples collected using calibrated sampling pumps at 15 litres per minute</li>
+                          <li>• Multiple sampling locations including affected areas and clean reference points</li>
+                          <li>• Laboratory analysis identifies specific mould species and spore concentrations</li>
+                          <li>• Results compared against Australian indoor air quality guidelines</li>
+                          <li>• Assessment of health risks based on spore types and concentrations found</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-gray-600 italic">
+                          Laboratory Partner: All samples processed by NATA-accredited laboratories using industry-standard
+                          protocols for accurate, reliable results you can trust.
+                        </p>
+                      </div>
+                    )}
+
+                    {index === 3 && (
+                      <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                        <h4 className="font-bold text-gray-900 mb-3">Root Cause Investigation:</h4>
+                        <ul className="space-y-2 text-gray-700">
+                          <li>• Detailed investigation of plumbing systems, roof integrity, and drainage issues</li>
+                          <li>• Ventilation assessment including exhaust fans, natural airflow, and humidity control</li>
+                          <li>• Building envelope inspection for air leaks and thermal bridging</li>
+                          <li>• Occupant behaviour factors that may contribute to moisture problems</li>
+                          <li>• Seasonal and weather-related moisture patterns specific to Melbourne climate</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-gray-600 italic">
+                          Prevention Focus: Identifying the source prevents recurrence. Our 5+ years Melbourne experience
+                          helps us spot common local issues like poor subfloor ventilation and seasonal condensation problems.
+                        </p>
+                      </div>
+                    )}
+
+                    {index === 4 && (
+                      <div className="bg-white p-6 rounded-lg border-l-4 border-blue-600">
+                        <h4 className="font-bold text-gray-900 mb-3">Your Comprehensive Action Plan:</h4>
+                        <ul className="space-y-2 text-gray-700">
+                          <li>• Detailed written report with photographs, thermal images, and laboratory results</li>
+                          <li>• Priority ranking of issues from immediate health risks to preventative measures</li>
+                          <li>• Specific remediation recommendations with IICRC-compliant methods</li>
+                          <li>• Timeline for addressing each issue based on severity and practical considerations</li>
+                          <li>• Cost estimates for recommended work with transparent pricing breakdowns</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-gray-600 italic">
+                          Complete Transparency: Every recommendation includes the reason why it's needed, what happens if
+                          delayed, and alternative approaches when applicable. No surprise costs or hidden fees.
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Transparency Section */}
+          <div className="mt-16 bg-blue-50 rounded-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Commitment to Complete Transparency</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-bold text-gray-900 mb-3">Honest Pricing Approach</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Free basic visual inspection with any quote request</li>
+                  <li>• Advanced thermal imaging and air quality testing from $299</li>
+                  <li>• All costs explained upfront - no hidden fees or surprise charges</li>
+                  <li>• Detailed quote provided same-day for any recommended work</li>
+                  <li>• Payment options available including insurance claim assistance</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-3">Quality Guarantees</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• 100% satisfaction guarantee on all inspection services</li>
+                  <li>• IICRC-certified technicians with ongoing training requirements</li>
+                  <li>• Professional liability insurance covering all assessment work</li>
+                  <li>• Same-day report delivery with detailed findings and recommendations</li>
+                  <li>• Follow-up consultation included to discuss results and next steps</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQs for Process Transparency */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions About Our Inspection Process</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">How long does a typical inspection take?</h4>
+                <p className="text-gray-700">
+                  Basic visual inspections take 60-90 minutes. Comprehensive inspections with thermal imaging
+                  and air quality testing take 2-3 hours depending on property size. We never rush - thoroughness is key.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">What should I do to prepare for the inspection?</h4>
+                <p className="text-gray-700">
+                  Ensure access to all areas including subfloors, roof spaces, and storage areas. Remove furniture
+                  from suspected problem areas if possible. Have any relevant history available (leaks, repairs, etc.).
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">Do you find additional issues during inspections?</h4>
+                <p className="text-gray-700">
+                  Sometimes yes. If we discover significant issues beyond the original scope, we'll discuss them
+                  immediately and get your approval before any additional testing. Complete transparency means no surprises.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">What happens after the inspection is complete?</h4>
+                <p className="text-gray-700">
+                  You'll receive a comprehensive written report the same day, followed by a detailed discussion of
+                  findings. We'll explain all options, from immediate DIY steps to professional remediation services.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

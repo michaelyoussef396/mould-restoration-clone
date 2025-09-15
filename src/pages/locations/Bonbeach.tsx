@@ -17,7 +17,7 @@ export const Bonbeach = () => {
       <LocationPageSEO
         suburb="Bonbeach"
         title="Mould Removal Bonbeach - Beachfront Living Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Bonbeach Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Bonbeach mould inspection & removal."
+        description="Professional mould removal in Bonbeach Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Bonbeach mould inspection & removal."
         canonical="/services/mould-removal-bonbeach"
       />
 
@@ -40,13 +40,13 @@ export const Bonbeach = () => {
 
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Bonbeach</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Bonbeach</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -96,8 +96,8 @@ export const Bonbeach = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Bonbeach</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Bonbeach</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-success-green" />
@@ -118,7 +118,7 @@ export const Bonbeach = () => {
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -331,7 +331,7 @@ export const Bonbeach = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response within 2 hours to Bonbeach beachfront properties, operating 7am-7pm daily with 24/7 emergency availability. Licensed and insured for premium coastal properties across Melbourne's beachfront communities. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide emergency response Same-day professional service to Bonbeach beachfront properties, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability. Licensed and insured for premium coastal properties across Melbourne's beachfront communities. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -340,11 +340,11 @@ export const Bonbeach = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>2-hour emergency response guarantee to Bonbeach postcode 3196</span>
+                    <span>Same-day professional service guarantee to Bonbeach postcode 3196</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>24/7 emergency hotline: 1800 954 117</span>
+                    <span>Professional service hotline (7am-7pm): 1800 954 117</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -436,15 +436,15 @@ export const Bonbeach = () => {
               Need Immediate Mould Removal in Bonbeach?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Bonbeach beachfront home or direct beach access property. Our IICRC-certified technicians provide 24/7 emergency response with 2-hour arrival guarantee. Trusted by beachfront communities and direct beach access homes with a 5.0-star rating.
+              Don't let mould compromise your Bonbeach beachfront home or direct beach access property. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by beachfront communities and direct beach access homes with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Emergency Response</h3>
-                  <p className="mb-4">Call now for immediate mould removal Bonbeach Melbourne assistance. Our beachfront living specialists respond within 2 hours.</p>
+                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <p className="mb-4">Call now for immediate mould removal Bonbeach Melbourne assistance. Our beachfront living specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now
                   </Button>

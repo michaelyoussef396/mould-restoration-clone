@@ -65,7 +65,7 @@ export default function WilliamstownMouldRemoval() {
                   <Clock className="h-8 w-8 text-blue-600" />
                 </div>
                 <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Emergency Response</div>
+                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">

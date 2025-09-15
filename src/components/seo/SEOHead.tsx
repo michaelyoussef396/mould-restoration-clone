@@ -98,7 +98,7 @@ const generateLocationContent = (service: string, location: string, emergency?: 
     inspection: `Professional mould inspection ${location} Melbourne. Free thermal imaging assessment, air quality testing, detailed reports. ${responseTime.toLowerCase()}. Call 1800 954 117 for expert IICRC certified service.`,
     removal: `Expert mould removal ${location} Melbourne. IICRC certified safe elimination, complete restoration, 100% satisfaction guarantee. Serving ${location} with ${responseTime.toLowerCase()}. Call 1800 954 117.`,
     remediation: `Specialist subfloor mould remediation ${location} Melbourne. Under house moisture control, ventilation improvement, foundation protection. Professional ${location} service. Call 1800 954 117.`,
-    emergency: `Emergency mould removal ${location} Melbourne. 2 hour response time, immediate containment, health hazard assessment. Available 7am-7pm every day. Call 1800 954 117 now.`,
+    emergency: `Same-day Service Available 7am-7pm every day. Call 1800 954 117 now.`,
     fogging: `Advanced ULV fogging sanitisation ${location} Melbourne. Penetrates hard-to-reach spaces, comprehensive treatment, professional equipment. Expert ${location} service. Call 1800 954 117.`
   };
 
@@ -242,8 +242,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 // Specialized components for different page types
 export const HomePageSEO: React.FC = () => (
   <SEOHead
-    title="Emergency Mould Removal Melbourne - 2 Hour Response | Mould & Restoration Co"
-    description="Melbourne's premier mould removal service. Emergency response within 2 hours, IICRC certified technicians, 5+ years experience, 100+ properties restored. Call 1800 954 117 now."
+    title="Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+    description="Melbourne's premier mould removal service. Emergency response Same-day professional service, IICRC certified technicians, 5+ years experience, 100+ properties restored. Call 1800 954 117 now."
     keywords="emergency mould removal melbourne, professional mould inspection melbourne, same day mould removal, IICRC mould removal melbourne, melbourne mould experts"
     emergency={true}
   />

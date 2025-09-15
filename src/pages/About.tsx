@@ -70,8 +70,8 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
           <span className="sm:hidden">7am-7pm Everyday</span>
@@ -115,7 +115,7 @@ const About = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <Button 
-                  variant="emergency" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white" 
                   size="lg" 
                   className="text-lg px-8 py-4 h-auto"
                   asChild

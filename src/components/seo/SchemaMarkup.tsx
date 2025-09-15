@@ -313,7 +313,7 @@ export const OrganizationSchema: React.FC = () => {
       "Air Quality Testing",
       "Thermal Imaging",
       "Melbourne Property Services",
-      "Emergency Mould Response",
+      "Professional Service - Same-day Available 7am-7pm",
       "IICRC Standards"
     ],
 

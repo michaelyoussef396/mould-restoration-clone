@@ -19,7 +19,7 @@ export const ComprehensiveMouldRemoval = () => {
   const cleaningProcess = [
     {
       step: 1,
-      title: 'Emergency Assessment',
+      title: 'Professional Assessment',
       description: 'Rapid on-site evaluation to assess mold extent, health risks, and immediate containment needs.',
     },
     {
@@ -52,7 +52,7 @@ export const ComprehensiveMouldRemoval = () => {
       rating: 5,
     },
     {
-      text: "Emergency response was incredible - arrived within 2 hours on a weekend. Contained the mold spread and prevented further damage to our home.",
+      text: "Emergency response was incredible - arrived Same-day professional service on a weekend. Contained the mold spread and prevented further damage to our home.",
       name: "Lisa Chen",
       location: "Brighton",
       rating: 5,
@@ -61,11 +61,11 @@ export const ComprehensiveMouldRemoval = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 Serious Mold Problem? Emergency response within 2 hours</span>
-          <span className="sm:hidden">Emergency Mold Response</span>
+          <span className="hidden sm:block">🚨 Serious Mold Problem? Emergency response Same-day professional service</span>
+          <span className="sm:hidden">Professional Service - Same-day Available 7am-7pm</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -127,13 +127,13 @@ export const ComprehensiveMouldRemoval = () => {
               {/* Emergency vs. Scheduled CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <Button 
-                  variant="emergency" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white" 
                   size="lg" 
                   className="text-lg px-8 py-4 h-auto"
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Removal - Call Now
+                    Professional Service - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -253,34 +253,220 @@ export const ComprehensiveMouldRemoval = () => {
         </div>
       </section>
 
-      {/* Process Detail */}
+      {/* Process Detail - Complete Transparency */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Comprehensive Removal Process
+              Our Comprehensive Removal Process - Every Step Explained
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Systematic 5-step approach ensuring complete mold elimination and prevention
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Melbourne's most thorough mould removal process following strict IICRC guidelines. Here's exactly what we do,
+              why we do it, and what you can expect during each phase of your mould remediation.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="space-y-12">
             {cleaningProcess.map((process, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                    {process.step}
+              <div key={index} className="bg-gray-50 rounded-lg p-8">
+                <Card className="p-8 hover:shadow-lg transition-shadow border-l-4 border-blue-600">
+                  <div className="flex items-start space-x-6">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                      {process.step}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{process.title}</h3>
+                      <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                        {process.description}
+                      </p>
+
+                      {/* Detailed breakdown for each step */}
+                      {index === 0 && (
+                        <div className="bg-white p-6 rounded-lg border border-red-200">
+                          <h4 className="font-bold text-gray-900 mb-3">Professional Service - Same-day Available 7am-7pm Protocol:</h4>
+                          <ul className="space-y-2 text-gray-700 mb-4">
+                            <li>• Within 2 hours response time for Melbourne emergencies</li>
+                            <li>• Initial containment setup to prevent further contamination spread</li>
+                            <li>• Comprehensive visual assessment and documentation with digital photography</li>
+                            <li>• Moisture content readings using calibrated equipment at all affected areas</li>
+                            <li>• Air quality sampling to establish baseline contamination levels</li>
+                            <li>• Immediate health and safety assessment for occupants</li>
+                          </ul>
+                          <div className="bg-red-50 p-4 rounded border-l-4 border-red-500">
+                            <p className="text-sm text-red-800">
+                              <strong>Critical Health Considerations:</strong> Areas with extensive mould growth pose immediate health risks.
+                              We establish temporary barriers and recommend occupant relocation if spore concentrations exceed safe levels.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {index === 1 && (
+                        <div className="bg-white p-6 rounded-lg border border-orange-200">
+                          <h4 className="font-bold text-gray-900 mb-3">Professional Containment Systems:</h4>
+                          <ul className="space-y-2 text-gray-700 mb-4">
+                            <li>• 6-mil polyethylene barriers sealed with professional tapes and caulking</li>
+                            <li>• HEPA-filtered negative air machines creating -5 to -10 Pascal pressure differential</li>
+                            <li>• Airlock entry systems with sticky mat decontamination stations</li>
+                            <li>• Complete HVAC system isolation to prevent contamination spread</li>
+                            <li>• Critical barrier integrity testing using smoke pencils</li>
+                            <li>• Secondary containment for high-risk areas or extensive contamination</li>
+                          </ul>
+                          <div className="bg-orange-50 p-4 rounded border-l-4 border-orange-500">
+                            <p className="text-sm text-orange-800">
+                              <strong>Why This Matters:</strong> Without proper containment, mould spores spread to clean areas during removal,
+                              often making the problem worse. Our systems meet or exceed IICRC S520 containment standards.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {index === 2 && (
+                        <div className="bg-white p-6 rounded-lg border border-blue-200">
+                          <h4 className="font-bold text-gray-900 mb-3">IICRC-Certified Removal Techniques:</h4>
+                          <ul className="space-y-2 text-gray-700 mb-4">
+                            <li>• HEPA vacuum pre-cleaning to capture loose spores and debris</li>
+                            <li>• Controlled demolition using hand tools to minimize airborne disturbance</li>
+                            <li>• Double-bagging protocol for contaminated materials with proper labeling</li>
+                            <li>• Surface cleaning using EPA-registered antimicrobial solutions</li>
+                            <li>• HEPA vacuum cleaning of all surfaces including structural elements</li>
+                            <li>• Progressive cleaning from most contaminated to least contaminated areas</li>
+                          </ul>
+                          <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+                            <p className="text-sm text-blue-800">
+                              <strong>Safety First:</strong> Our technicians wear full respiratory protection (P100 filters),
+                              disposable coveralls, and follow strict decontamination procedures. Your family's safety is our priority.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {index === 3 && (
+                        <div className="bg-white p-6 rounded-lg border border-green-200">
+                          <h4 className="font-bold text-gray-900 mb-3">Advanced Sanitization Methods:</h4>
+                          <ul className="space-y-2 text-gray-700 mb-4">
+                            <li>• EPA-registered antimicrobial treatment application to all surfaces</li>
+                            <li>• ULV (Ultra-Low Volume) fogging for complete coverage in hard-to-reach areas</li>
+                            <li>• Encapsulant application on porous surfaces that can't be removed</li>
+                            <li>• HVAC system cleaning and sanitization including ductwork treatment</li>
+                            <li>• Hydroxyl generator treatment for advanced air purification</li>
+                            <li>• Surface biocide application with residual antimicrobial protection</li>
+                          </ul>
+                          <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+                            <p className="text-sm text-green-800">
+                              <strong>Long-term Protection:</strong> Our sanitization process includes residual protection that continues
+                              working for weeks after application, preventing mould regrowth during the critical recovery period.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {index === 4 && (
+                        <div className="bg-white p-6 rounded-lg border border-purple-200">
+                          <h4 className="font-bold text-gray-900 mb-3">Independent Clearance Verification:</h4>
+                          <ul className="space-y-2 text-gray-700 mb-4">
+                            <li>• Third-party air quality testing by NATA-accredited laboratories</li>
+                            <li>• Multiple sampling locations throughout treated and adjacent areas</li>
+                            <li>• Comparison against Australian air quality guidelines and baseline readings</li>
+                            <li>• Visual inspection using UV lights and magnification equipment</li>
+                            <li>• Moisture content verification to ensure dry conditions maintained</li>
+                            <li>• Comprehensive clearance documentation for insurance and health records</li>
+                          </ul>
+                          <div className="bg-purple-50 p-4 rounded border-l-4 border-purple-500">
+                            <p className="text-sm text-purple-800">
+                              <strong>Your Guarantee:</strong> We don't consider the job complete until independent testing confirms
+                              successful elimination. If clearance testing fails, we return at no charge to address any issues.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{process.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {process.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </div>
             ))}
+          </div>
+
+          {/* Pricing Transparency Section */}
+          <div className="mt-16 bg-blue-50 rounded-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Complete Pricing Transparency</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-bold text-gray-900 mb-3">How We Determine Pricing</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Square footage of affected areas requiring treatment</li>
+                  <li>• Extent of contamination based on visual assessment and testing</li>
+                  <li>• Type of materials affected (porous vs. non-porous surfaces)</li>
+                  <li>• Complexity of containment setup and access challenges</li>
+                  <li>• Required post-treatment verification and testing</li>
+                  <li>• Time estimate based on IICRC productivity standards</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-3">What's Always Included</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Complete containment setup and breakdown</li>
+                  <li>• All required safety equipment and protective gear</li>
+                  <li>• Proper disposal of contaminated materials</li>
+                  <li>• Post-treatment cleanup and HEPA vacuuming</li>
+                  <li>• Basic antimicrobial treatment of all surfaces</li>
+                  <li>• Written documentation and progress photographs</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 bg-white p-6 rounded-lg border border-blue-200">
+              <h4 className="font-bold text-gray-900 mb-3">Our No-Surprise Guarantee</h4>
+              <p className="text-gray-700 mb-3">
+                Once work begins, the price won't change unless we discover significant additional contamination
+                beyond what was visible during the initial assessment. If this happens:
+              </p>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Work stops immediately while we discuss the new findings with you</li>
+                <li>• We provide a detailed explanation and additional cost estimate</li>
+                <li>• You choose whether to proceed with additional work or modify the scope</li>
+                <li>• All pricing changes require your written approval before continuing</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Quality Assurance and Guarantee Details */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our 100% Satisfaction Guarantee Details</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">Workmanship Guarantee</h4>
+                <p className="text-gray-700 mb-3">
+                  All mould removal work guaranteed for 12 months when recommended moisture control measures are implemented.
+                </p>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li>• Free return service for any regrowth in treated areas</li>
+                  <li>• Guarantee applies when moisture sources are controlled</li>
+                  <li>• Written warranty provided with final documentation</li>
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">Clearance Testing Promise</h4>
+                <p className="text-gray-700 mb-3">
+                  Independent air quality testing must show successful elimination or we return at no charge.
+                </p>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li>• Testing by independent NATA-accredited laboratory</li>
+                  <li>• Results compared to established health guidelines</li>
+                  <li>• Free remedial work if testing shows incomplete removal</li>
+                </ul>
+              </div>
+              <div className="bg-white p-6 rounded-lg border border-gray-200">
+                <h4 className="font-bold text-gray-900 mb-3">Customer Satisfaction Promise</h4>
+                <p className="text-gray-700 mb-3">
+                  If you're not completely satisfied with our service, we'll make it right or refund your money.
+                </p>
+                <ul className="space-y-1 text-sm text-gray-600">
+                  <li>• Professional service meeting IICRC standards</li>
+                  <li>• Complete cleanup and site restoration</li>
+                  <li>• Respectful treatment of your property and family</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -360,13 +546,13 @@ export const ComprehensiveMouldRemoval = () => {
             </Card>
           </div>
           
-          {/* Emergency Response Availability */}
+          {/* Professional Service - Same-day Available 7am-7pm Availability */}
           <div className="max-w-2xl mx-auto">
             <Card className="p-6 bg-orange-50 border border-orange-200">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold text-orange-800">Emergency Team Available</span>
+                  <span className="font-semibold text-orange-800">Same-day Service Available</span>
                 </div>
                 <p className="text-orange-700 mb-4">Responding to 4 emergency calls in Melbourne today</p>
                 <div className="flex items-center justify-center gap-2 text-green-700">

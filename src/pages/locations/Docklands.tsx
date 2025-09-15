@@ -16,8 +16,8 @@ export const Docklands = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         suburb="Docklands"
-        title="Mould Removal Docklands Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in Docklands Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Docklands mould inspection & removal."
+        title="Mould Removal Docklands Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in Docklands Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Docklands mould inspection & removal."
         canonical="/services/mould-removal-docklands"
       />
 
@@ -40,13 +40,13 @@ export const Docklands = () => {
 
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Docklands</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Docklands</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -92,7 +92,7 @@ export const Docklands = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Docklands</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,16 +114,16 @@ export const Docklands = () => {
                   <span>Harbour precinct building protection</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
-                  <span>24/7 emergency availability</span>
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>Professional service hotline (7am-7pm) availability</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Docklands Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Docklands Inspection
@@ -145,7 +145,7 @@ export const Docklands = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The precinct's position on Melbourne's western harbour creates unique moisture challenges, while new construction building systems require different approaches than heritage properties. Properties around Harbour Esplanade, near Marvel Stadium, and throughout NewQuay and Victoria Harbour experience varying humidity patterns due to waterfront exposure and modern building technologies. Our emergency mould removal Docklands service responds within 2 hours to protect your modern apartment or commercial space.
+              The precinct's position on Melbourne's western harbour creates unique moisture challenges, while new construction building systems require different approaches than heritage properties. Properties around Harbour Esplanade, near Marvel Stadium, and throughout NewQuay and Victoria Harbour experience varying humidity patterns due to waterfront exposure and modern building technologies. Our emergency mould removal Docklands service responds Same-day professional service to protect your modern apartment or commercial space.
             </p>
           </div>
 
@@ -216,9 +216,9 @@ export const Docklands = () => {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-primary">Waterfront Emergency Response</h4>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Waterfront Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Docklands, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your modern living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal Docklands, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your modern living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -377,7 +377,7 @@ export const Docklands = () => {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Waterfront Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Waterfront Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• 2-hour response time to Docklands</li>
                     <li>• Building management notification</li>
@@ -561,7 +561,7 @@ export const Docklands = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Contemporary appointments:</span>
@@ -597,8 +597,8 @@ export const Docklands = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Modern Service Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 modern emergency)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -642,7 +642,7 @@ export const Docklands = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Docklands Modern Emergency: 1800 954 117
               </Button>

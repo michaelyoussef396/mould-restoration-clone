@@ -61,7 +61,7 @@ export default function HeidelbergMouldRemoval() {
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Clock className="h-4 w-4 text-blue-600 mr-2" />
-                  <span className="font-medium">2-Hour Emergency Response Heidelberg</span>
+                  <span className="font-medium">2-Hour Professional Service - Same-day Available 7am-7pm Heidelberg</span>
                 </div>
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Star className="h-4 w-4 text-yellow-500 mr-2" />

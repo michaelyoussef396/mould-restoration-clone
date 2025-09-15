@@ -16,8 +16,8 @@ export const Southbank = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         suburb="Southbank"
-        title="Mould Removal Southbank Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in Southbank Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Southbank mould inspection & removal."
+        title="Mould Removal Southbank Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in Southbank Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Southbank mould inspection & removal."
         canonical="/services/mould-removal-southbank"
       />
 
@@ -40,13 +40,13 @@ export const Southbank = () => {
 
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Southbank</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Southbank</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -92,7 +92,7 @@ export const Southbank = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Southbank</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,16 +114,16 @@ export const Southbank = () => {
                   <span>Strata management coordination</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
-                  <span>24/7 emergency availability</span>
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <span>Professional service hotline (7am-7pm) availability</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Southbank Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Southbank Inspection
@@ -145,7 +145,7 @@ export const Southbank = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The precinct's position along the Yarra River creates elevated humidity levels, while sealed high-rise building envelopes can trap moisture in apartment units. Properties near Crown Casino, along Southbank Promenade, and in the Arts Precinct experience varying humidity patterns due to river proximity and building density. Our emergency mould removal Southbank service responds within 2 hours to protect your luxury apartment or commercial space.
+              The precinct's position along the Yarra River creates elevated humidity levels, while sealed high-rise building envelopes can trap moisture in apartment units. Properties near Crown Casino, along Southbank Promenade, and in the Arts Precinct experience varying humidity patterns due to river proximity and building density. Our emergency mould removal Southbank service responds Same-day professional service to protect your luxury apartment or commercial space.
             </p>
           </div>
 
@@ -216,9 +216,9 @@ export const Southbank = () => {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-primary">Riverside Emergency Response</h4>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Riverside Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Southbank, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your luxury living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal Southbank, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your luxury living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -377,7 +377,7 @@ export const Southbank = () => {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">High-Rise Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">High-Rise Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• 2-hour response time to Southbank</li>
                     <li>• Building management notification</li>
@@ -561,7 +561,7 @@ export const Southbank = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Premium appointments:</span>
@@ -597,8 +597,8 @@ export const Southbank = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Premium Service Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 luxury emergency)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -642,7 +642,7 @@ export const Southbank = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Southbank Luxury Emergency: 1800 954 117
               </Button>

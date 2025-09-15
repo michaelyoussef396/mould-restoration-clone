@@ -16,8 +16,8 @@ export const Fitzroy = () => {
     <div className="min-h-screen bg-background">
       <LocationPageSEO
         suburb="Fitzroy"
-        title="Mould Removal Fitzroy Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in Fitzroy Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Fitzroy mould inspection & removal."
+        title="Mould Removal Fitzroy Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in Fitzroy Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Fitzroy mould inspection & removal."
         canonical="/services/mould-removal-fitzroy"
       />
 
@@ -40,13 +40,13 @@ export const Fitzroy = () => {
 
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Fitzroy</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Fitzroy</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -96,8 +96,8 @@ export const Fitzroy = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Fitzroy</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Fitzroy</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -126,14 +126,14 @@ export const Fitzroy = () => {
                   <span>7am-7pm every day service</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-emergency-orange" />
+                  <CheckCircle className="w-5 h-5 text-blue-600" />
                   <span>Postcode 3065 - Local experts</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Fitzroy Mould Emergency: 1800 954 117
               </Button>
@@ -497,7 +497,7 @@ export const Fitzroy = () => {
                   <h3 className="text-lg font-semibold text-primary mb-3">Service Guarantee</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• 100% satisfaction guarantee</li>
-                    <li>• 2-hour emergency response Fitzroy</li>
+                    <li>• Same-day professional service Fitzroy</li>
                     <li>• 7am-7pm service availability</li>
                     <li>• Free initial consultation and quote</li>
                     <li>• Post-treatment clearance testing</li>
@@ -720,7 +720,7 @@ export const Fitzroy = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground text-sm">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">2 hours max</span>
+                    <span className="font-semibold text-blue-600">2 hours max</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground text-sm">Standard appointments:</span>
@@ -812,13 +812,13 @@ export const Fitzroy = () => {
 
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div>
-                      <h4 className="font-semibold text-primary mb-3">Emergency Contact - Available 7am-7pm Daily</h4>
+                      <h4 className="font-semibold text-primary mb-3">Same-day Service Available 7am-7pm Daily</h4>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <Phone className="w-5 h-5 text-emergency-orange" />
+                          <Phone className="w-5 h-5 text-blue-600" />
                           <div>
                             <span className="font-semibold text-lg">1800 954 117</span>
-                            <p className="text-sm text-muted-foreground">24/7 Emergency Response Fitzroy</p>
+                            <p className="text-sm text-muted-foreground">24/7 Professional Service - Same-day Available 7am-7pm Fitzroy</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
@@ -843,7 +843,7 @@ export const Fitzroy = () => {
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-success-green" />
-                          <span>2-hour emergency response to Fitzroy 3065</span>
+                          <span>Same-day professional service to Fitzroy 3065</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-success-green" />
@@ -967,7 +967,7 @@ export const Fitzroy = () => {
 
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <Button size="lg" className="emergency-cta text-lg px-8 py-4">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
                   Emergency Fitzroy Mould: 1800 954 117
                 </Button>

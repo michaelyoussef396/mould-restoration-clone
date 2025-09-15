@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { LocationPageSEO } from "@/components/seo/LocationPageSEO";
-import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
-import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 
 export const GlenIris = () => {
   const breadcrumbItems = [
@@ -17,8 +16,8 @@ export const GlenIris = () => {
   return (
     <div className="min-h-screen bg-background">
       <LocationPageSEO
-        title="Mould Removal Glen Iris Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in Glen Iris Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Glen Iris mould inspection & removal."
+        title="Mould Removal Glen Iris Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in Glen Iris Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Glen Iris mould inspection & removal."
         suburb="Glen Iris"
         postcode="3146"
         canonicalUrl="https://mouldrestorationco.com.au/locations/glen-iris"
@@ -43,13 +42,13 @@ export const GlenIris = () => {
       />
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Glen Iris</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Glen Iris</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -75,7 +74,7 @@ export const GlenIris = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Glen Iris</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -100,9 +99,9 @@ export const GlenIris = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Glen Iris Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Glen Iris Inspection
@@ -124,7 +123,7 @@ export const GlenIris = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's tree-lined streets, established landscaping, and creek proximity creates unique humidity levels and natural moisture challenges. Properties near Gardiners Creek, around the railway corridors, and in the mature residential areas experience different moisture patterns due to varying building ages, established gardens, and natural water features. Our emergency mould removal Glen Iris service responds within 2 hours to protect your family home or heritage property.
+              The suburb's tree-lined streets, established landscaping, and creek proximity creates unique humidity levels and natural moisture challenges. Properties near Gardiners Creek, around the railway corridors, and in the mature residential areas experience different moisture patterns due to varying building ages, established gardens, and natural water features. Our emergency mould removal Glen Iris service responds Same-day professional service to protect your family home or heritage property.
             </p>
           </div>
 
@@ -195,9 +194,9 @@ export const GlenIris = () => {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-primary">Leafy Residential Emergency Response</h4>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Leafy Residential Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Glen Iris, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with garden-appropriate methods. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal Glen Iris, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with garden-appropriate methods. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -440,7 +439,7 @@ export const GlenIris = () => {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Garden Family Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Garden Family Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• 2-hour response time to Glen Iris</li>
                     <li>• Family garden schedule coordination</li>
@@ -540,7 +539,7 @@ export const GlenIris = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
@@ -576,8 +575,8 @@ export const GlenIris = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Garden-Family Friendly Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 family garden emergency)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -621,7 +620,7 @@ export const GlenIris = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Glen Iris Family Garden Emergency: 1800 954 117
               </Button>

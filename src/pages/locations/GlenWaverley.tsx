@@ -38,13 +38,13 @@ export const GlenWaverley = () => {
       />
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Glen Waverley</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Glen Waverley</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -70,7 +70,7 @@ export const GlenWaverley = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Glen Waverley</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -95,9 +95,9 @@ export const GlenWaverley = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Glen Waverley Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Free Glen Waverley Mould Inspection
@@ -114,10 +114,10 @@ export const GlenWaverley = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Emergency Glen Waverley Response</h3>
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground mb-4">2-hour emergency callout to all Glen Waverley properties</p>
-                <Button className="w-full emergency-cta">Call 1800 954 117</Button>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -287,8 +287,8 @@ export const GlenWaverley = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">2-Hour Family Emergency Response</h3>
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">2-Hour Family Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground">
                   Rapid response to Glen Waverley family emergencies with same-day service. Understanding of busy family schedules, school commitments, and community events.
                 </p>
@@ -308,7 +308,7 @@ export const GlenWaverley = () => {
                 Our experienced team has successfully treated mould issues in modern family homes, townhouses, and apartments throughout Glen Waverley. We understand the importance of providing culturally sensitive service while maintaining healthy living environments for diverse families and children attending local schools.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="emergency-cta">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Glen Waverley Service
                 </Button>
@@ -382,7 +382,7 @@ export const GlenWaverley = () => {
               <p className="text-muted-foreground mb-6">
                 Every Glen Waverley property serves different family and cultural needs. Our IICRC-certified technicians provide respectful, professional service that accommodates diverse lifestyles while ensuring comprehensive mould remediation and prevention.
               </p>
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 Call 1800 954 117 for Glen Waverley Property Assessment
               </Button>
             </div>
@@ -469,8 +469,8 @@ export const GlenWaverley = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-emergency-orange" />
-              <span className="text-lg">2-Hour Emergency Response</span>
+              <Clock className="w-6 h-6 text-blue-600" />
+              <span className="text-lg">2-Hour Professional Service - Same-day Available 7am-7pm</span>
             </div>
             <div className="flex items-center gap-3">
               <Shield className="w-6 h-6 text-success-green" />
@@ -483,7 +483,7 @@ export const GlenWaverley = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="emergency-cta text-lg px-8 py-4">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Emergency Glen Waverley Mould Service
             </Button>

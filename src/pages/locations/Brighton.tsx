@@ -38,13 +38,13 @@ export const Brighton = () => {
       />
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-3 px-4 text-center">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Brighton</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service in Brighton - Same-day Available 7am-7pm</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-blue-50">
               Call 1800 954 117
             </Button>
           </div>
@@ -64,14 +64,14 @@ export const Brighton = () => {
               Professional Mould Removal & Inspection in Brighton, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Brighton's coastal properties and bayside estates. IICRC-certified technicians with 5+ years experience treating salt air damage, humidity issues, and Federation home preservation. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Brighton homeowners.
+              Melbourne's premier mould removal specialists serving Brighton's coastal properties and bayside estates. IICRC-certified technicians with 5+ years experience treating salt air damage, humidity issues, and Federation home preservation. Same-day service available, 100+ properties restored with 5.0/5 star rating from Brighton homeowners.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>Same-day emergency response to Brighton</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Brighton</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -95,12 +95,12 @@ export const Brighton = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Brighton Mould Emergency: 1800 954 117
+                Call Brighton Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
-                Schedule Free Brighton Mould Inspection
+                Schedule Brighton Mould Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
@@ -149,19 +149,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer sea breezes carrying salt moisture inland affecting weatherboard homes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter storm surge and heavy rains impacting beach-adjacent properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coastal humidity year-round affecting properties within 1km of the bay</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Sand and salt deposits affecting building seals and ventilation systems</span>
                   </li>
                 </ul>
@@ -238,23 +238,23 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <span>Salt spray damage to building seals creating moisture entry points</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <span>Sandy soil drainage issues affecting foundation moisture levels</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <span>Sea breeze moisture penetration through aging weather seals and caulking</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <span>Beach house design features (large windows, open plans) lacking moisture control</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
                     <span>Holiday rental property maintenance gaps during peak summer occupancy</span>
                   </li>
                 </ul>
@@ -361,19 +361,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Negative air pressure systems designed for coastal properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-appropriate protective barriers and coverings</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Salt-resistant equipment and materials for coastal conditions</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Neighbouring property protection in dense Brighton residential areas</span>
                   </li>
                 </ul>
@@ -444,16 +444,16 @@ export const Brighton = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-emergency-orange rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Coastal Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Professional Coastal Service</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Brighton</li>
-                    <li>• Storm damage mold prevention</li>
-                    <li>• Immediate moisture containment</li>
-                    <li>• Salt air exposure assessment</li>
+                    <li>• Same-day service available to Brighton</li>
+                    <li>• Storm damage mould prevention</li>
+                    <li>• Professional moisture assessment</li>
+                    <li>• Salt air exposure evaluation</li>
                   </ul>
                 </div>
               </div>
@@ -544,25 +544,25 @@ export const Brighton = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Professional Service</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response within 2 hours to Brighton coastal properties, operating 7am-7pm daily with 24/7 emergency availability. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide professional service to Brighton coastal properties, operating 7am-7pm daily with same-day availability during business hours. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and water damage restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>2-hour emergency response guarantee to Brighton postcode 3186</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional service guarantee to Brighton postcode 3186</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>24/7 emergency hotline: 1800 954 117</span>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling 7 days per week</span>
                   </li>
                 </ul>
@@ -725,19 +725,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Federation Homes:</strong> White salt crystallization on brick, paint peeling on weatherboard, musty odors in under-floor areas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Beach Houses:</strong> Black spots around coastal-facing windows, timber window frame swelling and warping</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Modern Coastal Homes:</strong> HVAC system salt corrosion odors, bathroom exhaust fan salt buildup</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>All Property Types:</strong> Increased allergies during sea breeze conditions, salt residue on interior surfaces near windows</span>
                   </li>
                 </ul>
@@ -782,11 +782,11 @@ export const Brighton = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Response Times to Brighton</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Professional Service Times to Brighton</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="text-muted-foreground">Professional response:</span>
+                    <span className="font-semibold text-blue-600">Same-day available</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
@@ -822,8 +822,8 @@ export const Brighton = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Property Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 coastal emergency line)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -831,7 +831,7 @@ export const Brighton = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Storm damage rapid response available</span>
+                      <span>Storm damage professional response available</span>
                     </div>
                   </div>
                 </CardContent>
@@ -867,9 +867,9 @@ export const Brighton = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Brighton Coastal Emergency: 1800 954 117
+                Brighton Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Coastal Inspection

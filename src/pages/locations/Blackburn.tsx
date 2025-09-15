@@ -192,7 +192,7 @@ const BlackburnPage = () => {
                 <Card className="border-green-200 bg-green-50">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      Emergency Mould Response
+                      Professional Service - Same-day Available 7am-7pm
                     </h3>
                     <p className="text-gray-600 mb-4">
                       Available 7 days a week for urgent mould problems in Blackburn period homes and established properties.

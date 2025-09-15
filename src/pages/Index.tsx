@@ -36,21 +36,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* SEO Optimization for Melbourne Emergency Mould Removal */}
+      {/* SEO Optimization for Melbourne Professional Mould Services */}
       <HomePageSEO />
       <LocalBusinessSchema
         pageName="Home"
         pageUrl="https://mouldrestoration.com.au"
-        serviceType="emergency"
+        serviceType="professional"
         location="Melbourne"
       />
       <OrganizationSchema />
       <ReviewSchema reviews={customerReviews} />
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-center sm:justify-between">
-          <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
-          <span className="sm:hidden text-xs">7am-7pm Everyday</span>
+          <span className="hidden sm:block">📞 Professional Mould Inspections - Same-day Service Available 7am-7pm</span>
+          <span className="sm:hidden text-xs">Same-day Service Available</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1 ml-2 sm:ml-0">
             <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
             <span className="text-xs sm:text-sm">1800 954 117</span>
@@ -76,24 +76,24 @@ const Index = () => {
             {/* Left: Value Proposition */}
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-                Emergency Mold Removal & Inspection 
+                Professional Mould Removal & Inspection
                 <span className="text-blue-300"> Melbourne</span>
               </h1>
-              
+
               <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
-                IICRC-certified technicians respond within 2 hours. Protecting Melbourne families from dangerous mold since 2015.
+                IICRC-certified technicians providing same-day service. Protecting Melbourne families from dangerous mould for over 5 years.
               </p>
               
-              {/* Dual CTA Strategy */}
+              {/* Professional CTA Strategy */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  variant="emergency" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto w-full sm:w-auto"
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="text-lg px-8 py-4 h-auto w-full sm:w-auto bg-blue-600 hover:bg-blue-700"
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Response - Call Now
+                    Same-day Service - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -144,24 +144,24 @@ const Index = () => {
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     Technicians available now
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Get Emergency Help</h3>
-                  <p className="text-gray-600">24/7 emergency service available</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Get Professional Help</h3>
+                  <p className="text-gray-600">Same-day service available 7am-7pm</p>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
                     <Phone className="h-5 w-5 text-blue-600" />
                     <div>
-                      <div className="font-semibold text-gray-900">Emergency Line</div>
+                      <div className="font-semibold text-gray-900">Professional Service</div>
                       <div className="text-blue-600 font-bold">1800 954 117</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                     <Clock className="h-5 w-5 text-gray-600" />
                     <div>
-                      <div className="font-semibold text-gray-900">Response Time</div>
-                      <div className="text-gray-600">Within 2 hours</div>
+                      <div className="font-semibold text-gray-900">Business Hours</div>
+                      <div className="text-gray-600">7am-7pm Every Day</div>
                     </div>
                   </div>
                   
@@ -175,7 +175,7 @@ const Index = () => {
                 </div>
                 
                 <Button className="w-full mt-4" variant="default" asChild>
-                  <a href="#contact">Schedule Free Inspection</a>
+                  <a href="#contact">Schedule Professional Inspection</a>
                 </Button>
               </Card>
             </div>
@@ -188,35 +188,35 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Complete Mold Solutions for Melbourne
+              Complete Mould Solutions for Melbourne
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From emergency response to prevention, we protect your property and health with certified expertise.
+              From professional inspections to complete remediation, we protect your property and health with certified expertise.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Emergency Response */}
-            <Card className="p-6 border-l-4 border-l-emergency-orange hover:shadow-lg transition-shadow">
+            {/* Same-day Professional Service */}
+            <Card className="p-6 border-l-4 border-l-blue-600 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-emergency-orange" />
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Phone className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Emergency Response</h3>
-                  <div className="text-emergency-orange font-semibold text-sm">Available 24/7</div>
+                  <h3 className="text-xl font-bold text-gray-900">Same-day Service</h3>
+                  <div className="text-blue-600 font-semibold text-sm">Available 7am-7pm</div>
                 </div>
               </div>
               <p className="text-gray-600 mb-4">
-                Immediate response for health hazards and property damage. Our certified team arrives within 2 hours.
+                Professional response for mould concerns and property protection. Our certified team provides prompt service during business hours.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                <li>• On-site within 2 hours</li>
-                <li>• Immediate containment</li>
-                <li>• Health hazard assessment</li>
+                <li>• Same-day availability</li>
+                <li>• Professional assessment</li>
+                <li>• Quality service guarantee</li>
               </ul>
-              <Button variant="emergency" className="w-full" asChild>
-                <a href="tel:1800954117">Call Emergency Line</a>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700" asChild>
+                <a href="tel:1800954117">Call Professional Service</a>
               </Button>
             </Card>
             
@@ -228,7 +228,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Professional Inspection</h3>
-                  <div className="text-green-600 font-semibold text-sm">FREE Assessment</div>
+                  <div className="text-green-600 font-semibold text-sm">Comprehensive Assessment</div>
                 </div>
               </div>
               <p className="text-gray-600 mb-4">

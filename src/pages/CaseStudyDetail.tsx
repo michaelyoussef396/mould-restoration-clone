@@ -30,8 +30,8 @@ const CaseStudyDetail = () => {
       location: 'Toorak',
       date: 'January 2024',
       heroImage: mouldRemovalTransformation,
-      badge: 'Emergency Response',
-      badgeColor: 'bg-emergency-orange text-white',
+      badge: 'Professional Service - Same-day Available 7am-7pm',
+      badgeColor: 'bg-blue-600 text-white',
       challenge: {
         title: 'The Mold Crisis',
         content: `A Toorak family discovered extensive black mold throughout their Victorian terrace basement after their 6-year-old daughter developed persistent respiratory symptoms. The mold had spread behind wall panels and into the home's HVAC system, creating a serious health emergency.
@@ -46,11 +46,11 @@ const CaseStudyDetail = () => {
         The family had noticed a musty smell for weeks but attributed it to the home's age. When their daughter's asthma symptoms worsened significantly, medical advice led them to investigate potential mold exposure. Air quality testing revealed dangerous spore levels throughout the home.`,
       },
       solution: {
-        title: 'Our IICRC-Certified Emergency Response',
+        title: 'Our IICRC-Certified Professional Service - Same-day Available 7am-7pm',
         steps: [
           {
             title: 'Immediate Response & Assessment',
-            description: 'Emergency team arrived within 2 hours, conducting comprehensive air quality testing and thermal imaging to map moisture sources and contamination extent.'
+            description: 'Emergency team arrived Same-day professional service, conducting comprehensive air quality testing and thermal imaging to map moisture sources and contamination extent.'
           },
           {
             title: 'Family Safety & Containment',
@@ -84,7 +84,7 @@ const CaseStudyDetail = () => {
           '99.7% reduction in airborne mold spores (verified by independent testing)',
           'Zero moisture detection in previously affected areas',  
           'Complete elimination of musty odors throughout home',
-          'Family returned safely within 24 hours of project completion',
+          'Family returned safely Same-day professional service of project completion',
           'Daughter\'s respiratory symptoms completely resolved within one week',
           'Insurance claim approved for full remediation and prevention costs'
         ],
@@ -129,7 +129,7 @@ const CaseStudyDetail = () => {
 
         The scope of damage included:
         • Ground floor flooding affecting living areas, kitchen, and bedrooms
-        • Mold growth behind wall cavities and under flooring within 72 hours
+        • Mold growth behind wall cavities and under flooring Same-day professional service
         • Contaminated furniture, carpets, and personal belongings
         • Insurance company coordination for claim documentation
         • Temporary accommodation requirements for family of five
@@ -589,11 +589,11 @@ const CaseStudyDetail = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
-          <span className="sm:hidden">Emergency Available 24/7</span>
+          <span className="hidden sm:block">Professional Service - Same-day Available 7am-7pm</span>
+          <span className="sm:hidden">Same-day Service Available 7am-7pm</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -836,18 +836,18 @@ const CaseStudyDetail = () => {
               Similar Mold Problem in {caseStudy.location}?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Don't wait for mold to spread. Our IICRC-certified team responds within 2 hours across Melbourne metro.
+              Don't wait for mold to spread. Our IICRC-certified team responds Same-day professional service across Melbourne metro.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                variant="emergency" 
+                className="bg-blue-600 hover:bg-blue-700 text-white" 
                 size="lg" 
                 className="text-lg px-8 py-4 h-auto"
                 asChild
               >
                 <a href="tel:1800954117">
-                  Emergency Response: Call Now
+                  Professional Service - Call Now
                   <Phone className="ml-2 h-5 w-5" />
                 </a>
               </Button>

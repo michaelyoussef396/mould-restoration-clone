@@ -38,13 +38,13 @@ export const Toorak = () => {
       />
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Toorak</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Toorak</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -70,7 +70,7 @@ export const Toorak = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Toorak</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -95,9 +95,9 @@ export const Toorak = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Toorak Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Toorak Mould Inspection
@@ -332,7 +332,7 @@ export const Toorak = () => {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Discreet Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Discreet Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• 2-hour response time to Toorak</li>
                     <li>• Unmarked vehicles for privacy</li>
@@ -430,7 +430,7 @@ export const Toorak = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Discreet Service</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide discreet emergency response within 2 hours to Toorak luxury properties, operating 7am-7pm daily with 24/7 emergency availability. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide discreet emergency response Same-day professional service to Toorak luxury properties, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -439,7 +439,7 @@ export const Toorak = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>2-hour emergency response guarantee to Toorak postcode 3142</span>
+                    <span>Same-day professional service guarantee to Toorak postcode 3142</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -614,7 +614,7 @@ export const Toorak = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Premium appointments:</span>
@@ -650,7 +650,7 @@ export const Toorak = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Premium Contact Service</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
+                      <Phone className="w-5 h-5 text-blue-600" />
                       <span>1800 954 117 (24/7 priority line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -695,7 +695,7 @@ export const Toorak = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Priority Toorak Response: 1800 954 117
               </Button>
@@ -706,7 +706,7 @@ export const Toorak = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving Toorak and all premium Melbourne suburbs • Discreet, professional service • Emergency response within 2 hours
+              Serving Toorak and all premium Melbourne suburbs • Discreet, professional service • Emergency response Same-day professional service
             </p>
           </div>
         </div>

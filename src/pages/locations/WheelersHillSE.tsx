@@ -17,7 +17,7 @@ export const WheelersHillSE = () => {
       <LocationPageSEO
         suburb="Wheelers Hill"
         title="Mould Removal Wheelers Hill - Hillside Estate Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Wheelers Hill Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Wheelers Hill mould inspection & removal."
+        description="Professional mould removal in Wheelers Hill Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Wheelers Hill mould inspection & removal."
         canonical="/services/mould-removal-wheelers-hill-se"
       />
 
@@ -40,13 +40,13 @@ export const WheelersHillSE = () => {
 
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Wheelers Hill</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Wheelers Hill</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -96,8 +96,8 @@ export const WheelersHillSE = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Wheelers Hill</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Wheelers Hill</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-success-green" />
@@ -118,7 +118,7 @@ export const WheelersHillSE = () => {
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -320,7 +320,7 @@ export const WheelersHillSE = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Emergency Response to Wheelers Hill</div>
+                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Wheelers Hill</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
@@ -344,15 +344,15 @@ export const WheelersHillSE = () => {
               Need Immediate Mould Removal in Wheelers Hill?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Wheelers Hill estate home, elevated property, or modern family residence. Our IICRC-certified technicians provide 24/7 emergency response with 2-hour arrival guarantee. Trusted by hillside communities and estate families with a 5.0-star rating.
+              Don't let mould compromise your Wheelers Hill estate home, elevated property, or modern family residence. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by hillside communities and estate families with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Emergency Response</h3>
-                  <p className="mb-4">Call now for immediate mould removal Wheelers Hill Melbourne assistance. Our hillside estate specialists respond within 2 hours.</p>
+                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <p className="mb-4">Call now for immediate mould removal Wheelers Hill Melbourne assistance. Our hillside estate specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now
                   </Button>

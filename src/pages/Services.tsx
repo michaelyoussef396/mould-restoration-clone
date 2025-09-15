@@ -72,11 +72,11 @@ export const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">📞 Professional Mould Inspections - 7am-7pm Everyday</span>
-          <span className="sm:hidden">7am-7pm Everyday</span>
+          <span className="hidden sm:block">📞 Professional Mould Inspections - Same-day Service Available 7am-7pm</span>
+          <span className="sm:hidden">Same-day Service Available</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -123,10 +123,10 @@ export const Services = () => {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  variant="emergency" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="text-lg px-8 py-4 h-auto bg-blue-600 hover:bg-blue-700"
                   asChild
                 >
                   <a href="tel:1800954117">
@@ -207,12 +207,7 @@ export const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="relative">
-                <Card className={`service-card overflow-hidden group cursor-pointer h-full ${service.emergency ? 'border-l-4 border-l-emergency-orange' : ''}`}>
-                  {service.emergency && (
-                    <div className="absolute top-4 left-4 z-10 bg-emergency-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Emergency 24/7
-                    </div>
-                  )}
+                <Card className="service-card overflow-hidden group cursor-pointer h-full">
                   {service.badge && (
                     <div className="absolute top-4 right-4 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {service.badge}
@@ -254,25 +249,12 @@ export const Services = () => {
                     </ul>
                     
                     <div className="flex gap-2">
-                      {service.emergency ? (
-                        <>
-                          <Button variant="emergency" className="flex-1" asChild>
-                            <a href="tel:1800954117">Call Emergency Line</a>
-                          </Button>
-                          <Button variant="outline" className="flex-1" asChild>
-                            <a href={service.link}>Learn More</a>
-                          </Button>
-                        </>
-                      ) : (
-                        <>
-                          <Button className="flex-1" asChild>
-                            <a href={service.link}>Learn More</a>
-                          </Button>
-                          <Button variant="outline" asChild>
-                            <a href="/contact">Quote</a>
-                          </Button>
-                        </>
-                      )}
+                      <Button className="flex-1" asChild>
+                        <a href={service.link}>Learn More</a>
+                      </Button>
+                      <Button variant="outline" asChild>
+                        <a href="/contact">Quote</a>
+                      </Button>
                     </div>
                   </div>
                 </Card>

@@ -17,7 +17,7 @@ export const Dandenong = () => {
       <LocationPageSEO
         suburb="Dandenong"
         title="Mould Removal Dandenong - Multicultural Community Specialists | Mould & Restoration Co"
-        description="Professional mould removal in Dandenong Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Dandenong mould inspection & removal."
+        description="Professional mould removal in Dandenong Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Dandenong mould inspection & removal."
         canonical="/services/mould-removal-dandenong"
       />
 
@@ -40,13 +40,13 @@ export const Dandenong = () => {
 
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Dandenong</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Dandenong</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -96,8 +96,8 @@ export const Dandenong = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Dandenong</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Dandenong</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-success-green" />
@@ -118,7 +118,7 @@ export const Dandenong = () => {
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -269,10 +269,10 @@ export const Dandenong = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Comprehensive Multicultural Community Assessment</h3>
                       <p className="text-gray-700 mb-4">
-                        Upon receiving your call for mould removal Dandenong Melbourne, our IICRC-certified technicians respond within 2 hours. We conduct comprehensive thermal imaging and moisture mapping suitable for diverse community housing, industrial buildings, and high-density developments.
+                        Upon receiving your call for mould removal Dandenong Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping suitable for diverse community housing, industrial buildings, and high-density developments.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• 24/7 emergency response to Dandenong (3175)</li>
+                        <li>• Professional service hotline (7am-7pm) response to Dandenong (3175)</li>
                         <li>• Multicultural housing and community building assessment</li>
                         <li>• Industrial precinct environmental impact evaluation</li>
                         <li>• High-density housing moisture source identification</li>
@@ -406,7 +406,7 @@ export const Dandenong = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Emergency Response to Dandenong</div>
+                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Dandenong</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
@@ -430,15 +430,15 @@ export const Dandenong = () => {
               Need Immediate Mould Removal in Dandenong?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Dandenong multicultural housing, industrial facility, or community building. Our IICRC-certified technicians provide 24/7 emergency response with 2-hour arrival guarantee. Trusted by diverse communities, industrial facilities, and high-density developments with a 5.0-star rating.
+              Don't let mould compromise your Dandenong multicultural housing, industrial facility, or community building. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by diverse communities, industrial facilities, and high-density developments with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Emergency Response</h3>
-                  <p className="mb-4">Call now for immediate mould removal Dandenong Melbourne assistance. Our multicultural community specialists respond within 2 hours.</p>
+                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <p className="mb-4">Call now for immediate mould removal Dandenong Melbourne assistance. Our multicultural community specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now
                   </Button>

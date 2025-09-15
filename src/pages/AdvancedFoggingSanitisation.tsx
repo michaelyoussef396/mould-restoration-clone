@@ -61,11 +61,11 @@ export const AdvancedFoggingSanitisation = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
           <span className="hidden sm:block">🌪️ Need Complete Sanitization? ULV fogging available today</span>
-          <span className="sm:hidden">Emergency Fogging Service</span>
+          <span className="sm:hidden">Professional Fogging Service</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -127,7 +127,7 @@ export const AdvancedFoggingSanitisation = () => {
               {/* Emergency vs. Scheduled CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <Button 
-                  variant="emergency" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white" 
                   size="lg" 
                   className="text-lg px-8 py-4 h-auto"
                   asChild

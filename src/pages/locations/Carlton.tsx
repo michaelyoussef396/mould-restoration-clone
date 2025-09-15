@@ -38,13 +38,13 @@ export const Carlton = () => {
       />
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Carlton</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Carlton</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -70,8 +70,8 @@ export const Carlton = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Carlton</span>
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Carlton</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -95,9 +95,9 @@ export const Carlton = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Carlton Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Carlton Mould Inspection
@@ -502,7 +502,7 @@ export const Carlton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response within 2 hours to Carlton properties, operating 7am-7pm daily with 24/7 emergency availability. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide emergency response Same-day professional service to Carlton properties, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -511,11 +511,11 @@ export const Carlton = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>2-hour emergency response guarantee to Carlton postcodes 3053, 3054</span>
+                    <span>Same-day professional service guarantee to Carlton postcodes 3053, 3054</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>24/7 emergency hotline: 1800 954 117</span>
+                    <span>Professional service hotline (7am-7pm): 1800 954 117</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -711,9 +711,9 @@ export const Carlton = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Carlton Emergency Mould Response Network</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Carlton Professional Service - Same-day Available 7am-7pm Network</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Carlton mould removal emergency response network ensures rapid deployment to all Carlton postcodes (3053, 3054) within 2 hours of your call. Operating from our Melbourne base, we maintain specialized equipment ready for University precinct and heritage property emergencies.
+                  Our Carlton mould removal emergency response network ensures rapid deployment to all Carlton postcodes (3053, 3054) Same-day professional service of your call. Operating from our Melbourne base, we maintain specialized equipment ready for University precinct and heritage property emergencies.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -939,7 +939,7 @@ export const Carlton = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency mould response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard inspection appointments:</span>
@@ -984,8 +984,8 @@ export const Carlton = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Carlton Heritage Property Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 emergency hotline)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -1049,7 +1049,7 @@ export const Carlton = () => {
                     </div>
                     <div className="flex items-start gap-2">
                       <Shield className="w-4 h-4 text-success-green mt-1 flex-shrink-0" />
-                      <span><strong>Emergency Response:</strong> 2-hour response time for urgent Carlton mould situations</span>
+                      <span><strong>Professional Service - Same-day Available 7am-7pm:</strong> 2-hour response time for urgent Carlton mould situations</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <Shield className="w-4 h-4 text-success-green mt-1 flex-shrink-0" />
@@ -1061,14 +1061,14 @@ export const Carlton = () => {
             </div>
 
             <div className="bg-gradient-to-r from-primary/10 to-accent-blue/10 rounded-lg p-8 mb-8">
-              <h3 className="text-2xl font-bold text-primary mb-4 text-center">Carlton Melbourne Mould Emergency Response</h3>
+              <h3 className="text-2xl font-bold text-primary mb-4 text-center">Carlton Melbourne Mould Professional Service - Same-day Available 7am-7pm</h3>
               <p className="text-center text-muted-foreground mb-6">
                 Serving Carlton's heritage properties, student housing, and modern developments with Melbourne's most trusted mould removal specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="emergency-cta">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Phone className="w-5 h-5 mr-2" />
-                  Emergency Carlton Mould Response: 1800 954 117
+                  Professional Service - Same-day Available 7am-7pm: 1800 954 117
                 </Button>
                 <Button variant="outline" size="lg" className="bg-white text-primary border-primary hover:bg-primary hover:text-white">
                   Schedule Carlton Heritage Property Inspection
@@ -1085,7 +1085,7 @@ export const Carlton = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls within 2 hours to Carlton postcodes 3053, 3054 • Same-day inspection scheduling • 7 days a week availability
+                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Carlton postcodes 3053, 3054 • Same-day inspection scheduling • 7 days a week availability
                 </p>
               </div>
             </div>

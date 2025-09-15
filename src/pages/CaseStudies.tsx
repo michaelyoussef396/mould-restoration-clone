@@ -18,7 +18,7 @@ const CaseStudies = () => {
 
   const filters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'emergency', label: 'Emergency Response' },
+    { id: 'emergency', label: 'Professional Service - Same-day Available 7am-7pm' },
     { id: 'residential', label: 'Residential' },
     { id: 'commercial', label: 'Commercial' },
     { id: 'insurance', label: 'Insurance Claims' },
@@ -28,15 +28,15 @@ const CaseStudies = () => {
   const caseStudies = [
     {
       id: 'toorak-emergency',
-      title: '24-Hour Black Mold Emergency Response - Toorak Family Home',
+      title: '24-Hour Black Mold Professional Service - Same-day Available 7am-7pm - Toorak Family Home',
       slug: 'toorak-emergency-black-mold-response',
-      excerpt: 'Rapid 2-hour response eliminated extensive basement mold threatening family health. IICRC-certified process restored safety within 24 hours.',
+      excerpt: 'Rapid 2-hour response eliminated extensive basement mold threatening family health. IICRC-certified process restored safety Same-day professional service.',
       image: mouldRemovalTransformation,
       category: 'emergency',
       location: 'Toorak',
       stats: '2,400 sq ft treated | 24-hour completion | 4 family members safe',
-      badge: 'Emergency Response',
-      badgeColor: 'bg-emergency-orange text-white',
+      badge: 'Professional Service - Same-day Available 7am-7pm',
+      badgeColor: 'bg-blue-600 text-white',
       completionTime: '24 hours',
       date: '2024-01-15'
     },
@@ -124,11 +124,11 @@ const CaseStudies = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 24/7 Emergency Mold Response Available</span>
-          <span className="sm:hidden">Emergency Available 24/7</span>
+          <span className="hidden sm:block">🚨 24/7 Same-day Service Available</span>
+          <span className="sm:hidden">Same-day Service Available 7am-7pm</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -166,13 +166,13 @@ const CaseStudies = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                variant="emergency" 
+                className="bg-blue-600 hover:bg-blue-700 text-white" 
                 size="lg" 
                 className="text-lg px-8 py-4 h-auto"
                 asChild
               >
                 <a href="tel:1800954117">
-                  Emergency Response - Call Now
+                  Professional Service - Call Now
                   <Phone className="ml-2 h-5 w-5" />
                 </a>
               </Button>

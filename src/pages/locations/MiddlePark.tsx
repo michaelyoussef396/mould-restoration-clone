@@ -38,13 +38,13 @@ export const MiddlePark = () => {
       />
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Middle Park</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Middle Park</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -70,7 +70,7 @@ export const MiddlePark = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Middle Park</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -95,9 +95,9 @@ export const MiddlePark = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Middle Park Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Free Beachside Property Inspection
@@ -114,10 +114,10 @@ export const MiddlePark = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Priority Middle Park Response</h3>
                 <p className="text-muted-foreground mb-4">2-hour priority response to Middle Park beachside properties</p>
-                <Button className="w-full emergency-cta">Call 1800 954 117</Button>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -287,7 +287,7 @@ export const MiddlePark = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Priority Beachside Response</h3>
                 <p className="text-muted-foreground">
                   Exclusive priority response to Middle Park beachside properties. Available 7am-7pm every day with same-day service for urgent situations. Professional service that respects the premium coastal lifestyle.
@@ -308,7 +308,7 @@ export const MiddlePark = () => {
                 Our experienced team has successfully treated mould issues in beachside heritage homes, coastal modern developments, and premium properties throughout Middle Park. We understand the importance of maintaining the exclusive beachside lifestyle while ensuring the highest standards of health and safety.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="emergency-cta">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Middle Park Service
                 </Button>
@@ -382,7 +382,7 @@ export const MiddlePark = () => {
               <p className="text-muted-foreground mb-6">
                 Every Middle Park property benefits from our specialized understanding of coastal living challenges. Our IICRC-certified technicians provide customized treatment plans that preserve the unique character and premium lifestyle of beachside living.
               </p>
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 Call 1800 954 117 for Middle Park Beachside Assessment
               </Button>
             </div>
@@ -469,7 +469,7 @@ export const MiddlePark = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-emergency-orange" />
+              <Clock className="w-6 h-6 text-blue-600" />
               <span className="text-lg">Priority Beachside Response</span>
             </div>
             <div className="flex items-center gap-3">
@@ -483,7 +483,7 @@ export const MiddlePark = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="emergency-cta text-lg px-8 py-4">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Premium Middle Park Mould Service
             </Button>

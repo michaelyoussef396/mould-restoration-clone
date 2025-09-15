@@ -288,9 +288,9 @@ export const EmergencyContactLinks: React.FC<{ currentPage?: string }> = ({ curr
       <div className="flex items-start gap-3">
         <Phone className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
         <div>
-          <h3 className="font-bold text-red-900 mb-2">Melbourne Emergency Mould Response</h3>
+          <h3 className="font-bold text-red-900 mb-2">Melbourne Professional Service - Same-day Available 7am-7pm</h3>
           <p className="text-red-800 text-sm mb-3">
-            Serious mould problem? Our IICRC certified team responds within 2 hours across Melbourne metro.
+            Serious mould problem? Our IICRC certified team responds Same-day professional service across Melbourne metro.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-2">
@@ -305,7 +305,7 @@ export const EmergencyContactLinks: React.FC<{ currentPage?: string }> = ({ curr
                 <SEOInternalLink
                   href="/services/emergency-mould-removal"
                   anchor="Emergency Mould Removal Melbourne"
-                  service="Emergency Response"
+                  service="Professional Service - Same-day Available 7am-7pm"
                   className="text-red-700 hover:text-red-900"
                 >
                   Emergency Service Info

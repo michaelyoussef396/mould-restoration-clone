@@ -38,13 +38,13 @@ export const PortMelbourne = () => {
       />
       <Navigation />
 
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Port Melbourne</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Port Melbourne</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -70,7 +70,7 @@ export const PortMelbourne = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to Port Melbourne</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -95,9 +95,9 @@ export const PortMelbourne = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Port Melbourne Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Free Waterfront Property Inspection
@@ -114,10 +114,10 @@ export const PortMelbourne = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Emergency Port Melbourne Response</h3>
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground mb-4">2-hour emergency callout to Port Melbourne waterfront properties</p>
-                <Button className="w-full emergency-cta">Call 1800 954 117</Button>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -287,8 +287,8 @@ export const PortMelbourne = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-emergency-orange mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">2-Hour Emergency Response</h3>
+                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3">2-Hour Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground">
                   Fast response to Port Melbourne mould emergencies. Available 7am-7pm every day with same-day service for urgent situations. Professional assessment and immediate action when you need it most.
                 </p>
@@ -308,7 +308,7 @@ export const PortMelbourne = () => {
                 Our experienced team has successfully treated mould issues in warehouse conversions, waterfront apartments, Bay Street commercial premises, and heritage properties throughout Port Melbourne. We understand the importance of preserving industrial character while ensuring healthy living and working environments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="emergency-cta">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Port Melbourne Service
                 </Button>
@@ -382,7 +382,7 @@ export const PortMelbourne = () => {
               <p className="text-muted-foreground mb-6">
                 Every Port Melbourne property benefits from our specialized understanding of waterfront and heritage challenges. Our IICRC-certified technicians provide customized treatment plans that respect both industrial heritage and modern waterfront living requirements.
               </p>
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 Call 1800 954 117 for Port Melbourne Property Assessment
               </Button>
             </div>
@@ -469,8 +469,8 @@ export const PortMelbourne = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-emergency-orange" />
-              <span className="text-lg">2-Hour Emergency Response</span>
+              <Clock className="w-6 h-6 text-blue-600" />
+              <span className="text-lg">2-Hour Professional Service - Same-day Available 7am-7pm</span>
             </div>
             <div className="flex items-center gap-3">
               <Shield className="w-6 h-6 text-success-green" />
@@ -483,7 +483,7 @@ export const PortMelbourne = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="emergency-cta text-lg px-8 py-4">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Emergency Port Melbourne Mould Service
             </Button>

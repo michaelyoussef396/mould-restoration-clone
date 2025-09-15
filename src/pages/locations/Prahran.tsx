@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { LocationPageSEO } from "@/components/seo/LocationPageSEO";
-import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
-import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { LocationPageSEO } from "@/components/seo/SEOHead";
+import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 
 export const Prahran = () => {
   const breadcrumbItems = [
@@ -17,8 +16,8 @@ export const Prahran = () => {
   return (
     <div className="min-h-screen bg-background">
       <LocationPageSEO
-        title="Mould Removal Prahran Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in Prahran Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day Prahran mould inspection & removal."
+        title="Mould Removal Prahran Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in Prahran Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day Prahran mould inspection & removal."
         suburb="Prahran"
         postcode="3181"
         canonicalUrl="https://mouldrestorationco.com.au/locations/prahran"
@@ -43,13 +42,13 @@ export const Prahran = () => {
       />
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in Prahran - ABN 47 683 089 652</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in Prahran - ABN 47 683 089 652</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -90,8 +89,8 @@ export const Prahran = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Zap className="w-5 h-5 text-emergency-orange" />
-                  <span>2-hour emergency response to Prahran Melbourne</span>
+                  <Zap className="w-5 h-5 text-blue-600" />
+                  <span>Same-day professional service to Prahran Melbourne</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -120,16 +119,16 @@ export const Prahran = () => {
                   <span>Insurance claims welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-emergency-orange" />
+                  <Phone className="w-5 h-5 text-blue-600" />
                   <span>ABN 47 683 089 652</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for Prahran Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free Prahran Inspection
@@ -187,19 +186,19 @@ export const Prahran = () => {
                 <h4 className="text-xl font-semibold mb-4 text-primary">Prahran 3181 Specific Risk Factors</h4>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-emergency-orange mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <span>Proximity to Prahran Market heritage buildings creating microclimatic moisture retention in surrounding developments</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-emergency-orange mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <span>Commercial Road's busy traffic corridor contributing to air quality issues and building moisture seal problems</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-emergency-orange mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <span>Heritage warehouse conversions with original masonry creating thermal bridging and condensation issues</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-emergency-orange mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <span>Modern apartment developments with sealed building design lacking adequate natural ventilation for Melbourne's humid climate</span>
                   </li>
                 </ul>
@@ -218,7 +217,7 @@ export const Prahran = () => {
                 <h4 className="text-lg font-semibold mb-3 text-primary">Emergency Assessment</h4>
                 <p className="text-muted-foreground mb-4">Rapid response mould inspection Prahran with advanced thermal imaging and moisture mapping technology specifically designed for mixed-use developments and entertainment district properties.</p>
                 <ul className="text-sm space-y-2 text-muted-foreground">
-                  <li>• 2-hour emergency response to Prahran 3181</li>
+                  <li>• Same-day professional service to Prahran 3181</li>
                   <li>• Thermal imaging for hidden moisture</li>
                   <li>• Air quality testing for commercial spaces</li>
                   <li>• Business continuity assessment</li>
@@ -453,9 +452,9 @@ export const Prahran = () => {
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Emergency Mould Response Prahran</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Professional Service - Same-day Available 7am-7pm Prahran</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour emergency response time to Prahran 3181</li>
+                    <li>• Same-day professional service time to Prahran 3181</li>
                     <li>• 24/7 availability for entertainment venue emergencies</li>
                     <li>• Rapid containment for mixed-use developments</li>
                     <li>• Fashion retail inventory protection protocols</li>
@@ -663,7 +662,7 @@ export const Prahran = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency mould response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Commercial property appointments:</span>
@@ -708,8 +707,8 @@ export const Prahran = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Expert Prahran Mould Removal Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span><strong>1800 954 117</strong> (24/7 emergency response)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span><strong>1800 954 117</strong> (Professional service hotline (7am-7pm) response)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -737,7 +736,7 @@ export const Prahran = () => {
                   <div className="space-y-3 text-left text-sm">
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
-                      <span><strong>Free consultation</strong> - Emergency response to Prahran 3181 within 2 hours</span>
+                      <span><strong>Free consultation</strong> - Emergency response to Prahran 3181 Same-day professional service</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
@@ -761,7 +760,7 @@ export const Prahran = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Emergency Mould Removal Prahran: 1800 954 117
               </Button>

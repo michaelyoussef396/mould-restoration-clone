@@ -16,8 +16,8 @@ export const SouthYarra = () => {
   return (
     <div className="min-h-screen bg-background">
       <LocationPageSEO
-        title="Mould Removal South Yarra Melbourne - Emergency Response | Mould & Restoration Co"
-        description="Professional mould removal in South Yarra Melbourne. IICRC certified, 2-hour emergency response. Call 1800 954 117 for same-day South Yarra mould inspection & removal."
+        title="Mould Removal South Yarra Melbourne - Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
+        description="Professional mould removal in South Yarra Melbourne. IICRC certified, Same-day professional service. Call 1800 954 117 for same-day South Yarra mould inspection & removal."
         suburb="South Yarra"
         postcode="3141"
         canonical="https://mouldrestoration.com.au/mould-removal-south-yarra-melbourne"
@@ -46,13 +46,13 @@ export const SouthYarra = () => {
 
       <Navigation />
       
-      {/* Emergency Response Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service - Same-day Available 7am-7pm Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Mould Response in South Yarra</span>
-            <Button variant="outline" size="sm" className="bg-white text-emergency-orange border-white hover:bg-emergency-orange hover:text-white">
+            <span>Professional Mould Service - Same-day Available 7am-7pm in South Yarra</span>
+            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -78,7 +78,7 @@ export const SouthYarra = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-emergency-orange" />
+                  <Clock className="w-5 h-5 text-blue-600" />
                   <span>Same-day emergency response to South Yarra</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -103,9 +103,9 @@ export const SouthYarra = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Call Now for South Yarra Mould Emergency: 1800 954 117
+                Professional Mould Service - Call Now: 1800 954 117
               </Button>
               <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-primary hover:text-white">
                 Schedule Free South Yarra Inspection
@@ -127,7 +127,7 @@ export const SouthYarra = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's proximity to the Yarra River increases ambient humidity, while modern sealed building envelopes in apartments can trap moisture. Properties near Chapel Street, around South Yarra Station, and along Toorak Road experience different humidity patterns due to urban heat island effects and varying building orientations. Our emergency mould removal South Yarra service responds within 2 hours to protect your apartment or townhouse.
+              The suburb's proximity to the Yarra River increases ambient humidity, while modern sealed building envelopes in apartments can trap moisture. Properties near Chapel Street, around South Yarra Station, and along Toorak Road experience different humidity patterns due to urban heat island effects and varying building orientations. Our emergency mould removal South Yarra service responds Same-day professional service to protect your apartment or townhouse.
             </p>
           </div>
           
@@ -198,9 +198,9 @@ export const SouthYarra = () => {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-4 text-primary">Inner-City Emergency Response</h4>
+                <h4 className="text-xl font-semibold mb-4 text-primary">Inner-City Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal South Yarra, our emergency response team reaches your property within 2 hours. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to neighbors. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal South Yarra, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to neighbors. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -443,7 +443,7 @@ export const SouthYarra = () => {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Apartment Emergency Response</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Apartment Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• 2-hour response time to South Yarra</li>
                     <li>• Body corporate notification service</li>
@@ -543,7 +543,7 @@ export const SouthYarra = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency response:</span>
-                    <span className="font-semibold text-emergency-orange">Within 2 hours</span>
+                    <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
@@ -579,8 +579,8 @@ export const SouthYarra = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Apartment-Friendly Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-emergency-orange" />
-                      <span>1800 954 117 (24/7 apartment emergency)</span>
+                      <Phone className="w-5 h-5 text-blue-600" />
+                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -624,7 +624,7 @@ export const SouthYarra = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="emergency-cta">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 South Yarra Apartment Emergency: 1800 954 117
               </Button>

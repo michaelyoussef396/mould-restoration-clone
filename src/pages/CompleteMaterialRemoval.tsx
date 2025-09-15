@@ -19,7 +19,7 @@ export const CompleteMaterialRemoval = () => {
   const removalProcesses = [
     {
       step: 1,
-      title: 'Emergency Assessment',
+      title: 'Professional Assessment',
       description: 'Rapid evaluation of material damage and contamination extent to determine removal scope.',
     },
     {
@@ -61,11 +61,11 @@ export const CompleteMaterialRemoval = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Emergency Bar */}
-      <div className="bg-emergency-orange text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🏠 Severe Material Contamination? Emergency removal within 4 hours</span>
-          <span className="sm:hidden">Emergency Material Removal</span>
+          <span className="hidden sm:block">Professional Material Removal - Same-day Service Available 7am-7pm</span>
+          <span className="sm:hidden">Same-day Material Removal</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
             1800 954 117
@@ -124,16 +124,15 @@ export const CompleteMaterialRemoval = () => {
                 IICRC-certified material removal for severe contamination with full structural restoration.
               </p>
               
-              {/* Emergency vs. Scheduled CTAs */}
+              {/* Professional Service CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  variant="emergency" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-4 h-auto bg-blue-600 hover:bg-blue-700 text-white"
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Emergency Removal - Call Now
+                    Professional Removal - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -360,18 +359,18 @@ export const CompleteMaterialRemoval = () => {
             </Card>
           </div>
           
-          {/* Emergency Response Availability */}
+          {/* Service Availability */}
           <div className="max-w-2xl mx-auto">
-            <Card className="p-6 bg-orange-50 border border-orange-200">
+            <Card className="p-6 bg-blue-50 border border-blue-200">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold text-orange-800">Emergency Team Available</span>
+                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <span className="font-semibold text-blue-800">Professional Team Available</span>
                 </div>
-                <p className="text-orange-700 mb-4">Responding to 2 emergency material removal calls today</p>
+                <p className="text-blue-700 mb-4">2 material removal projects scheduled today</p>
                 <div className="flex items-center justify-center gap-2 text-green-700">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Next emergency slot: Within 4 hours</span>
+                  <span className="font-medium">Next available: Same-day service</span>
                 </div>
               </div>
             </Card>

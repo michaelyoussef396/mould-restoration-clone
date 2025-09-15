@@ -12,8 +12,8 @@ import heroBackground from '@/assets/hero-background.jpg';
 export const ContactOptimized = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Emergency Bar */}
-      <div className="emergency-bar">
+      {/* Professional Service Bar */}
+      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <span className="text-sm font-medium">Professional Mould Inspections - 7am-7pm Everyday</span>
           <a 
@@ -58,7 +58,7 @@ export const ContactOptimized = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a 
                 href="tel:1800954117" 
-                className="emergency-cta text-lg px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 font-semibold"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 font-semibold"
               >
                 <Phone className="w-5 h-5" />
                 Same-day Service - Call Now
@@ -231,7 +231,7 @@ export const ContactOptimized = () => {
                     Get Your Free Quote
                   </h2>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you within 24 hours with a detailed quote for your project.
+                    Fill out the form below and we'll get back to you Same-day professional service with a detailed quote for your project.
                   </p>
                 </div>
 
@@ -355,7 +355,7 @@ export const ContactOptimized = () => {
 
                   <Button 
                     type="submit" 
-                    variant="emergency"
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
                     size="lg" 
                     className="w-full text-lg px-8 py-4 h-auto"
                   >
