@@ -62,7 +62,7 @@ export const ProfessionalMouldInspections = () => {
       <ServicePageSEO
         service="inspection"
         title="Professional Mould Inspection Melbourne - Free Thermal Imaging Assessment"
-        description="Expert mould inspection Melbourne. Free thermal imaging assessment, air quality testing, same-day detailed reports. IICRC certified technicians. Call 1800 954 117 for professional service."
+        description="Expert mould inspection Melbourne. Free thermal imaging assessment, air quality testing, professional detailed reports. IICRC certified technicians. Call 1800 954 117 for professional service."
       />
       <LocalBusinessSchema
         pageName="Professional Mould Inspections"
@@ -72,19 +72,20 @@ export const ProfessionalMouldInspections = () => {
       />
       <ServiceSchema
         serviceName="Professional Mould Inspection Melbourne"
-        serviceDescription="Comprehensive mould detection and air quality testing using thermal imaging technology. IICRC-certified technicians provide same-day detailed reports for Melbourne properties."
+        serviceDescription="Comprehensive mould detection and air quality testing using thermal imaging technology. IICRC-certified technicians provide professional detailed reports for Melbourne properties."
         serviceUrl="https://mouldrestoration.com.au/services/professional-mould-inspections"
         priceRange="$$"
       />
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">Professional Mould Service - Same-day Available 7am-7pm</span>
-          <span className="sm:hidden">Same-day Service Available</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
-            <Phone className="h-4 w-4" />
-            1800 954 117
-          </a>
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 
@@ -196,7 +197,7 @@ export const ProfessionalMouldInspections = () => {
                     <Clock className="h-5 w-5 text-orange-600" />
                     <div>
                       <div className="font-semibold text-gray-900">Written Report</div>
-                      <div className="text-orange-600 text-sm">Same-day delivery</div>
+                      <div className="text-orange-600 text-sm">Professional delivery</div>
                     </div>
                   </div>
                 </div>
@@ -394,7 +395,7 @@ export const ProfessionalMouldInspections = () => {
                   <li>• Free basic visual inspection with any quote request</li>
                   <li>• Advanced thermal imaging and air quality testing from $299</li>
                   <li>• All costs explained upfront - no hidden fees or surprise charges</li>
-                  <li>• Detailed quote provided same-day for any recommended work</li>
+                  <li>• Detailed quote provided professionally for any recommended work</li>
                   <li>• Payment options available including insurance claim assistance</li>
                 </ul>
               </div>
@@ -404,7 +405,7 @@ export const ProfessionalMouldInspections = () => {
                   <li>• 100% satisfaction guarantee on all inspection services</li>
                   <li>• IICRC-certified technicians with ongoing training requirements</li>
                   <li>• Professional liability insurance covering all assessment work</li>
-                  <li>• Same-day report delivery with detailed findings and recommendations</li>
+                  <li>• Professional report delivery with detailed findings and recommendations</li>
                   <li>• Follow-up consultation included to discuss results and next steps</li>
                 </ul>
               </div>
@@ -439,7 +440,7 @@ export const ProfessionalMouldInspections = () => {
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h4 className="font-bold text-gray-900 mb-3">What happens after the inspection is complete?</h4>
                 <p className="text-gray-700">
-                  You'll receive a comprehensive written report the same day, followed by a detailed discussion of
+                  You'll receive a comprehensive written report promptly, followed by a detailed discussion of
                   findings. We'll explain all options, from immediate DIY steps to professional remediation services.
                 </p>
               </div>

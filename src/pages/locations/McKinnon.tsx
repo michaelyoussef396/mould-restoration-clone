@@ -784,7 +784,7 @@ export const McKinnon = () => {
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family Community Response Times to McKinnon</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Emergency response:</span>
+                    <span className="text-muted-foreground">Professional service:</span>
                     <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">

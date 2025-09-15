@@ -57,7 +57,7 @@ export const SEO_CONFIG = {
   },
 
   OPERATING_HOURS: 'Mo-Su 07:00-19:00',
-  RESPONSE_TIME: '2 hours emergency response',
+  RESPONSE_TIME: 'same-day professional service available',
   EXPERIENCE: '5+ years',
   PROPERTIES_RESTORED: '100+',
   CUSTOMER_RATING: '5.0',
@@ -108,7 +108,7 @@ export const SEO_UTILS = {
   generateDescription: (service?: string, location?: string, emergency?: boolean): string => {
     const serviceText = service || 'mould removal';
     const locationText = location && location !== 'Melbourne' ? ` ${location}` : '';
-    const responseTime = emergency ? '2 hour emergency response' : 'same day service available';
+    const responseTime = emergency ? 'same-day professional service' : 'same day service available';
 
     return `Expert ${serviceText}${locationText} Melbourne. IICRC certified, ${SEO_CONFIG.EXPERIENCE} experience, ${SEO_CONFIG.PROPERTIES_RESTORED} properties restored. ${responseTime}. Call ${SEO_CONFIG.PHONE}.`;
   },

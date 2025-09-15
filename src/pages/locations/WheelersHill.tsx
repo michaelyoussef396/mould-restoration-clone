@@ -436,7 +436,7 @@ const WheelersHillPage = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Busy Family Schedule Coordination</h3>
                   <p className="text-gray-600">
-                    Available 7am-7pm every day with flexible scheduling that accommodates busy family schedules, school runs, after-school activities, and weekend commitments. Emergency response available when mould problems can't wait.
+                    Available 7am-7pm every day with flexible scheduling that accommodates busy family schedules, school runs, after-school activities, and weekend commitments. Professional service available when mould problems can't wait.
                   </p>
                 </CardContent>
               </Card>

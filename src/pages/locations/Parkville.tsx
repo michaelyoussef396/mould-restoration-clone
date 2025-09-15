@@ -174,7 +174,7 @@ export const Parkville = () => {
                     <li>• Healthcare infrastructure drainage effects</li>
                     <li>• Medical precinct high-traffic building condensation</li>
                     <li>• Hospital landscaping and water feature humidity effects</li>
-                    <li>• Emergency service vehicle area drainage challenges</li>
+                    <li>• Service vehicle area drainage challenges</li>
                   </ul>
                 </div>
                 <div>

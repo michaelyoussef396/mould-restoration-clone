@@ -48,13 +48,14 @@ const Index = () => {
       <ReviewSchema reviews={customerReviews} />
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
-        <div className="container mx-auto flex items-center justify-center sm:justify-between">
-          <span className="hidden sm:block">📞 Professional Mould Inspections - Same-day Service Available 7am-7pm</span>
-          <span className="sm:hidden text-xs">Same-day Service Available</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1 ml-2 sm:ml-0">
-            <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
-            <span className="text-xs sm:text-sm">1800 954 117</span>
-          </a>
+        <div className="container mx-auto flex items-center justify-between">
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 
@@ -81,7 +82,7 @@ const Index = () => {
               </h1>
 
               <p className="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl">
-                IICRC-certified technicians providing same-day service. Protecting Melbourne families from dangerous mould for over 5 years.
+                IICRC-certified technicians providing professional service. Protecting Melbourne families from dangerous mould for over 5 years.
               </p>
               
               {/* Professional CTA Strategy */}
@@ -93,7 +94,7 @@ const Index = () => {
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Same-day Service - Call Now
+                    Professional Service - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -116,13 +117,13 @@ const Index = () => {
                   {[1,2,3,4,5].map((star) => (
                     <Star key={star} className="h-5 w-5 fill-current" />
                   ))}
-                  <span className="text-white ml-2">4.9/5 (247 reviews)</span>
+                  <span className="text-white ml-2">5.0 ⭐ 51 Google reviews</span>
                 </div>
                 
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/90 text-sm">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-400" />
-                    Same-day service
+                    Professional service
                   </div>
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-400" />
@@ -145,7 +146,7 @@ const Index = () => {
                     Technicians available now
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Get Professional Help</h3>
-                  <p className="text-gray-600">Same-day service available 7am-7pm</p>
+                  <p className="text-gray-600">Professional service available 7am-7pm</p>
                 </div>
                 
                 <div className="space-y-4">
@@ -169,7 +170,7 @@ const Index = () => {
                     <MapPin className="h-5 w-5 text-gray-600" />
                     <div>
                       <div className="font-semibold text-gray-900">Service Area</div>
-                      <div className="text-gray-600">All Melbourne Metro</div>
+                      <div className="text-gray-600">All Melbourne</div>
                     </div>
                   </div>
                 </div>
@@ -196,14 +197,14 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Same-day Professional Service */}
+            {/* Professional Service */}
             <Card className="p-6 border-l-4 border-l-blue-600 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                   <Phone className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Same-day Service</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Professional Service</h3>
                   <div className="text-blue-600 font-semibold text-sm">Available 7am-7pm</div>
                 </div>
               </div>
@@ -211,7 +212,7 @@ const Index = () => {
                 Professional response for mould concerns and property protection. Our certified team provides prompt service during business hours.
               </p>
               <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                <li>• Same-day availability</li>
+                <li>• Professional availability</li>
                 <li>• Professional assessment</li>
                 <li>• Quality service guarantee</li>
               </ul>

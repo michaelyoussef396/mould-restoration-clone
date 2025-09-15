@@ -737,7 +737,7 @@ export const Balwyn = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Balwyn postcodes 3103, 3104 • Heritage-sensitive treatment • School term scheduling available
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Balwyn postcodes 3103, 3104 • Heritage-sensitive treatment • School term scheduling available
                 </p>
               </div>
             </div>

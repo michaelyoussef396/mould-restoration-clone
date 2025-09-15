@@ -353,11 +353,10 @@ export const ContactOptimized = () => {
                     </div>
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="bg-blue-600 hover:bg-blue-700 text-white"
-                    size="lg" 
-                    className="w-full text-lg px-8 py-4 h-auto"
+                  <Button
+                    type="submit"
+                    className="bg-blue-600 hover:bg-blue-700 text-white w-full text-lg px-8 py-4 h-auto"
+                    size="lg"
                   >
                     Get My Professional Quote Now
                     <ArrowRight className="ml-2 h-5 w-5" />

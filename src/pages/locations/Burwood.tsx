@@ -380,7 +380,7 @@ export const Burwood = () => {
                   <h3 className="text-xl font-semibold mb-2 text-primary">Family Home Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• same-day professional service response to Burwood</li>
-                    <li>• Family-safe emergency protocols</li>
+                    <li>• Family-safe professional protocols</li>
                     <li>• Immediate residential containment</li>
                     <li>• Child and pet protection measures</li>
                   </ul>
@@ -560,7 +560,7 @@ export const Burwood = () => {
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family-Friendly Response Times to Burwood</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Emergency response:</span>
+                    <span className="text-muted-foreground">Professional service:</span>
                     <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">

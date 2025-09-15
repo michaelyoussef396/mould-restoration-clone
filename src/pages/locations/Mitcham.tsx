@@ -348,7 +348,7 @@ export default function MitchamMouldRemoval() {
                   <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
                   <p className="text-sm text-gray-700">
-                    Same-day emergency service protecting your heritage family home investment.
+                    Same-day professional service protecting your heritage family home investment.
                   </p>
                 </div>
               </div>

@@ -436,7 +436,7 @@ const AshwoodPage = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">7am-7pm Every Day</h3>
                   <p className="text-gray-600">
-                    Flexible scheduling that works around busy family schedules and school routines. Emergency response available for urgent mould problems that can't wait. We respect Ashwood's quiet residential character.
+                    Flexible scheduling that works around busy family schedules and school routines. Professional service available for urgent mould problems that can't wait. We respect Ashwood's quiet residential character.
                   </p>
                 </CardContent>
               </Card>

@@ -347,7 +347,7 @@ export default function NunawadingMouldRemoval() {
                   <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
                   <p className="text-sm text-gray-700">
-                    Same-day emergency service covering all areas from the station to shopping precincts.
+                    Same-day professional service covering all areas from the station to shopping precincts.
                   </p>
                 </div>
               </div>

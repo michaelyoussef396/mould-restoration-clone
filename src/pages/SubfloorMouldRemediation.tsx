@@ -69,12 +69,13 @@ export const SubfloorMouldRemediation = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🏗️ Subfloor Mould Issues? Specialized remediation available</span>
-          <span className="sm:hidden">Professional Subfloor Service</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
-            <Phone className="h-4 w-4" />
-            1800 954 117
-          </a>
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 
@@ -131,10 +132,9 @@ export const SubfloorMouldRemediation = () => {
               
               {/* Emergency vs. Scheduled CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 h-auto"
+                  size="lg"
                   asChild
                 >
                   <a href="tel:1800954117">
@@ -473,7 +473,7 @@ export const SubfloorMouldRemediation = () => {
               <div className="bg-white p-6 rounded-lg border border-gray-200">
                 <h4 className="font-bold text-gray-900 mb-3">Project Timeline</h4>
                 <ul className="space-y-2 text-gray-700 mb-4">
-                  <li>• Initial assessment and quote: Same day</li>
+                  <li>• Initial assessment and quote: Professional service</li>
                   <li>• Moisture source control: 1-3 days</li>
                   <li>• Mould removal and sanitization: 2-4 days</li>
                   <li>• Ventilation installation: 1-2 days</li>

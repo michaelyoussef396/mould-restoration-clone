@@ -737,7 +737,7 @@ export const Bulleen = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Bulleen postcode 3105 • Family-friendly service • Riverside property expertise
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Bulleen postcode 3105 • Family-friendly service • Riverside property expertise
                 </p>
               </div>
             </div>

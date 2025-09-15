@@ -75,12 +75,13 @@ export const Services = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">📞 Professional Mould Inspections - Same-day Service Available 7am-7pm</span>
-          <span className="sm:hidden">Same-day Service Available</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
-            <Phone className="h-4 w-4" />
-            1800 954 117
-          </a>
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 

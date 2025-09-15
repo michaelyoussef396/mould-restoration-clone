@@ -719,7 +719,7 @@ export const Fitzroy = () => {
                 <h3 className="text-xl font-semibold mb-4 text-primary">Fitzroy Response Times & Coverage</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Emergency response:</span>
+                    <span className="text-muted-foreground text-sm">Professional service:</span>
                     <span className="font-semibold text-blue-600">2 hours max</span>
                   </div>
                   <div className="flex justify-between items-center">

@@ -411,7 +411,7 @@ export const Carrum = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Average 90-minute response time to Carrum emergency calls</span>
+                    <span>Average 90-minute response time to Carrum professional service calls</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>

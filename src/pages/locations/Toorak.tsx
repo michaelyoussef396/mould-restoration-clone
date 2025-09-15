@@ -613,7 +613,7 @@ export const Toorak = () => {
                 <h3 className="text-xl font-semibold mb-4 text-primary">Priority Response Times to Toorak</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Emergency response:</span>
+                    <span className="text-muted-foreground">Professional service:</span>
                     <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -706,7 +706,7 @@ export const Toorak = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving Toorak and all premium Melbourne suburbs • Discreet, professional service • Emergency response Same-day professional service
+              Serving Toorak and all premium Melbourne suburbs • Discreet, professional service • Professional service available same-day
             </p>
           </div>
         </div>

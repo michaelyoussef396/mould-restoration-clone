@@ -348,7 +348,7 @@ export default function WilliamstownMouldRemoval() {
                   <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
                   <p className="text-sm text-gray-700">
-                    Same-day emergency service throughout the peninsula and ferry precincts.
+                    Same-day professional service throughout the peninsula and ferry precincts.
                   </p>
                 </div>
               </div>

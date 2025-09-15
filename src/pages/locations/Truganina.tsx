@@ -737,7 +737,7 @@ export const Truganina = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Truganina postcode 3029 • New construction warranty compliance • Young family priority service
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Truganina postcode 3029 • New construction warranty compliance • Young family priority service
                 </p>
               </div>
             </div>

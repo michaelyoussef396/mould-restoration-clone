@@ -165,10 +165,9 @@ const CaseStudies = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                className="bg-blue-600 hover:bg-blue-700 text-white" 
-                size="lg" 
-                className="text-lg px-8 py-4 h-auto"
+              <Button
+                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 h-auto"
+                size="lg"
                 asChild
               >
                 <a href="tel:1800954117">

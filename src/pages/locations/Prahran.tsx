@@ -736,7 +736,7 @@ export const Prahran = () => {
                   <div className="space-y-3 text-left text-sm">
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
-                      <span><strong>Free consultation</strong> - Emergency response to Prahran 3181 Same-day professional service</span>
+                      <span><strong>Free consultation</strong> - Professional service to Prahran 3181 Same-day response</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
@@ -789,7 +789,7 @@ export const Prahran = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              <strong>Professional mould removal Prahran Melbourne</strong> • Entertainment district specialists • Mixed-use building experts • Emergency response 7am-7pm daily • ABN 47 683 089 652
+              <strong>Professional mould removal Prahran Melbourne</strong> • Entertainment district specialists • Mixed-use building experts • Professional service 7am-7pm daily • ABN 47 683 089 652
             </p>
           </div>
         </div>

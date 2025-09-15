@@ -737,7 +737,7 @@ export const Doncaster = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Doncaster postcodes 3108, 3109 • Multilingual support • Cultural sensitivity priority
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Doncaster postcodes 3108, 3109 • Multilingual support • Cultural sensitivity priority
                 </p>
               </div>
             </div>

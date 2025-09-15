@@ -64,12 +64,13 @@ export const AdvancedFoggingSanitisation = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🌪️ Need Complete Sanitization? ULV fogging available today</span>
-          <span className="sm:hidden">Professional Fogging Service</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
-            <Phone className="h-4 w-4" />
-            1800 954 117
-          </a>
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 
@@ -126,14 +127,13 @@ export const AdvancedFoggingSanitisation = () => {
               
               {/* Emergency vs. Scheduled CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 h-auto"
+                  size="lg"
                   asChild
                 >
                   <a href="tel:1800954117">
-                    Same-Day Fogging - Call Now
+                    Professional Fogging - Call Now
                     <Phone className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -334,7 +334,7 @@ export const AdvancedFoggingSanitisation = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Same-day completion
+                  Professional completion
                 </li>
               </ul>
             </Card>
@@ -371,7 +371,7 @@ export const AdvancedFoggingSanitisation = () => {
                 <p className="text-green-700 mb-4">3 ULV fogging treatments scheduled in Melbourne today</p>
                 <div className="flex items-center justify-center gap-2 text-blue-700">
                   <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="font-medium">Next available slot: Same day booking available</span>
+                  <span className="font-medium">Next available slot: Professional booking available</span>
                 </div>
               </div>
             </Card>

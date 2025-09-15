@@ -52,7 +52,7 @@ export const ComprehensiveMouldRemoval = () => {
       rating: 5,
     },
     {
-      text: "Professional response was incredible - arrived same-day on a weekend. Contained the mold spread and prevented further damage to our home.",
+      text: "Professional response was incredible - arrived promptly on a weekend. Contained the mold spread and prevented further damage to our home.",
       name: "Lisa Chen",
       location: "Brighton",
       rating: 5,
@@ -64,12 +64,13 @@ export const ComprehensiveMouldRemoval = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 Serious Mold Problem? Professional Service - Same-day Available 7am-7pm</span>
-          <span className="sm:hidden">Professional Service - Same-day Available 7am-7pm</span>
-          <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
-            <Phone className="h-4 w-4" />
-            1800 954 117
-          </a>
+          <span className="hidden sm:block text-xs sm:text-sm">Monday - Sunday: 7 AM - 7PM</span>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <a href="tel:1800954117" className="font-bold hover:underline">1800 954 117</a>
+            <span className="hidden sm:inline">|</span>
+            <a href="mailto:admin@mouldandrestoration.com.au" className="hidden sm:inline hover:underline">admin@mouldandrestoration.com.au</a>
+          </div>
+          <span className="text-xs sm:text-sm">Melbourne, VIC 📍</span>
         </div>
       </div>
 
@@ -126,10 +127,9 @@ export const ComprehensiveMouldRemoval = () => {
               
               {/* Emergency vs. Scheduled CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <Button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white" 
-                  size="lg" 
-                  className="text-lg px-8 py-4 h-auto"
+                <Button
+                  className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 h-auto"
+                  size="lg"
                   asChild
                 >
                   <a href="tel:1800954117">
@@ -283,9 +283,9 @@ export const ComprehensiveMouldRemoval = () => {
                       {/* Detailed breakdown for each step */}
                       {index === 0 && (
                         <div className="bg-white p-6 rounded-lg border border-red-200">
-                          <h4 className="font-bold text-gray-900 mb-3">Professional Service - Same-day Available 7am-7pm Protocol:</h4>
+                          <h4 className="font-bold text-gray-900 mb-3">Professional Service - 7am-7pm Protocol:</h4>
                           <ul className="space-y-2 text-gray-700 mb-4">
-            <li>• Same-day response for Melbourne professional service requests</li>
+            <li>• Professional response for Melbourne service requests</li>
                             <li>• Initial containment setup to prevent further contamination spread</li>
                             <li>• Comprehensive visual assessment and documentation with digital photography</li>
                             <li>• Moisture content readings using calibrated equipment at all affected areas</li>
@@ -546,18 +546,18 @@ export const ComprehensiveMouldRemoval = () => {
             </Card>
           </div>
           
-          {/* Professional Service - Same-day Available 7am-7pm Availability */}
+          {/* Professional Service - 7am-7pm Availability */}
           <div className="max-w-2xl mx-auto">
             <Card className="p-6 bg-orange-50 border border-orange-200">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold text-orange-800">Same-day Service Available</span>
+                  <span className="font-semibold text-orange-800">Professional Service Available</span>
                 </div>
                 <p className="text-orange-700 mb-4">Responding to 4 service calls in Melbourne today</p>
                 <div className="flex items-center justify-center gap-2 text-green-700">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Next professional service slot: Same-day available</span>
+                  <span className="font-medium">Next professional service slot: Professional booking available</span>
                 </div>
               </div>
             </Card>

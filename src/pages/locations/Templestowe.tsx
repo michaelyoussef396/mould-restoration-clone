@@ -737,7 +737,7 @@ export const Templestowe = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Templestowe postcodes 3105, 3106 • Same-day inspection scheduling • 7 days a week availability
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Templestowe postcodes 3105, 3106 • Same-day inspection scheduling • 7 days a week availability
                 </p>
               </div>
             </div>

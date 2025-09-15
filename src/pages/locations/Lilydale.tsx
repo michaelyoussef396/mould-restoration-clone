@@ -347,7 +347,7 @@ export default function LilydaleMouldRemoval() {
                   <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Extended Coverage</h3>
                   <p className="text-sm text-gray-700">
-                    Same-day emergency service extending throughout wine country and rural areas.
+                    Same-day professional service extending throughout wine country and rural areas.
                   </p>
                 </div>
               </div>

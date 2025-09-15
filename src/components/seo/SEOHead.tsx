@@ -243,7 +243,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 export const HomePageSEO: React.FC = () => (
   <SEOHead
     title="Professional Service - Same-day Available 7am-7pm | Mould & Restoration Co"
-    description="Melbourne's premier mould removal service. Emergency response Same-day professional service, IICRC certified technicians, 5+ years experience, 100+ properties restored. Call 1800 954 117 now."
+    description="Melbourne's premier mould removal service. Same-day professional service, IICRC certified technicians, 5+ years experience, 100+ properties restored. Call 1800 954 117 now."
     keywords="emergency mould removal melbourne, professional mould inspection melbourne, same day mould removal, IICRC mould removal melbourne, melbourne mould experts"
     emergency={true}
   />

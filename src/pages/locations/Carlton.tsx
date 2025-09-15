@@ -722,7 +722,7 @@ export const Carlton = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Carlton heritage property emergency protocols for Victorian terraces</span>
+                    <span>Carlton heritage property professional protocols for Victorian terraces</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -730,7 +730,7 @@ export const Carlton = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Lygon Street commercial property after-hours emergency service</span>
+                    <span>Lygon Street commercial property after-hours professional service</span>
                   </li>
                 </ul>
               </CardContent>
@@ -938,7 +938,7 @@ export const Carlton = () => {
                 <h3 className="text-xl font-semibold mb-4 text-primary">Carlton Response Times & Service Coverage</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Emergency mould response:</span>
+                    <span className="text-muted-foreground">Professional mould service:</span>
                     <span className="font-semibold text-blue-600">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -1085,7 +1085,7 @@ export const Carlton = () => {
               </div>
               <div className="text-center">
                 <p className="text-muted-foreground">
-                  <strong>Response Guarantee:</strong> Emergency calls Same-day professional service to Carlton postcodes 3053, 3054 • Same-day inspection scheduling • 7 days a week availability
+                  <strong>Response Guarantee:</strong> Professional service calls Same-day response to Carlton postcodes 3053, 3054 • Same-day inspection scheduling • 7 days a week availability
                 </p>
               </div>
             </div>
