@@ -298,7 +298,7 @@ const About = () => {
             <div className="relative">
               <img
                 src={storySpace}
-                alt="Melbourne property restoration"
+                alt="Mould & Restoration Co team completing successful Melbourne property restoration with 5 star customer satisfaction"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">

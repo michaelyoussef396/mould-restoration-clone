@@ -229,7 +229,7 @@ export const AdvancedFoggingSanitisation = () => {
               <div className="relative">
                 <img
                   src={ulvFoggingEquipment}
-                  alt="Professional ULV fogging equipment setup"
+                  alt="Professional ULV fogging equipment setup for advanced mould sanitisation in Melbourne property with hospital-grade technology"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
@@ -240,7 +240,7 @@ export const AdvancedFoggingSanitisation = () => {
               <div className="relative">
                 <img
                   src={sanitisationProcess}
-                  alt="Fogging sanitization process in action"
+                  alt="Advanced fogging sanitisation process in action treating Melbourne home with penetrating antimicrobial mist for complete mould elimination"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">

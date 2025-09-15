@@ -229,7 +229,7 @@ export const ComprehensiveMouldRemoval = () => {
               <div className="relative">
                 <img
                   src={mouldRemovalEquipment}
-                  alt="Professional mold removal in progress"
+                  alt="IICRC certified technician using professional mould removal equipment and containment systems in Melbourne home"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
@@ -240,7 +240,7 @@ export const ComprehensiveMouldRemoval = () => {
               <div className="relative">
                 <img
                   src={mouldRemovalTransformation}
-                  alt="Complete mold removal transformation"
+                  alt="Complete Melbourne property mould removal transformation showing restored clean walls after professional remediation"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">

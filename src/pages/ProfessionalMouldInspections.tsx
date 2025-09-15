@@ -244,7 +244,7 @@ export const ProfessionalMouldInspections = () => {
               <div className="relative">
                 <img
                   src={thermalImagingDevice}
-                  alt="Thermal imaging revealing hidden moisture"
+                  alt="Professional thermal imaging equipment revealing hidden moisture behind Melbourne home walls during IICRC certified mould inspection"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">
@@ -255,7 +255,7 @@ export const ProfessionalMouldInspections = () => {
               <div className="relative">
                 <img
                   src={cleanResidentialInterior}
-                  alt="Clean interior after following inspection recommendations"
+                  alt="Clean healthy Melbourne home interior after following professional mould inspection recommendations and remediation treatment"
                   className="w-full h-64 object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg">

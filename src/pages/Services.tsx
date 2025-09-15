@@ -294,52 +294,6 @@ export const Services = () => {
         </div>
       </section>
 
-      {/* Service Area Coverage */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Serving All Melbourne Metro
-            </h2>
-            <p className="text-xl text-gray-600">Professional mold remediation across all Melbourne suburbs</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { area: 'CBD & Inner Melbourne', coverage: 'Full Coverage', popular: true },
-              { area: 'Eastern Suburbs', coverage: 'Same Day', popular: true },
-              { area: 'Northern Suburbs', coverage: 'Full Coverage', popular: false },
-              { area: 'Western Suburbs', coverage: 'Same Day', popular: false },
-              { area: 'Southern Suburbs', coverage: 'Full Coverage', popular: true },
-              { area: 'Outer Melbourne', coverage: 'Next Day', popular: false },
-            ].map((location, index) => (
-              <Card key={index} className={`p-4 text-center ${location.popular ? 'border-blue-200 bg-blue-50' : ''}`}>
-                <div className="flex items-center justify-center gap-1 mb-2">
-                  <MapPin className="h-4 w-4 text-blue-600" />
-                  <h3 className="font-semibold text-gray-900">{location.area}</h3>
-                </div>
-                <div className="text-lg font-bold text-blue-600">{location.coverage}</div>
-                <div className="text-sm text-gray-600">service available</div>
-                {location.popular && (
-                  <div className="mt-2 text-xs bg-blue-600 text-white px-2 py-1 rounded-full">
-                    Popular Area
-                  </div>
-                )}
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Button size="lg" asChild>
-              <a href="/contact">
-                Schedule Service in Your Area
-                <MapPin className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <FAQSection />
 
@@ -349,5 +303,5 @@ export const Services = () => {
       {/* Footer */}
       <Footer />
     </div>
-  );
+  );  
 };

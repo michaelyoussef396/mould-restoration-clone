@@ -156,18 +156,29 @@ export const ContactOptimized = () => {
             {/* Contact Information */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Melbourne Office</h2>
-                
+                <h2 className="text-3xl font-bold text-foreground mb-6">Melbourne's Premier Mould Restoration Experts</h2>
+
+                {/* Business Overview */}
+                <div className="mb-8">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    As Melbourne's leading mould inspection and remediation specialists, Mould & Restoration Co. has been protecting Victorian families and businesses for over 5 years. Our professional team combines industry-leading technology with local expertise to deliver safe, effective solutions for mould problems across all Melbourne suburbs.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Whether you're dealing with visible mould growth, musty odours, or potential moisture issues, our IICRC-certified technicians provide comprehensive assessments and customized treatment plans. From heritage homes in Toorak to modern apartments in Southbank, we've successfully restored over 100 properties throughout Melbourne.
+                  </p>
+                </div>
+
                 <Card className="service-card p-6 mb-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-highlight/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-highlight" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-card-foreground mb-2">Location</h3>
+                      <h3 className="font-semibold text-card-foreground mb-2">Service Location</h3>
                       <address className="text-muted-foreground not-italic">
                         Melbourne, VIC 📍<br />
-                        Servicing all Melbourne Metro
+                        Servicing all Melbourne Metro<br />
+                        ABN: 47 683 089 652
                       </address>
                     </div>
                   </div>
@@ -179,20 +190,25 @@ export const ContactOptimized = () => {
                       <Clock className="w-6 h-6 text-highlight" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-card-foreground mb-2">Operating Hours</h3>
+                      <h3 className="font-semibold text-card-foreground mb-2">Professional Service Hours</h3>
                       <ul className="text-muted-foreground text-sm space-y-1">
-                        <li className="font-semibold text-orange-500">Professional Service: 7am-7pm Everyday</li>
-                        <li>Office Hours: Mon-Fri 7AM-7PM</li>
-                        <li>Weekend: Sat-Sun 7AM-7PM</li>
+                        <li className="font-semibold text-orange-500">Professional Service: 7am-7pm Every Day</li>
+                        <li>Monday - Friday: 7AM-7PM (Full Service)</li>
+                        <li>Saturday - Sunday: 7AM-7PM (Full Service)</li>
+                        <li>Same-day inspections available</li>
+                        <li>Professional response within 1 hour</li>
                       </ul>
+                      <p className="text-xs text-muted-foreground mt-3">
+                        Unlike many competitors who offer limited weekend service, we provide full professional assistance seven days a week. Our technicians are available for same-day inspections and consultations throughout Melbourne.
+                      </p>
                     </div>
                   </div>
                 </Card>
 
                 {/* Trust Credentials */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-foreground">Why Choose Us?</h3>
-                  <div className="grid grid-cols-3 gap-4 text-center">
+                  <h3 className="text-xl font-bold text-foreground">Why Melbourne Trusts Mould & Restoration Co.</h3>
+                  <div className="grid grid-cols-3 gap-4 text-center mb-4">
                     <div className="trust-signals p-4">
                       <div className="text-2xl font-bold text-accent-teal">100+</div>
                       <div className="text-xs text-muted-foreground">Properties Restored</div>
@@ -206,19 +222,46 @@ export const ContactOptimized = () => {
                       <div className="text-xs text-muted-foreground">Inspection Available</div>
                     </div>
                   </div>
+
+                  {/* Additional Trust Content */}
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-2">Professional Credentials & Standards</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• IICRC-certified mould remediation specialists</li>
+                      <li>• Fully insured for commercial and residential work</li>
+                      <li>• Professional-grade equipment and safety protocols</li>
+                      <li>• Comprehensive warranty on all remediation work</li>
+                      <li>• Transparent pricing with detailed written quotes</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-2">Melbourne Market Expertise</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Our team understands Melbourne's unique climate challenges, from the humid summers that promote mould growth to the seasonal variations that affect different property types. We've worked extensively across all Melbourne suburbs, from historic terraces in Fitzroy to luxury apartments in Docklands, developing specialized approaches for each type of building and environmental condition.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Service Area */}
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">Popular Service Areas:</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                    <div>• Toorak</div>
-                    <div>• Brighton</div>
-                    <div>• Malvern</div>
-                    <div>• Carlton</div>
-                    <div>• Richmond</div>
-                    <div>• South Yarra</div>
+                  <h4 className="font-semibold text-foreground mb-3">Comprehensive Melbourne Service Coverage</h4>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    We provide professional mould inspection and remediation services across all Melbourne metropolitan areas. Our mobile service units are strategically positioned to ensure rapid response times throughout the city.
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground mb-3">
+                    <div>• Toorak & Malvern</div>
+                    <div>• Brighton & Sandringham</div>
+                    <div>• Carlton & Fitzroy</div>
+                    <div>• Richmond & South Yarra</div>
+                    <div>• Docklands & Southbank</div>
+                    <div>• Kew & Hawthorn</div>
+                    <div>• Camberwell & Glen Iris</div>
+                    <div>• Essendon & Airport West</div>
                   </div>
+                  <p className="text-xs text-muted-foreground">
+                    Plus all surrounding Melbourne metro areas. Contact us to confirm service availability in your specific location - we regularly expand our service zones based on customer demand.
+                  </p>
                 </div>
               </div>
             </div>
@@ -228,11 +271,21 @@ export const ContactOptimized = () => {
               <Card className="service-card p-8">
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold text-foreground mb-4">
-                    Get Your Free Quote
+                    Get Your Free Professional Assessment & Quote
                   </h2>
-                  <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you Same-day professional service with a detailed quote for your project.
+                  <p className="text-muted-foreground mb-4">
+                    Complete the form below to receive a comprehensive assessment and detailed quote for your mould inspection or remediation needs. Our experienced team reviews every submission personally and responds within 1 hour during business hours.
                   </p>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-2">What You'll Receive:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Detailed assessment of your specific mould concerns</li>
+                      <li>• Professional recommendation for inspection or remediation</li>
+                      <li>• Transparent pricing with no hidden costs</li>
+                      <li>• Available appointment times within 24-48 hours</li>
+                      <li>• Educational information about mould prevention</li>
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Urgency Indicator */}
@@ -368,6 +421,39 @@ export const ContactOptimized = () => {
                   </div>
                 </form>
               </Card>
+            </div>
+          </div>
+
+          {/* Additional Information Section */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
+                What Makes Our Melbourne Mould Service Different
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Professional Standards</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Every member of our team holds industry certifications and follows strict safety protocols. We use only professional-grade equipment and proven methodologies, ensuring consistent results across all projects regardless of size or complexity.
+                  </p>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Local Melbourne Expertise</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Our deep understanding of Melbourne's climate patterns, building types, and local regulations ensures we provide solutions specifically tailored to Victorian conditions. From seaside properties in Brighton dealing with salt air to inner-city apartments with ventilation challenges, we've encountered and solved them all.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Customer-First Approach</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    We believe in educating our clients throughout the process. You'll receive detailed explanations of our findings, clear treatment recommendations, and practical advice for preventing future issues. Our goal is not just to solve the immediate problem but to help you maintain a healthy environment long-term.
+                  </p>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">Guaranteed Results</h3>
+                  <p className="text-muted-foreground text-sm">
+                    We stand behind our work with comprehensive warranties. Our systematic approach, quality materials, and experienced technicians mean you can trust that the job will be done right the first time. If issues arise, we'll return to make it right at no additional cost.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
