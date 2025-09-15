@@ -64,14 +64,14 @@ export const MiddlePark = () => {
               Professional Mould Removal & Inspection in Middle Park, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Middle Park's exclusive beachside community and coastal properties. IICRC-certified technicians with 5+ years experience treating beach proximity homes, coastal residences, and premium developments near Port Phillip Bay. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from discerning Middle Park residents.
+              Melbourne's premier mould removal specialists serving Middle Park's exclusive beachside community and coastal properties. IICRC-certified technicians with 5+ years experience treating beach proximity homes, coastal residences, and premium developments near Port Phillip Bay. same-day professional service, 100+ properties restored with 5.0/5 star rating from discerning Middle Park residents.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Middle Park</span>
+                  <span>same-day professional service to Middle Park</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />

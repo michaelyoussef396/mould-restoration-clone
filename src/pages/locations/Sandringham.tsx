@@ -35,7 +35,7 @@ export const Sandringham = () => {
         serviceName="Mould Removal Sandringham Melbourne"
         serviceType="Mould Remediation"
         areaServed="Sandringham, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Sandringham properties including beachside homes, marina buildings, and Bay Road commercial properties."
+        description="Professional mould removal and inspection services for Sandringham properties including beachside homes, marina buildings, and Bay Road commercial properties."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Sandringham = () => {
               Professional Mould Removal & Inspection in Sandringham, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Sandringham Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Sandringham's beachside living properties, marina proximity buildings, and Bay Road commercial precinct with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Sandringham Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Sandringham's beachside living properties, marina proximity buildings, and Bay Road commercial precinct with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const Sandringham = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common Sandringham Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Sandringham's combination of beachside living, marina activities, and commercial precinct creates specific mould challenges. Our emergency mould removal Sandringham Melbourne team addresses these with marine-appropriate solutions:
+                Sandringham's combination of beachside living, marina activities, and commercial precinct creates specific mould challenges. Our professional mould removal Sandringham Melbourne team addresses these with marine-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const Sandringham = () => {
                         Upon receiving your call for mould removal Sandringham Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to beachside homes, marina buildings, and commercial precinct properties.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to Sandringham (3191)</li>
+                        <li>• Professional service line response to Sandringham (3191)</li>
                         <li>• Beachside property salt air exposure assessment</li>
                         <li>• Marina proximity moisture impact evaluation</li>
                         <li>• Commercial precinct ventilation system analysis</li>
@@ -311,7 +311,7 @@ export const Sandringham = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Marine-Grade Remediation Techniques</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal Sandringham Melbourne service employs marine-grade techniques suitable for beachside properties, marina buildings, and commercial premises while addressing salt air corrosion and maintaining coastal building integrity.
+                        Our professional mould removal Sandringham Melbourne service employs marine-grade techniques suitable for beachside properties, marina buildings, and commercial premises while addressing salt air corrosion and maintaining coastal building integrity.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Salt-resistant antimicrobial treatments for coastal exposure</li>
@@ -383,7 +383,7 @@ export const Sandringham = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Sandringham Melbourne technicians are IICRC certified with additional training in marine environment standards and coastal property requirements, ensuring comprehensive service quality for beachside communities.
+                  Our professional mould removal Sandringham Melbourne technicians are IICRC certified with additional training in marine environment standards and coastal property requirements, ensuring comprehensive service quality for beachside communities.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -430,14 +430,14 @@ export const Sandringham = () => {
               Need Immediate Mould Removal in Sandringham?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Sandringham beachside home, marina property, or Bay Road business. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by beachside communities, marina facilities, and commercial properties with a 5.0-star rating.
+              Don't let mould compromise your Sandringham beachside home, marina property, or Bay Road business. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by beachside communities, marina facilities, and commercial properties with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Sandringham Melbourne assistance. Our marine environment specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

@@ -458,7 +458,7 @@ export default function KensingtonMouldRemoval() {
             </div>
 
             <div className="text-sm opacity-75">
-              ✓ Open 7am-7pm Every Day  ✓ Same-Day Emergency Service  ✓ Free Quotes  ✓ 5.0 Star Rating
+              ✓ Open 7am-7pm Every Day  ✓ Same-Day Professional Service  ✓ Free Quotes  ✓ 5.0 Star Rating
             </div>
           </div>
         </div>

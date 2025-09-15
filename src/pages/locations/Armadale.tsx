@@ -68,14 +68,14 @@ export const Armadale = () => {
               Professional Mould Removal & Inspection in Armadale, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal in Armadale Melbourne with same-day response. IICRC-certified technicians specializing in leafy suburban properties, heritage homes, and modern family residences. 5.0 stars, 100+ properties restored.
+              Professional mould removal in Armadale Melbourne with same-day response. IICRC-certified technicians specializing in leafy suburban properties, heritage homes, and modern family residences. 5.0 stars, 100+ properties restored.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Armadale</span>
+                  <span>same-day professional service to Armadale</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -123,7 +123,7 @@ export const Armadale = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's mature tree canopy, established garden settings, and family-oriented architecture creates unique humidity levels and ventilation challenges. Properties near the railway line, along High Street, and in the quiet residential streets experience different moisture patterns due to varying building ages, architectural styles, and landscaping influences. Our emergency mould removal Armadale service responds Same-day professional service to protect your family home or commercial property.
+              The suburb's mature tree canopy, established garden settings, and family-oriented architecture creates unique humidity levels and ventilation challenges. Properties near the railway line, along High Street, and in the quiet residential streets experience different moisture patterns due to varying building ages, architectural styles, and landscaping influences. Our professional mould removal Armadale service responds Same-day professional service to protect your family home or commercial property.
             </p>
           </div>
 
@@ -196,7 +196,7 @@ export const Armadale = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-4 text-primary">Suburban Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Armadale, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with family-safe methods. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal Armadale, our professional service team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with family-safe methods. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -441,7 +441,7 @@ export const Armadale = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Family Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Armadale</li>
+                    <li>• same-day professional service response to Armadale</li>
                     <li>• Family schedule coordination</li>
                     <li>• Immediate child and pet safety protection</li>
                     <li>• School routine accommodation</li>
@@ -576,7 +576,7 @@ export const Armadale = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
+                      <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -622,7 +622,7 @@ export const Armadale = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Armadale Family Emergency: 1800 954 117
+                Armadale Family Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Family Home Inspection

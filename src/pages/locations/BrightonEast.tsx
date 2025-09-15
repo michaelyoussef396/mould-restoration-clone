@@ -35,7 +35,7 @@ export const BrightonEast = () => {
         serviceName="Mould Removal Brighton East Melbourne"
         serviceType="Mould Remediation"
         areaServed="Brighton East, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Brighton East properties including family homes, beachside residences, and coastal exposure buildings."
+        description="Professional mould removal and inspection services for Brighton East properties including family homes, beachside residences, and coastal exposure buildings."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const BrightonEast = () => {
               Professional Mould Removal & Inspection in Brighton East, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Brighton East Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Brighton East's family homes, beachside residences, and coastal exposure properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Brighton East Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Brighton East's family homes, beachside residences, and coastal exposure properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const BrightonEast = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common Brighton East Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Brighton East's combination of family living, beachside location, and suburban density creates specific mould challenges. Our emergency mould removal Brighton East Melbourne team addresses these with family-appropriate solutions:
+                Brighton East's combination of family living, beachside location, and suburban density creates specific mould challenges. Our professional mould removal Brighton East Melbourne team addresses these with family-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const BrightonEast = () => {
                         Upon receiving your call for mould removal Brighton East Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to family homes, beachside properties, and coastal exposure areas.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to Brighton East (3187)</li>
+                        <li>• Professional service line response to Brighton East (3187)</li>
                         <li>• Family home structure and ventilation assessment</li>
                         <li>• Beachside environmental impact evaluation</li>
                         <li>• Salt air exposure and moisture penetration mapping</li>
@@ -311,7 +311,7 @@ export const BrightonEast = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Family Home Remediation Techniques</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal Brighton East Melbourne service employs family-safe techniques suitable for residential homes, children's areas, and beachside properties while maintaining healthy indoor environments for all family members.
+                        Our professional mould removal Brighton East Melbourne service employs family-safe techniques suitable for residential homes, children's areas, and beachside properties while maintaining healthy indoor environments for all family members.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Non-toxic treatments safe for children and pets</li>
@@ -383,7 +383,7 @@ export const BrightonEast = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Brighton East Melbourne technicians are IICRC certified with additional training in family home safety and coastal property standards, ensuring comprehensive service quality for residential properties.
+                  Our professional mould removal Brighton East Melbourne technicians are IICRC certified with additional training in family home safety and coastal property standards, ensuring comprehensive service quality for residential properties.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -430,14 +430,14 @@ export const BrightonEast = () => {
               Need Immediate Mould Removal in Brighton East?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Brighton East family home, beachside property, or children's health. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by families, schools, and coastal properties with a 5.0-star rating.
+              Don't let mould compromise your Brighton East family home, beachside property, or children's health. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by families, schools, and coastal properties with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Brighton East Melbourne assistance. Our family home specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

@@ -24,7 +24,7 @@ const DEFAULT_SEO = {
   titleSuffix: "Mould & Restoration Co.",
   baseUrl: "https://mouldrestoration.com.au",
   defaultImage: "https://mouldrestoration.com.au/assets/hero-background.jpg",
-  defaultDescription: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored. Emergency response available 7am-7pm every day. Call 1800 954 117.",
+  defaultDescription: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored. Professional same-day service available 7am-7pm every day. Call 1800 954 117.",
   phone: "1800 954 117",
   businessName: "Mould & Restoration Co.",
   abn: "47 683 089 652"
@@ -44,10 +44,10 @@ const generateMelbourneKeywords = (location?: string, service?: string, emergenc
 
   if (emergency) {
     baseKeywords.push(
-      "emergency mould removal melbourne",
-      "same day mould removal",
+      "same day mould removal melbourne",
+      "professional mould removal",
       "urgent mould inspection melbourne",
-      "24/7 mould response melbourne"
+      "same-day mould response melbourne"
     );
   }
 
@@ -65,7 +65,7 @@ const generateMelbourneKeywords = (location?: string, service?: string, emergenc
       inspection: ["mould inspection", "mould testing", "air quality testing", "thermal imaging inspection"],
       removal: ["mould removal", "mould elimination", "comprehensive mould removal"],
       remediation: ["mould remediation", "subfloor mould", "mould restoration", "moisture control"],
-      emergency: ["emergency mould", "urgent mould removal", "same day mould", "rapid response"],
+      emergency: ["same day mould", "professional mould removal", "urgent mould removal", "rapid professional response"],
       fogging: ["fogging sanitisation", "mould fogging", "ULV fogging", "sanitization treatment"]
     };
 
@@ -83,14 +83,14 @@ const generateMelbourneKeywords = (location?: string, service?: string, emergenc
 
 // Generate location-specific titles and descriptions
 const generateLocationContent = (service: string, location: string, emergency?: boolean) => {
-  const emergencyPrefix = emergency ? "Emergency " : "Professional ";
-  const responseTime = emergency ? "2 Hour Response" : "Same Day Available";
+  const emergencyPrefix = "Professional ";
+  const responseTime = "Same Day Available";
 
   const titles = {
     inspection: `${emergencyPrefix}Mould Inspection ${location} Melbourne - ${responseTime}`,
     removal: `${emergencyPrefix}Mould Removal ${location} Melbourne - IICRC Certified`,
     remediation: `Subfloor Mould Remediation ${location} Melbourne - Expert Treatment`,
-    emergency: `Emergency Mould Removal ${location} Melbourne - Call 1800 954 117`,
+    emergency: `Professional Mould Removal ${location} Melbourne - Call 1800 954 117`,
     fogging: `Advanced Fogging Sanitisation ${location} Melbourne - Professional Service`
   };
 

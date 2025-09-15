@@ -35,7 +35,7 @@ export const Mentone = () => {
         serviceName="Mould Removal Mentone Melbourne"
         serviceType="Mould Remediation"
         areaServed="Mentone, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Mentone properties including family beach homes, station precinct buildings, and Balcombe Creek area properties."
+        description="Professional mould removal and inspection services for Mentone properties including family beach homes, station precinct buildings, and Balcombe Creek area properties."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Mentone = () => {
               Professional Mould Removal & Inspection in Mentone, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Mentone Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Mentone's family beach living properties, station precinct buildings, and Balcombe Creek area homes with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Mentone Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Mentone's family beach living properties, station precinct buildings, and Balcombe Creek area homes with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const Mentone = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common Mentone Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Mentone's combination of family beach living, creek proximity, and suburban amenities creates specific mould challenges. Our emergency mould removal Mentone Melbourne team addresses these with family-appropriate solutions:
+                Mentone's combination of family beach living, creek proximity, and suburban amenities creates specific mould challenges. Our professional mould removal Mentone Melbourne team addresses these with family-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const Mentone = () => {
                         Upon receiving your call for mould removal Mentone Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to family beach homes, creek area properties, and station precinct buildings.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to Mentone (3194)</li>
+                        <li>• Professional service line response to Mentone (3194)</li>
                         <li>• Family beach property salt air and moisture assessment</li>
                         <li>• Creek proximity waterway impact evaluation</li>
                         <li>• Station precinct microclimate analysis</li>
@@ -311,7 +311,7 @@ export const Mentone = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Family Community Remediation Techniques</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal Mentone Melbourne service employs family-community techniques suitable for beach homes, creek area properties, and station precinct buildings while maintaining healthy environments for families and community members.
+                        Our professional mould removal Mentone Melbourne service employs family-community techniques suitable for beach homes, creek area properties, and station precinct buildings while maintaining healthy environments for families and community members.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Non-toxic family-safe treatments for beach homes</li>
@@ -383,7 +383,7 @@ export const Mentone = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Mentone Melbourne technicians are IICRC certified with additional training in family community standards and diverse environmental property requirements, ensuring comprehensive service quality for beachside families.
+                  Our professional mould removal Mentone Melbourne technicians are IICRC certified with additional training in family community standards and diverse environmental property requirements, ensuring comprehensive service quality for beachside families.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -430,14 +430,14 @@ export const Mentone = () => {
               Need Immediate Mould Removal in Mentone?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Mentone family beach home, creek area property, or children's health. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by families, schools, and community properties with a 5.0-star rating.
+              Don't let mould compromise your Mentone family beach home, creek area property, or children's health. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by families, schools, and community properties with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Mentone Melbourne assistance. Our family community specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

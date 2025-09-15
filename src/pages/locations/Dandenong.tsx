@@ -35,7 +35,7 @@ export const Dandenong = () => {
         serviceName="Mould Removal Dandenong Melbourne"
         serviceType="Mould Remediation"
         areaServed="Dandenong, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Dandenong properties including multicultural housing, industrial buildings, and diverse community developments."
+        description="Professional mould removal and inspection services for Dandenong properties including multicultural housing, industrial buildings, and diverse community developments."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Dandenong = () => {
               Professional Mould Removal & Inspection in Dandenong, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Dandenong Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Dandenong's multicultural community housing, industrial precinct properties, and diverse residential developments with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Dandenong Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Dandenong's multicultural community housing, industrial precinct properties, and diverse residential developments with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const Dandenong = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common Dandenong Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Dandenong's combination of multicultural community housing, industrial activities, and high-density living creates specific mould challenges. Our emergency mould removal Dandenong Melbourne team addresses these with community-appropriate solutions:
+                Dandenong's combination of multicultural community housing, industrial activities, and high-density living creates specific mould challenges. Our professional mould removal Dandenong Melbourne team addresses these with community-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const Dandenong = () => {
                         Upon receiving your call for mould removal Dandenong Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping suitable for diverse community housing, industrial buildings, and high-density developments.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to Dandenong (3175)</li>
+                        <li>• Professional service line response to Dandenong (3175)</li>
                         <li>• Multicultural housing and community building assessment</li>
                         <li>• Industrial precinct environmental impact evaluation</li>
                         <li>• High-density housing moisture source identification</li>
@@ -311,7 +311,7 @@ export const Dandenong = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Diverse Community Remediation Techniques</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal Dandenong Melbourne service employs adaptable techniques suitable for multicultural housing, industrial buildings, and high-density developments while maintaining community health standards for all residents.
+                        Our professional mould removal Dandenong Melbourne service employs adaptable techniques suitable for multicultural housing, industrial buildings, and high-density developments while maintaining community health standards for all residents.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Community-safe treatments for diverse household compositions</li>
@@ -383,7 +383,7 @@ export const Dandenong = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Dandenong Melbourne technicians are IICRC certified with additional training in diverse community standards and industrial safety requirements, ensuring comprehensive service quality for all community members.
+                  Our professional mould removal Dandenong Melbourne technicians are IICRC certified with additional training in diverse community standards and industrial safety requirements, ensuring comprehensive service quality for all community members.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -430,14 +430,14 @@ export const Dandenong = () => {
               Need Immediate Mould Removal in Dandenong?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Dandenong multicultural housing, industrial facility, or community building. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by diverse communities, industrial facilities, and high-density developments with a 5.0-star rating.
+              Don't let mould compromise your Dandenong multicultural housing, industrial facility, or community building. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by diverse communities, industrial facilities, and high-density developments with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Dandenong Melbourne assistance. Our multicultural community specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

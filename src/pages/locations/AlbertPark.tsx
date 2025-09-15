@@ -64,14 +64,14 @@ export const AlbertPark = () => {
               Professional Mould Removal & Inspection in Albert Park, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Albert Park's prestigious lakeside community and sports precinct. IICRC-certified technicians with 5+ years experience treating lakefront properties, Grand Prix circuit homes, and premium developments around Albert Park Lake. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from discerning Albert Park residents.
+              Melbourne's premier mould removal specialists serving Albert Park's prestigious lakeside community and sports precinct. IICRC-certified technicians with 5+ years experience treating lakefront properties, Grand Prix circuit homes, and premium developments around Albert Park Lake. same-day professional service, 100+ properties restored with 5.0/5 star rating from discerning Albert Park residents.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Albert Park</span>
+                  <span>same-day professional service to Albert Park</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />

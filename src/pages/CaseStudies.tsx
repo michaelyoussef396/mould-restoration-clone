@@ -18,7 +18,7 @@ const CaseStudies = () => {
 
   const filters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'emergency', label: 'Professional Service - Same-day Available 7am-7pm' },
+    { id: 'emergency', label: 'Same-day Professional Service' },
     { id: 'residential', label: 'Residential' },
     { id: 'commercial', label: 'Commercial' },
     { id: 'insurance', label: 'Insurance Claims' },
@@ -28,9 +28,9 @@ const CaseStudies = () => {
   const caseStudies = [
     {
       id: 'toorak-emergency',
-      title: '24-Hour Black Mold Professional Service - Same-day Available 7am-7pm - Toorak Family Home',
+      title: 'Same-Day Black Mold Professional Service - Toorak Family Home',
       slug: 'toorak-emergency-black-mold-response',
-      excerpt: 'Rapid 2-hour response eliminated extensive basement mold threatening family health. IICRC-certified process restored safety Same-day professional service.',
+      excerpt: 'Same-day professional response eliminated extensive basement mold threatening family health. IICRC-certified process restored safety within 24 hours.',
       image: mouldRemovalTransformation,
       category: 'emergency',
       location: 'Toorak',
@@ -127,7 +127,7 @@ const CaseStudies = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium fixed top-0 left-0 right-0 z-[60] h-10">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 24/7 Same-day Service Available</span>
+          <span className="hidden sm:block">🚨 Professional Service - Same-day Available 7am-7pm</span>
           <span className="sm:hidden">Same-day Service Available 7am-7pm</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />

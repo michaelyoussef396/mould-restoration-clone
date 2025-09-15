@@ -35,7 +35,7 @@ export const Springvale = () => {
         serviceName="Mould Removal Springvale Melbourne"
         serviceType="Mould Remediation"
         areaServed="Springvale, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Springvale properties including diverse community housing, commercial buildings, and multicultural residential developments."
+        description="Professional mould removal and inspection services for Springvale properties including diverse community housing, commercial buildings, and multicultural residential developments."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Springvale = () => {
               Professional Mould Removal & Inspection in Springvale, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Springvale Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Springvale's diverse community housing, Springvale Road commercial precinct, and multicultural residential properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Springvale Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Springvale's diverse community housing, Springvale Road commercial precinct, and multicultural residential properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -152,7 +152,7 @@ export const Springvale = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Springvale Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Springvale's combination of diverse community housing, intensive commercial activities, and multicultural living patterns creates specific mould challenges. Our emergency mould removal Springvale Melbourne team addresses these with culturally-appropriate solutions:
+                Springvale's combination of diverse community housing, intensive commercial activities, and multicultural living patterns creates specific mould challenges. Our professional mould removal Springvale Melbourne team addresses these with culturally-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -297,7 +297,7 @@ export const Springvale = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Springvale Melbourne technicians are IICRC certified with training in multicultural community standards and diverse housing requirements, ensuring comprehensive service quality for all community members.
+                  Our professional mould removal Springvale Melbourne technicians are IICRC certified with training in multicultural community standards and diverse housing requirements, ensuring comprehensive service quality for all community members.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -344,14 +344,14 @@ export const Springvale = () => {
               Need Immediate Mould Removal in Springvale?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Springvale multicultural home, commercial property, or community building. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by diverse communities, commercial facilities, and multicultural housing with a 5.0-star rating.
+              Don't let mould compromise your Springvale multicultural home, commercial property, or community building. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by diverse communities, commercial facilities, and multicultural housing with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Springvale Melbourne assistance. Our multicultural community specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

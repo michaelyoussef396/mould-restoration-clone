@@ -35,7 +35,7 @@ export const Parkville = () => {
         serviceName="Mould Removal Parkville Melbourne"
         serviceType="Mould Remediation"
         areaServed="Parkville, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Parkville properties including university buildings, hospital vicinity homes, heritage properties, and research facilities."
+        description="Professional mould removal and inspection services for Parkville properties including university buildings, hospital vicinity homes, heritage properties, and research facilities."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Parkville = () => {
               Professional Mould Removal & Inspection in Parkville, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Parkville Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Parkville's university precinct, hospital vicinity properties, and heritage residential areas with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Parkville Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Parkville's university precinct, hospital vicinity properties, and heritage residential areas with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -152,7 +152,7 @@ export const Parkville = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Parkville Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Parkville's combination of prestigious institutions, heritage architecture, and parkland proximity creates specific mould challenges. Our emergency mould removal Parkville Melbourne team addresses these with institutional-grade solutions:
+                Parkville's combination of prestigious institutions, heritage architecture, and parkland proximity creates specific mould challenges. Our professional mould removal Parkville Melbourne team addresses these with institutional-grade solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -297,7 +297,7 @@ export const Parkville = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Parkville Melbourne technicians are IICRC certified with specialized training in institutional facilities and heritage building conservation standards.
+                  Our professional mould removal Parkville Melbourne technicians are IICRC certified with specialized training in institutional facilities and heritage building conservation standards.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -344,14 +344,14 @@ export const Parkville = () => {
               Need Immediate Mould Removal in Parkville?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Parkville institutional facility, heritage property, or residential building. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by educational institutions, medical facilities, and heritage property owners with a 5.0-star rating.
+              Don't let mould compromise your Parkville institutional facility, heritage property, or residential building. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by educational institutions, medical facilities, and heritage property owners with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Parkville Melbourne assistance. Our institutional and heritage specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

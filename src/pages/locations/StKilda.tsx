@@ -68,14 +68,14 @@ export const StKilda = () => {
               Professional Mould Removal & Inspection in St Kilda, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal in St Kilda Melbourne with same-day response. IICRC-certified technicians specializing in seaside properties, heritage apartments, and vibrant community developments. 5.0 stars, 100+ properties restored.
+              Professional mould removal in St Kilda Melbourne with same-day response. IICRC-certified technicians specializing in seaside properties, heritage apartments, and vibrant community developments. 5.0 stars, 100+ properties restored.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to St Kilda</span>
+                  <span>same-day professional service to St Kilda</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -123,7 +123,7 @@ export const StKilda = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's coastal environment, entertainment district atmosphere, and proximity to Port Phillip Bay creates unique humidity levels and salt air challenges. Properties near the beach, along Acland Street, and in the artistic quarter experience different moisture patterns due to varying building ages, coastal exposure, and entertainment activity levels. Our emergency mould removal St Kilda service responds Same-day professional service to protect your seaside property or entertainment venue.
+              The suburb's coastal environment, entertainment district atmosphere, and proximity to Port Phillip Bay creates unique humidity levels and salt air challenges. Properties near the beach, along Acland Street, and in the artistic quarter experience different moisture patterns due to varying building ages, coastal exposure, and entertainment activity levels. Our professional mould removal St Kilda service responds Same-day professional service to protect your seaside property or entertainment venue.
             </p>
           </div>
 
@@ -196,7 +196,7 @@ export const StKilda = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-4 text-primary">Coastal Entertainment Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal St Kilda, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with coastal-appropriate methods. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal St Kilda, our professional service team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with coastal-appropriate methods. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -441,7 +441,7 @@ export const StKilda = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Coastal Entertainment Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to St Kilda</li>
+                    <li>• same-day professional service response to St Kilda</li>
                     <li>• Entertainment venue coordination</li>
                     <li>• Immediate coastal property protection</li>
                     <li>• Business activity accommodation</li>
@@ -576,7 +576,7 @@ export const StKilda = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
+                      <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -622,7 +622,7 @@ export const StKilda = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                St Kilda Coastal Entertainment Emergency: 1800 954 117
+                St Kilda Coastal Entertainment Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Coastal Inspection

@@ -35,7 +35,7 @@ export const NottingHill = () => {
         serviceName="Mould Removal Notting Hill Melbourne"
         serviceType="Mould Remediation"
         areaServed="Notting Hill, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Notting Hill properties including established family homes, unit complexes, and mature suburban developments."
+        description="Professional mould removal and inspection services for Notting Hill properties including established family homes, unit complexes, and mature suburban developments."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const NottingHill = () => {
               Professional Mould Removal & Inspection in Notting Hill, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Notting Hill Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Notting Hill's established family homes, unit developments, and mature suburban properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Notting Hill Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Notting Hill's established family homes, unit developments, and mature suburban properties with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -152,7 +152,7 @@ export const NottingHill = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Notting Hill Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Notting Hill's combination of established family housing, mature suburban infrastructure, and diverse property ages creates specific mould challenges. Our emergency mould removal Notting Hill Melbourne team addresses these with comprehensive suburban solutions:
+                Notting Hill's combination of established family housing, mature suburban infrastructure, and diverse property ages creates specific mould challenges. Our professional mould removal Notting Hill Melbourne team addresses these with comprehensive suburban solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -297,7 +297,7 @@ export const NottingHill = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Notting Hill Melbourne technicians are IICRC certified with specialized training in established home renovation and unit complex moisture management.
+                  Our professional mould removal Notting Hill Melbourne technicians are IICRC certified with specialized training in established home renovation and unit complex moisture management.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -344,14 +344,14 @@ export const NottingHill = () => {
               Need Immediate Mould Removal in Notting Hill?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Notting Hill family home, unit complex, or investment property. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by established suburban families and property investors with a 5.0-star rating.
+              Don't let mould compromise your Notting Hill family home, unit complex, or investment property. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by established suburban families and property investors with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Notting Hill Melbourne assistance. Our established suburb specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

@@ -303,12 +303,12 @@ export const EmergencyContactLinks: React.FC<{ currentPage?: string }> = ({ curr
             {currentPage !== 'emergency' && (
               <Button variant="outline" size="sm" asChild>
                 <SEOInternalLink
-                  href="/services/emergency-mould-removal"
-                  anchor="Emergency Mould Removal Melbourne"
-                  service="Professional Service - Same-day Available 7am-7pm"
-                  className="text-red-700 hover:text-red-900"
+                  href="/services/comprehensive-mould-removal"
+                  anchor="Professional Mould Removal Melbourne"
+                  service="Same-day Professional Service"
+                  className="text-blue-700 hover:text-blue-900"
                 >
-                  Emergency Service Info
+                  Professional Service Info
                 </SEOInternalLink>
               </Button>
             )}

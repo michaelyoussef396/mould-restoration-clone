@@ -35,7 +35,7 @@ export const WheelersHillSE = () => {
         serviceName="Mould Removal Wheelers Hill Melbourne"
         serviceType="Mould Remediation"
         areaServed="Wheelers Hill, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Wheelers Hill properties including hillside estates, modern family homes, and elevated residential developments."
+        description="Professional mould removal and inspection services for Wheelers Hill properties including hillside estates, modern family homes, and elevated residential developments."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const WheelersHillSE = () => {
               Professional Mould Removal & Inspection in Wheelers Hill, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Wheelers Hill Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Wheelers Hill's hillside estate properties, modern family homes, and elevated residential developments with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Wheelers Hill Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Wheelers Hill's hillside estate properties, modern family homes, and elevated residential developments with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -152,7 +152,7 @@ export const WheelersHillSE = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Wheelers Hill Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Wheelers Hill's combination of elevated terrain, modern estate development, and hillside weather exposure creates specific mould challenges. Our emergency mould removal Wheelers Hill Melbourne team addresses these with elevation-focused solutions:
+                Wheelers Hill's combination of elevated terrain, modern estate development, and hillside weather exposure creates specific mould challenges. Our professional mould removal Wheelers Hill Melbourne team addresses these with elevation-focused solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -297,7 +297,7 @@ export const WheelersHillSE = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Wheelers Hill Melbourne technicians are IICRC certified with training in elevated property standards and modern building requirements, ensuring comprehensive service quality for hillside communities.
+                  Our professional mould removal Wheelers Hill Melbourne technicians are IICRC certified with training in elevated property standards and modern building requirements, ensuring comprehensive service quality for hillside communities.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -344,14 +344,14 @@ export const WheelersHillSE = () => {
               Need Immediate Mould Removal in Wheelers Hill?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Wheelers Hill estate home, elevated property, or modern family residence. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by hillside communities and estate families with a 5.0-star rating.
+              Don't let mould compromise your Wheelers Hill estate home, elevated property, or modern family residence. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by hillside communities and estate families with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Wheelers Hill Melbourne assistance. Our hillside estate specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

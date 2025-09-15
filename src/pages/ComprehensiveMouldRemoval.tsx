@@ -52,7 +52,7 @@ export const ComprehensiveMouldRemoval = () => {
       rating: 5,
     },
     {
-      text: "Emergency response was incredible - arrived Same-day professional service on a weekend. Contained the mold spread and prevented further damage to our home.",
+      text: "Professional response was incredible - arrived same-day on a weekend. Contained the mold spread and prevented further damage to our home.",
       name: "Lisa Chen",
       location: "Brighton",
       rating: 5,
@@ -64,7 +64,7 @@ export const ComprehensiveMouldRemoval = () => {
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
-          <span className="hidden sm:block">🚨 Serious Mold Problem? Emergency response Same-day professional service</span>
+          <span className="hidden sm:block">🚨 Serious Mold Problem? Professional Service - Same-day Available 7am-7pm</span>
           <span className="sm:hidden">Professional Service - Same-day Available 7am-7pm</span>
           <a href="tel:1800954117" className="font-bold hover:underline flex items-center gap-1">
             <Phone className="h-4 w-4" />
@@ -285,7 +285,7 @@ export const ComprehensiveMouldRemoval = () => {
                         <div className="bg-white p-6 rounded-lg border border-red-200">
                           <h4 className="font-bold text-gray-900 mb-3">Professional Service - Same-day Available 7am-7pm Protocol:</h4>
                           <ul className="space-y-2 text-gray-700 mb-4">
-                            <li>• Within 2 hours response time for Melbourne emergencies</li>
+            <li>• Same-day response for Melbourne professional service requests</li>
                             <li>• Initial containment setup to prevent further contamination spread</li>
                             <li>• Comprehensive visual assessment and documentation with digital photography</li>
                             <li>• Moisture content readings using calibrated equipment at all affected areas</li>
@@ -554,10 +554,10 @@ export const ComprehensiveMouldRemoval = () => {
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
                   <span className="font-semibold text-orange-800">Same-day Service Available</span>
                 </div>
-                <p className="text-orange-700 mb-4">Responding to 4 emergency calls in Melbourne today</p>
+                <p className="text-orange-700 mb-4">Responding to 4 service calls in Melbourne today</p>
                 <div className="flex items-center justify-center gap-2 text-green-700">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">Next emergency slot: Within 2 hours</span>
+                  <span className="font-medium">Next professional service slot: Same-day available</span>
                 </div>
               </div>
             </Card>

@@ -68,7 +68,7 @@ export const Prahran = () => {
               Professional Mould Removal & Inspection in Prahran Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Prahran (3181). Expert emergency response for Chapel Street entertainment district, fashion boutiques, and mixed-use developments. IICRC certified technicians, 5.0-star rating, 100+ properties restored.
+              Melbourne's premier mould removal specialists serving Prahran (3181). Expert professional service for Chapel Street entertainment district, fashion boutiques, and mixed-use developments. IICRC certified technicians, 5.0-star rating, 100+ properties restored.
             </p>
 
             <div className="flex items-center gap-6 mb-6 text-primary-foreground/90">
@@ -146,7 +146,7 @@ export const Prahran = () => {
 
           <div className="prose prose-lg max-w-4xl mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Mould & Restoration Co specialises in professional mould removal Prahran Melbourne, serving the vibrant entertainment district with emergency response and comprehensive mould remediation services. Our IICRC certified technicians understand the unique challenges facing Prahran's mixed residential and commercial properties, from Chapel Street's bustling fashion boutiques to the area's characteristic mixed-use developments.
+              Mould & Restoration Co specialises in professional mould removal Prahran Melbourne, serving the vibrant entertainment district with professional service and comprehensive mould remediation services. Our IICRC certified technicians understand the unique challenges facing Prahran's mixed residential and commercial properties, from Chapel Street's bustling fashion boutiques to the area's characteristic mixed-use developments.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
@@ -305,7 +305,7 @@ export const Prahran = () => {
 
           <div className="prose prose-lg max-w-4xl mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Prahran's unique position as Melbourne's premier entertainment and fashion district creates diverse property challenges requiring specialized mould removal expertise. From Chapel Street's heritage conversions to Commercial Road's modern mixed-use developments, our emergency mould removal Prahran services are tailored to each property type's specific moisture management requirements.
+              Prahran's unique position as Melbourne's premier entertainment and fashion district creates diverse property challenges requiring specialized mould removal expertise. From Chapel Street's heritage conversions to Commercial Road's modern mixed-use developments, our professional mould removal Prahran services are tailored to each property type's specific moisture management requirements.
             </p>
           </div>
           
@@ -441,7 +441,7 @@ export const Prahran = () => {
 
           <div className="prose prose-lg max-w-4xl mb-8">
             <p className="text-lg text-muted-foreground mb-6">
-              Our professional mould removal Prahran Melbourne services combine IICRC-certified techniques with local expertise to address the entertainment district's unique environmental challenges. From emergency response for Chapel Street businesses to comprehensive remediation for mixed-use developments, we provide specialized solutions for Prahran's diverse property portfolio.
+              Our professional mould removal Prahran Melbourne services combine IICRC-certified techniques with local expertise to address the entertainment district's unique environmental challenges. From professional service for Chapel Street businesses to comprehensive remediation for mixed-use developments, we provide specialized solutions for Prahran's diverse property portfolio.
             </p>
           </div>
 
@@ -455,7 +455,7 @@ export const Prahran = () => {
                   <h3 className="text-xl font-semibold mb-2 text-primary">Professional Service - Same-day Available 7am-7pm Prahran</h3>
                   <ul className="space-y-1 text-muted-foreground">
                     <li>• Same-day professional service time to Prahran 3181</li>
-                    <li>• 24/7 availability for entertainment venue emergencies</li>
+                    <li>• 7am-7pm daily availability for entertainment venue situations</li>
                     <li>• Rapid containment for mixed-use developments</li>
                     <li>• Fashion retail inventory protection protocols</li>
                     <li>• After-hours service to minimize business disruption</li>
@@ -622,12 +622,12 @@ export const Prahran = () => {
             </Card>
           </div>
 
-          <h3 className="text-2xl font-bold text-primary mb-8">Emergency Mould Removal Service Areas Near Prahran</h3>
+          <h3 className="text-2xl font-bold text-primary mb-8">Professional Mould Removal Service Areas Near Prahran</h3>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                Mould & Restoration Co provides rapid emergency mould removal services throughout Prahran Melbourne 3181 and surrounding entertainment district areas. Our 2-hour response commitment covers all property types from Chapel Street fashion boutiques to Commercial Road mixed-use developments.
+                Mould & Restoration Co provides rapid professional mould removal services throughout Prahran Melbourne 3181 and surrounding entertainment district areas. Our 2-hour response commitment covers all property types from Chapel Street fashion boutiques to Commercial Road mixed-use developments.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -708,7 +708,7 @@ export const Prahran = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span><strong>1800 954 117</strong> (Professional service hotline (7am-7pm) response)</span>
+                      <span><strong>1800 954 117</strong> (Professional service line response)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -762,7 +762,7 @@ export const Prahran = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Emergency Mould Removal Prahran: 1800 954 117
+                Professional Mould Removal Prahran: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Free Prahran Inspection
@@ -789,7 +789,7 @@ export const Prahran = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              <strong>Professional mould removal Prahran Melbourne</strong> • Entertainment district specialists • Mixed-use building experts • Emergency response 24/7 • ABN 47 683 089 652
+              <strong>Professional mould removal Prahran Melbourne</strong> • Entertainment district specialists • Mixed-use building experts • Emergency response 7am-7pm daily • ABN 47 683 089 652
             </p>
           </div>
         </div>

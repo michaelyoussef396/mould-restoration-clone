@@ -49,8 +49,8 @@ const CaseStudyDetail = () => {
         title: 'Our IICRC-Certified Professional Service - Same-day Available 7am-7pm',
         steps: [
           {
-            title: 'Immediate Response & Assessment',
-            description: 'Emergency team arrived Same-day professional service, conducting comprehensive air quality testing and thermal imaging to map moisture sources and contamination extent.'
+            title: 'Professional Response & Assessment',
+            description: 'Professional team arrived same-day, conducting comprehensive air quality testing and thermal imaging to map moisture sources and contamination extent.'
           },
           {
             title: 'Family Safety & Containment',
@@ -96,7 +96,7 @@ const CaseStudyDetail = () => {
         }
       },
       testimonial: {
-        quote: "I cannot express how grateful we are for the emergency response team. Within hours of my call, they had assessed the situation and begun remediation. My daughter's breathing improved dramatically within days, and we felt confident returning to our home. The professionalism and expertise were exceptional during a very scary time for our family.",
+        quote: "I cannot express how grateful we are for the professional team. Within hours of my call, they had assessed the situation and begun remediation. My daughter's breathing improved dramatically within days, and we felt confident returning to our home. The professionalism and expertise were exceptional during a very scary time for our family.",
         author: 'Sarah Johnson',
         location: 'Toorak',
         rating: 5,
@@ -235,7 +235,7 @@ const CaseStudyDetail = () => {
         steps: [
           {
             title: 'Immediate Employee Safety Assessment',
-            description: 'Emergency air quality testing and employee area isolation while coordinating with management on temporary workspace solutions.'
+            description: 'Immediate air quality testing and employee area isolation while coordinating with management on temporary workspace solutions.'
           },
           {
             title: 'WorkSafe Victoria Compliance',

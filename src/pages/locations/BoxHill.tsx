@@ -64,14 +64,14 @@ export const BoxHill = () => {
               Professional Mould Removal & Inspection in Box Hill, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Box Hill's vibrant multicultural transport hub and high-density living community. IICRC-certified technicians with 5+ years experience treating apartments, town centres, and diverse residential properties near Box Hill Central. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Box Hill residents.
+              Melbourne's premier mould removal specialists serving Box Hill's vibrant multicultural transport hub and high-density living community. IICRC-certified technicians with 5+ years experience treating apartments, town centres, and diverse residential properties near Box Hill Central. same-day professional service, 100+ properties restored with 5.0/5 star rating from Box Hill residents.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Box Hill</span>
+                  <span>same-day professional service to Box Hill</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -116,7 +116,7 @@ export const BoxHill = () => {
               <CardContent className="p-6 text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
-                <p className="text-muted-foreground mb-4">2-hour emergency callout to all Box Hill properties</p>
+                <p className="text-muted-foreground mb-4">same-day professional service to all Box Hill properties</p>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
@@ -290,7 +290,7 @@ export const BoxHill = () => {
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">2-Hour Transport Hub Response</h3>
                 <p className="text-muted-foreground">
-                  Rapid response to Box Hill emergencies with excellent transport access. Same-day service available with understanding of urban living schedules and community needs.
+                  Rapid response to Box Hill situations with excellent transport access. Same-day service available with understanding of urban living schedules and community needs.
                 </p>
               </div>
               <div className="text-center">
@@ -464,13 +464,13 @@ export const BoxHill = () => {
             Professional Mould Removal Service in Box Hill Melbourne
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-primary-foreground/90">
-            Protect your Box Hill property and urban community health with expert mould removal services. Our IICRC-certified specialists provide same-day emergency response with professional treatment for apartments, units, and high-density living throughout postcode 3128.
+            Protect your Box Hill property and urban community health with expert mould removal services. Our IICRC-certified specialists provide same-day professional service with professional treatment for apartments, units, and high-density living throughout postcode 3128.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
               <Clock className="w-6 h-6 text-blue-600" />
-              <span className="text-lg">2-Hour Professional Service - Same-day Available 7am-7pm</span>
+              <span className="text-lg">Same-Day Professional Service</span>
             </div>
             <div className="flex items-center gap-3">
               <Shield className="w-6 h-6 text-success-green" />

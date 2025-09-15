@@ -347,7 +347,7 @@ export default function RingwoodMouldRemoval() {
                   <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Accessible Service</h3>
                   <p className="text-sm text-gray-700">
-                    Same-day emergency response leveraging excellent transport connectivity.
+                    same-day professional service leveraging excellent transport connectivity.
                   </p>
                 </div>
               </div>
@@ -457,7 +457,7 @@ export default function RingwoodMouldRemoval() {
             </div>
 
             <div className="text-sm opacity-75">
-              ✓ Open 7am-7pm Every Day  ✓ Same-Day Emergency Service  ✓ Free Quotes  ✓ 5.0 Star Rating
+              ✓ Open 7am-7pm Every Day  ✓ Same-Day Professional Service  ✓ Free Quotes  ✓ 5.0 Star Rating
             </div>
           </div>
         </div>

@@ -64,14 +64,14 @@ export const GlenWaverley = () => {
               Professional Mould Removal & Inspection in Glen Waverley, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Glen Waverley's diverse multicultural community and family homes. IICRC-certified technicians with 5+ years experience treating newer constructions, established properties, and homes serving the Asian community near quality schools. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Glen Waverley families.
+              Melbourne's premier mould removal specialists serving Glen Waverley's diverse multicultural community and family homes. IICRC-certified technicians with 5+ years experience treating newer constructions, established properties, and homes serving the Asian community near quality schools. same-day professional service, 100+ properties restored with 5.0/5 star rating from Glen Waverley families.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Glen Waverley</span>
+                  <span>same-day professional service to Glen Waverley</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -116,7 +116,7 @@ export const GlenWaverley = () => {
               <CardContent className="p-6 text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
-                <p className="text-muted-foreground mb-4">2-hour emergency callout to all Glen Waverley properties</p>
+                <p className="text-muted-foreground mb-4">same-day professional service to all Glen Waverley properties</p>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
@@ -288,9 +288,9 @@ export const GlenWaverley = () => {
               </div>
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">2-Hour Family Professional Service - Same-day Available 7am-7pm</h3>
+                <h3 className="text-xl font-semibold mb-3">Same-Day Family Professional Service</h3>
                 <p className="text-muted-foreground">
-                  Rapid response to Glen Waverley family emergencies with same-day service. Understanding of busy family schedules, school commitments, and community events.
+                  Rapid response to Glen Waverley family situations with same-day service. Understanding of busy family schedules, school commitments, and community events.
                 </p>
               </div>
               <div className="text-center">
@@ -464,13 +464,13 @@ export const GlenWaverley = () => {
             Professional Mould Removal Service in Glen Waverley Melbourne
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-primary-foreground/90">
-            Protect your Glen Waverley family property and multicultural community health with expert mould removal services. Our IICRC-certified specialists provide same-day emergency response with culturally sensitive treatment for modern homes and contemporary properties throughout postcode 3150.
+            Protect your Glen Waverley family property and multicultural community health with expert mould removal services. Our IICRC-certified specialists provide same-day professional service with culturally sensitive treatment for modern homes and contemporary properties throughout postcode 3150.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
               <Clock className="w-6 h-6 text-blue-600" />
-              <span className="text-lg">2-Hour Professional Service - Same-day Available 7am-7pm</span>
+              <span className="text-lg">Same-Day Professional Service</span>
             </div>
             <div className="flex items-center gap-3">
               <Shield className="w-6 h-6 text-success-green" />

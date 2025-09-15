@@ -35,7 +35,7 @@ export const Carnegie = () => {
         serviceName="Mould Removal Carnegie Melbourne"
         serviceType="Mould Remediation"
         areaServed="Carnegie, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Carnegie properties including village community homes, period properties, and Koornang Road commercial buildings."
+        description="Professional mould removal and inspection services for Carnegie properties including village community homes, period properties, and Koornang Road commercial buildings."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Carnegie = () => {
               Professional Mould Removal & Inspection in Carnegie, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Carnegie Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Carnegie's village community properties, Koornang Road precinct, and period home renovations with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Carnegie Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Carnegie's village community properties, Koornang Road precinct, and period home renovations with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -152,7 +152,7 @@ export const Carnegie = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Carnegie Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Carnegie's combination of period architecture, village community atmosphere, and heritage building preservation creates specific mould challenges. Our emergency mould removal Carnegie Melbourne team addresses these with heritage-sensitive solutions:
+                Carnegie's combination of period architecture, village community atmosphere, and heritage building preservation creates specific mould challenges. Our professional mould removal Carnegie Melbourne team addresses these with heritage-sensitive solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -297,7 +297,7 @@ export const Carnegie = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Carnegie Melbourne technicians are IICRC certified with training in heritage building standards and period property requirements, ensuring comprehensive service quality for village community preservation.
+                  Our professional mould removal Carnegie Melbourne technicians are IICRC certified with training in heritage building standards and period property requirements, ensuring comprehensive service quality for village community preservation.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -344,14 +344,14 @@ export const Carnegie = () => {
               Need Immediate Mould Removal in Carnegie?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Carnegie period property, heritage building, or village community home. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by heritage property owners and village community residents with a 5.0-star rating.
+              Don't let mould compromise your Carnegie period property, heritage building, or village community home. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by heritage property owners and village community residents with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Carnegie Melbourne assistance. Our heritage property specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

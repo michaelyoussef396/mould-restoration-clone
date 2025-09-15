@@ -64,14 +64,14 @@ export const Murrumbeena = () => {
               Professional Mould Removal & Inspection in Murrumbeena, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Murrumbeena's family suburb and established residential properties. IICRC-certified technicians with 5+ years experience treating established home moisture challenges, community-focused properties, and period residential restoration. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Murrumbeena families.
+              Melbourne's premier mould removal specialists serving Murrumbeena's family suburb and established residential properties. IICRC-certified technicians with 5+ years experience treating established home moisture challenges, community-focused properties, and period residential restoration. same-day professional service, 100+ properties restored with 5.0/5 star rating from Murrumbeena families.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Murrumbeena</span>
+                  <span>same-day professional service to Murrumbeena</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -449,8 +449,8 @@ export const Murrumbeena = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Family Suburb Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Murrumbeena</li>
-                    <li>• Established residential moisture emergency</li>
+                    <li>• same-day professional service response to Murrumbeena</li>
+                    <li>• Established residential professional moisture service</li>
                     <li>• Family suburb protection</li>
                     <li>• Community-appropriate assessment</li>
                   </ul>
@@ -543,9 +543,9 @@ export const Murrumbeena = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Same-Day Response</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response Same-day professional service to Murrumbeena family suburb properties, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability for established residential emergencies. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide professional service Same-day professional service to Murrumbeena family suburb properties, operating 7am-7pm daily with Professional service line availability for established residential situations. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -558,7 +558,7 @@ export const Murrumbeena = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Professional service hotline (7am-7pm) hotline: 1800 954 117</span>
+                    <span>Professional service line: 1800 954 117</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -822,7 +822,7 @@ export const Murrumbeena = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service hotline (7am-7pm) line)</span>
+                      <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -830,7 +830,7 @@ export const Murrumbeena = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Established residential moisture emergency response available</span>
+                      <span>Established residential moisture professional service available</span>
                     </div>
                   </div>
                 </CardContent>
@@ -868,7 +868,7 @@ export const Murrumbeena = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Murrumbeena Family Emergency: 1800 954 117
+                Murrumbeena Family Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Family Inspection
@@ -877,7 +877,7 @@ export const Murrumbeena = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving Murrumbeena and all family suburb areas • Established residential specialists • Community neighbourhood emergency response available
+              Serving Murrumbeena and all family suburb areas • Established residential specialists • Community neighbourhood professional service available
             </p>
           </div>
         </div>

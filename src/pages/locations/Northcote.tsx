@@ -61,7 +61,7 @@ export default function NorthcoteMouldRemoval() {
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Clock className="h-4 w-4 text-blue-600 mr-2" />
-                  <span className="font-medium">2-Hour Professional Service - Same-day Available 7am-7pm Northcote</span>
+                  <span className="font-medium">Same-Day Professional Service Northcote</span>
                 </div>
                 <div className="flex items-center bg-white px-4 py-2 rounded-full shadow-md">
                   <Star className="h-4 w-4 text-yellow-500 mr-2" />
@@ -355,10 +355,10 @@ export default function NorthcoteMouldRemoval() {
         <div className="py-16 px-4 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-6">
-              Need Emergency Mould Removal in Northcote?
+              Need Professional Mould Removal in Northcote?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Don't let mould compromise your Northcote property. Our IICRC certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival time.
+              Don't let mould compromise your Northcote property. Our IICRC certified technicians provide Professional service line response with 2-hour arrival time.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-200">

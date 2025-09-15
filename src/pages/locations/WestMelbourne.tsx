@@ -35,7 +35,7 @@ export const WestMelbourne = () => {
         serviceName="Mould Removal West Melbourne Melbourne"
         serviceType="Mould Remediation"
         areaServed="West Melbourne, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for West Melbourne properties including converted warehouses, university buildings, and residential developments."
+        description="Professional mould removal and inspection services for West Melbourne properties including converted warehouses, university buildings, and residential developments."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const WestMelbourne = () => {
               Professional Mould Removal & Inspection in West Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal West Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving West Melbourne's diverse mixed residential and industrial heritage area with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal West Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving West Melbourne's diverse mixed residential and industrial heritage area with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const WestMelbourne = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common West Melbourne Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                West Melbourne's unique mix of converted industrial buildings, university facilities, and modern developments creates specific mould challenges. Our emergency mould removal West Melbourne Melbourne team addresses these with industry-appropriate solutions:
+                West Melbourne's unique mix of converted industrial buildings, university facilities, and modern developments creates specific mould challenges. Our professional mould removal West Melbourne Melbourne team addresses these with industry-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const WestMelbourne = () => {
                         Upon receiving your call for mould removal West Melbourne Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to converted industrial buildings, university facilities, and mixed-use developments.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to West Melbourne (3003)</li>
+                        <li>• Professional service line response to West Melbourne (3003)</li>
                         <li>• Industrial building structure assessment</li>
                         <li>• University facility safety protocols</li>
                         <li>• Thermal imaging for concrete and brick structures</li>
@@ -311,7 +311,7 @@ export const WestMelbourne = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Industrial-Grade Remediation</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal West Melbourne Melbourne service employs industrial-strength techniques suitable for converted warehouses, concrete structures, and high-occupancy university buildings while preserving architectural character.
+                        Our professional mould removal West Melbourne Melbourne service employs industrial-strength techniques suitable for converted warehouses, concrete structures, and high-occupancy university buildings while preserving architectural character.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Concrete and brick structure treatment</li>
@@ -383,7 +383,7 @@ export const WestMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal West Melbourne Melbourne technicians are IICRC certified with additional training in industrial building restoration and educational facility standards, ensuring comprehensive service quality.
+                  Our professional mould removal West Melbourne Melbourne technicians are IICRC certified with additional training in industrial building restoration and educational facility standards, ensuring comprehensive service quality.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -450,7 +450,7 @@ export const WestMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">University Buildings</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal West Melbourne Melbourne for Victoria University buildings, student accommodation, and educational facilities requiring health-compliant environments.
+                    Specialised professional mould removal West Melbourne Melbourne for Victoria University buildings, student accommodation, and educational facilities requiring health-compliant environments.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Student dormitory moisture management</li>
@@ -510,7 +510,7 @@ export const WestMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Heritage Cottages</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal West Melbourne Melbourne for heritage worker's cottages and renovated period homes requiring preservation of original architectural features.
+                    Specialised professional mould removal West Melbourne Melbourne for heritage worker's cottages and renovated period homes requiring preservation of original architectural features.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Original timber floor preservation</li>
@@ -537,7 +537,7 @@ export const WestMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Industrial Building Considerations</h3>
                 <p className="text-gray-700 mb-4">
-                  West Melbourne's converted industrial buildings and warehouse lofts require specialised prevention strategies. Our emergency mould removal West Melbourne Melbourne experience informs these industrial-specific recommendations.
+                  West Melbourne's converted industrial buildings and warehouse lofts require specialised prevention strategies. Our professional mould removal West Melbourne Melbourne experience informs these industrial-specific recommendations.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -640,14 +640,14 @@ export const WestMelbourne = () => {
               Need Immediate Mould Removal in West Melbourne?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your West Melbourne warehouse loft, university facility, or mixed-use development. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by industrial conversions and educational facilities with a 5.0-star rating.
+              Don't let mould compromise your West Melbourne warehouse loft, university facility, or mixed-use development. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by industrial conversions and educational facilities with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal West Melbourne Melbourne assistance. Our industrial and university specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

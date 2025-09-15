@@ -19,7 +19,7 @@ interface ServiceSchemaProps {
 // Melbourne business data constants
 const BUSINESS_DATA = {
   name: "Mould & Restoration Co.",
-  description: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored, serving all Melbourne metro areas with emergency response available.",
+  description: "Melbourne's premier mould inspection and remediation service. 5+ years experience, 100+ properties restored, serving all Melbourne metro areas with professional same-day service available.",
   telephone: "1800954117",
   email: "info@mouldrestoration.com.au",
   url: "https://mouldrestoration.com.au",
@@ -174,7 +174,7 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
       },
       "result": {
         "@type": "Reservation",
-        "name": `${serviceType === 'emergency' ? 'Emergency' : 'Professional'} Mould Inspection ${location}`
+        "name": `Professional Mould Inspection ${location}`
       }
     }
   };
@@ -313,7 +313,7 @@ export const OrganizationSchema: React.FC = () => {
       "Air Quality Testing",
       "Thermal Imaging",
       "Melbourne Property Services",
-      "Professional Service - Same-day Available 7am-7pm",
+      "Same-day Professional Service Available",
       "IICRC Standards"
     ],
 

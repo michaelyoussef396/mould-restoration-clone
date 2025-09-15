@@ -35,7 +35,7 @@ export const Docklands = () => {
         serviceName="Mould Removal Docklands Melbourne"
         serviceType="Mould Remediation"
         areaServed="Docklands, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Docklands properties including modern waterfront apartments, new construction developments, and harbour precinct buildings."
+        description="Professional mould removal and inspection services for Docklands properties including modern waterfront apartments, new construction developments, and harbour precinct buildings."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Docklands = () => {
               Professional Mould Removal & Inspection in Docklands Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Docklands Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Docklands' modern waterfront developments, harbour precinct, and new construction with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Docklands Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Docklands' modern waterfront developments, harbour precinct, and new construction with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -93,7 +93,7 @@ export const Docklands = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Docklands</span>
+                  <span>same-day professional service to Docklands</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -115,7 +115,7 @@ export const Docklands = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-blue-600" />
-                  <span>Professional service hotline (7am-7pm) availability</span>
+                  <span>Professional service line availability</span>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export const Docklands = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The precinct's position on Melbourne's western harbour creates unique moisture challenges, while new construction building systems require different approaches than heritage properties. Properties around Harbour Esplanade, near Marvel Stadium, and throughout NewQuay and Victoria Harbour experience varying humidity patterns due to waterfront exposure and modern building technologies. Our emergency mould removal Docklands service responds Same-day professional service to protect your modern apartment or commercial space.
+              The precinct's position on Melbourne's western harbour creates unique moisture challenges, while new construction building systems require different approaches than heritage properties. Properties around Harbour Esplanade, near Marvel Stadium, and throughout NewQuay and Victoria Harbour experience varying humidity patterns due to waterfront exposure and modern building technologies. Our professional mould removal Docklands service responds Same-day professional service to protect your modern apartment or commercial space.
             </p>
           </div>
 
@@ -218,7 +218,7 @@ export const Docklands = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-4 text-primary">Waterfront Professional Service - Same-day Available 7am-7pm</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Docklands, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your modern living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
+                  When you need urgent mould removal Docklands, our professional service team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment with minimal disruption to your modern living environment. Our 100% satisfaction guarantee ensures complete peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -379,7 +379,7 @@ export const Docklands = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Waterfront Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Docklands</li>
+                    <li>• same-day professional service response to Docklands</li>
                     <li>• Building management notification</li>
                     <li>• Immediate modern apartment containment</li>
                     <li>• Contemporary service protocols</li>
@@ -598,7 +598,7 @@ export const Docklands = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service hotline (7am-7pm))</span>
+                      <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -644,7 +644,7 @@ export const Docklands = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Docklands Modern Emergency: 1800 954 117
+                Docklands Modern Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Contemporary Inspection

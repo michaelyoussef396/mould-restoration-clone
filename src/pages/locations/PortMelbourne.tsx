@@ -64,14 +64,14 @@ export const PortMelbourne = () => {
               Professional Mould Removal & Inspection in Port Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Port Melbourne's dynamic waterfront community and industrial heritage properties. IICRC-certified technicians with 5+ years experience treating warehouse conversions, docklands developments, and Bay Street commercial premises. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Port Melbourne residents and businesses.
+              Melbourne's premier mould removal specialists serving Port Melbourne's dynamic waterfront community and industrial heritage properties. IICRC-certified technicians with 5+ years experience treating warehouse conversions, docklands developments, and Bay Street commercial premises. same-day professional service, 100+ properties restored with 5.0/5 star rating from Port Melbourne residents and businesses.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Port Melbourne</span>
+                  <span>same-day professional service to Port Melbourne</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -116,7 +116,7 @@ export const PortMelbourne = () => {
               <CardContent className="p-6 text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
-                <p className="text-muted-foreground mb-4">2-hour emergency callout to Port Melbourne waterfront properties</p>
+                <p className="text-muted-foreground mb-4">same-day professional service to Port Melbourne waterfront properties</p>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
@@ -288,9 +288,9 @@ export const PortMelbourne = () => {
               </div>
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">2-Hour Professional Service - Same-day Available 7am-7pm</h3>
+                <h3 className="text-xl font-semibold mb-3">Same-Day Professional Service</h3>
                 <p className="text-muted-foreground">
-                  Fast response to Port Melbourne mould emergencies. Available 7am-7pm every day with same-day service for urgent situations. Professional assessment and immediate action when you need it most.
+                  Fast response to Port Melbourne mould situations. Available 7am-7pm every day with same-day service for urgent situations. Professional assessment and immediate action when you need it most.
                 </p>
               </div>
               <div className="text-center">
@@ -464,13 +464,13 @@ export const PortMelbourne = () => {
             Professional Mould Removal Service in Port Melbourne
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-primary-foreground/90">
-            Protect your Port Melbourne waterfront or heritage property with our professional mould removal services. Our IICRC-certified specialists provide same-day emergency response with expert treatment for warehouse conversions and waterfront developments throughout postcode 3207.
+            Protect your Port Melbourne waterfront or heritage property with our professional mould removal services. Our IICRC-certified specialists provide same-day professional service with expert treatment for warehouse conversions and waterfront developments throughout postcode 3207.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
               <Clock className="w-6 h-6 text-blue-600" />
-              <span className="text-lg">2-Hour Professional Service - Same-day Available 7am-7pm</span>
+              <span className="text-lg">Same-Day Professional Service</span>
             </div>
             <div className="flex items-center gap-3">
               <Shield className="w-6 h-6 text-success-green" />

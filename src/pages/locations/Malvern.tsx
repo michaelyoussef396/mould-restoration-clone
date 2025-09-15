@@ -21,12 +21,12 @@ export const Malvern = () => {
         suburb="Malvern"
         postcode="3144"
         canonical="https://mouldrestoration.com.au/mould-removal-malvern-melbourne"
-        keywords="mould removal Malvern Melbourne, mould inspection Malvern, emergency mould removal Malvern, mould treatment Malvern Melbourne"
+        keywords="mould removal Malvern Melbourne, mould inspection Malvern, professional mould removal Malvern, mould treatment Malvern Melbourne"
       />
 
       <LocalBusinessSchema
         businessName="Mould & Restoration Co - Malvern"
-        description="Professional mould removal and inspection services in Malvern Melbourne. IICRC certified technicians, emergency response, family-safe methods."
+        description="Professional mould removal and inspection services in Malvern Melbourne. IICRC certified technicians, professional service, family-safe methods."
         address="Malvern, Melbourne, VIC 3144"
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
@@ -41,7 +41,7 @@ export const Malvern = () => {
         serviceType="Mould Inspection and Remediation"
         provider="Mould & Restoration Co"
         areaServed="Malvern Melbourne VIC 3144"
-        description="Emergency mould removal services in Malvern Melbourne. Professional assessment, family-safe treatment, and complete remediation for Federation homes and modern properties."
+        description="Professional mould removal services in Malvern Melbourne. Professional assessment, family-safe treatment, and complete remediation for Federation homes and modern properties."
       />
 
       <Navigation />
@@ -72,14 +72,14 @@ export const Malvern = () => {
               Professional Mould Removal & Inspection in Malvern, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal in Malvern Melbourne with same-day response. IICRC-certified technicians specializing in established residential areas, Federation homes, and family properties. 5.0 stars, 100+ properties restored.
+              Professional mould removal in Malvern Melbourne with same-day response. IICRC-certified technicians specializing in established residential areas, Federation homes, and family properties. 5.0 stars, 100+ properties restored.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Malvern</span>
+                  <span>same-day professional service to Malvern</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -127,7 +127,7 @@ export const Malvern = () => {
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's elevated position on the Malvern Hills, combined with Melbourne's humid climate, creates unique moisture management challenges. Properties around Glenferrie Road, near Malvern Central shopping precinct, and surrounding Lloyd Park often experience different humidity patterns due to mature landscaping and varied building orientations. Our emergency mould removal Malvern service responds Same-day professional service to protect your family home.
+              The suburb's elevated position on the Malvern Hills, combined with Melbourne's humid climate, creates unique moisture management challenges. Properties around Glenferrie Road, near Malvern Central shopping precinct, and surrounding Lloyd Park often experience different humidity patterns due to mature landscaping and varied building orientations. Our professional mould removal Malvern service responds Same-day professional service to protect your family home.
             </p>
           </div>
           
@@ -200,7 +200,7 @@ export const Malvern = () => {
               <div>
                 <h4 className="text-xl font-semibold mb-4 text-primary">Professional Service - Same-day Available 7am-7pm Excellence</h4>
                 <p className="text-muted-foreground mb-4">
-                  When you need urgent mould removal Malvern, our emergency response team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment. Our 100% satisfaction guarantee ensures complete family peace of mind.
+                  When you need urgent mould removal Malvern, our professional service team reaches your property Same-day professional service. Operating 7am-7pm every day with ABN 47 683 089 652, we provide immediate containment and assessment. Our 100% satisfaction guarantee ensures complete family peace of mind.
                 </p>
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">Comprehensive Property Protection</h4>
@@ -445,7 +445,7 @@ export const Malvern = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Family Home Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Malvern</li>
+                    <li>• same-day professional service response to Malvern</li>
                     <li>• Family-safe emergency protocols</li>
                     <li>• Child and pet protection measures</li>
                     <li>• Neighbor-considerate service approach</li>
@@ -580,7 +580,7 @@ export const Malvern = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>(03) 9012-3456 (Professional service hotline (7am-7pm))</span>
+                      <span>(03) 9012-3456 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -626,7 +626,7 @@ export const Malvern = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Malvern Family Emergency: (03) 9012-3456
+                Malvern Family Professional Service: (03) 9012-3456
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Family Home Inspection

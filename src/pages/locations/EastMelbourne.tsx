@@ -35,7 +35,7 @@ export const EastMelbourne = () => {
         serviceName="Mould Removal East Melbourne Melbourne"
         serviceType="Mould Remediation"
         areaServed="East Melbourne, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for East Melbourne properties including heritage mansions, medical buildings, and luxury townhouses."
+        description="Professional mould removal and inspection services for East Melbourne properties including heritage mansions, medical buildings, and luxury townhouses."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const EastMelbourne = () => {
               Professional Mould Removal & Inspection in East Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal East Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving East Melbourne's prestigious medical precinct and heritage mansions with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal East Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving East Melbourne's prestigious medical precinct and heritage mansions with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const EastMelbourne = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common East Melbourne Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                East Melbourne's unique combination of heritage architecture, prestigious medical facilities, and garden-adjacent properties creates specific mould challenges. Our emergency mould removal East Melbourne Melbourne team addresses these with heritage-appropriate solutions:
+                East Melbourne's unique combination of heritage architecture, prestigious medical facilities, and garden-adjacent properties creates specific mould challenges. Our professional mould removal East Melbourne Melbourne team addresses these with heritage-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const EastMelbourne = () => {
                         Upon receiving your call for mould removal East Melbourne Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping with special attention to heritage architectural elements and medical facility requirements.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to East Melbourne (3002)</li>
+                        <li>• Professional service line response to East Melbourne (3002)</li>
                         <li>• Heritage building conservation assessment</li>
                         <li>• Medical facility contamination protocols</li>
                         <li>• Non-invasive thermal imaging for heritage walls</li>
@@ -311,7 +311,7 @@ export const EastMelbourne = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Conservation-Grade Remediation</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal East Melbourne Melbourne service employs conservation-appropriate techniques suitable for heritage mansions and medical facilities, ensuring both mould elimination and architectural preservation.
+                        Our professional mould removal East Melbourne Melbourne service employs conservation-appropriate techniques suitable for heritage mansions and medical facilities, ensuring both mould elimination and architectural preservation.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Gentle heritage plaster and timber treatment</li>
@@ -383,7 +383,7 @@ export const EastMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal East Melbourne Melbourne technicians are IICRC certified with additional training in heritage building restoration and medical facility standards, ensuring the highest quality service.
+                  Our professional mould removal East Melbourne Melbourne technicians are IICRC certified with additional training in heritage building restoration and medical facility standards, ensuring the highest quality service.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -450,7 +450,7 @@ export const EastMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Medical Facilities</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal East Melbourne Melbourne for medical centres, specialist clinics, and consultation suites requiring medical-grade air quality and sterile environments.
+                    Specialised professional mould removal East Melbourne Melbourne for medical centres, specialist clinics, and consultation suites requiring medical-grade air quality and sterile environments.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Medical-grade air filtration</li>
@@ -510,7 +510,7 @@ export const EastMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Garden District Properties</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal East Melbourne Melbourne for properties adjacent to Fitzroy Gardens and heritage garden estates, addressing unique irrigation-related moisture challenges.
+                    Specialised professional mould removal East Melbourne Melbourne for properties adjacent to Fitzroy Gardens and heritage garden estates, addressing unique irrigation-related moisture challenges.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Garden irrigation moisture effects</li>
@@ -537,7 +537,7 @@ export const EastMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Heritage Building Considerations</h3>
                 <p className="text-gray-700 mb-4">
-                  East Melbourne's heritage mansions and medical facilities require specialised prevention strategies. Our emergency mould removal East Melbourne Melbourne experience informs these heritage-appropriate recommendations.
+                  East Melbourne's heritage mansions and medical facilities require specialised prevention strategies. Our professional mould removal East Melbourne Melbourne experience informs these heritage-appropriate recommendations.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -640,14 +640,14 @@ export const EastMelbourne = () => {
               Need Immediate Mould Removal in East Melbourne?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your East Melbourne heritage property or medical facility. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by heritage properties and medical facilities with a 5.0-star rating.
+              Don't let mould compromise your East Melbourne heritage property or medical facility. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by heritage properties and medical facilities with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal East Melbourne Melbourne assistance. Our heritage and medical specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

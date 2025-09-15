@@ -35,7 +35,7 @@ export const NorthMelbourne = () => {
         serviceName="Mould Removal North Melbourne Melbourne"
         serviceType="Mould Remediation"
         areaServed="North Melbourne, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for North Melbourne properties including worker's cottages, heritage homes, and Flemington Racecourse area buildings."
+        description="Professional mould removal and inspection services for North Melbourne properties including worker's cottages, heritage homes, and Flemington Racecourse area buildings."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const NorthMelbourne = () => {
               Professional Mould Removal & Inspection in North Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal North Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving North Melbourne's historic worker's cottages and Flemington Racecourse precinct with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal North Melbourne Melbourne specialists with 5+ years experience. IICRC-certified technicians serving North Melbourne's historic worker's cottages and Flemington Racecourse precinct with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const NorthMelbourne = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common North Melbourne Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                North Melbourne's combination of heritage worker's cottages, racing precinct properties, and older building stock creates specific mould challenges. Our emergency mould removal North Melbourne Melbourne team addresses these with heritage-appropriate solutions:
+                North Melbourne's combination of heritage worker's cottages, racing precinct properties, and older building stock creates specific mould challenges. Our professional mould removal North Melbourne Melbourne team addresses these with heritage-appropriate solutions:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const NorthMelbourne = () => {
                         Upon receiving your call for mould removal North Melbourne Melbourne, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to worker's cottages, heritage terraces, and racing precinct properties.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to North Melbourne (3051)</li>
+                        <li>• Professional service line response to North Melbourne (3051)</li>
                         <li>• Heritage cottage structure assessment</li>
                         <li>• Racing precinct environmental evaluation</li>
                         <li>• Non-invasive thermal imaging for heritage walls</li>
@@ -311,7 +311,7 @@ export const NorthMelbourne = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Heritage-Appropriate Remediation</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal North Melbourne Melbourne service employs heritage-appropriate techniques suitable for worker's cottages, period terraces, and community housing while ensuring thorough mould elimination.
+                        Our professional mould removal North Melbourne Melbourne service employs heritage-appropriate techniques suitable for worker's cottages, period terraces, and community housing while ensuring thorough mould elimination.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• Heritage timber and plaster preservation</li>
@@ -383,7 +383,7 @@ export const NorthMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal North Melbourne Melbourne technicians are IICRC certified with additional training in heritage building restoration and community housing standards, ensuring quality service for all residents.
+                  Our professional mould removal North Melbourne Melbourne technicians are IICRC certified with additional training in heritage building restoration and community housing standards, ensuring quality service for all residents.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -450,7 +450,7 @@ export const NorthMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Heritage Terraces</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal North Melbourne Melbourne for period terraced houses and renovated heritage properties requiring conservation-compliant restoration techniques.
+                    Specialised professional mould removal North Melbourne Melbourne for period terraced houses and renovated heritage properties requiring conservation-compliant restoration techniques.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Original plaster and lath restoration</li>
@@ -510,7 +510,7 @@ export const NorthMelbourne = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Modern Developments</h3>
                   <p className="text-gray-700 mb-4">
-                    Contemporary emergency mould removal North Melbourne Melbourne for new townhouses, apartment blocks, and modern residential developments near heritage areas.
+                    Contemporary professional mould removal North Melbourne Melbourne for new townhouses, apartment blocks, and modern residential developments near heritage areas.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• New construction moisture issues</li>
@@ -537,7 +537,7 @@ export const NorthMelbourne = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Heritage Cottage Considerations</h3>
                 <p className="text-gray-700 mb-4">
-                  North Melbourne's worker's cottages and heritage terraces require specialised prevention strategies. Our emergency mould removal North Melbourne Melbourne experience informs these heritage-appropriate recommendations.
+                  North Melbourne's worker's cottages and heritage terraces require specialised prevention strategies. Our professional mould removal North Melbourne Melbourne experience informs these heritage-appropriate recommendations.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -640,14 +640,14 @@ export const NorthMelbourne = () => {
               Need Immediate Mould Removal in North Melbourne?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your North Melbourne worker's cottage, heritage terrace, or community housing property. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by heritage properties and community housing with a 5.0-star rating.
+              Don't let mould compromise your North Melbourne worker's cottage, heritage terrace, or community housing property. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by heritage properties and community housing with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal North Melbourne Melbourne assistance. Our heritage and community housing specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

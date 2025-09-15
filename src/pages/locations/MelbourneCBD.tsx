@@ -35,7 +35,7 @@ export const MelbourneCBD = () => {
         serviceName="Mould Removal Melbourne CBD"
         serviceType="Mould Remediation"
         areaServed="Melbourne CBD, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Melbourne CBD properties including commercial towers, high-rise apartments, and heritage buildings."
+        description="Professional mould removal and inspection services for Melbourne CBD properties including commercial towers, high-rise apartments, and heritage buildings."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const MelbourneCBD = () => {
               Professional Mould Removal & Inspection in Melbourne CBD
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Melbourne CBD specialists with 5+ years experience. IICRC-certified technicians serving Melbourne's business district with same-day response for commercial towers, high-rise apartments, and heritage buildings. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Melbourne CBD specialists with 5+ years experience. IICRC-certified technicians serving Melbourne's business district with same-day response for commercial towers, high-rise apartments, and heritage buildings. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -214,7 +214,7 @@ export const MelbourneCBD = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Common Melbourne CBD Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Melbourne CBD's unique urban microclimate creates specific mould challenges. Our emergency mould removal Melbourne CBD team addresses these issues with precision:
+                Melbourne CBD's unique urban microclimate creates specific mould challenges. Our professional mould removal Melbourne CBD team addresses these issues with precision:
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -272,7 +272,7 @@ export const MelbourneCBD = () => {
                         Upon receiving your call for mould removal Melbourne CBD, our IICRC-certified technicians respond Same-day professional service. We conduct comprehensive thermal imaging and moisture mapping specific to CBD building types, whether commercial towers or heritage structures.
                       </p>
                       <ul className="space-y-2 text-sm">
-                        <li>• Professional service hotline (7am-7pm) response to Melbourne CBD (3000, 3004, 3006, 3008)</li>
+                        <li>• Professional service line response to Melbourne CBD (3000, 3004, 3006, 3008)</li>
                         <li>• Commercial building access coordination</li>
                         <li>• Thermal imaging for concealed moisture detection</li>
                         <li>• Air quality testing and spore sampling</li>
@@ -311,7 +311,7 @@ export const MelbourneCBD = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Advanced Remediation Techniques</h3>
                       <p className="text-gray-700 mb-4">
-                        Our emergency mould removal Melbourne CBD service employs cutting-edge remediation techniques suitable for complex CBD environments, from high-rise HVAC systems to heritage masonry restoration.
+                        Our professional mould removal Melbourne CBD service employs cutting-edge remediation techniques suitable for complex CBD environments, from high-rise HVAC systems to heritage masonry restoration.
                       </p>
                       <ul className="space-y-2 text-sm">
                         <li>• HVAC system decontamination for commercial buildings</li>
@@ -383,7 +383,7 @@ export const MelbourneCBD = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our emergency mould removal Melbourne CBD technicians are IICRC certified, ensuring you receive the highest standard of professional service. We maintain strict protocols for health, safety, and restoration quality.
+                  Our professional mould removal Melbourne CBD technicians are IICRC certified, ensuring you receive the highest standard of professional service. We maintain strict protocols for health, safety, and restoration quality.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
@@ -450,7 +450,7 @@ export const MelbourneCBD = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Heritage Buildings</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal Melbourne CBD for heritage-listed properties including Block Arcade, Royal Arcade, and historic bluestone buildings requiring conservation-compliant restoration.
+                    Specialised professional mould removal Melbourne CBD for heritage-listed properties including Block Arcade, Royal Arcade, and historic bluestone buildings requiring conservation-compliant restoration.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Sandstone and bluestone structures</li>
@@ -510,7 +510,7 @@ export const MelbourneCBD = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Medical & Legal</h3>
                   <p className="text-gray-700 mb-4">
-                    Specialised emergency mould removal Melbourne CBD for Collins Street medical suites, legal chambers, and professional offices requiring pristine air quality standards.
+                    Specialised professional mould removal Melbourne CBD for Collins Street medical suites, legal chambers, and professional offices requiring pristine air quality standards.
                   </p>
                   <ul className="space-y-2 text-sm">
                     <li>• Medical clinic air filtration</li>
@@ -562,7 +562,7 @@ export const MelbourneCBD = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Building-Specific Maintenance</h3>
                 <p className="text-gray-700 mb-4">
-                  Different Melbourne CBD building types require tailored prevention approaches. Our emergency mould removal Melbourne CBD experience informs these maintenance recommendations.
+                  Different Melbourne CBD building types require tailored prevention approaches. Our professional mould removal Melbourne CBD experience informs these maintenance recommendations.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -640,14 +640,14 @@ export const MelbourneCBD = () => {
               Need Immediate Mould Removal in Melbourne CBD?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Melbourne CBD property. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by 100+ Melbourne properties with a 5.0-star rating.
+              Don't let mould compromise your Melbourne CBD property. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by 100+ Melbourne properties with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Melbourne CBD assistance. Our certified technicians respond Same-day professional service to all CBD postcodes.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now

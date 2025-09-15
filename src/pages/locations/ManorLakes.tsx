@@ -64,14 +64,14 @@ export const ManorLakes = () => {
               Professional Mould Removal & Inspection in Manor Lakes, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Melbourne's premier mould removal specialists serving Manor Lakes premium estates and lake precinct communities. IICRC-certified technicians with 5+ years experience treating waterfront moisture issues, luxury home humidity control, and premium estate challenges. Same-day emergency response, 100+ properties restored with 5.0/5 star rating from Manor Lakes homeowners.
+              Melbourne's premier mould removal specialists serving Manor Lakes premium estates and lake precinct communities. IICRC-certified technicians with 5+ years experience treating waterfront moisture issues, luxury home humidity control, and premium estate challenges. same-day professional service, 100+ properties restored with 5.0/5 star rating from Manor Lakes homeowners.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-blue-600" />
-                  <span>Same-day emergency response to Manor Lakes</span>
+                  <span>same-day professional service to Manor Lakes</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-accent-teal" />
@@ -449,8 +449,8 @@ export const ManorLakes = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Premium Estate Professional Service - Same-day Available 7am-7pm</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• 2-hour response time to Manor Lakes</li>
-                    <li>• Luxury home moisture emergency</li>
+                    <li>• same-day professional service response to Manor Lakes</li>
+                    <li>• Luxury home professional moisture service</li>
                     <li>• Waterfront property protection</li>
                     <li>• Lake humidity assessment</li>
                   </ul>
@@ -543,9 +543,9 @@ export const ManorLakes = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Same-Day Response</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response Same-day professional service to Manor Lakes premium estates, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability for luxury properties. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide professional service Same-day professional service to Manor Lakes premium estates, operating 7am-7pm daily with Professional service line availability for luxury properties. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -558,7 +558,7 @@ export const ManorLakes = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Professional service hotline (7am-7pm) hotline: 1800 954 117</span>
+                    <span>Professional service line: 1800 954 117</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -822,7 +822,7 @@ export const ManorLakes = () => {
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service hotline (7am-7pm) line)</span>
+                      <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-accent-blue" />
@@ -830,7 +830,7 @@ export const ManorLakes = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Waterfront moisture emergency response available</span>
+                      <span>Waterfront moisture professional service available</span>
                     </div>
                   </div>
                 </CardContent>
@@ -868,7 +868,7 @@ export const ManorLakes = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="w-5 h-5 mr-2" />
-                Manor Lakes Luxury Emergency: 1800 954 117
+                Manor Lakes Luxury Professional Service: 1800 954 117
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Luxury Inspection
@@ -877,7 +877,7 @@ export const ManorLakes = () => {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Serving Manor Lakes and all premium waterfront suburbs • Luxury property specialists • Lake humidity emergency response available
+              Serving Manor Lakes and all premium waterfront suburbs • Luxury property specialists • Lake humidity professional service available
             </p>
           </div>
         </div>

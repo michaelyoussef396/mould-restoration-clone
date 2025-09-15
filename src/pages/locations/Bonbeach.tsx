@@ -35,7 +35,7 @@ export const Bonbeach = () => {
         serviceName="Mould Removal Bonbeach Melbourne"
         serviceType="Mould Remediation"
         areaServed="Bonbeach, Melbourne, Victoria"
-        description="Emergency mould removal and inspection services for Bonbeach properties including beachfront homes, Station Road properties, and direct beach access residences."
+        description="Professional mould removal and inspection services for Bonbeach properties including beachfront homes, Station Road properties, and direct beach access residences."
       />
 
       <Navigation />
@@ -66,7 +66,7 @@ export const Bonbeach = () => {
               Professional Mould Removal & Inspection in Bonbeach, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Emergency mould removal Bonbeach Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Bonbeach's beachfront living properties, Station Road corridor, and direct beach access homes with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
+              Professional mould removal Bonbeach Melbourne specialists with 5+ years experience. IICRC-certified technicians serving Bonbeach's beachfront living properties, Station Road corridor, and direct beach access homes with same-day response. Trusted by 100+ Melbourne properties with 5.0-star rating.
             </p>
 
             {/* Trust Indicators */}
@@ -175,7 +175,7 @@ export const Bonbeach = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Impact on Bonbeach</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bonbeach's direct beachfront position experiences Melbourne's temperate oceanic climate at maximum intensity with immediate bay exposure. Annual rainfall of 650mm combines with constant salt spray, direct wind patterns, and sand infiltration to create the most challenging coastal conditions for property maintenance in Melbourne's southeastern bayside. Properties experience 24/7 marine exposure requiring specialized management approaches.
+                  Bonbeach's direct beachfront position experiences Melbourne's temperate oceanic climate at maximum intensity with immediate bay exposure. Annual rainfall of 650mm combines with constant salt spray, direct wind patterns, and sand infiltration to create the most challenging coastal conditions for property maintenance in Melbourne's southeastern bayside. Properties experience 7am-7pm daily marine exposure requiring specialized management approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -188,7 +188,7 @@ export const Bonbeach = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Constant coastal humidity with 24/7 marine environment exposure</span>
+                    <span>Constant coastal humidity with 7am-7pm daily marine environment exposure</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -329,9 +329,9 @@ export const Bonbeach = () => {
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & 2-Hour Response</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Technicians & Same-Day Response</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our IICRC-certified technicians provide emergency response Same-day professional service to Bonbeach beachfront properties, operating 7am-7pm daily with Professional service hotline (7am-7pm) availability. Licensed and insured for premium coastal properties across Melbourne's beachfront communities. ABN: 47 683 089 652.
+                  Our IICRC-certified technicians provide professional service Same-day professional service to Bonbeach beachfront properties, operating 7am-7pm daily with Professional service line availability. Licensed and insured for premium coastal properties across Melbourne's beachfront communities. ABN: 47 683 089 652.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -344,7 +344,7 @@ export const Bonbeach = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Professional service hotline (7am-7pm): 1800 954 117</span>
+                    <span>Professional service line: 1800 954 117</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-emergency-orange rounded-full mt-2 flex-shrink-0"></div>
@@ -436,14 +436,14 @@ export const Bonbeach = () => {
               Need Immediate Mould Removal in Bonbeach?
             </h2>
             <p className="text-xl mb-8">
-              Don't let mould compromise your Bonbeach beachfront home or direct beach access property. Our IICRC-certified technicians provide Professional service hotline (7am-7pm) response with 2-hour arrival guarantee. Trusted by beachfront communities and direct beach access homes with a 5.0-star rating.
+              Don't let mould compromise your Bonbeach beachfront home or direct beach access property. Our IICRC-certified technicians provide Professional service line response with 2-hour arrival guarantee. Trusted by beachfront communities and direct beach access homes with a 5.0-star rating.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="bg-white text-gray-900">
                 <CardContent className="p-6">
                   <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">24/7 Professional Service - Same-day Available 7am-7pm</h3>
+                  <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Bonbeach Melbourne assistance. Our beachfront living specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
                     Call 1800 954 117 Now
