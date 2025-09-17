@@ -6,13 +6,44 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
 import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
-import { LocationOptimizedImage } from "@/components/OptimizedImage";
+import OptimizedImage from '../../components/OptimizedImage';
+import { ServiceProcessImage, OptimizedImageGallery } from "@/components/seo/EnhancedOptimizedImage";
+import { generateLocationImages, getOptimizedImage } from "@/utils/imageAssets";
 
 export const Carlton = () => {
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Carlton Mold Removal", href: "/services/mold-removal-carlton", current: true }
+  ];
+
+  // Generate Carlton-specific optimized images
+  const carltonImages = generateLocationImages('Carlton');
+  const galleryImages = [
+    {
+      src: '/src/assets/residential-inspection.jpg',
+      location: 'Carlton',
+      service: 'inspection' as const,
+      context: 'Victorian terrace heritage architecture university precinct professional assessment'
+    },
+    {
+      src: '/src/assets/mould-removal.jpg',
+      location: 'Carlton',
+      service: 'removal' as const,
+      context: 'heritage preservation student housing specialist high occupancy treatment process'
+    },
+    {
+      src: '/src/assets/fogging-sanitisation.jpg',
+      location: 'Carlton',
+      service: 'fogging' as const,
+      context: 'university housing antimicrobial treatment heritage building sanitisation'
+    },
+    {
+      src: '/src/assets/clean-residential-interior.jpg',
+      location: 'Carlton',
+      service: 'remediation' as const,
+      context: 'restored Victorian terrace post-treatment results heritage preservation'
+    }
   ];
 
   return (
@@ -55,9 +86,17 @@ export const Carlton = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground pt-[104px]">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80"></div>
-        <div className="container mx-auto px-4 relative">
+      <section className="relative py-20 bg-primary text-primary-foreground pt-[104px] overflow-hidden">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <OptimizedImage
+            src={carltonImages.hero.src}
+            alt="Professional mould removal Carlton Melbourne Victorian terrace heritage building university precinct"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="mb-6">
             <Breadcrumb items={breadcrumbItems} />
           </div>
@@ -171,7 +210,7 @@ export const Carlton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Carlton Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From the Royal Exhibition Building to Lygon Street's famous Italian quarter, Carlton's heritage significance requires specialized mould treatment approaches that preserve architectural integrity while ensuring occupant health.
+                  From the Royal Exhibition Building to Lygon Street's famous Italian quarter, Carlton's heritage significance requires specialised mould treatment approaches that preserve architectural integrity while ensuring occupant health.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -268,7 +307,7 @@ export const Carlton = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Victorian Terraces</h3>
-                <p className="text-muted-foreground mb-4">Heritage-listed terraces from 1880s-1920s featuring solid brick construction, slate roofs, and bluestone foundations requiring specialized preservation treatments.</p>
+                <p className="text-muted-foreground mb-4">Heritage-listed terraces from 1880s-1920s featuring solid brick construction, slate roofs, and bluestone foundations requiring specialised preservation treatments.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Shield className="w-4 h-4 text-success-green" />
@@ -331,7 +370,7 @@ export const Carlton = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Commercial Properties</h3>
-                <p className="text-muted-foreground mb-4">Lygon Street restaurants, University precinct offices, and mixed-use buildings requiring specialized commercial mould treatment protocols.</p>
+                <p className="text-muted-foreground mb-4">Lygon Street restaurants, University precinct offices, and mixed-use buildings requiring specialised commercial mould treatment protocols.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Shield className="w-4 h-4 text-success-green" />
@@ -384,7 +423,7 @@ export const Carlton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Containment & Safety Protocols</h3>
                 <p className="text-muted-foreground mb-4">
-                  Carlton's high-density housing requires specialized containment strategies to prevent mould spore migration between properties and protect neighboring residents, particularly in shared terrace walls and student accommodations.
+                  Carlton's high-density housing requires specialised containment strategies to prevent mould spore migration between properties and protect neighboring residents, particularly in shared terrace walls and student accommodations.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -415,7 +454,7 @@ export const Carlton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Heritage-Appropriate Mould Removal</h3>
                 <p className="text-muted-foreground mb-4">
-                  Carlton's Victorian and Edwardian properties require specialized techniques that preserve architectural integrity while effectively eliminating mould colonies from heritage building materials.
+                  Carlton's Victorian and Edwardian properties require specialised techniques that preserve architectural integrity while effectively eliminating mould colonies from heritage building materials.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -483,7 +522,7 @@ export const Carlton = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Carlton heritage property mould issues</span>
+                    <span>5+ years specialising in Carlton heritage property mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -716,7 +755,7 @@ export const Carlton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Carlton Professional Service - Same-day Available 7am-7pm Network</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Carlton mould removal professional service network ensures rapid deployment to all Carlton postcodes (3053, 3054) Same-day professional service of your call. Operating from our Melbourne base, we maintain specialized equipment ready for University precinct and heritage property situations.
+                  Our Carlton mould removal professional service network ensures rapid deployment to all Carlton postcodes (3053, 3054) Same-day professional service of your call. Operating from our Melbourne base, we maintain specialised equipment ready for University precinct and heritage property situations.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -907,7 +946,7 @@ export const Carlton = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                Our Carlton mould removal specialists provide comprehensive services throughout the University precinct and surrounding inner-city Melbourne areas, with specialized knowledge of heritage properties and high-density housing challenges.
+                Our Carlton mould removal specialists provide comprehensive services throughout the University precinct and surrounding inner-city Melbourne areas, with specialised knowledge of heritage properties and high-density housing challenges.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -1097,10 +1136,12 @@ export const Carlton = () => {
       </section>
 
       {/* Strategic Internal Linking for Location to Service SEO */}
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
       <StrategicLocationLinks
         currentLocation="Carlton"
-        maxServiceLinks={5}
-        maxLocationLinks={6}
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
       />
     </div>
   );

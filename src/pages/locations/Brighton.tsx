@@ -5,48 +5,76 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
+import { EnhancedSchemaMarkup, LocationSpecificServiceSchema, EnhancedBreadcrumbSchema, LocationFAQSchema } from "@/components/seo/EnhancedSchemaMarkup";
+import { LocationPageH1 } from "@/components/seo/H1Optimization";
+import { getSuburbMetaDescription } from "@/components/seo/MetaDescriptions";
 import { SuburbClusterLinks, StrategicLocationLinks } from "@/components/seo/InternalLinking";
-import { LocationOptimizedImage } from "@/components/OptimizedImage";
+import OptimizedImage from '../../components/OptimizedImage';
+import { ServiceProcessImage, OptimizedImageGallery } from "@/components/seo/EnhancedOptimizedImage";
+import { generateLocationImages, getOptimizedImage } from "@/utils/imageAssets";
 
 export const Brighton = () => {
+  const location = "Brighton";
+  const brightonMetaDescription = getSuburbMetaDescription('brighton');
+
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
-    { label: "Brighton Mold Removal", href: "/services/mold-removal-brighton", current: true }
+    { label: "Brighton Mould Removal", href: "/services/mould-removal-brighton", current: true }
+  ];
+
+  // Generate Brighton-specific optimized images
+  const brightonImages = generateLocationImages('Brighton');
+  const galleryImages = [
+    {
+      src: '/src/assets/residential-inspection.jpg',
+      location: 'Brighton',
+      service: 'inspection' as const,
+      context: 'Federation home weatherboard construction coastal property assessment'
+    },
+    {
+      src: '/src/assets/mould-removal.jpg',
+      location: 'Brighton',
+      service: 'removal' as const,
+      context: 'salt air damage treatment heritage property preservation'
+    },
+    {
+      src: '/src/assets/fogging-sanitisation.jpg',
+      location: 'Brighton',
+      service: 'fogging' as const,
+      context: 'coastal property antimicrobial treatment beach house sanitisation'
+    },
+    {
+      src: '/src/assets/clean-residential-interior.jpg',
+      location: 'Brighton',
+      service: 'remediation' as const,
+      context: 'restored coastal property post-treatment Federation home results'
+    }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* SEO Optimization for Brighton Melbourne Mould Removal */}
+      {/* Enhanced SEO Optimization for Brighton Melbourne Mould Removal - Phase 4 */}
       <LocationPageSEO
         location="Brighton"
         service="removal"
         emergency={false}
-        title="Mould Removal Brighton Melbourne - Coastal Property Specialists"
-        description="Mould removal Brighton Melbourne - Coastal property specialists. Salt air & humidity solutions for Federation homes. Expert service. Call 1800 954 117"
+        title="Coastal Property Mould Removal & Inspection in Brighton, Melbourne"
+        description={brightonMetaDescription}
         canonical="https://mouldrestoration.com.au/services/mould-removal-brighton"
       />
-      <LocalBusinessSchema
+
+      {/* Enhanced Schema Markup with Coastal Specializations */}
+      <EnhancedSchemaMarkup
         pageName="Brighton Mould Removal"
-        pageUrl="https://mouldrestoration.com.au/locations/brighton"
+        pageUrl="https://mouldrestoration.com.au/services/mould-removal-brighton"
         serviceType="removal"
         location="Brighton"
+        customServices={["Salt Air Damage Assessment", "Federation Home Preservation", "Weatherboard Treatment"]}
       />
-      <ServiceSchema
-        serviceName="Mould Removal Brighton Melbourne"
-        serviceDescription="Specialized mould removal for Brighton's coastal properties. Expert treatment for salt air corrosion, weatherboard moisture issues, and Federation home preservation."
-        serviceUrl="https://mouldrestoration.com.au/locations/brighton"
-        priceRange="$$"
-        areaServed={["Brighton", "Brighton East", "Hampton", "Sandringham", "Bentleigh"]}
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://mouldrestoration.com.au/" },
-          { name: "Services", url: "https://mouldrestoration.com.au/services" },
-          { name: "Brighton Mould Removal", url: "https://mouldrestoration.com.au/services/mould-removal-brighton" }
-        ]}
-      />
-      <Navigation />
+
+
+
       
       {/* Professional Service Bar */}
       <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
@@ -62,17 +90,27 @@ export const Brighton = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-primary text-primary-foreground pt-[104px]">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80"></div>
-        <div className="container mx-auto px-4 relative">
+      <section className="relative py-20 bg-primary text-primary-foreground pt-[104px] overflow-hidden">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <OptimizedImage
+            src={brightonImages.hero.src}
+            alt="Professional mould removal Brighton Melbourne Federation home bayside location salt air exposure"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/80"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="mb-6">
             <Breadcrumb items={breadcrumbItems} />
           </div>
           
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Mould Removal & Inspection in Brighton, Melbourne
-            </h1>
+            <LocationPageH1
+              location="Brighton"
+              service="removal"
+              className="text-4xl md:text-5xl font-bold mb-6"
+            />
             <p className="text-xl mb-8 text-primary-foreground/90">
               Melbourne's premier mould removal specialists serving Brighton's coastal properties and bayside estates. IICRC-certified technicians with 5+ years experience treating salt air damage, humidity issues, and Federation home preservation. Same-day service available, 100+ properties restored with 5.0/5 star rating from Brighton homeowners.
             </p>
@@ -122,6 +160,15 @@ export const Brighton = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary mb-8">Brighton Melbourne Local Area Expertise</h2>
+
+          {/* Brighton Property Showcase */}
+          <div className="mb-12">
+            <OptimizedImage
+              src={brightonImages.property_primary.src}
+              alt="Brighton Melbourne heritage Federation home mould inspection professional assessment"
+              className="w-full h-[300px] object-cover rounded-lg mb-8"
+            />
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card>
@@ -182,7 +229,7 @@ export const Brighton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Brighton Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Brighton Beach with its iconic bathing boxes to Brighton Grammar School, the suburb's prestigious locations present specific mould challenges. High-value properties demand expert care while heritage restrictions require specialized approaches.
+                  From Brighton Beach with its iconic bathing boxes to Brighton Grammar School, the suburb's prestigious locations present specific mould challenges. High-value properties demand expert care while heritage restrictions require specialised approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -284,7 +331,7 @@ export const Brighton = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Federation Homes</h3>
-                <p className="text-muted-foreground mb-4">Period properties with weatherboard construction requiring specialized coastal moisture management.</p>
+                <p className="text-muted-foreground mb-4">Period properties with weatherboard construction requiring specialised coastal moisture management.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
                     <Shield className="w-4 h-4 text-success-green" />
@@ -335,6 +382,26 @@ export const Brighton = () => {
 
           <h2 className="text-3xl font-bold text-primary mb-8">Our Brighton Mould Removal Process</h2>
 
+          {/* Process Images Showcase */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <ServiceProcessImage
+              src="/src/assets/thermal-imaging-device.jpg"
+              location="Brighton"
+              service="inspection"
+              processStep="initial assessment"
+              equipment="thermal imaging technology"
+              className="w-full h-[250px] object-cover rounded-lg"
+            />
+            <ServiceProcessImage
+              src="/src/assets/mould-removal-equipment.jpg"
+              location="Brighton"
+              service="removal"
+              processStep="containment and treatment"
+              equipment="professional IICRC certified tools"
+              className="w-full h-[250px] object-cover rounded-lg"
+            />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
@@ -367,7 +434,7 @@ export const Brighton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Containment & Heritage Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  Brighton's coastal properties require specialized containment strategies that protect heritage features while preventing mould spore migration. Our approach preserves architectural integrity while ensuring effective treatment.
+                  Brighton's coastal properties require specialised containment strategies that protect heritage features while preventing mould spore migration. Our approach preserves architectural integrity while ensuring effective treatment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -393,12 +460,22 @@ export const Brighton = () => {
 
           <h2 className="text-3xl font-bold text-primary mb-8">Professional Brighton Mould Remediation Techniques</h2>
 
+          {/* Brighton Service Gallery */}
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold mb-6 text-primary">Brighton Coastal Property Treatment Results</h3>
+            <OptimizedImageGallery
+              images={galleryImages}
+              location="Brighton"
+              columns={4}
+            />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Coastal-Safe Mould Removal Methods</h3>
                 <p className="text-muted-foreground mb-4">
-                  Brighton's coastal properties demand specialized removal techniques that account for salt air corrosion, heritage material preservation, and ongoing moisture management in the marine environment.
+                  Brighton's coastal properties demand specialised removal techniques that account for salt air corrosion, heritage material preservation, and ongoing moisture management in the marine environment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -534,7 +611,7 @@ export const Brighton = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Brighton coastal property mould issues</span>
+                    <span>5+ years specialising in Brighton coastal property mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -675,7 +752,7 @@ export const Brighton = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Brighton Salt Air & Ventilation Management</h3>
                 <p className="text-muted-foreground mb-4">
-                  Brighton's coastal properties require specialized ventilation strategies that account for constant salt air exposure while managing moisture levels. Heritage constraints and modern efficiency demands require balanced approaches.
+                  Brighton's coastal properties require specialised ventilation strategies that account for constant salt air exposure while managing moisture levels. Heritage constraints and modern efficiency demands require balanced approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -765,7 +842,7 @@ export const Brighton = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide coastal-specialized mold removal services throughout Brighton and nearby beachside suburbs including:
+                We provide coastal-specialised mold removal services throughout Brighton and nearby beachside suburbs including:
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -818,91 +895,100 @@ export const Brighton = () => {
       </section>
 
       {/* Strategic Internal Linking for Location to Service SEO */}
-      <StrategicLocationLinks
-        currentLocation="Brighton"
-        maxServiceLinks={5}
-        maxLocationLinks={6}
-      />
 
-      {/* Related Coastal Suburbs */}
-      <SuburbClusterLinks currentLocation="Brighton" />
-
-      {/* Contact Section */}
-      <section className="py-16 bg-muted/50">
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-teal-600 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Brighton Mold Inspection Today</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Protect your Brighton coastal property from salt air and humidity damage. Expert mold assessment and remediation for beachside homes.
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Protect Your Brighton Property?
+            </h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Don't let mould compromise your coastal property investment. Our Brighton specialists provide comprehensive solutions tailored to Melbourne's bayside conditions.
             </p>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Property Contact</h3>
-                  <div className="space-y-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-accent-blue" />
-                      <span>admin@mouldandrestoration.com.au</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Storm damage professional response available</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Property Process</h3>
-                  <div className="space-y-3 text-left text-sm">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
-                      <span>Free coastal property consultation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
-                      <span>Same-day Brighton inspection scheduling</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
-                      <span>Coastal-specific assessment and reporting</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
-                      <span>Salt air-resistant remediation methods</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
-                      <span>Final testing and coastal protection plan</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Phone className="w-5 h-5 mr-2" />
+                Call Brighton Team: 1800 954 117
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
+                Schedule Coastal Assessment
+              </Button>
+            </div>
+
+            <p className="text-sm text-blue-200 mt-6">
+              Serving Brighton and all bayside Melbourne suburbs • Coastal property specialists
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Locations Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              We Also Service These Coastal Areas
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive mould solutions across Melbourne's bayside suburbs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 className="font-semibold text-lg mb-2">St Kilda</h3>
+              <p className="text-gray-600 text-sm">Coastal mould solutions</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 className="font-semibold text-lg mb-2">Elwood</h3>
+              <p className="text-gray-600 text-sm">Beachside property care</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <h3 className="font-semibold text-lg mb-2">Port Melbourne</h3>
+              <p className="text-gray-600 text-sm">Waterfront specialists</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 bg-blue-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Protect Your Brighton Investment Today
+            </h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Expert coastal property mould solutions for Melbourne's premier bayside suburb
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
                 <Phone className="w-5 h-5 mr-2" />
                 Brighton Professional Service: 1800 954 117
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-900">
                 Schedule Coastal Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-sm text-blue-200 mt-6">
               Serving Brighton and all bayside Melbourne suburbs • Coastal property specialists • Storm damage response available
             </p>
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Brighton"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };
+export default Brighton;
