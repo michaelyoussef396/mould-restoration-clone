@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Search, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Search, MapPin, Phone, ArrowRight, UserCheck } from 'lucide-react';
 import mouldLogo from '@/assets/mould-restoration-logo.png';
 import { suburbsData, getSuburbsByRegion, melbourneRegions, searchSuburbs, type SuburbData } from '@/data/suburbData';
 
@@ -243,7 +243,17 @@ export const Navigation = () => {
               <a href="/case-studies" className="text-white/90 hover:text-success transition-colors px-3 py-2 text-sm font-medium">
                 Case Studies
               </a>
-              
+
+              {/* Staff Portal - Discrete professional access */}
+              <a
+                href="/admin/login"
+                className="text-white/60 hover:text-white/90 transition-colors px-3 py-2 text-sm font-medium flex items-center gap-1"
+                title="Staff Portal Access"
+              >
+                <UserCheck className="h-3.5 w-3.5" />
+                <span className="text-xs">Staff</span>
+              </a>
+
             </div>
           </div>
 
@@ -438,7 +448,18 @@ export const Navigation = () => {
               >
                 Case Studies
               </a>
-              
+
+              {/* Staff Portal - Mobile */}
+              <a
+                href="/admin/login"
+                className="text-white/60 hover:text-white/90 flex items-center gap-2 px-3 py-2 text-sm font-medium"
+                onClick={() => setIsOpen(false)}
+                title="Staff Portal Access"
+              >
+                <UserCheck className="h-4 w-4" />
+                Staff Portal
+              </a>
+
               {/* Mobile Quick Actions */}
               <div className="px-3 py-4 border-t border-primary-600 mt-4">
                 <div className="space-y-3">
