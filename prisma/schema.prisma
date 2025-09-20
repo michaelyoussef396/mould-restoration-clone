@@ -1,0 +1,171 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      Role     @default(CLIENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  leadsCreated Lead[] @relation("CreatedBy")
+  leadsAssigned Lead[] @relation("AssignedTo")
+  inspections  Inspection[]
+  activities   Activity[]
+
+  @@map("users")
+}
+
+model Lead {
+  id           String     @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String
+  phone        String
+  suburb       String
+  address      String?
+  postcode     String?
+  serviceType  ServiceType
+  urgency      Urgency    @default(MEDIUM)
+  source       LeadSource @default(WEBSITE)
+  status       LeadStatus @default(NEW)
+  notes        String?
+  estimatedValue Float?
+  bookingDates String?    // JSON string array of available booking dates
+
+  // Timestamps
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  contactedAt  DateTime?
+  qualifiedAt  DateTime?
+  convertedAt  DateTime?
+
+  // Relationships
+  createdById  String
+  createdBy    User       @relation("CreatedBy", fields: [createdById], references: [id])
+  assignedToId String?
+  assignedTo   User?      @relation("AssignedTo", fields: [assignedToId], references: [id])
+
+  inspections  Inspection[]
+  activities   Activity[]
+
+  @@map("leads")
+}
+
+model Inspection {
+  id          String           @id @default(cuid())
+  scheduledAt DateTime
+  completedAt DateTime?
+  status      InspectionStatus @default(SCHEDULED)
+  findings    String?
+  recommendations String?
+  photos      String? // JSON string array of photo URLs
+  reportUrl   String?
+
+  // Cost information
+  estimatedCost Float?
+  finalCost     Float?
+
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relationships
+  leadId      String
+  lead        Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  technicianId String
+  technician  User     @relation(fields: [technicianId], references: [id])
+  activities  Activity[]
+
+  @@map("inspections")
+}
+
+model Activity {
+  id          String       @id @default(cuid())
+  type        ActivityType
+  description String
+  notes       String?
+  createdAt   DateTime     @default(now())
+
+  // Relationships
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  leadId      String?
+  lead        Lead?        @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  inspectionId String?
+  inspection  Inspection?  @relation(fields: [inspectionId], references: [id], onDelete: Cascade)
+
+  @@map("activities")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  TECHNICIAN
+  CLIENT
+}
+
+enum ServiceType {
+  MOULD_INSPECTION
+  COMPLETE_REMOVAL
+  ADVANCED_FOGGING
+  COMPREHENSIVE_REMOVAL
+  SUBFLOOR_REMEDIATION
+  EMERGENCY_RESPONSE
+}
+
+enum Urgency {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum LeadSource {
+  WEBSITE
+  PHONE
+  REFERRAL
+  GOOGLE_ADS
+  FACEBOOK
+  EMAIL
+  WALK_IN
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  QUOTED
+  CONVERTED
+  CLOSED_LOST
+  FOLLOW_UP
+}
+
+enum InspectionStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  RESCHEDULED
+}
+
+enum ActivityType {
+  CALL
+  EMAIL
+  SMS
+  MEETING
+  INSPECTION_SCHEDULED
+  INSPECTION_COMPLETED
+  QUOTE_SENT
+  PAYMENT_RECEIVED
+  NOTE_ADDED
+  STATUS_CHANGED
+}

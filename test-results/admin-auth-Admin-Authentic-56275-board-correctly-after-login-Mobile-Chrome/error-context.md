@@ -1,0 +1,154 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "CRM Dashboard" [level=1] [ref=e7]
+        - paragraph [ref=e8]: Welcome back, Admin User
+      - generic [ref=e9]:
+        - button "Manage Leads" [ref=e10] [cursor=pointer]:
+          - img
+          - text: Manage Leads
+        - button "Logout" [ref=e11] [cursor=pointer]:
+          - img
+          - text: Logout
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - heading "Total Leads" [level=3] [ref=e16]
+            - img [ref=e17]
+          - generic [ref=e22]:
+            - generic [ref=e23]: "14"
+            - paragraph [ref=e24]: All time
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - heading "New Leads" [level=3] [ref=e27]
+            - img [ref=e28]
+          - generic [ref=e31]:
+            - generic [ref=e32]: "6"
+            - paragraph [ref=e33]: Awaiting contact
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - heading "Scheduled" [level=3] [ref=e36]
+            - img [ref=e37]
+          - generic [ref=e39]:
+            - generic [ref=e40]: "2"
+            - paragraph [ref=e41]: Inspections
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - heading "Completed" [level=3] [ref=e44]
+            - img [ref=e45]
+          - generic [ref=e48]:
+            - generic [ref=e49]: "2"
+            - paragraph [ref=e50]: This week
+      - generic [ref=e51]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Recent Leads" [level=3] [ref=e55]
+            - paragraph [ref=e56]: Latest inquiries from your website and phone calls
+          - button "View All" [ref=e57] [cursor=pointer]:
+            - img
+            - text: View All
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - generic [ref=e62]:
+                - heading "Delete Test" [level=3] [ref=e63]
+                - generic [ref=e64]: new
+              - generic [ref=e65]:
+                - generic [ref=e66]:
+                  - img [ref=e67]
+                  - text: delete@test.com
+                - generic [ref=e70]:
+                  - img [ref=e71]
+                  - text: 0400 999 888
+                - generic [ref=e73]:
+                  - img [ref=e74]
+                  - text: TestSuburb
+              - paragraph [ref=e77]: Mould Inspection
+            - generic [ref=e78]:
+              - paragraph [ref=e79]: 9/21/2025
+              - paragraph [ref=e80]: 2:53:35 AM
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - heading "Delete Test" [level=3] [ref=e84]
+                - generic [ref=e85]: new
+              - generic [ref=e86]:
+                - generic [ref=e87]:
+                  - img [ref=e88]
+                  - text: delete@test.com
+                - generic [ref=e91]:
+                  - img [ref=e92]
+                  - text: 0400 999 888
+                - generic [ref=e94]:
+                  - img [ref=e95]
+                  - text: TestSuburb
+              - paragraph [ref=e98]: Mould Inspection
+            - generic [ref=e99]:
+              - paragraph [ref=e100]: 9/21/2025
+              - paragraph [ref=e101]: 2:53:18 AM
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - heading "Delete Test" [level=3] [ref=e105]
+                - generic [ref=e106]: new
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - img [ref=e109]
+                  - text: delete@test.com
+                - generic [ref=e112]:
+                  - img [ref=e113]
+                  - text: 0400 999 888
+                - generic [ref=e115]:
+                  - img [ref=e116]
+                  - text: TestSuburb
+              - paragraph [ref=e119]: Mould Inspection
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: 9/21/2025
+              - paragraph [ref=e122]: 2:52:56 AM
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]:
+                - heading "John Smith" [level=3] [ref=e126]
+                - generic [ref=e127]: new
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - img [ref=e130]
+                  - text: john.smith@email.com
+                - generic [ref=e133]:
+                  - img [ref=e134]
+                  - text: 0412 555 999
+                - generic [ref=e136]:
+                  - img [ref=e137]
+                  - text: Collingwood
+              - paragraph [ref=e140]: Mould Inspection
+            - generic [ref=e141]:
+              - paragraph [ref=e142]: 9/21/2025
+              - paragraph [ref=e143]: 2:37:18 AM
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]:
+                - heading "Lisa Martinez" [level=3] [ref=e147]
+                - generic [ref=e148]: converted
+              - generic [ref=e149]:
+                - generic [ref=e150]:
+                  - img [ref=e151]
+                  - text: lisa.m@example.com
+                - generic [ref=e154]:
+                  - img [ref=e155]
+                  - text: 0456 789 012
+                - generic [ref=e157]:
+                  - img [ref=e158]
+                  - text: Fitzroy
+              - paragraph [ref=e161]: Subfloor Remediation
+            - generic [ref=e162]:
+              - paragraph [ref=e163]: 9/21/2025
+              - paragraph [ref=e164]: 2:31:52 AM
+```

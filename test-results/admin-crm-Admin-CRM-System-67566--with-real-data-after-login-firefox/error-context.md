@@ -1,0 +1,154 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "CRM Dashboard" [level=1] [ref=e7]
+        - paragraph [ref=e8]: Welcome back, Admin User
+      - generic [ref=e9]:
+        - button "Manage Leads" [ref=e10] [cursor=pointer]:
+          - img
+          - text: Manage Leads
+        - button "Logout" [ref=e11] [cursor=pointer]:
+          - img
+          - text: Logout
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - heading "Total Leads" [level=3] [ref=e16]
+            - img [ref=e17]
+          - generic [ref=e22]:
+            - generic [ref=e23]: "12"
+            - paragraph [ref=e24]: All time
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - heading "New Leads" [level=3] [ref=e27]
+            - img [ref=e28]
+          - generic [ref=e31]:
+            - generic [ref=e32]: "4"
+            - paragraph [ref=e33]: Awaiting contact
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - heading "Scheduled" [level=3] [ref=e36]
+            - img [ref=e37]
+          - generic [ref=e42]:
+            - generic [ref=e43]: "2"
+            - paragraph [ref=e44]: Inspections
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - heading "Completed" [level=3] [ref=e47]
+            - img [ref=e48]
+          - generic [ref=e51]:
+            - generic [ref=e52]: "2"
+            - paragraph [ref=e53]: This week
+      - generic [ref=e54]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - heading "Recent Leads" [level=3] [ref=e58]
+            - paragraph [ref=e59]: Latest inquiries from your website and phone calls
+          - button "View All" [ref=e60] [cursor=pointer]:
+            - img
+            - text: View All
+        - generic [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - heading "Delete Test" [level=3] [ref=e66]
+                - generic [ref=e67]: new
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - img [ref=e70]
+                  - text: delete@test.com
+                - generic [ref=e73]:
+                  - img [ref=e74]
+                  - text: 0400 999 888
+                - generic [ref=e76]:
+                  - img [ref=e77]
+                  - text: TestSuburb
+              - paragraph [ref=e80]: Mould Inspection
+            - generic [ref=e81]:
+              - paragraph [ref=e82]: 9/21/2025
+              - paragraph [ref=e83]: 2:52:56 AM
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - heading "John Smith" [level=3] [ref=e87]
+                - generic [ref=e88]: new
+              - generic [ref=e89]:
+                - generic [ref=e90]:
+                  - img [ref=e91]
+                  - text: john.smith@email.com
+                - generic [ref=e94]:
+                  - img [ref=e95]
+                  - text: 0412 555 999
+                - generic [ref=e97]:
+                  - img [ref=e98]
+                  - text: Collingwood
+              - paragraph [ref=e101]: Mould Inspection
+            - generic [ref=e102]:
+              - paragraph [ref=e103]: 9/21/2025
+              - paragraph [ref=e104]: 2:37:18 AM
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - heading "Lisa Martinez" [level=3] [ref=e108]
+                - generic [ref=e109]: converted
+              - generic [ref=e110]:
+                - generic [ref=e111]:
+                  - img [ref=e112]
+                  - text: lisa.m@example.com
+                - generic [ref=e115]:
+                  - img [ref=e116]
+                  - text: 0456 789 012
+                - generic [ref=e118]:
+                  - img [ref=e119]
+                  - text: Fitzroy
+              - paragraph [ref=e122]: Subfloor Remediation
+            - generic [ref=e123]:
+              - paragraph [ref=e124]: 9/21/2025
+              - paragraph [ref=e125]: 2:31:52 AM
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - heading "Emma Wilson" [level=3] [ref=e129]
+                - generic [ref=e130]: contacted
+              - generic [ref=e131]:
+                - generic [ref=e132]:
+                  - img [ref=e133]
+                  - text: emma.wilson@example.com
+                - generic [ref=e136]:
+                  - img [ref=e137]
+                  - text: 0434 567 890
+                - generic [ref=e139]:
+                  - img [ref=e140]
+                  - text: Brighton
+              - paragraph [ref=e143]: Advanced Fogging
+            - generic [ref=e144]:
+              - paragraph [ref=e145]: 9/21/2025
+              - paragraph [ref=e146]: 2:31:52 AM
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - heading "David Thompson" [level=3] [ref=e150]
+                - generic [ref=e151]: quoted
+              - generic [ref=e152]:
+                - generic [ref=e153]:
+                  - img [ref=e154]
+                  - text: david.t@example.com
+                - generic [ref=e157]:
+                  - img [ref=e158]
+                  - text: 0445 678 901
+                - generic [ref=e160]:
+                  - img [ref=e161]
+                  - text: Richmond
+              - paragraph [ref=e164]: Comprehensive Removal
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: 9/21/2025
+              - paragraph [ref=e167]: 2:31:52 AM
+```

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index"; // Keep homepage non-lazy for fastest initial load
 
 // Lazy load all other pages
@@ -33,6 +34,11 @@ const Fitzroy = lazy(() => import("./pages/locations/Fitzroy").then(module => ({
 const Prahran = lazy(() => import("./pages/locations/Prahran").then(module => ({ default: module.Prahran })));
 const Malvern = lazy(() => import("./pages/locations/Malvern").then(module => ({ default: module.Malvern })));
 
+// Lazy load admin pages for Phase 2A CRM
+const AdminLogin = lazy(() => import("./pages/admin/Login").then(module => ({ default: module.AdminLogin })));
+const AdminDashboard = lazy(() => import("./pages/admin/Dashboard").then(module => ({ default: module.AdminDashboard })));
+const LeadsPage = lazy(() => import("./pages/admin/Leads").then(module => ({ default: module.LeadsPage })));
+
 const queryClient = new QueryClient();
 
 // Loading fallback component
@@ -48,14 +54,15 @@ const LoadingFallback = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <AuthProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -93,11 +100,17 @@ const App = () => (
             {/* Dynamic Location Route - Handles all 100+ suburbs */}
             <Route path="/locations/:suburb" element={<DynamicLocationPage />} />
 
+            {/* Phase 2A: Admin CRM Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/leads" element={<LeadsPage />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Suspense>
-      </BrowserRouter>
+          </Suspense>
+        </BrowserRouter>
+      </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

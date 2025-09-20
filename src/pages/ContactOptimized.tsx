@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { ArrowRight, Phone, Mail, MapPin, Clock, Star, CheckCircle, AlertCircle, Users, Shield, Award } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { ServicePageSEO } from '@/components/seo/SEOHead';
+import { ContactForm } from '@/components/ContactForm';
 import heroBackground from '@/assets/hero-background-optimized.webp';
 
 export const ContactOptimized = () => {
@@ -305,130 +306,7 @@ export const ContactOptimized = () => {
                   </div>
                 </div>
 
-                <form className="space-y-6">
-                  {/* Step 1: Service Type */}
-                  <div className="space-y-3">
-                    <Label className="text-base font-semibold">What service do you need? *</Label>
-                    <div className="grid md:grid-cols-2 gap-3">
-                      <label className="flex items-center space-x-3 cursor-pointer p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
-                        <input type="radio" name="service" value="emergency" className="text-orange-500" />
-                        <div>
-                          <div className="font-medium text-orange-500">Same-day Service</div>
-                          <div className="text-sm text-muted-foreground">Professional response</div>
-                        </div>
-                      </label>
-                      <label className="flex items-center space-x-3 cursor-pointer p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
-                        <input type="radio" name="service" value="inspection" className="text-accent-teal" />
-                        <div>
-                          <div className="font-medium">Professional Inspection</div>
-                          <div className="text-sm text-muted-foreground">Comprehensive assessment</div>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-
-                  {/* Contact Information */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="fullName">Full Name *</Label>
-                      <Input 
-                        id="fullName" 
-                        placeholder="Enter your full name" 
-                        required 
-                        className="h-12"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        placeholder="Enter your phone number" 
-                        required 
-                        className="h-12"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="Enter your email address" 
-                      required 
-                      className="h-12"
-                    />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="suburb">Suburb *</Label>
-                      <Input 
-                        id="suburb" 
-                        placeholder="Enter your suburb" 
-                        required
-                        className="h-12"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="propertyType">Property Type</Label>
-                      <select 
-                        id="propertyType"
-                        className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                      >
-                        <option value="">Select property type</option>
-                        <option value="house">House</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="commercial">Commercial</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="description">Brief Description of the Issue *</Label>
-                    <Textarea 
-                      id="description" 
-                      placeholder="Please describe your mould issue or restoration needs in detail..." 
-                      rows={4}
-                      required 
-                    />
-                  </div>
-
-                  {/* Photo Upload Section */}
-                  <div className="space-y-2">
-                    <Label htmlFor="photos">Upload Photos (Optional)</Label>
-                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
-                      <div className="text-muted-foreground">
-                        <div className="mb-2">📷 Upload photos of the affected area</div>
-                        <div className="text-sm">Helps us provide a more accurate quote</div>
-                      </div>
-                      <input type="file" id="photos" multiple accept="image/*" className="hidden" />
-                      <Button 
-                        type="button" 
-                        variant="outline" 
-                        className="mt-4"
-                        onClick={() => document.getElementById('photos')?.click()}
-                      >
-                        Choose Files
-                      </Button>
-                    </div>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="bg-primary hover:bg-primary-600 text-white w-full text-lg px-8 py-4 h-auto"
-                    size="lg"
-                  >
-                    Get My Professional Quote Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-
-                  <div className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to our terms and privacy policy. 
-                    We'll never share your information.
-                  </div>
-                </form>
+                <ContactForm />
               </Card>
             </div>
           </div>

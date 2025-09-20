@@ -1,0 +1,464 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Lead Management" [level=1] [ref=e7]
+        - paragraph [ref=e8]: Manage and track all your customer inquiries
+      - button "Add Lead" [ref=e9] [cursor=pointer]:
+        - img
+        - text: Add Lead
+    - generic [ref=e11]:
+      - generic [ref=e14]:
+        - generic [ref=e16]:
+          - img [ref=e17]
+          - textbox "Search leads by name, email, phone, or suburb..." [ref=e20]
+        - combobox [ref=e22] [cursor=pointer]:
+          - generic: All Status
+          - img [ref=e23] [cursor=pointer]
+      - generic [ref=e25]:
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - paragraph [ref=e30]: Total Leads
+            - paragraph [ref=e31]: "14"
+          - img [ref=e32]
+        - generic [ref=e40]:
+          - paragraph [ref=e41]: New Leads
+          - paragraph [ref=e42]: "6"
+        - generic [ref=e48]:
+          - paragraph [ref=e49]: Converted
+          - paragraph [ref=e50]: "2"
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - paragraph [ref=e57]: Total Value
+            - paragraph [ref=e58]: $18,350
+          - img [ref=e59]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - heading "Leads (14)" [level=3] [ref=e63]
+          - paragraph [ref=e64]: All leads in the system
+        - table [ref=e68]:
+          - rowgroup [ref=e69]:
+            - row "Name Contact Location Service Status Urgency Value Created Actions" [ref=e70]:
+              - cell "Name" [ref=e71]
+              - cell "Contact" [ref=e72]
+              - cell "Location" [ref=e73]
+              - cell "Service" [ref=e74]
+              - cell "Status" [ref=e75]
+              - cell "Urgency" [ref=e76]
+              - cell "Value" [ref=e77]
+              - cell "Created" [ref=e78]
+              - cell "Actions" [ref=e79]
+          - rowgroup [ref=e80]:
+            - row "Delete Test Unassigned delete@test.com 0400 999 888 TestSuburb Mould Inspection New Medium - 9/21/2025" [ref=e81]:
+              - cell "Delete Test Unassigned" [ref=e82]:
+                - generic [ref=e83]:
+                  - generic [ref=e84]: Delete Test
+                  - generic [ref=e85]: Unassigned
+              - cell "delete@test.com 0400 999 888" [ref=e86]:
+                - generic [ref=e87]:
+                  - generic [ref=e88]:
+                    - img [ref=e89]
+                    - text: delete@test.com
+                  - generic [ref=e92]:
+                    - img [ref=e93]
+                    - text: 0400 999 888
+              - cell "TestSuburb" [ref=e95]:
+                - generic [ref=e96]:
+                  - img [ref=e97]
+                  - text: TestSuburb
+              - cell "Mould Inspection" [ref=e100]:
+                - generic [ref=e101]: Mould Inspection
+              - cell "New" [ref=e102]:
+                - generic [ref=e103]: New
+              - cell "Medium" [ref=e104]:
+                - generic [ref=e105]: Medium
+              - cell "-" [ref=e106]
+              - cell "9/21/2025" [ref=e107]:
+                - generic [ref=e108]: 9/21/2025
+              - cell [ref=e109]:
+                - button [ref=e110] [cursor=pointer]:
+                  - img
+            - row "Delete Test Unassigned delete@test.com 0400 999 888 TestSuburb Mould Inspection New Medium - 9/21/2025" [ref=e111]:
+              - cell "Delete Test Unassigned" [ref=e112]:
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Delete Test
+                  - generic [ref=e115]: Unassigned
+              - cell "delete@test.com 0400 999 888" [ref=e116]:
+                - generic [ref=e117]:
+                  - generic [ref=e118]:
+                    - img [ref=e119]
+                    - text: delete@test.com
+                  - generic [ref=e122]:
+                    - img [ref=e123]
+                    - text: 0400 999 888
+              - cell "TestSuburb" [ref=e125]:
+                - generic [ref=e126]:
+                  - img [ref=e127]
+                  - text: TestSuburb
+              - cell "Mould Inspection" [ref=e130]:
+                - generic [ref=e131]: Mould Inspection
+              - cell "New" [ref=e132]:
+                - generic [ref=e133]: New
+              - cell "Medium" [ref=e134]:
+                - generic [ref=e135]: Medium
+              - cell "-" [ref=e136]
+              - cell "9/21/2025" [ref=e137]:
+                - generic [ref=e138]: 9/21/2025
+              - cell [ref=e139]:
+                - button [ref=e140] [cursor=pointer]:
+                  - img
+            - row "Delete Test Unassigned delete@test.com 0400 999 888 TestSuburb Mould Inspection New Medium - 9/21/2025" [ref=e141]:
+              - cell "Delete Test Unassigned" [ref=e142]:
+                - generic [ref=e143]:
+                  - generic [ref=e144]: Delete Test
+                  - generic [ref=e145]: Unassigned
+              - cell "delete@test.com 0400 999 888" [ref=e146]:
+                - generic [ref=e147]:
+                  - generic [ref=e148]:
+                    - img [ref=e149]
+                    - text: delete@test.com
+                  - generic [ref=e152]:
+                    - img [ref=e153]
+                    - text: 0400 999 888
+              - cell "TestSuburb" [ref=e155]:
+                - generic [ref=e156]:
+                  - img [ref=e157]
+                  - text: TestSuburb
+              - cell "Mould Inspection" [ref=e160]:
+                - generic [ref=e161]: Mould Inspection
+              - cell "New" [ref=e162]:
+                - generic [ref=e163]: New
+              - cell "Medium" [ref=e164]:
+                - generic [ref=e165]: Medium
+              - cell "-" [ref=e166]
+              - cell "9/21/2025" [ref=e167]:
+                - generic [ref=e168]: 9/21/2025
+              - cell [ref=e169]:
+                - button [ref=e170] [cursor=pointer]:
+                  - img
+            - row "John Smith Unassigned john.smith@email.com 0412 555 999 Collingwood Mould Inspection New Medium $750 9/21/2025" [ref=e171]:
+              - cell "John Smith Unassigned" [ref=e172]:
+                - generic [ref=e173]:
+                  - generic [ref=e174]: John Smith
+                  - generic [ref=e175]: Unassigned
+              - cell "john.smith@email.com 0412 555 999" [ref=e176]:
+                - generic [ref=e177]:
+                  - generic [ref=e178]:
+                    - img [ref=e179]
+                    - text: john.smith@email.com
+                  - generic [ref=e182]:
+                    - img [ref=e183]
+                    - text: 0412 555 999
+              - cell "Collingwood" [ref=e185]:
+                - generic [ref=e186]:
+                  - img [ref=e187]
+                  - text: Collingwood
+              - cell "Mould Inspection" [ref=e190]:
+                - generic [ref=e191]: Mould Inspection
+              - cell "New" [ref=e192]:
+                - generic [ref=e193]: New
+              - cell "Medium" [ref=e194]:
+                - generic [ref=e195]: Medium
+              - cell "$750" [ref=e196]
+              - cell "9/21/2025" [ref=e197]:
+                - generic [ref=e198]: 9/21/2025
+              - cell [ref=e199]:
+                - button [ref=e200] [cursor=pointer]:
+                  - img
+            - row "Lisa Martinez Assigned to John Thompson lisa.m@example.com 0456 789 012 Fitzroy 3065 Subfloor Remediation Converted High $1,800 9/21/2025" [ref=e201]:
+              - cell "Lisa Martinez Assigned to John Thompson" [ref=e202]:
+                - generic [ref=e203]:
+                  - generic [ref=e204]: Lisa Martinez
+                  - generic [ref=e205]: Assigned to John Thompson
+              - cell "lisa.m@example.com 0456 789 012" [ref=e206]:
+                - generic [ref=e207]:
+                  - generic [ref=e208]:
+                    - img [ref=e209]
+                    - text: lisa.m@example.com
+                  - generic [ref=e212]:
+                    - img [ref=e213]
+                    - text: 0456 789 012
+              - cell "Fitzroy 3065" [ref=e215]:
+                - generic [ref=e216]:
+                  - img [ref=e217]
+                  - text: Fitzroy 3065
+              - cell "Subfloor Remediation" [ref=e220]:
+                - generic [ref=e221]: Subfloor Remediation
+              - cell "Converted" [ref=e222]:
+                - generic [ref=e223]: Converted
+              - cell "High" [ref=e224]:
+                - generic [ref=e225]: High
+              - cell "$1,800" [ref=e226]
+              - cell "9/21/2025" [ref=e227]:
+                - generic [ref=e228]: 9/21/2025
+              - cell [ref=e229]:
+                - button [ref=e230] [cursor=pointer]:
+                  - img
+            - row "Emma Wilson Unassigned emma.wilson@example.com 0434 567 890 Brighton 3186 Advanced Fogging Contacted Medium $800 9/21/2025" [ref=e231]:
+              - cell "Emma Wilson Unassigned" [ref=e232]:
+                - generic [ref=e233]:
+                  - generic [ref=e234]: Emma Wilson
+                  - generic [ref=e235]: Unassigned
+              - cell "emma.wilson@example.com 0434 567 890" [ref=e236]:
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - img [ref=e239]
+                    - text: emma.wilson@example.com
+                  - generic [ref=e242]:
+                    - img [ref=e243]
+                    - text: 0434 567 890
+              - cell "Brighton 3186" [ref=e245]:
+                - generic [ref=e246]:
+                  - img [ref=e247]
+                  - text: Brighton 3186
+              - cell "Advanced Fogging" [ref=e250]:
+                - generic [ref=e251]: Advanced Fogging
+              - cell "Contacted" [ref=e252]:
+                - generic [ref=e253]: Contacted
+              - cell "Medium" [ref=e254]:
+                - generic [ref=e255]: Medium
+              - cell "$800" [ref=e256]
+              - cell "9/21/2025" [ref=e257]:
+                - generic [ref=e258]: 9/21/2025
+              - cell [ref=e259]:
+                - button [ref=e260] [cursor=pointer]:
+                  - img
+            - row "David Thompson Assigned to John Thompson david.t@example.com 0445 678 901 Richmond 3121 Comprehensive Removal Quoted Urgent $3,200 9/21/2025" [ref=e261]:
+              - cell "David Thompson Assigned to John Thompson" [ref=e262]:
+                - generic [ref=e263]:
+                  - generic [ref=e264]: David Thompson
+                  - generic [ref=e265]: Assigned to John Thompson
+              - cell "david.t@example.com 0445 678 901" [ref=e266]:
+                - generic [ref=e267]:
+                  - generic [ref=e268]:
+                    - img [ref=e269]
+                    - text: david.t@example.com
+                  - generic [ref=e272]:
+                    - img [ref=e273]
+                    - text: 0445 678 901
+              - cell "Richmond 3121" [ref=e275]:
+                - generic [ref=e276]:
+                  - img [ref=e277]
+                  - text: Richmond 3121
+              - cell "Comprehensive Removal" [ref=e280]:
+                - generic [ref=e281]: Comprehensive Removal
+              - cell "Quoted" [ref=e282]:
+                - generic [ref=e283]: Quoted
+              - cell "Urgent" [ref=e284]:
+                - generic [ref=e285]: Urgent
+              - cell "$3,200" [ref=e286]
+              - cell "9/21/2025" [ref=e287]:
+                - generic [ref=e288]: 9/21/2025
+              - cell [ref=e289]:
+                - button [ref=e290] [cursor=pointer]:
+                  - img
+            - row "Sarah Johnson Assigned to John Thompson sarah.j@example.com 0412 345 678 Carlton 3053 Mould Inspection New Medium $500 9/21/2025" [ref=e291]:
+              - cell "Sarah Johnson Assigned to John Thompson" [ref=e292]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]: Sarah Johnson
+                  - generic [ref=e295]: Assigned to John Thompson
+              - cell "sarah.j@example.com 0412 345 678" [ref=e296]:
+                - generic [ref=e297]:
+                  - generic [ref=e298]:
+                    - img [ref=e299]
+                    - text: sarah.j@example.com
+                  - generic [ref=e302]:
+                    - img [ref=e303]
+                    - text: 0412 345 678
+              - cell "Carlton 3053" [ref=e305]:
+                - generic [ref=e306]:
+                  - img [ref=e307]
+                  - text: Carlton 3053
+              - cell "Mould Inspection" [ref=e310]:
+                - generic [ref=e311]: Mould Inspection
+              - cell "New" [ref=e312]:
+                - generic [ref=e313]: New
+              - cell "Medium" [ref=e314]:
+                - generic [ref=e315]: Medium
+              - cell "$500" [ref=e316]
+              - cell "9/21/2025" [ref=e317]:
+                - generic [ref=e318]: 9/21/2025
+              - cell [ref=e319]:
+                - button [ref=e320] [cursor=pointer]:
+                  - img
+            - row "Michael Chen Assigned to John Thompson chen.michael@example.com 0423 456 789 Toorak 3142 Complete Removal Qualified High $2,500 9/21/2025" [ref=e321]:
+              - cell "Michael Chen Assigned to John Thompson" [ref=e322]:
+                - generic [ref=e323]:
+                  - generic [ref=e324]: Michael Chen
+                  - generic [ref=e325]: Assigned to John Thompson
+              - cell "chen.michael@example.com 0423 456 789" [ref=e326]:
+                - generic [ref=e327]:
+                  - generic [ref=e328]:
+                    - img [ref=e329]
+                    - text: chen.michael@example.com
+                  - generic [ref=e332]:
+                    - img [ref=e333]
+                    - text: 0423 456 789
+              - cell "Toorak 3142" [ref=e335]:
+                - generic [ref=e336]:
+                  - img [ref=e337]
+                  - text: Toorak 3142
+              - cell "Complete Removal" [ref=e340]:
+                - generic [ref=e341]: Complete Removal
+              - cell "Qualified" [ref=e342]:
+                - generic [ref=e343]: Qualified
+              - cell "High" [ref=e344]:
+                - generic [ref=e345]: High
+              - cell "$2,500" [ref=e346]
+              - cell "9/21/2025" [ref=e347]:
+                - generic [ref=e348]: 9/21/2025
+              - cell [ref=e349]:
+                - button [ref=e350] [cursor=pointer]:
+                  - img
+            - row "David Thompson Assigned to John Thompson david.t@example.com 0445 678 901 Richmond 3121 Comprehensive Removal Quoted Urgent $3,200 9/21/2025" [ref=e351]:
+              - cell "David Thompson Assigned to John Thompson" [ref=e352]:
+                - generic [ref=e353]:
+                  - generic [ref=e354]: David Thompson
+                  - generic [ref=e355]: Assigned to John Thompson
+              - cell "david.t@example.com 0445 678 901" [ref=e356]:
+                - generic [ref=e357]:
+                  - generic [ref=e358]:
+                    - img [ref=e359]
+                    - text: david.t@example.com
+                  - generic [ref=e362]:
+                    - img [ref=e363]
+                    - text: 0445 678 901
+              - cell "Richmond 3121" [ref=e365]:
+                - generic [ref=e366]:
+                  - img [ref=e367]
+                  - text: Richmond 3121
+              - cell "Comprehensive Removal" [ref=e370]:
+                - generic [ref=e371]: Comprehensive Removal
+              - cell "Quoted" [ref=e372]:
+                - generic [ref=e373]: Quoted
+              - cell "Urgent" [ref=e374]:
+                - generic [ref=e375]: Urgent
+              - cell "$3,200" [ref=e376]
+              - cell "9/21/2025" [ref=e377]:
+                - generic [ref=e378]: 9/21/2025
+              - cell [ref=e379]:
+                - button [ref=e380] [cursor=pointer]:
+                  - img
+            - row "Sarah Johnson Assigned to John Thompson sarah.j@example.com 0412 345 678 Carlton 3053 Mould Inspection New Medium $500 9/21/2025" [ref=e381]:
+              - cell "Sarah Johnson Assigned to John Thompson" [ref=e382]:
+                - generic [ref=e383]:
+                  - generic [ref=e384]: Sarah Johnson
+                  - generic [ref=e385]: Assigned to John Thompson
+              - cell "sarah.j@example.com 0412 345 678" [ref=e386]:
+                - generic [ref=e387]:
+                  - generic [ref=e388]:
+                    - img [ref=e389]
+                    - text: sarah.j@example.com
+                  - generic [ref=e392]:
+                    - img [ref=e393]
+                    - text: 0412 345 678
+              - cell "Carlton 3053" [ref=e395]:
+                - generic [ref=e396]:
+                  - img [ref=e397]
+                  - text: Carlton 3053
+              - cell "Mould Inspection" [ref=e400]:
+                - generic [ref=e401]: Mould Inspection
+              - cell "New" [ref=e402]:
+                - generic [ref=e403]: New
+              - cell "Medium" [ref=e404]:
+                - generic [ref=e405]: Medium
+              - cell "$500" [ref=e406]
+              - cell "9/21/2025" [ref=e407]:
+                - generic [ref=e408]: 9/21/2025
+              - cell [ref=e409]:
+                - button [ref=e410] [cursor=pointer]:
+                  - img
+            - row "Emma Wilson Unassigned emma.wilson@example.com 0434 567 890 Brighton 3186 Advanced Fogging Contacted Medium $800 9/21/2025" [ref=e411]:
+              - cell "Emma Wilson Unassigned" [ref=e412]:
+                - generic [ref=e413]:
+                  - generic [ref=e414]: Emma Wilson
+                  - generic [ref=e415]: Unassigned
+              - cell "emma.wilson@example.com 0434 567 890" [ref=e416]:
+                - generic [ref=e417]:
+                  - generic [ref=e418]:
+                    - img [ref=e419]
+                    - text: emma.wilson@example.com
+                  - generic [ref=e422]:
+                    - img [ref=e423]
+                    - text: 0434 567 890
+              - cell "Brighton 3186" [ref=e425]:
+                - generic [ref=e426]:
+                  - img [ref=e427]
+                  - text: Brighton 3186
+              - cell "Advanced Fogging" [ref=e430]:
+                - generic [ref=e431]: Advanced Fogging
+              - cell "Contacted" [ref=e432]:
+                - generic [ref=e433]: Contacted
+              - cell "Medium" [ref=e434]:
+                - generic [ref=e435]: Medium
+              - cell "$800" [ref=e436]
+              - cell "9/21/2025" [ref=e437]:
+                - generic [ref=e438]: 9/21/2025
+              - cell [ref=e439]:
+                - button [ref=e440] [cursor=pointer]:
+                  - img
+            - row "Michael Chen Assigned to John Thompson chen.michael@example.com 0423 456 789 Toorak 3142 Complete Removal Qualified High $2,500 9/21/2025" [ref=e441]:
+              - cell "Michael Chen Assigned to John Thompson" [ref=e442]:
+                - generic [ref=e443]:
+                  - generic [ref=e444]: Michael Chen
+                  - generic [ref=e445]: Assigned to John Thompson
+              - cell "chen.michael@example.com 0423 456 789" [ref=e446]:
+                - generic [ref=e447]:
+                  - generic [ref=e448]:
+                    - img [ref=e449]
+                    - text: chen.michael@example.com
+                  - generic [ref=e452]:
+                    - img [ref=e453]
+                    - text: 0423 456 789
+              - cell "Toorak 3142" [ref=e455]:
+                - generic [ref=e456]:
+                  - img [ref=e457]
+                  - text: Toorak 3142
+              - cell "Complete Removal" [ref=e460]:
+                - generic [ref=e461]: Complete Removal
+              - cell "Qualified" [ref=e462]:
+                - generic [ref=e463]: Qualified
+              - cell "High" [ref=e464]:
+                - generic [ref=e465]: High
+              - cell "$2,500" [ref=e466]
+              - cell "9/21/2025" [ref=e467]:
+                - generic [ref=e468]: 9/21/2025
+              - cell [ref=e469]:
+                - button [ref=e470] [cursor=pointer]:
+                  - img
+            - row "Lisa Martinez Assigned to John Thompson lisa.m@example.com 0456 789 012 Fitzroy 3065 Subfloor Remediation Converted High $1,800 9/21/2025" [ref=e471]:
+              - cell "Lisa Martinez Assigned to John Thompson" [ref=e472]:
+                - generic [ref=e473]:
+                  - generic [ref=e474]: Lisa Martinez
+                  - generic [ref=e475]: Assigned to John Thompson
+              - cell "lisa.m@example.com 0456 789 012" [ref=e476]:
+                - generic [ref=e477]:
+                  - generic [ref=e478]:
+                    - img [ref=e479]
+                    - text: lisa.m@example.com
+                  - generic [ref=e482]:
+                    - img [ref=e483]
+                    - text: 0456 789 012
+              - cell "Fitzroy 3065" [ref=e485]:
+                - generic [ref=e486]:
+                  - img [ref=e487]
+                  - text: Fitzroy 3065
+              - cell "Subfloor Remediation" [ref=e490]:
+                - generic [ref=e491]: Subfloor Remediation
+              - cell "Converted" [ref=e492]:
+                - generic [ref=e493]: Converted
+              - cell "High" [ref=e494]:
+                - generic [ref=e495]: High
+              - cell "$1,800" [ref=e496]
+              - cell "9/21/2025" [ref=e497]:
+                - generic [ref=e498]: 9/21/2025
+              - cell [ref=e499]:
+                - button [ref=e500] [cursor=pointer]:
+                  - img
+```
