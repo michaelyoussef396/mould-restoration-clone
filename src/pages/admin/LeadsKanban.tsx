@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { DndContext, DragEndEvent, DragOverlay, DragStartEvent, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, DragOverlay, DragStartEvent, PointerSensor, TouchSensor, useSensor, useSensors, useDroppable } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -117,39 +117,39 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
       style={style}
       {...attributes}
       {...listeners}
-      className={`cursor-pointer hover:shadow-md transition-shadow ${
+      className={`cursor-pointer hover:shadow-md transition-shadow touch-manipulation select-none ${
         isDragging ? 'shadow-lg' : ''
-      }`}
+      } ${isSortableDragging ? 'z-50' : ''}`}
       onClick={() => onLeadClick(lead)}
     >
-      <CardContent className="p-4">
-        <div className="space-y-3">
+      <CardContent className="p-3 sm:p-4">
+        <div className="space-y-2 sm:space-y-3">
           {/* Header with name and urgency */}
-          <div className="flex items-start justify-between">
-            <div>
-              <h3 className="font-medium text-gray-900">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <h3 className="font-medium text-gray-900 text-sm sm:text-base truncate">
                 {lead.firstName} {lead.lastName}
               </h3>
-              <p className="text-sm text-gray-600">{formatServiceType(lead.serviceType)}</p>
+              <p className="text-xs sm:text-sm text-gray-600 truncate">{formatServiceType(lead.serviceType)}</p>
             </div>
-            <Badge className={getUrgencyColor(lead.urgency)} variant="secondary">
+            <Badge className={`${getUrgencyColor(lead.urgency)} text-xs flex-shrink-0`} variant="secondary">
               {formatEnumValue(lead.urgency)}
             </Badge>
           </div>
 
           {/* Contact information */}
           <div className="space-y-1">
-            <div className="flex items-center text-sm text-gray-600">
-              <Mail className="h-3 w-3 mr-2" />
+            <div className="flex items-center text-xs sm:text-sm text-gray-600">
+              <Mail className="h-3 w-3 mr-2 flex-shrink-0" />
               <span className="truncate">{lead.email}</span>
             </div>
-            <div className="flex items-center text-sm text-gray-600">
-              <Phone className="h-3 w-3 mr-2" />
-              {lead.phone}
+            <div className="flex items-center text-xs sm:text-sm text-gray-600">
+              <Phone className="h-3 w-3 mr-2 flex-shrink-0" />
+              <span className="truncate">{lead.phone}</span>
             </div>
-            <div className="flex items-center text-sm text-gray-600">
-              <MapPin className="h-3 w-3 mr-2" />
-              {lead.suburb}
+            <div className="flex items-center text-xs sm:text-sm text-gray-600">
+              <MapPin className="h-3 w-3 mr-2 flex-shrink-0" />
+              <span className="truncate">{lead.suburb}</span>
             </div>
           </div>
 
@@ -181,7 +181,7 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
 
           {/* Action buttons */}
           <div className="flex items-center justify-between">
-            <div className="text-xs text-gray-400">
+            <div className="text-xs text-gray-400 truncate">
               {new Date(lead.createdAt).toLocaleDateString()}
             </div>
             <Button
@@ -191,7 +191,7 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
                 e.stopPropagation();
                 onCommunicationClick(lead);
               }}
-              className="h-6 w-6 p-0"
+              className="h-8 w-8 p-0 touch-manipulation flex-shrink-0"
             >
               <MessageSquare className="h-3 w-3" />
             </Button>
@@ -208,34 +208,51 @@ interface KanbanColumnProps {
   leads: LeadWithRelations[];
   onLeadClick: (lead: LeadWithRelations) => void;
   onCommunicationClick: (lead: LeadWithRelations) => void;
+  onAddLead?: () => void;
 }
 
-function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick }: KanbanColumnProps) {
+function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onAddLead }: KanbanColumnProps) {
+  const { isOver, setNodeRef } = useDroppable({
+    id: column.id,
+  });
+
   return (
-    <div className={`flex-shrink-0 w-80 ${column.color} rounded-lg border-2 border-dashed`}>
-      <div className="p-4">
+    <div className={`flex-shrink-0 w-full sm:w-80 min-w-[280px] ${column.color} rounded-lg border-2 ${isOver ? 'border-solid border-blue-500 bg-blue-50' : 'border-dashed'} transition-colors`}>
+      <div className="p-3 sm:p-4">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="font-semibold text-gray-900">{column.title}</h2>
-            <p className="text-sm text-gray-600">{leads.length} leads</p>
+            <h2 className="font-semibold text-gray-900 text-sm sm:text-base">{column.title}</h2>
+            <p className="text-xs sm:text-sm text-gray-600">{leads.length} leads</p>
           </div>
-          <Button variant="ghost" size="sm">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onAddLead}
+            className="h-8 w-8 p-0 touch-manipulation"
+          >
             <Plus className="h-4 w-4" />
           </Button>
         </div>
 
-        <SortableContext items={leads.map(lead => lead.id)} strategy={verticalListSortingStrategy}>
-          <div className="space-y-3 max-h-[calc(100vh-300px)] overflow-y-auto">
-            {leads.map((lead) => (
-              <LeadCard
-                key={lead.id}
-                lead={lead}
-                onLeadClick={onLeadClick}
-                onCommunicationClick={onCommunicationClick}
-              />
-            ))}
-          </div>
-        </SortableContext>
+        <div ref={setNodeRef} className="min-h-[200px]">
+          <SortableContext items={leads.map(lead => lead.id)} strategy={verticalListSortingStrategy}>
+            <div className="space-y-2 sm:space-y-3 max-h-[calc(100vh-250px)] sm:max-h-[calc(100vh-300px)] overflow-y-auto">
+              {leads.map((lead) => (
+                <LeadCard
+                  key={lead.id}
+                  lead={lead}
+                  onLeadClick={onLeadClick}
+                  onCommunicationClick={onCommunicationClick}
+                />
+              ))}
+              {leads.length === 0 && (
+                <div className="text-center py-8 text-gray-400 text-sm">
+                  Drop leads here or click + to add
+                </div>
+              )}
+            </div>
+          </SortableContext>
+        </div>
       </div>
     </div>
   );
@@ -253,13 +270,17 @@ function FilterSidebar({ open, onOpenChange, filters, onFiltersChange }: FilterS
   if (!open) return null;
 
   return (
-    <div className="w-80 bg-white border-r border-gray-200 p-6 space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold">Advanced Filters</h2>
-        <Button variant="ghost" size="sm" onClick={() => onOpenChange(false)}>
-          ×
-        </Button>
-      </div>
+    <>
+      {/* Mobile overlay */}
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden" onClick={() => onOpenChange(false)} />
+
+      <div className={`${open ? 'translate-x-0' : '-translate-x-full'} fixed sm:relative z-50 sm:z-auto w-80 h-full sm:h-auto bg-white border-r border-gray-200 p-4 sm:p-6 space-y-4 sm:space-y-6 transition-transform sm:transition-none overflow-y-auto`}>
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold">Advanced Filters</h2>
+          <Button variant="ghost" size="sm" onClick={() => onOpenChange(false)} className="touch-manipulation">
+            ×
+          </Button>
+        </div>
 
       {/* Service Type Filter */}
       <div>
@@ -362,7 +383,8 @@ function FilterSidebar({ open, onOpenChange, filters, onFiltersChange }: FilterS
       <Button variant="outline" className="w-full" onClick={() => onFiltersChange({})}>
         Clear All Filters
       </Button>
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -424,11 +446,19 @@ export function LeadsKanban() {
   const [communicationLead, setCommunicationLead] = useState<LeadWithRelations | null>(null);
   const [technicianAssignmentOpen, setTechnicianAssignmentOpen] = useState(false);
   const [technicianAssignmentLeads, setTechnicianAssignmentLeads] = useState<LeadWithRelations[]>([]);
+  const [addLeadModalOpen, setAddLeadModalOpen] = useState(false);
+  const [addLeadStatus, setAddLeadStatus] = useState<LeadStatus | null>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
         distance: 8,
+      },
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
       },
     })
   );
@@ -537,6 +567,16 @@ export function LeadsKanban() {
     }
   };
 
+  const handleAddLead = (status: LeadStatus) => {
+    setAddLeadStatus(status);
+    setAddLeadModalOpen(true);
+  };
+
+  const handleAddLeadFromHeader = () => {
+    setAddLeadStatus('NEW' as LeadStatus);
+    setAddLeadModalOpen(true);
+  };
+
   // Group leads by status
   const groupedLeads = LEAD_COLUMNS.reduce((acc, column) => {
     acc[column.id] = filteredLeads.filter(lead => lead.status === column.id);
@@ -562,7 +602,7 @@ export function LeadsKanban() {
 
   return (
     <ProtectedRoute requireAdmin>
-      <div className="min-h-screen bg-gray-50 flex">
+      <div className="min-h-screen bg-gray-50 flex overflow-x-hidden">
         {/* Filter Sidebar */}
         <FilterSidebar
           open={filterSidebarOpen}
@@ -572,42 +612,55 @@ export function LeadsKanban() {
         />
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           {/* Header */}
-          <div className="bg-white border-b border-gray-200 px-6 py-4">
+          <div className="bg-white border-b border-gray-200 px-3 sm:px-6 py-4">
             <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Lead Pipeline</h1>
-                <p className="text-gray-600">Kanban board view with drag and drop functionality</p>
+              <div className="min-w-0 flex-1">
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900 truncate">Lead Pipeline</h1>
+                <p className="text-sm sm:text-base text-gray-600 hidden sm:block">Kanban board view with drag and drop functionality</p>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
+                  className="hidden sm:flex"
                 >
                   <Filter className="h-4 w-4 mr-2" />
                   Filters
                 </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
+                  className="sm:hidden"
+                >
+                  <Filter className="h-4 w-4" />
+                </Button>
                 <Button variant="outline" size="sm" onClick={() => navigate('/admin/leads')}>
-                  <List className="h-4 w-4 mr-2" />
-                  List View
+                  <List className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">List View</span>
+                </Button>
+                <Button size="sm" onClick={handleAddLeadFromHeader}>
+                  <Plus className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Add Lead</span>
                 </Button>
               </div>
             </div>
           </div>
 
           {/* Search and Bulk Operations */}
-          <div className="p-6">
+          <div className="p-3 sm:p-6">
             {/* Search Bar */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               <div className="relative max-w-md">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
-                  placeholder="Search leads by name, email, phone, or suburb..."
+                  placeholder="Search leads..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 text-sm"
                 />
               </div>
             </div>
@@ -625,16 +678,19 @@ export function LeadsKanban() {
               onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
             >
-              <div className="flex space-x-6 overflow-x-auto pb-6">
-                {LEAD_COLUMNS.map((column) => (
-                  <KanbanColumn
-                    key={column.id}
-                    column={column}
-                    leads={groupedLeads[column.id] || []}
-                    onLeadClick={handleLeadClick}
-                    onCommunicationClick={handleCommunicationClick}
-                  />
-                ))}
+              <div className="overflow-x-auto">
+                <div className="flex space-x-3 sm:space-x-6 pb-6 min-w-max">
+                  {LEAD_COLUMNS.map((column) => (
+                    <KanbanColumn
+                      key={column.id}
+                      column={column}
+                      leads={groupedLeads[column.id] || []}
+                      onLeadClick={handleLeadClick}
+                      onCommunicationClick={handleCommunicationClick}
+                      onAddLead={() => handleAddLead(column.id as LeadStatus)}
+                    />
+                  ))}
+                </div>
               </div>
 
               <DragOverlay>
@@ -712,6 +768,70 @@ export function LeadsKanban() {
           setSelectedLeads([]);
         }}
       />
+
+      {/* Add Lead Modal */}
+      <Dialog open={addLeadModalOpen} onOpenChange={setAddLeadModalOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Add New Lead</DialogTitle>
+            <DialogDescription>
+              Quick lead creation for {addLeadStatus ? LEAD_COLUMNS.find(c => c.id === addLeadStatus)?.title : 'New Leads'} column
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-2">First Name *</label>
+                <Input placeholder="John" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Last Name *</label>
+                <Input placeholder="Smith" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Email *</label>
+              <Input type="email" placeholder="john@example.com" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Phone *</label>
+              <Input placeholder="0412 345 678" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Suburb *</label>
+              <Input placeholder="Melbourne" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Service Type</label>
+              <Select defaultValue="MOULD_INSPECTION">
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {Object.values(ServiceType).map((type) => (
+                    <SelectItem key={type} value={type}>
+                      {formatServiceType(type)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setAddLeadModalOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={() => {
+              // TODO: Implement lead creation
+              console.log('Creating new lead with status:', addLeadStatus);
+              setAddLeadModalOpen(false);
+              // In real implementation, call API and refresh leads
+            }}>
+              Create Lead
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </ProtectedRoute>
   );
 }
