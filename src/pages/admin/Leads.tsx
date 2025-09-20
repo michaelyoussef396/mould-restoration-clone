@@ -31,6 +31,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { PhoneLeadDialog } from '@/components/PhoneLeadDialog';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
+import { Kanban } from 'lucide-react';
 
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
@@ -840,6 +841,10 @@ export function LeadsPage() {
               <p className="text-gray-600">Manage and track all your customer inquiries</p>
             </div>
             <div className="flex items-center space-x-3">
+              <Button variant="outline" onClick={() => navigate('/admin/leads/kanban')}>
+                <Kanban className="h-4 w-4 mr-2" />
+                Kanban View
+              </Button>
               <Button variant="default" onClick={() => setPhoneDialogOpen(true)} className="bg-green-600 hover:bg-green-700">
                 <Phone className="h-4 w-4 mr-2" />
                 Phone Lead

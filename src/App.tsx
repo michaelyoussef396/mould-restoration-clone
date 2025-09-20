@@ -39,6 +39,9 @@ const AdminLogin = lazy(() => import("./pages/admin/Login").then(module => ({ de
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard").then(module => ({ default: module.AdminDashboard })));
 const LeadsPage = lazy(() => import("./pages/admin/Leads").then(module => ({ default: module.LeadsPage })));
 
+// Phase 2B: Advanced Lead Management
+const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanban").then(module => ({ default: module.LeadsKanban })));
+
 const queryClient = new QueryClient();
 
 // Loading fallback component
@@ -104,6 +107,9 @@ const App = () => (
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/leads" element={<LeadsPage />} />
+
+            {/* Phase 2B: Advanced Lead Management */}
+            <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
