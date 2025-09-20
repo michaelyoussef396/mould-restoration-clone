@@ -1,0 +1,82 @@
+# Development files
+node_modules
+.git
+.DS_Store
+*.log
+.env.local
+.env.development
+.env.test
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Build artifacts (except dist)
+.vite
+.cache
+coverage
+
+# Testing files
+__tests__
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Development tools
+lighthouse-*.json
+*.report.html
+*.report.json
+accessibility-*.js
+performance-*.js
+*-audit.js
+execute-audit.sh
+run-*.js
+run-*.sh
+
+# Lighthouse and audit files
+lighthouse-*
+*.lighthouse.*
+comprehensive-*
+triple-check-*
+ULTRA-*
+LCP_*
+PHASE*
+STRATEGIC*
+ACCESSIBILITY*
+PERFORMANCE*
+PRODUCTION*
+OPTIMIZATION*
+MELBOURNE*
+FINAL*
+VERIFICATION*
+COMPREHENSIVE*
+ADVANCED*
+AUDIT*
+
+# Documentation (not needed for builds)
+*.md
+!README.md
+
+# Screenshots and images not in src/assets
+"Screenshot*"
+*.png
+*.jpg
+*.jpeg
+!src/assets/**
+!public/**
+
+# Python and temp files
+*.py
+temp_*
+updated_*
+
+# Server files (not needed for static build)
+server.js
+
+# Analysis files
+analyze-*
+manual-*
+simple-*
