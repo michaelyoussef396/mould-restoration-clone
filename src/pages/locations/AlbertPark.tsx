@@ -40,12 +40,12 @@ export const AlbertPark = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Albert Park</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const AlbertPark = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Albert Park</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const AlbertPark = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Sports precinct property care</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const AlbertPark = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -115,10 +115,10 @@ export const AlbertPark = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Priority Albert Park Response</h3>
                 <p className="text-muted-foreground mb-4">2-hour priority response to Albert Park lakeside properties</p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
+                <Button className="w-full bg-primary hover:bg-primary-600 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -159,7 +159,7 @@ export const AlbertPark = () => {
                   The suburb encompasses postcode 3206, stretching from Albert Park Lake in the east to Pickles Street in the west. The area features a unique blend of Victorian terraces, Edwardian homes, and contemporary apartments, all benefiting from proximity to the lake and sports facilities.
                 </p>
                 <p className="text-muted-foreground">
-                  Albert Park's distinctive lakeside location and sports precinct atmosphere create specific environmental conditions. The proximity to Albert Park Lake, combined with the area's popularity for outdoor activities and events, creates unique moisture challenges requiring specialized understanding and treatment approaches.
+                  Albert Park's distinctive lakeside location and sports precinct atmosphere create specific environmental conditions. The proximity to Albert Park Lake, combined with the area's popularity for outdoor activities and events, creates unique moisture challenges requiring specialised understanding and treatment approaches.
                 </p>
               </div>
               <div>
@@ -192,7 +192,7 @@ export const AlbertPark = () => {
             <div className="bg-accent-blue/10 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3">Why Albert Park Properties Need Specialized Lakeside Mould Treatment</h3>
               <p className="text-muted-foreground">
-                Albert Park's unique lakeside environment and sports precinct atmosphere require specialized mould removal approaches that understand the specific challenges of waterfront living. Our IICRC-certified technicians have extensive experience treating properties affected by lake proximity, managing the elevated humidity levels while preserving the premium lifestyle and property values that make Albert Park so desirable.
+                Albert Park's unique lakeside environment and sports precinct atmosphere require specialised mould removal approaches that understand the specific challenges of waterfront living. Our IICRC-certified technicians have extensive experience treating properties affected by lake proximity, managing the elevated humidity levels while preserving the premium lifestyle and property values that make Albert Park so desirable.
               </p>
             </div>
           </div>
@@ -243,7 +243,7 @@ export const AlbertPark = () => {
                   <div>
                     <h4 className="font-semibold mb-2">Lake Proximity Moisture Management</h4>
                     <p className="text-muted-foreground text-sm">
-                      Address moisture sources specific to Albert Park's lakeside location - humidity control systems, ventilation optimization, and specialized treatments for water-proximity challenges.
+                      Address moisture sources specific to Albert Park's lakeside location - humidity control systems, ventilation optimisation, and specialised treatments for water-proximity challenges.
                     </p>
                   </div>
                 </div>
@@ -288,14 +288,14 @@ export const AlbertPark = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Priority Lakeside Response</h3>
                 <p className="text-muted-foreground">
                   Exclusive priority response to Albert Park lakeside properties. Available 7am-7pm every day with same-day service for urgent situations. Professional service that respects the premium lakeside lifestyle.
                 </p>
               </div>
               <div className="text-center">
-                <Shield className="w-12 h-12 text-success-green mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-success mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">IICRC Lakefront Specialists</h3>
                 <p className="text-muted-foreground">
                   Certified mould removal specialists with lakeside property experience. ABN 47 683 089 652, premium insurance work welcome, 100% satisfaction guarantee for discerning Albert Park residents.
@@ -309,7 +309,7 @@ export const AlbertPark = () => {
                 Our experienced team has successfully treated mould issues in lakefront terraces, Grand Prix circuit properties, and modern developments throughout Albert Park. We understand the importance of maintaining the premium lakeside lifestyle while ensuring the highest standards of health and safety.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Albert Park Service
                 </Button>
@@ -337,13 +337,13 @@ export const AlbertPark = () => {
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Lakefront Victorian Terraces</h4>
                     <p className="text-muted-foreground text-sm">
-                      Period homes with direct lake proximity requiring specialized treatment for heritage construction and elevated humidity exposure from Albert Park Lake.
+                      Period homes with direct lake proximity requiring specialised treatment for heritage construction and elevated humidity exposure from Albert Park Lake.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Grand Prix Circuit Properties</h4>
                     <p className="text-muted-foreground text-sm">
-                      Homes near the Formula 1 circuit with unique environmental challenges from racing activities and associated infrastructure, requiring specialized moisture management.
+                      Homes near the Formula 1 circuit with unique environmental challenges from racing activities and associated infrastructure, requiring specialised moisture management.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
@@ -360,7 +360,7 @@ export const AlbertPark = () => {
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Sports Facility Commercial Spaces</h4>
                     <p className="text-muted-foreground text-sm">
-                      Business premises serving the sports precinct including cafes, fitness facilities, and professional services requiring specialized commercial treatment approaches.
+                      Business premises serving the sports precinct including cafes, fitness facilities, and professional services requiring specialised commercial treatment approaches.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
@@ -381,9 +381,9 @@ export const AlbertPark = () => {
 
             <div className="mt-8 text-center">
               <p className="text-muted-foreground mb-6">
-                Every Albert Park property benefits from our specialized understanding of lakeside living challenges. Our IICRC-certified technicians provide customized treatment plans that preserve the unique character and premium lifestyle of lakefront living.
+                Every Albert Park property benefits from our specialised understanding of lakeside living challenges. Our IICRC-certified technicians provide customised treatment plans that preserve the unique character and premium lifestyle of lakefront living.
               </p>
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 Call 1800 954 117 for Albert Park Lakeside Assessment
               </Button>
             </div>
@@ -403,7 +403,7 @@ export const AlbertPark = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Lakeside Environment Factors</h3>
                 <p className="text-muted-foreground mb-4">
-                  Albert Park's unique lakeside location creates distinctive environmental conditions that affect nearby properties. The combination of Albert Park Lake proximity, sports precinct activities, and Melbourne's climate patterns requires specialized moisture management strategies.
+                  Albert Park's unique lakeside location creates distinctive environmental conditions that affect nearby properties. The combination of Albert Park Lake proximity, sports precinct activities, and Melbourne's climate patterns requires specialised moisture management strategies.
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -433,7 +433,7 @@ export const AlbertPark = () => {
                       Monitor indoor humidity levels regularly, especially during Melbourne's humid summer months. Use dehumidifiers when necessary and ensure adequate ventilation systems function properly.
                     </p>
                   </div>
-                  <div className="bg-success-green/10 p-4 rounded-lg">
+                  <div className="bg-success/10 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Lake Proximity Ventilation</h4>
                     <p className="text-muted-foreground text-sm">
                       Maintain excellent air circulation in properties near Albert Park Lake. Ensure exhaust fans work effectively and consider installing additional ventilation if needed.
@@ -448,7 +448,7 @@ export const AlbertPark = () => {
                   <div className="bg-emergency-orange/10 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Event Period Preparation</h4>
                     <p className="text-muted-foreground text-sm">
-                      Prepare properties for major events like the Grand Prix by ensuring ventilation systems are optimized and any moisture issues are addressed beforehand.
+                      Prepare properties for major events like the Grand Prix by ensuring ventilation systems are optimised and any moisture issues are addressed beforehand.
                     </p>
                   </div>
                 </div>
@@ -465,16 +465,16 @@ export const AlbertPark = () => {
             Premium Mould Removal Service in Albert Park Melbourne
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-primary-foreground/90">
-            Protect your prestigious Albert Park lakeside property with our premium mould removal services. Our IICRC-certified specialists provide priority response with specialized treatment for lakefront homes and Grand Prix circuit properties throughout postcode 3206.
+            Protect your prestigious Albert Park lakeside property with our premium mould removal services. Our IICRC-certified specialists provide priority response with specialised treatment for lakefront homes and Grand Prix circuit properties throughout postcode 3206.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-blue-600" />
+              <Clock className="w-6 h-6 text-primary" />
               <span className="text-lg">Priority Lakeside Response</span>
             </div>
             <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-success-green" />
+              <Shield className="w-6 h-6 text-success" />
               <span className="text-lg">Lakefront Property Specialists</span>
             </div>
             <div className="flex items-center gap-3">
@@ -484,7 +484,7 @@ export const AlbertPark = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
+            <Button size="lg" className="bg-primary hover:bg-primary-600 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Premium Albert Park Mould Service
             </Button>

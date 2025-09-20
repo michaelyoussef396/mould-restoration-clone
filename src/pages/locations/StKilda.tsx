@@ -43,12 +43,12 @@ export const StKilda = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in St Kilda</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -68,13 +68,13 @@ export const StKilda = () => {
               Professional Mould Removal & Inspection in St Kilda, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Professional mould removal in St Kilda Melbourne with same-day response. IICRC-certified technicians specializing in seaside properties, heritage apartments, and vibrant community developments. 5.0 stars, 100+ properties restored.
+              Professional mould removal in St Kilda Melbourne with same-day response. IICRC-certified technicians specialising in seaside properties, heritage apartments, and vibrant community developments. 5.0 stars, 100+ properties restored.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to St Kilda</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ export const StKilda = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Acland Street entertainment precinct solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -99,7 +99,7 @@ export const StKilda = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -119,7 +119,7 @@ export const StKilda = () => {
 
           <div className="mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Our mould removal St Kilda Melbourne team understands the unique challenges facing this iconic seaside suburb. Located in postcode 3182, St Kilda combines coastal heritage properties with vibrant entertainment developments, creating specific moisture management challenges. With a mix of heritage apartments, modern developments, and the bustling Acland Street entertainment precinct, St Kilda presents distinctive mould risks that require specialized coastal expertise.
+              Our mould removal St Kilda Melbourne team understands the unique challenges facing this iconic seaside suburb. Located in postcode 3182, St Kilda combines coastal heritage properties with vibrant entertainment developments, creating specific moisture management challenges. With a mix of heritage apartments, modern developments, and the bustling Acland Street entertainment precinct, St Kilda presents distinctive mould risks that require specialised coastal expertise.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
@@ -189,7 +189,7 @@ export const StKilda = () => {
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Coastal-Safe Service</h4>
                 <p className="text-muted-foreground mb-4">
-                  All our technicians are IICRC certified with specialized training in coastal property and entertainment venue remediation techniques. We understand St Kilda residents and business operators need dynamic service that works with the vibrant community atmosphere. Our mould removal St Kilda Melbourne service includes comprehensive coastal impact assessments.
+                  All our technicians are IICRC certified with specialised training in coastal property and entertainment venue remediation techniques. We understand St Kilda residents and business operators need dynamic service that works with the vibrant community atmosphere. Our mould removal St Kilda Melbourne service includes comprehensive coastal impact assessments.
                 </p>
               </div>
 
@@ -254,7 +254,7 @@ export const StKilda = () => {
               <h3 className="text-2xl font-semibold mb-6 text-primary">Coastal-Safe Remediation Methods</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -384,11 +384,11 @@ export const StKilda = () => {
                 <p className="text-muted-foreground mb-4">Period coastal apartment buildings requiring heritage-sensitive treatment approaches with coastal exposure considerations.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Coastal heritage preservation methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Salt air impact protection</span>
                   </div>
                 </div>
@@ -401,11 +401,11 @@ export const StKilda = () => {
                 <p className="text-muted-foreground mb-4">Commercial entertainment venues requiring business-friendly treatment approaches with minimal operational disruption.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Entertainment business continuity focus</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>High-activity moisture management</span>
                   </div>
                 </div>
@@ -415,14 +415,14 @@ export const StKilda = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Modern Coastal Developments</h3>
-                <p className="text-muted-foreground mb-4">Contemporary residential and mixed-use developments requiring specialized coastal environment treatment.</p>
+                <p className="text-muted-foreground mb-4">Contemporary residential and mixed-use developments requiring specialised coastal environment treatment.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern coastal system management</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Bay proximity moisture solutions</span>
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export const StKilda = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -539,11 +539,11 @@ export const StKilda = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -575,7 +575,7 @@ export const StKilda = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Coastal-Entertainment Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -620,7 +620,7 @@ export const StKilda = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 St Kilda Coastal Entertainment Professional Service: 1800 954 117
               </Button>

@@ -28,7 +28,7 @@ export const MelbourneCBD = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Melbourne CBD. IICRC certified technicians specializing in commercial towers, apartments, and business properties."
+        description="Professional mould removal and inspection services in Melbourne CBD. IICRC certified technicians specialising in commercial towers, apartments, and business properties."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const MelbourneCBD = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Melbourne CBD</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const MelbourneCBD = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const MelbourneCBD = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Melbourne CBD</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Commercial and residential expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const MelbourneCBD = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -154,27 +154,27 @@ export const MelbourneCBD = () => {
                 <h3 className="text-xl font-semibold mb-4">Melbourne CBD Property Types We Service</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Commercial Towers:</strong> Collins Street, Bourke Street high-rises with HVAC mould issues</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Luxury Apartments:</strong> Southbank towers, Eureka Tower residences</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Heritage Buildings:</strong> Block Arcade, Royal Arcade historic properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Office Buildings:</strong> Legal precinct, financial district offices</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Retail Spaces:</strong> Hardware Lane, Degraves Street commercial properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Student Housing:</strong> University precinct apartments and residences</span>
                   </li>
                 </ul>
@@ -366,15 +366,15 @@ export const MelbourneCBD = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Expertise in CBD commercial building systems</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Heritage building conservation experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Understanding of Melbourne's urban climate</span>
                   </li>
                 </ul>
@@ -387,15 +387,15 @@ export const MelbourneCBD = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC certified water damage restoration</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying specialist certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Continuing education in latest techniques</span>
                   </li>
                 </ul>
@@ -406,15 +406,15 @@ export const MelbourneCBD = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Melbourne CBD</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Melbourne CBD</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Satisfaction Guarantee</div>
+                  <div className="text-sm text-professional">Satisfaction Guarantee</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from 100+ Properties</div>
+                  <div className="text-sm text-professional">Rating from 100+ Properties</div>
                 </div>
               </div>
             </div>
@@ -541,19 +541,19 @@ export const MelbourneCBD = () => {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Humidity Monitoring:</strong> Maintain 30-50% relative humidity in CBD properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Seasonal Awareness:</strong> Extra vigilance during Melbourne's humid summer months</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>River Proximity:</strong> Properties near Yarra River require enhanced ventilation</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Urban Heat Effects:</strong> Concrete buildings trap moisture differently than suburbs</span>
                   </li>
                 </ul>
@@ -566,19 +566,19 @@ export const MelbourneCBD = () => {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>HVAC Systems:</strong> Quarterly professional cleaning and inspection</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Heritage Buildings:</strong> Monitor sandstone moisture penetration</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>High-Rise Apartments:</strong> Check window seals and balcony drainage</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Commercial Kitchens:</strong> Exhaust fan maintenance and grease trap cleaning</span>
                   </li>
                 </ul>
@@ -644,9 +644,9 @@ export const MelbourneCBD = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Melbourne CBD assistance. Our certified technicians respond Same-day professional service to all CBD postcodes.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -655,7 +655,7 @@ export const MelbourneCBD = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Melbourne CBD Inspection</h3>

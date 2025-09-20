@@ -40,12 +40,12 @@ export const Elwood = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Elwood</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const Elwood = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Elwood</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const Elwood = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Canal area specialist</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const Elwood = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -136,7 +136,7 @@ export const Elwood = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Coastal community properties requiring specialized maritime moisture management</span>
+                    <span>Coastal community properties requiring specialised maritime moisture management</span>
                   </li>
                 </ul>
               </CardContent>
@@ -186,7 +186,7 @@ export const Elwood = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Elwood Canal waterfront properties requiring specialized maritime moisture management</span>
+                    <span>Elwood Canal waterfront properties requiring specialised maritime moisture management</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -252,7 +252,7 @@ export const Elwood = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Canal area properties with unique waterfront challenges and specialized requirements</span>
+                    <span>Canal area properties with unique waterfront challenges and specialised requirements</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
@@ -274,14 +274,14 @@ export const Elwood = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Beachside Apartment Buildings</h3>
-                <p className="text-muted-foreground mb-4">Coastal apartment complexes requiring specialized maritime moisture management and salt air corrosion prevention strategies.</p>
+                <p className="text-muted-foreground mb-4">Coastal apartment complexes requiring specialised maritime moisture management and salt air corrosion prevention strategies.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Coastal moisture expertise</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Salt air corrosion management</span>
                   </div>
                 </div>
@@ -291,14 +291,14 @@ export const Elwood = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Canal Area Properties</h3>
-                <p className="text-muted-foreground mb-4">Waterfront properties along Elwood Canal requiring specialized maritime exposure management and unique moisture control methods.</p>
+                <p className="text-muted-foreground mb-4">Waterfront properties along Elwood Canal requiring specialised maritime exposure management and unique moisture control methods.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Waterfront property expertise</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Canal proximity management</span>
                   </div>
                 </div>
@@ -311,11 +311,11 @@ export const Elwood = () => {
                 <p className="text-muted-foreground mb-4">Interwar and mid-century coastal homes requiring period-appropriate restoration approaches adapted for maritime exposure.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Period coastal restoration</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Maritime heritage expertise</span>
                   </div>
                 </div>
@@ -419,19 +419,19 @@ export const Elwood = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coastal architecture air quality testing certified for maritime-grade restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Beachside and canal area property material moisture content verification and compliance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coastal community clearance certificates for maritime environment and property preservation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty with coastal architecture and maritime environment considerations</span>
                   </li>
                 </ul>
@@ -491,7 +491,7 @@ export const Elwood = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -524,7 +524,7 @@ export const Elwood = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Elwood beachside community mould issues</span>
+                    <span>5+ years specialising in Elwood beachside community mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -575,23 +575,23 @@ export const Elwood = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Insurance Work Welcome & 100% Satisfaction</h3>
                 <p className="text-muted-foreground mb-4">
-                  We work directly with all major Australian insurance providers and offer comprehensive documentation for claims related to coastal architecture damage, maritime exposure, and beachside community water damage incidents requiring specialized restoration.
+                  We work directly with all major Australian insurance providers and offer comprehensive documentation for claims related to coastal architecture damage, maritime exposure, and beachside community water damage incidents requiring specialised restoration.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved coastal architecture claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Maritime environment documentation and coastal property evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Elwood beachside community work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional coastal architecture remediation</span>
                   </li>
                 </ul>
@@ -698,19 +698,19 @@ export const Elwood = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Monthly coastal building system assessment and maritime-grade maintenance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Quarterly beachside moisture monitoring and coastal community compliance verification</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Bi-annual coastal and canal area architecture envelope inspection with maritime focus</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Annual maritime environment assessment and coastal architecture planning</span>
                   </li>
                 </ul>
@@ -755,7 +755,7 @@ export const Elwood = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide coastal architecture-specialized mould removal services throughout Elwood and nearby beachside community areas including:
+                We provide coastal architecture-specialised mould removal services throughout Elwood and nearby beachside community areas including:
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -786,11 +786,11 @@ export const Elwood = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -822,7 +822,7 @@ export const Elwood = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Architecture Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -867,7 +867,7 @@ export const Elwood = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Elwood Coastal Professional Service: 1800 954 117
               </Button>

@@ -28,7 +28,7 @@ export const Mordialloc = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Mordialloc Melbourne. IICRC certified technicians specializing in creek & beach living properties, Main Street commercial precinct, and waterway proximity buildings."
+        description="Professional mould removal and inspection services in Mordialloc Melbourne. IICRC certified technicians specialising in creek & beach living properties, Main Street commercial precinct, and waterway proximity buildings."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Mordialloc = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Mordialloc</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Mordialloc = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Mordialloc = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Mordialloc</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Creek & beach living waterway expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Mordialloc = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export const Mordialloc = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4">Common Mordialloc Mould Issues</h3>
               <p className="text-gray-700 mb-6">
-                Mordialloc's unique combination of creek proximity, beach access, and commercial precinct creates specific waterway-related mould challenges requiring specialized creek and beach living solutions.
+                Mordialloc's unique combination of creek proximity, beach access, and commercial precinct creates specific waterway-related mould challenges requiring specialised creek and beach living solutions.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
@@ -191,15 +191,15 @@ export const Mordialloc = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Mordialloc Dual Waterway Environment</h3>
               <p className="text-gray-700 mb-6">
-                Located where Mordialloc Creek meets Port Phillip Bay, this unique dual waterway environment creates complex moisture challenges requiring specialized understanding of both freshwater and marine influences on property conditions.
+                Located where Mordialloc Creek meets Port Phillip Bay, this unique dual waterway environment creates complex moisture challenges requiring specialised understanding of both freshwater and marine influences on property conditions.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Creek to Bay Gradient Effects</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Transitional salinity levels affecting different building materials differently</li>
                     <li>• Freshwater creek influence in upper Mordialloc areas versus marine exposure closer to bay</li>
                     <li>• Tidal flow patterns bringing marine moisture inland through creek system</li>
@@ -208,7 +208,7 @@ export const Mordialloc = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Seasonal Waterway Variations</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Summer low creek flow concentrating salinity and affecting nearby foundations</li>
                     <li>• Autumn storm water increasing both creek and bay moisture impact</li>
                     <li>• Winter bay storm activity creating sustained coastal moisture exposure</li>
@@ -229,15 +229,15 @@ export const Mordialloc = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Creek Front Homes</h5>
-                      <p className="text-sm text-gray-600">Properties with direct creek access requiring specialized moisture management addressing freshwater humidity, periodic flooding, and unique drainage challenges.</p>
+                      <p className="text-sm text-professional">Properties with direct creek access requiring specialised moisture management addressing freshwater humidity, periodic flooding, and unique drainage challenges.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Beach Access Cottages</h5>
-                      <p className="text-sm text-gray-600">Traditional beach houses often with elevated designs requiring saltwater corrosion protection and sand infiltration moisture management.</p>
+                      <p className="text-sm text-professional">Traditional beach houses often with elevated designs requiring saltwater corrosion protection and sand infiltration moisture management.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Waterfront Developments</h5>
-                      <p className="text-sm text-gray-600">Contemporary apartments and townhouses with glass facades requiring advanced moisture control systems addressing both aesthetic and structural integrity.</p>
+                      <p className="text-sm text-professional">Contemporary apartments and townhouses with glass facades requiring advanced moisture control systems addressing both aesthetic and structural integrity.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const Mordialloc = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Main Street Heritage Buildings</h5>
-                      <p className="text-sm text-gray-600">Historic commercial and residential buildings requiring heritage-sensitive mould solutions preserving architectural character while ensuring occupant health and safety.</p>
+                      <p className="text-sm text-professional">Historic commercial and residential buildings requiring heritage-sensitive mould solutions preserving architectural character while ensuring occupant health and safety.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Established Family Neighbourhoods</h5>
-                      <p className="text-sm text-gray-600">Mid-century homes in established streets requiring family-focused mould management addressing children's health while maintaining comfortable living environments.</p>
+                      <p className="text-sm text-professional">Mid-century homes in established streets requiring family-focused mould management addressing children's health while maintaining comfortable living environments.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Parkland Adjacent Properties</h5>
-                      <p className="text-sm text-gray-600">Homes near waterway reserves and parkland requiring consideration of natural vegetation moisture, seasonal flooding, and wildlife habitat protection protocols.</p>
+                      <p className="text-sm text-professional">Homes near waterway reserves and parkland requiring consideration of natural vegetation moisture, seasonal flooding, and wildlife habitat protection protocols.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const Mordialloc = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Creek proximity and waterway moisture specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Beach access property salt air environmental understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Main Street commercial precinct mixed-use expertise</span>
                   </li>
                 </ul>
@@ -297,19 +297,19 @@ export const Mordialloc = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our professional mould removal Mordialloc Melbourne technicians are IICRC certified with specialized training in waterway environment properties and creek-beach dual exposure challenges.
+                  Our professional mould removal Mordialloc Melbourne technicians are IICRC certified with specialised training in waterway environment properties and creek-beach dual exposure challenges.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for waterway environment properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Creek and coastal dual environment protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const Mordialloc = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Mordialloc</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Mordialloc</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Waterway-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Waterway-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Creek & Beach Properties</div>
+                  <div className="text-sm text-professional">Rating from Creek & Beach Properties</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const Mordialloc = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Mordialloc Melbourne assistance. Our waterway environment specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const Mordialloc = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Mordialloc Inspection</h3>

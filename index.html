@@ -11,14 +11,318 @@
     <meta property="og:title" content="Mould & Restoration Co - Expert Mould Removal Melbourne" />
     <meta property="og:description" content="Melbourne's trusted experts in mould removal and property restoration. Professional services for residential, commercial, and industrial properties." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://mouldrestoration.com.au/assets/hero-background.jpg" />
+    <meta property="og:url" content="https://mouldrestoration.com.au/" />
+    <meta property="og:site_name" content="Mould & Restoration Co." />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@mouldrestoration" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://mouldrestoration.com.au/assets/hero-background.jpg" />
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+    <meta name="theme-color" content="#1e40af" />
+
+    <!-- Critical DNS and Resource Prefetching -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ultra-Critical LCP Image Preload - HIGHEST PRIORITY -->
+    <!-- Ultra-optimized 4kB image for sub-1s LCP -->
+    <link rel="preload" href="/src/assets/hero-background-ultra-lcp.webp" as="image" type="image/webp" fetchpriority="high">
+
+    <!-- Critical Font Loading - Only essential weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Remove static preloads - Vite handles this automatically -->
+
+    <!-- Advanced Critical CSS for Immediate Hero Render -->
+    <style>
+      /* Ultra-optimized critical styles for LCP < 2.5s */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #ffffff;
+        color: #1f2937;
+      }
+
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* LCP-Critical Hero Container - Immediate visibility */
+      .lcp-hero-section {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('data:image/webp;base64,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') center center / cover;
+        overflow: hidden;
+        /* Immediate layout containment */
+        contain: layout style paint;
+        /* Hardware acceleration */
+        will-change: auto;
+        transform: translateZ(0);
+      }
+
+      /* Critical image styles for immediate LCP */
+      .lcp-hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        /* Immediate visibility - no fade transitions for LCP */
+        opacity: 1;
+        visibility: visible;
+        /* Hardware acceleration */
+        will-change: auto;
+        transform: translateZ(0);
+        /* Prevent layout shifts */
+        min-height: 100vh;
+        min-width: 100vw;
+      }
+
+      .lcp-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        contain: layout style paint;
+      }
+
+      .lcp-hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        text-align: center;
+        contain: layout style;
+      }
+
+      .lcp-hero-title {
+        color: #ffffff;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin: 0 0 1.5rem 0;
+        font-display: swap;
+        /* Prevent layout shift with fixed height */
+        min-height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* CRITICAL: React H1 element optimization for LCP */
+      div.relative > div.flex > div.flex-1 > h1.text-4xl,
+      h1.text-4xl.sm\:text-5xl.lg\:text-6xl.font-black.text-white.mb-6.leading-tight {
+        /* Immediate visibility - no React hydration wait */
+        color: #ffffff !important;
+        font-size: clamp(2rem, 5vw, 3.5rem) !important;
+        font-weight: 900 !important;
+        line-height: 1.1 !important;
+        margin: 0 0 1.5rem 0 !important;
+        padding: 0 !important;
+        /* Force immediate render without waiting for React */
+        opacity: 1 !important;
+        visibility: visible !important;
+        /* Hardware acceleration for immediate paint */
+        will-change: auto !important;
+        transform: translateZ(0) !important;
+        /* Prevent layout shift */
+        min-height: 4rem !important;
+        /* Font optimization */
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-display: swap !important;
+        /* Prevent CLS */
+        contain: layout style !important;
+        flex-direction: column;
+      }
+
+      .lcp-hero-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        font-weight: 400;
+        margin: 0 0 2rem 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        /* Prevent layout shift */
+        min-height: 2rem;
+      }
+
+      .lcp-cta-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: #2563eb;
+        border: none;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.15s ease;
+        margin: 0.5rem;
+        min-height: 56px;
+        min-width: 200px;
+        /* Hardware acceleration */
+        will-change: background-color;
+        contain: layout style;
+      }
+
+      .lcp-cta-primary:hover {
+        background-color: #1d4ed8;
+      }
+
+      /* Service bar critical styles */
+      .service-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background-color: #1e40af;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 60;
+        font-size: 0.875rem;
+        font-weight: 500;
+        contain: layout style;
+      }
+
+      /* Navigation critical styles */
+      .nav-critical {
+        position: fixed;
+        top: 40px;
+        left: 0;
+        right: 0;
+        height: 66px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        contain: layout style;
+      }
+
+      /* Mobile optimizations for faster rendering */
+      @media (max-width: 768px) {
+        .lcp-hero-title {
+          font-size: 2rem;
+          min-height: 3rem;
+        }
+
+        .lcp-hero-subtitle {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+          min-height: 1.5rem;
+        }
+
+        .lcp-cta-primary {
+          width: 100%;
+          max-width: 280px;
+          padding: 0.875rem 1.5rem;
+          font-size: 1rem;
+        }
+
+        .lcp-hero-content {
+          padding: 1rem 0.75rem;
+        }
+      }
+
+      /* Prevent font loading flashes */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 900;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* Immediate visibility helper classes */
+      .immediate-render {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transition: none !important;
+      }
+
+      /* Loading optimization */
+      .loading-optimize {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    </style>
+
+    <!-- Hero Image Pre-decode Script for Ultra-Fast LCP -->
+    <script>
+      // Ultra-aggressive hero image preloading and decode
+      (function() {
+        'use strict';
+
+        // Create and preload hero image immediately
+        const heroImg = new Image();
+        heroImg.fetchPriority = 'high';
+        heroImg.decoding = 'sync'; // Synchronous decode for faster LCP
+        heroImg.crossOrigin = 'anonymous';
+
+        // Set source and start loading ultra-optimized LCP image
+        heroImg.src = '/src/assets/hero-background-ultra-lcp.webp';
+
+        // Track loading for LCP optimization
+        heroImg.onload = function() {
+          document.documentElement.classList.add('hero-image-loaded');
+          console.log('Hero image preloaded successfully for LCP optimization');
+        };
+
+        heroImg.onerror = function() {
+          document.documentElement.classList.add('hero-image-fallback');
+          console.warn('Hero image preload failed, using CSS fallback');
+        };
+      })();
+    </script>
   </head>
 
   <body>

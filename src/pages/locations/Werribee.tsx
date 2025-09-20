@@ -1,6 +1,6 @@
 import React from 'react';
-import { LocationPageSEO } from '../../components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '../../components/seo/Schema';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent } from '../../components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
@@ -49,11 +49,11 @@ const WerribeeMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
                 <Phone className="w-5 h-5 mr-2" />
                 Call 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -83,7 +83,7 @@ const WerribeeMouldRemoval = () => {
         {/* Local Expertise Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Werribee Growth Corridor Mould Expertise
             </h2>
 
@@ -103,49 +103,49 @@ const WerribeeMouldRemoval = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Growth corridor expertise</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Diverse property specialists</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Heritage to modern solutions</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Community-focused service</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Werribee Service Areas</h3>
+              <div className="bg-columbia p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">Werribee Service Areas</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Historic Werribee township</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Werribee South estates</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">New growth corridor developments</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Werribee River proximity areas</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Pacific Werribee vicinity</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Manor Lakes border areas</span>
                   </div>
                 </div>
@@ -157,21 +157,21 @@ const WerribeeMouldRemoval = () => {
         {/* Property Types Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Werribee Property Types We Service
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-columbia rounded-full flex items-center justify-center mb-6">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Heritage Properties</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Heritage Properties</h3>
                   <p className="text-gray-700 mb-4">
                     Specialised treatment for Werribee's historic homes and heritage buildings, preserving architectural significance while addressing moisture challenges in period construction materials and methods.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Heritage preservation expertise</li>
                     <li>• Period construction understanding</li>
                     <li>• Historical material care</li>
@@ -182,14 +182,14 @@ const WerribeeMouldRemoval = () => {
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <MapPin className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mb-6">
+                    <MapPin className="w-6 h-6 text-success" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">New Estate Developments</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">New Estate Developments</h3>
                   <p className="text-gray-700 mb-4">
                     Comprehensive moisture management for Werribee's rapidly growing new estates, addressing modern construction challenges, landscaping development, and community infrastructure impacts.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• New construction expertise</li>
                     <li>• Estate development understanding</li>
                     <li>• Modern building treatments</li>
@@ -203,11 +203,11 @@ const WerribeeMouldRemoval = () => {
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                     <Award className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Established Family Homes</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Established Family Homes</h3>
                   <p className="text-gray-700 mb-4">
                     Proven solutions for Werribee's diverse established housing stock, from 1970s-90s family homes to renovated properties, ensuring family health protection across all property ages.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Established home expertise</li>
                     <li>• Family-focused treatments</li>
                     <li>• Renovation-aware methods</li>
@@ -222,18 +222,18 @@ const WerribeeMouldRemoval = () => {
         {/* Why Choose Us Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Why Werribee Residents Choose Us
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Star className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-columbia rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Growth Corridor Specialists</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Growth Corridor Specialists</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Our comprehensive understanding of Werribee's incredible diversity—from heritage properties to brand-new estates—means we can provide the right solution for any property type in this dynamic growth area.
                     </p>
@@ -241,11 +241,11 @@ const WerribeeMouldRemoval = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Shield className="w-5 h-5 text-success" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Diverse Community Track Record</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Proven Diverse Community Track Record</h3>
                     <p className="text-gray-700 leading-relaxed">
                       With over 100 successful property restorations across Melbourne and 5+ years of experience, we've helped families from all backgrounds across Werribee's diverse housing types protect their homes and health.
                     </p>
@@ -257,7 +257,7 @@ const WerribeeMouldRemoval = () => {
                     <Award className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Heritage to Modern Expertise</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Heritage to Modern Expertise</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Whether your Werribee home is a cherished heritage property or part of the area's exciting new developments, we have the specialised knowledge to protect it with methods appropriate to its age and construction.
                     </p>
@@ -290,7 +290,7 @@ const WerribeeMouldRemoval = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-6 rounded-full">
+                <Button size="lg" className="w-full bg-white text-primary hover:bg-columbia font-semibold py-6 rounded-full">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 Now
                 </Button>
@@ -302,51 +302,51 @@ const WerribeeMouldRemoval = () => {
         {/* Prevention Tips Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Mould Prevention Tips for Werribee Properties
             </h2>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Property-Appropriate Care</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Property-Appropriate Care</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Tailor maintenance to your property's age and construction</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Monitor heritage properties for period-specific moisture risks</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Address new construction settlement issues promptly</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Maintain drainage systems appropriate to your property type</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Growth Area Considerations</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Growth Area Considerations</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Consider construction activity impacts from nearby developments</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Monitor landscaping establishment in new estates</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Ensure ventilation systems match your family's needs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Schedule professional inspections for diverse property types</span>
                     </li>
                   </ul>
@@ -357,7 +357,7 @@ const WerribeeMouldRemoval = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 bg-blue-600">
+        <section className="py-16 px-4 bg-primary">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">
               Ready to Protect Your Werribee Property?
@@ -367,11 +367,11 @@ const WerribeeMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full">
                 <Phone className="w-5 h-5 mr-2" />
                 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Book Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

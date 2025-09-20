@@ -35,7 +35,7 @@ import {
   LocationFAQSchema
 } from '@/components/seo/EnhancedSchemaMarkup';
 import { SuburbClusterLinks, StrategicLocationLinks } from '@/components/seo/InternalLinking';
-import OptimizedImage from '../../components/OptimizedImage';
+import { OptimizedImage } from '../../components/OptimizedImage';
 import {
   ServiceProcessImage,
   OptimizedImageGallery
@@ -218,23 +218,23 @@ export const Braybrook = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/braybrook-hero-bg.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-10"></div>
         <div className="container mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <LocationPageH1 location={location} />
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-professional mb-8 leading-relaxed">
                 IICRC-certified mould inspection and removal specialists serving Braybrook's diverse multicultural community. From family homes to industrial properties, we provide affordable, professional mould solutions that respect cultural diversity and budget requirements in this vibrant western Melbourne suburb.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <a href="tel:1800954117" className="flex items-center">
                     <Phone className="mr-2 h-5 w-5" />
                     Call 1800 954 117
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-columbia px-8 py-4">
                   <a href="#contact" className="flex items-center">
                     Schedule Inspection
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -244,20 +244,20 @@ export const Braybrook = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">5+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-sm text-professional">Years Experience</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">100+</div>
-                  <div className="text-sm text-gray-600">Properties Restored</div>
+                  <div className="text-2xl font-bold text-primary">100+</div>
+                  <div className="text-sm text-professional">Properties Restored</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">5.0★</div>
-                  <div className="text-sm text-gray-600">Google Rating</div>
+                  <div className="text-2xl font-bold text-primary">5.0★</div>
+                  <div className="text-sm text-professional">Google Rating</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">Affordable</div>
-                  <div className="text-sm text-gray-600">Solutions</div>
+                  <div className="text-2xl font-bold text-primary">Affordable</div>
+                  <div className="text-sm text-professional">Solutions</div>
                 </div>
               </div>
             </div>
@@ -270,7 +270,7 @@ export const Braybrook = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-success/100 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Available Now in Braybrook</span>
                 </div>
               </div>
@@ -283,10 +283,10 @@ export const Braybrook = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Local Braybrook Mould Expertise
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our inclusive approach and understanding of Braybrook's diverse community needs, industrial landscape, and river proximity ensures effective mould solutions tailored to your specific circumstances within this dynamic western Melbourne suburb.
             </p>
           </div>
@@ -295,12 +295,12 @@ export const Braybrook = () => {
             {localFactors.map((factor, index) => (
               <Card key={index} className="p-6 h-full hover:shadow-lg transition-shadow">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-8 w-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-columbia rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-3">{factor.factor}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{factor.impact}</p>
-                  <p className="text-sm text-blue-600 font-medium">{factor.solution}</p>
+                  <h3 className="font-bold text-charcoal mb-3">{factor.factor}</h3>
+                  <p className="text-sm text-professional mb-3">{factor.impact}</p>
+                  <p className="text-sm text-primary font-medium">{factor.solution}</p>
                 </div>
               </Card>
             ))}
@@ -312,10 +312,10 @@ export const Braybrook = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Braybrook Property Types We Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               From family homes to industrial facilities, our IICRC-certified team provides affordable, professional mould solutions for every property type in Braybrook's diverse urban landscape.
             </p>
           </div>
@@ -332,8 +332,8 @@ export const Braybrook = () => {
                     />
                   </div>
                   <div className="md:w-2/3 p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{property.type}</h3>
-                    <p className="text-gray-600 leading-relaxed">{property.description}</p>
+                    <h3 className="text-xl font-bold text-charcoal mb-3">{property.type}</h3>
+                    <p className="text-professional leading-relaxed">{property.description}</p>
                   </div>
                 </div>
               </Card>
@@ -343,13 +343,13 @@ export const Braybrook = () => {
       </section>
 
       {/* Specialised Services */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-columbia">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Specialised Mould Services for Braybrook
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our comprehensive range of affordable, culturally sensitive mould services addresses the specific needs of Braybrook's diverse community and property types.
             </p>
           </div>
@@ -358,16 +358,16 @@ export const Braybrook = () => {
             {braybrookServices.map((service, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                    <h3 className="text-xl font-bold text-charcoal mb-3">{service.title}</h3>
+                    <p className="text-professional mb-4 leading-relaxed">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-professional">
+                          <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -384,31 +384,31 @@ export const Braybrook = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Why Choose Us for Braybrook Mould Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our affordable pricing, inclusive service approach, and understanding of diverse community needs make us the trusted choice for Braybrook property owners seeking effective mould solutions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="h-8 w-8 text-blue-600" />
+              <div className="w-16 h-16 bg-columbia rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">IICRC Certified Professionals</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">IICRC Certified Professionals</h3>
+              <p className="text-professional">
                 Our technicians hold industry-leading IICRC certifications with commitment to providing professional service accessible to all community members.
               </p>
             </Card>
 
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-green-600" />
+              <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-8 w-8 text-success" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Community-Inclusive Service</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">Community-Inclusive Service</h3>
+              <p className="text-professional">
                 Culturally sensitive approach with affordable options that respect diverse household needs and provide solutions accessible to all residents.
               </p>
             </Card>
@@ -417,8 +417,8 @@ export const Braybrook = () => {
               <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Building2 className="h-8 w-8 text-teal-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mixed-Zone Expertise</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">Mixed-Zone Expertise</h3>
+              <p className="text-professional">
                 Comprehensive understanding of residential, industrial, and riverside property challenges with solutions for Braybrook's diverse urban landscape.
               </p>
             </Card>
@@ -430,10 +430,10 @@ export const Braybrook = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               What Braybrook Customers Say
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Read testimonials from satisfied Braybrook property owners who have experienced our affordable, professional mould inspection and remediation services.
             </p>
           </div>
@@ -446,9 +446,9 @@ export const Braybrook = () => {
                     <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.testimonial}"</p>
+                <p className="text-professional mb-4 italic">"{testimonial.testimonial}"</p>
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="font-semibold text-charcoal">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.property}</div>
                 </div>
               </Card>
@@ -461,47 +461,47 @@ export const Braybrook = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Our Braybrook Mould Inspection Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our inclusive approach ensures thorough assessment and effective treatment while respecting diverse community needs and budget requirements.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Inclusive Assessment</h3>
-              <p className="text-gray-600">Respectful property evaluation with clear communication and budget-conscious options presented upfront.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">1</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Inclusive Assessment</h3>
+              <p className="text-professional">Respectful property evaluation with clear communication and budget-conscious options presented upfront.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">2</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Affordable Testing</h3>
-              <p className="text-gray-600">Cost-effective air quality and surface testing with transparent pricing and no hidden costs.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">2</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Affordable Testing</h3>
+              <p className="text-professional">Cost-effective air quality and surface testing with transparent pricing and no hidden costs.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">3</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Flexible Solutions</h3>
-              <p className="text-gray-600">Treatment options that fit your budget with payment arrangements available for families in need.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">3</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Flexible Solutions</h3>
+              <p className="text-professional">Treatment options that fit your budget with payment arrangements available for families in need.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">4</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Community Support</h3>
-              <p className="text-gray-600">Ongoing prevention education and support that helps protect your investment long-term.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">4</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Community Support</h3>
+              <p className="text-professional">Ongoing prevention education and support that helps protect your investment long-term.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mould Prevention Tips */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-columbia">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Affordable Mould Prevention Tips for Braybrook
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Protect your Braybrook property with these practical, budget-friendly prevention strategies suitable for all property types and household situations.
             </p>
           </div>
@@ -509,20 +509,20 @@ export const Braybrook = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <Wind className="h-8 w-8 text-blue-600" />
-                <h3 className="text-lg font-bold text-gray-900">Free Ventilation</h3>
+                <Wind className="h-8 w-8 text-primary" />
+                <h3 className="text-lg font-bold text-charcoal">Free Ventilation</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Utilise natural ventilation by opening windows during dry periods. Cross-ventilation costs nothing and effectively reduces indoor humidity levels.
               </p>
             </Card>
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <Thermometer className="h-8 w-8 text-green-600" />
-                <h3 className="text-lg font-bold text-gray-900">Smart Temperature Control</h3>
+                <Thermometer className="h-8 w-8 text-success" />
+                <h3 className="text-lg font-bold text-charcoal">Smart Temperature Control</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Use heating and cooling efficiently to prevent condensation. Even basic temperature management can significantly reduce mould risk without high costs.
               </p>
             </Card>
@@ -530,9 +530,9 @@ export const Braybrook = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Droplets className="h-8 w-8 text-teal-600" />
-                <h3 className="text-lg font-bold text-gray-900">DIY Moisture Checks</h3>
+                <h3 className="text-lg font-bold text-charcoal">DIY Moisture Checks</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Regular visual checks for leaks, condensation, and damp spots cost nothing but can catch problems early before expensive damage occurs.
               </p>
             </Card>
@@ -540,9 +540,9 @@ export const Braybrook = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="h-8 w-8 text-orange-600" />
-                <h3 className="text-lg font-bold text-gray-900">River Area Awareness</h3>
+                <h3 className="text-lg font-bold text-charcoal">River Area Awareness</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Properties near the Maribyrnong River need extra vigilance during wet seasons. Simple precautions can prevent major moisture problems.
               </p>
             </Card>
@@ -550,9 +550,9 @@ export const Braybrook = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Home className="h-8 w-8 text-purple-600" />
-                <h3 className="text-lg font-bold text-gray-900">Simple Maintenance</h3>
+                <h3 className="text-lg font-bold text-charcoal">Simple Maintenance</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Basic maintenance like cleaning gutters and fixing small leaks promptly prevents bigger, more expensive mould problems developing.
               </p>
             </Card>
@@ -560,9 +560,9 @@ export const Braybrook = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="h-8 w-8 text-red-600" />
-                <h3 className="text-lg font-bold text-gray-900">Community Resources</h3>
+                <h3 className="text-lg font-bold text-charcoal">Community Resources</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Access community support programs and professional advice to maintain healthy homes. Prevention education helps avoid costly remediation needs.
               </p>
             </Card>
@@ -574,10 +574,10 @@ export const Braybrook = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Braybrook Areas We Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               We provide comprehensive, affordable mould inspection and removal services throughout Braybrook and surrounding areas.
             </p>
           </div>
@@ -585,8 +585,8 @@ export const Braybrook = () => {
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
             {serviceAreas.map((area, index) => (
               <Card key={index} className="p-4 text-center hover:shadow-lg transition-shadow">
-                <MapPin className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-gray-900">{area}</h3>
+                <MapPin className="h-6 w-6 text-primary mx-auto mb-2" />
+                <h3 className="font-semibold text-charcoal">{area}</h3>
               </Card>
             ))}
           </div>
@@ -599,10 +599,10 @@ export const Braybrook = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Frequently Asked Questions - Braybrook Mould Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Get answers to common questions about our affordable, inclusive mould services for Braybrook properties.
             </p>
           </div>
@@ -611,8 +611,8 @@ export const Braybrook = () => {
             <div className="space-y-6">
               {faqData.map((faq, index) => (
                 <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <h3 className="text-lg font-bold text-charcoal mb-3">{faq.question}</h3>
+                  <p className="text-professional leading-relaxed">{faq.answer}</p>
                 </Card>
               ))}
             </div>
@@ -621,7 +621,7 @@ export const Braybrook = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-blue-600 text-white">
+      <section id="contact" className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -634,45 +634,45 @@ export const Braybrook = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Card className="p-8 bg-white text-gray-900">
+              <Card className="p-8 bg-white text-charcoal">
                 <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Phone</div>
-                      <a href="tel:1800954117" className="text-blue-600 hover:underline text-lg">
+                      <a href="tel:1800954117" className="text-primary hover:underline text-lg">
                         1800 954 117
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <Clock className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Business Hours</div>
-                      <div className="text-gray-600">7:00 AM - 7:00 PM, Every Day</div>
+                      <div className="text-professional">7:00 AM - 7:00 PM, Every Day</div>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Service Area</div>
-                      <div className="text-gray-600">Braybrook & All Melbourne</div>
+                      <div className="text-professional">Braybrook & All Melbourne</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8 text-center">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                     <a href="tel:1800954117" className="flex items-center">
                       <Phone className="mr-2 h-5 w-5" />
                       Call Now for Affordable Service
@@ -687,7 +687,7 @@ export const Braybrook = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -699,7 +699,7 @@ export const Braybrook = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -711,7 +711,7 @@ export const Braybrook = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>

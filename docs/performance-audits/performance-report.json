@@ -1,0 +1,287 @@
+{
+  "timestamp": "2025-09-17T10:47:28.178Z",
+  "summary": {
+    "desktop": {
+      "lcp": 562.4,
+      "fcp": 521.6,
+      "cls": 0.0029890790506580077,
+      "fid": null,
+      "loadTime": 3448,
+      "bundleSize": 0
+    },
+    "mobile": {
+      "lcp": 409.6,
+      "fcp": 376,
+      "cls": 0.011282650185402051,
+      "fid": null,
+      "loadTime": 3314.4,
+      "bundleSize": 0
+    }
+  },
+  "detailed": [
+    {
+      "page": "Homepage",
+      "path": "/",
+      "desktop": {
+        "deviceType": "desktop",
+        "url": "http://localhost:8081/",
+        "loadTime": 4191,
+        "lcp": 1308,
+        "fcp": 1308,
+        "cls": 0.001611897518539952,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 131,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 34
+        }
+      },
+      "mobile": {
+        "deviceType": "mobile",
+        "url": "http://localhost:8081/",
+        "loadTime": 3575,
+        "lcp": 648,
+        "fcp": 648,
+        "cls": 0.016795160983975776,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 128,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 32
+        }
+      },
+      "timestamp": "2025-09-17T10:47:01.427Z"
+    },
+    {
+      "page": "Services Page",
+      "path": "/services",
+      "desktop": {
+        "deviceType": "desktop",
+        "url": "http://localhost:8081/services",
+        "loadTime": 3249,
+        "lcp": 308,
+        "fcp": 308,
+        "cls": 0.007732535338434499,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 133,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 37
+        }
+      },
+      "mobile": {
+        "deviceType": "mobile",
+        "url": "http://localhost:8081/services",
+        "loadTime": 3270,
+        "lcp": 324,
+        "fcp": 324,
+        "cls": 0.002397551224387806,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 133,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 37
+        }
+      },
+      "timestamp": "2025-09-17T10:47:08.101Z"
+    },
+    {
+      "page": "Location - Carlton",
+      "path": "/locations/carlton",
+      "desktop": {
+        "deviceType": "desktop",
+        "url": "http://localhost:8081/locations/carlton",
+        "loadTime": 3241,
+        "lcp": 484,
+        "fcp": 300,
+        "cls": 0.000754158964013203,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 128,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 32
+        }
+      },
+      "mobile": {
+        "deviceType": "mobile",
+        "url": "http://localhost:8081/locations/carlton",
+        "loadTime": 3232,
+        "lcp": 460,
+        "fcp": 292,
+        "cls": 0.00006784089214762933,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 128,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 32
+        }
+      },
+      "timestamp": "2025-09-17T10:47:14.746Z"
+    },
+    {
+      "page": "Professional Mould Inspections",
+      "path": "/services/professional-mould-inspections",
+      "desktop": {
+        "deviceType": "desktop",
+        "url": "http://localhost:8081/services/professional-mould-inspections",
+        "loadTime": 3263,
+        "lcp": 328,
+        "fcp": 328,
+        "cls": 0.0011566592453275035,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 130,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 34
+        }
+      },
+      "mobile": {
+        "deviceType": "mobile",
+        "url": "http://localhost:8081/services/professional-mould-inspections",
+        "loadTime": 3251,
+        "lcp": 308,
+        "fcp": 308,
+        "cls": 0.023052449599787812,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 130,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 34
+        }
+      },
+      "timestamp": "2025-09-17T10:47:21.410Z"
+    },
+    {
+      "page": "Contact Page",
+      "path": "/contact",
+      "desktop": {
+        "deviceType": "desktop",
+        "url": "http://localhost:8081/contact",
+        "loadTime": 3296,
+        "lcp": 384,
+        "fcp": 364,
+        "cls": 0.0036901441869748803,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 128,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 32
+        }
+      },
+      "mobile": {
+        "deviceType": "mobile",
+        "url": "http://localhost:8081/contact",
+        "loadTime": 3244,
+        "lcp": 308,
+        "fcp": 308,
+        "cls": 0.014100248226711232,
+        "fid": null,
+        "navigation": {
+          "domContentLoaded": null,
+          "loadComplete": null,
+          "firstByte": null
+        },
+        "resources": {
+          "total": 128,
+          "totalSize": 0,
+          "jsSize": 0,
+          "cssSize": 0,
+          "imageSize": 0,
+          "imageCount": 32
+        }
+      },
+      "timestamp": "2025-09-17T10:47:28.106Z"
+    }
+  ],
+  "issues": [
+    "Homepage: Many images (34) - implement lazy loading",
+    "Services Page: Many images (37) - implement lazy loading",
+    "Location - Carlton: Many images (32) - implement lazy loading",
+    "Professional Mould Inspections: Many images (34) - implement lazy loading",
+    "Contact Page: Many images (32) - implement lazy loading"
+  ],
+  "recommendations": [
+    "Optimize images with WebP format and proper sizing",
+    "Implement lazy loading for below-the-fold images",
+    "Add width/height attributes to images to prevent CLS",
+    "Enable code splitting for location pages",
+    "Preload critical CSS and fonts",
+    "Use React.memo for expensive components",
+    "Implement service worker for caching",
+    "Optimize font loading with font-display: swap",
+    "Consider using a CDN for Australian users",
+    "Minimize render-blocking resources"
+  ]
+}

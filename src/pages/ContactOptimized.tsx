@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { ArrowRight, Phone, Mail, MapPin, Clock, Star, CheckCircle, AlertCircle, Users, Shield, Award } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { ServicePageSEO } from '@/components/seo/SEOHead';
-import heroBackground from '@/assets/hero-background.jpg';
+import heroBackground from '@/assets/hero-background-optimized.webp';
 
 export const ContactOptimized = () => {
   return (
@@ -22,7 +22,7 @@ export const ContactOptimized = () => {
       />
 
       {/* {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <span className="text-sm font-medium">Professional Mould Inspections - 7am-7pm Everyday</span>
           <a 
@@ -67,7 +67,7 @@ export const ContactOptimized = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a 
                 href="tel:1800954117" 
-                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 font-semibold"
+                className="bg-primary hover:bg-primary-600 text-white text-lg px-8 py-4 rounded-lg inline-flex items-center justify-center gap-2 font-semibold"
               >
                 <Phone className="w-5 h-5" />
                 Same-day Service - Call Now
@@ -173,7 +173,7 @@ export const ContactOptimized = () => {
                     As Melbourne's leading mould inspection and remediation specialists, Mould & Restoration Co. has been protecting Victorian families and businesses for over 5 years. Our professional team combines industry-leading technology with local expertise to deliver safe, effective solutions for mould problems across all Melbourne suburbs.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Whether you're dealing with visible mould growth, musty odours, or potential moisture issues, our IICRC-certified technicians provide comprehensive assessments and customized treatment plans. From heritage homes in Toorak to modern apartments in Southbank, we've successfully restored over 100 properties throughout Melbourne.
+                    Whether you're dealing with visible mould growth, musty odours, or potential moisture issues, our IICRC-certified technicians provide comprehensive assessments and customised treatment plans. From heritage homes in Toorak to modern apartments in Southbank, we've successfully restored over 100 properties throughout Melbourne.
                   </p>
                 </div>
 
@@ -233,7 +233,7 @@ export const ContactOptimized = () => {
                   </div>
 
                   {/* Additional Trust Content */}
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="bg-columbia p-4 rounded-lg">
                     <h4 className="font-semibold text-foreground mb-2">Professional Credentials & Standards</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• IICRC-certified mould remediation specialists</li>
@@ -244,10 +244,10 @@ export const ContactOptimized = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="bg-success/10 p-4 rounded-lg">
                     <h4 className="font-semibold text-foreground mb-2">Melbourne Market Expertise</h4>
                     <p className="text-sm text-muted-foreground">
-                      Our team understands Melbourne's unique climate challenges, from the humid summers that promote mould growth to the seasonal variations that affect different property types. We've worked extensively across all Melbourne suburbs, from historic terraces in Fitzroy to luxury apartments in Docklands, developing specialized approaches for each type of building and environmental condition.
+                      Our team understands Melbourne's unique climate challenges, from the humid summers that promote mould growth to the seasonal variations that affect different property types. We've worked extensively across all Melbourne suburbs, from historic terraces in Fitzroy to luxury apartments in Docklands, developing specialised approaches for each type of building and environmental condition.
                     </p>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export const ContactOptimized = () => {
                   <p className="text-muted-foreground mb-4">
                     Complete the form below to receive a comprehensive assessment and detailed quote for your mould inspection or remediation needs. Our experienced team reviews every submission personally and responds within 1 hour during business hours.
                   </p>
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="bg-columbia p-4 rounded-lg">
                     <h4 className="font-semibold text-foreground mb-2">What You'll Receive:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Detailed assessment of your specific mould concerns</li>
@@ -417,7 +417,7 @@ export const ContactOptimized = () => {
 
                   <Button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white w-full text-lg px-8 py-4 h-auto"
+                    className="bg-primary hover:bg-primary-600 text-white w-full text-lg px-8 py-4 h-auto"
                     size="lg"
                   >
                     Get My Professional Quote Now

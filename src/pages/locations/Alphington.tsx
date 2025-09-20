@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
 import { SuburbClusterLinks, StrategicLocationLinks } from "@/components/seo/InternalLinking";
-import OptimizedImage from '../../components/OptimizedImage';
+import { OptimizedImage } from '../../components/OptimizedImage';
 import { ServiceProcessImage, OptimizedImageGallery } from "@/components/seo/EnhancedOptimizedImage";
 import { generateLocationImages, getOptimizedImage } from "@/utils/imageAssets";
 
@@ -82,7 +82,7 @@ export const Alphington = () => {
       <Navigation />
 
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -113,7 +113,7 @@ export const Alphington = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Alphington</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -127,7 +127,7 @@ export const Alphington = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Heritage building preservation</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -138,7 +138,7 @@ export const Alphington = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Alphington Professional Service: 1800 954 117
               </Button>
@@ -192,19 +192,19 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer river humidity affecting established homes with limited air conditioning and ventilation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter fog and condensation issues in heritage properties with poor thermal performance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>River valley drainage affecting foundations and causing basement moisture in older family homes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Mature vegetation and parkland proximity affecting property drainage and sun exposure</span>
                   </li>
                 </ul>
@@ -281,23 +281,23 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>River humidity affecting family living areas, children's bedrooms, and play spaces</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Seasonal flooding risk affecting basements, lower levels, and family storage areas</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Clay soil moisture retention affecting family home foundations and garden-adjacent areas</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Parkland and recreation area proximity increasing ambient moisture around family properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Family health concerns requiring safe, non-toxic treatment methods and rapid moisture remediation</span>
                   </li>
                 </ul>
@@ -319,11 +319,11 @@ export const Alphington = () => {
                 <p className="text-muted-foreground mb-4">Established residential properties requiring family-safe treatment methods while preserving period character and materials.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family-safe treatment methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Heritage material preservation</span>
                   </div>
                 </div>
@@ -336,11 +336,11 @@ export const Alphington = () => {
                 <p className="text-muted-foreground mb-4">Modern residential developments with family-friendly designs requiring moisture management for active household environments.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern family home compatibility</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Child-safe treatment protocols</span>
                   </div>
                 </div>
@@ -353,11 +353,11 @@ export const Alphington = () => {
                 <p className="text-muted-foreground mb-4">Yarra River frontage family homes requiring specialised treatment for elevated humidity and family recreation areas.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>River humidity management</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family property protection</span>
                   </div>
                 </div>
@@ -403,19 +403,19 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family-safe negative air pressure systems designed for occupied residential environments</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Child-safe protective barriers and non-toxic containment materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage home protection protocols preserving family heritage while ensuring safety</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family schedule coordination minimizing disruption to children's routines and activities</span>
                   </li>
                 </ul>
@@ -461,19 +461,19 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality testing certified for family residential environments</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Moisture content verification in heritage timber, brick, and family home building materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family health clearance certificates for children's safety and residential occupancy</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month treatment warranty with river zone and family home considerations</span>
                   </li>
                 </ul>
@@ -486,7 +486,7 @@ export const Alphington = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -533,7 +533,7 @@ export const Alphington = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -592,19 +592,19 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and water damage restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Alphington postcode 3078</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling 7 days per week</span>
                   </li>
                 </ul>
@@ -621,19 +621,19 @@ export const Alphington = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved family home property claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive river humidity damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Alphington mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional family home remediation services</span>
                   </li>
                 </ul>
@@ -685,7 +685,7 @@ export const Alphington = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Family Home Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service 7am-7pm daily)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -730,7 +730,7 @@ export const Alphington = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Alphington Professional Service: 1800 954 117
               </Button>
@@ -753,10 +753,10 @@ export const Alphington = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               We Also Service These Northeast Areas
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-professional max-w-3xl mx-auto">
               Comprehensive mould solutions across Melbourne's northeast suburbs
             </p>
           </div>
@@ -764,15 +764,15 @@ export const Alphington = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">Heidelberg</h3>
-              <p className="text-gray-600 text-sm">Parkland area specialists</p>
+              <p className="text-professional text-sm">Parkland area specialists</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">Ivanhoe</h3>
-              <p className="text-gray-600 text-sm">Yarra River proximity experts</p>
+              <p className="text-professional text-sm">Yarra River proximity experts</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">Fairfield</h3>
-              <p className="text-gray-600 text-sm">Heritage property care</p>
+              <p className="text-professional text-sm">Heritage property care</p>
             </div>
           </div>
         </div>

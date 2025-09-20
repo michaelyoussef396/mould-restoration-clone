@@ -28,7 +28,7 @@ export const Sandringham = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Sandringham Melbourne. IICRC certified technicians specializing in beachside living properties, marina proximity buildings, and Bay Road commercial precinct."
+        description="Professional mould removal and inspection services in Sandringham Melbourne. IICRC certified technicians specialising in beachside living properties, marina proximity buildings, and Bay Road commercial precinct."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Sandringham = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Sandringham</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Sandringham = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Sandringham = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Sandringham</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Beachside living & marina proximity expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Sandringham = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -154,27 +154,27 @@ export const Sandringham = () => {
                 <h3 className="text-xl font-semibold mb-4">Sandringham Property Types We Service</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Beachside Homes:</strong> Properties with direct or proximity beach access and marine exposure</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Marina Buildings:</strong> Properties near Royal Melbourne Yacht Squadron and marina facilities</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Bay Road Commercial:</strong> Shop fronts, restaurants, and mixed-use buildings</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Luxury Residences:</strong> High-value beachside estates and premium family homes</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Holiday Properties:</strong> Beach houses and seasonal accommodation rentals</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span><strong>Yacht Club Facilities:</strong> Marine recreational buildings and event spaces</span>
                   </li>
                 </ul>
@@ -318,7 +318,7 @@ export const Sandringham = () => {
                         <li>• Marine-environment compatible dehumidification systems</li>
                         <li>• Beachside property moisture barrier installation</li>
                         <li>• Commercial marine precinct ventilation restoration</li>
-                        <li>• Yacht club and marina facility specialized cleaning</li>
+                        <li>• Yacht club and marina facility specialised cleaning</li>
                       </ul>
                     </div>
                   </div>
@@ -366,15 +366,15 @@ export const Sandringham = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Beachside living and salt air exposure specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Marina proximity building environmental understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Bay Road commercial precinct property expertise</span>
                   </li>
                 </ul>
@@ -387,15 +387,15 @@ export const Sandringham = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for marine environment properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Coastal health and safety protocol training</span>
                   </li>
                 </ul>
@@ -406,15 +406,15 @@ export const Sandringham = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Sandringham</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Sandringham</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Marine-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Marine-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Beachside Properties</div>
+                  <div className="text-sm text-professional">Rating from Beachside Properties</div>
                 </div>
               </div>
             </div>
@@ -434,9 +434,9 @@ export const Sandringham = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Sandringham Melbourne assistance. Our marine environment specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -445,7 +445,7 @@ export const Sandringham = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Sandringham Inspection</h3>

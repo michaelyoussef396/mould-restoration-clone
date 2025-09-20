@@ -17,7 +17,7 @@ export const WhyChooseUsSection = () => {
     {
       icon: Users,
       title: 'Client-Centric Service',
-      description: 'From consultation to completion, we prioritize your needs, providing clear communication and tailored results.',
+      description: 'From consultation to completion, we prioritise your needs, providing clear communication and tailored results.',
     },
   ];
 

@@ -40,12 +40,12 @@ export const McKinnon = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in McKinnon</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const McKinnon = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to McKinnon</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const McKinnon = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Post-war property protection</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const McKinnon = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -256,7 +256,7 @@ export const McKinnon = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Post-war construction material aging requiring specialized maintenance</span>
+                    <span>Post-war construction material aging requiring specialised maintenance</span>
                   </li>
                 </ul>
               </CardContent>
@@ -277,11 +277,11 @@ export const McKinnon = () => {
                 <p className="text-muted-foreground mb-4">Established brick veneer and weatherboard family residences requiring period-appropriate moisture management.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family home moisture control</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Post-war construction expertise</span>
                   </div>
                 </div>
@@ -294,11 +294,11 @@ export const McKinnon = () => {
                 <p className="text-muted-foreground mb-4">Updated family homes with modern additions requiring integrated moisture management solutions.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Renovation integration</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Period and modern coordination</span>
                   </div>
                 </div>
@@ -311,11 +311,11 @@ export const McKinnon = () => {
                 <p className="text-muted-foreground mb-4">Local schools, community centres, and shared facilities requiring healthy air quality management.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Community health focus</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Minimal disruption service</span>
                   </div>
                 </div>
@@ -357,7 +357,7 @@ export const McKinnon = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family-Friendly Containment & Community Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  McKinnon's family-oriented residential properties require specialized containment strategies that minimize disruption to family life while preventing mould spore migration through established neighborhood and community living environments.
+                  McKinnon's family-oriented residential properties require specialised containment strategies that minimize disruption to family life while preventing mould spore migration through established neighborhood and community living environments.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -388,7 +388,7 @@ export const McKinnon = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family Home Safe Removal Methods</h3>
                 <p className="text-muted-foreground mb-4">
-                  McKinnon's family residential properties demand specialized removal techniques that account for family living requirements, post-war construction characteristics, and the community-focused nature of established residential neighborhoods.
+                  McKinnon's family residential properties demand specialised removal techniques that account for family living requirements, post-war construction characteristics, and the community-focused nature of established residential neighborhoods.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -419,19 +419,19 @@ export const McKinnon = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family home air quality testing certified for residential health standards</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Post-war construction moisture content verification and safety clearance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family health certification and community documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty with residential community considerations</span>
                   </li>
                 </ul>
@@ -491,7 +491,7 @@ export const McKinnon = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -524,7 +524,7 @@ export const McKinnon = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in McKinnon family home mould issues</span>
+                    <span>5+ years specialising in McKinnon family home mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -579,19 +579,19 @@ export const McKinnon = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved family home claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family health documentation and residential safety evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all McKinnon family work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional residential remediation</span>
                   </li>
                 </ul>
@@ -698,19 +698,19 @@ export const McKinnon = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Monthly family home ventilation system maintenance and filter changes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Quarterly residential moisture assessment and drainage maintenance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Bi-annual family home building envelope and post-war construction inspection</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Annual community moisture monitoring and neighborhood coordination</span>
                   </li>
                 </ul>
@@ -786,11 +786,11 @@ export const McKinnon = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -822,7 +822,7 @@ export const McKinnon = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Family Property Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -867,7 +867,7 @@ export const McKinnon = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 McKinnon Family Professional Service: 1800 954 117
               </Button>

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-18T08:15:25.121Z",
+  "pages": {
+    "Homepage": {
+      "path": "/",
+      "error": "Screen emulation mobile setting (true) does not match formFactor setting (desktop). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md"
+    },
+    "About": {
+      "path": "/about",
+      "error": "Screen emulation mobile setting (true) does not match formFactor setting (desktop). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md"
+    },
+    "Contact": {
+      "path": "/contact",
+      "error": "Screen emulation mobile setting (true) does not match formFactor setting (desktop). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md"
+    },
+    "Services": {
+      "path": "/services",
+      "error": "Screen emulation mobile setting (true) does not match formFactor setting (desktop). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md"
+    },
+    "Areas": {
+      "path": "/areas",
+      "error": "Screen emulation mobile setting (true) does not match formFactor setting (desktop). See https://github.com/GoogleChrome/lighthouse/blob/main/docs/emulation.md"
+    }
+  }
+}

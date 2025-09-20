@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const PortMelbourne = () => {
   const breadcrumbItems = [
@@ -40,12 +41,12 @@ export const PortMelbourne = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Port Melbourne</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +72,7 @@ export const PortMelbourne = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Port Melbourne</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +86,7 @@ export const PortMelbourne = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Industrial heritage preservation</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +97,7 @@ export const PortMelbourne = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -115,10 +116,10 @@ export const PortMelbourne = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground mb-4">same-day professional service to Port Melbourne waterfront properties</p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
+                <Button className="w-full bg-primary hover:bg-primary-600 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -159,7 +160,7 @@ export const PortMelbourne = () => {
                   The suburb encompasses postcode 3207, stretching from the Yarra River in the north to Port Phillip Bay in the south. Bay Street serves as the main commercial strip, featuring cafes, restaurants, and boutique shopping, while the area includes significant industrial heritage buildings converted to residential and commercial use.
                 </p>
                 <p className="text-muted-foreground">
-                  Port Melbourne's distinctive waterfront location and industrial heritage create unique environmental conditions. The combination of bay proximity, converted warehouse spaces, and modern developments creates diverse moisture challenges requiring specialized understanding of both heritage preservation and contemporary waterfront living.
+                  Port Melbourne's distinctive waterfront location and industrial heritage create unique environmental conditions. The combination of bay proximity, converted warehouse spaces, and modern developments creates diverse moisture challenges requiring specialised understanding of both heritage preservation and contemporary waterfront living.
                 </p>
               </div>
               <div>
@@ -167,7 +168,7 @@ export const PortMelbourne = () => {
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-accent-teal mt-0.5 flex-shrink-0" />
-                    <span><strong>Warehouse Conversion Challenges:</strong> Industrial buildings converted to residential and commercial use with original construction requiring specialized moisture management approaches.</span>
+                    <span><strong>Warehouse Conversion Challenges:</strong> Industrial buildings converted to residential and commercial use with original construction requiring specialised moisture management approaches.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-accent-teal mt-0.5 flex-shrink-0" />
@@ -192,7 +193,7 @@ export const PortMelbourne = () => {
             <div className="bg-accent-blue/10 rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-3">Why Port Melbourne Properties Need Specialized Waterfront Mould Treatment</h3>
               <p className="text-muted-foreground">
-                Port Melbourne's unique combination of waterfront location, industrial heritage, and diverse property types requires specialized mould removal approaches. Our IICRC-certified technicians understand the challenges of treating converted warehouses, managing bay proximity humidity, and working with both heritage preservation requirements and modern waterfront living standards to deliver effective solutions for this dynamic community.
+                Port Melbourne's unique combination of waterfront location, industrial heritage, and diverse property types requires specialised mould removal approaches. Our IICRC-certified technicians understand the challenges of treating converted warehouses, managing bay proximity humidity, and working with both heritage preservation requirements and modern waterfront living standards to deliver effective solutions for this dynamic community.
               </p>
             </div>
           </div>
@@ -243,7 +244,7 @@ export const PortMelbourne = () => {
                   <div>
                     <h4 className="font-semibold mb-2">Waterfront Moisture Management</h4>
                     <p className="text-muted-foreground text-sm">
-                      Address moisture sources specific to Port Melbourne's waterfront location - bay proximity humidity control, industrial building ventilation optimization, and drainage solutions.
+                      Address moisture sources specific to Port Melbourne's waterfront location - bay proximity humidity control, industrial building ventilation optimisation, and drainage solutions.
                     </p>
                   </div>
                 </div>
@@ -288,14 +289,14 @@ export const PortMelbourne = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Same-Day Professional Service</h3>
                 <p className="text-muted-foreground">
                   Fast response to Port Melbourne mould situations. Available 7am-7pm every day with same-day service for urgent situations. Professional assessment and immediate action when you need it most.
                 </p>
               </div>
               <div className="text-center">
-                <Shield className="w-12 h-12 text-success-green mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-success mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">IICRC Certified Experts</h3>
                 <p className="text-muted-foreground">
                   Fully qualified mould removal specialists with heritage and waterfront property experience. ABN 47 683 089 652, insurance work welcome, 100% satisfaction guarantee for all Port Melbourne clients.
@@ -309,7 +310,7 @@ export const PortMelbourne = () => {
                 Our experienced team has successfully treated mould issues in warehouse conversions, waterfront apartments, Bay Street commercial premises, and heritage properties throughout Port Melbourne. We understand the importance of preserving industrial character while ensuring healthy living and working environments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Port Melbourne Service
                 </Button>
@@ -337,7 +338,7 @@ export const PortMelbourne = () => {
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Warehouse Conversions</h4>
                     <p className="text-muted-foreground text-sm">
-                      Industrial buildings converted to residential lofts and apartments requiring specialized treatment for original brick construction, high ceilings, and large open spaces.
+                      Industrial buildings converted to residential lofts and apartments requiring specialised treatment for original brick construction, high ceilings, and large open spaces.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
@@ -360,7 +361,7 @@ export const PortMelbourne = () => {
                   <div className="bg-white p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Contemporary Waterfront Apartments</h4>
                     <p className="text-muted-foreground text-sm">
-                      Modern developments with bay views and waterfront proximity requiring specialized moisture management for sealed building environments and humidity exposure.
+                      Modern developments with bay views and waterfront proximity requiring specialised moisture management for sealed building environments and humidity exposure.
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg">
@@ -381,9 +382,9 @@ export const PortMelbourne = () => {
 
             <div className="mt-8 text-center">
               <p className="text-muted-foreground mb-6">
-                Every Port Melbourne property benefits from our specialized understanding of waterfront and heritage challenges. Our IICRC-certified technicians provide customized treatment plans that respect both industrial heritage and modern waterfront living requirements.
+                Every Port Melbourne property benefits from our specialised understanding of waterfront and heritage challenges. Our IICRC-certified technicians provide customised treatment plans that respect both industrial heritage and modern waterfront living requirements.
               </p>
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 Call 1800 954 117 for Port Melbourne Property Assessment
               </Button>
             </div>
@@ -403,7 +404,7 @@ export const PortMelbourne = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-4">Waterfront Environment Factors</h3>
                 <p className="text-muted-foreground mb-4">
-                  Port Melbourne's waterfront location and industrial heritage create unique environmental conditions affecting properties. The combination of bay proximity, converted warehouse spaces, and Melbourne's maritime climate requires specialized moisture management approaches.
+                  Port Melbourne's waterfront location and industrial heritage create unique environmental conditions affecting properties. The combination of bay proximity, converted warehouse spaces, and Melbourne's maritime climate requires specialised moisture management approaches.
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -433,7 +434,7 @@ export const PortMelbourne = () => {
                       Optimize air circulation in converted spaces with high ceilings and large rooms. Ensure adequate ventilation systems are installed to manage humidity in warehouse-style living spaces.
                     </p>
                   </div>
-                  <div className="bg-success-green/10 p-4 rounded-lg">
+                  <div className="bg-success/10 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Waterfront Humidity Management</h4>
                     <p className="text-muted-foreground text-sm">
                       Monitor indoor humidity levels carefully, especially during Melbourne's humid months. Use dehumidifiers when necessary and ensure waterfront exposure doesn't compromise building materials.
@@ -470,11 +471,11 @@ export const PortMelbourne = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-blue-600" />
+              <Clock className="w-6 h-6 text-primary" />
               <span className="text-lg">Same-Day Professional Service</span>
             </div>
             <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-success-green" />
+              <Shield className="w-6 h-6 text-success" />
               <span className="text-lg">100+ Properties Restored</span>
             </div>
             <div className="flex items-center gap-3">
@@ -484,7 +485,7 @@ export const PortMelbourne = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
+            <Button size="lg" className="bg-primary hover:bg-primary-600 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Emergency Port Melbourne Mould Service
             </Button>
@@ -500,6 +501,13 @@ export const PortMelbourne = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Port Melbourne"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

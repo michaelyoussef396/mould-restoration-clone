@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Hawthorn = () => {
   const breadcrumbItems = [
@@ -40,12 +41,12 @@ export const Hawthorn = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Hawthorn</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +72,7 @@ export const Hawthorn = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Hawthorn</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +86,7 @@ export const Hawthorn = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Federation home preservation</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +97,7 @@ export const Hawthorn = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -115,10 +116,10 @@ export const Hawthorn = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Professional Service - Same-day Available 7am-7pm</h3>
                 <p className="text-muted-foreground mb-4">same-day professional service to Hawthorn properties</p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1800 954 117</Button>
+                <Button className="w-full bg-primary hover:bg-primary-600 text-white">Call 1800 954 117</Button>
               </CardContent>
             </Card>
             <Card>
@@ -288,14 +289,14 @@ export const Hawthorn = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Same-Day Professional Service</h3>
                 <p className="text-muted-foreground">
                   Fast response to Hawthorn mould situations. Available 7am-7pm every day with same-day service for urgent situations. Professional assessment and immediate action when you need it most.
                 </p>
               </div>
               <div className="text-center">
-                <Shield className="w-12 h-12 text-success-green mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-success mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">IICRC Certified Experts</h3>
                 <p className="text-muted-foreground">
                   Fully qualified mould removal specialists with advanced training in heritage property treatment. ABN 47 683 089 652, insurance work welcome, 100% satisfaction guarantee for all Hawthorn clients.
@@ -309,7 +310,7 @@ export const Hawthorn = () => {
                 Our experienced team has successfully treated mould issues in Federation homes, Edwardian terraces, and modern properties throughout Hawthorn. We understand the importance of preserving your property's character while ensuring a healthy living environment for your family.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 for Hawthorn Service
                 </Button>
@@ -383,7 +384,7 @@ export const Hawthorn = () => {
               <p className="text-muted-foreground mb-6">
                 Every Hawthorn property is unique. Our IICRC-certified technicians assess each situation individually to provide the most effective treatment while respecting your property's character and your family's needs.
               </p>
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 Call 1800 954 117 for Hawthorn Property Assessment
               </Button>
             </div>
@@ -433,7 +434,7 @@ export const Hawthorn = () => {
                       Improve air circulation in Federation homes by opening windows regularly, using exhaust fans in bathrooms, and ensuring original fireplaces have proper ventilation.
                     </p>
                   </div>
-                  <div className="bg-success-green/10 p-4 rounded-lg">
+                  <div className="bg-success/10 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Subfloor Maintenance</h4>
                     <p className="text-muted-foreground text-sm">
                       Check subfloor ventilation annually, clear vegetation from around foundations, and ensure adequate cross-flow ventilation under the house.
@@ -470,11 +471,11 @@ export const Hawthorn = () => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <div className="flex items-center gap-3">
-              <Clock className="w-6 h-6 text-blue-600" />
+              <Clock className="w-6 h-6 text-primary" />
               <span className="text-lg">Same-Day Professional Service</span>
             </div>
             <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-success-green" />
+              <Shield className="w-6 h-6 text-success" />
               <span className="text-lg">100+ Properties Restored</span>
             </div>
             <div className="flex items-center gap-3">
@@ -484,7 +485,7 @@ export const Hawthorn = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
+            <Button size="lg" className="bg-primary hover:bg-primary-600 text-white text-lg px-8 py-4">
               <Phone className="w-6 h-6 mr-2" />
               Call 1800 954 117 - Emergency Hawthorn Mould Service
             </Button>
@@ -500,6 +501,13 @@ export const Hawthorn = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Hawthorn"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

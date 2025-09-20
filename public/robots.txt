@@ -30,10 +30,8 @@ Allow: /*.webp
 Allow: /*.svg
 
 # XML Sitemaps for Melbourne mould removal services
-Sitemap: https://mouldrestoration.com.au/sitemap.xml
-Sitemap: https://mouldrestoration.com.au/sitemap-locations.xml
-Sitemap: https://mouldrestoration.com.au/sitemap-services.xml
-Sitemap: https://mouldrestoration.com.au/sitemap-images.xml
+Sitemap: https://mouldandrestoration.com.au/sitemap.xml
+Sitemap: https://mouldandrestoration.com.au/sitemap-locations.xml
 
 # Crawl settings optimized for Melbourne local business
 Crawl-delay: 1

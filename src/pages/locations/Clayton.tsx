@@ -28,7 +28,7 @@ export const Clayton = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Clayton Melbourne. IICRC certified technicians specializing in university precinct properties, student accommodation, and research facility buildings."
+        description="Professional mould removal and inspection services in Clayton Melbourne. IICRC certified technicians specialising in university precinct properties, student accommodation, and research facility buildings."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Clayton = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Clayton</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Clayton = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Clayton = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Clayton</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>University precinct & student accommodation expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Clayton = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export const Clayton = () => {
                   <h4 className="font-semibold mb-3 text-primary">Research Facility Issues</h4>
                   <ul className="space-y-2 text-sm">
                     <li>• Laboratory controlled environment system moisture problems</li>
-                    <li>• Research facility specialized HVAC requirements</li>
+                    <li>• Research facility specialised HVAC requirements</li>
                     <li>• Scientific equipment climate control affecting building moisture</li>
                     <li>• Clean room and sterile environment humidity control challenges</li>
                     <li>• Chemical storage areas moisture management complications</li>
@@ -191,7 +191,7 @@ export const Clayton = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Clayton Climate and Seasonal Challenges</h3>
               <p className="text-gray-700 mb-6">
                 Clayton experiences unique climate challenges due to its position in Melbourne's southeastern growth corridor and proximity to educational facilities with varying occupancy patterns throughout the academic year.
@@ -199,7 +199,7 @@ export const Clayton = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Seasonal Academic Patterns</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Summer semester break periods with reduced ventilation maintenance</li>
                     <li>• Autumn high-occupancy return creating moisture spikes in buildings</li>
                     <li>• Winter heating system usage affecting university building humidity levels</li>
@@ -208,11 +208,11 @@ export const Clayton = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Environmental Factors</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Higher density development affecting local microclimate patterns</li>
                     <li>• Large campus building complexes creating wind tunnel moisture effects</li>
                     <li>• Educational precinct traffic increasing localised air quality challenges</li>
-                    <li>• Research facility emissions requiring specialized environmental controls</li>
+                    <li>• Research facility emissions requiring specialised environmental controls</li>
                   </ul>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export const Clayton = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Clayton Property Types and Mould Challenges</h3>
               <p className="text-gray-700 mb-6">
-                From heritage university buildings to modern student accommodation and research facilities, Clayton's diverse property portfolio requires specialized mould removal approaches tailored to each building type and usage pattern.
+                From heritage university buildings to modern student accommodation and research facilities, Clayton's diverse property portfolio requires specialised mould removal approaches tailored to each building type and usage pattern.
               </p>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -229,15 +229,15 @@ export const Clayton = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Historic University Buildings</h5>
-                      <p className="text-sm text-gray-600">Heritage structures with traditional ventilation systems require careful mould management preserving architectural integrity while ensuring modern health standards.</p>
+                      <p className="text-sm text-professional">Heritage structures with traditional ventilation systems require careful mould management preserving architectural integrity while ensuring modern health standards.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Research Facilities</h5>
-                      <p className="text-sm text-gray-600">State-of-the-art laboratories and research centres with complex HVAC systems demanding precise moisture control for equipment protection and research integrity.</p>
+                      <p className="text-sm text-professional">State-of-the-art laboratories and research centres with complex HVAC systems demanding precise moisture control for equipment protection and research integrity.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Student Services Buildings</h5>
-                      <p className="text-sm text-gray-600">High-traffic facilities including cafeterias, sports centres, and administration buildings requiring intensive moisture management protocols.</p>
+                      <p className="text-sm text-professional">High-traffic facilities including cafeterias, sports centres, and administration buildings requiring intensive moisture management protocols.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const Clayton = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Student Accommodation Complexes</h5>
-                      <p className="text-sm text-gray-600">Purpose-built student housing with shared facilities requiring specialized moisture control addressing high occupancy density and varying lifestyle patterns.</p>
+                      <p className="text-sm text-professional">Purpose-built student housing with shared facilities requiring specialised moisture control addressing high occupancy density and varying lifestyle patterns.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Mixed-Use Developments</h5>
-                      <p className="text-sm text-gray-600">Modern apartment complexes combining retail, office, and residential spaces near campus requiring comprehensive moisture management across different usage zones.</p>
+                      <p className="text-sm text-professional">Modern apartment complexes combining retail, office, and residential spaces near campus requiring comprehensive moisture management across different usage zones.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Established Family Homes</h5>
-                      <p className="text-sm text-gray-600">Traditional suburban properties in established Clayton neighbourhoods requiring family-focused mould solutions maintaining home comfort and children's health.</p>
+                      <p className="text-sm text-professional">Traditional suburban properties in established Clayton neighbourhoods requiring family-focused mould solutions maintaining home comfort and children's health.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const Clayton = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>University building and student accommodation specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Monash University precinct environmental understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Research facility and laboratory environment expertise</span>
                   </li>
                 </ul>
@@ -301,15 +301,15 @@ export const Clayton = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for university property types</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Educational facility health and safety protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const Clayton = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Clayton</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Clayton</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Education-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Education-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from University Community</div>
+                  <div className="text-sm text-professional">Rating from University Community</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const Clayton = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Clayton Melbourne assistance. Our university precinct specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const Clayton = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Clayton Inspection</h3>

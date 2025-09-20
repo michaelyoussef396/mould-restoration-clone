@@ -40,12 +40,12 @@ export const Doncaster = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Doncaster</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const Doncaster = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Doncaster</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const Doncaster = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Westfield proximity service</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const Doncaster = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -169,7 +169,7 @@ export const Doncaster = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Doncaster Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Westfield Doncaster to the Ruffey Lake Park, Doncaster's role as a major shopping and community hub requires specialized mould treatment approaches that accommodate diverse family needs and varied property maintenance standards.
+                  From Westfield Doncaster to the Ruffey Lake Park, Doncaster's role as a major shopping and community hub requires specialised mould treatment approaches that accommodate diverse family needs and varied property maintenance standards.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -269,15 +269,15 @@ export const Doncaster = () => {
                 <p className="text-muted-foreground mb-4">1960s-1980s brick veneer family homes serving multicultural communities with diverse cooking and living requirements.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Multicultural-sensitive service</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Kitchen ventilation solutions</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Extended family coordination</span>
                   </div>
                 </div>
@@ -290,15 +290,15 @@ export const Doncaster = () => {
                 <p className="text-muted-foreground mb-4">Contemporary townhouse complexes with shared walls, varied maintenance standards, and strata management requirements.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Strata management liaison</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Shared wall moisture prevention</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Neighbour-friendly scheduling</span>
                   </div>
                 </div>
@@ -308,18 +308,18 @@ export const Doncaster = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Commercial Properties</h3>
-                <p className="text-muted-foreground mb-4">Shopping centre proximity businesses, restaurants, and mixed-use buildings requiring specialized commercial protocols.</p>
+                <p className="text-muted-foreground mb-4">Shopping centre proximity businesses, restaurants, and mixed-use buildings requiring specialised commercial protocols.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Business continuity planning</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>After-hours service available</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Health department compliance</span>
                   </div>
                 </div>
@@ -332,15 +332,15 @@ export const Doncaster = () => {
                 <p className="text-muted-foreground mb-4">Established apartment buildings with varied ages, maintenance histories, and body corporate management structures.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Body corporate coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Multiple unit assessment</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Resident notification protocols</span>
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export const Doncaster = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Community-Respectful Containment Protocols</h3>
                 <p className="text-muted-foreground mb-4">
-                  Doncaster's multicultural community requires specialized containment strategies that respect cultural practices, accommodate extended family living arrangements, and coordinate with diverse business operations near the shopping hub.
+                  Doncaster's multicultural community requires specialised containment strategies that respect cultural practices, accommodate extended family living arrangements, and coordinate with diverse business operations near the shopping hub.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -413,7 +413,7 @@ export const Doncaster = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Diverse Property-Appropriate Mould Removal</h3>
                 <p className="text-muted-foreground mb-4">
-                  Doncaster's varied property types require specialized techniques that eliminate mould colonies while accommodating different building ages, construction methods, and multicultural family usage patterns.
+                  Doncaster's varied property types require specialised techniques that eliminate mould colonies while accommodating different building ages, construction methods, and multicultural family usage patterns.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -422,7 +422,7 @@ export const Doncaster = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Kitchen and cooking area specialized remediation for diverse cuisines</span>
+                    <span>Kitchen and cooking area specialised remediation for diverse cuisines</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
@@ -444,19 +444,19 @@ export const Doncaster = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality certification in multiple languages</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Moisture content verification across varied building materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Family health clearance documentation for diverse household needs</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month comprehensive treatment warranty</span>
                   </li>
                 </ul>
@@ -481,7 +481,7 @@ export const Doncaster = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Doncaster multicultural community mould issues</span>
+                    <span>5+ years specialising in Doncaster multicultural community mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -536,19 +536,19 @@ export const Doncaster = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Multilingual damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Doncaster mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional remediation services</span>
                   </li>
                 </ul>
@@ -655,19 +655,19 @@ export const Doncaster = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Service diverse HVAC systems quarterly to accommodate varied building standards</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Clean kitchen exhaust systems regularly for multicultural cooking impacts</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Inspect building envelopes across different construction eras annually</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coordinate strata and body corporate maintenance schedules effectively</span>
                   </li>
                 </ul>
@@ -719,7 +719,7 @@ export const Doncaster = () => {
                 Serving Doncaster's multicultural families, shopping hub businesses, and diverse residential properties with Melbourne's most trusted culturally-sensitive mould removal specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Professional Service - Same-day Available 7am-7pm: 1800 954 117
                 </Button>

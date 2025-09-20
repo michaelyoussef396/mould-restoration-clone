@@ -7,7 +7,7 @@ import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Check, Phone, Award, Users, Clock, Shield, MapPin, Star, ArrowRight } from 'lucide-react';
-import aboutHero from '@/assets/about-hero.jpg';
+import aboutHero from '@/assets/about-hero-optimized.webp';
 import visionInterior from '@/assets/vision-interior.jpg';
 import experienceFurniture from '@/assets/experience-furniture.jpg';
 import storySpace from '@/assets/story-space.jpg';

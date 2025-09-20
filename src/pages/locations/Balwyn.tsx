@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
 
 export const Balwyn = () => {
@@ -48,7 +49,7 @@ export const Balwyn = () => {
       <Navigation />
 
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -79,7 +80,7 @@ export const Balwyn = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Balwyn</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -93,7 +94,7 @@ export const Balwyn = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Heritage home treatment</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -104,7 +105,7 @@ export const Balwyn = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Balwyn Professional Service: 1800 954 117
               </Button>
@@ -158,19 +159,19 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer shade from mature tree canopy reducing direct solar drying effects</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter moisture retention in established gardens and under tree coverage</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Leafy street drainage patterns affected by root systems and garden beds</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Period home heating and cooling systems interacting with natural humidity</span>
                   </li>
                 </ul>
@@ -247,23 +248,23 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Mature street trees creating canopy humidity and affecting natural building drying</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Established garden beds with extensive irrigation affecting foundation moisture</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Tree root systems affecting traditional drainage and creating moisture pockets</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Autumn leaf fall creating moisture retention around building foundations</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Natural shelter belts reducing air circulation and moisture evaporation</span>
                   </li>
                 </ul>
@@ -314,19 +315,19 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-appropriate treatment methods preserving period home character and value</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Leafy environment techniques accounting for ongoing natural moisture sources</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coordinated scheduling respecting established neighborhood quiet periods</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Garden and landscape moisture integration with building treatment planning</span>
                   </li>
                 </ul>
@@ -368,23 +369,23 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Heritage-Safe Treatment Equipment</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Balwyn operations utilize professional-grade equipment designed for period home environments, ensuring effective treatment while protecting heritage features, original materials, and maintaining established neighborhood standards throughout remediation.
+                  Our Balwyn operations utilise professional-grade equipment designed for period home environments, ensuring effective treatment while protecting heritage features, original materials, and maintaining established neighbourhood standards throughout remediation.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>HEPA-filtered air systems ensuring heritage home air quality during treatment</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Quiet-operation equipment respecting established neighborhood tranquility</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage material-compatible dehumidification systems for period home contents</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Period building-safe drying equipment protecting original architectural elements</span>
                   </li>
                 </ul>
@@ -409,7 +410,7 @@ export const Balwyn = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Balwyn heritage and period home property issues</span>
+                    <span>5+ years specialising in Balwyn heritage and period home property issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -417,7 +418,7 @@ export const Balwyn = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Eastern suburbs leafy environment and mature landscape specialized experience</span>
+                    <span>Eastern suburbs leafy environment and mature landscape specialised experience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -435,19 +436,19 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and heritage property restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Balwyn postcode 3103</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling with heritage property consultation available</span>
                   </li>
                 </ul>
@@ -464,19 +465,19 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved heritage and established property claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive documentation for period home insurance requirements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Balwyn heritage and period home services</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional heritage property remediation services</span>
                   </li>
                 </ul>
@@ -487,7 +488,7 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Balwyn Heritage Community Reviews</h3>
                 <p className="text-muted-foreground mb-4">
-                  With over 50+ verified 5-star reviews from Balwyn heritage property owners, established families, and eastern suburbs residents, we're Melbourne's most trusted heritage and period home mould removal service specializing in leafy established areas.
+                  With over 50+ verified 5-star reviews from Balwyn heritage property owners, established families, and eastern suburbs residents, we're Melbourne's most trusted heritage and period home mould removal service specialising in leafy established areas.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -504,7 +505,7 @@ export const Balwyn = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Recommended by eastern suburbs real estate agents specializing in period properties</span>
+                    <span>Recommended by eastern suburbs real estate agents specialising in period properties</span>
                   </li>
                 </ul>
               </CardContent>
@@ -546,19 +547,19 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 2: Heritage-Safe Containment & Character Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  Balwyn heritage properties require specialized containment strategies that protect original features, period details, and established home character while maintaining property functionality and neighborhood standards throughout treatment.
+                  Balwyn heritage properties require specialised containment strategies that protect original features, period details, and established home character while maintaining property functionality and neighborhood standards throughout treatment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage property negative air systems protecting period features and finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Original feature protection with conservation-grade protective barriers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Neighborhood character maintenance ensuring continued property functionality</span>
                   </li>
                 </ul>
@@ -571,7 +572,7 @@ export const Balwyn = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 3: Safe Removal & Heritage Preservation</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our removal process for Balwyn properties utilizes heritage-appropriate methods suitable for period homes, ensuring effective treatment while maintaining property value, character features, and established neighborhood standards.
+                  Our removal process for Balwyn properties utilises heritage-appropriate methods suitable for period homes, ensuring effective treatment while maintaining property value, character features, and established neighbourhood standards.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -598,15 +599,15 @@ export const Balwyn = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage home dehumidification systems suitable for original materials and contents</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Period building material-appropriate drying protecting character features</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Continuous monitoring ensuring optimal heritage living environment conditions</span>
                   </li>
                 </ul>
@@ -622,19 +623,19 @@ export const Balwyn = () => {
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Independent laboratory air quality testing meeting heritage property health standards</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Period building material moisture verification and character feature preservation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Comprehensive clearance certificates for heritage property insurance documentation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>12-month treatment warranty with heritage property service support included</span>
                 </li>
               </ul>
@@ -651,7 +652,7 @@ export const Balwyn = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide heritage property-specialized mould removal services throughout Balwyn and nearby eastern suburbs Melbourne areas including:
+                We provide heritage property-specialised mould removal services throughout Balwyn and nearby eastern suburbs Melbourne areas including:
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -682,11 +683,11 @@ export const Balwyn = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Heritage property emergency:</span>
-                    <span className="font-semibold text-blue-600">Same-day available</span>
+                    <span className="font-semibold text-primary">Same-day available</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard heritage appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -703,70 +704,40 @@ export const Balwyn = () => {
         </div>
       </section>
 
-      {/* Related Eastern Suburbs */}
-      <SuburbClusterLinks currentLocation="Balwyn" />
-
-      {/* Contact Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Balwyn Heritage Property Mould Inspection Today</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Protect your Balwyn heritage or period home from moisture damage and environmental health risks. Expert assessment and remediation for established properties, period homes, and leafy street residences.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Contact</h3>
-                  <div className="space-y-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-accent-blue" />
-                      <span>admin@mouldandrestoration.com.au</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Heritage property emergency response available</span>
-                    </div>
+      {/* Heritage Property Quick Contact */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center space-y-8">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Process</h3>
+                <div className="space-y-3 text-left text-sm">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
+                    <span>Free heritage property consultation</span>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Process</h3>
-                  <div className="space-y-3 text-left text-sm">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
-                      <span>Free heritage property consultation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
-                      <span>Same-day Balwyn inspection scheduling</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
-                      <span>Heritage-safe assessment and period home evaluation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
-                      <span>Character-preserving remediation methods</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
-                      <span>Final testing and heritage property certification</span>
-                    </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
+                    <span>Same-day Balwyn inspection scheduling</span>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
+                    <span>Heritage-safe assessment and period home evaluation</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
+                    <span>Character-preserving remediation methods</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
+                    <span>Final testing and heritage property certification</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Balwyn Professional Service: 1800 954 117
               </Button>
@@ -782,6 +753,13 @@ export const Balwyn = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Balwyn"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

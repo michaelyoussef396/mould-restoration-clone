@@ -40,12 +40,12 @@ export const Bulleen = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Bulleen</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const Bulleen = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Bulleen</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const Bulleen = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Established suburb service</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const Bulleen = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -169,7 +169,7 @@ export const Bulleen = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Bulleen Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Yarra Bend Park to Bulleen Plaza, Bulleen's riverside community character requires specialized mould treatment approaches that preserve family home environments while managing the unique moisture challenges of parkland proximity living.
+                  From Yarra Bend Park to Bulleen Plaza, Bulleen's riverside community character requires specialised mould treatment approaches that preserve family home environments while managing the unique moisture challenges of parkland proximity living.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -269,15 +269,15 @@ export const Bulleen = () => {
                 <p className="text-muted-foreground mb-4">1960s-1990s brick veneer and weatherboard family homes with established gardens, original fixtures, and mature landscaping.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family-safe treatment methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Established garden preservation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Original feature protection</span>
                   </div>
                 </div>
@@ -287,18 +287,18 @@ export const Bulleen = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Riverside Properties</h3>
-                <p className="text-muted-foreground mb-4">Homes with Yarra River access or proximity, parkland views, and elevated groundwater considerations requiring specialized moisture management.</p>
+                <p className="text-muted-foreground mb-4">Homes with Yarra River access or proximity, parkland views, and elevated groundwater considerations requiring specialised moisture management.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Groundwater moisture control</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Flood plain consideration</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Riverside humidity management</span>
                   </div>
                 </div>
@@ -311,15 +311,15 @@ export const Bulleen = () => {
                 <p className="text-muted-foreground mb-4">Contemporary townhouse complexes and unit developments with modern amenities, shared facilities, and strata management requirements.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Strata coordination service</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Shared facility protection</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Multi-resident scheduling</span>
                   </div>
                 </div>
@@ -329,18 +329,18 @@ export const Bulleen = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Community Facilities</h3>
-                <p className="text-muted-foreground mb-4">Local community centers, sporting facilities, and commercial properties serving the Bulleen residential community with specialized requirements.</p>
+                <p className="text-muted-foreground mb-4">Local community centers, sporting facilities, and commercial properties serving the Bulleen residential community with specialised requirements.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Community-focused service</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Minimal disruption protocols</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Public facility compliance</span>
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export const Bulleen = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family-Friendly Containment Protocols</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bulleen's established residential community requires specialized containment strategies that protect family members, preserve established gardens, and maintain the peaceful neighbourhood character during treatment.
+                  Bulleen's established residential community requires specialised containment strategies that protect family members, preserve established gardens, and maintain the peaceful neighbourhood character during treatment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -413,7 +413,7 @@ export const Bulleen = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Established Property-Appropriate Mould Removal</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bulleen's established properties require specialized techniques that eliminate mould colonies while preserving original features, maintaining family living spaces, and adapting to varied building ages and construction methods.
+                  Bulleen's established properties require specialised techniques that eliminate mould colonies while preserving original features, maintaining family living spaces, and adapting to varied building ages and construction methods.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -444,19 +444,19 @@ export const Bulleen = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality certification for family safety</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Moisture content verification across varied established materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Riverside property environmental clearance documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month community-focused treatment warranty</span>
                   </li>
                 </ul>
@@ -481,7 +481,7 @@ export const Bulleen = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Bulleen riverside community mould issues</span>
+                    <span>5+ years specialising in Bulleen riverside community mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -536,19 +536,19 @@ export const Bulleen = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved residential claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Bulleen mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional remediation services</span>
                   </li>
                 </ul>
@@ -655,19 +655,19 @@ export const Bulleen = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Service aging HVAC systems quarterly to maintain family comfort standards</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Monitor riverside groundwater impacts on foundation and basement areas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Maintain established garden drainage systems and root management</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Inspect building materials regularly for age-related moisture susceptibility</span>
                   </li>
                 </ul>
@@ -719,7 +719,7 @@ export const Bulleen = () => {
                 Serving Bulleen's riverside community families, established residential properties, and parkland proximity homes with Melbourne's most trusted neighbourhood-focused mould removal specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Professional Service - Same-day Available 7am-7pm: 1800 954 117
                 </Button>

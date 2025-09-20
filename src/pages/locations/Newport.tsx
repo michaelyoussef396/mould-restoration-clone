@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
-import { LocationPageSEO } from '@/components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/StructuredData';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 
 export default function NewportMouldRemoval() {
   return (
@@ -41,7 +41,7 @@ export default function NewportMouldRemoval() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
                 Mould Removal Newport Melbourne
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function NewportMouldRemoval() {
                 Expert solutions for industrial heritage properties and growing residential areas in the 3015 region.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <Phone className="mr-2 h-5 w-5" />
                   Call 1800 954 117
                 </Button>
@@ -63,31 +63,31 @@ export default function NewportMouldRemoval() {
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="h-8 w-8 text-blue-600" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
+                <div className="font-semibold text-charcoal">Same Day</div>
+                <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5+ Years</div>
-                <div className="text-sm text-gray-600">Experience</div>
+                <div className="font-semibold text-charcoal">5+ Years</div>
+                <div className="text-sm text-professional">Experience</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="h-8 w-8 text-blue-600" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Properties Restored</div>
+                <div className="font-semibold text-charcoal">100+</div>
+                <div className="text-sm text-professional">Properties Restored</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Star className="h-8 w-8 text-blue-600" />
+                  <Star className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5.0 Stars</div>
-                <div className="text-sm text-gray-600">50+ Reviews</div>
+                <div className="font-semibold text-charcoal">5.0 Stars</div>
+                <div className="text-sm text-professional">50+ Reviews</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function NewportMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Local Newport Area Expertise
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -124,40 +124,40 @@ export default function NewportMouldRemoval() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <MapPin className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">Postcode: 3015</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">8km from Melbourne CBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:order-first">
-                <div className="bg-blue-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <div className="bg-columbia p-8 rounded-2xl">
+                  <h3 className="text-2xl font-semibold text-charcoal mb-6">
                     Newport Property Specialisation
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Industrial heritage conversions</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Railway corridor properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Growing residential developments</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Worker's cottage restorations</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Mixed-use building complexes</span>
                     </li>
                   </ul>
@@ -171,7 +171,7 @@ export default function NewportMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Newport Property Types We Service
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -183,7 +183,7 @@ export default function NewportMouldRemoval() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Industrial Heritage Conversions
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -191,7 +191,7 @@ export default function NewportMouldRemoval() {
                     understanding of industrial construction methods combined with modern residential
                     requirements. We provide heritage-aware moisture management solutions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Warehouse conversion moisture control</li>
                     <li>• Industrial material compatibility</li>
                     <li>• High ceiling ventilation management</li>
@@ -202,7 +202,7 @@ export default function NewportMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Railway Corridor Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -210,7 +210,7 @@ export default function NewportMouldRemoval() {
                     from vibration, industrial activity, and transport corridor moisture patterns.
                     Our specialists provide railway-aware property protection.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Rail vibration impact assessment</li>
                     <li>• Transport corridor moisture management</li>
                     <li>• Industrial proximity considerations</li>
@@ -221,7 +221,7 @@ export default function NewportMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     New Residential Developments
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -229,7 +229,7 @@ export default function NewportMouldRemoval() {
                     built on former industrial land. We provide comprehensive moisture management
                     for these contemporary developments with unique ground conditions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Former industrial site considerations</li>
                     <li>• Modern construction moisture control</li>
                     <li>• Ground contamination awareness</li>
@@ -246,7 +246,7 @@ export default function NewportMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Newport Industrial Climate Challenges
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -272,35 +272,35 @@ export default function NewportMouldRemoval() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">
                   Industrial-Residential Moisture Patterns
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-600 rounded-full w-3 h-3 mt-2"></div>
+                    <div className="bg-primary rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Winter (Jun-Aug)</div>
+                      <div className="font-semibold text-charcoal">Winter (Jun-Aug)</div>
                       <div className="text-sm text-gray-700">Industrial building heating challenges and rail moisture</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-green-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Spring (Sep-Nov)</div>
+                      <div className="font-semibold text-charcoal">Spring (Sep-Nov)</div>
                       <div className="text-sm text-gray-700">Ground moisture from former industrial sites</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-yellow-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Summer (Dec-Feb)</div>
+                      <div className="font-semibold text-charcoal">Summer (Dec-Feb)</div>
                       <div className="text-sm text-gray-700">Warehouse conversion ventilation and cooling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-orange-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Autumn (Mar-May)</div>
+                      <div className="font-semibold text-charcoal">Autumn (Mar-May)</div>
                       <div className="text-sm text-gray-700">Transport corridor drainage and industrial runoff</div>
                     </div>
                   </div>
@@ -314,7 +314,7 @@ export default function NewportMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Why Newport Residents Choose Mould & Restoration Co.
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -326,8 +326,8 @@ export default function NewportMouldRemoval() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Industrial Expertise</h3>
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Industrial Expertise</h3>
                   <p className="text-sm text-gray-700">
                     Specialist knowledge of industrial conversions and heritage buildings.
                   </p>
@@ -336,8 +336,8 @@ export default function NewportMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Transition Awareness</h3>
+                  <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Transition Awareness</h3>
                   <p className="text-sm text-gray-700">
                     Understanding of Newport's evolution from industrial to residential.
                   </p>
@@ -346,8 +346,8 @@ export default function NewportMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Rapid Response</h3>
                   <p className="text-sm text-gray-700">
                     Same-day professional service throughout rail corridors and growth areas.
                   </p>
@@ -356,8 +356,8 @@ export default function NewportMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Proven Results</h3>
+                  <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Proven Results</h3>
                   <p className="text-sm text-gray-700">
                     100+ successful restorations with authentic 5.0-star reviews from locals.
                   </p>
@@ -371,7 +371,7 @@ export default function NewportMouldRemoval() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Newport Industrial-Residential Property Care
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -383,24 +383,24 @@ export default function NewportMouldRemoval() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Industrial Conversion Care
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor moisture in converted warehouse spaces</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Maintain industrial ventilation systems for residential use</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address ground moisture from former industrial use</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Regular inspection of heritage industrial features</span>
                     </li>
                   </ul>
@@ -409,24 +409,24 @@ export default function NewportMouldRemoval() {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Transport Corridor Management
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Manage vibration impacts on building seals</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address rail corridor drainage and runoff</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor industrial activity impacts on air quality</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Professional assessment for transport proximity factors</span>
                     </li>
                   </ul>
@@ -448,11 +448,11 @@ export default function NewportMouldRemoval() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 1800 954 117 Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4">
                 Free Inspection Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

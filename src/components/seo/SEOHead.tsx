@@ -66,7 +66,7 @@ const generateMelbourneKeywords = (location?: string, service?: string, emergenc
       removal: ["mould removal", "mould elimination", "comprehensive mould removal"],
       remediation: ["mould remediation", "subfloor mould", "mould restoration", "moisture control"],
       emergency: ["same day mould", "professional mould removal", "urgent mould removal", "rapid professional response"],
-      fogging: ["fogging sanitisation", "mould fogging", "ULV fogging", "sanitization treatment"]
+      fogging: ["fogging sanitisation", "mould fogging", "ULV fogging", "sanitisation treatment"]
     };
 
     const serviceSpecific = serviceKeywords[service as keyof typeof serviceKeywords] || [];
@@ -126,7 +126,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   noindex = false
 }) => {
 
-  // Generate Melbourne-optimized content if not provided
+  // Generate Melbourne-optimised content if not provided
   const locationContent = location !== "Melbourne" && service ?
     generateLocationContent(service, location, emergency) : null;
 
@@ -137,16 +137,45 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
   const finalKeywords = keywords || generateMelbourneKeywords(location, service, emergency);
 
-  // Generate canonical URL with proper SSR handling
-  const finalCanonicalUrl = canonicalUrl ?
-    (canonicalUrl.startsWith('http') ? canonicalUrl : `${DEFAULT_SEO.baseUrl}${canonicalUrl}`) :
-    `${DEFAULT_SEO.baseUrl}/`;
+  // Generate canonical URL with proper SSR handling and standardization
+  const generateCanonicalUrl = () => {
+    if (canonicalUrl) {
+      // If it's already a full URL, use it
+      if (canonicalUrl.startsWith('http')) {
+        return canonicalUrl;
+      }
+      // If it's a relative path, add base URL
+      return `${DEFAULT_SEO.baseUrl}${canonicalUrl.startsWith('/') ? canonicalUrl : '/' + canonicalUrl}`;
+    }
 
-  // Open Graph optimizations
+    // Generate location page URLs with consistent pattern
+    if (location && location !== "Melbourne" && service) {
+      return `${DEFAULT_SEO.baseUrl}/services/mould-removal-${location.toLowerCase().replace(/\s+/g, '-')}`;
+    }
+
+    // Generate service page URLs
+    if (service && service !== "removal") {
+      const serviceSlugMap = {
+        'inspection': 'professional-mould-inspections',
+        'remediation': 'subfloor-mould-remediation',
+        'emergency': 'comprehensive-mould-removal',
+        'fogging': 'advanced-fogging-sanitisation'
+      };
+      const serviceSlug = serviceSlugMap[service as keyof typeof serviceSlugMap] || service.toLowerCase().replace(/\s+/g, '-');
+      return `${DEFAULT_SEO.baseUrl}/services/${serviceSlug}`;
+    }
+
+    // Default to homepage
+    return `${DEFAULT_SEO.baseUrl}/`;
+  };
+
+  const finalCanonicalUrl = typeof window !== 'undefined' ? generateCanonicalUrl() : generateCanonicalUrl();
+
+  // Open Graph optimisations
   const finalOgTitle = ogTitle || finalTitle;
   const finalOgDescription = ogDescription || finalDescription;
 
-  // Twitter Card optimizations
+  // Twitter Card optimisations
   const finalTwitterTitle = twitterTitle || finalTitle;
   const finalTwitterDescription = twitterDescription || finalDescription;
   const finalTwitterImage = twitterImage || ogImage;

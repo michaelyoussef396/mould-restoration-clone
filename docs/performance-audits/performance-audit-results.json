@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-09-17T10:45:50.414Z",
+  "summary": {
+    "desktop": {},
+    "mobile": {}
+  },
+  "detailed": [],
+  "issues": [],
+  "recommendations": [
+    "Implement image optimization with WebP format and proper sizing",
+    "Add resource hints (preload, prefetch) for critical assets",
+    "Enable code splitting for location pages to reduce initial bundle size",
+    "Implement lazy loading for below-the-fold images",
+    "Add proper width/height attributes to prevent layout shifts",
+    "Consider using a CDN for faster asset delivery in Australia",
+    "Optimize font loading with font-display: swap",
+    "Minimize render-blocking JavaScript and CSS",
+    "Implement service worker for caching critical resources",
+    "Use React.memo and useMemo for expensive components"
+  ]
+}

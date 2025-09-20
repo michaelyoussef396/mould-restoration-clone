@@ -28,7 +28,7 @@ export const Mulgrave = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Mulgrave Melbourne. IICRC certified technicians specializing in family suburb properties, Jells Park proximity homes, and established residential neighborhoods."
+        description="Professional mould removal and inspection services in Mulgrave Melbourne. IICRC certified technicians specialising in family suburb properties, Jells Park proximity homes, and established residential neighborhoods."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Mulgrave = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Mulgrave</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Mulgrave = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Mulgrave = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Mulgrave</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Family suburb & Jells Park proximity expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Mulgrave = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -184,14 +184,14 @@ export const Mulgrave = () => {
                     <li>• Established neighborhood density moisture transfer effects</li>
                     <li>• Family suburb pool and spa area humidity management needs</li>
                     <li>• Wellington Road corridor drainage patterns affecting nearby homes</li>
-                    <li>• Suburban shopping center proximity affecting local drainage</li>
+                    <li>• Suburban shopping centre proximity affecting local drainage</li>
                     <li>• Multi-decade infrastructure aging requiring building adaptation</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Mulgrave Family Suburb Environment</h3>
               <p className="text-gray-700 mb-6">
                 As one of Melbourne's most established family suburbs, Mulgrave presents unique mould challenges related to long-term family living patterns, mature landscaping, and evolving home improvement needs spanning decades of family ownership.
@@ -199,7 +199,7 @@ export const Mulgrave = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Long-Term Family Living Patterns</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Multi-generational households creating complex moisture management needs</li>
                     <li>• Family swimming pools and entertaining areas requiring seasonal management</li>
                     <li>• Long-term pet ownership affecting indoor air quality and moisture patterns</li>
@@ -208,7 +208,7 @@ export const Mulgrave = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Mature Suburban Characteristics</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Established garden irrigation systems affecting foundation moisture</li>
                     <li>• Mature street tree root systems impacting property drainage</li>
                     <li>• Decades-old construction requiring modern moisture management updates</li>
@@ -229,15 +229,15 @@ export const Mulgrave = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">1970s-80s Family Homes</h5>
-                      <p className="text-sm text-gray-600">Original family homes from Mulgrave's development era requiring modern moisture management while maintaining character and accommodation large families.</p>
+                      <p className="text-sm text-professional">Original family homes from Mulgrave's development era requiring modern moisture management while maintaining character and accommodation large families.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Multi-Generational Family Houses</h5>
-                      <p className="text-sm text-gray-600">Extended family homes with in-law accommodations requiring comprehensive moisture control addressing varied living patterns and increased occupancy.</p>
+                      <p className="text-sm text-professional">Extended family homes with in-law accommodations requiring comprehensive moisture control addressing varied living patterns and increased occupancy.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Family Estates with Swimming Pools</h5>
-                      <p className="text-sm text-gray-600">Properties with pool and spa areas requiring specialized humidity management addressing recreational water features and year-round family activities.</p>
+                      <p className="text-sm text-professional">Properties with pool and spa areas requiring specialised humidity management addressing recreational water features and year-round family activities.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const Mulgrave = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Contemporary Family Townhouses</h5>
-                      <p className="text-sm text-gray-600">Modern family developments requiring advanced moisture management systems suitable for contemporary family living with energy efficiency and comfort priorities.</p>
+                      <p className="text-sm text-professional">Modern family developments requiring advanced moisture management systems suitable for contemporary family living with energy efficiency and comfort priorities.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Renovated Family Homes</h5>
-                      <p className="text-sm text-gray-600">Updated family properties combining heritage charm with modern amenities requiring balanced mould solutions addressing both old and new building elements.</p>
+                      <p className="text-sm text-professional">Updated family properties combining heritage charm with modern amenities requiring balanced mould solutions addressing both old and new building elements.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Family Cluster Housing</h5>
-                      <p className="text-sm text-gray-600">Modern family communities near parklands requiring moisture control addressing shared walls, communal areas, and family-focused outdoor spaces.</p>
+                      <p className="text-sm text-professional">Modern family communities near parklands requiring moisture control addressing shared walls, communal areas, and family-focused outdoor spaces.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const Mulgrave = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Established family home and child-safe treatment specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Jells Park proximity environmental understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Mature suburban infrastructure and established neighborhood expertise</span>
                   </li>
                 </ul>
@@ -301,15 +301,15 @@ export const Mulgrave = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for established family property types</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Family suburban health and safety protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const Mulgrave = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Mulgrave</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Mulgrave</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Family-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Family-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Mulgrave Families</div>
+                  <div className="text-sm text-professional">Rating from Mulgrave Families</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const Mulgrave = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Mulgrave Melbourne assistance. Our family suburb specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const Mulgrave = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Mulgrave Inspection</h3>

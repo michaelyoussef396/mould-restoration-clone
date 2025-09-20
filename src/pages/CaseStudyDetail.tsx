@@ -62,7 +62,7 @@ const CaseStudyDetail = () => {
           },
           {
             title: 'HVAC System Decontamination',
-            description: 'Professional cleaning and sanitization of the entire ducted heating system to eliminate spores and prevent recontamination.'
+            description: 'Professional cleaning and sanitisation of the entire ducted heating system to eliminate spores and prevent recontamination.'
           },
           {
             title: 'Final Clearance Testing',
@@ -146,7 +146,7 @@ const CaseStudyDetail = () => {
           },
           {
             title: 'Salvage vs. Disposal Analysis',  
-            description: 'Professional assessment of all affected items, categorizing what could be restored versus what required safe disposal to minimize insurance costs.'
+            description: 'Professional assessment of all affected items, categorising what could be restored versus what required safe disposal to minimise insurance costs.'
           },
           {
             title: 'Systematic Water Extraction',
@@ -414,7 +414,7 @@ const CaseStudyDetail = () => {
         • Insurance considerations for heritage property coverage
         • Maintaining property's heritage listing status
 
-        This required specialized expertise in both mold remediation and heritage conservation techniques.`
+        This required specialised expertise in both mold remediation and heritage conservation techniques.`
       },
       solution: {
         title: 'Heritage-Sensitive Remediation Approach',

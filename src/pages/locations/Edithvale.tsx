@@ -47,7 +47,7 @@ export const Edithvale = () => {
       <Navigation />
 
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -78,7 +78,7 @@ export const Edithvale = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Professional service to Edithvale</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -92,7 +92,7 @@ export const Edithvale = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Salt air damage treatment</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -103,7 +103,7 @@ export const Edithvale = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Edithvale Professional Service: 1800 954 117
               </Button>
@@ -157,19 +157,19 @@ export const Edithvale = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer sea breezes carrying salt moisture affecting weatherboard beach cottages</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter storm impact on beachside properties within 500m of the bay</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coastal humidity year-round affecting properties near Edithvale Beach</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Sandy soil drainage challenges affecting foundation moisture levels</span>
                   </li>
                 </ul>
@@ -180,7 +180,7 @@ export const Edithvale = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Edithvale Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Edithvale Beach Reserve to the established shopping precinct along Nepean Highway, the suburb's family-friendly community presents specific mould challenges. Beachside properties and retirement living require specialized care for aging structures and vulnerable occupants.
+                  From Edithvale Beach Reserve to the established shopping precinct along Nepean Highway, the suburb's family-friendly community presents specific mould challenges. Beachside properties and retirement living require specialised care for aging structures and vulnerable occupants.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -246,23 +246,23 @@ export const Edithvale = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Salt spray damage to building seals creating moisture entry points</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Sandy soil drainage affecting foundation moisture in beach community homes</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Sea breeze moisture penetration through aging weather seals</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Retirement village properties with vulnerable occupant health considerations</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Family home maintenance gaps during holiday periods and property transitions</span>
                   </li>
                 </ul>
@@ -281,14 +281,14 @@ export const Edithvale = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Beach Cottages</h3>
-                <p className="text-muted-foreground mb-4">Original weatherboard cottages requiring specialized coastal moisture management and salt air protection.</p>
+                <p className="text-muted-foreground mb-4">Original weatherboard cottages requiring specialised coastal moisture management and salt air protection.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Coastal-appropriate treatments</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Weatherboard preservation</span>
                   </div>
                 </div>
@@ -301,11 +301,11 @@ export const Edithvale = () => {
                 <p className="text-muted-foreground mb-4">Established brick and modern homes with family living requirements and coastal exposure considerations.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family-safe treatments</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Child-friendly processes</span>
                   </div>
                 </div>
@@ -318,11 +318,11 @@ export const Edithvale = () => {
                 <p className="text-muted-foreground mb-4">Aged care facilities and retirement villages requiring sensitive treatment for vulnerable occupants.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Sensitive occupant care</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Minimal disruption protocols</span>
                   </div>
                 </div>
@@ -364,23 +364,23 @@ export const Edithvale = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Containment & Community Safety</h3>
                 <p className="text-muted-foreground mb-4">
-                  Edithvale's established beach community requires specialized containment strategies that protect vulnerable residents while preventing mould spore migration in dense residential areas and retirement facilities.
+                  Edithvale's established beach community requires specialised containment strategies that protect vulnerable residents while preventing mould spore migration in dense residential areas and retirement facilities.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Negative air pressure systems designed for coastal community properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Beach cottage protective barriers preserving coastal architecture</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Salt-resistant equipment and materials for beachside conditions</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Retirement community resident protection protocols and health safeguards</span>
                   </li>
                 </ul>
@@ -395,7 +395,7 @@ export const Edithvale = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Coastal-Safe Mould Removal Methods</h3>
                 <p className="text-muted-foreground mb-4">
-                  Edithvale's coastal properties demand specialized removal techniques that account for salt air corrosion, beach cottage preservation, and sensitive occupant considerations in retirement living facilities.
+                  Edithvale's coastal properties demand specialised removal techniques that account for salt air corrosion, beach cottage preservation, and sensitive occupant considerations in retirement living facilities.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -426,19 +426,19 @@ export const Edithvale = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality testing certified for coastal properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Moisture content verification in beach cottage building materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Clearance certificates for insurance claims and property sales</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month treatment warranty with coastal condition considerations</span>
                   </li>
                 </ul>
@@ -463,7 +463,7 @@ export const Edithvale = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Edithvale coastal property mould issues</span>
+                    <span>5+ years specialising in Edithvale coastal property mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -489,19 +489,19 @@ export const Edithvale = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and water damage restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Edithvale postcode 3196</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service scheduling 7 days per week</span>
                   </li>
                 </ul>
@@ -518,19 +518,19 @@ export const Edithvale = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved coastal property claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive salt air damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Edithvale mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional coastal remediation services</span>
                   </li>
                 </ul>
@@ -604,7 +604,7 @@ export const Edithvale = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Edithvale Salt Air & Ventilation Management</h3>
                 <p className="text-muted-foreground mb-4">
-                  Edithvale's coastal properties require specialized ventilation strategies that account for constant salt air exposure while managing moisture levels. Beach cottages and retirement facilities require balanced approaches.
+                  Edithvale's coastal properties require specialised ventilation strategies that account for constant salt air exposure while managing moisture levels. Beach cottages and retirement facilities require balanced approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -638,7 +638,7 @@ export const Edithvale = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide coastal-specialized mould removal services throughout Edithvale and nearby beachside suburbs including:
+                We provide coastal-specialised mould removal services throughout Edithvale and nearby beachside suburbs including:
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -669,11 +669,11 @@ export const Edithvale = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional response:</span>
-                    <span className="font-semibold text-blue-600">Professional service available</span>
+                    <span className="font-semibold text-primary">Professional service available</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Next day booking</span>
+                    <span className="font-semibold text-success">Next day booking</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -705,7 +705,7 @@ export const Edithvale = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Coastal Property Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service 7am-7pm daily)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -750,7 +750,7 @@ export const Edithvale = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Edithvale Professional Service: 1800 954 117
               </Button>

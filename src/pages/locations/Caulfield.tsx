@@ -43,12 +43,12 @@ export const Caulfield = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Caulfield</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -68,13 +68,13 @@ export const Caulfield = () => {
               Professional Mould Removal & Inspection in Caulfield, Melbourne
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90">
-              Professional mould removal in Caulfield Melbourne with same-day response. IICRC-certified technicians specializing in educational precinct properties, heritage homes, and modern family residences. 5.0 stars, 100+ properties restored.
+              Professional mould removal in Caulfield Melbourne with same-day response. IICRC-certified technicians specialising in educational precinct properties, heritage homes, and modern family residences. 5.0 stars, 100+ properties restored.
             </p>
 
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Caulfield</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ export const Caulfield = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Glenhuntly Road commercial solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -99,7 +99,7 @@ export const Caulfield = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -119,7 +119,7 @@ export const Caulfield = () => {
 
           <div className="mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Our mould removal Caulfield Melbourne team understands the unique challenges facing this vibrant educational hub. Located in postcode 3162, Caulfield combines university campus properties with established family homes, creating specific moisture management challenges. With a mix of student accommodation, heritage residences, and the busy Glenhuntly Road commercial strip, Caulfield presents distinctive mould risks that require specialized educational community expertise.
+              Our mould removal Caulfield Melbourne team understands the unique challenges facing this vibrant educational hub. Located in postcode 3162, Caulfield combines university campus properties with established family homes, creating specific moisture management challenges. With a mix of student accommodation, heritage residences, and the busy Glenhuntly Road commercial strip, Caulfield presents distinctive mould risks that require specialised educational community expertise.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
@@ -189,7 +189,7 @@ export const Caulfield = () => {
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Student-Safe Service</h4>
                 <p className="text-muted-foreground mb-4">
-                  All our technicians are IICRC certified with specialized training in educational community and high-occupancy property remediation techniques. We understand Caulfield residents and students need flexible service that accommodates academic schedules. Our mould removal Caulfield Melbourne service includes comprehensive student safety assessments.
+                  All our technicians are IICRC certified with specialised training in educational community and high-occupancy property remediation techniques. We understand Caulfield residents and students need flexible service that accommodates academic schedules. Our mould removal Caulfield Melbourne service includes comprehensive student safety assessments.
                 </p>
               </div>
 
@@ -254,7 +254,7 @@ export const Caulfield = () => {
               <h3 className="text-2xl font-semibold mb-6 text-primary">Student-Safe Remediation Methods</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -309,7 +309,7 @@ export const Caulfield = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
-                    <span>Educational precinct ventilation optimization</span>
+                    <span>Educational precinct ventilation optimisation</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
@@ -381,14 +381,14 @@ export const Caulfield = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Student Accommodation Properties</h3>
-                <p className="text-muted-foreground mb-4">Purpose-built and converted student housing requiring specialized high-occupancy treatment approaches.</p>
+                <p className="text-muted-foreground mb-4">Purpose-built and converted student housing requiring specialised high-occupancy treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Student-safe treatment methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Academic schedule accommodation</span>
                   </div>
                 </div>
@@ -401,11 +401,11 @@ export const Caulfield = () => {
                 <p className="text-muted-foreground mb-4">Family homes within the educational precinct requiring community-sensitive treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Educational community assessment</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family and student consideration</span>
                   </div>
                 </div>
@@ -418,11 +418,11 @@ export const Caulfield = () => {
                 <p className="text-muted-foreground mb-4">Commercial properties serving the educational community requiring student-friendly treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Educational business continuity focus</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Student-serving commercial solutions</span>
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export const Caulfield = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -539,11 +539,11 @@ export const Caulfield = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -575,7 +575,7 @@ export const Caulfield = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Student-Academic Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -620,7 +620,7 @@ export const Caulfield = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Caulfield Educational Professional Service: 1800 954 117
               </Button>

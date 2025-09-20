@@ -40,12 +40,12 @@ export const Truganina = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Truganina</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +71,7 @@ export const Truganina = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Truganina</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export const Truganina = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Modern estate service</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ export const Truganina = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -169,12 +169,12 @@ export const Truganina = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Truganina Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From the growing Truganina community hub to proximity to major transport links, Truganina's rapid development requires specialized mould treatment approaches that accommodate new construction standards while serving growing family communities.
+                  From the growing Truganina community hub to proximity to major transport links, Truganina's rapid development requires specialised mould treatment approaches that accommodate new construction standards while serving growing family communities.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>New construction requiring specialized modern building material treatment</span>
+                    <span>New construction requiring specialised modern building material treatment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -266,18 +266,18 @@ export const Truganina = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">New Family Homes</h3>
-                <p className="text-muted-foreground mb-4">Contemporary 2010s-2020s family homes with modern construction, integrated systems, and warranty coverage requiring specialized new-build treatment approaches.</p>
+                <p className="text-muted-foreground mb-4">Contemporary 2010s-2020s family homes with modern construction, integrated systems, and warranty coverage requiring specialised new-build treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Warranty-compliant methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern system integration</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family-safe treatment priority</span>
                   </div>
                 </div>
@@ -290,15 +290,15 @@ export const Truganina = () => {
                 <p className="text-muted-foreground mb-4">Large-scale housing estates with integrated infrastructure, shared facilities, and body corporate management requiring coordinated service approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Body corporate liaison</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Multi-property coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Infrastructure-aware treatment</span>
                   </div>
                 </div>
@@ -311,15 +311,15 @@ export const Truganina = () => {
                 <p className="text-muted-foreground mb-4">Contemporary townhouse developments with shared walls, common areas, and strata management requiring neighbour-considerate service protocols.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Strata management coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Shared wall moisture control</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Community-friendly scheduling</span>
                   </div>
                 </div>
@@ -332,15 +332,15 @@ export const Truganina = () => {
                 <p className="text-muted-foreground mb-4">Mixed-use and commercial properties serving the growing Truganina community with business continuity requirements and commercial standards.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Business continuity focus</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Commercial compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>After-hours service available</span>
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export const Truganina = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Family Community-Focused Containment</h3>
                 <p className="text-muted-foreground mb-4">
-                  Truganina's young family communities require specialized containment strategies that protect growing families, preserve modern finishes, and coordinate with active neighbourhood life and contemporary living standards.
+                  Truganina's young family communities require specialised containment strategies that protect growing families, preserve modern finishes, and coordinate with active neighbourhood life and contemporary living standards.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -413,7 +413,7 @@ export const Truganina = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Contemporary Construction Mould Removal</h3>
                 <p className="text-muted-foreground mb-4">
-                  Truganina's new construction properties require specialized techniques that eliminate mould colonies while preserving warranty coverage, modern building systems, and contemporary finishes.
+                  Truganina's new construction properties require specialised techniques that eliminate mould colonies while preserving warranty coverage, modern building systems, and contemporary finishes.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -444,19 +444,19 @@ export const Truganina = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality certification for young families</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Modern construction moisture content verification</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Developer warranty-compatible completion documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month new construction treatment warranty</span>
                   </li>
                 </ul>
@@ -481,7 +481,7 @@ export const Truganina = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Truganina new development mould issues</span>
+                    <span>5+ years specialising in Truganina new development mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -536,19 +536,19 @@ export const Truganina = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved new construction claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Developer warranty coordination and documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Truganina mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional remediation services</span>
                   </li>
                 </ul>
@@ -622,7 +622,7 @@ export const Truganina = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Truganina Humidity & Ventilation Management</h3>
                 <p className="text-muted-foreground mb-4">
-                  Truganina's new developments require specific ventilation strategies that optimize modern HVAC systems, accommodate young family lifestyles, and maintain warranty compliance in contemporary construction.
+                  Truganina's new developments require specific ventilation strategies that optimise modern HVAC systems, accommodate young family lifestyles, and maintain warranty compliance in contemporary construction.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -655,19 +655,19 @@ export const Truganina = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Service modern HVAC systems according to manufacturer warranties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Monitor new construction settlement effects on moisture barriers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Maintain developing drainage systems and stormwater infrastructure</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coordinate with body corporate for shared facility maintenance</span>
                   </li>
                 </ul>
@@ -716,10 +716,10 @@ export const Truganina = () => {
             <div className="bg-gradient-to-r from-primary/10 to-accent-blue/10 rounded-lg p-8 mb-8">
               <h3 className="text-2xl font-bold text-primary mb-4 text-center">Truganina Melbourne Mould Professional Service - Same-day Available 7am-7pm</h3>
               <p className="text-center text-muted-foreground mb-6">
-                Serving Truganina's new development families, modern estate communities, and contemporary construction properties with Melbourne's most trusted growth corridor-specialized mould removal specialists.
+                Serving Truganina's new development families, modern estate communities, and contemporary construction properties with Melbourne's most trusted growth corridor-specialised mould removal specialists.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                   <Phone className="w-5 h-5 mr-2" />
                   Professional Service - Same-day Available 7am-7pm: 1800 954 117
                 </Button>

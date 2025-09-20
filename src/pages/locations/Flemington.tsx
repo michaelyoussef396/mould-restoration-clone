@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
-import { LocationPageSEO } from '@/components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/StructuredData';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 
 export default function FlemingtonMouldRemoval() {
   return (
@@ -41,7 +41,7 @@ export default function FlemingtonMouldRemoval() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
                 Mould Removal Flemington Melbourne
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function FlemingtonMouldRemoval() {
                 Expert solutions for racecourse properties and industrial-residential areas throughout the 3031 region.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <Phone className="mr-2 h-5 w-5" />
                   Call 1800 954 117
                 </Button>
@@ -63,31 +63,31 @@ export default function FlemingtonMouldRemoval() {
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="h-8 w-8 text-blue-600" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
+                <div className="font-semibold text-charcoal">Same Day</div>
+                <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5+ Years</div>
-                <div className="text-sm text-gray-600">Experience</div>
+                <div className="font-semibold text-charcoal">5+ Years</div>
+                <div className="text-sm text-professional">Experience</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="h-8 w-8 text-blue-600" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Properties Restored</div>
+                <div className="font-semibold text-charcoal">100+</div>
+                <div className="text-sm text-professional">Properties Restored</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Star className="h-8 w-8 text-blue-600" />
+                  <Star className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5.0 Stars</div>
-                <div className="text-sm text-gray-600">50+ Reviews</div>
+                <div className="font-semibold text-charcoal">5.0 Stars</div>
+                <div className="text-sm text-professional">50+ Reviews</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function FlemingtonMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Local Flemington Area Expertise
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -124,40 +124,40 @@ export default function FlemingtonMouldRemoval() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <MapPin className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">Postcode: 3031</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">4km from Melbourne CBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:order-first">
-                <div className="bg-blue-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <div className="bg-columbia p-8 rounded-2xl">
+                  <h3 className="text-2xl font-semibold text-charcoal mb-6">
                     Flemington Property Specialisation
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Racecourse proximity properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Industrial heritage conversions</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Event-impacted residential areas</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Mixed-use industrial residential</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Transport corridor properties</span>
                     </li>
                   </ul>
@@ -171,7 +171,7 @@ export default function FlemingtonMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Flemington Property Types We Service
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -183,7 +183,7 @@ export default function FlemingtonMouldRemoval() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Racecourse Proximity Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -191,7 +191,7 @@ export default function FlemingtonMouldRemoval() {
                     major racing events, particularly Melbourne Cup week. Our specialists provide
                     event-specific moisture management for these high-profile occasions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Melbourne Cup Carnival planning</li>
                     <li>• Event season moisture management</li>
                     <li>• Crowd impact assessment</li>
@@ -202,7 +202,7 @@ export default function FlemingtonMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Industrial Heritage Conversions
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -210,7 +210,7 @@ export default function FlemingtonMouldRemoval() {
                     understanding of industrial construction adapted for residential use. We provide
                     heritage-industrial moisture management solutions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Industrial conversion expertise</li>
                     <li>• Heritage warehouse treatment</li>
                     <li>• Mixed-use building solutions</li>
@@ -221,7 +221,7 @@ export default function FlemingtonMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Event-Impacted Residential Areas
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -229,7 +229,7 @@ export default function FlemingtonMouldRemoval() {
                     understanding of seasonal usage patterns and crowd impacts. We provide
                     event-aware residential moisture management.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Seasonal activity planning</li>
                     <li>• Event crowd impact management</li>
                     <li>• Residential comfort protection</li>
@@ -246,7 +246,7 @@ export default function FlemingtonMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Flemington Racing Event Climate Challenges
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -260,7 +260,7 @@ export default function FlemingtonMouldRemoval() {
                     <strong>Melbourne Cup season moisture management</strong> becomes critical
                     as autumn racing events bring increased humidity from crowds, temporary
                     facilities, and event-related activity. Properties near the racecourse
-                    require specialized preparation for these intense periods.
+                    require specialised preparation for these intense periods.
                   </p>
                   <p>
                     <strong>Year-round considerations</strong> include managing the effects of
@@ -272,35 +272,35 @@ export default function FlemingtonMouldRemoval() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">
                   Racing Season Moisture Patterns
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-600 rounded-full w-3 h-3 mt-2"></div>
+                    <div className="bg-primary rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Winter (Jun-Aug)</div>
+                      <div className="font-semibold text-charcoal">Winter (Jun-Aug)</div>
                       <div className="text-sm text-gray-700">Training season activity and industrial area moisture</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-green-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Spring (Sep-Nov)</div>
+                      <div className="font-semibold text-charcoal">Spring (Sep-Nov)</div>
                       <div className="text-sm text-gray-700">Melbourne Cup Carnival preparation and crowd buildup</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-yellow-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Summer (Dec-Feb)</div>
+                      <div className="font-semibold text-charcoal">Summer (Dec-Feb)</div>
                       <div className="text-sm text-gray-700">Post-carnival recovery and summer racing events</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-orange-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Autumn (Mar-May)</div>
+                      <div className="font-semibold text-charcoal">Autumn (Mar-May)</div>
                       <div className="text-sm text-gray-700">Peak Melbourne Cup season and maximum event impact</div>
                     </div>
                   </div>
@@ -314,7 +314,7 @@ export default function FlemingtonMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Why Flemington Residents Choose Mould & Restoration Co.
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -326,8 +326,8 @@ export default function FlemingtonMouldRemoval() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Racing Event Expertise</h3>
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Racing Event Expertise</h3>
                   <p className="text-sm text-gray-700">
                     Understanding of Melbourne Cup and racing season impacts on properties.
                   </p>
@@ -336,8 +336,8 @@ export default function FlemingtonMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Industrial Heritage Focus</h3>
+                  <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Industrial Heritage Focus</h3>
                   <p className="text-sm text-gray-700">
                     Specialist knowledge of converted industrial properties and mixed-use buildings.
                   </p>
@@ -346,8 +346,8 @@ export default function FlemingtonMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Event-Aware Scheduling</h3>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Event-Aware Scheduling</h3>
                   <p className="text-sm text-gray-700">
                     Service timing coordinated around major racing events and carnival periods.
                   </p>
@@ -356,8 +356,8 @@ export default function FlemingtonMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Proven Results</h3>
+                  <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Proven Results</h3>
                   <p className="text-sm text-gray-700">
                     100+ successful restorations with authentic 5.0-star reviews from locals.
                   </p>
@@ -371,7 +371,7 @@ export default function FlemingtonMouldRemoval() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Flemington Racing Precinct Property Care
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -383,24 +383,24 @@ export default function FlemingtonMouldRemoval() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Racing Season Preparation
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Prepare properties for Melbourne Cup Carnival moisture impacts</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Plan maintenance around major racing event schedules</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address crowd and activity-related moisture increases</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor seasonal racing activity impact on property</span>
                     </li>
                   </ul>
@@ -409,24 +409,24 @@ export default function FlemingtonMouldRemoval() {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Industrial-Residential Balance
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Maintain converted industrial property moisture systems</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address mixed-use building ventilation challenges</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Balance heritage preservation with modern moisture control</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Professional assessment for event-impacted properties</span>
                     </li>
                   </ul>
@@ -448,11 +448,11 @@ export default function FlemingtonMouldRemoval() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 1800 954 117 Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4">
                 Free Inspection Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

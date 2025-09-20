@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Prahran = () => {
   const breadcrumbItems = [
@@ -43,12 +44,12 @@ export const Prahran = () => {
       <Navigation />
       
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Prahran - ABN 47 683 089 652</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -89,7 +90,7 @@ export const Prahran = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Zap className="w-5 h-5 text-blue-600" />
+                  <Zap className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Prahran Melbourne</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -101,13 +102,13 @@ export const Prahran = () => {
                   <span>Mixed-use development mould solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-success-green" />
+                  <Clock className="w-5 h-5 text-success" />
                   <span>After-hours service for nightlife venues</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Boutique apartment building expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -119,14 +120,14 @@ export const Prahran = () => {
                   <span>Insurance claims welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN 47 683 089 652</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -186,19 +187,19 @@ export const Prahran = () => {
                 <h4 className="text-xl font-semibold mb-4 text-primary">Prahran 3181 Specific Risk Factors</h4>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span>Proximity to Prahran Market heritage buildings creating microclimatic moisture retention in surrounding developments</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span>Commercial Road's busy traffic corridor contributing to air quality issues and building moisture seal problems</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span>Heritage warehouse conversions with original masonry creating thermal bridging and condensation issues</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <AlertTriangle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span>Modern apartment developments with sealed building design lacking adequate natural ventilation for Melbourne's humid climate</span>
                   </li>
                 </ul>
@@ -243,11 +244,11 @@ export const Prahran = () => {
 
             <Card>
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-semibold mb-3 text-primary">Professional Remediation</h4>
-                <p className="text-muted-foreground mb-4">Complete mould removal Prahran Melbourne using IICRC certified techniques, with specialized approaches for heritage conversions and modern apartment complexes.</p>
+                <p className="text-muted-foreground mb-4">Complete mould removal Prahran Melbourne using IICRC certified techniques, with specialised approaches for heritage conversions and modern apartment complexes.</p>
                 <ul className="text-sm space-y-2 text-muted-foreground">
                   <li>• HEPA filtration and removal</li>
                   <li>• Structural drying and dehumidification</li>
@@ -264,15 +265,15 @@ export const Prahran = () => {
               <div>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>Local Melbourne expertise</strong> - 5+ years serving Prahran's entertainment district with deep understanding of local property challenges</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>Mixed-use specialists</strong> - Expert coordination between commercial and residential spaces in the same building</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>Business-friendly scheduling</strong> - After-hours and weekend service to minimize disruption to Chapel Street businesses</span>
                   </li>
                 </ul>
@@ -280,15 +281,15 @@ export const Prahran = () => {
               <div>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>Insurance approved</strong> - Direct billing welcome with comprehensive documentation for all insurance claims</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>5.0 star rating</strong> - 100+ properties successfully restored across Melbourne with verified customer testimonials</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span><strong>ABN 47 683 089 652</strong> - Fully licensed and insured with IICRC certified technicians</span>
                   </li>
                 </ul>
@@ -305,7 +306,7 @@ export const Prahran = () => {
 
           <div className="prose prose-lg max-w-4xl mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Prahran's unique position as Melbourne's premier entertainment and fashion district creates diverse property challenges requiring specialized mould removal expertise. From Chapel Street's heritage conversions to Commercial Road's modern mixed-use developments, our professional mould removal Prahran services are tailored to each property type's specific moisture management requirements.
+              Prahran's unique position as Melbourne's premier entertainment and fashion district creates diverse property challenges requiring specialised mould removal expertise. From Chapel Street's heritage conversions to Commercial Road's modern mixed-use developments, our professional mould removal Prahran services are tailored to each property type's specific moisture management requirements.
             </p>
           </div>
           
@@ -313,18 +314,18 @@ export const Prahran = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Boutique Apartment Buildings</h3>
-                <p className="text-muted-foreground mb-4">Contemporary designer apartment complexes throughout Prahran requiring specialized moisture management to protect high-end finishes and resident health.</p>
+                <p className="text-muted-foreground mb-4">Contemporary designer apartment complexes throughout Prahran requiring specialised moisture management to protect high-end finishes and resident health.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Premium interior finish protection</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Body corporate coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Tenant-friendly scheduling</span>
                   </div>
                 </div>
@@ -337,15 +338,15 @@ export const Prahran = () => {
                 <p className="text-muted-foreground mb-4">Complex buildings with commercial ground floors and residential apartments above, requiring coordinated mould management across different use zones.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Multi-zone containment systems</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Business continuity planning</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Cross-contamination prevention</span>
                   </div>
                 </div>
@@ -358,15 +359,15 @@ export const Prahran = () => {
                 <p className="text-muted-foreground mb-4">Boutique fashion stores, showrooms, and retail spaces requiring minimal disruption mould treatment to protect valuable inventory and maintain business operations.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Inventory protection protocols</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>After-hours service priority</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Rapid response capabilities</span>
                   </div>
                 </div>
@@ -376,18 +377,18 @@ export const Prahran = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Entertainment Venues</h3>
-                <p className="text-muted-foreground mb-4">Restaurants, bars, and nightlife establishments in Prahran's entertainment district requiring specialized commercial mould remediation and prevention strategies.</p>
+                <p className="text-muted-foreground mb-4">Restaurants, bars, and nightlife establishments in Prahran's entertainment district requiring specialised commercial mould remediation and prevention strategies.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Health department compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Kitchen and bar area expertise</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Minimal downtime solutions</span>
                   </div>
                 </div>
@@ -397,18 +398,18 @@ export const Prahran = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Heritage Warehouse Conversions</h3>
-                <p className="text-muted-foreground mb-4">Historic industrial buildings converted to apartments or commercial spaces, requiring specialized approaches for original masonry and heritage building constraints.</p>
+                <p className="text-muted-foreground mb-4">Historic industrial buildings converted to apartments or commercial spaces, requiring specialised approaches for original masonry and heritage building constraints.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Heritage building compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Original fabric preservation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Masonry treatment expertise</span>
                   </div>
                 </div>
@@ -421,15 +422,15 @@ export const Prahran = () => {
                 <p className="text-muted-foreground mb-4">Modern office developments and shared workspaces throughout Commercial Road requiring professional-grade air quality management and minimal workplace disruption.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Workplace health compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Off-hours treatment scheduling</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Documentation for tenancy</span>
                   </div>
                 </div>
@@ -441,7 +442,7 @@ export const Prahran = () => {
 
           <div className="prose prose-lg max-w-4xl mb-8">
             <p className="text-lg text-muted-foreground mb-6">
-              Our professional mould removal Prahran Melbourne services combine IICRC-certified techniques with local expertise to address the entertainment district's unique environmental challenges. From professional service for Chapel Street businesses to comprehensive remediation for mixed-use developments, we provide specialized solutions for Prahran's diverse property portfolio.
+              Our professional mould removal Prahran Melbourne services combine IICRC-certified techniques with local expertise to address the entertainment district's unique environmental challenges. From professional service for Chapel Street businesses to comprehensive remediation for mixed-use developments, we provide specialised solutions for Prahran's diverse property portfolio.
             </p>
           </div>
 
@@ -486,7 +487,7 @@ export const Prahran = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Heritage Building Mould Treatment</h3>
                   <ul className="space-y-1 text-muted-foreground">
-                    <li>• Warehouse conversion specialized techniques</li>
+                    <li>• Warehouse conversion specialised techniques</li>
                     <li>• Original masonry preservation methods</li>
                     <li>• Heritage compliance documentation</li>
                     <li>• Thermal bridging moisture management</li>
@@ -498,7 +499,7 @@ export const Prahran = () => {
 
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -539,7 +540,7 @@ export const Prahran = () => {
                     <li>• Regular monitoring for entertainment venues</li>
                     <li>• Seasonal moisture management programs</li>
                     <li>• Early detection systems installation</li>
-                    <li>• Humidity control optimization</li>
+                    <li>• Humidity control optimisation</li>
                     <li>• Melbourne climate adaptation strategies</li>
                   </ul>
                 </div>
@@ -566,15 +567,15 @@ export const Prahran = () => {
                 <h4 className="text-lg font-semibold mb-4 text-primary">Entertainment District Climate Control</h4>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Install commercial-grade ventilation in basement retail spaces</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Monitor humidity levels during Melbourne's humid summer months</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Address thermal bridging in heritage warehouse conversions</span>
                   </li>
                 </ul>
@@ -586,15 +587,15 @@ export const Prahran = () => {
                 <h4 className="text-lg font-semibold mb-4 text-primary">Mixed-Use Building Maintenance</h4>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Coordinate ventilation between commercial and residential zones</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Regular building envelope inspections for moisture penetration</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Professional moisture barrier maintenance in shared walls</span>
                   </li>
                 </ul>
@@ -606,15 +607,15 @@ export const Prahran = () => {
                 <h4 className="text-lg font-semibold mb-4 text-primary">Seasonal Melbourne Considerations</h4>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Pre-winter humidity control system checks</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Summer rainfall drainage system maintenance</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span>Chapel Street microclimate moisture monitoring</span>
                   </li>
                 </ul>
@@ -662,11 +663,11 @@ export const Prahran = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Emergency mould response:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Commercial property appointments:</span>
-                    <span className="font-semibold text-success-green">Same day scheduling</span>
+                    <span className="font-semibold text-success">Same day scheduling</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">After-hours entertainment venues:</span>
@@ -707,7 +708,7 @@ export const Prahran = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Expert Prahran Mould Removal Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span><strong>1800 954 117</strong> (Professional service line response)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -719,7 +720,7 @@ export const Prahran = () => {
                       <span>7am-7pm daily service hours</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Shield className="w-5 h-5 text-success-green" />
+                      <Shield className="w-5 h-5 text-success" />
                       <span>ABN 47 683 089 652 - Licensed & Insured</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -760,7 +761,7 @@ export const Prahran = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Removal Prahran: 1800 954 117
               </Button>
@@ -775,7 +776,7 @@ export const Prahran = () => {
               <div className="grid md:grid-cols-3 gap-6 text-left">
                 <div>
                   <h5 className="font-semibold text-primary mb-2">Local Melbourne Expertise</h5>
-                  <p className="text-sm text-muted-foreground">5+ years specializing in Prahran's entertainment district and mixed-use developments</p>
+                  <p className="text-sm text-muted-foreground">5+ years specialising in Prahran's entertainment district and mixed-use developments</p>
                 </div>
                 <div>
                   <h5 className="font-semibold text-primary mb-2">Entertainment District Specialists</h5>
@@ -794,6 +795,13 @@ export const Prahran = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Prahran"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

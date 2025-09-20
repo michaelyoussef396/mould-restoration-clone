@@ -28,7 +28,7 @@ export const Springvale = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Springvale Melbourne. IICRC certified technicians specializing in diverse community housing, Springvale Road commercial precinct, and multicultural residential properties."
+        description="Professional mould removal and inspection services in Springvale Melbourne. IICRC certified technicians specialising in diverse community housing, Springvale Road commercial precinct, and multicultural residential properties."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Springvale = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Springvale</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Springvale = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Springvale = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Springvale</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Diverse community & multicultural expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Springvale = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export const Springvale = () => {
                     <li>• Springvale Road commercial building mixed-use moisture problems</li>
                     <li>• Market and shopping area high foot traffic condensation</li>
                     <li>• Above-shop residential properties moisture transfer issues</li>
-                    <li>• Asian food processing businesses creating specialized humidity challenges</li>
+                    <li>• Asian food processing businesses creating specialised humidity challenges</li>
                     <li>• Community centre and cultural facility intensive usage patterns</li>
                   </ul>
                 </div>
@@ -191,7 +191,7 @@ export const Springvale = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Springvale Cultural Community Considerations</h3>
               <p className="text-gray-700 mb-6">
                 As Melbourne's most culturally diverse suburb, Springvale presents unique mould challenges requiring understanding of varied living patterns, cooking practices, and housing arrangements across different cultural communities.
@@ -199,7 +199,7 @@ export const Springvale = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Multicultural Living Patterns</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Vietnamese community traditional cooking practices creating concentrated kitchen humidity</li>
                     <li>• Sri Lankan and Indian families using intensive spice preparation increasing moisture</li>
                     <li>• Chinese community hot pot and steamboat cooking affecting indoor air quality</li>
@@ -208,11 +208,11 @@ export const Springvale = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Cultural Facility Challenges</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Buddhist temples and community centres intensive incense usage affecting air quality</li>
                     <li>• Cultural celebration venues requiring moisture management for large gatherings</li>
                     <li>• Community language schools and cultural centres with varying occupancy patterns</li>
-                    <li>• Religious facility food preparation areas requiring specialized ventilation</li>
+                    <li>• Religious facility food preparation areas requiring specialised ventilation</li>
                   </ul>
                 </div>
               </div>
@@ -229,15 +229,15 @@ export const Springvale = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">High-Rise Housing Commission Buildings</h5>
-                      <p className="text-sm text-gray-600">Multi-storey community housing requiring specialized moisture management addressing high-density living, shared facilities, and diverse occupancy patterns.</p>
+                      <p className="text-sm text-professional">Multi-storey community housing requiring specialised moisture management addressing high-density living, shared facilities, and diverse occupancy patterns.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Transitional Housing Facilities</h5>
-                      <p className="text-sm text-gray-600">Temporary accommodation and refugee settlement housing requiring rapid response mould solutions prioritising health and safety for vulnerable populations.</p>
+                      <p className="text-sm text-professional">Temporary accommodation and refugee settlement housing requiring rapid response mould solutions prioritising health and safety for vulnerable populations.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Supported Accommodation Services</h5>
-                      <p className="text-sm text-gray-600">Community support housing requiring gentle mould management approaches suitable for residents with varying needs and circumstances.</p>
+                      <p className="text-sm text-professional">Community support housing requiring gentle mould management approaches suitable for residents with varying needs and circumstances.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const Springvale = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Post-War Family Homes</h5>
-                      <p className="text-sm text-gray-600">Established brick and weatherboard homes requiring heritage-sensitive mould solutions while accommodating modern multicultural family living patterns.</p>
+                      <p className="text-sm text-professional">Established brick and weatherboard homes requiring heritage-sensitive mould solutions while accommodating modern multicultural family living patterns.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Apartment Developments</h5>
-                      <p className="text-sm text-gray-600">Contemporary high-density living requiring advanced moisture management systems addressing intensive cooking, shared facilities, and varied cultural practices.</p>
+                      <p className="text-sm text-professional">Contemporary high-density living requiring advanced moisture management systems addressing intensive cooking, shared facilities, and varied cultural practices.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Mixed-Use Commercial Properties</h5>
-                      <p className="text-sm text-gray-600">Springvale Road developments combining retail, restaurant, and residential spaces requiring comprehensive moisture control across different usage zones.</p>
+                      <p className="text-sm text-professional">Springvale Road developments combining retail, restaurant, and residential spaces requiring comprehensive moisture control across different usage zones.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const Springvale = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Diverse community housing and multicultural living specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Springvale Road commercial precinct understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Transport corridor and community facility expertise</span>
                   </li>
                 </ul>
@@ -301,15 +301,15 @@ export const Springvale = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for diverse community property types</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Multicultural community health and safety protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const Springvale = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Springvale</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Springvale</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Community-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Community-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Diverse Communities</div>
+                  <div className="text-sm text-professional">Rating from Diverse Communities</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const Springvale = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Springvale Melbourne assistance. Our multicultural community specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const Springvale = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Springvale Inspection</h3>

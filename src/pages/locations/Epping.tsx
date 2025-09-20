@@ -1,6 +1,6 @@
 import React from 'react';
-import { LocationPageSEO } from '../../components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '../../components/seo/Schema';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent } from '../../components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
@@ -49,11 +49,11 @@ const EppingMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
                 <Phone className="w-5 h-5 mr-2" />
                 Call 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -83,7 +83,7 @@ const EppingMouldRemoval = () => {
         {/* Local Expertise Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Epping Outer North Mould Expertise
             </h2>
 
@@ -103,49 +103,49 @@ const EppingMouldRemoval = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Outer north expertise</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Family community specialists</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Established suburban focus</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Transport hub understanding</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Epping Service Areas</h3>
+              <div className="bg-columbia p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">Epping Service Areas</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Epping Plaza vicinity</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Epping railway station area</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">High Street corridor</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Family residential estates</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">School proximity neighbourhoods</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Community facility surrounds</span>
                   </div>
                 </div>
@@ -157,21 +157,21 @@ const EppingMouldRemoval = () => {
         {/* Property Types Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Epping Property Types We Service
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-columbia rounded-full flex items-center justify-center mb-6">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Established Family Homes</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Established Family Homes</h3>
                   <p className="text-gray-700 mb-4">
                     Comprehensive treatment for Epping's well-established family properties, from 1970s-80s brick homes to renovated family houses, ensuring optimal health protection for growing families.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Established home expertise</li>
                     <li>• Family health prioritisation</li>
                     <li>• Child-safe treatments</li>
@@ -182,14 +182,14 @@ const EppingMouldRemoval = () => {
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <MapPin className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mb-6">
+                    <MapPin className="w-6 h-6 text-success" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Community-Focused Properties</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Community-Focused Properties</h3>
                   <p className="text-gray-700 mb-4">
                     Specialised moisture management for homes near Epping's schools, parks, and community facilities, understanding the family lifestyle priorities of this well-connected suburb.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• School proximity considerations</li>
                     <li>• Community facility awareness</li>
                     <li>• Family lifestyle adaptation</li>
@@ -203,11 +203,11 @@ const EppingMouldRemoval = () => {
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                     <Award className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Modern Suburban Developments</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Modern Suburban Developments</h3>
                   <p className="text-gray-700 mb-4">
                     Advanced moisture control for Epping's contemporary family developments and townhouse complexes, managing modern construction materials and suburban family living patterns.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Modern construction expertise</li>
                     <li>• Townhouse complex solutions</li>
                     <li>• Contemporary moisture systems</li>
@@ -222,18 +222,18 @@ const EppingMouldRemoval = () => {
         {/* Why Choose Us Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Why Epping Families Choose Us
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Star className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-columbia rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Outer Northern Family Specialists</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Outer Northern Family Specialists</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Our extensive experience with Epping's established family community means we understand the priorities of suburban families who value space, schools, and community connections for their children's development.
                     </p>
@@ -241,11 +241,11 @@ const EppingMouldRemoval = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Shield className="w-5 h-5 text-success" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Suburban Community Track Record</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Proven Suburban Community Track Record</h3>
                     <p className="text-gray-700 leading-relaxed">
                       With over 100 successful property restorations across Melbourne and 5+ years of experience, we've helped numerous Epping families protect their established suburban home investments and family health.
                     </p>
@@ -257,7 +257,7 @@ const EppingMouldRemoval = () => {
                     <Award className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Community-Connected Service Approach</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Community-Connected Service Approach</h3>
                     <p className="text-gray-700 leading-relaxed">
                       We understand the rhythm of Epping family life, offering flexible scheduling around school routines, community activities, and the established suburban lifestyle that residents cherish.
                     </p>
@@ -290,7 +290,7 @@ const EppingMouldRemoval = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-6 rounded-full">
+                <Button size="lg" className="w-full bg-white text-primary hover:bg-columbia font-semibold py-6 rounded-full">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 Now
                 </Button>
@@ -302,51 +302,51 @@ const EppingMouldRemoval = () => {
         {/* Prevention Tips Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Mould Prevention Tips for Epping Properties
             </h2>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Suburban Family Home Care</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Suburban Family Home Care</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Maintain adequate ventilation in family activity areas and bedrooms</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Monitor established home building materials for moisture retention</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Address drainage issues in established suburban gardens</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Ensure children's play and study areas remain moisture-free</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Community Living Considerations</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Community Living Considerations</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Consider school and community activity impacts on home schedules</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Maintain suburban landscaping to support proper drainage</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Balance established home character with moisture control needs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Schedule regular inspections around family and school routines</span>
                     </li>
                   </ul>
@@ -357,7 +357,7 @@ const EppingMouldRemoval = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 bg-blue-600">
+        <section className="py-16 px-4 bg-primary">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">
               Ready to Protect Your Epping Family Home?
@@ -367,11 +367,11 @@ const EppingMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full">
                 <Phone className="w-5 h-5 mr-2" />
                 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Book Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

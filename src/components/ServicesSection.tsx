@@ -2,9 +2,9 @@ import { Card } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { ServiceOptimizedImage } from '@/components/OptimizedImage';
 import mouldInspection from '@/assets/mould-inspection.jpg';
-import materialRemoval from '@/assets/material-removal.jpg';
+import materialRemoval from '@/assets/commercial-removal-work.jpg';
 import foggingSanitisation from '@/assets/fogging-sanitisation.jpg';
-import mouldRemoval from '@/assets/mould-removal.jpg';
+import mouldRemoval from '@/assets/mould-removal-transformation.jpg';
 import subfloorRemediation from '@/assets/subfloor-remediation.jpg';
 
 export const ServicesSection = () => {
@@ -66,6 +66,7 @@ export const ServicesSection = () => {
               <div className="aspect-video overflow-hidden">
                 <ServiceOptimizedImage
                   src={service.image}
+                  alt={`Professional ${service.service} Melbourne service - ${service.title}`}
                   service={service.service}
                   stage={service.stage}
                   equipment={service.equipment}

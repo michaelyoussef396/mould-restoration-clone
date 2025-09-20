@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
-import { LocationPageSEO } from '@/components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/StructuredData';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 
 export default function NunawadingMouldRemoval() {
   return (
@@ -41,7 +41,7 @@ export default function NunawadingMouldRemoval() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
                 Mould Removal Nunawading Melbourne
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function NunawadingMouldRemoval() {
                 Expert solutions for mixed residential properties throughout the 3131 area.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <Phone className="mr-2 h-5 w-5" />
                   Call 1800 954 117
                 </Button>
@@ -63,31 +63,31 @@ export default function NunawadingMouldRemoval() {
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="h-8 w-8 text-blue-600" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
+                <div className="font-semibold text-charcoal">Same Day</div>
+                <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5+ Years</div>
-                <div className="text-sm text-gray-600">Experience</div>
+                <div className="font-semibold text-charcoal">5+ Years</div>
+                <div className="text-sm text-professional">Experience</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="h-8 w-8 text-blue-600" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Properties Restored</div>
+                <div className="font-semibold text-charcoal">100+</div>
+                <div className="text-sm text-professional">Properties Restored</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Star className="h-8 w-8 text-blue-600" />
+                  <Star className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5.0 Stars</div>
-                <div className="text-sm text-gray-600">50+ Reviews</div>
+                <div className="font-semibold text-charcoal">5.0 Stars</div>
+                <div className="text-sm text-professional">50+ Reviews</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function NunawadingMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Local Nunawading Area Expertise
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -123,40 +123,40 @@ export default function NunawadingMouldRemoval() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <MapPin className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">Postcode: 3131</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">15km from Melbourne CBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:order-first">
-                <div className="bg-blue-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <div className="bg-columbia p-8 rounded-2xl">
+                  <h3 className="text-2xl font-semibold text-charcoal mb-6">
                     Nunawading Property Specialisation
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Family homes near shopping centres</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Post-war residential properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Modern townhouse developments</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Mixed residential communities</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Railway corridor properties</span>
                     </li>
                   </ul>
@@ -170,7 +170,7 @@ export default function NunawadingMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Nunawading Property Types We Service
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function NunawadingMouldRemoval() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Family Homes Near Shopping Centres
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -190,7 +190,7 @@ export default function NunawadingMouldRemoval() {
                     increased foot traffic, parking areas, and proximity to commercial developments.
                     Our specialists address moisture issues in established family neighbourhoods.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Moisture control near commercial areas</li>
                     <li>• Family-safe remediation methods</li>
                     <li>• Garden and landscaping considerations</li>
@@ -201,7 +201,7 @@ export default function NunawadingMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Post-War Residential Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -209,7 +209,7 @@ export default function NunawadingMouldRemoval() {
                     and construction methods from the 1950s-1970s era. We provide heritage-sensitive
                     mould treatment that preserves structural integrity.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Heritage building material expertise</li>
                     <li>• Original weatherboard treatment</li>
                     <li>• Period-appropriate ventilation upgrades</li>
@@ -220,7 +220,7 @@ export default function NunawadingMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Modern Townhouse Developments
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -228,7 +228,7 @@ export default function NunawadingMouldRemoval() {
                     approaches. We specialise in multi-unit building treatments and shared wall
                     moisture issues affecting modern families.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Multi-unit building coordination</li>
                     <li>• Shared wall moisture treatment</li>
                     <li>• Modern insulation considerations</li>
@@ -245,7 +245,7 @@ export default function NunawadingMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Nunawading Climate & Moisture Challenges
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -271,35 +271,35 @@ export default function NunawadingMouldRemoval() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">
                   Seasonal Moisture Patterns
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-600 rounded-full w-3 h-3 mt-2"></div>
+                    <div className="bg-primary rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Winter (Jun-Aug)</div>
+                      <div className="font-semibold text-charcoal">Winter (Jun-Aug)</div>
                       <div className="text-sm text-gray-700">Condensation control in family living areas</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-green-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Spring (Sep-Nov)</div>
+                      <div className="font-semibold text-charcoal">Spring (Sep-Nov)</div>
                       <div className="text-sm text-gray-700">Garden irrigation and outdoor moisture management</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-yellow-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Summer (Dec-Feb)</div>
+                      <div className="font-semibold text-charcoal">Summer (Dec-Feb)</div>
                       <div className="text-sm text-gray-700">Cooling system moisture and air quality control</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-orange-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Autumn (Mar-May)</div>
+                      <div className="font-semibold text-charcoal">Autumn (Mar-May)</div>
                       <div className="text-sm text-gray-700">Leaf litter moisture and gutter maintenance</div>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function NunawadingMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Why Nunawading Families Choose Mould & Restoration Co.
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -325,8 +325,8 @@ export default function NunawadingMouldRemoval() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Local Expertise</h3>
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Local Expertise</h3>
                   <p className="text-sm text-gray-700">
                     Deep understanding of Nunawading's mixed residential properties and local climate challenges.
                   </p>
@@ -335,8 +335,8 @@ export default function NunawadingMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Family-Focused Service</h3>
+                  <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Family-Focused Service</h3>
                   <p className="text-sm text-gray-700">
                     Safe, child-friendly methods prioritising family health in this family-oriented community.
                   </p>
@@ -345,8 +345,8 @@ export default function NunawadingMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h3>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Rapid Response</h3>
                   <p className="text-sm text-gray-700">
                     Same-day professional service covering all areas from the station to shopping precincts.
                   </p>
@@ -355,8 +355,8 @@ export default function NunawadingMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Proven Results</h3>
+                  <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Proven Results</h3>
                   <p className="text-sm text-gray-700">
                     100+ successful restorations with authentic 5.0-star reviews from local families.
                   </p>
@@ -370,7 +370,7 @@ export default function NunawadingMouldRemoval() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Nunawading Mould Prevention Tips
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -382,24 +382,24 @@ export default function NunawadingMouldRemoval() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Family Home Maintenance
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor moisture levels in children's bedrooms and play areas</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Ensure proper ventilation in family bathrooms and laundries</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address garden irrigation overspray near house foundations</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Clean gutters regularly to prevent autumn leaf blockages</span>
                     </li>
                   </ul>
@@ -408,24 +408,24 @@ export default function NunawadingMouldRemoval() {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Seasonal Preparation
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Winter heating system maintenance to prevent condensation</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Spring garden planning to maintain proper drainage</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Summer cooling system moisture management</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Autumn preparation for increased rainfall and humidity</span>
                     </li>
                   </ul>
@@ -447,11 +447,11 @@ export default function NunawadingMouldRemoval() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 1800 954 117 Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4">
                 Free Inspection Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

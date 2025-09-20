@@ -28,7 +28,7 @@ export const Carnegie = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Carnegie Melbourne. IICRC certified technicians specializing in village community properties, Koornang Road precinct, and period home restorations."
+        description="Professional mould removal and inspection services in Carnegie Melbourne. IICRC certified technicians specialising in village community properties, Koornang Road precinct, and period home restorations."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Carnegie = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Carnegie</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Carnegie = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Carnegie = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Carnegie</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Village community & period home expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Carnegie = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export const Carnegie = () => {
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Period Property Challenges</h4>
                   <ul className="space-y-2 text-sm">
-                    <li>• Heritage building materials requiring specialized treatment approaches</li>
+                    <li>• Heritage building materials requiring specialised treatment approaches</li>
                     <li>• Period home ventilation systems needing modern moisture management</li>
                     <li>• Original building envelope moisture penetration issues</li>
                     <li>• Restored period features requiring careful mould remediation</li>
@@ -183,7 +183,7 @@ export const Carnegie = () => {
                     <li>• Commercial village precinct mixed-use building challenges</li>
                     <li>• Above-shop residential properties moisture management</li>
                     <li>• Shopping village pedestrian area drainage affecting properties</li>
-                    <li>• Heritage commercial buildings requiring specialized approaches</li>
+                    <li>• Heritage commercial buildings requiring specialised approaches</li>
                     <li>• Traditional shopfront buildings with modern retrofit challenges</li>
                     <li>• Village market and community events affecting building moisture</li>
                   </ul>
@@ -191,15 +191,15 @@ export const Carnegie = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Carnegie Heritage and Character Preservation</h3>
               <p className="text-gray-700 mb-6">
-                Carnegie's heritage overlay and strict character preservation requirements create unique challenges for mould remediation, requiring specialized approaches that maintain architectural integrity while ensuring modern health standards.
+                Carnegie's heritage overlay and strict character preservation requirements create unique challenges for mould remediation, requiring specialised approaches that maintain architectural integrity while ensuring modern health standards.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Heritage Building Considerations</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Heritage overlay requirements affecting mould remediation methods</li>
                     <li>• Period building materials requiring conservation-grade treatment</li>
                     <li>• Original architectural features needing careful preservation during work</li>
@@ -208,7 +208,7 @@ export const Carnegie = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Character Area Protection</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Village character streetscape maintaining consistency during restoration</li>
                     <li>• Community expectations for sympathetic building conservation</li>
                     <li>• Local planning restrictions affecting external building modifications</li>
@@ -229,15 +229,15 @@ export const Carnegie = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Victorian and Edwardian Cottages</h5>
-                      <p className="text-sm text-gray-600">Original heritage cottages with traditional materials requiring conservation-grade mould remediation preserving architectural authenticity while ensuring modern safety standards.</p>
+                      <p className="text-sm text-professional">Original heritage cottages with traditional materials requiring conservation-grade mould remediation preserving architectural authenticity while ensuring modern safety standards.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Period Family Homes</h5>
-                      <p className="text-sm text-gray-600">Established heritage family homes with original features requiring family-focused mould management maintaining character while ensuring children's health and comfort.</p>
+                      <p className="text-sm text-professional">Established heritage family homes with original features requiring family-focused mould management maintaining character while ensuring children's health and comfort.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Renovated Heritage Properties</h5>
-                      <p className="text-sm text-gray-600">Carefully restored period homes requiring specialized mould solutions protecting both original heritage features and modern renovation investments.</p>
+                      <p className="text-sm text-professional">Carefully restored period homes requiring specialised mould solutions protecting both original heritage features and modern renovation investments.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const Carnegie = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Koornang Road Heritage Shops</h5>
-                      <p className="text-sm text-gray-600">Traditional shopfront buildings requiring commercial-grade mould management balancing heritage preservation with modern business operational requirements.</p>
+                      <p className="text-sm text-professional">Traditional shopfront buildings requiring commercial-grade mould management balancing heritage preservation with modern business operational requirements.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Community and Cultural Buildings</h5>
-                      <p className="text-sm text-gray-600">Village community centres and cultural facilities requiring public-use mould solutions ensuring safe community gathering spaces while respecting architectural character.</p>
+                      <p className="text-sm text-professional">Village community centres and cultural facilities requiring public-use mould solutions ensuring safe community gathering spaces while respecting architectural character.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Village Developments</h5>
-                      <p className="text-sm text-gray-600">Contemporary housing designed to complement village character requiring modern mould management systems while maintaining neighborhood architectural consistency.</p>
+                      <p className="text-sm text-professional">Contemporary housing designed to complement village character requiring modern mould management systems while maintaining neighborhood architectural consistency.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const Carnegie = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Period property and heritage building specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Koornang Road village precinct understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Heritage-sensitive restoration and community character expertise</span>
                   </li>
                 </ul>
@@ -301,15 +301,15 @@ export const Carnegie = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for period property types</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Heritage building health and safety protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const Carnegie = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Carnegie</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Carnegie</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">Heritage-Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">Heritage-Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Village Community</div>
+                  <div className="text-sm text-professional">Rating from Village Community</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const Carnegie = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Carnegie Melbourne assistance. Our heritage property specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const Carnegie = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Carnegie Inspection</h3>

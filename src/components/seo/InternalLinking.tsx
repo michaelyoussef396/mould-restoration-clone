@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Phone, Shield } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 interface InternalLinkProps {
   href: string;
@@ -14,200 +12,21 @@ interface InternalLinkProps {
   service?: string;
 }
 
-interface RelatedServicesProps {
-  currentService?: string;
-  location?: string;
-  maxItems?: number;
-}
-
-interface RelatedLocationsProps {
-  currentLocation?: string;
-  service?: string;
-  maxItems?: number;
-}
-
-// Melbourne mould restoration services data
-const SERVICES_DATA = [
-  {
-    name: 'Professional Mould Inspections',
-    slug: 'professional-mould-inspections',
-    description: 'Free thermal imaging assessment and air quality testing',
-    keywords: 'mould inspection melbourne, thermal imaging, air quality testing',
-    priority: 'high'
-  },
-  {
-    name: 'Comprehensive Mould Removal',
-    slug: 'comprehensive-mould-removal',
-    description: 'Complete IICRC certified mould elimination',
-    keywords: 'mould removal melbourne, IICRC certified, comprehensive treatment',
-    priority: 'high'
-  },
-  {
-    name: 'Subfloor Mould Remediation',
-    slug: 'subfloor-mould-remediation',
-    description: 'Under house moisture control and ventilation',
-    keywords: 'subfloor mould melbourne, under house treatment, moisture control',
-    priority: 'medium'
-  },
-  {
-    name: 'Complete Material Removal',
-    slug: 'complete-material-removal',
-    description: 'Safe contaminated material disposal',
-    keywords: 'material removal melbourne, contaminated disposal, safe removal',
-    priority: 'medium'
-  },
-  {
-    name: 'Advanced Fogging Sanitisation',
-    slug: 'advanced-fogging-sanitisation',
-    description: 'ULV fogging for hard-to-reach areas',
-    keywords: 'fogging melbourne, ULV sanitisation, comprehensive treatment',
-    priority: 'medium'
-  }
-];
-
-// Melbourne suburb clusters for internal linking
-const SUBURB_CLUSTERS = {
-  innerMelbourne: {
-    name: 'Inner Melbourne',
-    priority: 'high',
-    suburbs: [
-      { name: 'Carlton', slug: 'carlton', description: 'Heritage property & university precinct specialists', features: ['Victorian terraces', 'Student housing', 'Heritage preservation'], priority: 'high' },
-      { name: 'Fitzroy', slug: 'fitzroy', description: 'Creative quarter & warehouse conversion experts', features: ['Artist studios', 'Converted warehouses', 'Heritage protection'], priority: 'high' },
-      { name: 'Richmond', slug: 'richmond', description: 'Industrial heritage & Swan Street precinct', features: ['Warehouse conversions', 'Victorian cottages', 'Rental properties'], priority: 'high' },
-      { name: 'South Yarra', slug: 'south-yarra', description: 'Premium apartments & heritage buildings', features: ['Apartment blocks', 'Mixed development', 'Commercial spaces'], priority: 'high' },
-      { name: 'Prahran', slug: 'prahran', description: 'Mixed residential & commercial properties', features: ['Shopping precincts', 'Apartments', 'Commercial spaces'], priority: 'high' },
-      { name: 'Collingwood', slug: 'collingwood', description: 'Creative arts & converted warehouses', features: ['Artist studios', 'Warehouse conversions', 'Mixed residential'], priority: 'medium' },
-      { name: 'Northcote', slug: 'northcote', description: 'Trendy mixed residential & commercial', features: ['Victorian cottages', 'Modern apartments', 'Mixed development'], priority: 'medium' },
-      { name: 'East Melbourne', slug: 'east-melbourne', description: 'Historic CBD fringe properties', features: ['Heritage buildings', 'Modern apartments', 'Commercial spaces'], priority: 'medium' },
-      { name: 'West Melbourne', slug: 'west-melbourne', description: 'Industrial heritage & modern development', features: ['Warehouse conversions', 'New apartments', 'Mixed use'], priority: 'medium' },
-      { name: 'Kensington', slug: 'kensington', description: 'Established residential & student housing', features: ['Period homes', 'Student accommodation', 'Family properties'], priority: 'medium' }
-    ]
-  },
-  coastalSuburbs: {
-    name: 'Coastal & Bayside',
-    priority: 'high',
-    suburbs: [
-      { name: 'Brighton', slug: 'brighton', description: 'Coastal property & Federation home specialists', features: ['Federation homes', 'Salt air treatment', 'Weatherboard expertise'], priority: 'high' },
-      { name: 'Hampton', slug: 'hampton', description: 'Bayside family homes & coastal moisture', features: ['Family properties', 'Coastal exposure', 'Salt air protection'], priority: 'medium' },
-      { name: 'Sandringham', slug: 'sandringham', description: 'Beach community & retirement living', features: ['Beach houses', 'Retirement villages', 'Coastal humidity'], priority: 'medium' },
-      { name: 'Mentone', slug: 'mentone', description: 'Established beachside community', features: ['Beach cottages', 'Family homes', 'Coastal conditions'], priority: 'medium' },
-      { name: 'Brighton East', slug: 'brighton-east', description: 'Residential coastal properties', features: ['Family homes', 'Coastal conditions', 'Established properties'], priority: 'medium' },
-      { name: 'Edithvale', slug: 'edithvale', description: 'Bayside beach community specialists', features: ['Beach cottages', 'Retirement living', 'Salt air exposure'], priority: 'low' },
-      { name: 'Aspendale', slug: 'aspendale', description: 'Coastal family homes & apartments', features: ['Beach properties', 'Family homes', 'Coastal humidity'], priority: 'low' },
-      { name: 'Mordialloc', slug: 'mordialloc', description: 'Bayside family community', features: ['Family properties', 'Beach access', 'Established homes'], priority: 'low' },
-      { name: 'Parkdale', slug: 'parkdale', description: 'Coastal residential properties', features: ['Family homes', 'Coastal conditions', 'Established community'], priority: 'low' },
-      { name: 'Carrum', slug: 'carrum', description: 'Beach community properties', features: ['Beach houses', 'Family homes', 'Coastal environment'], priority: 'low' }
-    ]
-  },
-  easternSuburbs: {
-    name: 'Eastern Suburbs',
-    priority: 'high',
-    suburbs: [
-      { name: 'Camberwell', slug: 'camberwell', description: 'Premium residential & heritage homes', features: ['Heritage properties', 'Family homes', 'Established gardens'], priority: 'high' },
-      { name: 'Hawthorn', slug: 'hawthorn', description: 'Prestigious family homes & apartments', features: ['Victorian homes', 'Modern apartments', 'Established area'], priority: 'high' },
-      { name: 'Toorak', slug: 'toorak', description: 'Luxury properties & heritage mansions', features: ['Luxury homes', 'Heritage mansions', 'Premium finishes'], priority: 'high' },
-      { name: 'Malvern', slug: 'malvern', description: 'Established family homes & gardens', features: ['Family properties', 'Established gardens', 'Period features'], priority: 'high' },
-      { name: 'Armadale', slug: 'armadale', description: 'Premium residential & heritage properties', features: ['Luxury homes', 'Heritage preservation', 'High-end finishes'], priority: 'high' },
-      { name: 'Burwood', slug: 'burwood', description: 'Family homes & established properties', features: ['Family properties', 'Brick homes', 'Established gardens'], priority: 'medium' },
-      { name: 'Caulfield', slug: 'caulfield', description: 'Mixed housing & commercial areas', features: ['Apartments', 'Commercial spaces', 'Mixed development'], priority: 'medium' },
-      { name: 'Glen Iris', slug: 'glen-iris', description: 'Established residential & heritage homes', features: ['Heritage properties', 'Family homes', 'Period features'], priority: 'medium' },
-      { name: 'Malvern East', slug: 'malvern-east', description: 'Family residential & modern developments', features: ['Family homes', 'Modern units', 'Established area'], priority: 'medium' },
-      { name: 'Ashwood', slug: 'ashwood', description: 'Family homes & established properties', features: ['Family properties', 'Established homes', 'Quiet residential'], priority: 'low' }
-    ]
-  },
-  northernSuburbs: {
-    name: 'Northern Suburbs',
-    priority: 'medium',
-    suburbs: [
-      { name: 'Brunswick', slug: 'brunswick', description: 'Heritage homes & modern developments', features: ['Victorian terraces', 'Modern apartments', 'Mixed residential'], priority: 'high' },
-      { name: 'Coburg', slug: 'coburg', description: 'Established residential & family homes', features: ['Family properties', 'Period homes', 'Growing area'], priority: 'medium' },
-      { name: 'Preston', slug: 'preston', description: 'Mixed residential & industrial', features: ['Family homes', 'Industrial properties', 'Mixed development'], priority: 'medium' },
-      { name: 'Thornbury', slug: 'thornbury', description: 'Creative community & residential', features: ['Artist studios', 'Family homes', 'Creative quarter'], priority: 'medium' },
-      { name: 'Reservoir', slug: 'reservoir', description: 'Family residential & established homes', features: ['Family properties', 'Established homes', 'Growing area'], priority: 'low' },
-      { name: 'Heidelberg', slug: 'heidelberg', description: 'Established residential community', features: ['Family homes', 'Established area', 'River proximity'], priority: 'low' },
-      { name: 'Ivanhoe', slug: 'ivanhoe', description: 'Premium residential & family homes', features: ['Family properties', 'Premium homes', 'Established gardens'], priority: 'medium' },
-      { name: 'Fairfield', slug: 'fairfield', description: 'Riverside residential properties', features: ['River proximity', 'Family homes', 'Established area'], priority: 'low' },
-      { name: 'Bundoora', slug: 'bundoora', description: 'Family homes & university area', features: ['Family properties', 'University proximity', 'Established homes'], priority: 'low' }
-    ]
-  },
-  westernSuburbs: {
-    name: 'Western Suburbs',
-    priority: 'medium',
-    suburbs: [
-      { name: 'Footscray', slug: 'footscray', description: 'Heritage homes & modern developments', features: ['Victorian terraces', 'Modern apartments', 'Mixed development'], priority: 'high' },
-      { name: 'Maribyrnong', slug: 'maribyrnong', description: 'Riverside residential & family homes', features: ['Family properties', 'River proximity', 'Modern developments'], priority: 'medium' },
-      { name: 'Williamstown', slug: 'williamstown', description: 'Historic coastal community', features: ['Heritage homes', 'Coastal properties', 'Historic area'], priority: 'medium' },
-      { name: 'Newport', slug: 'newport', description: 'Industrial heritage & family homes', features: ['Family properties', 'Industrial heritage', 'Growing area'], priority: 'medium' },
-      { name: 'Yarraville', slug: 'yarraville', description: 'Heritage homes & family community', features: ['Victorian homes', 'Family properties', 'Village atmosphere'], priority: 'medium' },
-      { name: 'Seddon', slug: 'seddon', description: 'Heritage cottages & modern developments', features: ['Victorian cottages', 'Modern units', 'Family area'], priority: 'low' },
-      { name: 'Altona', slug: 'altona', description: 'Family homes & coastal proximity', features: ['Family properties', 'Coastal access', 'Established homes'], priority: 'low' },
-      { name: 'Sunshine', slug: 'sunshine', description: 'Mixed residential & commercial', features: ['Family homes', 'Commercial areas', 'Growing development'], priority: 'low' },
-      { name: 'Point Cook', slug: 'point-cook', description: 'New family homes & developments', features: ['New developments', 'Family properties', 'Modern homes'], priority: 'medium' }
-    ]
-  },
-  southernSuburbs: {
-    name: 'Southern Suburbs',
-    priority: 'medium',
-    suburbs: [
-      { name: 'Chadstone', slug: 'chadstone', description: 'Family homes & commercial centre', features: ['Family properties', 'Shopping centre', 'Established homes'], priority: 'medium' },
-      { name: 'Oakleigh', slug: 'oakleigh', description: 'Family residential & heritage homes', features: ['Family properties', 'Heritage homes', 'Established area'], priority: 'medium' },
-      { name: 'Carnegie', slug: 'carnegie', description: 'Mixed residential & commercial', features: ['Family homes', 'Apartments', 'Mixed development'], priority: 'medium' },
-      { name: 'Murrumbeena', slug: 'murrumbeena', description: 'Quiet family residential', features: ['Family properties', 'Quiet residential', 'Established homes'], priority: 'low' },
-      { name: 'Bentleigh', slug: 'bentleigh', description: 'Family homes & established community', features: ['Family properties', 'Established area', 'Good transport'], priority: 'medium' },
-      { name: 'Clayton', slug: 'clayton', description: 'University area & family homes', features: ['University proximity', 'Family properties', 'Mixed residential'], priority: 'medium' },
-      { name: 'Glen Waverley', slug: 'glen-waverley', description: 'Family homes & shopping centre', features: ['Family properties', 'Shopping centre', 'Established area'], priority: 'medium' },
-      { name: 'Mount Waverley', slug: 'mount-waverley', description: 'Premium family residential', features: ['Family homes', 'Premium area', 'Established gardens'], priority: 'medium' },
-      { name: 'Springvale', slug: 'springvale', description: 'Multicultural family community', features: ['Family properties', 'Multicultural', 'Growing area'], priority: 'low' }
-    ]
-  },
-  outerEastern: {
-    name: 'Outer Eastern',
-    priority: 'low',
-    suburbs: [
-      { name: 'Box Hill', slug: 'box-hill', description: 'Shopping centre & family homes', features: ['Shopping centre', 'Family properties', 'Mixed development'], priority: 'medium' },
-      { name: 'Doncaster', slug: 'doncaster', description: 'Family homes & shopping centre', features: ['Family properties', 'Shopping centre', 'Established area'], priority: 'medium' },
-      { name: 'Templestowe', slug: 'templestowe', description: 'Premium family residential', features: ['Family homes', 'Premium area', 'Established gardens'], priority: 'low' },
-      { name: 'Ringwood', slug: 'ringwood', description: 'Family homes & commercial centre', features: ['Family properties', 'Commercial centre', 'Established area'], priority: 'medium' },
-      { name: 'Croydon', slug: 'croydon', description: 'Family residential & hills location', features: ['Family homes', 'Hills location', 'Established area'], priority: 'low' },
-      { name: 'Lilydale', slug: 'lilydale', description: 'Hills family homes & rural feel', features: ['Family properties', 'Rural feel', 'Hills location'], priority: 'low' },
-      { name: 'Vermont', slug: 'vermont', description: 'Family homes & established community', features: ['Family properties', 'Established area', 'Quiet residential'], priority: 'low' }
-    ]
-  },
-  outerWestern: {
-    name: 'Outer Western',
-    priority: 'low',
-    suburbs: [
-      { name: 'Werribee', slug: 'werribee', description: 'Growing family community', features: ['Family properties', 'New developments', 'Growing area'], priority: 'medium' },
-      { name: 'Hoppers Crossing', slug: 'hoppers-crossing', description: 'Family homes & new developments', features: ['Family properties', 'New developments', 'Growing community'], priority: 'low' },
-      { name: 'Tarneit', slug: 'tarneit', description: 'New family developments', features: ['New developments', 'Family properties', 'Growing area'], priority: 'low' },
-      { name: 'Truganina', slug: 'truganina', description: 'New family community', features: ['New developments', 'Family homes', 'Modern properties'], priority: 'low' },
-      { name: 'Wyndham Vale', slug: 'wyndham-vale', description: 'New family developments', features: ['New developments', 'Family properties', 'Modern homes'], priority: 'low' }
-    ]
-  }
-};
-
-// Flatten suburb clusters for compatibility
-const LOCATIONS_DATA = Object.values(SUBURB_CLUSTERS)
-  .flatMap(cluster => cluster.suburbs)
-  .map(suburb => ({ ...suburb, priority: 'high' }));
-
 // SEO-optimized internal link component
-export const SEOInternalLink: React.FC<InternalLinkProps> = ({
+const SEOInternalLink: React.FC<InternalLinkProps> = ({
   href,
   children,
   className = '',
   anchor,
-  priority = 'medium',
   location,
   service
 }) => {
-
   // Generate SEO-optimized anchor text if not provided
-  const defaultAnchor = anchor ||
+  const optimizedAnchor = anchor ||
     (location && service ? `${service} ${location} Melbourne` :
      location ? `Mould Removal ${location} Melbourne` :
      service ? `${service} Melbourne` :
-     children?.toString() || '');
+     children);
 
   const linkClassName = `inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium transition-colors ${className}`;
 
@@ -215,8 +34,7 @@ export const SEOInternalLink: React.FC<InternalLinkProps> = ({
     <Link
       to={href}
       className={linkClassName}
-      title={defaultAnchor}
-      aria-label={defaultAnchor}
+      title={optimizedAnchor}
     >
       {children}
       <ArrowRight className="h-4 w-4" />
@@ -224,658 +42,113 @@ export const SEOInternalLink: React.FC<InternalLinkProps> = ({
   );
 };
 
-// Related services component
-export const RelatedServices: React.FC<RelatedServicesProps> = ({
-  currentService,
-  location = '',
-  maxItems = 3
-}) => {
+// Import the comprehensive internal linking system
+import { StrategicInternalLinks as ComprehensiveInternalLinks } from './ComprehensiveInternalLinking';
 
-  const relatedServices = SERVICES_DATA
-    .filter(service => service.slug !== currentService)
-    .sort((a, b) => (a.priority === 'high' ? -1 : 1))
-    .slice(0, maxItems);
-
-  if (relatedServices.length === 0) return null;
-
-  return (
-    <div className="bg-gray-50 py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          {location ? `Other Services in ${location} Melbourne` : 'Related Mould Services Melbourne'}
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {relatedServices.map((service) => (
-            <Card key={service.slug} className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <Shield className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">
-                      <SEOInternalLink
-                        href={`/services/${service.slug}`}
-                        anchor={`${service.name} ${location} Melbourne`}
-                        location={location}
-                        service={service.name}
-                        className="text-gray-900 hover:text-blue-600 no-underline"
-                      >
-                        {service.name}
-                      </SEOInternalLink>
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3">{service.description}</p>
-
-                    <Button variant="outline" size="sm" asChild>
-                      <Link to={`/services/${service.slug}`}>
-                        Learn More
-                        <ArrowRight className="h-4 w-4 ml-1" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Related locations component
-export const RelatedLocations: React.FC<RelatedLocationsProps> = ({
-  currentLocation,
-  service = 'mould removal',
-  maxItems = 4
-}) => {
-
-  const relatedLocations = LOCATIONS_DATA
-    .filter(location => location.slug !== currentLocation?.toLowerCase())
-    .sort((a, b) => (a.priority === 'high' ? -1 : 1))
-    .slice(0, maxItems);
-
-  if (relatedLocations.length === 0) return null;
-
-  return (
-    <div className="bg-white py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          {service} in Other Melbourne Suburbs
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {relatedLocations.map((location) => (
-            <Card key={location.slug} className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <MapPin className="h-5 w-5 text-blue-600" />
-                  <h3 className="font-bold text-gray-900">
-                    <SEOInternalLink
-                      href={`/locations/${location.slug}`}
-                      anchor={`${service} ${location.name} Melbourne`}
-                      location={location.name}
-                      service={service}
-                      className="text-gray-900 hover:text-blue-600 no-underline"
-                    >
-                      {location.name}
-                    </SEOInternalLink>
-                  </h3>
-                </div>
-
-                <p className="text-gray-600 text-sm mb-3">{location.description}</p>
-
-                <ul className="text-xs text-gray-500 space-y-1 mb-3">
-                  {location.features.slice(0, 2).map((feature, index) => (
-                    <li key={index} className="flex items-center gap-1">
-                      <div className="w-1 h-1 bg-blue-600 rounded-full"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button variant="outline" size="sm" className="w-full" asChild>
-                  <Link to={`/locations/${location.slug}`}>
-                    View {location.name} Services
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Emergency contact cross-linking component
-export const EmergencyContactLinks: React.FC<{ currentPage?: string }> = ({ currentPage }) => {
-  return (
-    <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-      <div className="flex items-start gap-3">
-        <Phone className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
-        <div>
-          <h3 className="font-bold text-red-900 mb-2">Melbourne Professional Service - Same-day Available 7am-7pm</h3>
-          <p className="text-red-800 text-sm mb-3">
-            Serious mould problem? Our IICRC certified team responds Same-day professional service across Melbourne metro.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-2">
-            <Button variant="destructive" size="sm" asChild>
-              <a href="tel:1800954117">
-                Call Emergency Line: 1800 954 117
-              </a>
-            </Button>
-
-            {currentPage !== 'emergency' && (
-              <Button variant="outline" size="sm" asChild>
-                <SEOInternalLink
-                  href="/services/comprehensive-mould-removal"
-                  anchor="Professional Mould Removal Melbourne"
-                  service="Same-day Professional Service"
-                  className="text-blue-700 hover:text-blue-900"
-                >
-                  Professional Service Info
-                </SEOInternalLink>
-              </Button>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Service to location cross-linking
-export const ServiceLocationLinks: React.FC<{
-  serviceName: string;
-  serviceSlug: string;
-  maxLocations?: number;
-}> = ({ serviceName, serviceSlug, maxLocations = 6 }) => {
-
-  const topLocations = LOCATIONS_DATA
-    .filter(location => location.priority === 'high')
-    .slice(0, maxLocations);
-
-  return (
-    <div className="bg-blue-50 py-8">
-      <div className="container mx-auto px-4">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">
-          {serviceName} Available in These Melbourne Areas
-        </h3>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {topLocations.map((location) => (
-            <SEOInternalLink
-              key={location.slug}
-              href={`/services/mould-removal-${location.slug}`}
-              anchor={`${serviceName} ${location.name} Melbourne`}
-              location={location.name}
-              service={serviceName}
-              className="p-3 bg-white rounded-lg text-center hover:shadow-md transition-shadow text-sm"
-            >
-              {location.name}
-            </SEOInternalLink>
-          ))}
-        </div>
-
-        <div className="text-center mt-6">
-          <SEOInternalLink
-            href="/contact"
-            anchor="Contact Melbourne Mould Removal Service"
-            className="text-blue-600 hover:text-blue-800 font-medium"
-          >
-            Service your area? Contact us for availability
-          </SEOInternalLink>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Suburb cluster linking component
-interface SuburbClusterLinksProps {
-  currentLocation?: string;
-  maxClusters?: number;
-}
-
-export const SuburbClusterLinks: React.FC<SuburbClusterLinksProps> = ({
-  currentLocation,
-  maxClusters = 3
-}) => {
-  // Get cluster for current location
-  const currentCluster = Object.entries(SUBURB_CLUSTERS).find(([, cluster]) =>
-    cluster.suburbs.some(suburb => suburb.slug === currentLocation?.toLowerCase())
-  );
-
-  // If current location is in a cluster, show other suburbs from same cluster and nearby clusters
-  const clustersToShow = currentCluster
-    ? Object.entries(SUBURB_CLUSTERS).filter(([key]) => key === currentCluster[0]).slice(0, 1)
-    : Object.entries(SUBURB_CLUSTERS).slice(0, maxClusters);
-
-  return (
-    <div className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">
-          {currentLocation
-            ? `Other Suburbs Near ${currentLocation}`
-            : 'Melbourne Suburb Clusters We Service'
-          }
-        </h2>
-
-        {clustersToShow.map(([clusterKey, cluster]) => (
-          <div key={clusterKey} className="mb-8">
-            <h3 className="text-xl font-semibold text-primary mb-4">{cluster.name}</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {cluster.suburbs
-                .filter(suburb => suburb.slug !== currentLocation?.toLowerCase())
-                .map((suburb) => (
-                  <Card key={suburb.slug} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="h-4 w-4 text-blue-600" />
-                        <h4 className="font-bold text-gray-900">
-                          <SEOInternalLink
-                            href={`/services/mould-removal-${suburb.slug}`}
-                            anchor={`Mould removal ${suburb.name} Melbourne`}
-                            location={suburb.name}
-                            service="mould removal"
-                            className="text-gray-900 hover:text-blue-600 no-underline"
-                          >
-                            {suburb.name}
-                          </SEOInternalLink>
-                        </h4>
-                      </div>
-
-                      <p className="text-gray-600 text-sm mb-3">{suburb.description}</p>
-
-                      <ul className="text-xs text-gray-500 space-y-1">
-                        {suburb.features.slice(0, 2).map((feature, index) => (
-                          <li key={index} className="flex items-center gap-1">
-                            <div className="w-1 h-1 bg-blue-600 rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                ))}
-            </div>
-          </div>
-        ))}
-
-        <div className="text-center mt-8">
-          <p className="text-gray-600 mb-4">
-            Professional mould removal services available across all Melbourne metropolitan areas
-          </p>
-          <Button variant="outline" asChild>
-            <Link to="/contact">
-              Find Your Suburb
-              <ArrowRight className="h-4 w-4 ml-1" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Service to location mapping for strategic linking
-const SERVICE_LOCATION_MAPPING = {
-  'professional-mould-inspections': {
-    highPriority: ['toorak', 'brighton', 'camberwell', 'hawthorn', 'armadale', 'malvern'], // Premium suburbs
-    medium: ['carlton', 'fitzroy', 'richmond', 'south-yarra', 'prahran', 'brunswick'],
-    locations: ['All Melbourne suburbs']
-  },
-  'comprehensive-mould-removal': {
-    highPriority: ['carlton', 'fitzroy', 'richmond', 'brunswick', 'footscray', 'williamstown'], // All suburbs (broad service)
-    medium: ['preston', 'coburg', 'thornbury', 'yarraville', 'newport', 'maribyrnong'],
-    locations: ['All Melbourne suburbs']
-  },
-  'subfloor-mould-remediation': {
-    highPriority: ['brighton', 'hampton', 'sandringham', 'mentone', 'williamstown'], // Coastal + heritage areas
-    medium: ['carlton', 'fitzroy', 'richmond', 'prahran', 'armadale', 'malvern'],
-    locations: ['Coastal suburbs', 'Heritage areas']
-  },
-  'complete-material-removal': {
-    highPriority: ['altona', 'sunshine', 'dandenong', 'clayton', 'preston'], // Industrial areas
-    medium: ['footscray', 'brunswick', 'coburg', 'thornbury', 'newport'],
-    locations: ['Industrial areas', 'Older suburbs']
-  },
-  'advanced-fogging-sanitisation': {
-    highPriority: ['melbourne-cbd', 'southbank', 'docklands', 'point-cook', 'werribee'], // Commercial + high-density
-    medium: ['carlton', 'fitzroy', 'richmond', 'south-yarra', 'prahran'],
-    locations: ['Commercial areas', 'High-density suburbs']
-  }
-};
-
-// Location to nearby suburbs mapping for geographic linking
-const NEARBY_SUBURBS_MAPPING = {
-  // Inner Melbourne cluster
-  'carlton': ['fitzroy', 'northcote', 'brunswick', 'parkville', 'north-melbourne'],
-  'fitzroy': ['carlton', 'richmond', 'collingwood', 'northcote', 'thornbury'],
-  'richmond': ['fitzroy', 'south-yarra', 'prahran', 'cremorne', 'collingwood'],
-  'south-yarra': ['richmond', 'prahran', 'toorak', 'malvern', 'armadale'],
-  'prahran': ['south-yarra', 'windsor', 'st-kilda', 'armadale', 'malvern'],
-
-  // Coastal cluster
-  'brighton': ['brighton-east', 'hampton', 'sandringham', 'bentleigh', 'caulfield'],
-  'hampton': ['brighton', 'sandringham', 'bentleigh', 'moorabbin', 'highett'],
-  'sandringham': ['hampton', 'mentone', 'bentleigh', 'cheltenham', 'beaumaris'],
-  'mentone': ['sandringham', 'mordialloc', 'cheltenham', 'parkdale', 'edithvale'],
-
-  // Eastern suburbs cluster
-  'camberwell': ['hawthorn', 'kew', 'burwood', 'ashwood', 'glen-iris'],
-  'hawthorn': ['camberwell', 'kew', 'richmond', 'toorak', 'malvern'],
-  'toorak': ['hawthorn', 'south-yarra', 'armadale', 'malvern', 'kooyong'],
-  'malvern': ['toorak', 'armadale', 'prahran', 'caulfield', 'glen-iris'],
-  'armadale': ['malvern', 'toorak', 'kooyong', 'windsor', 'prahran'],
-
-  // Northern suburbs cluster
-  'brunswick': ['fitzroy', 'carlton', 'northcote', 'coburg', 'parkville'],
-  'northcote': ['fitzroy', 'thornbury', 'preston', 'brunswick', 'fairfield'],
-  'preston': ['northcote', 'thornbury', 'coburg', 'reservoir', 'fairfield'],
-  'thornbury': ['northcote', 'preston', 'fairfield', 'heidelberg-west', 'northcote'],
-
-  // Western suburbs cluster
-  'footscray': ['west-melbourne', 'yarraville', 'seddon', 'maribyrnong', 'kensington'],
-  'williamstown': ['newport', 'altona', 'yarraville', 'spotswood', 'port-melbourne'],
-  'yarraville': ['footscray', 'seddon', 'newport', 'west-melbourne', 'maribyrnong']
-};
-
-// Strategic internal linking component for location pages
+// Legacy component interfaces for backward compatibility
 interface StrategicLocationLinksProps {
-  currentLocation: string;
-  maxServiceLinks?: number;
-  maxLocationLinks?: number;
+  currentLocation?: string;
+  businessType?: string;
+  serviceTypes?: string[];
 }
 
-export const StrategicLocationLinks: React.FC<StrategicLocationLinksProps> = ({
-  currentLocation,
-  maxServiceLinks = 3,
-  maxLocationLinks = 4
-}) => {
-  const currentSlug = currentLocation.toLowerCase().replace(/\s+/g, '-');
-
-  // Get relevant services for this location
-  const relevantServices = SERVICES_DATA.filter(service => {
-    const mapping = SERVICE_LOCATION_MAPPING[service.slug as keyof typeof SERVICE_LOCATION_MAPPING];
-    if (!mapping) return false;
-
-    return mapping.highPriority.includes(currentSlug) ||
-           mapping.medium.includes(currentSlug) ||
-           service.priority === 'high'; // All locations get high priority services
-  }).slice(0, maxServiceLinks);
-
-  // Get nearby locations
-  const nearbyLocations = NEARBY_SUBURBS_MAPPING[currentSlug as keyof typeof NEARBY_SUBURBS_MAPPING] || [];
-  const nearbyLocationData = nearbyLocations
-    .map(slug => LOCATIONS_DATA.find(loc => loc.slug === slug))
-    .filter(Boolean)
-    .slice(0, maxLocationLinks);
-
-  return (
-    <div className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Related Services Section */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Professional Mould Services in {currentLocation} Melbourne
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {relevantServices.map((service) => (
-              <Card key={service.slug} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Shield className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-bold text-gray-900 mb-2">
-                        <SEOInternalLink
-                          href={`/services/${service.slug}`}
-                          anchor={`${service.name} ${currentLocation} Melbourne`}
-                          location={currentLocation}
-                          service={service.name}
-                          className="text-gray-900 hover:text-blue-600 no-underline"
-                        >
-                          {service.name}
-                        </SEOInternalLink>
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3">{service.description}</p>
-                      <div className="text-xs text-blue-600 font-medium">
-                        Professional service available in {currentLocation}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Nearby Locations Section */}
-        {nearbyLocationData.length > 0 && (
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-6">
-              Mould Removal in Nearby Suburbs
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {nearbyLocationData.map((location) => (
-                <Card key={location!.slug} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-blue-600" />
-                      <h4 className="font-bold text-gray-900">
-                        <SEOInternalLink
-                          href={`/locations/${location!.slug}`}
-                          anchor={`Professional mould removal ${location!.name} Melbourne`}
-                          location={location!.name}
-                          service="mould removal"
-                          className="text-gray-900 hover:text-blue-600 no-underline"
-                        >
-                          {location!.name}
-                        </SEOInternalLink>
-                      </h4>
-                    </div>
-                    <p className="text-gray-600 text-sm">{location!.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-// Strategic service page linking component
 interface StrategicServiceLinksProps {
-  currentService: string;
-  maxLocationLinks?: number;
-  maxServiceLinks?: number;
+  currentService?: string;
+  targetLocations?: string[];
 }
 
-export const StrategicServiceLinks: React.FC<StrategicServiceLinksProps> = ({
+interface HomePageStrategicLinksProps {
+  showServices?: boolean;
+  showLocations?: boolean;
+}
+
+// Updated components using the comprehensive system
+const StrategicLocationLinks: React.FC<StrategicLocationLinksProps> = ({
+  currentLocation,
+  businessType,
+  serviceTypes
+}) => (
+  <ComprehensiveInternalLinks
+    currentLocation={currentLocation}
+    variant="location"
+    showNearbySuburbs={true}
+    showRelatedServices={true}
+  />
+);
+
+const StrategicServiceLinks: React.FC<StrategicServiceLinksProps> = ({
   currentService,
-  maxLocationLinks = 8,
-  maxServiceLinks = 4
-}) => {
-  // Get relevant locations for this service
-  const serviceMapping = SERVICE_LOCATION_MAPPING[currentService as keyof typeof SERVICE_LOCATION_MAPPING];
-  const relevantLocationSlugs = serviceMapping
-    ? [...serviceMapping.highPriority, ...serviceMapping.medium.slice(0, maxLocationLinks - serviceMapping.highPriority.length)]
-    : LOCATIONS_DATA.filter(loc => loc.priority === 'high').map(loc => loc.slug).slice(0, maxLocationLinks);
+  targetLocations
+}) => (
+  <ComprehensiveInternalLinks
+    currentService={currentService}
+    variant="service"
+    showTopLocations={true}
+  />
+);
 
-  const relevantLocations = relevantLocationSlugs
-    .map(slug => LOCATIONS_DATA.find(loc => loc.slug === slug))
-    .filter(Boolean);
+const HomePageStrategicLinks: React.FC<HomePageStrategicLinksProps> = ({
+  showServices = true,
+  showLocations = true
+}) => (
+  <ComprehensiveInternalLinks
+    variant="homepage"
+  />
+);
 
-  // Get related services
-  const relatedServices = SERVICES_DATA
-    .filter(service => service.slug !== currentService)
-    .sort((a, b) => (a.priority === 'high' ? -1 : 1))
-    .slice(0, maxServiceLinks);
+// Backward compatibility components
+const RelatedServices: React.FC<{ location?: string }> = ({ location }) => (
+  <ComprehensiveInternalLinks
+    currentLocation={location}
+    variant="location"
+    showNearbySuburbs={false}
+    showRelatedServices={true}
+  />
+);
 
-  const currentServiceData = SERVICES_DATA.find(s => s.slug === currentService);
+const RelatedLocations: React.FC<{ service?: string }> = ({ service }) => (
+  <ComprehensiveInternalLinks
+    currentService={service}
+    variant="service"
+    showTopLocations={true}
+  />
+);
 
-  return (
-    <div className="py-12 bg-blue-50">
-      <div className="container mx-auto px-4">
-        {/* High Priority Locations for This Service */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            {currentServiceData?.name} Available in These Melbourne Areas
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {relevantLocations.map((location) => (
-              <Card key={location!.slug} className="hover:shadow-lg transition-shadow bg-white">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
-                    <h3 className="font-bold text-gray-900">
-                      <SEOInternalLink
-                        href={`/locations/${location!.slug}`}
-                        anchor={`${currentServiceData?.name} ${location!.name} Melbourne`}
-                        location={location!.name}
-                        service={currentServiceData?.name}
-                        className="text-gray-900 hover:text-blue-600 no-underline"
-                      >
-                        {location!.name}
-                      </SEOInternalLink>
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-3">{location!.description}</p>
-                  <div className="text-xs text-blue-600 font-medium">
-                    Professional service available
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+const EmergencyContactLinks: React.FC = () => (
+  <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+    <h3 className="font-semibold text-red-800 mb-2">Emergency Mould Removal</h3>
+    <p className="text-sm text-red-600 mb-3">Same-day service available across Melbourne</p>
+    <Link
+      to="tel:1800954117"
+      className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+    >
+      <ArrowRight className="w-4 h-4" />
+      Call 1800 954 117 Now
+    </Link>
+  </div>
+);
 
-        {/* Related Services */}
-        <div>
-          <h3 className="text-xl font-bold text-gray-900 mb-6">
-            Other Professional Mould Services Melbourne
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {relatedServices.map((service) => (
-              <Card key={service.slug} className="hover:shadow-lg transition-shadow bg-white">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Shield className="h-5 w-5 text-blue-600" />
-                    <h4 className="font-bold text-gray-900">
-                      <SEOInternalLink
-                        href={`/services/${service.slug}`}
-                        anchor={`${service.name} Melbourne`}
-                        service={service.name}
-                        className="text-gray-900 hover:text-blue-600 no-underline"
-                      >
-                        {service.name}
-                      </SEOInternalLink>
-                    </h4>
-                  </div>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+const ServiceLocationLinks: React.FC<{ service?: string; locations?: string[] }> = ({
+  service,
+  locations
+}) => (
+  <ComprehensiveInternalLinks
+    currentService={service}
+    variant="service"
+    showTopLocations={true}
+  />
+);
 
-// Homepage strategic linking component
-export const HomePageStrategicLinks: React.FC = () => {
-  // Top priority locations for homepage
-  const topLocations = LOCATIONS_DATA
-    .filter(loc => loc.priority === 'high')
-    .slice(0, 10);
+const SuburbClusterLinks: React.FC<{ currentSuburb?: string }> = ({ currentSuburb }) => (
+  <ComprehensiveInternalLinks
+    currentLocation={currentSuburb}
+    variant="location"
+    showNearbySuburbs={true}
+    showRelatedServices={false}
+  />
+);
 
-  return (
-    <div className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Professional Mould Removal Services Across Melbourne
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            IICRC-certified technicians providing comprehensive mould solutions throughout Melbourne metropolitan area. Same-day service available to all suburbs.
-          </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-5 gap-6 mb-12">
-          {SERVICES_DATA.map((service) => (
-            <Card key={service.slug} className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-2">
-                  <SEOInternalLink
-                    href={`/services/${service.slug}`}
-                    anchor={`${service.name} Melbourne`}
-                    service={service.name}
-                    className="text-gray-900 hover:text-blue-600 no-underline"
-                  >
-                    {service.name}
-                  </SEOInternalLink>
-                </h3>
-                <p className="text-gray-600 text-sm">{service.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Top Priority Locations */}
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Serving Melbourne's Premier Suburbs
-          </h3>
-          <div className="grid md:grid-cols-5 gap-4">
-            {topLocations.map((location) => (
-              <Card key={location.slug} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center gap-1 mb-2">
-                    <MapPin className="h-4 w-4 text-blue-600" />
-                    <h4 className="font-bold text-gray-900">
-                      <SEOInternalLink
-                        href={`/locations/${location.slug}`}
-                        anchor={`Mould removal ${location.name} Melbourne`}
-                        location={location.name}
-                        service="mould removal"
-                        className="text-gray-900 hover:text-blue-600 no-underline"
-                      >
-                        {location.name}
-                      </SEOInternalLink>
-                    </h4>
-                  </div>
-                  <p className="text-gray-600 text-xs">{location.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-center mt-8">
-          <p className="text-gray-600 mb-4">
-            Professional mould removal services available across all Melbourne metropolitan areas
-          </p>
-          <Button variant="outline" asChild>
-            <Link to="/contact">
-              Find Your Suburb
-              <ArrowRight className="h-4 w-4 ml-1" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default {
+export {
   SEOInternalLink,
   RelatedServices,
   RelatedLocations,

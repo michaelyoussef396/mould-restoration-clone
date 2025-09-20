@@ -1,6 +1,6 @@
 import React from 'react';
-import { LocationPageSEO } from '../../components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '../../components/seo/Schema';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent } from '../../components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
@@ -49,11 +49,11 @@ const PointCookMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
                 <Phone className="w-5 h-5 mr-2" />
                 Call 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -83,7 +83,7 @@ const PointCookMouldRemoval = () => {
         {/* Local Expertise Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Point Cook New Estate Mould Expertise
             </h2>
 
@@ -103,49 +103,49 @@ const PointCookMouldRemoval = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">New estate expertise</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Modern construction specialists</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Family-focused solutions</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Coastal influence management</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Point Cook Service Areas</h3>
+              <div className="bg-columbia p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">Point Cook Service Areas</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Saltwater Coast estates</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Point Cook Central precinct</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Boardwalk Boulevard vicinity</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Featherbrook estate areas</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Town Centre surrounds</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Coastal park proximities</span>
                   </div>
                 </div>
@@ -157,21 +157,21 @@ const PointCookMouldRemoval = () => {
         {/* Property Types Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Point Cook Property Types We Service
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-columbia rounded-full flex items-center justify-center mb-6">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Modern Family Homes</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Modern Family Homes</h3>
                   <p className="text-gray-700 mb-4">
                     Comprehensive treatment for Point Cook's contemporary family homes, addressing new construction moisture dynamics, landscaping impacts, and modern building material considerations.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• New construction expertise</li>
                     <li>• Modern material treatments</li>
                     <li>• Family-safe methodologies</li>
@@ -182,14 +182,14 @@ const PointCookMouldRemoval = () => {
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <MapPin className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mb-6">
+                    <MapPin className="w-6 h-6 text-success" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Estate Townhouses</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Estate Townhouses</h3>
                   <p className="text-gray-700 mb-4">
                     Specialised moisture control for Point Cook's popular townhouse developments, managing shared wall considerations, estate drainage, and community living environmental factors.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Townhouse-specific solutions</li>
                     <li>• Shared wall considerations</li>
                     <li>• Estate drainage expertise</li>
@@ -203,11 +203,11 @@ const PointCookMouldRemoval = () => {
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                     <Award className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Coastal Proximity Properties</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Coastal Proximity Properties</h3>
                   <p className="text-gray-700 mb-4">
                     Advanced moisture management for homes near Point Cook's coastal areas, addressing saltwater influence, elevated humidity, and weather pattern variations from Port Phillip Bay proximity.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Coastal environment expertise</li>
                     <li>• Saltwater influence mitigation</li>
                     <li>• Weather pattern adaptation</li>
@@ -222,18 +222,18 @@ const PointCookMouldRemoval = () => {
         {/* Why Choose Us Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Why Point Cook Families Choose Us
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Star className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-columbia rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">New Estate Specialists</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">New Estate Specialists</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Our extensive experience with Point Cook's modern estate developments means we understand the unique challenges of new construction, from building settlement moisture to landscaping establishment impacts on your family home.
                     </p>
@@ -241,11 +241,11 @@ const PointCookMouldRemoval = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Shield className="w-5 h-5 text-success" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Family-Focused Track Record</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Proven Family-Focused Track Record</h3>
                     <p className="text-gray-700 leading-relaxed">
                       With over 100 successful property restorations across Melbourne and 5+ years of experience, we've helped numerous Point Cook families protect their new home investments with child-safe, effective treatments.
                     </p>
@@ -257,7 +257,7 @@ const PointCookMouldRemoval = () => {
                     <Award className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Coastal Environment Expertise</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Coastal Environment Expertise</h3>
                     <p className="text-gray-700 leading-relaxed">
                       We've mastered moisture management in Point Cook's unique coastal-influenced environment, protecting your modern home from the elevated humidity and weather patterns that come with Port Phillip Bay proximity.
                     </p>
@@ -290,7 +290,7 @@ const PointCookMouldRemoval = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-6 rounded-full">
+                <Button size="lg" className="w-full bg-white text-primary hover:bg-columbia font-semibold py-6 rounded-full">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 Now
                 </Button>
@@ -302,51 +302,51 @@ const PointCookMouldRemoval = () => {
         {/* Prevention Tips Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Mould Prevention Tips for Point Cook Properties
             </h2>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">New Estate Property Care</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">New Estate Property Care</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Monitor building settlement and resulting moisture changes</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Maintain new landscaping drainage away from foundations</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Ensure modern ventilation systems operate effectively</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Address any construction warranty moisture issues promptly</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Coastal Environment Management</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Coastal Environment Management</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Manage elevated humidity from Port Phillip Bay proximity</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Use dehumidifiers during high coastal humidity periods</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Consider saltwater influence on exterior surfaces</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Schedule regular professional inspections for estate properties</span>
                     </li>
                   </ul>
@@ -357,7 +357,7 @@ const PointCookMouldRemoval = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 bg-blue-600">
+        <section className="py-16 px-4 bg-primary">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">
               Ready to Protect Your Point Cook Family Home?
@@ -367,11 +367,11 @@ const PointCookMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full">
                 <Phone className="w-5 h-5 mr-2" />
                 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Book Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

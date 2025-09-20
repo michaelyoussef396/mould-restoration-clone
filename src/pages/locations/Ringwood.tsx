@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
-import { LocationPageSEO } from '@/components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/StructuredData';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 
 export default function RingwoodMouldRemoval() {
   return (
@@ -41,7 +41,7 @@ export default function RingwoodMouldRemoval() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
                 Mould Removal Ringwood Melbourne
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function RingwoodMouldRemoval() {
                 Expert solutions for mixed housing near major shopping and transport centres in the 3134 area.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <Phone className="mr-2 h-5 w-5" />
                   Call 1800 954 117
                 </Button>
@@ -63,31 +63,31 @@ export default function RingwoodMouldRemoval() {
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="h-8 w-8 text-blue-600" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
+                <div className="font-semibold text-charcoal">Same Day</div>
+                <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5+ Years</div>
-                <div className="text-sm text-gray-600">Experience</div>
+                <div className="font-semibold text-charcoal">5+ Years</div>
+                <div className="text-sm text-professional">Experience</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="h-8 w-8 text-blue-600" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Properties Restored</div>
+                <div className="font-semibold text-charcoal">100+</div>
+                <div className="text-sm text-professional">Properties Restored</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Star className="h-8 w-8 text-blue-600" />
+                  <Star className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5.0 Stars</div>
-                <div className="text-sm text-gray-600">50+ Reviews</div>
+                <div className="font-semibold text-charcoal">5.0 Stars</div>
+                <div className="text-sm text-professional">50+ Reviews</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function RingwoodMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Local Ringwood Area Expertise
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -115,7 +115,7 @@ export default function RingwoodMouldRemoval() {
                     and the family areas near <strong>Aquanation Ringwood</strong>.
                   </p>
                   <p>
-                    The suburb's role as a transport center and shopping destination creates unique
+                    The suburb's role as a transport centre and shopping destination creates unique
                     moisture management challenges, from busy commercial areas to quiet residential
                     streets, all requiring our specialised local expertise and understanding.
                   </p>
@@ -123,40 +123,40 @@ export default function RingwoodMouldRemoval() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <MapPin className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">Postcode: 3134</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">23km from Melbourne CBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:order-first">
-                <div className="bg-blue-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <div className="bg-columbia p-8 rounded-2xl">
+                  <h3 className="text-2xl font-semibold text-charcoal mb-6">
                     Ringwood Property Specialisation
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Mixed housing near shopping centres</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Transport hub residential properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Family homes in established areas</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Modern apartments and units</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Commercial-adjacent residential</span>
                     </li>
                   </ul>
@@ -170,7 +170,7 @@ export default function RingwoodMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Ringwood Property Types We Service
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function RingwoodMouldRemoval() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Shopping Centre Adjacent Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -190,7 +190,7 @@ export default function RingwoodMouldRemoval() {
                     from increased traffic, parking areas, and commercial activity. Our specialists
                     provide solutions that account for these urban density factors.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Urban density moisture management</li>
                     <li>• Commercial activity impact assessment</li>
                     <li>• Traffic pollution and air quality considerations</li>
@@ -201,7 +201,7 @@ export default function RingwoodMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Transport Hub Residential
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -209,7 +209,7 @@ export default function RingwoodMouldRemoval() {
                     moisture management approaches. We understand the unique challenges of
                     transport-adjacent living and provide effective remediation solutions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Railway corridor moisture management</li>
                     <li>• Vibration impact considerations</li>
                     <li>• Public transport accessibility maintenance</li>
@@ -220,7 +220,7 @@ export default function RingwoodMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Established Residential Areas
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -228,7 +228,7 @@ export default function RingwoodMouldRemoval() {
                     their own moisture challenges. We provide comprehensive family home solutions
                     that maintain neighbourhood character and property values.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Family home moisture protection</li>
                     <li>• Garden and landscaping considerations</li>
                     <li>• Neighbourhood character preservation</li>
@@ -245,7 +245,7 @@ export default function RingwoodMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Ringwood Climate & Moisture Challenges
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -271,35 +271,35 @@ export default function RingwoodMouldRemoval() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">
                   Urban Hub Moisture Patterns
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-600 rounded-full w-3 h-3 mt-2"></div>
+                    <div className="bg-primary rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Winter (Jun-Aug)</div>
+                      <div className="font-semibold text-charcoal">Winter (Jun-Aug)</div>
                       <div className="text-sm text-gray-700">Commercial heating impact and transport condensation</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-green-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Spring (Sep-Nov)</div>
+                      <div className="font-semibold text-charcoal">Spring (Sep-Nov)</div>
                       <div className="text-sm text-gray-700">Increased activity and lake recreation moisture</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-yellow-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Summer (Dec-Feb)</div>
+                      <div className="font-semibold text-charcoal">Summer (Dec-Feb)</div>
                       <div className="text-sm text-gray-700">Shopping centre air conditioning and urban heat</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-orange-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Autumn (Mar-May)</div>
+                      <div className="font-semibold text-charcoal">Autumn (Mar-May)</div>
                       <div className="text-sm text-gray-700">Commercial drainage and leaf litter management</div>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function RingwoodMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Why Ringwood Residents Choose Mould & Restoration Co.
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -325,8 +325,8 @@ export default function RingwoodMouldRemoval() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Urban Expertise</h3>
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Urban Expertise</h3>
                   <p className="text-sm text-gray-700">
                     Specialist knowledge of moisture challenges near shopping centres and transport hubs.
                   </p>
@@ -335,8 +335,8 @@ export default function RingwoodMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Community-Focused</h3>
+                  <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Community-Focused</h3>
                   <p className="text-sm text-gray-700">
                     Understanding of diverse housing needs in this major regional centre.
                   </p>
@@ -345,8 +345,8 @@ export default function RingwoodMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Accessible Service</h3>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Accessible Service</h3>
                   <p className="text-sm text-gray-700">
                     same-day professional service leveraging excellent transport connectivity.
                   </p>
@@ -355,8 +355,8 @@ export default function RingwoodMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Proven Results</h3>
+                  <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Proven Results</h3>
                   <p className="text-sm text-gray-700">
                     100+ successful restorations with authentic 5.0-star reviews from local residents.
                   </p>
@@ -370,7 +370,7 @@ export default function RingwoodMouldRemoval() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Ringwood Urban Living Moisture Prevention
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -382,24 +382,24 @@ export default function RingwoodMouldRemoval() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Urban Environment Management
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor air quality and ventilation near commercial areas</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address urban heat island effects on moisture levels</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Manage condensation from increased urban activity</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Account for transport vibration impacts on seals</span>
                     </li>
                   </ul>
@@ -408,24 +408,24 @@ export default function RingwoodMouldRemoval() {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Property-Specific Solutions
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Maintain drainage systems with increased urban runoff</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Regular inspection of building seals and weatherproofing</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Balanced ventilation for urban density living</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Professional moisture assessment for mixed-use areas</span>
                     </li>
                   </ul>
@@ -447,11 +447,11 @@ export default function RingwoodMouldRemoval() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 1800 954 117 Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4">
                 Free Inspection Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO, LocalBusinessSchema, ServiceSchema } from "@/components/seo";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Docklands = () => {
   const breadcrumbItems = [
@@ -28,7 +29,7 @@ export const Docklands = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Docklands Melbourne. IICRC certified technicians specializing in modern developments, waterfront apartments, and new construction buildings."
+        description="Professional mould removal and inspection services in Docklands Melbourne. IICRC certified technicians specialising in modern developments, waterfront apartments, and new construction buildings."
       />
 
       <ServiceSchema
@@ -41,12 +42,12 @@ export const Docklands = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Docklands</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +85,7 @@ export const Docklands = () => {
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
             </div>
@@ -92,7 +93,7 @@ export const Docklands = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Docklands</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -106,7 +107,7 @@ export const Docklands = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Modern apartment moisture solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,14 +115,14 @@ export const Docklands = () => {
                   <span>Harbour precinct building protection</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>Professional service line availability</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -141,7 +142,7 @@ export const Docklands = () => {
 
           <div className="mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Our mould removal Docklands Melbourne team understands the unique challenges facing this cutting-edge waterfront precinct. Located in postcode 3008, Docklands represents Melbourne's newest urban development, with state-of-the-art apartment towers, modern commercial buildings, and innovative harbour-side construction. This contemporary environment presents specific mould risks that require specialized new construction and waterfront expertise.
+              Our mould removal Docklands Melbourne team understands the unique challenges facing this cutting-edge waterfront precinct. Located in postcode 3008, Docklands represents Melbourne's newest urban development, with state-of-the-art apartment towers, modern commercial buildings, and innovative harbour-side construction. This contemporary environment presents specific mould risks that require specialised new construction and waterfront expertise.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
@@ -211,7 +212,7 @@ export const Docklands = () => {
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Modern-Safe Service</h4>
                 <p className="text-muted-foreground mb-4">
-                  All our technicians are IICRC certified with specialized training in new construction and modern apartment remediation techniques. We understand Docklands residents expect cutting-edge service that works with contemporary building systems and modern strata requirements. Our mould removal Docklands Melbourne service includes comprehensive building management coordination.
+                  All our technicians are IICRC certified with specialised training in new construction and modern apartment remediation techniques. We understand Docklands residents expect cutting-edge service that works with contemporary building systems and modern strata requirements. Our mould removal Docklands Melbourne service includes comprehensive building management coordination.
                 </p>
               </div>
 
@@ -276,7 +277,7 @@ export const Docklands = () => {
               <h3 className="text-2xl font-semibold mb-6 text-primary">Modern-Safe Remediation Methods</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -319,14 +320,14 @@ export const Docklands = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Modern Waterfront Apartments</h3>
-                <p className="text-muted-foreground mb-4">Contemporary apartment towers with harbour views requiring specialized waterfront moisture management and modern service standards.</p>
+                <p className="text-muted-foreground mb-4">Contemporary apartment towers with harbour views requiring specialised waterfront moisture management and modern service standards.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern building coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Contemporary service standards</span>
                   </div>
                 </div>
@@ -339,11 +340,11 @@ export const Docklands = () => {
                 <p className="text-muted-foreground mb-4">Commercial and mixed-use buildings in the harbour entertainment and business district with unique waterfront challenges.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Commercial waterfront expertise</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Harbour precinct solutions</span>
                   </div>
                 </div>
@@ -356,11 +357,11 @@ export const Docklands = () => {
                 <p className="text-muted-foreground mb-4">Brand new residential and commercial developments facing unique new construction moisture and building system challenges.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>New construction solutions</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern building expertise</span>
                   </div>
                 </div>
@@ -420,7 +421,7 @@ export const Docklands = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -455,7 +456,7 @@ export const Docklands = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
-                    <span>Modern apartment ventilation optimization</span>
+                    <span>Modern apartment ventilation optimisation</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
@@ -561,11 +562,11 @@ export const Docklands = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Contemporary appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -597,7 +598,7 @@ export const Docklands = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Modern Service Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -642,7 +643,7 @@ export const Docklands = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Docklands Modern Professional Service: 1800 954 117
               </Button>
@@ -658,6 +659,13 @@ export const Docklands = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Docklands"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

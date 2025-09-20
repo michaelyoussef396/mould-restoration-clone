@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
-import { LocationPageSEO } from '@/components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/StructuredData';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 
 export default function LilydaleMouldRemoval() {
   return (
@@ -41,7 +41,7 @@ export default function LilydaleMouldRemoval() {
         <div className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-charcoal mb-6">
                 Mould Removal Lilydale Melbourne
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
@@ -49,7 +49,7 @@ export default function LilydaleMouldRemoval() {
                 Expert solutions for winery areas and semi-rural homes throughout the 3140 region.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <Phone className="mr-2 h-5 w-5" />
                   Call 1800 954 117
                 </Button>
@@ -63,31 +63,31 @@ export default function LilydaleMouldRemoval() {
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Clock className="h-8 w-8 text-blue-600" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">Same Day</div>
-                <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm</div>
+                <div className="font-semibold text-charcoal">Same Day</div>
+                <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                  <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5+ Years</div>
-                <div className="text-sm text-gray-600">Experience</div>
+                <div className="font-semibold text-charcoal">5+ Years</div>
+                <div className="text-sm text-professional">Experience</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Award className="h-8 w-8 text-blue-600" />
+                  <Award className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">100+</div>
-                <div className="text-sm text-gray-600">Properties Restored</div>
+                <div className="font-semibold text-charcoal">100+</div>
+                <div className="text-sm text-professional">Properties Restored</div>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Star className="h-8 w-8 text-blue-600" />
+                  <Star className="h-8 w-8 text-primary" />
                 </div>
-                <div className="font-semibold text-gray-900">5.0 Stars</div>
-                <div className="text-sm text-gray-600">50+ Reviews</div>
+                <div className="font-semibold text-charcoal">5.0 Stars</div>
+                <div className="text-sm text-professional">50+ Reviews</div>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function LilydaleMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Local Lilydale Area Expertise
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -123,40 +123,40 @@ export default function LilydaleMouldRemoval() {
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <MapPin className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">Postcode: 3140</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-blue-600" />
+                    <Clock className="h-5 w-5 text-primary" />
                     <span className="text-gray-700">35km from Melbourne CBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:order-first">
-                <div className="bg-blue-50 p-8 rounded-2xl">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <div className="bg-columbia p-8 rounded-2xl">
+                  <h3 className="text-2xl font-semibold text-charcoal mb-6">
                     Lilydale Property Specialisation
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Winery and vineyard properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Semi-rural lifestyle homes</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Yarra Valley mountain properties</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Creek and valley floor homes</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600" />
+                      <CheckCircle className="h-5 w-5 text-success" />
                       <span>Rural-residential developments</span>
                     </li>
                   </ul>
@@ -170,7 +170,7 @@ export default function LilydaleMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Lilydale Property Types We Service
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function LilydaleMouldRemoval() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Winery & Vineyard Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -190,7 +190,7 @@ export default function LilydaleMouldRemoval() {
                     cellar operations, fermentation areas, and agricultural activities. Our specialists
                     provide wine industry-aware moisture management solutions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Wine cellar moisture control</li>
                     <li>• Agricultural building treatment</li>
                     <li>• Fermentation area humidity management</li>
@@ -201,7 +201,7 @@ export default function LilydaleMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Semi-Rural Lifestyle Homes
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -209,7 +209,7 @@ export default function LilydaleMouldRemoval() {
                     approaches accounting for rural water sources, extensive landscaping, and
                     outbuildings. We provide holistic property protection solutions.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Large block moisture assessment</li>
                     <li>• Rural water source management</li>
                     <li>• Outbuilding and shed treatment</li>
@@ -220,7 +220,7 @@ export default function LilydaleMouldRemoval() {
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Valley Floor & Creek Properties
                   </h3>
                   <p className="text-gray-700 mb-4">
@@ -228,7 +228,7 @@ export default function LilydaleMouldRemoval() {
                     require specialist understanding of natural water flow patterns and seasonal
                     moisture variations in this scenic environment.
                   </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-professional space-y-2">
                     <li>• Valley moisture pattern management</li>
                     <li>• Creek system impact assessment</li>
                     <li>• Natural water flow considerations</li>
@@ -245,7 +245,7 @@ export default function LilydaleMouldRemoval() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl font-bold text-charcoal mb-6">
                   Lilydale Yarra Valley Climate Challenges
                 </h2>
                 <div className="space-y-4 text-gray-700">
@@ -271,35 +271,35 @@ export default function LilydaleMouldRemoval() {
               </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">
                   Wine Country Moisture Patterns
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="bg-blue-600 rounded-full w-3 h-3 mt-2"></div>
+                    <div className="bg-primary rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Winter (Jun-Aug)</div>
+                      <div className="font-semibold text-charcoal">Winter (Jun-Aug)</div>
                       <div className="text-sm text-gray-700">Valley fog and mountain drainage management</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-green-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Spring (Sep-Nov)</div>
+                      <div className="font-semibold text-charcoal">Spring (Sep-Nov)</div>
                       <div className="text-sm text-gray-700">Vineyard irrigation and tourism activity moisture</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-yellow-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Summer (Dec-Feb)</div>
+                      <div className="font-semibold text-charcoal">Summer (Dec-Feb)</div>
                       <div className="text-sm text-gray-700">Harvest season activity and rural property cooling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="bg-orange-600 rounded-full w-3 h-3 mt-2"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">Autumn (Mar-May)</div>
+                      <div className="font-semibold text-charcoal">Autumn (Mar-May)</div>
                       <div className="text-sm text-gray-700">Vintage season humidity and agricultural moisture</div>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function LilydaleMouldRemoval() {
         <div className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Why Lilydale Property Owners Choose Mould & Restoration Co.
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -325,8 +325,8 @@ export default function LilydaleMouldRemoval() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Rural Expertise</h3>
+                  <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Rural Expertise</h3>
                   <p className="text-sm text-gray-700">
                     Specialist knowledge of wine country properties and semi-rural moisture challenges.
                   </p>
@@ -335,8 +335,8 @@ export default function LilydaleMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Lifestyle-Focused</h3>
+                  <Award className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Lifestyle-Focused</h3>
                   <p className="text-sm text-gray-700">
                     Understanding of unique Yarra Valley lifestyle and agricultural considerations.
                   </p>
@@ -345,8 +345,8 @@ export default function LilydaleMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Extended Coverage</h3>
+                  <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Extended Coverage</h3>
                   <p className="text-sm text-gray-700">
                     Same-day professional service extending throughout wine country and rural areas.
                   </p>
@@ -355,8 +355,8 @@ export default function LilydaleMouldRemoval() {
 
               <div className="text-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Star className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Proven Results</h3>
+                  <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-charcoal mb-2">Proven Results</h3>
                   <p className="text-sm text-gray-700">
                     100+ successful restorations with authentic 5.0-star reviews from property owners.
                   </p>
@@ -370,7 +370,7 @@ export default function LilydaleMouldRemoval() {
         <div className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-charcoal mb-4">
                 Lilydale Wine Country Property Care Tips
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -382,24 +382,24 @@ export default function LilydaleMouldRemoval() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Wine Country Climate Management
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Monitor valley fog and morning moisture patterns</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address mountain drainage and natural water flow</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Manage agricultural irrigation proximity effects</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Plan for vintage season humidity variations</span>
                     </li>
                   </ul>
@@ -408,24 +408,24 @@ export default function LilydaleMouldRemoval() {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">
                     Rural Property Maintenance
                   </h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Maintain proper drainage across larger property blocks</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Regular inspection of outbuildings and storage areas</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Address creek system proximity and water table influences</span>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                      <CheckCircle className="h-5 w-5 text-success mt-0.5" />
                       <span>Professional assessment for wine storage and cellar areas</span>
                     </li>
                   </ul>
@@ -447,11 +447,11 @@ export default function LilydaleMouldRemoval() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-4">
                 <Phone className="mr-2 h-5 w-5" />
                 Call 1800 954 117 Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4">
                 Free Inspection Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

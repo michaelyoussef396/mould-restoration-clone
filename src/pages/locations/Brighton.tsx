@@ -9,7 +9,7 @@ import { EnhancedSchemaMarkup, LocationSpecificServiceSchema, EnhancedBreadcrumb
 import { LocationPageH1 } from "@/components/seo/H1Optimization";
 import { getSuburbMetaDescription } from "@/components/seo/MetaDescriptions";
 import { SuburbClusterLinks, StrategicLocationLinks } from "@/components/seo/InternalLinking";
-import OptimizedImage from '../../components/OptimizedImage';
+import { OptimizedImage } from '../../components/OptimizedImage';
 import { ServiceProcessImage, OptimizedImageGallery } from "@/components/seo/EnhancedOptimizedImage";
 import { generateLocationImages, getOptimizedImage } from "@/utils/imageAssets";
 
@@ -77,7 +77,7 @@ export const Brighton = () => {
 
       
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -118,7 +118,7 @@ export const Brighton = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Brighton</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export const Brighton = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Salt air corrosion treatment</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export const Brighton = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Brighton Professional Service: 1800 954 117
               </Button>
@@ -206,19 +206,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer sea breezes carrying salt moisture inland affecting weatherboard homes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter storm surge and heavy rains impacting beach-adjacent properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coastal humidity year-round affecting properties within 1km of the bay</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Sand and salt deposits affecting building seals and ventilation systems</span>
                   </li>
                 </ul>
@@ -295,23 +295,23 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Salt spray damage to building seals creating moisture entry points</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Sandy soil drainage issues affecting foundation moisture levels</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Sea breeze moisture penetration through aging weather seals and caulking</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Beach house design features (large windows, open plans) lacking moisture control</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Holiday rental property maintenance gaps during peak summer occupancy</span>
                   </li>
                 </ul>
@@ -334,11 +334,11 @@ export const Brighton = () => {
                 <p className="text-muted-foreground mb-4">Period properties with weatherboard construction requiring specialised coastal moisture management.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Heritage-appropriate treatments</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Weatherboard preservation</span>
                   </div>
                 </div>
@@ -351,11 +351,11 @@ export const Brighton = () => {
                 <p className="text-muted-foreground mb-4">Contemporary properties with large windows and open designs exposed to sea air humidity.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern material compatibility</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>HVAC system integration</span>
                   </div>
                 </div>
@@ -368,11 +368,11 @@ export const Brighton = () => {
                 <p className="text-muted-foreground mb-4">Holiday and investment properties requiring rapid treatment between tenancies.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Fast turnaround service</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Investment property protection</span>
                   </div>
                 </div>
@@ -438,19 +438,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Negative air pressure systems designed for coastal properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-appropriate protective barriers and coverings</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Salt-resistant equipment and materials for coastal conditions</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Neighbouring property protection in dense Brighton residential areas</span>
                   </li>
                 </ul>
@@ -506,19 +506,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Independent laboratory air quality testing certified for coastal properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Moisture content verification in heritage building materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Clearance certificates for insurance claims and property sales</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month treatment warranty with coastal condition considerations</span>
                   </li>
                 </ul>
@@ -531,7 +531,7 @@ export const Brighton = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -578,7 +578,7 @@ export const Brighton = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -637,19 +637,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and water damage restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Brighton postcode 3186</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling 7 days per week</span>
                   </li>
                 </ul>
@@ -666,19 +666,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved coastal property claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive salt air damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Brighton mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional coastal remediation services</span>
                   </li>
                 </ul>
@@ -785,19 +785,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Quarterly gutter cleaning to prevent salt-laden debris causing overflow onto weatherboard</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Annual weatherboard and window seal inspection for salt air corrosion damage</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Spring roof and gutter assessment after winter storms affecting coastal properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage timber treatment with marine-grade sealants before peak summer exposure</span>
                   </li>
                 </ul>
@@ -812,19 +812,19 @@ export const Brighton = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Federation Homes:</strong> White salt crystallization on brick, paint peeling on weatherboard, musty odors in under-floor areas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Beach Houses:</strong> Black spots around coastal-facing windows, timber window frame swelling and warping</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Modern Coastal Homes:</strong> HVAC system salt corrosion odors, bathroom exhaust fan salt buildup</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>All Property Types:</strong> Increased allergies during sea breeze conditions, salt residue on interior surfaces near windows</span>
                   </li>
                 </ul>
@@ -873,11 +873,11 @@ export const Brighton = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional response:</span>
-                    <span className="font-semibold text-blue-600">Same-day available</span>
+                    <span className="font-semibold text-primary">Same-day available</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -908,11 +908,11 @@ export const Brighton = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Brighton Team: 1800 954 117
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 Schedule Coastal Assessment
               </Button>
             </div>
@@ -928,10 +928,10 @@ export const Brighton = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               We Also Service These Coastal Areas
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-professional max-w-3xl mx-auto">
               Comprehensive mould solutions across Melbourne's bayside suburbs
             </p>
           </div>
@@ -939,15 +939,15 @@ export const Brighton = () => {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">St Kilda</h3>
-              <p className="text-gray-600 text-sm">Coastal mould solutions</p>
+              <p className="text-professional text-sm">Coastal mould solutions</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">Elwood</h3>
-              <p className="text-gray-600 text-sm">Beachside property care</p>
+              <p className="text-professional text-sm">Beachside property care</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="font-semibold text-lg mb-2">Port Melbourne</h3>
-              <p className="text-gray-600 text-sm">Waterfront specialists</p>
+              <p className="text-professional text-sm">Waterfront specialists</p>
             </div>
           </div>
         </div>

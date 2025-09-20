@@ -10,7 +10,7 @@ import { ContactSection } from '@/components/ContactSection';
 import { HomePageSEO } from '@/components/seo/SEOHead';
 import { LocalBusinessSchema, OrganizationSchema, ReviewSchema } from '@/components/seo/SchemaMarkup';
 import { HomePageStrategicLinks } from '@/components/seo/InternalLinking';
-import heroBackground from '@/assets/hero-background.jpg';
+import heroBackground from '@/assets/hero-background-ultra-lcp.webp';
 
 const Index = () => {
   // Sample review data from your Google reviews

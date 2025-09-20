@@ -108,33 +108,23 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
       {/* Only render image when in view or priority */}
       {(isInView || priority) && (
-        <picture>
-          {/* WebP source for modern browsers */}
-          <source
-            srcSet={generateSrcSet(getWebPSource(src))}
-            sizes={sizes}
-            type="image/webp"
-          />
-
-          {/* Fallback to original format */}
-          <img
-            src={src}
-            srcSet={generateSrcSet(src)}
-            alt={alt}
-            className={`transition-opacity duration-300 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            } ${className}`}
-            loading={priority ? 'eager' : loading}
-            width={width}
-            height={height}
-            sizes={sizes}
-            onLoad={handleLoad}
-            onError={handleError}
-            // SEO and accessibility attributes
-            decoding="async"
-            fetchPriority={priority ? 'high' : 'auto'}
-          />
-        </picture>
+        <img
+          src={src}
+          srcSet={generateSrcSet(src)}
+          alt={alt}
+          className={`transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          } ${className}`}
+          loading={priority ? 'eager' : loading}
+          width={width}
+          height={height}
+          sizes={sizes}
+          onLoad={handleLoad}
+          onError={handleError}
+          // SEO and accessibility attributes
+          decoding="async"
+          fetchpriority={priority ? 'high' : 'auto'}
+        />
       )}
     </div>
   );
@@ -217,7 +207,7 @@ export const ServiceOptimizedImage: React.FC<ServiceImageProps> = ({
   return <OptimizedImage {...props} alt={generateServiceAlt()} />;
 };
 
-// Hero image component with specific optimization
+// Hero image component with specific optimisation
 interface HeroImageProps extends OptimizedImageProps {
   backgroundImage?: boolean;
 }

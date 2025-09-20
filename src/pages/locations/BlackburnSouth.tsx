@@ -35,7 +35,7 @@ import {
   LocationFAQSchema
 } from '@/components/seo/EnhancedSchemaMarkup';
 import { SuburbClusterLinks, StrategicLocationLinks } from '@/components/seo/InternalLinking';
-import OptimizedImage from '../../components/OptimizedImage';
+import { OptimizedImage } from '../../components/OptimizedImage';
 import {
   ServiceProcessImage,
   OptimizedImageGallery
@@ -218,23 +218,23 @@ export const BlackburnSouth = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/blackburn-south-hero-bg.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-10"></div>
         <div className="container mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <LocationPageH1 location={location} />
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-professional mb-8 leading-relaxed">
                 IICRC-certified mould inspection and removal specialists serving Blackburn South's family-oriented community. From modern family homes to established character properties, we provide professional mould solutions that prioritise family health and safety in this thriving Melbourne suburb.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                   <a href="tel:1800954117" className="flex items-center">
                     <Phone className="mr-2 h-5 w-5" />
                     Call 1800 954 117
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-4">
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-columbia px-8 py-4">
                   <a href="#contact" className="flex items-center">
                     Schedule Inspection
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -244,20 +244,20 @@ export const BlackburnSouth = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">5+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-sm text-professional">Years Experience</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">100+</div>
-                  <div className="text-sm text-gray-600">Properties Restored</div>
+                  <div className="text-2xl font-bold text-primary">100+</div>
+                  <div className="text-sm text-professional">Properties Restored</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">5.0★</div>
-                  <div className="text-sm text-gray-600">Google Rating</div>
+                  <div className="text-2xl font-bold text-primary">5.0★</div>
+                  <div className="text-sm text-professional">Google Rating</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm border">
-                  <div className="text-2xl font-bold text-blue-600">Family</div>
-                  <div className="text-sm text-gray-600">Safe</div>
+                  <div className="text-2xl font-bold text-primary">Family</div>
+                  <div className="text-sm text-professional">Safe</div>
                 </div>
               </div>
             </div>
@@ -270,7 +270,7 @@ export const BlackburnSouth = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-success/100 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Available Now in Blackburn South</span>
                 </div>
               </div>
@@ -283,10 +283,10 @@ export const BlackburnSouth = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Local Blackburn South Mould Expertise
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our family-focused approach and understanding of Blackburn South's suburban residential patterns ensures effective mould solutions tailored to your family's needs and property characteristics within this thriving Melbourne community.
             </p>
           </div>
@@ -295,12 +295,12 @@ export const BlackburnSouth = () => {
             {localFactors.map((factor, index) => (
               <Card key={index} className="p-6 h-full hover:shadow-lg transition-shadow">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-8 w-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-columbia rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-3">{factor.factor}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{factor.impact}</p>
-                  <p className="text-sm text-blue-600 font-medium">{factor.solution}</p>
+                  <h3 className="font-bold text-charcoal mb-3">{factor.factor}</h3>
+                  <p className="text-sm text-professional mb-3">{factor.impact}</p>
+                  <p className="text-sm text-primary font-medium">{factor.solution}</p>
                 </div>
               </Card>
             ))}
@@ -312,10 +312,10 @@ export const BlackburnSouth = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Blackburn South Property Types We Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               From family homes to commercial properties, our IICRC-certified team provides specialised mould solutions for every property type in Blackburn South's diverse suburban landscape.
             </p>
           </div>
@@ -332,8 +332,8 @@ export const BlackburnSouth = () => {
                     />
                   </div>
                   <div className="md:w-2/3 p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{property.type}</h3>
-                    <p className="text-gray-600 leading-relaxed">{property.description}</p>
+                    <h3 className="text-xl font-bold text-charcoal mb-3">{property.type}</h3>
+                    <p className="text-professional leading-relaxed">{property.description}</p>
                   </div>
                 </div>
               </Card>
@@ -343,13 +343,13 @@ export const BlackburnSouth = () => {
       </section>
 
       {/* Specialised Services */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-columbia">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Specialised Mould Services for Blackburn South
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our comprehensive range of family-focused mould services addresses the specific needs of Blackburn South properties and their residents.
             </p>
           </div>
@@ -358,16 +358,16 @@ export const BlackburnSouth = () => {
             {blackburnSouthServices.map((service, index) => (
               <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                    <h3 className="text-xl font-bold text-charcoal mb-3">{service.title}</h3>
+                    <p className="text-professional mb-4 leading-relaxed">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-professional">
+                          <CheckCircle className="h-4 w-4 text-success flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -384,31 +384,31 @@ export const BlackburnSouth = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Why Choose Us for Blackburn South Mould Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our family-safe approach, flexible scheduling, and community focus make us the trusted choice for Blackburn South property owners seeking effective mould solutions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="h-8 w-8 text-blue-600" />
+              <div className="w-16 h-16 bg-columbia rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">IICRC Certified Professionals</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">IICRC Certified Professionals</h3>
+              <p className="text-professional">
                 Our technicians hold industry-leading IICRC certifications with additional training in family-safe treatment methods and child-friendly service approaches.
               </p>
             </Card>
 
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-green-600" />
+              <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-8 w-8 text-success" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Family-Focused Service</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">Family-Focused Service</h3>
+              <p className="text-professional">
                 Specialised approaches designed for families with children and pets, including flexible scheduling and safe treatment methods that protect household members.
               </p>
             </Card>
@@ -417,8 +417,8 @@ export const BlackburnSouth = () => {
               <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Home className="h-8 w-8 text-teal-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Community Understanding</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-charcoal mb-4">Community Understanding</h3>
+              <p className="text-professional">
                 Deep knowledge of Blackburn South's housing types, suburban living patterns, and community expectations for professional service delivery.
               </p>
             </Card>
@@ -430,10 +430,10 @@ export const BlackburnSouth = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               What Blackburn South Customers Say
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Read testimonials from satisfied Blackburn South property owners who have experienced our family-focused mould inspection and remediation services.
             </p>
           </div>
@@ -446,9 +446,9 @@ export const BlackburnSouth = () => {
                     <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.testimonial}"</p>
+                <p className="text-professional mb-4 italic">"{testimonial.testimonial}"</p>
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                  <div className="font-semibold text-charcoal">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.property}</div>
                 </div>
               </Card>
@@ -461,47 +461,47 @@ export const BlackburnSouth = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Our Blackburn South Mould Inspection Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Our family-friendly process ensures thorough assessment and effective treatment while accommodating your household routine.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Family-Safe Assessment</h3>
-              <p className="text-gray-600">Comprehensive property evaluation using family-safe methods and child-friendly scheduling arrangements.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">1</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Family-Safe Assessment</h3>
+              <p className="text-professional">Comprehensive property evaluation using family-safe methods and child-friendly scheduling arrangements.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">2</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Detailed Testing</h3>
-              <p className="text-gray-600">Air quality sampling and surface testing with minimal household disruption and clear explanations for families.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">2</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Detailed Testing</h3>
+              <p className="text-professional">Air quality sampling and surface testing with minimal household disruption and clear explanations for families.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">3</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Safe Treatment</h3>
-              <p className="text-gray-600">Child and pet-safe remediation strategy that works around family schedules and daily routines.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">3</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Safe Treatment</h3>
+              <p className="text-professional">Child and pet-safe remediation strategy that works around family schedules and daily routines.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">4</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Family Education</h3>
-              <p className="text-gray-600">Comprehensive guidance on maintaining healthy family environments and preventing future mould growth.</p>
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold">4</div>
+              <h3 className="text-lg font-bold text-charcoal mb-2">Family Education</h3>
+              <p className="text-professional">Comprehensive guidance on maintaining healthy family environments and preventing future mould growth.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mould Prevention Tips */}
-      <section className="py-16 bg-blue-50">
+      <section className="py-16 bg-columbia">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Family-Safe Mould Prevention Tips for Blackburn South
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Protect your Blackburn South family home with these expert prevention strategies designed for busy households with children and pets.
             </p>
           </div>
@@ -509,20 +509,20 @@ export const BlackburnSouth = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <Wind className="h-8 w-8 text-blue-600" />
-                <h3 className="text-lg font-bold text-gray-900">Family-Safe Ventilation</h3>
+                <Wind className="h-8 w-8 text-primary" />
+                <h3 className="text-lg font-bold text-charcoal">Family-Safe Ventilation</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Ensure adequate ventilation in family areas while maintaining child safety. Use window locks and safety screens to maintain airflow without compromising security.
               </p>
             </Card>
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
-                <Thermometer className="h-8 w-8 text-green-600" />
-                <h3 className="text-lg font-bold text-gray-900">Comfortable Climate</h3>
+                <Thermometer className="h-8 w-8 text-success" />
+                <h3 className="text-lg font-bold text-charcoal">Comfortable Climate</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Maintain consistent temperatures that keep families comfortable while preventing condensation. Modern homes benefit from programmable thermostats and efficient heating systems.
               </p>
             </Card>
@@ -530,9 +530,9 @@ export const BlackburnSouth = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Droplets className="h-8 w-8 text-teal-600" />
-                <h3 className="text-lg font-bold text-gray-900">Household Moisture Control</h3>
+                <h3 className="text-lg font-bold text-charcoal">Household Moisture Control</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Monitor family activity moisture sources including bathrooms, laundries, and kitchen areas. Use exhaust fans and encourage good ventilation habits among household members.
               </p>
             </Card>
@@ -540,9 +540,9 @@ export const BlackburnSouth = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <AlertTriangle className="h-8 w-8 text-orange-600" />
-                <h3 className="text-lg font-bold text-gray-900">Family Awareness</h3>
+                <h3 className="text-lg font-bold text-charcoal">Family Awareness</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Teach family members to identify signs of moisture problems early. Regular family inspections of common areas can catch issues before they become significant problems.
               </p>
             </Card>
@@ -550,9 +550,9 @@ export const BlackburnSouth = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Home className="h-8 w-8 text-purple-600" />
-                <h3 className="text-lg font-bold text-gray-900">Routine Maintenance</h3>
+                <h3 className="text-lg font-bold text-charcoal">Routine Maintenance</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Establish family-friendly maintenance routines that include checking for leaks, cleaning exhaust fans, and ensuring proper drainage around the home.
               </p>
             </Card>
@@ -560,9 +560,9 @@ export const BlackburnSouth = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="h-8 w-8 text-red-600" />
-                <h3 className="text-lg font-bold text-gray-900">Professional Support</h3>
+                <h3 className="text-lg font-bold text-charcoal">Professional Support</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-professional">
                 Schedule regular family home inspections to ensure ongoing protection. Professional monitoring provides peace of mind for busy families with health-conscious approaches.
               </p>
             </Card>
@@ -574,10 +574,10 @@ export const BlackburnSouth = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Blackburn South Areas We Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               We provide comprehensive family-safe mould inspection and removal services throughout Blackburn South and surrounding suburban areas.
             </p>
           </div>
@@ -585,8 +585,8 @@ export const BlackburnSouth = () => {
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
             {serviceAreas.map((area, index) => (
               <Card key={index} className="p-4 text-center hover:shadow-lg transition-shadow">
-                <MapPin className="h-6 w-6 text-blue-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-gray-900">{area}</h3>
+                <MapPin className="h-6 w-6 text-primary mx-auto mb-2" />
+                <h3 className="font-semibold text-charcoal">{area}</h3>
               </Card>
             ))}
           </div>
@@ -599,10 +599,10 @@ export const BlackburnSouth = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-charcoal mb-4">
               Frequently Asked Questions - Blackburn South Mould Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-professional max-w-3xl mx-auto">
               Get answers to common questions about our family-focused mould services for Blackburn South properties.
             </p>
           </div>
@@ -611,8 +611,8 @@ export const BlackburnSouth = () => {
             <div className="space-y-6">
               {faqData.map((faq, index) => (
                 <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <h3 className="text-lg font-bold text-charcoal mb-3">{faq.question}</h3>
+                  <p className="text-professional leading-relaxed">{faq.answer}</p>
                 </Card>
               ))}
             </div>
@@ -621,7 +621,7 @@ export const BlackburnSouth = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-blue-600 text-white">
+      <section id="contact" className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -634,45 +634,45 @@ export const BlackburnSouth = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Card className="p-8 bg-white text-gray-900">
+              <Card className="p-8 bg-white text-charcoal">
                 <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Family Service Line</div>
-                      <a href="tel:1800954117" className="text-blue-600 hover:underline text-lg">
+                      <a href="tel:1800954117" className="text-primary hover:underline text-lg">
                         1800 954 117
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <Clock className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Business Hours</div>
-                      <div className="text-gray-600">7:00 AM - 7:00 PM, Every Day</div>
+                      <div className="text-professional">7:00 AM - 7:00 PM, Every Day</div>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-columbia rounded-lg flex items-center justify-center">
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <div className="font-semibold">Service Area</div>
-                      <div className="text-gray-600">Blackburn South & All Melbourne</div>
+                      <div className="text-professional">Blackburn South & All Melbourne</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8 text-center">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary-600 text-white px-8 py-4">
                     <a href="tel:1800954117" className="flex items-center">
                       <Phone className="mr-2 h-5 w-5" />
                       Call Now for Family-Safe Service
@@ -687,7 +687,7 @@ export const BlackburnSouth = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -699,7 +699,7 @@ export const BlackburnSouth = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>
@@ -711,7 +711,7 @@ export const BlackburnSouth = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-columbia0 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                   <div>

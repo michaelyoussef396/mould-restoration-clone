@@ -28,7 +28,7 @@ export const Burwood = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Burwood Melbourne. IICRC certified technicians specializing in established family homes, Deakin University area properties, and residential buildings."
+        description="Professional mould removal and inspection services in Burwood Melbourne. IICRC certified technicians specialising in established family homes, Deakin University area properties, and residential buildings."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Burwood = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Burwood</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Burwood = () => {
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
             </div>
@@ -92,7 +92,7 @@ export const Burwood = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Burwood</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export const Burwood = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Established suburb moisture solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,14 +114,14 @@ export const Burwood = () => {
                   <span>Student accommodation safe methods</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>Professional service line availability</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -141,11 +141,11 @@ export const Burwood = () => {
 
           <div className="mb-12">
             <p className="text-lg text-muted-foreground mb-6">
-              Our mould removal Burwood Melbourne team understands the unique challenges facing this established eastern suburb. Located in postcode 3125, Burwood sits between Camberwell and Glen Waverley, creating a perfect blend of established family living and educational precinct. With traditional family homes, Deakin University campus proximity, and mature residential streets, Burwood presents specific mould risks that require specialized suburban and educational area expertise.
+              Our mould removal Burwood Melbourne team understands the unique challenges facing this established eastern suburb. Located in postcode 3125, Burwood sits between Camberwell and Glen Waverley, creating a perfect blend of established family living and educational precinct. With traditional family homes, Deakin University campus proximity, and mature residential streets, Burwood presents specific mould risks that require specialised suburban and educational area expertise.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6">
-              The suburb's position near Deakin University creates unique demographic challenges, while established family homes often feature original building materials requiring careful treatment. Properties around Burwood Highway, near Burwood One shopping center, and throughout the university precinct experience varying humidity patterns due to mixed residential and educational land use. Our professional mould removal Burwood service responds Same-day professional service to protect your family home or student accommodation.
+              The suburb's position near Deakin University creates unique demographic challenges, while established family homes often feature original building materials requiring careful treatment. Properties around Burwood Highway, near Burwood One shopping centre, and throughout the university precinct experience varying humidity patterns due to mixed residential and educational land use. Our professional mould removal Burwood service responds Same-day professional service to protect your family home or student accommodation.
             </p>
           </div>
 
@@ -192,7 +192,7 @@ export const Burwood = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-emergency-orange rounded-full mt-2"></div>
-                    <span>Shopping center proximity urban heat island</span>
+                    <span>Shopping centre proximity urban heat island</span>
                   </li>
                 </ul>
               </CardContent>
@@ -211,7 +211,7 @@ export const Burwood = () => {
 
                 <h4 className="text-xl font-semibold mb-4 text-primary">IICRC Certified Family-Safe Service</h4>
                 <p className="text-muted-foreground mb-4">
-                  All our technicians are IICRC certified with specialized training in family home and student accommodation remediation techniques. We understand Burwood families and students need safe, effective service that protects health while maintaining property standards. Our mould removal Burwood Melbourne service includes comprehensive property management coordination for rental properties.
+                  All our technicians are IICRC certified with specialised training in family home and student accommodation remediation techniques. We understand Burwood families and students need safe, effective service that protects health while maintaining property standards. Our mould removal Burwood Melbourne service includes comprehensive property management coordination for rental properties.
                 </p>
               </div>
 
@@ -276,7 +276,7 @@ export const Burwood = () => {
               <h3 className="text-2xl font-semibold mb-6 text-primary">Family-Safe Remediation Methods</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -319,14 +319,14 @@ export const Burwood = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Established Family Homes</h3>
-                <p className="text-muted-foreground mb-4">Traditional family houses with established gardens requiring specialized residential moisture management and family-safe service standards.</p>
+                <p className="text-muted-foreground mb-4">Traditional family houses with established gardens requiring specialised residential moisture management and family-safe service standards.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Child and pet safe methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Family schedule coordination</span>
                   </div>
                 </div>
@@ -339,11 +339,11 @@ export const Burwood = () => {
                 <p className="text-muted-foreground mb-4">Student accommodation and properties near Deakin University with unique tenant and educational precinct challenges.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Student-safe treatment methods</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Property management coordination</span>
                   </div>
                 </div>
@@ -353,14 +353,14 @@ export const Burwood = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Post-War Residential Buildings</h3>
-                <p className="text-muted-foreground mb-4">Mid-century family homes and established residential buildings requiring specialized heritage-conscious treatment approaches.</p>
+                <p className="text-muted-foreground mb-4">Mid-century family homes and established residential buildings requiring specialised heritage-conscious treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Post-war building expertise</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Original material preservation</span>
                   </div>
                 </div>
@@ -420,7 +420,7 @@ export const Burwood = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -455,7 +455,7 @@ export const Burwood = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
-                    <span>Residential ventilation optimization</span>
+                    <span>Residential ventilation optimisation</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
@@ -561,11 +561,11 @@ export const Burwood = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Family appointments:</span>
-                    <span className="font-semibold text-success-green">School-hours scheduling</span>
+                    <span className="font-semibold text-success">School-hours scheduling</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -597,7 +597,7 @@ export const Burwood = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Family-Focused Service Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -642,7 +642,7 @@ export const Burwood = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Burwood Family Professional Service: 1800 954 117
               </Button>

@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema, BreadcrumbSchema } from "@/components/seo/SchemaMarkup";
-import { SuburbClusterLinks } from "@/components/seo/InternalLinking";
+import { SuburbClusterLinks, StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Parkville = () => {
   const breadcrumbItems = [
@@ -47,8 +47,9 @@ export const Parkville = () => {
       />
       <Navigation />
 
-      {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <main>
+        {/* Professional Service Bar */}
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -79,7 +80,7 @@ export const Parkville = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Parkville</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -93,7 +94,7 @@ export const Parkville = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Institutional air quality standards</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -104,7 +105,7 @@ export const Parkville = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Parkville Professional Service: 1800 954 117
               </Button>
@@ -158,19 +159,19 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer heat island effects from institutional buildings and concrete surfaces</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter condensation issues in heritage buildings with modern heating systems</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Royal Park proximity creating natural humidity and air circulation patterns</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Institutional HVAC systems affecting surrounding residential properties</span>
                   </li>
                 </ul>
@@ -212,7 +213,7 @@ export const Parkville = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Educational Building Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  Parkville's institutional buildings face unique mould challenges from high occupancy rates, specialized ventilation systems, and the need to maintain sterile environments while preserving heritage architecture and meeting educational requirements.
+                  Parkville's institutional buildings face unique mould challenges from high occupancy rates, specialised ventilation systems, and the need to maintain sterile environments while preserving heritage architecture and meeting educational requirements.
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
@@ -221,7 +222,7 @@ export const Parkville = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Laboratory and research facilities with specialized air handling requirements</span>
+                    <span>Laboratory and research facilities with specialised air handling requirements</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
@@ -247,23 +248,23 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Heritage timber construction with original ventilation systems requiring upgrades</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Period homes with cellars and basements affected by area water table changes</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Properties adjacent to institutional buildings affected by their HVAC systems</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Royal Park proximity creating natural humidity but also drainage challenges</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Tree-lined streets with mature canopy affecting property solar exposure and drainage</span>
                   </li>
                 </ul>
@@ -314,19 +315,19 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Minimal disruption protocols for operational educational and medical facilities</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-appropriate treatment methods preserving architectural integrity</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Hospital-grade air quality standards for medical precinct properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coordination with institutional maintenance and facilities management teams</span>
                   </li>
                 </ul>
@@ -368,23 +369,23 @@ export const Parkville = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Specialized Treatment Equipment</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Parkville operations utilize professional-grade equipment designed for institutional settings, heritage building preservation, and meeting the stringent requirements of educational and medical facilities while serving residential properties.
+                  Our Parkville operations utilise professional-grade equipment designed for institutional settings, heritage building preservation, and meeting the stringent requirements of educational and medical facilities while serving residential properties.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>HEPA-filtered negative air machines for containment in operational buildings</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Low-noise equipment for minimal disruption to educational activities</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Hospital-grade dehumidification systems for medical precinct requirements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-safe drying equipment protecting period building materials</span>
                   </li>
                 </ul>
@@ -409,7 +410,7 @@ export const Parkville = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Parkville institutional and heritage property issues</span>
+                    <span>5+ years specialising in Parkville institutional and heritage property issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -417,7 +418,7 @@ export const Parkville = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>University and hospital building specialized experience and clearances</span>
+                    <span>University and hospital building specialised experience and clearances</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -435,19 +436,19 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and institutional building restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Parkville postcode 3052</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling with institutional coordination available</span>
                   </li>
                 </ul>
@@ -464,19 +465,19 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved institutional and residential claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive documentation meeting institutional and heritage requirements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Parkville mould removal services</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional institutional and heritage remediation</span>
                   </li>
                 </ul>
@@ -546,19 +547,19 @@ export const Parkville = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 2: Containment & Heritage Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  Parkville properties require specialized containment strategies that protect ongoing operations, preserve heritage features, and maintain institutional air quality standards while preventing cross-contamination.
+                  Parkville properties require specialised containment strategies that protect ongoing operations, preserve heritage features, and maintain institutional air quality standards while preventing cross-contamination.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Negative air pressure systems designed for operational institutional buildings</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage-appropriate protective barriers preserving architectural elements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Hospital-grade containment meeting medical facility air quality standards</span>
                   </li>
                 </ul>
@@ -571,7 +572,7 @@ export const Parkville = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 3: Safe Removal & Heritage Preservation</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our removal process for Parkville properties utilizes methods appropriate for institutional requirements and heritage preservation, ensuring effective treatment while maintaining building integrity and operational continuity.
+                  Our removal process for Parkville properties utilises methods appropriate for institutional requirements and heritage preservation, ensuring effective treatment while maintaining building integrity and operational continuity.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -598,15 +599,15 @@ export const Parkville = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional dehumidification systems compatible with institutional buildings</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Heritage building material-appropriate drying protocols</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Continuous monitoring ensuring optimal conditions for institutional operations</span>
                   </li>
                 </ul>
@@ -622,19 +623,19 @@ export const Parkville = () => {
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Independent laboratory air quality testing meeting institutional health standards</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Heritage building material moisture verification and conservation compliance</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Comprehensive clearance certificates for institutional and insurance documentation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>12-month treatment warranty with institutional service support included</span>
                 </li>
               </ul>
@@ -651,7 +652,7 @@ export const Parkville = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide institutional and heritage-specialized mould removal services throughout Parkville and nearby Melbourne precincts including:
+                We provide institutional and heritage-specialised mould removal services throughout Parkville and nearby Melbourne precincts including:
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -682,11 +683,11 @@ export const Parkville = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Institutional emergency response:</span>
-                    <span className="font-semibold text-blue-600">1-2 hours</span>
+                    <span className="font-semibold text-primary">1-2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -703,85 +704,21 @@ export const Parkville = () => {
         </div>
       </section>
 
-      {/* Related Inner City Suburbs */}
-      <SuburbClusterLinks currentLocation="Parkville" />
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Parkville"
+        currentService="removal"
+        emergencyLocation={false}
+      />
 
-      {/* Contact Section */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Parkville Institutional & Heritage Mould Inspection Today</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Protect your Parkville institutional facility or heritage property from moisture damage and environmental health risks. Expert assessment and remediation for educational buildings, medical facilities, and heritage homes.
-            </p>
+      <SuburbClusterLinks
+        currentLocation="Parkville"
+        clusterType="inner-north"
+      />
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Heritage Contact</h3>
-                  <div className="space-y-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
-                      <span>1800 954 117 (Professional service 7am-7pm daily)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <MapPin className="w-5 h-5 text-accent-blue" />
-                      <span>admin@mouldandrestoration.com.au</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-accent-teal" />
-                      <span>Institutional emergency response available</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Institutional & Heritage Process</h3>
-                  <div className="space-y-3 text-left text-sm">
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</div>
-                      <span>Free institutional/heritage consultation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</div>
-                      <span>Same-day Parkville inspection scheduling</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</div>
-                      <span>Institutional-grade assessment and heritage evaluation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</div>
-                      <span>Heritage-appropriate and institutional-standard remediation</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-accent-blue text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">5</div>
-                      <span>Final testing and institutional compliance certification</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                <Phone className="w-5 h-5 mr-2" />
-                Parkville Professional Service: 1800 954 117
-              </Button>
-              <Button variant="outline" size="lg">
-                Schedule Institutional & Heritage Inspection
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
-
-            <p className="text-sm text-muted-foreground mt-6">
-              Serving Parkville institutional and heritage properties • University & hospital specialists • Heritage preservation experts
-            </p>
-          </div>
-        </div>
-      </section>
+      </main>
     </div>
   );
 };
+
+export default Parkville;

@@ -28,7 +28,7 @@ export const HoppersCrossing = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Hoppers Crossing Melbourne. IICRC certified technicians specializing in new estate developments, growth corridor properties, and modern family homes."
+        description="Professional mould removal and inspection services in Hoppers Crossing Melbourne. IICRC certified technicians specialising in new estate developments, growth corridor properties, and modern family homes."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const HoppersCrossing = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Hoppers Crossing</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const HoppersCrossing = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const HoppersCrossing = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Hoppers Crossing</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>New estate & growth corridor expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const HoppersCrossing = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -181,7 +181,7 @@ export const HoppersCrossing = () => {
                   <h4 className="font-semibold mb-3 text-primary">Modern Construction Issues</h4>
                   <ul className="space-y-2 text-sm">
                     <li>• Contemporary building standards requiring optimal moisture control</li>
-                    <li>• Energy-efficient home design ventilation optimization needs</li>
+                    <li>• Energy-efficient home design ventilation optimisation needs</li>
                     <li>• Modern family home high-performance HVAC systems</li>
                     <li>• New construction material moisture protection requirements</li>
                     <li>• Open plan living design moisture distribution patterns</li>
@@ -191,15 +191,15 @@ export const HoppersCrossing = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg shadow-lg mb-8">
+            <div className="bg-columbia p-8 rounded-lg shadow-lg mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Hoppers Crossing Growth Corridor Living</h3>
               <p className="text-gray-700 mb-6">
-                Located in Melbourne's fastest-growing western corridor, Hoppers Crossing presents unique mould challenges related to new development, modern building standards, and the transition from rural to urban infrastructure requiring specialized growth area expertise.
+                Located in Melbourne's fastest-growing western corridor, Hoppers Crossing presents unique mould challenges related to new development, modern building standards, and the transition from rural to urban infrastructure requiring specialised growth area expertise.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">New Development Environment</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• New estate landscaping and irrigation creating localized humidity patterns</li>
                     <li>• Modern construction standards requiring contemporary moisture management</li>
                     <li>• Growth area infrastructure affecting local environmental conditions</li>
@@ -208,7 +208,7 @@ export const HoppersCrossing = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-3 text-primary">Modern Family Living Patterns</h4>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Young family demographics creating specific moisture management needs</li>
                     <li>• Modern home entertainment and lifestyle requiring humidity control</li>
                     <li>• New community facilities and amenities affecting local moisture</li>
@@ -229,15 +229,15 @@ export const HoppersCrossing = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Contemporary Family Estates</h5>
-                      <p className="text-sm text-gray-600">Modern new estates requiring advanced moisture management systems addressing contemporary building standards and young family living with energy efficiency priorities.</p>
+                      <p className="text-sm text-professional">Modern new estates requiring advanced moisture management systems addressing contemporary building standards and young family living with energy efficiency priorities.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">First Home Buyer Developments</h5>
-                      <p className="text-sm text-gray-600">New developments popular with first home buyers requiring cost-effective moisture management suitable for young families establishing their first home with modern amenities.</p>
+                      <p className="text-sm text-professional">New developments popular with first home buyers requiring cost-effective moisture management suitable for young families establishing their first home with modern amenities.</p>
                     </div>
                     <div className="border-l-4 border-blue-200 pl-4">
                       <h5 className="font-medium text-gray-800">Master-Planned Community Homes</h5>
-                      <p className="text-sm text-gray-600">Comprehensive estate developments requiring moisture management addressing shared community facilities, estate landscaping, and modern family lifestyle integration.</p>
+                      <p className="text-sm text-professional">Comprehensive estate developments requiring moisture management addressing shared community facilities, estate landscaping, and modern family lifestyle integration.</p>
                     </div>
                   </div>
                 </div>
@@ -246,15 +246,15 @@ export const HoppersCrossing = () => {
                   <div className="space-y-4">
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Townhouse Developments</h5>
-                      <p className="text-sm text-gray-600">Contemporary townhouse communities requiring shared wall moisture management and modern family living solutions suitable for growth corridor demographics.</p>
+                      <p className="text-sm text-professional">Contemporary townhouse communities requiring shared wall moisture management and modern family living solutions suitable for growth corridor demographics.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Family Investment Properties</h5>
-                      <p className="text-sm text-gray-600">New investment properties requiring low-maintenance moisture solutions suitable for rental families while maintaining property value in growth corridor markets.</p>
+                      <p className="text-sm text-professional">New investment properties requiring low-maintenance moisture solutions suitable for rental families while maintaining property value in growth corridor markets.</p>
                     </div>
                     <div className="border-l-4 border-green-200 pl-4">
                       <h5 className="font-medium text-gray-800">Modern Sustainable Homes</h5>
-                      <p className="text-sm text-gray-600">Energy-efficient new homes requiring moisture management compatible with sustainable building practices and modern environmental standards.</p>
+                      <p className="text-sm text-professional">Energy-efficient new homes requiring moisture management compatible with sustainable building practices and modern environmental standards.</p>
                     </div>
                   </div>
                 </div>
@@ -280,15 +280,15 @@ export const HoppersCrossing = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>New estate development and modern construction specialist experience</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Growth corridor infrastructure and environmental understanding</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Young family and first home buyer moisture management expertise</span>
                   </li>
                 </ul>
@@ -297,19 +297,19 @@ export const HoppersCrossing = () => {
               <div>
                 <h3 className="text-xl font-semibold mb-4">IICRC Certified Excellence</h3>
                 <p className="text-gray-700 mb-4">
-                  Our professional mould removal Hoppers Crossing Melbourne technicians are IICRC certified with specialized training in modern construction standards and new development moisture management.
+                  Our professional mould removal Hoppers Crossing Melbourne technicians are IICRC certified with specialised training in modern construction standards and new development moisture management.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>IICRC water damage restoration certification</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Applied structural drying for new and modern properties</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-success-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                     <span>Modern family home and new development protocol training</span>
                   </li>
                 </ul>
@@ -320,15 +320,15 @@ export const HoppersCrossing = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">2 Hour</div>
-                  <div className="text-sm text-gray-600">Professional Service - Same-day Available 7am-7pm to Hoppers Crossing</div>
+                  <div className="text-sm text-professional">Professional Service - Same-day Available 7am-7pm to Hoppers Crossing</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-gray-600">New Home Safe Treatment Methods</div>
+                  <div className="text-sm text-professional">New Home Safe Treatment Methods</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-primary mb-2">5.0★</div>
-                  <div className="text-sm text-gray-600">Rating from Growth Corridor Families</div>
+                  <div className="text-sm text-professional">Rating from Growth Corridor Families</div>
                 </div>
               </div>
             </div>
@@ -348,9 +348,9 @@ export const HoppersCrossing = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Hoppers Crossing Melbourne assistance. Our growth corridor specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -359,7 +359,7 @@ export const HoppersCrossing = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Hoppers Crossing Inspection</h3>

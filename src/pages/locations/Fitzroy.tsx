@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO, LocalBusinessSchema, ServiceSchema } from "@/components/seo";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Fitzroy = () => {
   const breadcrumbItems = [
@@ -28,7 +29,7 @@ export const Fitzroy = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Fitzroy Melbourne. IICRC certified technicians specializing in heritage properties, artist studios, and creative spaces."
+        description="Professional mould removal and inspection services in Fitzroy Melbourne. IICRC certified technicians specialising in heritage properties, artist studios, and creative spaces."
       />
 
       <ServiceSchema
@@ -41,12 +42,12 @@ export const Fitzroy = () => {
       <Navigation />
       
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Fitzroy</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +85,7 @@ export const Fitzroy = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,7 +97,7 @@ export const Fitzroy = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Fitzroy</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -108,13 +109,13 @@ export const Fitzroy = () => {
                   <span>Artist studio mould solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>Brunswick Street precinct expertise</span>
                 </div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Heritage terrace preservation</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -126,14 +127,14 @@ export const Fitzroy = () => {
                   <span>7am-7pm every day service</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-blue-600" />
+                  <CheckCircle className="w-5 h-5 text-primary" />
                   <span>Postcode 3065 - Local experts</span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Fitzroy Mould Professional Service: 1800 954 117
               </Button>
@@ -313,15 +314,15 @@ export const Fitzroy = () => {
                 <p className="text-muted-foreground mb-4">1860s-1890s terraces along Brunswick Street, Gertrude Street, and surrounding laneways requiring heritage-sensitive mould removal Fitzroy Melbourne.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Heritage overlay compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Original timber preservation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Cast iron feature protection</span>
                   </div>
                 </div>
@@ -331,18 +332,18 @@ export const Fitzroy = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Artist Studios & Warehouses</h3>
-                <p className="text-muted-foreground mb-4">Converted industrial spaces and creative studios requiring specialized professional mould removal Fitzroy Melbourne approaches.</p>
+                <p className="text-muted-foreground mb-4">Converted industrial spaces and creative studios requiring specialised professional mould removal Fitzroy Melbourne approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Artwork protection protocols</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Equipment relocation assistance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Creative space ventilation upgrades</span>
                   </div>
                 </div>
@@ -355,15 +356,15 @@ export const Fitzroy = () => {
                 <p className="text-muted-foreground mb-4">Contemporary developments and heritage building conversions requiring professional mould inspection Fitzroy Melbourne.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Body corporate coordination</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Minimal tenant disruption</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Building defect rectification</span>
                   </div>
                 </div>
@@ -376,15 +377,15 @@ export const Fitzroy = () => {
                 <p className="text-muted-foreground mb-4">Multi-tenancy properties popular with Fitzroy's creative community requiring affordable mould removal Fitzroy Melbourne.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Flexible payment options</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Landlord direct billing</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Preventive education programs</span>
                   </div>
                 </div>
@@ -546,12 +547,12 @@ export const Fitzroy = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Heritage Property Specialization</h3>
-                  <p className="text-muted-foreground mb-3">Expert care for Fitzroy's Victorian terraces and heritage-listed buildings requiring specialized treatment approaches.</p>
+                  <p className="text-muted-foreground mb-3">Expert care for Fitzroy's Victorian terraces and heritage-listed buildings requiring specialised treatment approaches.</p>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li>• Heritage overlay compliance and documentation</li>
                     <li>• Original material preservation techniques</li>
@@ -720,11 +721,11 @@ export const Fitzroy = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground text-sm">Professional service:</span>
-                    <span className="font-semibold text-blue-600">2 hours max</span>
+                    <span className="font-semibold text-primary">2 hours max</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground text-sm">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same/next day</span>
+                    <span className="font-semibold text-success">Same/next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground text-sm">Service hours:</span>
@@ -815,7 +816,7 @@ export const Fitzroy = () => {
                       <h4 className="font-semibold text-primary mb-3">Same-day Service Available 7am-7pm Daily</h4>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <Phone className="w-5 h-5 text-blue-600" />
+                          <Phone className="w-5 h-5 text-primary" />
                           <div>
                             <span className="font-semibold text-lg">1800 954 117</span>
                             <p className="text-sm text-muted-foreground">7am-7pm daily Professional Service - Same-day Available 7am-7pm Fitzroy</p>
@@ -842,27 +843,27 @@ export const Fitzroy = () => {
                       <h4 className="font-semibold text-primary mb-3">Service Highlights</h4>
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>Same-day professional service to Fitzroy 3065</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>Heritage property preservation specialist</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>Creative space and artist studio expertise</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>IICRC-certified professional technicians</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>Insurance claims welcome and supported</span>
                         </li>
                         <li className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-success-green" />
+                          <CheckCircle className="w-4 h-4 text-success" />
                           <span>100% satisfaction guarantee on all work</span>
                         </li>
                       </ul>
@@ -935,7 +936,7 @@ export const Fitzroy = () => {
                       <span className="text-sm">100+ Melbourne Properties Restored</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success-green" />
+                      <CheckCircle className="w-5 h-5 text-success" />
                       <span className="text-sm">5+ Years Local Experience</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -967,7 +968,7 @@ export const Fitzroy = () => {
 
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
+                <Button size="lg" className="bg-primary hover:bg-primary-600 text-white text-lg px-8 py-4">
                   <Phone className="w-5 h-5 mr-2" />
                   Emergency Fitzroy Mould: 1800 954 117
                 </Button>
@@ -986,6 +987,13 @@ export const Fitzroy = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Fitzroy"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

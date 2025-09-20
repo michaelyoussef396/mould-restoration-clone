@@ -262,10 +262,10 @@ export const ServiceSchema: React.FC<ServiceSchemaProps> = ({
 
 export const OrganizationSchema: React.FC = () => {
 
-  const organizationSchema = {
+  const organisationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${BUSINESS_DATA.url}#organization`,
+    "@id": `${BUSINESS_DATA.url}#organisation`,
     "name": BUSINESS_DATA.name,
     "alternateName": ["Mould Restoration Melbourne", "Melbourne Mould Removal", "Mould Inspection Melbourne"],
     "description": BUSINESS_DATA.description,
@@ -326,7 +326,7 @@ export const OrganizationSchema: React.FC = () => {
   return (
     <Helmet>
       <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
+        {JSON.stringify(organisationSchema)}
       </script>
     </Helmet>
   );
@@ -347,7 +347,7 @@ export const ReviewSchema: React.FC<ReviewSchemaProps> = ({ reviews = [] }) => {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${BUSINESS_DATA.url}#organization`,
+    "@id": `${BUSINESS_DATA.url}#organisation`,
     "name": BUSINESS_DATA.name,
 
     "aggregateRating": {

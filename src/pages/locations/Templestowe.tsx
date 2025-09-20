@@ -48,7 +48,7 @@ export const Templestowe = () => {
       <Navigation />
 
       {/* Professional Service Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             <span className="hidden sm:inline">Monday - Sunday: 7 AM - 7PM</span>
@@ -79,7 +79,7 @@ export const Templestowe = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Templestowe</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ export const Templestowe = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Riverside property treatment</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -104,7 +104,7 @@ export const Templestowe = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Templestowe Professional Service: 1800 954 117
               </Button>
@@ -158,19 +158,19 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Summer river valley humidity creating elevated moisture levels around properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Winter fog and mist from Yarra River affecting riverside and valley properties</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Established tree canopy creating natural humidity pockets around family homes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Valley drainage patterns affecting foundation moisture and landscaping</span>
                   </li>
                 </ul>
@@ -181,7 +181,7 @@ export const Templestowe = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Templestowe Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From Westfield Doncaster shopping center proximity to the Yarra River parklands, Templestowe's premium residential community presents specific mould challenges. High-value properties and riverside locations require expert moisture management while maintaining luxury living standards.
+                  From Westfield Doncaster shopping centre proximity to the Yarra River parklands, Templestowe's premium residential community presents specific mould challenges. High-value properties and riverside locations require expert moisture management while maintaining luxury living standards.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -247,23 +247,23 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Large swimming pools and spas contributing to localized humidity around homes</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Extensive outdoor entertainment areas with inadequate moisture barriers</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Multi-level luxury homes with complex roof systems and potential leak points</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Home theaters and basement entertainment areas in naturally moist environments</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span>Luxury lifestyle patterns including frequent entertaining affecting humidity levels</span>
                   </li>
                 </ul>
@@ -314,19 +314,19 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Luxury home-appropriate treatment methods preserving high-value finishes and features</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Riverside property techniques accounting for ongoing moisture from river proximity</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Coordinated scheduling around luxury lifestyle patterns and home entertainment</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Estate landscaping and pool area moisture management integration</span>
                   </li>
                 </ul>
@@ -368,23 +368,23 @@ export const Templestowe = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Luxury Home-Safe Treatment Equipment</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our Templestowe operations utilize professional-grade equipment designed for luxury home environments, ensuring effective treatment while protecting valuable furnishings, artwork, and high-end finishes throughout the remediation process.
+                  Our Templestowe operations utilise professional-grade equipment designed for luxury home environments, ensuring effective treatment while protecting valuable furnishings, artwork, and high-end finishes throughout the remediation process.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>HEPA-filtered air systems ensuring luxury home air quality during treatment</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Ultra-quiet equipment for minimal disruption to luxury lifestyle patterns</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>High-end dehumidification systems suitable for valuable contents and finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Luxury material-safe drying equipment protecting estate building elements</span>
                   </li>
                 </ul>
@@ -409,7 +409,7 @@ export const Templestowe = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Templestowe luxury estate and riverside property issues</span>
+                    <span>5+ years specialising in Templestowe luxury estate and riverside property issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -417,7 +417,7 @@ export const Templestowe = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Eastern suburbs riverside and valley property specialized experience</span>
+                    <span>Eastern suburbs riverside and valley property specialised experience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -435,19 +435,19 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>IICRC certification in mould remediation and luxury property restoration</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional service guarantee to Templestowe postcode 3106</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Professional hotline: 1800 954 117 (7am-7pm daily)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Same-day service scheduling with luxury lifestyle accommodation</span>
                   </li>
                 </ul>
@@ -464,19 +464,19 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved luxury property and estate claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive documentation for high-value property insurance requirements</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Templestowe luxury estate services</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional luxury estate remediation services</span>
                   </li>
                 </ul>
@@ -487,7 +487,7 @@ export const Templestowe = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">5.0 Star Rating & Templestowe Estate Reviews</h3>
                 <p className="text-muted-foreground mb-4">
-                  With over 50+ verified 5-star reviews from Templestowe estate owners, luxury property specialists, and eastern suburbs families, we're Melbourne's most trusted luxury estate mould removal service specializing in riverside and premium residential areas.
+                  With over 50+ verified 5-star reviews from Templestowe estate owners, luxury property specialists, and eastern suburbs families, we're Melbourne's most trusted luxury estate mould removal service specialising in riverside and premium residential areas.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -504,7 +504,7 @@ export const Templestowe = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-teal rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Recommended by eastern suburbs real estate agents specializing in luxury properties</span>
+                    <span>Recommended by eastern suburbs real estate agents specialising in luxury properties</span>
                   </li>
                 </ul>
               </CardContent>
@@ -546,19 +546,19 @@ export const Templestowe = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 2: Luxury-Safe Containment & Asset Protection</h3>
                 <p className="text-muted-foreground mb-4">
-                  Templestowe luxury estates require specialized containment strategies that protect valuable furnishings, artwork, and high-end finishes while maintaining estate functionality and luxury lifestyle comfort throughout treatment.
+                  Templestowe luxury estates require specialised containment strategies that protect valuable furnishings, artwork, and high-end finishes while maintaining estate functionality and luxury lifestyle comfort throughout treatment.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Luxury estate negative air systems protecting valuable contents and finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>High-value asset protection with museum-quality conservation barriers</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span>Estate functionality maintenance ensuring continued luxury lifestyle operations</span>
                   </li>
                 </ul>
@@ -571,7 +571,7 @@ export const Templestowe = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Step 3: Safe Removal & Estate Preservation</h3>
                 <p className="text-muted-foreground mb-4">
-                  Our removal process for Templestowe properties utilizes luxury-appropriate methods suitable for high-value estates, ensuring effective treatment while maintaining property value and luxury standard preservation.
+                  Our removal process for Templestowe properties utilises luxury-appropriate methods suitable for high-value estates, ensuring effective treatment while maintaining property value and luxury standard preservation.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -598,15 +598,15 @@ export const Templestowe = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Luxury estate dehumidification systems suitable for valuable contents</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>High-end building material-appropriate drying protecting luxury finishes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Continuous monitoring ensuring optimal luxury living environment conditions</span>
                   </li>
                 </ul>
@@ -622,19 +622,19 @@ export const Templestowe = () => {
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Independent laboratory air quality testing meeting luxury estate health standards</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Luxury building material moisture verification and premium finish preservation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>Comprehensive clearance certificates for luxury estate insurance documentation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                   <span>12-month treatment warranty with luxury estate service support included</span>
                 </li>
               </ul>
@@ -651,7 +651,7 @@ export const Templestowe = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <p className="text-lg text-muted-foreground mb-6">
-                We provide luxury estate-specialized mould removal services throughout Templestowe and nearby eastern suburbs Melbourne areas including:
+                We provide luxury estate-specialised mould removal services throughout Templestowe and nearby eastern suburbs Melbourne areas including:
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -682,11 +682,11 @@ export const Templestowe = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Luxury estate emergency:</span>
-                    <span className="font-semibold text-blue-600">Same-day available</span>
+                    <span className="font-semibold text-primary">Same-day available</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard estate appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -703,16 +703,13 @@ export const Templestowe = () => {
         </div>
       </section>
 
-      {/* Related Eastern Suburbs */}
-      <SuburbClusterLinks currentLocation="Templestowe" />
-
       {/* Contact Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Templestowe Luxury Estate Mould Inspection Today</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Get Your Free Templestowe Estate Inspection Today</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Protect your Templestowe luxury estate from riverside moisture damage and environmental health risks. Expert assessment and remediation for high-value properties, family estates, and riverside homes.
+              Protect your Templestowe luxury estate with expert mould assessment and remediation for premium residential properties and manicured gardens.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -721,7 +718,7 @@ export const Templestowe = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Luxury Estate Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service 7am-7pm daily)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -766,7 +763,7 @@ export const Templestowe = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Templestowe Professional Service: 1800 954 117
               </Button>

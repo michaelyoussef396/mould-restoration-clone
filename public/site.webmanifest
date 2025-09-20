@@ -1,0 +1,26 @@
+{
+  "name": "Mould & Restoration Co. - Melbourne Mould Removal Experts",
+  "short_name": "Mould & Restoration",
+  "description": "Melbourne's premier mould removal and restoration service. Professional IICRC certified technicians available 7am-7pm every day. Call 1800 954 117.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "73x74",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "73x74",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1e40af",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en-AU",
+  "categories": ["business", "utilities", "lifestyle"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7"
+}

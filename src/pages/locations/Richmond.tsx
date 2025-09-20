@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { LocationPageSEO } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema, ServiceSchema } from "@/components/seo/SchemaMarkup";
+import { StrategicLocationLinks } from "@/components/seo/InternalLinking";
 
 export const Richmond = () => {
   const breadcrumbItems = [
@@ -40,12 +41,12 @@ export const Richmond = () => {
       <Navigation />
       
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Richmond</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -71,7 +72,7 @@ export const Richmond = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>same-day professional service to Richmond</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -85,7 +86,7 @@ export const Richmond = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Industrial heritage property focus</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -96,7 +97,7 @@ export const Richmond = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Professional Mould Service - Call Now: 1800 954 117
               </Button>
@@ -173,7 +174,7 @@ export const Richmond = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Local Richmond Landmarks & Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  From the Richmond Football Club's Punt Road Oval to the vibrant Swan Street dining precinct, Richmond's mix of sporting culture, arts community, and urban living creates diverse property challenges requiring specialized approaches.
+                  From the Richmond Football Club's Punt Road Oval to the vibrant Swan Street dining precinct, Richmond's mix of sporting culture, arts community, and urban living creates diverse property challenges requiring specialised approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -275,14 +276,14 @@ export const Richmond = () => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3 text-primary">Warehouse Conversions</h3>
-                <p className="text-muted-foreground mb-4">Industrial buildings converted to residential apartments requiring specialized mold treatment approaches.</p>
+                <p className="text-muted-foreground mb-4">Industrial buildings converted to residential apartments requiring specialised mold treatment approaches.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Industrial heritage preservation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>High ceiling moisture management</span>
                   </div>
                 </div>
@@ -295,11 +296,11 @@ export const Richmond = () => {
                 <p className="text-muted-foreground mb-4">Historic terraces and cottages with traditional moisture challenges and heritage considerations.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Heritage-sensitive treatments</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Period feature preservation</span>
                   </div>
                 </div>
@@ -312,11 +313,11 @@ export const Richmond = () => {
                 <p className="text-muted-foreground mb-4">New apartment blocks and townhouses with contemporary moisture management needs.</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Modern building compliance</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Shield className="w-4 h-4 text-success-green" />
+                    <Shield className="w-4 h-4 text-success" />
                     <span>Warranty protection service</span>
                   </div>
                 </div>
@@ -376,7 +377,7 @@ export const Richmond = () => {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-success-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -409,7 +410,7 @@ export const Richmond = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Richmond warehouse conversion mould issues</span>
+                    <span>5+ years specialising in Richmond warehouse conversion mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -464,19 +465,19 @@ export const Richmond = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing available for approved warehouse conversion claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Comprehensive flood and water damage documentation and photo evidence</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Richmond mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional industrial heritage remediation services</span>
                   </li>
                 </ul>
@@ -523,7 +524,7 @@ export const Richmond = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Considerations for Richmond</h3>
                 <p className="text-muted-foreground mb-4">
-                  Richmond's Yarra River location 3km east of Melbourne CBD experiences intensified urban humidity and seasonal water table fluctuations. Industrial heritage buildings and warehouse conversions require specialized moisture management approaches.
+                  Richmond's Yarra River location 3km east of Melbourne CBD experiences intensified urban humidity and seasonal water table fluctuations. Industrial heritage buildings and warehouse conversions require specialised moisture management approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -550,7 +551,7 @@ export const Richmond = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Richmond Industrial Building Ventilation Management</h3>
                 <p className="text-muted-foreground mb-4">
-                  Richmond's converted industrial properties require specialized ventilation strategies that account for high ceilings, concrete floors, and original building designs not intended for residential moisture loads.
+                  Richmond's converted industrial properties require specialised ventilation strategies that account for high ceilings, concrete floors, and original building designs not intended for residential moisture loads.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -615,11 +616,11 @@ export const Richmond = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Professional service:</span>
-                    <span className="font-semibold text-blue-600">Within 2 hours</span>
+                    <span className="font-semibold text-primary">Within 2 hours</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Standard appointments:</span>
-                    <span className="font-semibold text-success-green">Same day or next day</span>
+                    <span className="font-semibold text-success">Same day or next day</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Weekend availability:</span>
@@ -651,7 +652,7 @@ export const Richmond = () => {
                   <h3 className="text-xl font-semibold mb-4 text-primary">Heritage Property Contact</h3>
                   <div className="space-y-3 text-left">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600" />
+                      <Phone className="w-5 h-5 text-primary" />
                       <span>1800 954 117 (Professional service line)</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -696,7 +697,7 @@ export const Richmond = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary-600 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Richmond Heritage Professional Service: 1800 954 117
               </Button>
@@ -712,6 +713,13 @@ export const Richmond = () => {
           </div>
         </div>
       </section>
+
+      {/* Strategic Internal Linking for Location to Service SEO */}
+      <StrategicLocationLinks
+        currentLocation="Richmond"
+        businessType="mould removal"
+        serviceTypes={["inspection", "removal", "remediation"]}
+      />
     </div>
   );
 };

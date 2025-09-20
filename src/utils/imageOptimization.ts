@@ -1,4 +1,4 @@
-// Image optimization utilities for Melbourne mould restoration website
+// Image optimisation utilities for Melbourne mould restoration website
 
 export interface ImageOptimizationConfig {
   quality: number;
@@ -8,7 +8,7 @@ export interface ImageOptimizationConfig {
   priority: boolean;
 }
 
-// Default optimization settings for different image types
+// Default optimisation settings for different image types
 export const IMAGE_CONFIGS = {
   hero: {
     quality: 85,
@@ -136,7 +136,7 @@ export const RESPONSIVE_SIZES = {
   ]),
 } as const;
 
-// Core Web Vitals optimization helpers
+// Core Web Vitals optimisation helpers
 export const generateWebPSource = (src: string): string => {
   const ext = src.split('.').pop();
   return src.replace(`.${ext}`, '.webp');
@@ -151,7 +151,7 @@ export const generateSrcSet = (baseSrc: string, sizes: number[]): string => {
     .join(', ');
 };
 
-// Preload critical images for LCP optimization
+// Preload critical images for LCP optimisation
 export const preloadCriticalImages = (images: Array<{ src: string; sizes?: string }>) => {
   images.forEach(({ src, sizes }) => {
     const link = document.createElement('link');
@@ -163,7 +163,7 @@ export const preloadCriticalImages = (images: Array<{ src: string; sizes?: strin
   });
 };
 
-// Location-specific image optimization metadata
+// Location-specific image optimisation metadata
 export const LOCATION_IMAGE_METADATA = {
   Brighton: {
     context: 'coastal property Federation home',
@@ -186,10 +186,9 @@ export const LOCATION_IMAGE_METADATA = {
 // Image performance monitoring
 export const trackImagePerformance = (src: string, loadTime: number) => {
   // In production, send to analytics
-  console.log(`Image ${src} loaded in ${loadTime}ms`);
 };
 
-// Lazy loading optimization
+// Lazy loading optimisation
 export const createIntersectionObserver = (
   callback: (entry: IntersectionObserverEntry) => void,
   options: IntersectionObserverInit = {}
@@ -223,7 +222,7 @@ export const getOptimalImageFormat = (src: string): 'webp' | 'jpg' | 'png' => {
   }
 };
 
-// Melbourne mobile network optimization
+// Melbourne mobile network optimisation
 export const AUSTRALIAN_MOBILE_OPTIMIZATIONS = {
   // Optimize for Australian mobile networks (typically slower than US/Europe)
   quality: {

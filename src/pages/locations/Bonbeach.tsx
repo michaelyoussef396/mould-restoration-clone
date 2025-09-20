@@ -28,7 +28,7 @@ export const Bonbeach = () => {
         phone="1800 954 117"
         email="info@mouldrestoration.com.au"
         abn="47 683 089 652"
-        description="Professional mould removal and inspection services in Bonbeach Melbourne. IICRC certified technicians specializing in beachfront living properties, Station Road corridor, and direct beach access homes."
+        description="Professional mould removal and inspection services in Bonbeach Melbourne. IICRC certified technicians specialising in beachfront living properties, Station Road corridor, and direct beach access homes."
       />
 
       <ServiceSchema
@@ -41,12 +41,12 @@ export const Bonbeach = () => {
       <Navigation />
 
       {/* Professional Service - Same-day Available 7am-7pm Bar */}
-      <div className="bg-blue-600 text-white py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 text-sm font-semibold">
             <Clock className="w-4 h-4" />
             <span>Professional Mould Service - Same-day Available 7am-7pm in Bonbeach</span>
-            <Button variant="outline" size="sm" className="bg-white text-blue-600 border-white hover:bg-emergency-orange hover:text-white">
+            <Button variant="outline" size="sm" className="bg-white text-primary border-white hover:bg-emergency-orange hover:text-white">
               Call 1800 954 117
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Bonbeach = () => {
                 <span className="text-sm font-medium">100+ Properties Restored</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-success-green" />
+                <CheckCircle className="w-5 h-5 text-success" />
                 <span className="text-sm font-medium">IICRC Certified</span>
               </div>
               <div className="flex items-center gap-2">
@@ -96,11 +96,11 @@ export const Bonbeach = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-blue-600" />
+                  <Clock className="w-5 h-5 text-primary" />
                   <span>Same-day professional service to Bonbeach</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-success-green" />
+                  <Shield className="w-5 h-5 text-success" />
                   <span>Beachfront living & direct beach access expertise</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -114,11 +114,11 @@ export const Bonbeach = () => {
                   <span>Insurance work welcome</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-success-green" />
+                  <CheckCircle className="w-5 h-5 text-success" />
                   <span>100% satisfaction guarantee</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span>ABN: 47 683 089 652</span>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export const Bonbeach = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Melbourne Climate Impact on Bonbeach</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bonbeach's direct beachfront position experiences Melbourne's temperate oceanic climate at maximum intensity with immediate bay exposure. Annual rainfall of 650mm combines with constant salt spray, direct wind patterns, and sand infiltration to create the most challenging coastal conditions for property maintenance in Melbourne's southeastern bayside. Properties experience 7am-7pm daily marine exposure requiring specialized management approaches.
+                  Bonbeach's direct beachfront position experiences Melbourne's temperate oceanic climate at maximum intensity with immediate bay exposure. Annual rainfall of 650mm combines with constant salt spray, direct wind patterns, and sand infiltration to create the most challenging coastal conditions for property maintenance in Melbourne's southeastern bayside. Properties experience 7am-7pm daily marine exposure requiring specialised management approaches.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -233,7 +233,7 @@ export const Bonbeach = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Beachfront Property Maximum Exposure Challenges</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bonbeach's premium beachfront properties experience maximum coastal exposure with direct bay frontage creating unprecedented salt air, sand infiltration, and marine moisture challenges. These properties require specialized construction approaches and maintenance protocols to manage constant marine environment exposure affecting all building materials and systems.
+                  Bonbeach's premium beachfront properties experience maximum coastal exposure with direct bay frontage creating unprecedented salt air, sand infiltration, and marine moisture challenges. These properties require specialised construction approaches and maintenance protocols to manage constant marine environment exposure affecting all building materials and systems.
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-3">
@@ -250,7 +250,7 @@ export const Bonbeach = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                    <span>Constant salt air exposure requiring specialized sealants and protective systems</span>
+                    <span>Constant salt air exposure requiring specialised sealants and protective systems</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
@@ -309,7 +309,7 @@ export const Bonbeach = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
-                    <span>5+ years specializing in Bonbeach beachfront and direct bay access property mould issues</span>
+                    <span>5+ years specialising in Bonbeach beachfront and direct bay access property mould issues</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0"></div>
@@ -364,15 +364,15 @@ export const Bonbeach = () => {
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>Direct insurance billing for approved beachfront and marine exposure claims</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>100% satisfaction guarantee on all Bonbeach mould removal work</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-success-green rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-success rounded-full mt-2 flex-shrink-0"></div>
                     <span>12-month warranty on professional beachfront and marine environment remediation</span>
                   </li>
                 </ul>
@@ -440,9 +440,9 @@ export const Bonbeach = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
-                  <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">7am-7pm daily Professional Service - Same-day Available 7am-7pm</h3>
                   <p className="mb-4">Call now for immediate mould removal Bonbeach Melbourne assistance. Our beachfront living specialists respond Same-day professional service.</p>
                   <Button className="w-full bg-emergency-orange hover:bg-emergency-orange/90">
@@ -451,7 +451,7 @@ export const Bonbeach = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white text-gray-900">
+              <Card className="bg-white text-charcoal">
                 <CardContent className="p-6">
                   <MapPin className="w-12 h-12 text-accent-blue mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Free Bonbeach Inspection</h3>

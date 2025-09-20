@@ -19,71 +19,105 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
+        /* Professional Health Service Palette */
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          dark: "hsl(var(--primary-dark))",
-          light: "hsl(var(--primary-light))",
+          DEFAULT: "#1e40af",  /* Darker blue for better contrast */
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3066be",  /* True Blue */
+          600: "#2563eb",  /* Hover state */
+          700: "#1d4ed8",
+          800: "#1e40af",  /* Darker primary for contrast */
+          900: "#1e3a8a",
+          foreground: "#ffffff",
         },
+        columbia: {
+          DEFAULT: "#cce6f4",  /* Columbia Blue - backgrounds, calm sections */
+          50: "#f0f9ff",
+          100: "#cce6f4",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+        },
+        success: "#047857",  /* Success Green - even darker for better contrast */
+        professional: "#374151",  /* Professional Gray - even darker for better contrast */
+        white: "#ffffff",  /* Clean White - backgrounds, cleanliness */
+        charcoal: "#1f2937",  /* Charcoal - headings, important text */
+
+        /* Legacy color mappings for compatibility */
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#cce6f4",  /* Columbia Blue */
+          foreground: "#1f2937",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#f1f5f9",
+          foreground: "#64748b",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-          blue: "hsl(var(--accent-blue))",
-          teal: "hsl(var(--accent-teal))",
-          dark: "hsl(var(--accent-dark))",
+          DEFAULT: "#cce6f4",
+          foreground: "#1f2937",
+          blue: "#3066be",
+          teal: "#10b981",
+          dark: "#1f2937",
+        },
+        destructive: {
+          DEFAULT: "#ef4444",
+          foreground: "#ffffff",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#ffffff",
+          foreground: "#1f2937",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "#ffffff",
+          foreground: "#1f2937",
         },
         sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+          DEFAULT: "#f8fafc",
+          foreground: "#1f2937",
+          primary: "#3066be",
+          "primary-foreground": "#ffffff",
+          accent: "#cce6f4",
+          "accent-foreground": "#1f2937",
+          border: "#e2e8f0",
+          ring: "#3066be",
         },
-        /* Brand Colors */
-        "neutral-mid": "hsl(var(--neutral-mid))",
-        "emergency-orange": "hsl(var(--emergency-orange))",
-        "success-green": "hsl(var(--success-green))",
-        "warning-yellow": "hsl(var(--warning-yellow))",
-        "error-red": "hsl(var(--error-red))",
-        /* Blue Palette */
+
+        /* Utility colors */
+        "success-green": "#10b981",
+        "warning-yellow": "#f59e0b",
+        "error-red": "#ef4444",
+        gray: {
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          200: "#e5e7eb",
+          300: "#d1d5db",
+          400: "#9ca3af",
+          500: "#6b7280",
+          600: "#64748b",  /* Professional Gray */
+          700: "#1f2937",  /* Charcoal */
+          800: "#1f2937",
+          900: "#111827",
+        },
         blue: {
-          50: "hsl(var(--blue-50))",
-          100: "hsl(var(--blue-100))",
-          200: "hsl(var(--blue-200))",
-          300: "hsl(var(--blue-300))",
-          400: "hsl(var(--blue-400))",
-          500: "hsl(var(--blue-500))",
-          600: "hsl(var(--blue-600))",
-          700: "hsl(var(--blue-700))",
-          800: "hsl(var(--blue-800))",
-          900: "hsl(var(--blue-900))",
-          950: "hsl(var(--blue-950))",
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3066be",  /* True Blue */
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
         },
+
         /* Custom project colors */
-        highlight: "hsl(var(--highlight))",
+        highlight: "#3066be",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,6 +1,6 @@
 import React from 'react';
-import { LocationPageSEO } from '../../components/seo/LocationPageSEO';
-import { LocalBusinessSchema, ServiceSchema } from '../../components/seo/Schema';
+import { LocationPageSEO } from '@/components/seo/SEOHead';
+import { LocalBusinessSchema, ServiceSchema } from '@/components/seo/SchemaMarkup';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent } from '../../components/ui/card';
 import { Clock, Shield, MapPin, Phone, ArrowRight, Star, Award, CheckCircle } from 'lucide-react';
@@ -49,11 +49,11 @@ const LalorMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full shadow-lg border-0">
                 <Phone className="w-5 h-5 mr-2" />
                 Call 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -83,7 +83,7 @@ const LalorMouldRemoval = () => {
         {/* Local Expertise Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Lalor Family Area Mould Expertise
             </h2>
 
@@ -103,49 +103,49 @@ const LalorMouldRemoval = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Family area expertise</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Multicultural community focus</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Established home specialists</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-success mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Community-respectful service</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Lalor Service Areas</h3>
+              <div className="bg-columbia p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-charcoal mb-6">Lalor Service Areas</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Lalor Plaza vicinity</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Lalor railway station area</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Station Street corridor</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Family residential streets</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Multicultural community areas</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <MapPin className="w-5 h-5 text-primary" />
                     <span className="text-gray-700">Established suburban neighbourhoods</span>
                   </div>
                 </div>
@@ -157,21 +157,21 @@ const LalorMouldRemoval = () => {
         {/* Property Types Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Lalor Property Types We Service
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-columbia rounded-full flex items-center justify-center mb-6">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Multicultural Family Homes</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Multicultural Family Homes</h3>
                   <p className="text-gray-700 mb-4">
                     Culturally sensitive treatments for homes with diverse family arrangements, cooking practices, and cultural modifications that require specialised moisture management approaches.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Culturally sensitive methods</li>
                     <li>• Extended family considerations</li>
                     <li>• Diverse cooking moisture management</li>
@@ -182,14 +182,14 @@ const LalorMouldRemoval = () => {
 
               <Card className="bg-white shadow-lg hover:shadow-xl transition-shadow border-0">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <MapPin className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mb-6">
+                    <MapPin className="w-6 h-6 text-success" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Established Suburban Properties</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Established Suburban Properties</h3>
                   <p className="text-gray-700 mb-4">
                     Comprehensive care for Lalor's established housing stock, from post-war family homes to renovated properties, serving long-term residents and growing families in this established area.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Established home expertise</li>
                     <li>• Post-war construction care</li>
                     <li>• Family health prioritisation</li>
@@ -203,11 +203,11 @@ const LalorMouldRemoval = () => {
                   <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                     <Award className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Community Housing Properties</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Community Housing Properties</h3>
                   <p className="text-gray-700 mb-4">
                     Professional solutions for Lalor's diverse housing types, from community housing to private family properties, ensuring comprehensive moisture protection for all residents.
                   </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-professional">
                     <li>• Community housing expertise</li>
                     <li>• Diverse property solutions</li>
                     <li>• Inclusive service approach</li>
@@ -222,18 +222,18 @@ const LalorMouldRemoval = () => {
         {/* Why Choose Us Section */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-12 text-center">
               Why Lalor Families Choose Us
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Star className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-columbia rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Star className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Multicultural Family Specialists</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Multicultural Family Specialists</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Our experience with Lalor's diverse community means we understand and respect different cultural practices, family structures, and home use patterns that can impact moisture management in family homes.
                     </p>
@@ -241,11 +241,11 @@ const LalorMouldRemoval = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Shield className="w-5 h-5 text-success" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Community Track Record</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Proven Community Track Record</h3>
                     <p className="text-gray-700 leading-relaxed">
                       With over 100 successful property restorations across Melbourne and 5+ years of experience, we've helped numerous Lalor families from all backgrounds protect their homes and family health in this established community.
                     </p>
@@ -257,7 +257,7 @@ const LalorMouldRemoval = () => {
                     <Award className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Family-Focused Service Approach</h3>
+                    <h3 className="text-xl font-semibold text-charcoal mb-3">Family-Focused Service Approach</h3>
                     <p className="text-gray-700 leading-relaxed">
                       We understand the family priorities of Lalor residents, offering child-safe treatments, flexible scheduling around family routines, and respectful service that accommodates diverse community needs.
                     </p>
@@ -290,7 +290,7 @@ const LalorMouldRemoval = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-6 rounded-full">
+                <Button size="lg" className="w-full bg-white text-primary hover:bg-columbia font-semibold py-6 rounded-full">
                   <Phone className="w-5 h-5 mr-2" />
                   Call 1800 954 117 Now
                 </Button>
@@ -302,51 +302,51 @@ const LalorMouldRemoval = () => {
         {/* Prevention Tips Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-charcoal mb-8 text-center">
               Mould Prevention Tips for Lalor Properties
             </h2>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Multicultural Family Home Care</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Multicultural Family Home Care</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Manage moisture from diverse cooking practices and family activities</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Ensure adequate ventilation in high-occupancy family areas</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Address moisture in extended family living arrangements</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Monitor laundry areas in large family households</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Established Community Living</h3>
+                  <h3 className="text-xl font-semibold text-charcoal mb-4">Established Community Living</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Maintain established suburban property drainage systems</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Balance cultural home modifications with moisture control</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Consider community housing maintenance responsibilities</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
                       <span>Schedule family-friendly professional inspections</span>
                     </li>
                   </ul>
@@ -357,7 +357,7 @@ const LalorMouldRemoval = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 px-4 bg-blue-600">
+        <section className="py-16 px-4 bg-primary">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-6">
               Ready to Protect Your Lalor Family Home?
@@ -367,11 +367,11 @@ const LalorMouldRemoval = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" className="bg-white text-primary hover:bg-columbia px-8 py-6 text-lg font-semibold rounded-full">
                 <Phone className="w-5 h-5 mr-2" />
                 1800 954 117
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-semibold rounded-full">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold rounded-full">
                 Book Free Inspection
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
