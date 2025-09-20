@@ -375,6 +375,46 @@ export const LCPPerformanceMonitor = {
     });
   },
 
+  // Track LCP using proper PerformanceObserver API
+  trackLCP(): Promise<number> {
+    return new Promise((resolve) => {
+      if (!('PerformanceObserver' in window)) {
+        resolve(0);
+        return;
+      }
+
+      let lcpValue = 0;
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        if (lastEntry) {
+          lcpValue = lastEntry.startTime;
+        }
+      });
+
+      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+
+      // Return LCP after 5 seconds or on page visibility change
+      const finalize = () => {
+        observer.disconnect();
+        resolve(lcpValue);
+      };
+
+      setTimeout(finalize, 5000);
+
+      // Also finalize on visibility change (user navigating away)
+      if (document.visibilityState === 'hidden') {
+        finalize();
+      } else {
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'hidden') {
+            finalize();
+          }
+        }, { once: true });
+      }
+    });
+  },
+
   // Get comprehensive performance metrics
   async getAllMetrics(): Promise<{
     lcp: number;
@@ -382,23 +422,11 @@ export const LCPPerformanceMonitor = {
     fid: number;
     performance_score: number;
   }> {
-    const [cls, fid] = await Promise.all([
+    const [lcp, cls, fid] = await Promise.all([
+      this.trackLCP(),
       this.trackCLS(),
       this.trackFID(),
     ]);
-
-    // Get LCP if available
-    let lcp = 0;
-    if ('PerformanceObserver' in window) {
-      try {
-        const entries = performance.getEntriesByType('largest-contentful-paint');
-        if (entries.length > 0) {
-          lcp = entries[entries.length - 1].startTime;
-        }
-      } catch (error) {
-        console.warn('Could not get LCP metric:', error);
-      }
-    }
 
     // Calculate performance score (simplified)
     const lcpScore = lcp <= 2500 ? 100 : Math.max(0, 100 - ((lcp - 2500) / 25));

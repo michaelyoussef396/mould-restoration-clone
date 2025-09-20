@@ -44,6 +44,44 @@ import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
 import { toast } from '@/hooks/use-toast';
 import { useSwipeGesture } from '@/hooks/useSwipeGesture';
 
+// Helper functions - MUST be declared before usage
+function formatEnumValue(value: string): string {
+  return value
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+}
+
+const formatServiceType = (serviceType: string) => {
+  return serviceType
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+};
+
+const getStatusColor = (status: string) => {
+  switch (status.toLowerCase()) {
+    case 'new': return 'bg-blue-100 text-blue-800';
+    case 'qualified': return 'bg-green-100 text-green-800';
+    case 'contacted': return 'bg-orange-100 text-orange-800';
+    case 'quoted': return 'bg-purple-100 text-purple-800';
+    case 'converted': return 'bg-emerald-100 text-emerald-800';
+    case 'closed_lost': return 'bg-red-100 text-red-800';
+    case 'follow_up': return 'bg-yellow-100 text-yellow-800';
+    default: return 'bg-gray-100 text-gray-800';
+  }
+};
+
+const getUrgencyColor = (urgency: string) => {
+  switch (urgency.toLowerCase()) {
+    case 'urgent': return 'bg-red-100 text-red-800';
+    case 'high': return 'bg-orange-100 text-orange-800';
+    case 'medium': return 'bg-yellow-100 text-yellow-800';
+    case 'low': return 'bg-green-100 text-green-800';
+    default: return 'bg-gray-100 text-gray-800';
+  }
+};
+
 // Lead status columns configuration
 const LEAD_COLUMNS = [
   { id: 'NEW', title: 'New Leads', color: 'bg-blue-50 border-blue-200' },
@@ -72,44 +110,6 @@ const STATUS_OPTIONS = Object.values(LeadStatus).map(status => ({
     }
   })()
 }));
-
-// Helper functions
-const getStatusColor = (status: string) => {
-  switch (status.toLowerCase()) {
-    case 'new': return 'bg-blue-100 text-blue-800';
-    case 'qualified': return 'bg-green-100 text-green-800';
-    case 'contacted': return 'bg-orange-100 text-orange-800';
-    case 'quoted': return 'bg-purple-100 text-purple-800';
-    case 'converted': return 'bg-emerald-100 text-emerald-800';
-    case 'closed_lost': return 'bg-red-100 text-red-800';
-    case 'follow_up': return 'bg-yellow-100 text-yellow-800';
-    default: return 'bg-gray-100 text-gray-800';
-  }
-};
-
-const getUrgencyColor = (urgency: string) => {
-  switch (urgency.toLowerCase()) {
-    case 'urgent': return 'bg-red-100 text-red-800';
-    case 'high': return 'bg-orange-100 text-orange-800';
-    case 'medium': return 'bg-yellow-100 text-yellow-800';
-    case 'low': return 'bg-green-100 text-green-800';
-    default: return 'bg-gray-100 text-gray-800';
-  }
-};
-
-const formatServiceType = (serviceType: string) => {
-  return serviceType
-    .split('_')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
-};
-
-const formatEnumValue = (value: string) => {
-  return value
-    .split('_')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
-};
 
 // Lead Card Component with drag and drop and mobile-first design
 interface LeadCardProps {
