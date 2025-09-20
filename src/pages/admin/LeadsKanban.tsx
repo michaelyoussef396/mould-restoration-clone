@@ -35,6 +35,8 @@ import { ServiceType, LeadStatus, LeadSource, Urgency } from '@prisma/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useNavigate } from 'react-router-dom';
+import { CommunicationModal } from '@/components/CommunicationModal';
+import { TechnicianAssignmentModal } from '@/components/TechnicianAssignmentModal';
 
 // Lead status columns configuration
 const LEAD_COLUMNS = [
@@ -89,10 +91,11 @@ const formatEnumValue = (value: string) => {
 interface LeadCardProps {
   lead: LeadWithRelations;
   onLeadClick: (lead: LeadWithRelations) => void;
+  onCommunicationClick: (lead: LeadWithRelations) => void;
   isDragging?: boolean;
 }
 
-function LeadCard({ lead, onLeadClick, isDragging = false }: LeadCardProps) {
+function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false }: LeadCardProps) {
   const {
     attributes,
     listeners,
@@ -176,9 +179,22 @@ function LeadCard({ lead, onLeadClick, isDragging = false }: LeadCardProps) {
             <span className="capitalize">{formatEnumValue(lead.source)}</span>
           </div>
 
-          {/* Date */}
-          <div className="text-xs text-gray-400">
-            {new Date(lead.createdAt).toLocaleDateString()}
+          {/* Action buttons */}
+          <div className="flex items-center justify-between">
+            <div className="text-xs text-gray-400">
+              {new Date(lead.createdAt).toLocaleDateString()}
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                onCommunicationClick(lead);
+              }}
+              className="h-6 w-6 p-0"
+            >
+              <MessageSquare className="h-3 w-3" />
+            </Button>
           </div>
         </div>
       </CardContent>
@@ -191,9 +207,10 @@ interface KanbanColumnProps {
   column: typeof LEAD_COLUMNS[0];
   leads: LeadWithRelations[];
   onLeadClick: (lead: LeadWithRelations) => void;
+  onCommunicationClick: (lead: LeadWithRelations) => void;
 }
 
-function KanbanColumn({ column, leads, onLeadClick }: KanbanColumnProps) {
+function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick }: KanbanColumnProps) {
   return (
     <div className={`flex-shrink-0 w-80 ${column.color} rounded-lg border-2 border-dashed`}>
       <div className="p-4">
@@ -214,6 +231,7 @@ function KanbanColumn({ column, leads, onLeadClick }: KanbanColumnProps) {
                 key={lead.id}
                 lead={lead}
                 onLeadClick={onLeadClick}
+                onCommunicationClick={onCommunicationClick}
               />
             ))}
           </div>
@@ -402,6 +420,10 @@ export function LeadsKanban() {
   const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
   const [filters, setFilters] = useState<any>({});
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [communicationModalOpen, setCommunicationModalOpen] = useState(false);
+  const [communicationLead, setCommunicationLead] = useState<LeadWithRelations | null>(null);
+  const [technicianAssignmentOpen, setTechnicianAssignmentOpen] = useState(false);
+  const [technicianAssignmentLeads, setTechnicianAssignmentLeads] = useState<LeadWithRelations[]>([]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -495,9 +517,24 @@ export function LeadsKanban() {
     setViewDialogOpen(true);
   };
 
+  const handleCommunicationClick = (lead: LeadWithRelations) => {
+    setCommunicationLead(lead);
+    setCommunicationModalOpen(true);
+  };
+
   const handleBulkAction = (action: string) => {
-    console.log(`Bulk action: ${action} on leads:`, selectedLeads);
-    // Implement bulk actions here
+    const selectedLeadObjects = leads.filter(lead => selectedLeads.includes(lead.id));
+
+    if (action === 'assign') {
+      setTechnicianAssignmentLeads(selectedLeadObjects);
+      setTechnicianAssignmentOpen(true);
+    } else if (action === 'status') {
+      // TODO: Implement bulk status change
+      console.log('Bulk status change for leads:', selectedLeads);
+    } else if (action === 'archive') {
+      // TODO: Implement bulk archive
+      console.log('Bulk archive for leads:', selectedLeads);
+    }
   };
 
   // Group leads by status
@@ -595,6 +632,7 @@ export function LeadsKanban() {
                     column={column}
                     leads={groupedLeads[column.id] || []}
                     onLeadClick={handleLeadClick}
+                    onCommunicationClick={handleCommunicationClick}
                   />
                 ))}
               </div>
@@ -604,6 +642,7 @@ export function LeadsKanban() {
                   <LeadCard
                     lead={activeLead}
                     onLeadClick={() => {}}
+                    onCommunicationClick={() => {}}
                     isDragging
                   />
                 ) : null}
@@ -654,6 +693,25 @@ export function LeadsKanban() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Communication Modal */}
+      <CommunicationModal
+        open={communicationModalOpen}
+        onOpenChange={setCommunicationModalOpen}
+        lead={communicationLead}
+        onCommunicationAdded={loadLeads}
+      />
+
+      {/* Technician Assignment Modal */}
+      <TechnicianAssignmentModal
+        open={technicianAssignmentOpen}
+        onOpenChange={setTechnicianAssignmentOpen}
+        leads={technicianAssignmentLeads}
+        onAssignmentUpdate={() => {
+          loadLeads();
+          setSelectedLeads([]);
+        }}
+      />
     </ProtectedRoute>
   );
 }
