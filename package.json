@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rm -rf dist && npx vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "serve": "node server.js",
-    "start:prod": "npm run build && npm run serve"
+    "start:prod": "npm run build && npm run serve",
+    "vercel-build": "rm -rf dist && rm -rf .vite && npx vite build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
