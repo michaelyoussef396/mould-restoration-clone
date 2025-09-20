@@ -37,6 +37,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { useNavigate } from 'react-router-dom';
 import { CommunicationModal } from '@/components/CommunicationModal';
 import { TechnicianAssignmentModal } from '@/components/TechnicianAssignmentModal';
+import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
+import { toast } from '@/hooks/use-toast';
 
 // Lead status columns configuration
 const LEAD_COLUMNS = [
@@ -48,6 +50,24 @@ const LEAD_COLUMNS = [
   { id: 'FOLLOW_UP', title: 'Follow Up', color: 'bg-yellow-50 border-yellow-200' },
   { id: 'CLOSED_LOST', title: 'Closed Lost', color: 'bg-red-50 border-red-200' }
 ];
+
+// Status change alternatives for mobile and backup
+const STATUS_OPTIONS = Object.values(LeadStatus).map(status => ({
+  value: status,
+  label: formatEnumValue(status),
+  color: (() => {
+    switch (status) {
+      case 'NEW': return 'bg-blue-100 text-blue-800';
+      case 'CONTACTED': return 'bg-orange-100 text-orange-800';
+      case 'QUALIFIED': return 'bg-green-100 text-green-800';
+      case 'QUOTED': return 'bg-purple-100 text-purple-800';
+      case 'CONVERTED': return 'bg-emerald-100 text-emerald-800';
+      case 'FOLLOW_UP': return 'bg-yellow-100 text-yellow-800';
+      case 'CLOSED_LOST': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  })()
+}));
 
 // Helper functions
 const getStatusColor = (status: string) => {
@@ -87,15 +107,19 @@ const formatEnumValue = (value: string) => {
     .join(' ');
 };
 
-// Lead Card Component with drag and drop
+// Lead Card Component with drag and drop and mobile-first design
 interface LeadCardProps {
   lead: LeadWithRelations;
   onLeadClick: (lead: LeadWithRelations) => void;
   onCommunicationClick: (lead: LeadWithRelations) => void;
+  onStatusChange: (leadId: string, newStatus: LeadStatus) => void;
   isDragging?: boolean;
+  isMobile?: boolean;
 }
 
-function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false }: LeadCardProps) {
+function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isDragging = false, isMobile = false }: LeadCardProps) {
+  const [showStatusMenu, setShowStatusMenu] = useState(false);
+
   const {
     attributes,
     listeners,
@@ -103,7 +127,10 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
     transform,
     transition,
     isDragging: isSortableDragging,
-  } = useSortable({ id: lead.id });
+  } = useSortable({
+    id: lead.id,
+    disabled: isMobile // Disable drag on mobile
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -111,44 +138,91 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
     opacity: isSortableDragging ? 0.5 : 1,
   };
 
+  const handleStatusChange = (newStatus: LeadStatus) => {
+    onStatusChange(lead.id, newStatus);
+    setShowStatusMenu(false);
+  };
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Prevent card click when clicking on interactive elements
+    if ((e.target as HTMLElement).closest('button') || (e.target as HTMLElement).closest('[data-status-trigger]')) {
+      return;
+    }
+    onLeadClick(lead);
+  };
+
   return (
     <Card
       ref={setNodeRef}
       style={style}
       {...attributes}
-      {...listeners}
-      className={`cursor-pointer hover:shadow-md transition-shadow touch-manipulation select-none ${
-        isDragging ? 'shadow-lg' : ''
-      } ${isSortableDragging ? 'z-50' : ''}`}
-      onClick={() => onLeadClick(lead)}
+      {...(!isMobile ? listeners : {})}
+      className={`cursor-pointer hover:shadow-md transition-all duration-200 touch-manipulation select-none ${
+        isDragging ? 'shadow-lg scale-105' : ''
+      } ${isSortableDragging ? 'z-50 rotate-3' : ''}`}
+      onClick={handleCardClick}
     >
-      <CardContent className="p-3 sm:p-4">
-        <div className="space-y-2 sm:space-y-3">
-          {/* Header with name and urgency */}
+      <CardContent className="p-4 sm:p-4">
+        <div className="space-y-3">
+          {/* Header with name, status badge, and urgency */}
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0 flex-1">
-              <h3 className="font-medium text-gray-900 text-sm sm:text-base truncate">
+              <h3 className="font-semibold text-gray-900 text-base leading-tight mb-1">
                 {lead.firstName} {lead.lastName}
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 truncate">{formatServiceType(lead.serviceType)}</p>
+              <p className="text-sm text-gray-600 mb-2">{formatServiceType(lead.serviceType)}</p>
+
+              {/* Mobile-first status badge with dropdown */}
+              <div className="flex items-center gap-2">
+                <DropdownMenu open={showStatusMenu} onOpenChange={setShowStatusMenu}>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      data-status-trigger="true"
+                      className={`${getStatusColor(lead.status)} px-3 py-1 rounded-full text-xs font-medium hover:opacity-80 transition-opacity min-h-[32px] min-w-[80px] flex items-center justify-center`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowStatusMenu(!showStatusMenu);
+                      }}
+                    >
+                      {formatEnumValue(lead.status)}
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-48">
+                    {STATUS_OPTIONS.map((status) => (
+                      <DropdownMenuItem
+                        key={status.value}
+                        onClick={() => handleStatusChange(status.value)}
+                        className="flex items-center justify-between"
+                      >
+                        <span>{status.label}</span>
+                        <div className={`w-3 h-3 rounded-full ${status.color.replace('text-', 'bg-').replace('100', '500')}`} />
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </div>
-            <Badge className={`${getUrgencyColor(lead.urgency)} text-xs flex-shrink-0`} variant="secondary">
+            <Badge className={`${getUrgencyColor(lead.urgency)} text-xs flex-shrink-0 min-h-[24px]`} variant="secondary">
               {formatEnumValue(lead.urgency)}
             </Badge>
           </div>
 
-          {/* Contact information */}
-          <div className="space-y-1">
-            <div className="flex items-center text-xs sm:text-sm text-gray-600">
-              <Mail className="h-3 w-3 mr-2 flex-shrink-0" />
-              <span className="truncate">{lead.email}</span>
+          {/* Contact information - Mobile optimized */}
+          <div className="space-y-2">
+            <div className="flex items-center text-sm text-gray-700">
+              <Mail className="h-4 w-4 mr-3 flex-shrink-0 text-gray-400" />
+              <span className="truncate font-medium">{lead.email}</span>
             </div>
-            <div className="flex items-center text-xs sm:text-sm text-gray-600">
-              <Phone className="h-3 w-3 mr-2 flex-shrink-0" />
-              <span className="truncate">{lead.phone}</span>
-            </div>
-            <div className="flex items-center text-xs sm:text-sm text-gray-600">
-              <MapPin className="h-3 w-3 mr-2 flex-shrink-0" />
+            <a
+              href={`tel:${lead.phone}`}
+              className="flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Phone className="h-4 w-4 mr-3 flex-shrink-0" />
+              <span className="truncate font-medium">{lead.phone}</span>
+            </a>
+            <div className="flex items-center text-sm text-gray-700">
+              <MapPin className="h-4 w-4 mr-3 flex-shrink-0 text-gray-400" />
               <span className="truncate">{lead.suburb}</span>
             </div>
           </div>
@@ -159,8 +233,8 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
               const dates = JSON.parse(lead.bookingDates);
               if (Array.isArray(dates) && dates.length > 0) {
                 return (
-                  <div className="flex items-center text-xs text-gray-500">
-                    <Calendar className="h-3 w-3 mr-1" />
+                  <div className="flex items-center text-sm text-green-600 bg-green-50 px-2 py-1 rounded">
+                    <Calendar className="h-3 w-3 mr-2" />
                     {dates.length} available date{dates.length > 1 ? 's' : ''}
                   </div>
                 );
@@ -172,16 +246,17 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
           })()}
 
           {/* Assignment and source */}
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <span>
-              {lead.assignedTo ? `Assigned to ${lead.assignedTo.name}` : 'Unassigned'}
+          <div className="flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-gray-100">
+            <span className="flex items-center">
+              <User className="h-3 w-3 mr-1" />
+              {lead.assignedTo ? `${lead.assignedTo.name}` : 'Unassigned'}
             </span>
             <span className="capitalize">{formatEnumValue(lead.source)}</span>
           </div>
 
-          {/* Action buttons */}
-          <div className="flex items-center justify-between">
-            <div className="text-xs text-gray-400 truncate">
+          {/* Action buttons - Mobile optimized */}
+          <div className="flex items-center justify-between pt-2">
+            <div className="text-xs text-gray-400">
               {new Date(lead.createdAt).toLocaleDateString()}
             </div>
             <Button
@@ -191,9 +266,9 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
                 e.stopPropagation();
                 onCommunicationClick(lead);
               }}
-              className="h-8 w-8 p-0 touch-manipulation flex-shrink-0"
+              className="h-8 w-8 p-0 touch-manipulation flex-shrink-0 hover:bg-blue-50 hover:text-blue-600"
             >
-              <MessageSquare className="h-3 w-3" />
+              <MessageSquare className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -202,52 +277,66 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, isDragging = false 
   );
 }
 
-// Kanban Column Component
+// Kanban Column Component - Mobile-first responsive design
 interface KanbanColumnProps {
   column: typeof LEAD_COLUMNS[0];
   leads: LeadWithRelations[];
   onLeadClick: (lead: LeadWithRelations) => void;
   onCommunicationClick: (lead: LeadWithRelations) => void;
+  onStatusChange: (leadId: string, newStatus: LeadStatus) => void;
   onAddLead?: () => void;
+  isMobile?: boolean;
 }
 
-function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onAddLead }: KanbanColumnProps) {
+function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onStatusChange, onAddLead, isMobile = false }: KanbanColumnProps) {
   const { isOver, setNodeRef } = useDroppable({
     id: column.id,
+    disabled: isMobile // Disable drop zone on mobile
   });
 
   return (
-    <div className={`flex-shrink-0 w-full sm:w-80 min-w-[280px] ${column.color} rounded-lg border-2 ${isOver ? 'border-solid border-blue-500 bg-blue-50' : 'border-dashed'} transition-colors`}>
-      <div className="p-3 sm:p-4">
+    <div className={`
+      ${isMobile ? 'w-full mb-6' : 'flex-shrink-0 w-full sm:w-80 min-w-[300px]'}
+      ${column.color} rounded-lg border-2
+      ${isOver && !isMobile ? 'border-solid border-blue-500 bg-blue-50 scale-105' : 'border-dashed'}
+      transition-all duration-200 shadow-sm
+    `}>
+      <div className="p-4">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="font-semibold text-gray-900 text-sm sm:text-base">{column.title}</h2>
-            <p className="text-xs sm:text-sm text-gray-600">{leads.length} leads</p>
+            <h2 className="font-bold text-gray-900 text-base sm:text-lg">{column.title}</h2>
+            <p className="text-sm text-gray-600 font-medium">{leads.length} leads</p>
           </div>
           <Button
             variant="ghost"
             size="sm"
             onClick={onAddLead}
-            className="h-8 w-8 p-0 touch-manipulation"
+            className="h-10 w-10 p-0 touch-manipulation hover:bg-white hover:shadow-md transition-all"
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-5 w-5" />
           </Button>
         </div>
 
-        <div ref={setNodeRef} className="min-h-[200px]">
+        <div ref={setNodeRef} className={`min-h-[200px] ${isMobile ? '' : 'max-h-[calc(100vh-300px)] overflow-y-auto'}`}>
           <SortableContext items={leads.map(lead => lead.id)} strategy={verticalListSortingStrategy}>
-            <div className="space-y-2 sm:space-y-3 max-h-[calc(100vh-250px)] sm:max-h-[calc(100vh-300px)] overflow-y-auto">
+            <div className={`space-y-3 ${isMobile ? '' : 'overflow-y-auto pr-2'}`}>
               {leads.map((lead) => (
                 <LeadCard
                   key={lead.id}
                   lead={lead}
                   onLeadClick={onLeadClick}
                   onCommunicationClick={onCommunicationClick}
+                  onStatusChange={onStatusChange}
+                  isMobile={isMobile}
                 />
               ))}
               {leads.length === 0 && (
-                <div className="text-center py-8 text-gray-400 text-sm">
-                  Drop leads here or click + to add
+                <div className="text-center py-12 text-gray-400">
+                  <div className="text-6xl mb-4">📋</div>
+                  <p className="text-sm font-medium">No leads in {column.title}</p>
+                  <p className="text-xs mt-1">
+                    {isMobile ? 'Tap + to add a lead' : 'Drop leads here or click + to add'}
+                  </p>
                 </div>
               )}
             </div>
@@ -428,6 +517,255 @@ function BulkOperations({ selectedLeads, onClearSelection, onBulkAction }: BulkO
   );
 }
 
+// Edit Lead Form Component
+interface EditLeadFormProps {
+  lead: LeadWithRelations;
+  onLeadUpdated: () => void;
+  onCancel: () => void;
+}
+
+function EditLeadForm({ lead, onLeadUpdated, onCancel }: EditLeadFormProps) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedDates, setSelectedDates] = useState<string[]>([]);
+  const [formData, setFormData] = useState({
+    firstName: lead.firstName,
+    lastName: lead.lastName,
+    email: lead.email,
+    phone: lead.phone,
+    suburb: lead.suburb,
+    address: lead.address || '',
+    postcode: lead.postcode || '',
+    serviceType: lead.serviceType,
+    urgency: lead.urgency,
+    source: lead.source,
+    status: lead.status,
+    notes: lead.notes || '',
+  });
+
+  // Initialize booking dates
+  useEffect(() => {
+    if (lead.bookingDates) {
+      try {
+        const dates = JSON.parse(lead.bookingDates);
+        setSelectedDates(Array.isArray(dates) ? dates : []);
+      } catch {
+        setSelectedDates([]);
+      }
+    } else {
+      setSelectedDates([]);
+    }
+  }, [lead.bookingDates]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      await LeadService.updateLead(lead.id, {
+        ...formData,
+        bookingDates: selectedDates,
+      });
+
+      toast({
+        title: "Success",
+        description: "Lead updated successfully",
+      });
+
+      onLeadUpdated();
+    } catch (error) {
+      console.error('Failed to update lead:', error);
+      toast({
+        title: "Error",
+        description: "Failed to update lead. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="firstName">First Name *</Label>
+          <Input
+            id="firstName"
+            value={formData.firstName}
+            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="lastName">Last Name *</Label>
+          <Input
+            id="lastName"
+            value={formData.lastName}
+            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+            required
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="email">Email *</Label>
+          <Input
+            id="email"
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="phone">Phone *</Label>
+          <Input
+            id="phone"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            required
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="suburb">Suburb *</Label>
+          <Input
+            id="suburb"
+            value={formData.suburb}
+            onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="postcode">Postcode</Label>
+          <Input
+            id="postcode"
+            value={formData.postcode}
+            onChange={(e) => setFormData({ ...formData, postcode: e.target.value })}
+          />
+        </div>
+      </div>
+
+      <div>
+        <Label htmlFor="address">Address</Label>
+        <Input
+          id="address"
+          value={formData.address}
+          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="serviceType">Service Type</Label>
+          <Select
+            value={formData.serviceType}
+            onValueChange={(value) => setFormData({ ...formData, serviceType: value as ServiceType })}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(ServiceType).map((type) => (
+                <SelectItem key={type} value={type}>
+                  {formatServiceType(type)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <Label htmlFor="urgency">Urgency</Label>
+          <Select
+            value={formData.urgency}
+            onValueChange={(value) => setFormData({ ...formData, urgency: value as Urgency })}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(Urgency).map((urgency) => (
+                <SelectItem key={urgency} value={urgency}>
+                  {formatEnumValue(urgency)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="status">Status</Label>
+          <Select
+            value={formData.status}
+            onValueChange={(value) => setFormData({ ...formData, status: value as LeadStatus })}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(LeadStatus).map((status) => (
+                <SelectItem key={status} value={status}>
+                  {formatEnumValue(status)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <Label htmlFor="source">Lead Source</Label>
+          <Select
+            value={formData.source}
+            onValueChange={(value) => setFormData({ ...formData, source: value as LeadSource })}
+          >
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.values(LeadSource).map((source) => (
+                <SelectItem key={source} value={source}>
+                  {formatEnumValue(source)}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      <div>
+        <Label htmlFor="notes">Notes</Label>
+        <Textarea
+          id="notes"
+          value={formData.notes}
+          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+          rows={3}
+        />
+      </div>
+
+      <DatePickerMultiple
+        selectedDates={selectedDates}
+        onDatesChange={setSelectedDates}
+        label="Available Booking Dates"
+        placeholder="Select dates when customer is available"
+        maxDates={5}
+      />
+
+      <DialogFooter>
+        <Button type="button" variant="outline" onClick={onCancel}>
+          Cancel
+        </Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? 'Updating...' : 'Update Lead'}
+        </Button>
+      </DialogFooter>
+    </form>
+  );
+}
+
 // Main Kanban Board Component
 export function LeadsKanban() {
   const { user } = useAuth();
@@ -438,6 +776,7 @@ export function LeadsKanban() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLead, setSelectedLead] = useState<LeadWithRelations | null>(null);
   const [viewDialogOpen, setViewDialogOpen] = useState(false);
+  const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [filterSidebarOpen, setFilterSidebarOpen] = useState(false);
   const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
   const [filters, setFilters] = useState<any>({});
@@ -448,17 +787,33 @@ export function LeadsKanban() {
   const [technicianAssignmentLeads, setTechnicianAssignmentLeads] = useState<LeadWithRelations[]>([]);
   const [addLeadModalOpen, setAddLeadModalOpen] = useState(false);
   const [addLeadStatus, setAddLeadStatus] = useState<LeadStatus | null>(null);
+  const [dragError, setDragError] = useState<string | null>(null);
 
+  // Mobile detection
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Improved sensors with better mobile support
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 8,
+        distance: isMobile ? 15 : 8, // Longer distance on mobile to prevent accidental drags
       },
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 250,
-        tolerance: 5,
+        delay: isMobile ? 500 : 250, // Longer delay on mobile
+        tolerance: isMobile ? 10 : 5, // More tolerance on mobile
       },
     })
   );
@@ -516,13 +871,22 @@ export function LeadsKanban() {
 
   const handleDragStart = (event: DragStartEvent) => {
     setActiveId(event.active.id as string);
+    setDragError(null);
+
+    // Add haptic feedback on mobile
+    if (isMobile && 'vibrate' in navigator) {
+      navigator.vibrate(50);
+    }
   };
 
   const handleDragEnd = async (event: DragEndEvent) => {
     const { active, over } = event;
     setActiveId(null);
 
-    if (!over) return;
+    if (!over) {
+      setDragError('Drop cancelled');
+      return;
+    }
 
     const leadId = active.id as string;
     const newStatus = over.id as LeadStatus;
@@ -532,19 +896,60 @@ export function LeadsKanban() {
     if (!lead || lead.status === newStatus) return;
 
     try {
+      // Show loading state
+      setActiveId(`loading-${leadId}`);
+
       // Update lead status
       await LeadService.updateLead(leadId, { status: newStatus });
+
+      // Add haptic feedback on success
+      if (isMobile && 'vibrate' in navigator) {
+        navigator.vibrate([50, 50, 50]);
+      }
 
       // Refresh leads data
       await loadLeads();
     } catch (error) {
       console.error('Failed to update lead status:', error);
+      setDragError('Failed to update lead status. Please try again.');
+
+      // Error vibration
+      if (isMobile && 'vibrate' in navigator) {
+        navigator.vibrate([100, 50, 100]);
+      }
+    } finally {
+      setActiveId(null);
+    }
+  };
+
+  // Alternative status change method for mobile/backup
+  const handleStatusChange = async (leadId: string, newStatus: LeadStatus) => {
+    const lead = leads.find(l => l.id === leadId);
+    if (!lead || lead.status === newStatus) return;
+
+    try {
+      await LeadService.updateLead(leadId, { status: newStatus });
+
+      // Add haptic feedback on success
+      if (isMobile && 'vibrate' in navigator) {
+        navigator.vibrate(50);
+      }
+
+      await loadLeads();
+    } catch (error) {
+      console.error('Failed to update lead status:', error);
+      setDragError('Failed to update lead status. Please try again.');
     }
   };
 
   const handleLeadClick = (lead: LeadWithRelations) => {
     setSelectedLead(lead);
     setViewDialogOpen(true);
+  };
+
+  const handleEditLead = (lead: LeadWithRelations) => {
+    setSelectedLead(lead);
+    setEditDialogOpen(true);
   };
 
   const handleCommunicationClick = (lead: LeadWithRelations) => {
@@ -602,7 +1007,7 @@ export function LeadsKanban() {
 
   return (
     <ProtectedRoute requireAdmin>
-      <div className="min-h-screen bg-gray-50 flex overflow-x-hidden">
+      <div className={`min-h-screen bg-gray-50 ${isMobile ? 'flex flex-col' : 'flex overflow-x-hidden'}`}>
         {/* Filter Sidebar */}
         <FilterSidebar
           open={filterSidebarOpen}
@@ -614,56 +1019,68 @@ export function LeadsKanban() {
         {/* Main Content */}
         <div className="flex-1 min-w-0">
           {/* Header */}
-          <div className="bg-white border-b border-gray-200 px-3 sm:px-6 py-4">
+          <div className="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-10">
             <div className="flex items-center justify-between">
               <div className="min-w-0 flex-1">
                 <h1 className="text-xl sm:text-2xl font-bold text-gray-900 truncate">Lead Pipeline</h1>
-                <p className="text-sm sm:text-base text-gray-600 hidden sm:block">Kanban board view with drag and drop functionality</p>
+                <p className="text-sm text-gray-600 hidden sm:block">
+                  {isMobile ? 'Tap status badges to change' : 'Drag and drop or tap status badges to move leads'}
+                </p>
               </div>
-              <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+              <div className="flex items-center space-x-2 flex-shrink-0">
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
-                  className="hidden sm:flex"
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  Filters
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
-                  className="sm:hidden"
+                  className={isMobile ? "h-10 w-10 p-0" : ""}
                 >
                   <Filter className="h-4 w-4" />
+                  {!isMobile && <span className="ml-2">Filters</span>}
                 </Button>
                 <Button variant="outline" size="sm" onClick={() => navigate('/admin/leads')}>
-                  <List className="h-4 w-4 sm:mr-2" />
-                  <span className="hidden sm:inline">List View</span>
+                  <List className="h-4 w-4" />
+                  {!isMobile && <span className="ml-2">List View</span>}
                 </Button>
                 <Button size="sm" onClick={handleAddLeadFromHeader}>
-                  <Plus className="h-4 w-4 sm:mr-2" />
-                  <span className="hidden sm:inline">Add Lead</span>
+                  <Plus className="h-4 w-4" />
+                  {!isMobile && <span className="ml-2">Add Lead</span>}
                 </Button>
               </div>
             </div>
           </div>
 
-          {/* Search and Bulk Operations */}
-          <div className="p-3 sm:p-6">
+          {/* Search and Status */}
+          <div className="p-4">
             {/* Search Bar */}
-            <div className="mb-4 sm:mb-6">
-              <div className="relative max-w-md">
+            <div className="mb-4">
+              <div className="relative">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
                   placeholder="Search leads..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 text-sm"
+                  className="pl-10 h-10"
                 />
               </div>
             </div>
+
+            {/* Error Message */}
+            {dragError && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                <div className="flex items-center">
+                  <span className="font-medium">Error:</span>
+                  <span className="ml-2">{dragError}</span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setDragError(null)}
+                    className="ml-auto h-6 w-6 p-0"
+                  >
+                    ×
+                  </Button>
+                </div>
+              </div>
+            )}
 
             {/* Bulk Operations */}
             <BulkOperations
@@ -678,8 +1095,9 @@ export function LeadsKanban() {
               onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
             >
-              <div className="overflow-x-auto">
-                <div className="flex space-x-3 sm:space-x-6 pb-6 min-w-max">
+              {isMobile ? (
+                // Mobile: Vertical stack layout
+                <div className="space-y-4">
                   {LEAD_COLUMNS.map((column) => (
                     <KanbanColumn
                       key={column.id}
@@ -687,11 +1105,31 @@ export function LeadsKanban() {
                       leads={groupedLeads[column.id] || []}
                       onLeadClick={handleLeadClick}
                       onCommunicationClick={handleCommunicationClick}
+                      onStatusChange={handleStatusChange}
                       onAddLead={() => handleAddLead(column.id as LeadStatus)}
+                      isMobile={true}
                     />
                   ))}
                 </div>
-              </div>
+              ) : (
+                // Desktop: Horizontal scrollable layout
+                <div className="overflow-x-auto">
+                  <div className="flex space-x-6 pb-6 min-w-max">
+                    {LEAD_COLUMNS.map((column) => (
+                      <KanbanColumn
+                        key={column.id}
+                        column={column}
+                        leads={groupedLeads[column.id] || []}
+                        onLeadClick={handleLeadClick}
+                        onCommunicationClick={handleCommunicationClick}
+                        onStatusChange={handleStatusChange}
+                        onAddLead={() => handleAddLead(column.id as LeadStatus)}
+                        isMobile={false}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <DragOverlay>
                 {activeLead ? (
@@ -699,7 +1137,9 @@ export function LeadsKanban() {
                     lead={activeLead}
                     onLeadClick={() => {}}
                     onCommunicationClick={() => {}}
+                    onStatusChange={() => {}}
                     isDragging
+                    isMobile={isMobile}
                   />
                 ) : null}
               </DragOverlay>
@@ -745,8 +1185,37 @@ export function LeadsKanban() {
             <Button variant="outline" onClick={() => setViewDialogOpen(false)}>
               Close
             </Button>
-            <Button>Edit Lead</Button>
+            <Button onClick={() => {
+              setViewDialogOpen(false);
+              if (selectedLead) {
+                handleEditLead(selectedLead);
+              }
+            }}>
+              Edit Lead
+            </Button>
           </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Edit Lead Dialog */}
+      <Dialog open={editDialogOpen} onOpenChange={setEditDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Edit Lead - {selectedLead?.firstName} {selectedLead?.lastName}</DialogTitle>
+            <DialogDescription>
+              Update lead information and status
+            </DialogDescription>
+          </DialogHeader>
+          {selectedLead && (
+            <EditLeadForm
+              lead={selectedLead}
+              onLeadUpdated={() => {
+                loadLeads();
+                setEditDialogOpen(false);
+              }}
+              onCancel={() => setEditDialogOpen(false)}
+            />
+          )}
         </DialogContent>
       </Dialog>
 
