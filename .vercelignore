@@ -37,24 +37,26 @@ run-*.js
 run-*.sh
 
 # Lighthouse and audit files
-lighthouse-*
-*.lighthouse.*
-comprehensive-*
+lighthouse-*.json
+lighthouse-*.html
+lighthouse-*.js
+comprehensive-*.md
+comprehensive-*.js
 triple-check-*
-ULTRA-*
-LCP_*
-PHASE*
-STRATEGIC*
-ACCESSIBILITY*
-PERFORMANCE*
-PRODUCTION*
-OPTIMIZATION*
-MELBOURNE*
-FINAL*
-VERIFICATION*
-COMPREHENSIVE*
-ADVANCED*
-AUDIT*
+ULTRA-*.md
+LCP_*.md
+PHASE*.md
+STRATEGIC*.md
+ACCESSIBILITY*.md
+PERFORMANCE*.md
+PRODUCTION*.md
+OPTIMIZATION*.md
+MELBOURNE*.md
+FINAL*.md
+VERIFICATION*.md
+COMPREHENSIVE*.md
+ADVANCED*.md
+AUDIT*.md
 
 # Documentation (not needed for builds)
 *.md
@@ -77,6 +79,6 @@ updated_*
 server.js
 
 # Analysis files
-analyze-*
-manual-*
-simple-*
+analyze-*.js
+manual-*.js
+simple-*.js
