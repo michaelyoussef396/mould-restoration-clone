@@ -1,478 +1,459 @@
-// Melbourne Mould Restoration - Service Worker for Australian Mobile Networks
-// Optimized for 3G/4G networks with intelligent caching strategies
+// Service Worker for Melbourne Mould & Restoration CRM
+// Provides offline capability for field technicians
 
-const CACHE_VERSION = 'melbourne-mould-v1.0.0';
-const CACHE_NAMES = {
-  CRITICAL: `critical-${CACHE_VERSION}`,
-  LOCATIONS: `locations-${CACHE_VERSION}`,
-  IMAGES: `images-${CACHE_VERSION}`,
-  FONTS: `fonts-${CACHE_VERSION}`,
-  API: `api-${CACHE_VERSION}`,
-  OFFLINE: `offline-${CACHE_VERSION}`
-};
+const CACHE_NAME = 'mould-restoration-v1.0.0';
+const OFFLINE_CACHE_NAME = 'mould-restoration-offline-v1.0.0';
 
-// Australian CDN endpoints
-const AUSTRALIAN_CDNS = [
-  'https://cdn-au.mouldrestoration.com.au',
-  'https://fonts.gstatic.com',
-  'https://fonts.googleapis.com'
-];
-
-// Critical resources that should always be cached
-const CRITICAL_RESOURCES = [
+// Critical assets for offline functionality
+const CRITICAL_ASSETS = [
   '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.ico',
-  '/offline.html' // Offline fallback page
+  '/offline.html',
+  '/admin/dashboard',
+  '/admin/leads',
+  '/admin/leads/kanban',
+  // Add critical CSS and JS files dynamically
 ];
 
-// Melbourne location pages for intelligent prefetching
-const MELBOURNE_LOCATIONS = [
-  'carlton', 'toorak', 'brighton', 'south-yarra', 'richmond',
-  'fitzroy', 'prahran', 'malvern', 'armadale', 'albert-park',
-  // ... could include all 145 locations
+// API endpoints to cache for offline viewing
+const API_CACHE_PATTERNS = [
+  '/api/leads',
+  '/api/leads/recent',
+  '/api/dashboard/stats',
+  '/api/auth/me'
 ];
 
-// Network detection for Australian mobile networks
-const getNetworkType = () => {
-  const connection = self.navigator?.connection || self.navigator?.mozConnection;
-  return connection ? connection.effectiveType : '4g';
-};
-
-// Install event - Cache critical resources
-self.addEventListener('install', event => {
-  console.log('🔧 Service Worker installing for Melbourne Mould Restoration');
+// Install event - cache critical assets
+self.addEventListener('install', (event) => {
+  console.log('[SW] Installing service worker...');
 
   event.waitUntil(
-    Promise.all([
-      // Cache critical resources
-      caches.open(CACHE_NAMES.CRITICAL).then(cache => {
-        return cache.addAll(CRITICAL_RESOURCES);
-      }),
-
-      // Pre-cache fonts for Australian users
-      caches.open(CACHE_NAMES.FONTS).then(cache => {
-        return cache.addAll([
-          'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2'
-        ]);
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('[SW] Caching critical assets');
+        return cache.addAll(CRITICAL_ASSETS);
       })
-    ])
+      .then(() => {
+        // Skip waiting to activate immediately
+        return self.skipWaiting();
+      })
+      .catch((error) => {
+        console.error('[SW] Failed to cache critical assets:', error);
+      })
   );
-
-  // Skip waiting to activate immediately
-  self.skipWaiting();
 });
 
-// Activate event - Clean up old caches
-self.addEventListener('activate', event => {
-  console.log('✅ Service Worker activated for Australian mobile optimization');
+// Activate event - clean up old caches
+self.addEventListener('activate', (event) => {
+  console.log('[SW] Activating service worker...');
 
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          // Delete old caches that don't match current version
-          if (!Object.values(CACHE_NAMES).includes(cacheName)) {
-            console.log(`🗑️ Deleting old cache: ${cacheName}`);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME && cacheName !== OFFLINE_CACHE_NAME) {
+              console.log('[SW] Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        // Take control of all pages immediately
+        return self.clients.claim();
+      })
   );
-
-  // Take control of all pages immediately
-  self.clients.claim();
 });
 
-// Fetch event - Implement Australian network-aware caching strategies
-self.addEventListener('fetch', event => {
-  const request = event.request;
+// Fetch event - implement caching strategies
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
   const url = new URL(request.url);
-  const networkType = getNetworkType();
 
   // Skip non-GET requests
   if (request.method !== 'GET') {
+    // Handle POST requests for offline queue
+    if (request.method === 'POST' && url.pathname.startsWith('/api/')) {
+      event.respondWith(handleOfflinePost(request));
+    }
     return;
   }
 
-  // Handle different resource types with network-aware strategies
-  if (url.pathname === '/' || url.pathname.includes('.html')) {
-    event.respondWith(handleHTMLRequest(request, networkType));
-  } else if (url.pathname.includes('/locations/')) {
-    event.respondWith(handleLocationRequest(request, networkType));
-  } else if (isImageRequest(url)) {
-    event.respondWith(handleImageRequest(request, networkType));
-  } else if (isFontRequest(url)) {
-    event.respondWith(handleFontRequest(request));
-  } else if (isAPIRequest(url)) {
-    event.respondWith(handleAPIRequest(request, networkType));
-  } else {
-    event.respondWith(handleGenericRequest(request, networkType));
+  // API requests - Network First with offline fallback
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(handleAPIRequest(request));
+    return;
   }
+
+  // Static assets - Cache First
+  if (isStaticAsset(url.pathname)) {
+    event.respondWith(handleStaticAsset(request));
+    return;
+  }
+
+  // Navigation requests - Network First with fallback
+  if (request.mode === 'navigate') {
+    event.respondWith(handleNavigation(request));
+    return;
+  }
+
+  // Default strategy - Network First
+  event.respondWith(handleDefault(request));
 });
 
-// HTML caching strategy - Network first with cache fallback
-async function handleHTMLRequest(request, networkType) {
-  const cache = await caches.open(CACHE_NAMES.CRITICAL);
+// Handle API requests with offline support
+async function handleAPIRequest(request) {
+  const cacheName = OFFLINE_CACHE_NAME;
 
   try {
-    // Network first for fresh content
+    // Try network first
     const networkResponse = await fetch(request);
 
     if (networkResponse.ok) {
-      // Cache successful responses
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    }
-  } catch (error) {
-    console.log('📱 Network failed, serving from cache');
-  }
-
-  // Fallback to cache
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
-
-  // Ultimate fallback to offline page
-  const offlineResponse = await cache.match('/offline.html');
-  return offlineResponse || new Response('Offline', { status: 503 });
-}
-
-// Location pages strategy - Network first with intelligent prefetching
-async function handleLocationRequest(request, networkType) {
-  const cache = await caches.open(CACHE_NAMES.LOCATIONS);
-  const url = new URL(request.url);
-
-  try {
-    // Network first for location pages (always want fresh content)
-    const networkResponse = await fetch(request);
-
-    if (networkResponse.ok) {
-      // Cache the response
+      // Cache successful responses for offline access
+      const cache = await caches.open(cacheName);
       cache.put(request, networkResponse.clone());
 
-      // Intelligent prefetching based on network speed
-      if (networkType === '4g') {
-        prefetchAdjacentLocations(url.pathname);
-      }
-
-      return networkResponse;
+      // Update online status
+      notifyClientsOfNetworkStatus(true);
     }
+
+    return networkResponse;
+
   } catch (error) {
-    console.log(`📍 Location page network failed: ${url.pathname}`);
-  }
+    console.log('[SW] Network failed for API request, checking cache...');
 
-  // Fallback to cached version
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
+    // Network failed, try cache
+    const cachedResponse = await caches.match(request);
 
-  // Generate fallback location page if none cached
-  return generateFallbackLocationPage(url.pathname);
-}
-
-// Image caching strategy - Cache first with Australian CDN optimization
-async function handleImageRequest(request, networkType) {
-  const cache = await caches.open(CACHE_NAMES.IMAGES);
-
-  // Check cache first for images
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
-
-  try {
-    // Optimize image request for Australian CDN
-    const optimizedRequest = optimizeImageRequest(request);
-    const networkResponse = await fetch(optimizedRequest);
-
-    if (networkResponse.ok) {
-      // Cache images aggressively (they change rarely)
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    }
-  } catch (error) {
-    console.log(`🖼️ Image failed to load: ${request.url}`);
-  }
-
-  // Return placeholder image for failed loads
-  return generatePlaceholderImage();
-}
-
-// Font caching strategy - Cache first with long expiration
-async function handleFontRequest(request) {
-  const cache = await caches.open(CACHE_NAMES.FONTS);
-
-  // Fonts can be served from cache without network check
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
-
-  try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    }
-  } catch (error) {
-    console.log(`🔤 Font failed to load: ${request.url}`);
-  }
-
-  // System font fallback
-  return new Response('', { status: 404 });
-}
-
-// API caching strategy - Network first with stale-while-revalidate
-async function handleAPIRequest(request, networkType) {
-  const cache = await caches.open(CACHE_NAMES.API);
-
-  // For slow networks, serve cache first then update
-  if (networkType === 'slow-2g' || networkType === '2g') {
-    const cachedResponse = await cache.match(request);
     if (cachedResponse) {
-      // Serve cache immediately
-      updateCacheInBackground(request, cache);
-      return cachedResponse;
+      // Notify clients we're serving from cache (offline)
+      notifyClientsOfNetworkStatus(false);
+
+      // Add offline indicator header
+      const response = cachedResponse.clone();
+      response.headers.set('X-Served-From-Cache', 'true');
+      return response;
     }
-  }
 
-  try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    }
-  } catch (error) {
-    console.log(`🔄 API request failed: ${request.url}`);
-  }
-
-  // Fallback to cache
-  const cachedResponse = await cache.match(request);
-  return cachedResponse || new Response('API Unavailable', { status: 503 });
-}
-
-// Generic resource caching
-async function handleGenericRequest(request, networkType) {
-  const cache = await caches.open(CACHE_NAMES.CRITICAL);
-
-  try {
-    const networkResponse = await fetch(request);
-    if (networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
-      return networkResponse;
-    }
-  } catch (error) {
-    const cachedResponse = await cache.match(request);
-    if (cachedResponse) {
-      return cachedResponse;
-    }
-  }
-
-  return new Response('Resource Unavailable', { status: 404 });
-}
-
-// Helper functions
-
-function isImageRequest(url) {
-  return /\.(jpg|jpeg|png|webp|avif|svg)(\?|$)/i.test(url.pathname);
-}
-
-function isFontRequest(url) {
-  return /\.(woff|woff2|ttf|otf)(\?|$)/i.test(url.pathname);
-}
-
-function isAPIRequest(url) {
-  return url.pathname.startsWith('/api/') || url.hostname.includes('api.');
-}
-
-function optimizeImageRequest(request) {
-  const url = new URL(request.url);
-
-  // Convert to Australian CDN if not already
-  if (!url.hostname.includes('cdn-au.')) {
-    url.hostname = 'cdn-au.mouldrestoration.com.au';
-  }
-
-  // Add Australian-specific optimization parameters
-  url.searchParams.set('f', 'webp'); // Prefer WebP
-  url.searchParams.set('q', '85'); // Quality optimization for Australian mobile
-
-  return new Request(url.toString(), {
-    method: request.method,
-    headers: request.headers,
-    body: request.body,
-    mode: request.mode,
-    credentials: request.credentials,
-    cache: request.cache,
-    redirect: request.redirect,
-    referrer: request.referrer
-  });
-}
-
-// Prefetch adjacent Melbourne locations
-async function prefetchAdjacentLocations(currentPath) {
-  const currentLocation = currentPath.split('/').pop();
-  const cache = await caches.open(CACHE_NAMES.LOCATIONS);
-
-  // Simple adjacent location logic (could be more sophisticated)
-  const currentIndex = MELBOURNE_LOCATIONS.indexOf(currentLocation);
-  if (currentIndex !== -1) {
-    const adjacent = [
-      MELBOURNE_LOCATIONS[currentIndex - 1],
-      MELBOURNE_LOCATIONS[currentIndex + 1]
-    ].filter(Boolean);
-
-    adjacent.forEach(location => {
-      const locationUrl = `/locations/${location}`;
-
-      // Prefetch without waiting
-      fetch(locationUrl).then(response => {
-        if (response.ok) {
-          cache.put(locationUrl, response.clone());
+    // No cache available, return offline response
+    return new Response(
+      JSON.stringify({
+        error: 'Offline - No cached data available',
+        offline: true,
+        timestamp: new Date().toISOString()
+      }),
+      {
+        status: 503,
+        statusText: 'Service Unavailable - Offline',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Offline': 'true'
         }
-      }).catch(() => {
-        // Silently fail for prefetch
-      });
-    });
+      }
+    );
   }
 }
 
-// Generate fallback location page
-function generateFallbackLocationPage(pathname) {
-  const location = pathname.split('/').pop() || 'Melbourne';
-  const fallbackHTML = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Mould Removal ${location} Melbourne - Offline</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; }
-        .header { color: #2563eb; margin-bottom: 20px; }
-        .offline-notice { background: #fef3c7; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
-        .cta { background: #2563eb; color: white; padding: 15px 20px; text-decoration: none; border-radius: 4px; display: inline-block; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h1 class="header">Professional Mould Removal ${location} Melbourne</h1>
-        <div class="offline-notice">
-          <strong>You're currently offline.</strong> This is a cached version of our ${location} service page.
-        </div>
-        <p>We provide professional mould inspection and removal services in ${location}, Melbourne. Our IICRC-certified technicians are available for same-day service.</p>
-        <p><strong>Emergency Service:</strong> Call us at 1800 954 117</p>
-        <p>Services include:</p>
-        <ul>
-          <li>Professional mould inspection</li>
-          <li>Complete mould removal</li>
-          <li>Water damage restoration</li>
-          <li>Preventive treatments</li>
-        </ul>
-        <a href="tel:1800954117" class="cta">Call Now: 1800 954 117</a>
-      </div>
-    </body>
-    </html>
-  `;
+// Handle POST requests for offline queue
+async function handleOfflinePost(request) {
+  try {
+    // Try network first
+    const networkResponse = await fetch(request);
 
-  return new Response(fallbackHTML, {
-    headers: { 'Content-Type': 'text/html; charset=utf-8' }
-  });
-}
-
-// Generate placeholder image
-function generatePlaceholderImage() {
-  // Simple 1x1 transparent PNG
-  const transparentPNG = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=';
-
-  const binaryData = atob(transparentPNG);
-  const bytes = new Uint8Array(binaryData.length);
-  for (let i = 0; i < binaryData.length; i++) {
-    bytes[i] = binaryData.charCodeAt(i);
-  }
-
-  return new Response(bytes, {
-    headers: {
-      'Content-Type': 'image/png',
-      'Cache-Control': 'public, max-age=300'
+    if (networkResponse.ok) {
+      notifyClientsOfNetworkStatus(true);
+      return networkResponse;
     }
-  });
+
+    throw new Error('Network request failed');
+
+  } catch (error) {
+    console.log('[SW] POST request failed, queuing for later...');
+
+    // Store request for later sync
+    await queueOfflineRequest(request);
+
+    // Return optimistic response
+    return new Response(
+      JSON.stringify({
+        success: true,
+        queued: true,
+        message: 'Request queued for when connection is restored',
+        timestamp: new Date().toISOString()
+      }),
+      {
+        status: 202,
+        statusText: 'Accepted - Queued for Sync',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Queued-Offline': 'true'
+        }
+      }
+    );
+  }
 }
 
-// Background cache update
-async function updateCacheInBackground(request, cache) {
+// Handle static assets with cache-first strategy
+async function handleStaticAsset(request) {
+  const cachedResponse = await caches.match(request);
+
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
   try {
     const networkResponse = await fetch(request);
+
     if (networkResponse.ok) {
+      const cache = await caches.open(CACHE_NAME);
       cache.put(request, networkResponse.clone());
     }
+
+    return networkResponse;
+
   } catch (error) {
-    // Background updates can fail silently
+    console.log('[SW] Failed to fetch static asset:', request.url);
+
+    // Return a basic offline fallback for assets
+    return new Response('', {
+      status: 503,
+      statusText: 'Service Unavailable - Offline'
+    });
   }
 }
 
-// Message handling for cache management
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-
-  if (event.data && event.data.type === 'GET_CACHE_STATUS') {
-    // Return cache status for debugging
-    caches.keys().then(cacheNames => {
-      const status = {
-        cacheNames,
-        networkType: getNetworkType(),
-        version: CACHE_VERSION
-      };
-
-      event.ports[0].postMessage(status);
-    });
-  }
-
-  if (event.data && event.data.type === 'PREFETCH_LOCATIONS') {
-    // Prefetch specific locations
-    const locations = event.data.locations || [];
-    locations.forEach(location => {
-      fetch(`/locations/${location}`).catch(() => {
-        // Silently fail
-      });
-    });
-  }
-});
-
-// Background sync for analytics (when network returns)
-self.addEventListener('sync', event => {
-  if (event.tag === 'performance-analytics') {
-    event.waitUntil(sendPerformanceMetrics());
-  }
-});
-
-async function sendPerformanceMetrics() {
-  // Send cached performance metrics when network is available
+// Handle navigation requests
+async function handleNavigation(request) {
   try {
-    const cache = await caches.open(CACHE_NAMES.API);
-    const metrics = await cache.match('/api/performance-metrics');
+    // Try network first
+    const networkResponse = await fetch(request);
 
-    if (metrics) {
-      const data = await metrics.json();
-      await fetch('/api/analytics/performance', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+    if (networkResponse.ok) {
+      notifyClientsOfNetworkStatus(true);
 
-      // Remove from cache after successful send
-      cache.delete('/api/performance-metrics');
+      // Cache successful navigation responses
+      const cache = await caches.open(CACHE_NAME);
+      cache.put(request, networkResponse.clone());
     }
+
+    return networkResponse;
+
   } catch (error) {
-    console.log('Background sync failed:', error);
+    console.log('[SW] Navigation failed, checking cache...');
+
+    // Try cache
+    const cachedResponse = await caches.match(request);
+
+    if (cachedResponse) {
+      notifyClientsOfNetworkStatus(false);
+      return cachedResponse;
+    }
+
+    // Fallback to offline page
+    return caches.match('/offline.html');
   }
 }
 
-console.log('🇦🇺 Melbourne Mould Restoration Service Worker ready for Australian mobile networks');
+// Default fetch handler
+async function handleDefault(request) {
+  try {
+    return await fetch(request);
+  } catch (error) {
+    return caches.match(request);
+  }
+}
+
+// Utility functions
+function isStaticAsset(pathname) {
+  return /\.(js|css|png|jpg|jpeg|webp|svg|ico|woff|woff2|ttf)$/.test(pathname);
+}
+
+// Queue offline requests for later sync
+async function queueOfflineRequest(request) {
+  try {
+    const requestData = {
+      url: request.url,
+      method: request.method,
+      headers: Object.fromEntries(request.headers.entries()),
+      body: await request.text(),
+      timestamp: Date.now()
+    };
+
+    // Store in IndexedDB for persistence
+    const db = await openOfflineDB();
+    const transaction = db.transaction(['offline_queue'], 'readwrite');
+    const store = transaction.objectStore('offline_queue');
+
+    await store.add(requestData);
+
+    console.log('[SW] Request queued for offline sync:', request.url);
+
+    // Notify clients about queued request
+    notifyClientsOfQueuedRequest(requestData);
+
+  } catch (error) {
+    console.error('[SW] Failed to queue offline request:', error);
+  }
+}
+
+// IndexedDB for offline queue
+function openOfflineDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('MouldRestorationOffline', 1);
+
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => resolve(request.result);
+
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+
+      if (!db.objectStoreNames.contains('offline_queue')) {
+        const store = db.createObjectStore('offline_queue', {
+          keyPath: 'id',
+          autoIncrement: true
+        });
+        store.createIndex('timestamp', 'timestamp', { unique: false });
+      }
+    };
+  });
+}
+
+// Notify clients of network status changes
+function notifyClientsOfNetworkStatus(isOnline) {
+  self.clients.matchAll().then((clients) => {
+    clients.forEach((client) => {
+      client.postMessage({
+        type: 'NETWORK_STATUS',
+        isOnline,
+        timestamp: Date.now()
+      });
+    });
+  });
+}
+
+// Notify clients of queued requests
+function notifyClientsOfQueuedRequest(requestData) {
+  self.clients.matchAll().then((clients) => {
+    clients.forEach((client) => {
+      client.postMessage({
+        type: 'REQUEST_QUEUED',
+        request: requestData,
+        timestamp: Date.now()
+      });
+    });
+  });
+}
+
+// Background sync for offline queue
+self.addEventListener('sync', (event) => {
+  console.log('[SW] Background sync triggered:', event.tag);
+
+  if (event.tag === 'offline-queue-sync') {
+    event.waitUntil(processOfflineQueue());
+  }
+});
+
+// Process queued offline requests
+async function processOfflineQueue() {
+  console.log('[SW] Processing offline queue...');
+
+  try {
+    const db = await openOfflineDB();
+    const transaction = db.transaction(['offline_queue'], 'readwrite');
+    const store = transaction.objectStore('offline_queue');
+
+    const queuedRequests = await store.getAll();
+
+    for (const requestData of queuedRequests) {
+      try {
+        // Reconstruct the request
+        const request = new Request(requestData.url, {
+          method: requestData.method,
+          headers: requestData.headers,
+          body: requestData.body
+        });
+
+        // Attempt to send the request
+        const response = await fetch(request);
+
+        if (response.ok) {
+          // Remove from queue on success
+          await store.delete(requestData.id);
+          console.log('[SW] Synced queued request:', requestData.url);
+
+          // Notify clients of successful sync
+          notifyClientsOfSyncSuccess(requestData);
+        }
+
+      } catch (error) {
+        console.log('[SW] Failed to sync request:', requestData.url, error);
+
+        // Keep in queue for next sync attempt
+        // Optionally implement retry limit and expiration
+      }
+    }
+
+  } catch (error) {
+    console.error('[SW] Failed to process offline queue:', error);
+  }
+}
+
+// Notify clients of successful sync
+function notifyClientsOfSyncSuccess(requestData) {
+  self.clients.matchAll().then((clients) => {
+    clients.forEach((client) => {
+      client.postMessage({
+        type: 'SYNC_SUCCESS',
+        request: requestData,
+        timestamp: Date.now()
+      });
+    });
+  });
+}
+
+// Handle push notifications for urgent updates
+self.addEventListener('push', (event) => {
+  console.log('[SW] Push notification received');
+
+  const options = {
+    body: 'New urgent lead assigned to you',
+    icon: '/icon-192x192.png',
+    badge: '/badge-72x72.png',
+    vibrate: [200, 100, 200],
+    data: {
+      url: '/admin/leads'
+    },
+    actions: [
+      {
+        action: 'view',
+        title: 'View Lead',
+        icon: '/icon-view.png'
+      },
+      {
+        action: 'dismiss',
+        title: 'Dismiss',
+        icon: '/icon-dismiss.png'
+      }
+    ]
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('Mould & Restoration Co.', options)
+  );
+});
+
+// Handle notification clicks
+self.addEventListener('notificationclick', (event) => {
+  console.log('[SW] Notification clicked:', event.action);
+
+  event.notification.close();
+
+  if (event.action === 'view') {
+    event.waitUntil(
+      clients.openWindow(event.notification.data.url)
+    );
+  }
+});
+
+console.log('[SW] Service worker loaded and ready for field operations');

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Mould & Restoration Co.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 1rem;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .offline-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .features {
+            text-align: left;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .features h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .retry-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .retry-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .status-indicator {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .online {
+            border-left: 4px solid #4ade80;
+        }
+
+        .offline {
+            border-left: 4px solid #f87171;
+        }
+
+        @media (max-width: 640px) {
+            .offline-container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            📶
+        </div>
+
+        <h1>You're Offline</h1>
+        <p>Don't worry! You can still view cached leads and continue working. Any changes you make will be saved and synced when your connection is restored.</p>
+
+        <div class="features">
+            <h3>Available Offline:</h3>
+            <ul>
+                <li>View recently accessed leads</li>
+                <li>Edit lead information (will sync later)</li>
+                <li>Add new communications (will sync later)</li>
+                <li>View dashboard (cached data)</li>
+                <li>Browse inspection history</li>
+            </ul>
+        </div>
+
+        <div id="networkStatus" class="status-indicator offline">
+            <strong>Status:</strong> <span id="statusText">Offline</span>
+        </div>
+
+        <button onclick="retryConnection()" class="retry-button" id="retryButton">
+            Try Again
+        </button>
+    </div>
+
+    <script>
+        let isOnline = navigator.onLine;
+
+        function updateNetworkStatus() {
+            const statusDiv = document.getElementById('networkStatus');
+            const statusText = document.getElementById('statusText');
+            const retryButton = document.getElementById('retryButton');
+
+            if (navigator.onLine) {
+                statusDiv.className = 'status-indicator online';
+                statusText.textContent = 'Back Online!';
+                retryButton.textContent = 'Return to App';
+                retryButton.onclick = () => window.location.href = '/admin/dashboard';
+            } else {
+                statusDiv.className = 'status-indicator offline';
+                statusText.textContent = 'Offline';
+                retryButton.textContent = 'Try Again';
+                retryButton.onclick = retryConnection;
+            }
+        }
+
+        function retryConnection() {
+            if (navigator.onLine) {
+                // Try to navigate back to the app
+                window.location.href = '/admin/dashboard';
+            } else {
+                // Check connection and update status
+                fetch('/api/health', {
+                    method: 'GET',
+                    cache: 'no-cache',
+                    mode: 'cors'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/admin/dashboard';
+                    }
+                })
+                .catch(() => {
+                    // Still offline, update status
+                    updateNetworkStatus();
+                });
+            }
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', updateNetworkStatus);
+        window.addEventListener('offline', updateNetworkStatus);
+
+        // Listen for service worker messages
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                if (event.data.type === 'NETWORK_STATUS') {
+                    isOnline = event.data.isOnline;
+                    updateNetworkStatus();
+                }
+            });
+        }
+
+        // Initialize status
+        updateNetworkStatus();
+
+        // Auto-retry connection every 30 seconds
+        setInterval(() => {
+            if (!navigator.onLine) {
+                fetch('/api/health', {
+                    method: 'GET',
+                    cache: 'no-cache',
+                    signal: AbortSignal.timeout(5000)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        updateNetworkStatus();
+                    }
+                })
+                .catch(() => {
+                    // Still offline
+                });
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

@@ -17,6 +17,7 @@ import {
 import { ProtectedRoute } from '@/contexts/AuthContext';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { useNavigate } from 'react-router-dom';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 interface DashboardStats {
   totalLeads: number;
@@ -57,6 +58,7 @@ function DashboardHeader() {
           <p className="text-gray-600">Welcome back, {user?.name}</p>
         </div>
         <div className="flex items-center space-x-4">
+          <OfflineIndicator className="mr-2" />
           <Button variant="default" size="sm" onClick={() => navigate('/admin/leads?phoneEntry=true')} className="bg-green-600 hover:bg-green-700">
             <Phone className="h-4 w-4 mr-2" />
             Phone Lead

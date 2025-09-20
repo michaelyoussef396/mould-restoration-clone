@@ -43,6 +43,7 @@ import { TechnicianAssignmentModal } from '@/components/TechnicianAssignmentModa
 import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
 import { toast } from '@/hooks/use-toast';
 import { useSwipeGesture } from '@/hooks/useSwipeGesture';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 // Helper functions - MUST be declared before usage
 function formatEnumValue(value: string): string {
@@ -1082,6 +1083,7 @@ export function LeadsKanban() {
                 </p>
               </div>
               <div className="flex items-center space-x-2 flex-shrink-0">
+                <OfflineIndicator className="mr-2" showDetails={!isMobile} />
                 <Button
                   variant="outline"
                   size="sm"

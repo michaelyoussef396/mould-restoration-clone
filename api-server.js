@@ -10,15 +10,158 @@ const app = express();
 const PORT = process.env.API_PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'development-secret-key';
 
-// Initialize Prisma Client
-const prisma = new PrismaClient();
+// Initialize Prisma Client with enhanced configuration
+const prisma = new PrismaClient({
+  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+  errorFormat: 'pretty',
+});
 
-// Middleware
+// Rate limiting store (in-memory for development, use Redis in production)
+const rateLimitStore = new Map();
+
+// Rate limiting middleware
+const rateLimit = (windowMs = 15 * 60 * 1000, maxRequests = 100) => {
+  return (req, res, next) => {
+    const clientIp = req.ip || req.connection.remoteAddress;
+    const key = `${clientIp}:${req.path}`;
+    const now = Date.now();
+
+    // Clean up old entries
+    if (Math.random() < 0.1) { // Clean up 10% of the time
+      for (const [k, data] of rateLimitStore.entries()) {
+        if (now - data.windowStart > windowMs) {
+          rateLimitStore.delete(k);
+        }
+      }
+    }
+
+    let clientData = rateLimitStore.get(key);
+
+    if (!clientData || now - clientData.windowStart > windowMs) {
+      clientData = {
+        windowStart: now,
+        requestCount: 0
+      };
+    }
+
+    clientData.requestCount++;
+    rateLimitStore.set(key, clientData);
+
+    // Set rate limit headers
+    res.set({
+      'X-RateLimit-Limit': maxRequests.toString(),
+      'X-RateLimit-Remaining': Math.max(0, maxRequests - clientData.requestCount).toString(),
+      'X-RateLimit-Reset': new Date(clientData.windowStart + windowMs).toISOString(),
+    });
+
+    if (clientData.requestCount > maxRequests) {
+      return res.status(429).json({
+        error: 'Too many requests',
+        message: 'Rate limit exceeded. Please try again later.',
+        retryAfter: Math.ceil((clientData.windowStart + windowMs - now) / 1000)
+      });
+    }
+
+    next();
+  };
+};
+
+// Request logging middleware
+const requestLogger = (req, res, next) => {
+  const start = Date.now();
+  const requestId = Math.random().toString(36).substr(2, 9);
+
+  req.requestId = requestId;
+
+  // Log request
+  console.log(`[${new Date().toISOString()}] ${requestId} ${req.method} ${req.path}`, {
+    ip: req.ip,
+    userAgent: req.get('User-Agent'),
+    contentLength: req.get('Content-Length'),
+  });
+
+  // Override res.json to log responses
+  const originalJson = res.json.bind(res);
+  res.json = (data) => {
+    const duration = Date.now() - start;
+    console.log(`[${new Date().toISOString()}] ${requestId} ${res.statusCode} ${duration}ms`);
+    return originalJson(data);
+  };
+
+  next();
+};
+
+// Enhanced CORS with production safety
 app.use(cors({
-  origin: ['http://localhost:8080', 'http://localhost:8081', 'http://localhost:8082', 'http://localhost:8083', 'http://localhost:3000', 'http://localhost:5173'],
-  credentials: true
+  origin: process.env.NODE_ENV === 'production'
+    ? [process.env.FRONTEND_URL || 'https://mouldandrestoration.com.au']
+    : ['http://localhost:8080', 'http://localhost:8081', 'http://localhost:8082', 'http://localhost:8083', 'http://localhost:8084', 'http://localhost:3000', 'http://localhost:5173'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Client-Timestamp', 'X-Request-Source'],
+  exposedHeaders: ['X-RateLimit-Limit', 'X-RateLimit-Remaining', 'X-RateLimit-Reset']
 }));
-app.use(express.json());
+
+// Enhanced middleware stack
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use(requestLogger);
+app.use(rateLimit(15 * 60 * 1000, 1000)); // 1000 requests per 15 minutes
+
+// Security headers
+app.use((req, res, next) => {
+  res.set({
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'X-XSS-Protection': '1; mode=block',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'X-API-Version': '1.0.0',
+    'X-Powered-By': 'Mould & Restoration CRM'
+  });
+  next();
+});
+
+// Standard API response helpers
+const apiResponse = {
+  success: (data, message = 'Success', meta = {}) => ({
+    success: true,
+    message,
+    data,
+    meta: {
+      timestamp: new Date().toISOString(),
+      ...meta
+    }
+  }),
+
+  error: (message = 'Internal server error', code = 'INTERNAL_ERROR', details = {}, statusCode = 500) => ({
+    success: false,
+    error: {
+      code,
+      message,
+      details,
+      timestamp: new Date().toISOString()
+    }
+  }),
+
+  validationError: (errors) => ({
+    success: false,
+    error: {
+      code: 'VALIDATION_ERROR',
+      message: 'Validation failed',
+      details: errors,
+      timestamp: new Date().toISOString()
+    }
+  }),
+
+  notFound: (resource = 'Resource') => ({
+    success: false,
+    error: {
+      code: 'NOT_FOUND',
+      message: `${resource} not found`,
+      timestamp: new Date().toISOString()
+    }
+  })
+};
 
 // Demo passwords for development
 const userPasswords = {
@@ -26,22 +169,77 @@ const userPasswords = {
   'tech@mouldandrestoration.com.au': 'tech123',
 };
 
-// Authentication middleware
+// Enhanced authentication middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
-    return res.status(401).json({ error: 'Access token required' });
+    return res.status(401).json(
+      apiResponse.error('Access token required', 'MISSING_TOKEN', {}, 401)
+    );
   }
 
   jwt.verify(token, JWT_SECRET, (err, user) => {
     if (err) {
-      return res.status(403).json({ error: 'Invalid token' });
+      let errorCode = 'INVALID_TOKEN';
+      let message = 'Invalid token';
+
+      if (err.name === 'TokenExpiredError') {
+        errorCode = 'TOKEN_EXPIRED';
+        message = 'Token has expired';
+      } else if (err.name === 'JsonWebTokenError') {
+        errorCode = 'MALFORMED_TOKEN';
+        message = 'Malformed token';
+      }
+
+      return res.status(403).json(
+        apiResponse.error(message, errorCode, { tokenError: err.name }, 403)
+      );
     }
+
     req.user = user;
     next();
   });
+};
+
+// Enhanced database error handler
+const handleDatabaseError = (error, operation = 'Database operation') => {
+  console.error(`Database error during ${operation}:`, error);
+
+  if (error.code === 'P2002') {
+    return apiResponse.error(
+      'A record with this information already exists',
+      'UNIQUE_CONSTRAINT_VIOLATION',
+      { constraint: error.meta?.target },
+      409
+    );
+  }
+
+  if (error.code === 'P2025') {
+    return apiResponse.error(
+      'Record not found',
+      'RECORD_NOT_FOUND',
+      {},
+      404
+    );
+  }
+
+  if (error.code === 'P2003') {
+    return apiResponse.error(
+      'This operation would violate a required relationship',
+      'FOREIGN_KEY_CONSTRAINT',
+      { constraint: error.meta?.field_name },
+      400
+    );
+  }
+
+  return apiResponse.error(
+    'Database operation failed',
+    'DATABASE_ERROR',
+    { originalError: error.code || error.message },
+    500
+  );
 };
 
 // Auth Routes

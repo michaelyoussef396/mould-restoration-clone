@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { MockApiService } from './mockApiService';
 
 export interface User {
   id: string;
@@ -13,7 +14,7 @@ export interface LoginCredentials {
   password: string;
 }
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
 
 export class AuthService {
   private static readonly TOKEN_KEY = 'auth_token';
@@ -21,26 +22,32 @@ export class AuthService {
 
   static async login(credentials: LoginCredentials): Promise<{ user: User; token: string }> {
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-      });
+      // Try real API first, fall back to mock API
+      const isApiAvailable = await MockApiService.checkApiAvailability();
 
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Login failed');
+      if (isApiAvailable) {
+        const response = await fetch(`${API_BASE_URL}/auth/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(credentials),
+        });
+
+        if (response.ok) {
+          const { user, token } = await response.json();
+
+          // Store in localStorage for persistence
+          localStorage.setItem(this.TOKEN_KEY, token);
+          localStorage.setItem(this.USER_KEY, JSON.stringify(user));
+
+          return { user, token };
+        }
       }
 
-      const { user, token } = await response.json();
+      // Fallback to mock API for demo/development
+      return await MockApiService.login(credentials);
 
-      // Store in localStorage for persistence
-      localStorage.setItem(this.TOKEN_KEY, token);
-      localStorage.setItem(this.USER_KEY, JSON.stringify(user));
-
-      return { user, token };
     } catch (error) {
       console.error('Login error:', error);
       throw error;

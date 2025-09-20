@@ -3,8 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { useServiceWorker } from "@/hooks/useServiceWorker";
+import { initPerformanceObserver } from "@/hooks/usePerformanceMonitor";
 import Index from "./pages/Index"; // Keep homepage non-lazy for fastest initial load
 
 // Lazy load all other pages
@@ -39,10 +41,26 @@ const AdminLogin = lazy(() => import("./pages/admin/Login").then(module => ({ de
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard").then(module => ({ default: module.AdminDashboard })));
 const LeadsPage = lazy(() => import("./pages/admin/Leads").then(module => ({ default: module.LeadsPage })));
 
-// Phase 2B: Advanced Lead Management
-const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanban").then(module => ({ default: module.LeadsKanban })));
+// Phase 2B: Advanced Lead Management - Optimized Version
+const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanbanOptimized").then(module => ({ default: module.LeadsKanbanOptimized })));
 
-const queryClient = new QueryClient();
+// Fallback to original if needed
+const LeadsKanbanOriginal = lazy(() => import("./pages/admin/LeadsKanban").then(module => ({ default: module.LeadsKanban })));
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      retry: (failureCount, error) => {
+        // Don't retry on 4xx errors except 408 (timeout)
+        if (error?.status >= 400 && error?.status < 500 && error?.status !== 408) {
+          return false;
+        }
+        return failureCount < 3;
+      },
+    },
+  },
+});
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -54,18 +72,40 @@ const LoadingFallback = () => (
   </div>
 );
 
+// Service Worker Registration Component
+const ServiceWorkerProvider = ({ children }: { children: React.ReactNode }) => {
+  const { registerServiceWorker, isOnline } = useServiceWorker();
+
+  useEffect(() => {
+    registerServiceWorker();
+
+    // Initialize performance monitoring based on environment variable
+    if (import.meta.env.VITE_ENABLE_PERFORMANCE_MONITORING !== 'false') {
+      initPerformanceObserver();
+    }
+  }, [registerServiceWorker]);
+
+  // Add network status to document for CSS styling
+  useEffect(() => {
+    document.documentElement.setAttribute('data-network-status', isOnline ? 'online' : 'offline');
+  }, [isOnline]);
+
+  return <>{children}</>;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <AuthProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
+        <ServiceWorkerProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}
+          >
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -109,13 +149,16 @@ const App = () => (
             <Route path="/admin/leads" element={<LeadsPage />} />
 
             {/* Phase 2B: Advanced Lead Management */}
+            <Route path="/admin/leads-kanban" element={<LeadsKanban />} />
             <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
+            <Route path="/admin/leads/kanban-original" element={<LeadsKanbanOriginal />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           </Suspense>
         </BrowserRouter>
+        </ServiceWorkerProvider>
       </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>

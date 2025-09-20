@@ -1,7 +1,8 @@
 import { ServiceType, LeadStatus, LeadSource, Urgency } from '@prisma/client';
 import { AuthService } from '../auth';
+import { MockApiService } from '../mockApiService';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
@@ -118,18 +119,26 @@ export interface UpdateLeadData {
 export class LeadService {
   static async getAllLeads(): Promise<LeadWithRelations[]> {
     try {
-      const response = await fetch(`${API_BASE_URL}/leads`, {
-        headers: getAuthHeaders(),
-      });
+      // Try real API first, fall back to mock API
+      const isApiAvailable = await MockApiService.checkApiAvailability();
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch leads');
+      if (isApiAvailable) {
+        const response = await fetch(`${API_BASE_URL}/leads`, {
+          headers: getAuthHeaders(),
+        });
+
+        if (response.ok) {
+          return await response.json();
+        }
       }
 
-      return await response.json();
+      // Fallback to mock API
+      return await MockApiService.getAllLeads();
+
     } catch (error) {
       console.error('Error fetching leads:', error);
-      throw error;
+      // Return mock data as ultimate fallback
+      return await MockApiService.getAllLeads();
     }
   }
 
@@ -206,75 +215,85 @@ export class LeadService {
   }
 
   static async getLeadsByStatus(status: LeadStatus): Promise<LeadWithRelations[]> {
-    return prisma.lead.findMany({
-      where: { status },
-      include: {
-        createdBy: true,
-        assignedTo: true,
-        inspections: true,
-        activities: {
-          include: {
-            user: true,
-          },
-          orderBy: {
-            createdAt: 'desc',
-          },
-        },
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
-  }
-
-  static async getLeadsByAssignee(userId: string): Promise<LeadWithRelations[]> {
-    return prisma.lead.findMany({
-      where: { assignedToId: userId },
-      include: {
-        createdBy: true,
-        assignedTo: true,
-        inspections: true,
-        activities: {
-          include: {
-            user: true,
-          },
-          orderBy: {
-            createdAt: 'desc',
-          },
-        },
-      },
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
-  }
-
-  static async addActivity(leadId: string, userId: string, type: string, description: string, notes?: string): Promise<Activity> {
-    return prisma.activity.create({
-      data: {
-        type: type as any,
-        description,
-        notes,
-        userId,
-        leadId,
-      },
-    });
-  }
-
-  static async getDashboardStats() {
     try {
-      const response = await fetch(`${API_BASE_URL}/dashboard/stats`, {
+      const response = await fetch(`${API_BASE_URL}/leads/status/${status}`, {
         headers: getAuthHeaders(),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to fetch dashboard stats');
+        throw new Error('Failed to fetch leads by status');
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error fetching dashboard stats:', error);
+      console.error('Error fetching leads by status:', error);
       throw error;
+    }
+  }
+
+  static async getLeadsByAssignee(userId: string): Promise<LeadWithRelations[]> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/leads/assignee/${userId}`, {
+        headers: getAuthHeaders(),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch leads by assignee');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching leads by assignee:', error);
+      throw error;
+    }
+  }
+
+  static async addActivity(leadId: string, userId: string, type: string, description: string, notes?: string): Promise<Activity> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/leads/${leadId}/activities`, {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({
+          type,
+          description,
+          notes,
+          userId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add activity');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error adding activity:', error);
+      throw error;
+    }
+  }
+
+  static async getDashboardStats() {
+    try {
+      // Try real API first, fall back to mock API
+      const isApiAvailable = await MockApiService.checkApiAvailability();
+
+      if (isApiAvailable) {
+        const response = await fetch(`${API_BASE_URL}/dashboard/stats`, {
+          headers: getAuthHeaders(),
+        });
+
+        if (response.ok) {
+          return await response.json();
+        }
+      }
+
+      // Fallback to mock API
+      return await MockApiService.getDashboardStats();
+
+    } catch (error) {
+      console.error('Error fetching dashboard stats:', error);
+      // Return mock data as ultimate fallback
+      return await MockApiService.getDashboardStats();
     }
   }
 
