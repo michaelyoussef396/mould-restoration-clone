@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -27,7 +28,9 @@ import {
   MessageSquare,
   UserPlus,
   Archive,
-  Star
+  Star,
+  User,
+  Edit
 } from 'lucide-react';
 import { ProtectedRoute } from '@/contexts/AuthContext';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
@@ -39,6 +42,7 @@ import { CommunicationModal } from '@/components/CommunicationModal';
 import { TechnicianAssignmentModal } from '@/components/TechnicianAssignmentModal';
 import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
 import { toast } from '@/hooks/use-toast';
+import { useSwipeGesture } from '@/hooks/useSwipeGesture';
 
 // Lead status columns configuration
 const LEAD_COLUMNS = [
@@ -112,13 +116,30 @@ interface LeadCardProps {
   lead: LeadWithRelations;
   onLeadClick: (lead: LeadWithRelations) => void;
   onCommunicationClick: (lead: LeadWithRelations) => void;
+  onEditClick: (lead: LeadWithRelations) => void;
   onStatusChange: (leadId: string, newStatus: LeadStatus) => void;
   isDragging?: boolean;
   isMobile?: boolean;
 }
 
-function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isDragging = false, isMobile = false }: LeadCardProps) {
+function LeadCard({ lead, onLeadClick, onCommunicationClick, onEditClick, onStatusChange, isDragging = false, isMobile = false }: LeadCardProps) {
   const [showStatusMenu, setShowStatusMenu] = useState(false);
+
+  // Swipe gesture support for mobile
+  const swipeHandlers = useSwipeGesture({
+    onSwipeRight: () => {
+      if (isMobile) {
+        onEditClick(lead);
+      }
+    },
+    onSwipeLeft: () => {
+      if (isMobile) {
+        onCommunicationClick(lead);
+      }
+    },
+    threshold: 80,
+    restrained: 150
+  });
 
   const {
     attributes,
@@ -157,7 +178,8 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isD
       style={style}
       {...attributes}
       {...(!isMobile ? listeners : {})}
-      className={`cursor-pointer hover:shadow-md transition-all duration-200 touch-manipulation select-none ${
+      {...(isMobile ? swipeHandlers : {})}
+      className={`lead-card cursor-pointer hover:shadow-md transition-all duration-200 touch-manipulation select-none ${
         isDragging ? 'shadow-lg scale-105' : ''
       } ${isSortableDragging ? 'z-50 rotate-3' : ''}`}
       onClick={handleCardClick}
@@ -178,7 +200,7 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isD
                   <DropdownMenuTrigger asChild>
                     <button
                       data-status-trigger="true"
-                      className={`${getStatusColor(lead.status)} px-3 py-1 rounded-full text-xs font-medium hover:opacity-80 transition-opacity min-h-[32px] min-w-[80px] flex items-center justify-center`}
+                      className={`${getStatusColor(lead.status)} px-3 py-2 rounded-full text-xs font-medium hover:opacity-80 transition-opacity min-h-[48px] min-w-[100px] flex items-center justify-center touch-manipulation`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setShowStatusMenu(!showStatusMenu);
@@ -192,7 +214,7 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isD
                       <DropdownMenuItem
                         key={status.value}
                         onClick={() => handleStatusChange(status.value)}
-                        className="flex items-center justify-between"
+                        className="flex items-center justify-between min-h-[48px] touch-manipulation py-3"
                       >
                         <span>{status.label}</span>
                         <div className={`w-3 h-3 rounded-full ${status.color.replace('text-', 'bg-').replace('100', '500')}`} />
@@ -254,23 +276,52 @@ function LeadCard({ lead, onLeadClick, onCommunicationClick, onStatusChange, isD
             <span className="capitalize">{formatEnumValue(lead.source)}</span>
           </div>
 
-          {/* Action buttons - Mobile optimized */}
+          {/* Action buttons - Mobile optimized with 48px touch targets */}
           <div className="flex items-center justify-between pt-2">
             <div className="text-xs text-gray-400">
               {new Date(lead.createdAt).toLocaleDateString()}
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={(e) => {
-                e.stopPropagation();
-                onCommunicationClick(lead);
-              }}
-              className="h-8 w-8 p-0 touch-manipulation flex-shrink-0 hover:bg-blue-50 hover:text-blue-600"
-            >
-              <MessageSquare className="h-4 w-4" />
-            </Button>
+            <div className="flex items-center gap-1">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onEditClick(lead);
+                }}
+                className="h-12 w-12 p-0 touch-manipulation flex-shrink-0 hover:bg-green-50 hover:text-green-600"
+                title="Edit Lead"
+              >
+                <Edit className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onCommunicationClick(lead);
+                }}
+                className="h-12 w-12 p-0 touch-manipulation flex-shrink-0 hover:bg-blue-50 hover:text-blue-600"
+                title="Add Communication"
+              >
+                <MessageSquare className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
+
+          {/* Swipe hint for mobile users */}
+          {isMobile && (
+            <div className="flex items-center justify-center pt-2 border-t border-gray-100">
+              <div className="text-xs text-gray-400 flex items-center gap-4">
+                <span className="flex items-center gap-1">
+                  <span>←</span> Edit
+                </span>
+                <span className="flex items-center gap-1">
+                  Communication <span>→</span>
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
@@ -283,19 +334,20 @@ interface KanbanColumnProps {
   leads: LeadWithRelations[];
   onLeadClick: (lead: LeadWithRelations) => void;
   onCommunicationClick: (lead: LeadWithRelations) => void;
+  onEditClick: (lead: LeadWithRelations) => void;
   onStatusChange: (leadId: string, newStatus: LeadStatus) => void;
   onAddLead?: () => void;
   isMobile?: boolean;
 }
 
-function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onStatusChange, onAddLead, isMobile = false }: KanbanColumnProps) {
+function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onEditClick, onStatusChange, onAddLead, isMobile = false }: KanbanColumnProps) {
   const { isOver, setNodeRef } = useDroppable({
     id: column.id,
     disabled: isMobile // Disable drop zone on mobile
   });
 
   return (
-    <div className={`
+    <div className={`kanban-column
       ${isMobile ? 'w-full mb-6' : 'flex-shrink-0 w-full sm:w-80 min-w-[300px]'}
       ${column.color} rounded-lg border-2
       ${isOver && !isMobile ? 'border-solid border-blue-500 bg-blue-50 scale-105' : 'border-dashed'}
@@ -311,7 +363,8 @@ function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onStat
             variant="ghost"
             size="sm"
             onClick={onAddLead}
-            className="h-10 w-10 p-0 touch-manipulation hover:bg-white hover:shadow-md transition-all"
+            className="h-12 w-12 p-0 touch-manipulation hover:bg-white hover:shadow-md transition-all"
+            title="Add Lead"
           >
             <Plus className="h-5 w-5" />
           </Button>
@@ -326,6 +379,7 @@ function KanbanColumn({ column, leads, onLeadClick, onCommunicationClick, onStat
                   lead={lead}
                   onLeadClick={onLeadClick}
                   onCommunicationClick={onCommunicationClick}
+                  onEditClick={onEditClick}
                   onStatusChange={onStatusChange}
                   isMobile={isMobile}
                 />
@@ -366,7 +420,7 @@ function FilterSidebar({ open, onOpenChange, filters, onFiltersChange }: FilterS
       <div className={`${open ? 'translate-x-0' : '-translate-x-full'} fixed sm:relative z-50 sm:z-auto w-80 h-full sm:h-auto bg-white border-r border-gray-200 p-4 sm:p-6 space-y-4 sm:space-y-6 transition-transform sm:transition-none overflow-y-auto`}>
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Advanced Filters</h2>
-          <Button variant="ghost" size="sm" onClick={() => onOpenChange(false)} className="touch-manipulation">
+          <Button variant="ghost" size="sm" onClick={() => onOpenChange(false)} className="h-12 w-12 p-0 touch-manipulation">
             ×
           </Button>
         </div>
@@ -1032,16 +1086,28 @@ export function LeadsKanban() {
                   variant="outline"
                   size="sm"
                   onClick={() => setFilterSidebarOpen(!filterSidebarOpen)}
-                  className={isMobile ? "h-10 w-10 p-0" : ""}
+                  className={isMobile ? "h-12 w-12 p-0 touch-manipulation" : ""}
+                  title="Toggle Filters"
                 >
                   <Filter className="h-4 w-4" />
                   {!isMobile && <span className="ml-2">Filters</span>}
                 </Button>
-                <Button variant="outline" size="sm" onClick={() => navigate('/admin/leads')}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/admin/leads')}
+                  className={isMobile ? "h-12 w-12 p-0 touch-manipulation" : ""}
+                  title="List View"
+                >
                   <List className="h-4 w-4" />
                   {!isMobile && <span className="ml-2">List View</span>}
                 </Button>
-                <Button size="sm" onClick={handleAddLeadFromHeader}>
+                <Button
+                  size="sm"
+                  onClick={handleAddLeadFromHeader}
+                  className={isMobile ? "h-12 w-12 p-0 touch-manipulation" : ""}
+                  title="Add New Lead"
+                >
                   <Plus className="h-4 w-4" />
                   {!isMobile && <span className="ml-2">Add Lead</span>}
                 </Button>
@@ -1074,7 +1140,8 @@ export function LeadsKanban() {
                     variant="ghost"
                     size="sm"
                     onClick={() => setDragError(null)}
-                    className="ml-auto h-6 w-6 p-0"
+                    className="ml-auto h-8 w-8 p-0 touch-manipulation"
+                    title="Dismiss Error"
                   >
                     ×
                   </Button>
@@ -1095,6 +1162,7 @@ export function LeadsKanban() {
               onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
             >
+              <div data-testid="kanban-board">
               {isMobile ? (
                 // Mobile: Vertical stack layout
                 <div className="space-y-4">
@@ -1105,6 +1173,7 @@ export function LeadsKanban() {
                       leads={groupedLeads[column.id] || []}
                       onLeadClick={handleLeadClick}
                       onCommunicationClick={handleCommunicationClick}
+                      onEditClick={handleEditLead}
                       onStatusChange={handleStatusChange}
                       onAddLead={() => handleAddLead(column.id as LeadStatus)}
                       isMobile={true}
@@ -1122,6 +1191,7 @@ export function LeadsKanban() {
                         leads={groupedLeads[column.id] || []}
                         onLeadClick={handleLeadClick}
                         onCommunicationClick={handleCommunicationClick}
+                        onEditClick={handleEditLead}
                         onStatusChange={handleStatusChange}
                         onAddLead={() => handleAddLead(column.id as LeadStatus)}
                         isMobile={false}
@@ -1137,12 +1207,14 @@ export function LeadsKanban() {
                     lead={activeLead}
                     onLeadClick={() => {}}
                     onCommunicationClick={() => {}}
+                    onEditClick={() => {}}
                     onStatusChange={() => {}}
                     isDragging
                     isMobile={isMobile}
                   />
                 ) : null}
               </DragOverlay>
+              </div>
             </DndContext>
           </div>
         </div>

@@ -108,7 +108,7 @@ export function CommunicationModal({ open, onOpenChange, lead, onCommunicationAd
             <div className="grid grid-cols-2 gap-4">
               <Button
                 variant="outline"
-                className="h-20 flex-col space-y-2"
+                className="h-20 flex-col space-y-2 touch-manipulation"
                 onClick={() => handleQuickAction('CALL', `Called ${lead.firstName} ${lead.lastName}`)}
                 disabled={isLoading}
               >
@@ -118,7 +118,7 @@ export function CommunicationModal({ open, onOpenChange, lead, onCommunicationAd
 
               <Button
                 variant="outline"
-                className="h-20 flex-col space-y-2"
+                className="h-20 flex-col space-y-2 touch-manipulation"
                 onClick={() => handleQuickAction('EMAIL', `Sent email to ${lead.firstName} ${lead.lastName}`)}
                 disabled={isLoading}
               >
@@ -128,7 +128,7 @@ export function CommunicationModal({ open, onOpenChange, lead, onCommunicationAd
 
               <Button
                 variant="outline"
-                className="h-20 flex-col space-y-2"
+                className="h-20 flex-col space-y-2 touch-manipulation"
                 onClick={() => handleQuickAction('SMS', `Sent SMS to ${lead.firstName} ${lead.lastName}`)}
                 disabled={isLoading}
               >
@@ -138,7 +138,7 @@ export function CommunicationModal({ open, onOpenChange, lead, onCommunicationAd
 
               <Button
                 variant="outline"
-                className="h-20 flex-col space-y-2"
+                className="h-20 flex-col space-y-2 touch-manipulation"
                 onClick={() => handleQuickAction('MEETING', `Scheduled meeting with ${lead.firstName} ${lead.lastName}`)}
                 disabled={isLoading}
               >
@@ -233,13 +233,14 @@ export function CommunicationModal({ open, onOpenChange, lead, onCommunicationAd
         </Tabs>
 
         <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+          <Button variant="outline" onClick={() => onOpenChange(false)} className="touch-manipulation min-h-[48px]">
             Cancel
           </Button>
           {activeTab === 'detailed' && (
             <Button
               onClick={handleDetailedSubmit}
               disabled={isLoading || !communicationData.description.trim()}
+              className="touch-manipulation min-h-[48px]"
             >
               {isLoading ? 'Adding...' : 'Add Communication'}
             </Button>

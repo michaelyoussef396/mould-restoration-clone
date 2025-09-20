@@ -163,7 +163,7 @@ export function TechnicianAssignmentModal({
                 return (
                   <div
                     key={technician.id}
-                    className={`border rounded-lg p-4 cursor-pointer transition-all ${
+                    className={`border rounded-lg p-4 cursor-pointer transition-all touch-manipulation min-h-[48px] ${
                       isSelected ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'
                     }`}
                     onClick={() => setSelectedTechnician(technician.id)}
@@ -247,12 +247,13 @@ export function TechnicianAssignmentModal({
         </div>
 
         <DialogFooter>
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+          <Button variant="outline" onClick={() => onOpenChange(false)} className="touch-manipulation min-h-[48px]">
             Cancel
           </Button>
           <Button
             onClick={handleAssignment}
             disabled={!selectedTechnician || isLoading}
+            className="touch-manipulation min-h-[48px]"
           >
             {isLoading ? 'Assigning...' : `Assign to ${selectedTechnicianData?.name || 'Technician'}`}
           </Button>
