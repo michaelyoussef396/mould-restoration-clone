@@ -8,13 +8,33 @@ import viteCompression from 'vite-plugin-compression';
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
-    port: 8084,
+    port: 8085, // FIXED: Consistent port configuration
     hmr: {
-      overlay: false
+      overlay: false,
+      port: 8085 // Ensure HMR uses same port
     },
     open: false,
     force: true, // Force dependency re-optimization
-    clearScreen: false
+    clearScreen: false,
+    // Fix MIME type issues for module scripts
+    middlewareMode: false,
+    fs: {
+      strict: false
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    },
+    // Fix CSS MIME type issues
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url?.endsWith('.css')) {
+          res.setHeader('Content-Type', 'text/css');
+        }
+        next();
+      });
+    }
   },
   plugins: [
     react(),
@@ -84,86 +104,41 @@ export default defineConfig(({ mode }) => ({
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         manualChunks: (id) => {
-          // Mobile-optimized chunking strategy
+          // Optimized chunking strategy - prevent empty chunks
           if (id.includes('node_modules')) {
-            // Core React chunks
-            if (id.includes('react') || id.includes('react-dom')) {
+            // Core React bundle - substantial size
+            if (id.includes('react') && !id.includes('react-router')) {
               return 'react-core';
             }
             // Router separately for better caching
             if (id.includes('react-router')) {
               return 'router';
             }
-            // Icons in separate chunk with lazy loading
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            // UI components separately
+            // Large UI libraries only
             if (id.includes('@radix-ui') || id.includes('@dnd-kit')) {
               return 'ui-components';
             }
-            // Form libraries
-            if (id.includes('react-hook-form') || id.includes('zod') || id.includes('@hookform')) {
-              return 'forms';
-            }
-            // Charts and data visualization
-            if (id.includes('recharts') || id.includes('@tanstack')) {
+            // Charts and visualization - substantial size
+            if (id.includes('recharts') || id.includes('@tanstack/react-table')) {
               return 'charts';
-            }
-            // Date utilities
-            if (id.includes('date-fns') || id.includes('react-day-picker')) {
-              return 'date-utils';
             }
             // All other vendor dependencies
             return 'vendor';
           }
 
-          // Split large pages into separate chunks
+          // Only split substantial application chunks
           if (id.includes('/pages/admin/LeadsKanban')) {
-            return 'leads-kanban';
-          }
-          if (id.includes('/pages/admin/Leads')) {
-            return 'leads-management';
-          }
-          if (id.includes('/pages/admin/')) {
-            return 'admin-pages';
+            return 'admin-kanban';
           }
 
-          // Location pages split by geographic regions
+          // Geographic chunking only for substantial location sets
           if (id.includes('/pages/locations/')) {
-            // Inner Melbourne suburbs
-            if (id.includes('Melbourne') || id.includes('Carlton') || id.includes('Fitzroy') ||
-                id.includes('Richmond') || id.includes('Collingwood') || id.includes('Abbotsford')) {
-              return 'locations-inner';
-            }
-            // Eastern suburbs
-            if (id.includes('Camberwell') || id.includes('Hawthorn') || id.includes('Kew') ||
-                id.includes('Burwood') || id.includes('BoxHill') || id.includes('Glen')) {
-              return 'locations-east';
-            }
-            // Southern suburbs
-            if (id.includes('Brighton') || id.includes('Cheltenham') || id.includes('Bentleigh') ||
-                id.includes('Caulfield') || id.includes('Elwood') || id.includes('StKilda')) {
-              return 'locations-south';
-            }
-            // Western suburbs
-            if (id.includes('Footscray') || id.includes('Williamstown') || id.includes('Werribee') ||
-                id.includes('Sunshine') || id.includes('Newport') || id.includes('Altona')) {
-              return 'locations-west';
-            }
-            // Northern suburbs
-            if (id.includes('Preston') || id.includes('Northcote') || id.includes('Brunswick') ||
-                id.includes('Coburg') || id.includes('Thornbury') || id.includes('Heidelberg')) {
-              return 'locations-north';
-            }
-            // Outer suburbs
-            return 'locations-outer';
+            // Group all Melbourne locations together
+            return 'melbourne-locations';
           }
 
-          // Service pages
-          if (id.includes('/pages/services/')) {
-            return 'service-pages';
-          }
+          // All other app code stays in main bundle
+          return undefined;
         },
       },
     },

@@ -20,7 +20,12 @@
     "audit:lighthouse": "node scripts/lighthouse-audit.js",
     "audit:performance": "npm run build && npm run audit:lighthouse",
     "test:performance": "npm run audit:performance && echo 'Performance tests passed!'",
-    "production:verify": "npm run build && npm run audit:performance && echo 'Production verification complete!'"
+    "test:mobile": "node scripts/mobile-performance-test.js",
+    "test:mobile:ci": "npm run build && npm run test:mobile",
+    "build:mobile": "vite build --config vite.config.mobile.ts",
+    "build:mobile:analyze": "npm run build:mobile && npm run analyze:bundle",
+    "production:verify": "npm run build && npm run audit:performance && echo 'Production verification complete!'",
+    "production:verify:mobile": "npm run build:mobile && npm run test:mobile && echo 'Mobile verification complete!'"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

@@ -572,6 +572,480 @@ app.get('/api/dashboard/stats', authenticateToken, async (req, res) => {
   }
 });
 
+// Phase 2B+ API Endpoints
+
+// Technician Routes
+app.get('/api/technicians', authenticateToken, async (req, res) => {
+  try {
+    const technicians = await prisma.user.findMany({
+      where: {
+        role: { in: ['ADMIN', 'TECHNICIAN'] }
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        createdAt: true,
+        inspections: {
+          select: {
+            id: true,
+            scheduledAt: true,
+            status: true,
+            lead: {
+              select: {
+                suburb: true,
+                address: true
+              }
+            }
+          },
+          where: {
+            status: { in: ['SCHEDULED', 'IN_PROGRESS'] }
+          },
+          orderBy: {
+            scheduledAt: 'asc'
+          }
+        }
+      }
+    });
+
+    res.json(apiResponse.success(technicians, 'Technicians retrieved successfully'));
+  } catch (error) {
+    console.error('Get technicians error:', error);
+    const errorResponse = handleDatabaseError(error, 'fetching technicians');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Inspection Calendar Routes
+app.get('/api/inspections/calendar', authenticateToken, async (req, res) => {
+  try {
+    const { start, end, technicianId } = req.query;
+
+    let whereClause = {};
+
+    // Date range filter
+    if (start || end) {
+      whereClause.scheduledAt = {};
+      if (start) whereClause.scheduledAt.gte = new Date(start);
+      if (end) whereClause.scheduledAt.lte = new Date(end);
+    }
+
+    // Technician filter
+    if (technicianId) {
+      whereClause.technicianId = technicianId;
+    }
+
+    const inspections = await prisma.inspection.findMany({
+      where: whereClause,
+      include: {
+        lead: {
+          select: {
+            id: true,
+            firstName: true,
+            lastName: true,
+            email: true,
+            phone: true,
+            address: true,
+            suburb: true,
+            postcode: true,
+            serviceType: true,
+            urgency: true,
+            status: true
+          }
+        },
+        technician: {
+          select: {
+            id: true,
+            name: true,
+            email: true
+          }
+        }
+      },
+      orderBy: {
+        scheduledAt: 'asc'
+      }
+    });
+
+    // Transform for calendar format
+    const calendarEvents = inspections.map(inspection => ({
+      id: inspection.id,
+      title: `${inspection.lead.firstName} ${inspection.lead.lastName} - ${inspection.lead.serviceType.replace('_', ' ')}`,
+      start: inspection.scheduledAt,
+      end: new Date(new Date(inspection.scheduledAt).getTime() + 2 * 60 * 60 * 1000), // 2 hour default duration
+      status: inspection.status,
+      technician: inspection.technician,
+      lead: inspection.lead,
+      inspection: {
+        id: inspection.id,
+        status: inspection.status,
+        findings: inspection.findings,
+        estimatedCost: inspection.estimatedCost,
+        completedAt: inspection.completedAt
+      }
+    }));
+
+    res.json(apiResponse.success(calendarEvents, 'Calendar events retrieved successfully'));
+  } catch (error) {
+    console.error('Get calendar inspections error:', error);
+    const errorResponse = handleDatabaseError(error, 'fetching calendar inspections');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Available time slots calculation
+app.get('/api/inspections/available-slots', authenticateToken, async (req, res) => {
+  try {
+    const { date, technicianId } = req.query;
+
+    if (!date) {
+      return res.status(400).json(
+        apiResponse.validationError([{ field: 'date', message: 'Date parameter is required' }])
+      );
+    }
+
+    const targetDate = new Date(date);
+    const startOfDay = new Date(targetDate);
+    startOfDay.setHours(7, 0, 0, 0); // Business hours start at 7 AM
+
+    const endOfDay = new Date(targetDate);
+    endOfDay.setHours(19, 0, 0, 0); // Business hours end at 7 PM
+
+    // Find existing inspections for the date
+    let whereClause = {
+      scheduledAt: {
+        gte: startOfDay,
+        lte: endOfDay
+      }
+    };
+
+    if (technicianId) {
+      whereClause.technicianId = technicianId;
+    }
+
+    const existingInspections = await prisma.inspection.findMany({
+      where: whereClause,
+      select: {
+        scheduledAt: true,
+        technicianId: true
+      }
+    });
+
+    // Generate available slots (9 AM - 5 PM, 2-hour slots)
+    const slots = [];
+    for (let hour = 9; hour <= 15; hour += 2) { // 9, 11, 13, 15 (3 PM)
+      const slotTime = new Date(targetDate);
+      slotTime.setHours(hour, 0, 0, 0);
+
+      // Check if slot is available
+      const isBooked = existingInspections.some(inspection => {
+        const inspectionTime = new Date(inspection.scheduledAt);
+        return Math.abs(inspectionTime.getTime() - slotTime.getTime()) < 2 * 60 * 60 * 1000; // Within 2 hours
+      });
+
+      slots.push({
+        time: slotTime,
+        available: !isBooked,
+        displayTime: slotTime.toLocaleTimeString('en-AU', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        })
+      });
+    }
+
+    res.json(apiResponse.success(slots, 'Available slots calculated successfully'));
+  } catch (error) {
+    console.error('Get available slots error:', error);
+    const errorResponse = handleDatabaseError(error, 'calculating available slots');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Create new inspection
+app.post('/api/inspections', authenticateToken, async (req, res) => {
+  try {
+    const { leadId, technicianId, scheduledAt, notes } = req.body;
+
+    // Validate required fields
+    if (!leadId || !technicianId || !scheduledAt) {
+      return res.status(400).json(
+        apiResponse.validationError([
+          { field: 'leadId', message: 'Lead ID is required' },
+          { field: 'technicianId', message: 'Technician ID is required' },
+          { field: 'scheduledAt', message: 'Scheduled time is required' }
+        ])
+      );
+    }
+
+    // Check if lead exists
+    const lead = await prisma.lead.findUnique({
+      where: { id: leadId }
+    });
+
+    if (!lead) {
+      return res.status(404).json(
+        apiResponse.notFound('Lead')
+      );
+    }
+
+    // Check if technician exists
+    const technician = await prisma.user.findUnique({
+      where: {
+        id: technicianId,
+        role: { in: ['ADMIN', 'TECHNICIAN'] }
+      }
+    });
+
+    if (!technician) {
+      return res.status(404).json(
+        apiResponse.notFound('Technician')
+      );
+    }
+
+    // Create inspection
+    const inspection = await prisma.inspection.create({
+      data: {
+        leadId,
+        technicianId,
+        scheduledAt: new Date(scheduledAt),
+        status: 'SCHEDULED'
+      },
+      include: {
+        lead: true,
+        technician: {
+          select: {
+            id: true,
+            name: true,
+            email: true
+          }
+        }
+      }
+    });
+
+    // Create activity log
+    await prisma.activity.create({
+      data: {
+        type: 'INSPECTION_SCHEDULED',
+        description: `Inspection scheduled with ${technician.name}`,
+        notes: notes || `Inspection scheduled for ${new Date(scheduledAt).toLocaleString('en-AU')}`,
+        userId: req.user.id,
+        leadId: leadId,
+        inspectionId: inspection.id
+      }
+    });
+
+    // Update lead status if it's still NEW
+    if (lead.status === 'NEW') {
+      await prisma.lead.update({
+        where: { id: leadId },
+        data: { status: 'CONTACTED' }
+      });
+    }
+
+    res.status(201).json(apiResponse.success(inspection, 'Inspection scheduled successfully'));
+  } catch (error) {
+    console.error('Create inspection error:', error);
+    const errorResponse = handleDatabaseError(error, 'creating inspection');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Update inspection
+app.put('/api/inspections/:id', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updateData = { ...req.body };
+
+    // Handle status-specific updates
+    if (updateData.status === 'COMPLETED' && !updateData.completedAt) {
+      updateData.completedAt = new Date();
+    }
+
+    const inspection = await prisma.inspection.update({
+      where: { id },
+      data: updateData,
+      include: {
+        lead: true,
+        technician: {
+          select: {
+            id: true,
+            name: true,
+            email: true
+          }
+        }
+      }
+    });
+
+    // Create activity log for status changes
+    if (req.body.status && req.body.status !== inspection.status) {
+      await prisma.activity.create({
+        data: {
+          type: updateData.status === 'COMPLETED' ? 'INSPECTION_COMPLETED' : 'STATUS_CHANGED',
+          description: `Inspection status changed to ${updateData.status}`,
+          notes: updateData.notes || updateData.findings || null,
+          userId: req.user.id,
+          leadId: inspection.leadId,
+          inspectionId: inspection.id
+        }
+      });
+    }
+
+    res.json(apiResponse.success(inspection, 'Inspection updated successfully'));
+  } catch (error) {
+    console.error('Update inspection error:', error);
+    const errorResponse = handleDatabaseError(error, 'updating inspection');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Analytics and Reporting Routes
+app.get('/api/analytics/dashboard', authenticateToken, async (req, res) => {
+  try {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const startOfWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const startOfYear = new Date(now.getFullYear(), 0, 1);
+
+    const [
+      totalLeads,
+      totalInspections,
+      totalRevenue,
+      leadsThisMonth,
+      inspectionsThisWeek,
+      conversionRate,
+      recentActivity,
+      topServiceTypes,
+      monthlyTrends
+    ] = await Promise.all([
+      // Total leads
+      prisma.lead.count(),
+
+      // Total inspections
+      prisma.inspection.count(),
+
+      // Total revenue (sum of final costs from completed inspections)
+      prisma.inspection.aggregate({
+        where: { status: 'COMPLETED', finalCost: { not: null } },
+        _sum: { finalCost: true }
+      }),
+
+      // Leads this month
+      prisma.lead.count({
+        where: { createdAt: { gte: startOfMonth } }
+      }),
+
+      // Inspections this week
+      prisma.inspection.count({
+        where: { scheduledAt: { gte: startOfWeek } }
+      }),
+
+      // Conversion rate (converted leads / total leads)
+      Promise.all([
+        prisma.lead.count({ where: { status: 'CONVERTED' } }),
+        prisma.lead.count()
+      ]).then(([converted, total]) => total > 0 ? (converted / total * 100) : 0),
+
+      // Recent activity
+      prisma.activity.findMany({
+        take: 10,
+        include: {
+          user: { select: { name: true } },
+          lead: { select: { firstName: true, lastName: true } }
+        },
+        orderBy: { createdAt: 'desc' }
+      }),
+
+      // Top service types
+      prisma.lead.groupBy({
+        by: ['serviceType'],
+        _count: { serviceType: true },
+        orderBy: { _count: { serviceType: 'desc' } }
+      }),
+
+      // Monthly trends (last 6 months)
+      Promise.all(
+        Array.from({ length: 6 }, (_, i) => {
+          const monthStart = new Date(now.getFullYear(), now.getMonth() - i, 1);
+          const monthEnd = new Date(now.getFullYear(), now.getMonth() - i + 1, 0);
+          return prisma.lead.count({
+            where: {
+              createdAt: { gte: monthStart, lte: monthEnd }
+            }
+          }).then(count => ({
+            month: monthStart.toLocaleString('en-AU', { month: 'short', year: 'numeric' }),
+            leads: count
+          }));
+        })
+      ).then(results => results.reverse())
+    ]);
+
+    const analytics = {
+      overview: {
+        totalLeads,
+        totalInspections,
+        totalRevenue: totalRevenue._sum.finalCost || 0,
+        leadsThisMonth,
+        inspectionsThisWeek,
+        conversionRate: Math.round(conversionRate * 100) / 100
+      },
+      recentActivity: recentActivity.map(activity => ({
+        id: activity.id,
+        type: activity.type,
+        description: activity.description,
+        user: activity.user.name,
+        lead: activity.lead ? `${activity.lead.firstName} ${activity.lead.lastName}` : null,
+        createdAt: activity.createdAt
+      })),
+      serviceTypes: topServiceTypes.map(item => ({
+        service: item.serviceType.replace('_', ' '),
+        count: item._count.serviceType
+      })),
+      monthlyTrends
+    };
+
+    res.json(apiResponse.success(analytics, 'Analytics data retrieved successfully'));
+  } catch (error) {
+    console.error('Get analytics error:', error);
+    const errorResponse = handleDatabaseError(error, 'fetching analytics data');
+    res.status(errorResponse.error ? 500 : 500).json(errorResponse);
+  }
+});
+
+// Communication Hub Routes (basic implementation)
+app.get('/api/communication/templates', authenticateToken, async (req, res) => {
+  try {
+    // Return mock templates for now - in production this would be from database
+    const templates = [
+      {
+        id: '1',
+        name: 'Initial Contact',
+        type: 'EMAIL',
+        subject: 'Thank you for contacting Mould & Restoration Co.',
+        content: 'Dear {{firstName}},\n\nThank you for contacting us regarding mould inspection services. We will be in touch within 24 hours to schedule your inspection.\n\nBest regards,\nMould & Restoration Co.'
+      },
+      {
+        id: '2',
+        name: 'Inspection Reminder',
+        type: 'SMS',
+        content: 'Hi {{firstName}}, this is a reminder that your mould inspection is scheduled for {{date}} at {{time}}. Our technician {{technicianName}} will contact you 30 minutes before arrival.'
+      },
+      {
+        id: '3',
+        name: 'Quote Follow-up',
+        type: 'EMAIL',
+        subject: 'Following up on your mould remediation quote',
+        content: 'Dear {{firstName}},\n\nI wanted to follow up on the quote we provided for your property at {{address}}. Do you have any questions about our proposed solution?\n\nPlease let me know if you\'d like to proceed or if you need any clarification.\n\nBest regards,\nMould & Restoration Co.'
+      }
+    ];
+
+    res.json(apiResponse.success(templates, 'Communication templates retrieved successfully'));
+  } catch (error) {
+    console.error('Get templates error:', error);
+    res.status(500).json(apiResponse.error('Failed to retrieve templates'));
+  }
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

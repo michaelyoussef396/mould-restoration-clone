@@ -1,5 +1,7 @@
-import React, { useEffect, useState, useMemo, memo, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, memo, useCallback, Suspense, lazy } from 'react';
 import { usePerformanceMonitor } from '@/hooks/usePerformanceMonitor';
+import { useMobileOptimization } from '@/hooks/useMobileOptimization';
+import { performanceAnalyzer } from '@/utils/performanceAnalyzer';
 import {
   DndContext,
   DragEndEvent,
@@ -38,8 +40,15 @@ import {
   MessageSquare,
   Edit,
   GripVertical,
-  MoreVertical
+  MoreVertical,
+  ArrowLeft,
+  Smartphone,
+  Zap
 } from 'lucide-react';
+
+// Lazy load mobile components for performance
+const MobileLeadDrawer = lazy(() => import('@/components/mobile/MobileLeadDrawer').then(module => ({ default: module.MobileLeadDrawer })));
+const LeadsKanbanMobile = lazy(() => import('./LeadsKanbanMobile'));
 import { ProtectedRoute } from '@/contexts/AuthContext';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { LeadStatus } from '@prisma/client';
@@ -348,21 +357,32 @@ export function LeadsKanbanFixed() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeId, setActiveId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'kanban' | 'list'>('kanban');
+  const [showMobileDrawer, setShowMobileDrawer] = useState(false);
 
-  // Performance monitoring
+  // Performance monitoring with mobile optimization
   const { measureRender } = usePerformanceMonitor('LeadsKanbanFixed');
+  const { isMobile, isLowEndDevice, hapticFeedback, getAdaptiveConfig } = useMobileOptimization();
+  const adaptiveConfig = getAdaptiveConfig();
 
-  // Enhanced sensors for better touch and mouse support
+  // Redirect mobile users to optimized mobile version
+  useEffect(() => {
+    if (isMobile && window.innerWidth < 768) {
+      // For mobile devices, we'll render the mobile-optimized version
+      console.log('[MOBILE] Detected mobile device, using mobile-optimized interface');
+    }
+  }, [isMobile]);
+
+  // Enhanced sensors for better touch and mouse support with mobile optimization
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 8, // Minimum distance before drag starts
+        distance: isMobile ? 12 : 8, // Larger distance for mobile to prevent accidental drags
       }
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 200, // Delay before touch drag starts (prevents scroll conflicts)
-        tolerance: 5, // Movement tolerance
+        delay: isMobile ? 300 : 200, // Longer delay on mobile for better UX
+        tolerance: isMobile ? 8 : 5, // More tolerance on mobile
       }
     }),
     useSensor(KeyboardSensor, {
@@ -421,14 +441,19 @@ export function LeadsKanbanFixed() {
     [activeId, leads]
   );
 
-  // Drag handlers
+  // Drag handlers with mobile optimization
   const handleDragStart = useCallback((event: DragStartEvent) => {
     setActiveId(event.active.id as string);
-    // Haptic feedback for mobile
-    if ('vibrate' in navigator) {
-      navigator.vibrate(10);
+    // Enhanced haptic feedback for mobile
+    hapticFeedback('medium');
+
+    // Track performance for mobile
+    if (isMobile) {
+      performanceAnalyzer.measureComponent('LeadsKanbanFixed', 'drag-start', () => {
+        console.log('[MOBILE] Drag operation started');
+      });
     }
-  }, []);
+  }, [hapticFeedback, isMobile]);
 
   const handleDragEnd = useCallback(async (event: DragEndEvent) => {
     const { active, over } = event;
@@ -459,10 +484,8 @@ export function LeadsKanbanFixed() {
         title: "Status Updated",
         description: `Lead moved to ${targetColumn.title}`,
       });
-      // Haptic feedback for success
-      if ('vibrate' in navigator) {
-        navigator.vibrate([10, 5, 10]);
-      }
+      // Enhanced haptic feedback for success
+      hapticFeedback('heavy');
     } catch (error) {
       console.error('Failed to update lead status:', error);
       toast({
@@ -533,11 +556,22 @@ export function LeadsKanbanFixed() {
         <div className="bg-white shadow-sm border-b sticky top-0 z-40">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Lead Pipeline</h1>
-                <p className="text-sm text-gray-600 mt-1">
-                  {filteredLeads.length} total leads • ${filteredLeads.reduce((sum, l) => sum + (l.estimatedValue || 0), 0).toLocaleString()} potential value
-                </p>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate('/admin/dashboard')}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Dashboard
+                </Button>
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900">Lead Pipeline</h1>
+                  <p className="text-sm text-gray-600 mt-1">
+                    {filteredLeads.length} total leads • ${filteredLeads.reduce((sum, l) => sum + (l.estimatedValue || 0), 0).toLocaleString()} potential value
+                  </p>
+                </div>
               </div>
               <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
                 <div className="relative flex-1 sm:flex-initial">
@@ -558,13 +592,36 @@ export function LeadsKanbanFixed() {
                 >
                   {viewMode === 'kanban' ? <List className="h-4 w-4" /> : <Filter className="h-4 w-4" />}
                 </Button>
-                <Button
-                  onClick={() => navigate('/admin/leads/new')}
-                  size="sm"
-                >
-                  <Plus className="h-4 w-4 mr-2" />
-                  New Lead
-                </Button>
+                {isMobile ? (
+                  <Button
+                    onClick={() => setShowMobileDrawer(true)}
+                    size="sm"
+                    className="bg-blue-600 hover:bg-blue-700"
+                  >
+                    <Zap className="h-4 w-4 mr-2" />
+                    Quick Add
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => navigate('/admin/leads/new')}
+                    size="sm"
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    New Lead
+                  </Button>
+                )}
+
+                {isMobile && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => navigate('/admin/leads-mobile')}
+                    className="hidden sm:flex"
+                  >
+                    <Smartphone className="h-4 w-4 mr-2" />
+                    Mobile View
+                  </Button>
+                )}
               </div>
             </div>
           </div>
@@ -607,6 +664,27 @@ export function LeadsKanbanFixed() {
             </DragOverlay>
           </DndContext>
         </div>
+
+        {/* Mobile Quick Add Drawer */}
+        {isMobile && (
+          <Suspense fallback={null}>
+            <MobileLeadDrawer
+              open={showMobileDrawer}
+              onOpenChange={setShowMobileDrawer}
+              onLeadCreated={() => {
+                loadLeads();
+                setShowMobileDrawer(false);
+                hapticFeedback('heavy');
+                toast({
+                  title: "Lead Created! 🎉",
+                  description: "New lead added to your pipeline",
+                });
+              }}
+              mode="quick-add"
+              defaultSource="PHONE"
+            />
+          </Suspense>
+        )}
       </div>
     </ProtectedRoute>
   );

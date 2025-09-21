@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
-import { useServiceWorker } from "@/hooks/useServiceWorker";
+// TEMPORARILY DISABLED: import { useServiceWorker } from "@/hooks/useServiceWorker";
 import { initPerformanceObserver } from "@/hooks/usePerformanceMonitor";
 import Index from "./pages/Index"; // Keep homepage non-lazy for fastest initial load
 
@@ -46,6 +46,9 @@ const LeadNew = lazy(() => import("./pages/admin/LeadNew"));
 // Phase 2B: Advanced Lead Management - Fixed Version with better drag and drop
 const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanbanFixed").then(module => ({ default: module.LeadsKanbanFixed })));
 
+// Phase 2B: Mobile-Optimized Lead Management
+const LeadsKanbanMobile = lazy(() => import("./pages/admin/LeadsKanbanMobile"));
+
 // Previous versions for fallback
 const LeadsKanbanOptimized = lazy(() => import("./pages/admin/LeadsKanbanOptimized").then(module => ({ default: module.LeadsKanbanOptimized })));
 const LeadsKanbanOriginal = lazy(() => import("./pages/admin/LeadsKanban").then(module => ({ default: module.LeadsKanban })));
@@ -80,23 +83,25 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Service Worker Registration Component
+// Service Worker Registration Component - TEMPORARILY DISABLED FOR DEVELOPMENT FIX
 const ServiceWorkerProvider = ({ children }: { children: React.ReactNode }) => {
-  const { registerServiceWorker, isOnline } = useServiceWorker();
+  // EMERGENCY FIX: Temporarily disable service worker registration
+  // const { registerServiceWorker, isOnline } = useServiceWorker();
 
   useEffect(() => {
-    registerServiceWorker();
+    // DISABLED: registerServiceWorker();
+    console.log('[SW] Service worker registration temporarily disabled for development stability');
 
     // Initialize performance monitoring based on environment variable
     if (import.meta.env.VITE_ENABLE_PERFORMANCE_MONITORING !== 'false') {
       initPerformanceObserver();
     }
-  }, [registerServiceWorker]);
+  }, []);
 
-  // Add network status to document for CSS styling
-  useEffect(() => {
-    document.documentElement.setAttribute('data-network-status', isOnline ? 'online' : 'offline');
-  }, [isOnline]);
+  // DISABLED: Add network status to document for CSS styling
+  // useEffect(() => {
+  //   document.documentElement.setAttribute('data-network-status', isOnline ? 'online' : 'offline');
+  // }, [isOnline]);
 
   return <>{children}</>;
 };
@@ -161,6 +166,8 @@ const App = () => (
             {/* Phase 2B: Advanced Lead Management */}
             <Route path="/admin/leads-kanban" element={<LeadsKanban />} />
             <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
+            <Route path="/admin/leads-mobile" element={<LeadsKanbanMobile />} />
+            <Route path="/admin/leads/kanban-mobile" element={<LeadsKanbanMobile />} />
             <Route path="/admin/leads/kanban-optimized" element={<LeadsKanbanOptimized />} />
             <Route path="/admin/leads/kanban-original" element={<LeadsKanbanOriginal />} />
 

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { AdminLayout } from './AdminLayout';
+import React, { useState, useEffect, useRef } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useRealTimeCommunication } from '@/hooks/useRealTimeCommunication';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -10,935 +11,1077 @@ import { Switch } from '@/components/ui/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
 import {
-  Mail,
+  SidebarProvider,
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarInset,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton
+} from '@/components/ui/sidebar';
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable';
+import {
   MessageSquare,
   Phone,
   Send,
   Plus,
-  Edit,
-  Trash2,
-  Copy,
-  Eye,
   Settings,
   Bell,
   Clock,
   Users,
-  Target,
-  Zap,
-  Activity,
-  CheckCircle,
-  RefreshCw,
-  Download,
-  Filter,
   Search,
-  AlertTriangle
+  Paperclip,
+  Image,
+  MapPin,
+  Calendar,
+  CheckCircle2,
+  AlertTriangle,
+  Wifi,
+  WifiOff,
+  UserCheck,
+  MessageCircle,
+  Zap,
+  Home,
+  Building,
+  Car,
+  PhoneCall,
+  Mail,
+  Camera,
+  FileText,
+  Hash,
+  MoreHorizontal,
+  Star,
+  Archive,
+  Trash2,
+  RefreshCw
 } from 'lucide-react';
-import {
-  communicationService,
-  EmailTemplate,
-  SMSTemplate,
-  CommunicationLog,
-  AutomationRule,
-  CommunicationSequence,
-  CommunicationStats
-} from '@/lib/services/communicationService';
-import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { toast } from 'sonner';
-import { format } from 'date-fns';
+import { format, isToday, isYesterday } from 'date-fns';
+import { cn } from '@/lib/utils';
 
-interface TemplateFormData {
+// Types for real-time communication
+interface ChatMessage {
+  id: string;
+  senderId: string;
+  senderName: string;
+  senderRole: 'admin' | 'technician' | 'customer';
+  content: string;
+  type: 'text' | 'image' | 'file' | 'location' | 'template' | 'system';
+  timestamp: Date;
+  read: boolean;
+  reactions?: { emoji: string; users: string[] }[];
+  attachments?: { id: string; name: string; url: string; type: string }[];
+  metadata?: any;
+}
+
+interface ChatThread {
+  id: string;
+  type: 'direct' | 'group' | 'customer' | 'emergency';
   name: string;
-  type: string;
-  subject?: string;
-  body?: string;
-  message?: string;
-  variables: { key: string; description: string; required: boolean; defaultValue?: string; type: string }[];
+  description?: string;
+  participants: Participant[];
+  lastMessage?: ChatMessage;
+  unreadCount: number;
+  pinned: boolean;
+  archived: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  metadata?: {
+    leadId?: string;
+    inspectionId?: string;
+    propertyAddress?: string;
+    priority?: 'low' | 'medium' | 'high' | 'emergency';
+    suburb?: string;
+  };
 }
 
-interface SendMessageFormData {
-  recipients: string[];
-  templateId?: string;
-  subject?: string;
-  body?: string;
-  message?: string;
-  scheduledAt?: string;
-  leadId?: string;
+interface Participant {
+  id: string;
+  name: string;
+  role: 'admin' | 'technician' | 'customer';
+  avatar?: string;
+  status: 'online' | 'offline' | 'busy' | 'in-field';
+  lastSeen?: Date;
+  location?: {
+    latitude: number;
+    longitude: number;
+    address: string;
+    timestamp: Date;
+  };
 }
+
+interface MelbourneTemplate {
+  id: string;
+  name: string;
+  category: 'pre-inspection' | 'during-inspection' | 'post-inspection' | 'emergency' | 'follow-up';
+  suburb?: string;
+  content: string;
+  variables: string[];
+  useCount: number;
+  lastUsed?: Date;
+}
+
+// Melbourne-specific communication templates
+const melbourneTemplates: MelbourneTemplate[] = [
+  {
+    id: 'pre-inspection-carlton',
+    name: 'Pre-Inspection Arrival - Carlton',
+    category: 'pre-inspection',
+    suburb: 'Carlton',
+    content: "Good morning! This is {{technicianName}} from Mould & Restoration Co. We'll arrive at your Carlton property ({{address}}) between {{timeWindow}} for the mould inspection. I'll call when I'm 10 minutes away. Please ensure access to all areas mentioned during booking.",
+    variables: ['technicianName', 'address', 'timeWindow'],
+    useCount: 24,
+    lastUsed: new Date('2024-01-15')
+  },
+  {
+    id: 'during-inspection-richmond',
+    name: 'Inspection Progress - Richmond',
+    category: 'during-inspection',
+    suburb: 'Richmond',
+    content: "Currently conducting thorough mould assessment at your Richmond home. Found {{findings}} in the {{area}}. Taking detailed photos and moisture readings. Estimated completion in {{estimatedTime}}. Will provide full verbal report before leaving.",
+    variables: ['findings', 'area', 'estimatedTime'],
+    useCount: 18,
+    lastUsed: new Date('2024-01-14')
+  },
+  {
+    id: 'post-inspection-toorak',
+    name: 'Inspection Complete - Toorak',
+    category: 'post-inspection',
+    suburb: 'Toorak',
+    content: "Inspection complete at your Toorak property. {{summaryFindings}}. Comprehensive report with photos and recommendations will be emailed within 2 hours. Thank you for choosing Mould & Restoration Co. Any immediate questions?",
+    variables: ['summaryFindings'],
+    useCount: 31,
+    lastUsed: new Date('2024-01-16')
+  },
+  {
+    id: 'emergency-response',
+    name: 'Emergency Response',
+    category: 'emergency',
+    content: "URGENT: We've received your emergency mould report. {{technicianName}} is en route to {{address}} and will arrive within {{eta}}. Please ensure the affected area is isolated if safe to do so. Emergency contact: 1800-MOULD-HELP",
+    variables: ['technicianName', 'address', 'eta'],
+    useCount: 7,
+    lastUsed: new Date('2024-01-12')
+  },
+  {
+    id: 'follow-up-brighton',
+    name: 'Follow-up Check - Brighton',
+    category: 'follow-up',
+    suburb: 'Brighton',
+    content: "Hi! Following up on the mould remediation completed at your Brighton property. How are things going? Any concerns or questions? We offer a 12-month warranty on all work. Your satisfaction is our priority.",
+    variables: [],
+    useCount: 15,
+    lastUsed: new Date('2024-01-10')
+  }
+];
+
+// Mock data for demonstration
+const mockTechnicians: Participant[] = [
+  {
+    id: 'tech-james',
+    name: 'James Wilson',
+    role: 'technician',
+    avatar: '/avatars/james.jpg',
+    status: 'in-field',
+    lastSeen: new Date(),
+    location: {
+      latitude: -37.8136,
+      longitude: 144.9631,
+      address: 'Carlton, VIC',
+      timestamp: new Date()
+    }
+  },
+  {
+    id: 'tech-emma',
+    name: 'Emma Davis',
+    role: 'technician',
+    avatar: '/avatars/emma.jpg',
+    status: 'online',
+    lastSeen: new Date(Date.now() - 5 * 60 * 1000)
+  },
+  {
+    id: 'admin-sarah',
+    name: 'Sarah Chen',
+    role: 'admin',
+    avatar: '/avatars/sarah.jpg',
+    status: 'online',
+    lastSeen: new Date()
+  }
+];
+
+const mockChatThreads: ChatThread[] = [
+  {
+    id: 'thread-1',
+    type: 'customer',
+    name: 'John Smith - Carlton Inspection',
+    participants: [mockTechnicians[0], mockTechnicians[2]],
+    lastMessage: {
+      id: 'msg-1',
+      senderId: 'tech-james',
+      senderName: 'James Wilson',
+      senderRole: 'technician',
+      content: 'Inspection complete. Found significant moisture behind kitchen tiles. Sending photos now.',
+      type: 'text',
+      timestamp: new Date(Date.now() - 5 * 60 * 1000),
+      read: false
+    },
+    unreadCount: 2,
+    pinned: true,
+    archived: false,
+    createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 5 * 60 * 1000),
+    metadata: {
+      leadId: 'lead-123',
+      inspectionId: 'insp-456',
+      propertyAddress: '123 Lygon Street, Carlton VIC 3053',
+      priority: 'high',
+      suburb: 'Carlton'
+    }
+  },
+  {
+    id: 'thread-2',
+    type: 'direct',
+    name: 'Team Coordination',
+    participants: mockTechnicians,
+    lastMessage: {
+      id: 'msg-2',
+      senderId: 'admin-sarah',
+      senderName: 'Sarah Chen',
+      senderRole: 'admin',
+      content: 'Emma, can you take the 2PM Toorak inspection? James is running late from Carlton.',
+      type: 'text',
+      timestamp: new Date(Date.now() - 15 * 60 * 1000),
+      read: true
+    },
+    unreadCount: 0,
+    pinned: false,
+    archived: false,
+    createdAt: new Date(Date.now() - 4 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 15 * 60 * 1000)
+  },
+  {
+    id: 'thread-3',
+    type: 'emergency',
+    name: 'URGENT: Water Damage - Richmond',
+    participants: [mockTechnicians[1], mockTechnicians[2]],
+    lastMessage: {
+      id: 'msg-3',
+      senderId: 'tech-emma',
+      senderName: 'Emma Davis',
+      senderRole: 'technician',
+      content: 'On my way to Richmond emergency. ETA 20 minutes.',
+      type: 'text',
+      timestamp: new Date(Date.now() - 30 * 60 * 1000),
+      read: true
+    },
+    unreadCount: 0,
+    pinned: true,
+    archived: false,
+    createdAt: new Date(Date.now() - 1 * 60 * 60 * 1000),
+    updatedAt: new Date(Date.now() - 30 * 60 * 1000),
+    metadata: {
+      priority: 'emergency',
+      suburb: 'Richmond'
+    }
+  }
+];
 
 export function CommunicationHub() {
-  const [emailTemplates, setEmailTemplates] = useState<EmailTemplate[]>([]);
-  const [smsTemplates, setSmsTemplates] = useState<SMSTemplate[]>([]);
-  const [communicationLogs, setCommunicationLogs] = useState<CommunicationLog[]>([]);
-  const [automationRules, setAutomationRules] = useState<AutomationRule[]>([]);
-  const [communicationSequences, setCommunicationSequences] = useState<CommunicationSequence[]>([]);
-  const [stats, setStats] = useState<CommunicationStats | null>(null);
-  const [leads, setLeads] = useState<LeadWithRelations[]>([]);
-  const [selectedTab, setSelectedTab] = useState('templates');
-  const [loading, setLoading] = useState(false);
-  const [showCreateTemplateDialog, setShowCreateTemplateDialog] = useState(false);
-  const [showSendMessageDialog, setShowSendMessageDialog] = useState(false);
-  const [editingTemplate, setEditingTemplate] = useState<EmailTemplate | SMSTemplate | null>(null);
-  const [templateType, setTemplateType] = useState<'email' | 'sms'>('email');
+  const { user, isAdmin, isTechnician } = useAuth();
 
-  const [templateFormData, setTemplateFormData] = useState<TemplateFormData>({
+  // Real-time communication hook
+  const {
+    isConnected,
+    loading,
+    error,
+    threads,
+    templates,
+    onlineUsers,
+    sendMessage,
+    sendTypingIndicator,
+    getThreadMessages,
+    getTypingUsers,
+    getUnreadCount,
+    getOnlineParticipants,
+    loadThreads,
+    loadTemplates,
+    useTemplate,
+    uploadFile,
+    createThread,
+    markAsRead
+  } = useRealTimeCommunication({
+    autoConnect: true,
+    enableLocationSharing: isTechnician,
+    typingTimeout: 3000
+  });
+
+  const [selectedThread, setSelectedThread] = useState<ChatThread | null>(null);
+  const [message, setMessage] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showTemplates, setShowTemplates] = useState(false);
+  const [showCreateThread, setShowCreateThread] = useState(false);
+  const [newThreadData, setNewThreadData] = useState({
+    type: 'direct' as const,
     name: '',
-    type: '',
-    subject: '',
-    body: '',
-    message: '',
-    variables: [],
+    participantIds: [] as string[]
   });
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [sendMessageFormData, setSendMessageFormData] = useState<SendMessageFormData>({
-    recipients: [],
-    templateId: '',
-    subject: '',
-    body: '',
-    message: '',
-    scheduledAt: '',
-    leadId: '',
-  });
-
+  // Load initial data
   useEffect(() => {
-    loadCommunicationData();
-    loadLeads();
-  }, []);
-
-  const loadCommunicationData = async () => {
-    setLoading(true);
-    try {
-      const [
-        emailTemplateList,
-        smsTemplateList,
-        logs,
-        rules,
-        sequences,
-        communicationStats,
-      ] = await Promise.all([
-        communicationService.getEmailTemplates(),
-        communicationService.getSMSTemplates(),
-        communicationService.getCommunicationLogs({ limit: 50 }),
-        communicationService.getAutomationRules(),
-        communicationService.getCommunicationSequences(),
-        communicationService.getCommunicationStats({
-          start: format(new Date(Date.now() - 30 * 24 * 60 * 60 * 1000), 'yyyy-MM-dd'),
-          end: format(new Date(), 'yyyy-MM-dd'),
-        }),
-      ]);
-
-      setEmailTemplates(emailTemplateList);
-      setSmsTemplates(smsTemplateList);
-      setCommunicationLogs(logs);
-      setAutomationRules(rules);
-      setCommunicationSequences(sequences);
-      setStats(communicationStats);
-    } catch (error) {
-      toast.error('Failed to load communication data');
-      console.error('Communication load error:', error);
-    } finally {
-      setLoading(false);
+    if (isConnected) {
+      loadThreads();
+      loadTemplates();
     }
-  };
+  }, [isConnected, loadThreads, loadTemplates]);
 
-  const loadLeads = async () => {
-    try {
-      const leadList = await LeadService.getLeads();
-      setLeads(leadList);
-    } catch (error) {
-      toast.error('Failed to load leads');
+  // Auto-select first thread
+  useEffect(() => {
+    if (threads.length > 0 && !selectedThread) {
+      setSelectedThread(threads[0]);
     }
-  };
+  }, [threads, selectedThread]);
 
-  const handleCreateTemplate = async () => {
-    try {
-      setLoading(true);
-
-      if (templateType === 'email') {
-        await communicationService.createEmailTemplate(templateFormData);
-        await loadCommunicationData();
-        toast.success('Email template created successfully');
-      } else {
-        await communicationService.createSMSTemplate(templateFormData);
-        await loadCommunicationData();
-        toast.success('SMS template created successfully');
-      }
-
-      setShowCreateTemplateDialog(false);
-      resetTemplateForm();
-    } catch (error) {
-      toast.error('Failed to create template');
-      console.error('Create template error:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // Scroll to bottom of messages
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [selectedThread]);
 
   const handleSendMessage = async () => {
-    try {
-      setLoading(true);
+    if (!message.trim() || !selectedThread) return;
 
-      if (templateType === 'email') {
-        await communicationService.sendEmail(sendMessageFormData);
-        toast.success('Email sent successfully');
+    try {
+      await sendMessage(selectedThread.id, message);
+      setMessage('');
+      setIsTyping(false);
+    } catch (error) {
+      console.error('Failed to send message:', error);
+    }
+  };
+
+  const handleTemplateSelect = async (template: MelbourneTemplate) => {
+    try {
+      if (template.variables.length > 0) {
+        // For now, use template content directly
+        // In a real implementation, you'd show a form to fill variables
+        const renderedContent = await useTemplate(template.id, {});
+        setMessage(renderedContent);
       } else {
-        await communicationService.sendSMS(sendMessageFormData);
-        toast.success('SMS sent successfully');
+        setMessage(template.content);
       }
-
-      setShowSendMessageDialog(false);
-      resetSendMessageForm();
-      loadCommunicationData();
+      setShowTemplates(false);
     } catch (error) {
-      toast.error('Failed to send message');
-      console.error('Send message error:', error);
-    } finally {
-      setLoading(false);
+      console.error('Failed to apply template:', error);
+      setMessage(template.content); // Fallback to raw content
+      setShowTemplates(false);
     }
   };
 
-  const handleToggleAutomationRule = async (ruleId: string, active: boolean) => {
+  const handleCreateThread = async () => {
+    if (!newThreadData.name.trim() || newThreadData.participantIds.length === 0) {
+      toast.error('Please provide thread name and select participants');
+      return;
+    }
+
     try {
-      await communicationService.toggleAutomationRule(ruleId, active);
-      toast.success(`Automation rule ${active ? 'enabled' : 'disabled'}`);
-      loadCommunicationData();
+      const thread = await createThread(newThreadData);
+      setSelectedThread(thread);
+      setShowCreateThread(false);
+      setNewThreadData({
+        type: 'direct',
+        name: '',
+        participantIds: []
+      });
+      toast.success('Conversation created');
     } catch (error) {
-      toast.error('Failed to toggle automation rule');
+      console.error('Failed to create thread:', error);
     }
   };
 
-  const resetTemplateForm = () => {
-    setTemplateFormData({
-      name: '',
-      type: '',
-      subject: '',
-      body: '',
-      message: '',
-      variables: [],
-    });
-    setEditingTemplate(null);
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file || !selectedThread) return;
+
+    try {
+      const attachment = await uploadFile(file, selectedThread.id);
+      await sendMessage(selectedThread.id, `Shared file: ${file.name}`, {
+        type: 'file',
+        attachments: [attachment]
+      });
+    } catch (error) {
+      console.error('Failed to upload file:', error);
+    }
   };
 
-  const resetSendMessageForm = () => {
-    setSendMessageFormData({
-      recipients: [],
-      templateId: '',
-      subject: '',
-      body: '',
-      message: '',
-      scheduledAt: '',
-      leadId: '',
-    });
+  const handleTyping = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+
+    if (!isTyping && selectedThread) {
+      setIsTyping(true);
+      sendTypingIndicator(selectedThread.id);
+    }
   };
 
-  const addTemplateVariable = () => {
-    setTemplateFormData(prev => ({
-      ...prev,
-      variables: [
-        ...prev.variables,
-        { key: '', description: '', required: false, defaultValue: '', type: 'TEXT' }
-      ]
-    }));
-  };
-
-  const updateTemplateVariable = (index: number, field: string, value: any) => {
-    setTemplateFormData(prev => ({
-      ...prev,
-      variables: prev.variables.map((variable, i) =>
-        i === index ? { ...variable, [field]: value } : variable
-      )
-    }));
-  };
-
-  const removeTemplateVariable = (index: number) => {
-    setTemplateFormData(prev => ({
-      ...prev,
-      variables: prev.variables.filter((_, i) => i !== index)
-    }));
+  const formatMessageTime = (timestamp: Date) => {
+    if (isToday(timestamp)) {
+      return format(timestamp, 'h:mm a');
+    } else if (isYesterday(timestamp)) {
+      return `Yesterday ${format(timestamp, 'h:mm a')}`;
+    } else {
+      return format(timestamp, 'MMM d, h:mm a');
+    }
   };
 
   const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'sent': return 'bg-blue-100 text-blue-800';
-      case 'delivered': return 'bg-green-100 text-green-800';
-      case 'read': return 'bg-emerald-100 text-emerald-800';
-      case 'failed': return 'bg-red-100 text-red-800';
-      case 'bounced': return 'bg-orange-100 text-orange-800';
-      default: return 'bg-gray-100 text-gray-800';
+    switch (status) {
+      case 'online': return 'bg-green-500';
+      case 'in-field': return 'bg-blue-500';
+      case 'busy': return 'bg-yellow-500';
+      case 'offline': return 'bg-gray-400';
+      default: return 'bg-gray-400';
     }
   };
 
-  const formatPercentage = (value: number) => `${value.toFixed(1)}%`;
+  const getPriorityColor = (priority?: string) => {
+    switch (priority) {
+      case 'emergency': return 'border-l-red-500 bg-red-50';
+      case 'high': return 'border-l-orange-500 bg-orange-50';
+      case 'medium': return 'border-l-yellow-500 bg-yellow-50';
+      case 'low': return 'border-l-green-500 bg-green-50';
+      default: return 'border-l-gray-500 bg-gray-50';
+    }
+  };
 
-  const renderTemplatesTab = () => (
-    <div className="space-y-6">
-      {/* Templates Header */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-lg font-semibold">Communication Templates</h2>
-          <p className="text-gray-600">Manage email and SMS templates for automated communication</p>
-        </div>
+  const filteredThreads = threads.filter(thread =>
+    thread.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    thread.metadata?.suburb?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-        <Dialog open={showCreateTemplateDialog} onOpenChange={setShowCreateTemplateDialog}>
-          <DialogTrigger asChild>
-            <Button>
-              <Plus className="h-4 w-4 mr-2" />
-              Create Template
+  const filteredTemplates = templates.filter(template =>
+    template.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    template.suburb?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const currentMessages = selectedThread ? getThreadMessages(selectedThread.id) : [];
+  const typingUsers = selectedThread ? getTypingUsers(selectedThread.id) : [];
+  const totalUnreadCount = getUnreadCount();
+
+  // Show error state if not connected
+  if (error && !isConnected) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-background">
+        <div className="text-center space-y-4">
+          <AlertTriangle className="h-16 w-16 mx-auto text-destructive" />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Connection Error</h3>
+            <p className="text-muted-foreground mb-4">{error}</p>
+            <Button onClick={() => window.location.reload()}>
+              <RefreshCw className="h-4 w-4 mr-2" />
+              Retry Connection
             </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-2xl">
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show loading state during initial connection
+  if (loading && !isConnected) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-background">
+        <div className="text-center space-y-4">
+          <RefreshCw className="h-16 w-16 mx-auto text-muted-foreground animate-spin" />
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Connecting to Communication Hub</h3>
+            <p className="text-muted-foreground">Setting up real-time messaging...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <SidebarProvider defaultOpen={true}>
+      <div className="flex h-screen bg-background">
+        {/* Left Sidebar - Navigation & Threads */}
+        <Sidebar side="left" className="w-80">
+          <SidebarHeader className="p-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <h2 className="text-lg font-semibold">Communications</h2>
+                {totalUnreadCount > 0 && (
+                  <Badge variant="destructive" className="h-5 w-5 p-0 flex items-center justify-center text-xs">
+                    {totalUnreadCount}
+                  </Badge>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                {loading && <RefreshCw className="w-3 h-3 animate-spin" />}
+                <div className={cn("w-2 h-2 rounded-full", isConnected ? "bg-green-500" : "bg-red-500")} />
+                <span className="text-xs text-muted-foreground">
+                  {isConnected ? 'Connected' : 'Disconnected'}
+                </span>
+              </div>
+            </div>
+
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search conversations..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-8"
+              />
+            </div>
+          </SidebarHeader>
+
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupLabel>Active Conversations</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {filteredThreads.map((thread) => (
+                    <SidebarMenuItem key={thread.id}>
+                      <SidebarMenuButton
+                        isActive={selectedThread?.id === thread.id}
+                        onClick={() => setSelectedThread(thread)}
+                        className="flex items-start gap-3 p-3 hover:bg-accent"
+                      >
+                        <div className="relative">
+                          <Avatar className="h-10 w-10">
+                            <AvatarImage src={thread.participants[0]?.avatar} />
+                            <AvatarFallback>
+                              {thread.type === 'emergency' ? '🚨' :
+                               thread.type === 'customer' ? '👤' : '👥'}
+                            </AvatarFallback>
+                          </Avatar>
+                          {thread.participants[0]?.status && (
+                            <div className={cn(
+                              "absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-background",
+                              getStatusColor(thread.participants[0].status)
+                            )} />
+                          )}
+                        </div>
+
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <p className="font-medium text-sm truncate">{thread.name}</p>
+                            <div className="flex items-center gap-1">
+                              {thread.pinned && <Star className="h-3 w-3 text-yellow-500 fill-current" />}
+                              {thread.unreadCount > 0 && (
+                                <Badge variant="destructive" className="h-5 w-5 p-0 flex items-center justify-center text-xs">
+                                  {thread.unreadCount}
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+
+                          {thread.lastMessage && (
+                            <p className="text-xs text-muted-foreground truncate">
+                              {thread.lastMessage.senderName}: {thread.lastMessage.content}
+                            </p>
+                          )}
+
+                          <div className="flex items-center justify-between mt-1">
+                            <span className="text-xs text-muted-foreground">
+                              {thread.lastMessage && formatMessageTime(thread.lastMessage.timestamp)}
+                            </span>
+                            {thread.metadata?.suburb && (
+                              <Badge variant="outline" className="text-xs">
+                                {thread.metadata.suburb}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+
+          <SidebarFooter className="p-4 space-y-2">
+            <Button onClick={() => setShowCreateThread(true)} variant="outline" className="w-full">
+              <Plus className="h-4 w-4 mr-2" />
+              New Conversation
+            </Button>
+            <Button onClick={() => setShowTemplates(true)} variant="outline" className="w-full">
+              <MessageSquare className="h-4 w-4 mr-2" />
+              Quick Templates
+            </Button>
+          </SidebarFooter>
+        </Sidebar>
+
+        {/* Main Chat Area */}
+        <SidebarInset className="flex-1">
+          <ResizablePanelGroup direction="horizontal">
+            <ResizablePanel defaultSize={75}>
+              {selectedThread ? (
+                <div className="flex flex-col h-full">
+                  {/* Chat Header */}
+                  <div className={cn(
+                    "flex items-center justify-between p-4 border-b border-l-4",
+                    getPriorityColor(selectedThread.metadata?.priority)
+                  )}>
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-8 w-8">
+                        <AvatarImage src={selectedThread.participants[0]?.avatar} />
+                        <AvatarFallback>
+                          {selectedThread.type === 'emergency' ? '🚨' :
+                           selectedThread.type === 'customer' ? '👤' : '👥'}
+                        </AvatarFallback>
+                      </Avatar>
+
+                      <div>
+                        <h3 className="font-semibold">{selectedThread.name}</h3>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          {selectedThread.metadata?.propertyAddress && (
+                            <>
+                              <MapPin className="h-3 w-3" />
+                              <span>{selectedThread.metadata.propertyAddress}</span>
+                            </>
+                          )}
+                          {selectedThread.metadata?.priority === 'emergency' && (
+                            <Badge variant="destructive" className="text-xs">
+                              EMERGENCY
+                            </Badge>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Button variant="outline" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="outline" size="sm">
+                        <Calendar className="h-4 w-4" />
+                      </Button>
+                      <Button variant="outline" size="sm">
+                        <MoreHorizontal className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Messages Area */}
+                  <ScrollArea className="flex-1 p-4">
+                    <div className="space-y-4">
+                      {currentMessages.map((message) => (
+                        <div
+                          key={message.id}
+                          className={cn(
+                            "flex items-start gap-3",
+                            message.senderId === user?.id ? "justify-end" : ""
+                          )}
+                        >
+                          {message.senderId !== user?.id && (
+                            <Avatar className="h-8 w-8">
+                              <AvatarFallback>
+                                {message.senderName.split(' ').map(n => n[0]).join('').toUpperCase()}
+                              </AvatarFallback>
+                            </Avatar>
+                          )}
+
+                          <div className={cn("flex-1", message.senderId === user?.id ? "flex justify-end" : "")}>
+                            {message.senderId !== user?.id && (
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="font-medium text-sm">{message.senderName}</span>
+                                <span className="text-xs text-muted-foreground">
+                                  {formatMessageTime(message.timestamp)}
+                                </span>
+                              </div>
+                            )}
+
+                            <div className={cn(
+                              "p-3 rounded-lg max-w-md",
+                              message.senderId === user?.id
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted"
+                            )}>
+                              {message.content}
+
+                              {message.attachments && message.attachments.length > 0 && (
+                                <div className="mt-2 space-y-1">
+                                  {message.attachments.map((attachment) => (
+                                    <div key={attachment.id} className="flex items-center gap-2 text-xs">
+                                      <Paperclip className="h-3 w-3" />
+                                      <span>{attachment.name}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+
+                            {message.senderId === user?.id && (
+                              <div className="text-xs text-muted-foreground mt-1 text-right">
+                                {formatMessageTime(message.timestamp)}
+                                {message.read && <CheckCircle2 className="h-3 w-3 inline ml-1" />}
+                              </div>
+                            )}
+                          </div>
+
+                          {message.senderId === user?.id && (
+                            <Avatar className="h-8 w-8">
+                              <AvatarFallback>
+                                {user?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'YOU'}
+                              </AvatarFallback>
+                            </Avatar>
+                          )}
+                        </div>
+                      ))}
+
+                      {typingUsers.length > 0 && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <div className="flex gap-1">
+                            <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" />
+                            <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.1s' }} />
+                            <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.2s' }} />
+                          </div>
+                          <span>{typingUsers.join(', ')} {typingUsers.length === 1 ? 'is' : 'are'} typing...</span>
+                        </div>
+                      )}
+
+                      <div ref={messagesEndRef} />
+                    </div>
+                  </ScrollArea>
+
+                  {/* Message Input */}
+                  <div className="p-4 border-t">
+                    <div className="flex items-end gap-2">
+                      <div className="flex-1">
+                        <Textarea
+                          placeholder="Type your message..."
+                          value={message}
+                          onChange={handleTyping}
+                          onKeyPress={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                              e.preventDefault();
+                              handleSendMessage();
+                            }
+                          }}
+                          className="min-h-[60px] resize-none"
+                          disabled={!isConnected}
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <input
+                          type="file"
+                          ref={fileInputRef}
+                          onChange={handleFileUpload}
+                          style={{ display: 'none' }}
+                          accept="image/*,.pdf,.doc,.docx,.txt"
+                        />
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          onClick={() => fileInputRef.current?.click()}
+                          disabled={!isConnected || !selectedThread}
+                        >
+                          <Paperclip className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          onClick={() => fileInputRef.current?.click()}
+                          disabled={!isConnected || !selectedThread}
+                        >
+                          <Camera className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          onClick={handleSendMessage}
+                          disabled={!message.trim() || !isConnected || !selectedThread}
+                        >
+                          <Send className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center">
+                    <MessageCircle className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+                    <h3 className="text-lg font-semibold mb-2">No conversation selected</h3>
+                    <p className="text-muted-foreground">Choose a conversation to start messaging</p>
+                  </div>
+                </div>
+              )}
+            </ResizablePanel>
+
+            <ResizableHandle withHandle />
+
+            {/* Right Sidebar - Team & Quick Actions */}
+            <ResizablePanel defaultSize={25} minSize={20}>
+              <div className="h-full p-4 border-l">
+                <Tabs defaultValue="team" className="h-full">
+                  <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="team">Team</TabsTrigger>
+                    <TabsTrigger value="templates">Templates</TabsTrigger>
+                    <TabsTrigger value="actions">Actions</TabsTrigger>
+                  </TabsList>
+
+                  <TabsContent value="team" className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-3">Online Team Members</h4>
+                      <div className="space-y-3">
+                        {onlineUsers.map((user) => (
+                          <div key={user.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent">
+                            <div className="relative">
+                              <Avatar className="h-8 w-8">
+                                <AvatarImage src={user.avatar} />
+                                <AvatarFallback>{user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                              </Avatar>
+                              <div className={cn(
+                                "absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-background",
+                                getStatusColor(user.status)
+                              )} />
+                            </div>
+
+                            <div className="flex-1 min-w-0">
+                              <p className="font-medium text-sm">{user.name}</p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span className="capitalize">{user.status}</span>
+                                {user.location && (
+                                  <>
+                                    <span>•</span>
+                                    <MapPin className="h-3 w-3" />
+                                    <span>{user.location.address}</span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+
+                        {onlineUsers.length === 0 && (
+                          <div className="text-center text-muted-foreground text-sm py-4">
+                            No team members online
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="templates" className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-3">Melbourne Templates</h4>
+                      <div className="space-y-2">
+                        {filteredTemplates.slice(0, 5).map((template) => (
+                          <Button
+                            key={template.id}
+                            variant="outline"
+                            size="sm"
+                            className="w-full justify-start h-auto p-3"
+                            onClick={() => handleTemplateSelect(template)}
+                          >
+                            <div className="text-left">
+                              <p className="font-medium text-sm">{template.name}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {template.suburb && `${template.suburb} • `}
+                                Used {template.useCount} times
+                              </p>
+                            </div>
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="actions" className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-3">Quick Actions</h4>
+                      <div className="space-y-2">
+                        <Button variant="outline" size="sm" className="w-full justify-start">
+                          <Calendar className="h-4 w-4 mr-2" />
+                          Schedule Inspection
+                        </Button>
+                        <Button variant="outline" size="sm" className="w-full justify-start">
+                          <FileText className="h-4 w-4 mr-2" />
+                          Generate Report
+                        </Button>
+                        <Button variant="outline" size="sm" className="w-full justify-start">
+                          <Mail className="h-4 w-4 mr-2" />
+                          Send Email Update
+                        </Button>
+                        <Button variant="outline" size="sm" className="w-full justify-start">
+                          <Car className="h-4 w-4 mr-2" />
+                          Track Technician
+                        </Button>
+                        <Button variant="destructive" size="sm" className="w-full justify-start">
+                          <AlertTriangle className="h-4 w-4 mr-2" />
+                          Emergency Alert
+                        </Button>
+                      </div>
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+        </SidebarInset>
+
+        {/* Create Thread Dialog */}
+        <Dialog open={showCreateThread} onOpenChange={setShowCreateThread}>
+          <DialogContent className="max-w-md">
             <DialogHeader>
-              <DialogTitle>Create New Template</DialogTitle>
+              <DialogTitle>Create New Conversation</DialogTitle>
               <DialogDescription>
-                Create a reusable template for email or SMS communication
+                Start a new conversation with team members or customers
               </DialogDescription>
             </DialogHeader>
 
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label>Template Type</Label>
-                  <Select value={templateType} onValueChange={(value: 'email' | 'sms') => setTemplateType(value)}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="email">Email Template</SelectItem>
-                      <SelectItem value="sms">SMS Template</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label>Template Category</Label>
-                  <Select value={templateFormData.type} onValueChange={(value) =>
-                    setTemplateFormData(prev => ({ ...prev, type: value }))
-                  }>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="LEAD_CONFIRMATION">Lead Confirmation</SelectItem>
-                      <SelectItem value="INSPECTION_SCHEDULED">Inspection Scheduled</SelectItem>
-                      <SelectItem value="INSPECTION_REMINDER">Inspection Reminder</SelectItem>
-                      <SelectItem value="REPORT_READY">Report Ready</SelectItem>
-                      <SelectItem value="QUOTE_FOLLOW_UP">Quote Follow-up</SelectItem>
-                      <SelectItem value="THANK_YOU">Thank You</SelectItem>
-                      <SelectItem value="CUSTOM">Custom</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+              <div>
+                <Label>Conversation Type</Label>
+                <Select
+                  value={newThreadData.type}
+                  onValueChange={(value: any) => setNewThreadData(prev => ({ ...prev, type: value }))}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="direct">Direct Message</SelectItem>
+                    <SelectItem value="group">Group Chat</SelectItem>
+                    <SelectItem value="customer">Customer Support</SelectItem>
+                    <SelectItem value="emergency">Emergency Channel</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div>
-                <Label>Template Name</Label>
+                <Label>Conversation Name</Label>
                 <Input
-                  placeholder="Enter template name"
-                  value={templateFormData.name}
-                  onChange={(e) => setTemplateFormData(prev => ({ ...prev, name: e.target.value }))}
+                  placeholder="Enter conversation name"
+                  value={newThreadData.name}
+                  onChange={(e) => setNewThreadData(prev => ({ ...prev, name: e.target.value }))}
                 />
               </div>
 
-              {templateType === 'email' && (
-                <div>
-                  <Label>Subject Line</Label>
-                  <Input
-                    placeholder="Enter email subject"
-                    value={templateFormData.subject || ''}
-                    onChange={(e) => setTemplateFormData(prev => ({ ...prev, subject: e.target.value }))}
-                  />
-                </div>
-              )}
-
               <div>
-                <Label>{templateType === 'email' ? 'Email Body' : 'SMS Message'}</Label>
-                <Textarea
-                  placeholder={templateType === 'email' ? 'Enter email content...' : 'Enter SMS message...'}
-                  rows={templateType === 'email' ? 8 : 4}
-                  value={templateType === 'email' ? templateFormData.body || '' : templateFormData.message || ''}
-                  onChange={(e) => {
-                    const field = templateType === 'email' ? 'body' : 'message';
-                    setTemplateFormData(prev => ({ ...prev, [field]: e.target.value }));
-                  }}
-                />
-                {templateType === 'sms' && (
-                  <p className="text-xs text-gray-500 mt-1">
-                    Character count: {(templateFormData.message || '').length}/160
-                  </p>
-                )}
-              </div>
-
-              {/* Template Variables */}
-              <div>
-                <div className="flex justify-between items-center mb-3">
-                  <Label>Template Variables</Label>
-                  <Button variant="outline" size="sm" onClick={addTemplateVariable}>
-                    <Plus className="h-3 w-3 mr-1" />
-                    Add Variable
-                  </Button>
+                <Label>Participants</Label>
+                <div className="text-sm text-muted-foreground mb-2">
+                  Select team members to include in this conversation
                 </div>
-
-                <div className="space-y-3">
-                  {templateFormData.variables.map((variable, index) => (
-                    <div key={index} className="grid grid-cols-4 gap-2 items-end">
-                      <div>
-                        <Label className="text-xs">Key</Label>
-                        <Input
-                          placeholder="{{variable_name}}"
-                          value={variable.key}
-                          onChange={(e) => updateTemplateVariable(index, 'key', e.target.value)}
-                        />
-                      </div>
-                      <div>
-                        <Label className="text-xs">Description</Label>
-                        <Input
-                          placeholder="Description"
-                          value={variable.description}
-                          onChange={(e) => updateTemplateVariable(index, 'description', e.target.value)}
-                        />
-                      </div>
-                      <div>
-                        <Label className="text-xs">Type</Label>
-                        <Select
-                          value={variable.type}
-                          onValueChange={(value) => updateTemplateVariable(index, 'type', value)}
-                        >
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="TEXT">Text</SelectItem>
-                            <SelectItem value="DATE">Date</SelectItem>
-                            <SelectItem value="NUMBER">Number</SelectItem>
-                            <SelectItem value="CURRENCY">Currency</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => removeTemplateVariable(index)}
-                      >
-                        <Trash2 className="h-3 w-3" />
-                      </Button>
+                <div className="space-y-2 max-h-32 overflow-y-auto">
+                  {onlineUsers.map((user) => (
+                    <div key={user.id} className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        id={user.id}
+                        checked={newThreadData.participantIds.includes(user.id)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setNewThreadData(prev => ({
+                              ...prev,
+                              participantIds: [...prev.participantIds, user.id]
+                            }));
+                          } else {
+                            setNewThreadData(prev => ({
+                              ...prev,
+                              participantIds: prev.participantIds.filter(id => id !== user.id)
+                            }));
+                          }
+                        }}
+                        className="rounded"
+                      />
+                      <label htmlFor={user.id} className="text-sm font-medium">
+                        {user.name} ({user.role})
+                      </label>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => setShowCreateTemplateDialog(false)}>
+                <Button variant="outline" onClick={() => setShowCreateThread(false)}>
                   Cancel
                 </Button>
-                <Button onClick={handleCreateTemplate} disabled={loading}>
+                <Button onClick={handleCreateThread} disabled={loading}>
                   {loading && <RefreshCw className="h-4 w-4 mr-2 animate-spin" />}
-                  Create Template
+                  Create Conversation
                 </Button>
               </div>
             </div>
           </DialogContent>
         </Dialog>
-      </div>
 
-      {/* Template Tabs */}
-      <Tabs defaultValue="email">
-        <TabsList>
-          <TabsTrigger value="email">Email Templates</TabsTrigger>
-          <TabsTrigger value="sms">SMS Templates</TabsTrigger>
-        </TabsList>
+        {/* Templates Dialog */}
+        <Dialog open={showTemplates} onOpenChange={setShowTemplates}>
+          <DialogContent className="max-w-4xl max-h-[80vh]">
+            <DialogHeader>
+              <DialogTitle>Melbourne Communication Templates</DialogTitle>
+              <DialogDescription>
+                Select a pre-written template for common Melbourne inspection scenarios
+              </DialogDescription>
+            </DialogHeader>
 
-        <TabsContent value="email">
-          <Card>
-            <CardContent className="p-6">
-              <div className="space-y-4">
-                {emailTemplates.map((template) => (
-                  <div key={template.id} className="border rounded-lg p-4 hover:bg-gray-50">
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h3 className="font-medium">{template.name}</h3>
-                          <Badge className={template.active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}>
-                            {template.active ? 'Active' : 'Inactive'}
-                          </Badge>
-                          <Badge variant="outline">{template.type.replace('_', ' ')}</Badge>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-2">{template.subject}</p>
-                        <p className="text-xs text-gray-500">
-                          Last updated: {format(new Date(template.updatedAt), 'MMM d, yyyy')}
-                        </p>
-                      </div>
-                      <div className="flex gap-2">
-                        <Button variant="outline" size="sm">
-                          <Eye className="h-3 w-3 mr-1" />
-                          Preview
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <Edit className="h-3 w-3 mr-1" />
-                          Edit
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <Copy className="h-3 w-3 mr-1" />
-                          Duplicate
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="sms">
-          <Card>
-            <CardContent className="p-6">
-              <div className="space-y-4">
-                {smsTemplates.map((template) => (
-                  <div key={template.id} className="border rounded-lg p-4 hover:bg-gray-50">
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h3 className="font-medium">{template.name}</h3>
-                          <Badge className={template.active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}>
-                            {template.active ? 'Active' : 'Inactive'}
-                          </Badge>
-                          <Badge variant="outline">{template.type.replace('_', ' ')}</Badge>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-2">{template.message}</p>
-                        <p className="text-xs text-gray-500">
-                          Characters: {template.characterCount} |
-                          Last updated: {format(new Date(template.updatedAt || ''), 'MMM d, yyyy')}
-                        </p>
-                      </div>
-                      <div className="flex gap-2">
-                        <Button variant="outline" size="sm">
-                          <Eye className="h-3 w-3 mr-1" />
-                          Preview
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <Edit className="h-3 w-3 mr-1" />
-                          Edit
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <Copy className="h-3 w-3 mr-1" />
-                          Duplicate
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
-    </div>
-  );
-
-  const renderLogsTab = () => (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-lg font-semibold">Communication Logs</h2>
-          <p className="text-gray-600">View all communication history and delivery status</p>
-        </div>
-
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Filter
-          </Button>
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
-        </div>
-      </div>
-
-      <Card>
-        <CardContent className="p-6">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Date/Time</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Recipient</TableHead>
-                <TableHead>Subject/Message</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {communicationLogs.map((log) => (
-                <TableRow key={log.id}>
-                  <TableCell>
-                    <div className="text-sm">
-                      {format(new Date(log.createdAt), 'MMM d, yyyy')}
-                      <br />
-                      <span className="text-gray-500">{format(new Date(log.createdAt), 'h:mm a')}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-1">
-                      {log.type === 'EMAIL' ? <Mail className="h-4 w-4" /> : <MessageSquare className="h-4 w-4" />}
-                      <span className="text-sm">{log.type}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell>{log.recipient}</TableCell>
-                  <TableCell>
-                    <div className="max-w-xs truncate">
-                      {log.subject ? (
-                        <>
-                          <div className="font-medium text-sm">{log.subject}</div>
-                          <div className="text-xs text-gray-600 truncate">{log.content}</div>
-                        </>
-                      ) : (
-                        <div className="text-sm">{log.content}</div>
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <Badge className={getStatusColor(log.status)}>
-                      {log.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>
-                    <Button variant="ghost" size="sm">
-                      <Eye className="h-3 w-3" />
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
-    </div>
-  );
-
-  const renderAutomationTab = () => (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-lg font-semibold">Automation Rules</h2>
-          <p className="text-gray-600">Set up automated communication workflows</p>
-        </div>
-
-        <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          Create Rule
-        </Button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {automationRules.map((rule) => (
-          <Card key={rule.id}>
-            <CardContent className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="font-medium">{rule.name}</h3>
-                  <p className="text-sm text-gray-600">
-                    Trigger: {rule.trigger.type.replace('_', ' ')}
-                  </p>
-                </div>
-                <Switch
-                  checked={rule.active}
-                  onCheckedChange={(checked) => handleToggleAutomationRule(rule.id, checked)}
+            <div className="space-y-4">
+              <div className="relative">
+                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search templates by name or suburb..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-8"
                 />
               </div>
 
-              <div className="space-y-2">
-                <div className="text-sm">
-                  <span className="font-medium">Actions:</span>
-                  <ul className="mt-1 space-y-1">
-                    {rule.actions.map((action, index) => (
-                      <li key={index} className="text-gray-600 text-xs">
-                        • {action.type.replace('_', ' ')}
-                        {action.delay && ` (${action.delay}min delay)`}
-                      </li>
-                    ))}
-                  </ul>
+              <ScrollArea className="h-96">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {filteredTemplates.map((template) => (
+                    <Card key={template.id} className="cursor-pointer hover:shadow-md transition-shadow">
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center justify-between">
+                          <CardTitle className="text-sm">{template.name}</CardTitle>
+                          <Badge variant="outline" className="text-xs">
+                            {template.category}
+                          </Badge>
+                        </div>
+                        {template.suburb && (
+                          <Badge variant="secondary" className="w-fit text-xs">
+                            <MapPin className="h-3 w-3 mr-1" />
+                            {template.suburb}
+                          </Badge>
+                        )}
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground mb-3 line-clamp-3">
+                          {template.content.substring(0, 120)}...
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground">
+                            Used {template.useCount} times
+                          </span>
+                          <Button
+                            size="sm"
+                            onClick={() => handleTemplateSelect(template)}
+                          >
+                            Use Template
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
-
-                <div className="flex justify-between text-xs text-gray-500">
-                  <span>Triggered: {rule.timesTriggered} times</span>
-                  <span>Priority: {rule.priority}</span>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-4">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Edit className="h-3 w-3 mr-1" />
-                  Edit
-                </Button>
-                <Button variant="outline" size="sm">
-                  <Settings className="h-3 w-3" />
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+              </ScrollArea>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
-    </div>
-  );
-
-  const renderStatsTab = () => (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-lg font-semibold">Communication Statistics</h2>
-        <p className="text-gray-600">Track performance and engagement metrics</p>
-      </div>
-
-      {stats && (
-        <>
-          {/* Email Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Emails Sent</p>
-                    <p className="text-2xl font-bold mt-2">{stats.emails.sent}</p>
-                  </div>
-                  <Mail className="h-5 w-5 text-blue-600" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Delivery Rate</p>
-                    <p className="text-2xl font-bold mt-2">{formatPercentage(stats.emails.deliveryRate)}</p>
-                  </div>
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Open Rate</p>
-                    <p className="text-2xl font-bold mt-2">{formatPercentage(stats.emails.openRate)}</p>
-                  </div>
-                  <Eye className="h-5 w-5 text-purple-600" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Click Rate</p>
-                    <p className="text-2xl font-bold mt-2">{formatPercentage(stats.emails.clickRate)}</p>
-                  </div>
-                  <Target className="h-5 w-5 text-orange-600" />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* SMS Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">SMS Sent</p>
-                    <p className="text-2xl font-bold mt-2">{stats.sms.sent}</p>
-                  </div>
-                  <MessageSquare className="h-5 w-5 text-green-600" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">SMS Delivery Rate</p>
-                    <p className="text-2xl font-bold mt-2">{formatPercentage(stats.sms.deliveryRate)}</p>
-                  </div>
-                  <CheckCircle className="h-5 w-5 text-blue-600" />
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Response Rate</p>
-                    <p className="text-2xl font-bold mt-2">{formatPercentage(stats.sms.responseRate)}</p>
-                  </div>
-                  <Activity className="h-5 w-5 text-purple-600" />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Automation Stats */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Automation Performance</CardTitle>
-              <CardDescription>Efficiency gains from automated communication</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-blue-600">{stats.automation.rulesTriggered}</p>
-                  <p className="text-sm text-gray-600">Rules Triggered</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-green-600">{stats.automation.timesSaved}h</p>
-                  <p className="text-sm text-gray-600">Time Saved</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-purple-600">${stats.automation.costSaved}</p>
-                  <p className="text-sm text-gray-600">Cost Saved</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </>
-      )}
-    </div>
-  );
-
-  if (loading && !stats) {
-    return (
-      <div className="flex items-center justify-center h-96">
-        <RefreshCw className="h-8 w-8 animate-spin text-gray-400" />
-        <span className="ml-2 text-gray-600">Loading communication hub...</span>
-      </div>
-    );
-  }
-
-  return (
-    <AdminLayout>
-      <div className="space-y-6">
-      {/* Header */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold">Communication Hub</h1>
-          <p className="text-gray-600">Manage templates, automation, and communication workflows</p>
-        </div>
-
-        <div className="flex gap-2">
-          <Dialog open={showSendMessageDialog} onOpenChange={setShowSendMessageDialog}>
-            <DialogTrigger asChild>
-              <Button>
-                <Send className="h-4 w-4 mr-2" />
-                Send Message
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-2xl">
-              <DialogHeader>
-                <DialogTitle>Send Message</DialogTitle>
-                <DialogDescription>Send an email or SMS to customers</DialogDescription>
-              </DialogHeader>
-
-              <div className="space-y-4">
-                <div>
-                  <Label>Message Type</Label>
-                  <Select value={templateType} onValueChange={(value: 'email' | 'sms') => setTemplateType(value)}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="email">Email</SelectItem>
-                      <SelectItem value="sms">SMS</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label>Recipients</Label>
-                  <Select
-                    value={sendMessageFormData.leadId}
-                    onValueChange={(value) => {
-                      const lead = leads.find(l => l.id === value);
-                      if (lead) {
-                        setSendMessageFormData(prev => ({
-                          ...prev,
-                          leadId: value,
-                          recipients: [lead.email],
-                        }));
-                      }
-                    }}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select recipient" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {leads.map(lead => (
-                        <SelectItem key={lead.id} value={lead.id}>
-                          {lead.firstName} {lead.lastName} - {lead.email}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {templateType === 'email' && (
-                  <div>
-                    <Label>Subject</Label>
-                    <Input
-                      placeholder="Email subject"
-                      value={sendMessageFormData.subject || ''}
-                      onChange={(e) => setSendMessageFormData(prev => ({ ...prev, subject: e.target.value }))}
-                    />
-                  </div>
-                )}
-
-                <div>
-                  <Label>{templateType === 'email' ? 'Message Body' : 'SMS Message'}</Label>
-                  <Textarea
-                    placeholder={templateType === 'email' ? 'Email content...' : 'SMS message...'}
-                    rows={templateType === 'email' ? 8 : 4}
-                    value={templateType === 'email' ? sendMessageFormData.body || '' : sendMessageFormData.message || ''}
-                    onChange={(e) => {
-                      const field = templateType === 'email' ? 'body' : 'message';
-                      setSendMessageFormData(prev => ({ ...prev, [field]: e.target.value }));
-                    }}
-                  />
-                </div>
-
-                <div className="flex justify-end gap-2">
-                  <Button variant="outline" onClick={() => setShowSendMessageDialog(false)}>
-                    Cancel
-                  </Button>
-                  <Button onClick={handleSendMessage} disabled={loading}>
-                    {loading && <RefreshCw className="h-4 w-4 mr-2 animate-spin" />}
-                    Send Message
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
-        </div>
-      </div>
-
-      {/* Communication Tabs */}
-      <Tabs value={selectedTab} onValueChange={setSelectedTab}>
-        <TabsList>
-          <TabsTrigger value="templates">Templates</TabsTrigger>
-          <TabsTrigger value="logs">Logs</TabsTrigger>
-          <TabsTrigger value="automation">Automation</TabsTrigger>
-          <TabsTrigger value="stats">Statistics</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="templates">{renderTemplatesTab()}</TabsContent>
-        <TabsContent value="logs">{renderLogsTab()}</TabsContent>
-        <TabsContent value="automation">{renderAutomationTab()}</TabsContent>
-        <TabsContent value="stats">{renderStatsTab()}</TabsContent>
-      </Tabs>
-      </div>
-    </AdminLayout>
+    </SidebarProvider>
   );
 }

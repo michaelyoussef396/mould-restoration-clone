@@ -11,6 +11,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import {
   Calendar as CalendarIcon,
   Clock,
@@ -29,15 +32,20 @@ import {
   Settings,
   Filter,
   Download,
-  Upload
+  Upload,
+  ChevronLeft,
+  ChevronRight,
+  MoreHorizontal,
+  Calendar as CalendarIconSolid
 } from 'lucide-react';
-import { format, addDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
+import { format, addDays, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, startOfMonth, endOfMonth, eachDayOfInterval as eachDay, isSameMonth, isToday, getDay, addWeeks, subWeeks, addMonths, subMonths } from 'date-fns';
 import { inspectionService, Inspection, Technician, TimeSlot, SchedulingConflict } from '@/lib/services/inspectionService';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { toast } from 'sonner';
+import { cn } from '@/lib/utils';
 
 interface CalendarView {
-  type: 'day' | 'week' | 'month';
+  type: 'day' | 'week' | 'month' | 'events' | 'availability';
   date: Date;
 }
 
@@ -57,8 +65,29 @@ interface InspectionFormData {
   };
 }
 
+interface CalendarEvent {
+  id: string;
+  title: string;
+  date: Date;
+  startTime: string;
+  endTime: string;
+  type: 'inspection' | 'unavailable' | 'travel';
+  status: 'scheduled' | 'in-progress' | 'completed' | 'cancelled';
+  technician?: string;
+  customer?: string;
+  suburb?: string;
+  color: string;
+}
+
+interface TechnicianSchedule {
+  technician: Technician;
+  events: CalendarEvent[];
+  workingHours: { start: string; end: string };
+  isAvailable: boolean;
+}
+
 export function InspectionCalendar() {
-  const [view, setView] = useState<CalendarView>({ type: 'week', date: new Date() });
+  const [view, setView] = useState<CalendarView>({ type: 'events', date: new Date() });
   const [inspections, setInspections] = useState<Inspection[]>([]);
   const [technicians, setTechnicians] = useState<Technician[]>([]);
   const [leads, setLeads] = useState<LeadWithRelations[]>([]);
@@ -72,6 +101,8 @@ export function InspectionCalendar() {
   const [syncingCalendar, setSyncingCalendar] = useState(false);
   const [filterTechnician, setFilterTechnician] = useState<string>('all');
   const [filterStatus, setFilterStatus] = useState<string>('all');
+  const [calendarEvents, setCalendarEvents] = useState<CalendarEvent[]>([]);
+  const [technicianSchedules, setTechnicianSchedules] = useState<TechnicianSchedule[]>([]);
 
   const [formData, setFormData] = useState<InspectionFormData>({
     leadId: '',
@@ -99,6 +130,72 @@ export function InspectionCalendar() {
     }
   }, [selectedDate, formData.technicianId]);
 
+  useEffect(() => {
+    // Transform inspections to calendar events
+    const events = inspections.map(inspection => transformInspectionToEvent(inspection));
+    setCalendarEvents(events);
+  }, [inspections]);
+
+  useEffect(() => {
+    // Create technician schedules
+    if (technicians.length > 0 && calendarEvents.length > 0) {
+      const schedules = technicians.map(tech => createTechnicianSchedule(tech, calendarEvents));
+      setTechnicianSchedules(schedules);
+    }
+  }, [technicians, calendarEvents]);
+
+  // Helper function to transform inspection to calendar event
+  const transformInspectionToEvent = (inspection: Inspection): CalendarEvent => {
+    const date = new Date(inspection.scheduledAt);
+    const endTime = new Date(date.getTime() + 120 * 60000); // Default 2 hours
+
+    return {
+      id: inspection.id,
+      title: `${inspection.customerName} - ${inspection.serviceType}`,
+      date,
+      startTime: format(date, 'HH:mm'),
+      endTime: format(endTime, 'HH:mm'),
+      type: 'inspection',
+      status: inspection.status.toLowerCase() as 'scheduled' | 'in-progress' | 'completed' | 'cancelled',
+      technician: inspection.technicianId,
+      customer: inspection.customerName,
+      suburb: inspection.suburb,
+      color: getEventColor(inspection.status, 'inspection'),
+    };
+  };
+
+  // Helper function to create technician schedule
+  const createTechnicianSchedule = (technician: Technician, events: CalendarEvent[]): TechnicianSchedule => {
+    const techEvents = events.filter(event => event.technician === technician.id);
+    const today = format(selectedDate, 'EEEE').toLowerCase();
+    const todayHours = technician.workingHours[today as keyof typeof technician.workingHours];
+
+    return {
+      technician,
+      events: techEvents,
+      workingHours: {
+        start: todayHours?.start || '07:00',
+        end: todayHours?.end || '19:00',
+      },
+      isAvailable: todayHours?.available || false,
+    };
+  };
+
+  // Helper function to get event colors
+  const getEventColor = (status: string, type: string): string => {
+    if (type === 'inspection') {
+      switch (status.toLowerCase()) {
+        case 'scheduled': return 'bg-blue-500';
+        case 'in_progress': return 'bg-yellow-500';
+        case 'completed': return 'bg-green-500';
+        case 'cancelled': return 'bg-red-500';
+        case 'rescheduled': return 'bg-orange-500';
+        default: return 'bg-gray-500';
+      }
+    }
+    return 'bg-gray-400';
+  };
+
   const loadCalendarData = async () => {
     setLoading(true);
     try {
@@ -115,11 +212,16 @@ export function InspectionCalendar() {
         : format(addDays(view.date, 1), 'yyyy-MM-dd');
 
       const calendarData = await inspectionService.getCalendarData(startDate, endDate);
-      setInspections(calendarData.inspections);
-      setConflicts(calendarData.conflicts);
+      // Handle the API response format - calendarData might have inspections or be the array directly
+      const inspectionList = calendarData.inspections || calendarData || [];
+      setInspections(Array.isArray(inspectionList) ? inspectionList : []);
+      setConflicts(calendarData.conflicts || []);
     } catch (error) {
       toast.error('Failed to load calendar data');
       console.error('Calendar load error:', error);
+      // Set empty arrays as fallback
+      setInspections([]);
+      setConflicts([]);
     } finally {
       setLoading(false);
     }
@@ -128,18 +230,23 @@ export function InspectionCalendar() {
   const loadTechnicians = async () => {
     try {
       const technicianList = await inspectionService.getTechnicians();
-      setTechnicians(technicianList);
+      // Ensure technicianList is an array
+      setTechnicians(Array.isArray(technicianList) ? technicianList : []);
     } catch (error) {
       toast.error('Failed to load technicians');
+      setTechnicians([]);
     }
   };
 
   const loadLeads = async () => {
     try {
       const leadList = await LeadService.getLeads();
-      setLeads(leadList.filter(lead => lead.status !== 'CONVERTED' && lead.status !== 'CLOSED_LOST'));
+      // Ensure leadList is an array before filtering
+      const leads = Array.isArray(leadList) ? leadList : [];
+      setLeads(leads.filter(lead => lead.status !== 'CONVERTED' && lead.status !== 'CLOSED_LOST'));
     } catch (error) {
       toast.error('Failed to load leads');
+      setLeads([]);
     }
   };
 
@@ -316,24 +423,40 @@ export function InspectionCalendar() {
     return true;
   });
 
+  // Mobile-Optimized Day View with Australian Time
   const renderDayView = () => {
     const dayInspections = filteredInspections.filter(
       inspection => format(new Date(inspection.scheduledAt), 'yyyy-MM-dd') === format(view.date, 'yyyy-MM-dd')
     );
 
+    const timeSlots = Array.from({ length: 13 }, (_, i) => i + 7); // 7 AM to 7 PM
+
     return (
       <div className="space-y-4">
-        <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold">
-            {format(view.date, 'EEEE, MMMM d, yyyy')}
-          </h3>
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+          <div>
+            <h3 className="text-lg font-semibold">
+              {format(view.date, 'EEEE, MMMM d, yyyy')}
+            </h3>
+            <p className="text-sm text-gray-600">
+              Melbourne Field Schedule • {dayInspections.length} inspections
+            </p>
+          </div>
           <div className="flex gap-2">
             <Button
               variant="outline"
               size="sm"
               onClick={() => setView(prev => ({ ...prev, date: addDays(prev.date, -1) }))}
             >
+              <ChevronLeft className="h-4 w-4" />
               Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setView(prev => ({ ...prev, date: new Date() }))}
+            >
+              Today
             </Button>
             <Button
               variant="outline"
@@ -341,48 +464,107 @@ export function InspectionCalendar() {
               onClick={() => setView(prev => ({ ...prev, date: addDays(prev.date, 1) }))}
             >
               Next
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <div className="grid gap-2">
-          {Array.from({ length: 12 }, (_, i) => i + 7).map(hour => {
-            const hourInspections = dayInspections.filter(inspection => {
-              const inspectionHour = new Date(inspection.scheduledAt).getHours();
-              return inspectionHour === hour;
-            });
+        <ScrollArea className="h-[600px] pr-4">
+          <div className="space-y-1">
+            {timeSlots.map(hour => {
+              const hourInspections = dayInspections.filter(inspection => {
+                const inspectionHour = new Date(inspection.scheduledAt).getHours();
+                return inspectionHour === hour;
+              });
 
-            return (
-              <div key={hour} className="flex border-b border-gray-100 py-2">
-                <div className="w-20 text-sm text-gray-500 font-medium">
-                  {hour}:00
-                </div>
-                <div className="flex-1">
-                  {hourInspections.map(inspection => (
-                    <div
-                      key={inspection.id}
-                      className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-2 cursor-pointer hover:bg-blue-100"
-                      onClick={() => {
-                        setSelectedInspection(inspection);
-                        setShowEditDialog(true);
-                      }}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-medium text-sm">{inspection.customerName}</p>
-                          <p className="text-xs text-gray-600">{inspection.address}</p>
-                          <p className="text-xs text-gray-600">{inspection.serviceType}</p>
-                        </div>
-                        <Badge className={getStatusColor(inspection.status)}>
-                          {inspection.status}
-                        </Badge>
-                      </div>
+              return (
+                <div key={hour} className="flex border-b border-gray-100 py-3 min-h-[60px]">
+                  <div className="w-20 flex-shrink-0">
+                    <div className="text-sm font-medium text-gray-700">
+                      {hour.toString().padStart(2, '0')}:00
                     </div>
-                  ))}
+                    <div className="text-xs text-gray-500">
+                      {hour <= 12 ? `${hour}:00 AM` : `${hour - 12}:00 PM`}
+                    </div>
+                  </div>
+                  <div className="flex-1 pl-4">
+                    {hourInspections.length === 0 ? (
+                      <div className="text-xs text-gray-400 italic py-2">
+                        Available for scheduling
+                      </div>
+                    ) : (
+                      hourInspections.map(inspection => {
+                        const techName = technicians.find(t => t.id === inspection.technicianId)?.name || 'Unassigned';
+
+                        return (
+                          <div
+                            key={inspection.id}
+                            className="bg-white border border-gray-200 rounded-lg p-3 mb-2 cursor-pointer hover:border-blue-300 hover:shadow-sm transition-all"
+                            onClick={() => {
+                              setSelectedInspection(inspection);
+                              setShowEditDialog(true);
+                            }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <p className="font-medium text-sm truncate">{inspection.customerName}</p>
+                                  <Badge className={getStatusColor(inspection.status)} variant="secondary">
+                                    {inspection.status}
+                                  </Badge>
+                                </div>
+                                <div className="space-y-1">
+                                  <div className="flex items-center gap-1 text-xs text-gray-600">
+                                    <MapPin className="h-3 w-3" />
+                                    <span className="truncate">{inspection.suburb}, Melbourne</span>
+                                  </div>
+                                  <div className="flex items-center gap-1 text-xs text-gray-600">
+                                    <User className="h-3 w-3" />
+                                    <span>{techName}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1 text-xs text-gray-600">
+                                    <Clock className="h-3 w-3" />
+                                    <span>{format(new Date(inspection.scheduledAt), 'HH:mm')} - {format(new Date(new Date(inspection.scheduledAt).getTime() + 120 * 60000), 'HH:mm')}</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex flex-col items-end ml-2">
+                                <span className="text-xs text-gray-500 mb-1">{inspection.serviceType}</span>
+                                {inspection.estimatedCost && (
+                                  <span className="text-xs font-medium text-green-600">
+                                    ${inspection.estimatedCost.toFixed(0)}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+        </ScrollArea>
+
+        {/* Mobile Quick Actions */}
+        <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t">
+          <Button
+            className="w-full sm:w-auto"
+            onClick={() => setShowCreateDialog(true)}
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Schedule Inspection
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full sm:w-auto"
+            onClick={() => setView(prev => ({ ...prev, type: 'availability' }))}
+          >
+            <User className="h-4 w-4 mr-2" />
+            Check Technician Availability
+          </Button>
         </div>
       </div>
     );
@@ -463,65 +645,278 @@ export function InspectionCalendar() {
     );
   };
 
-  const renderMonthView = () => {
+  // Advanced Event Slots Calendar (calendar-31 style)
+  const renderEventsCalendar = () => {
+    const monthStart = startOfMonth(view.date);
+    const monthEnd = endOfMonth(view.date);
+    const calendarStart = startOfWeek(monthStart);
+    const calendarEnd = endOfWeek(monthEnd);
+    const calendarDays = eachDay({ start: calendarStart, end: calendarEnd });
+
+    const weekRows = [];
+    for (let i = 0; i < calendarDays.length; i += 7) {
+      weekRows.push(calendarDays.slice(i, i + 7));
+    }
+
     return (
       <div className="space-y-4">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold">
-            {format(view.date, 'MMMM yyyy')}
+            {format(view.date, 'MMMM yyyy')} - Event Calendar
           </h3>
           <div className="flex gap-2">
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setView(prev => ({
-                ...prev,
-                date: new Date(prev.date.getFullYear(), prev.date.getMonth() - 1, 1)
-              }))}
+              onClick={() => setView(prev => ({ ...prev, date: subMonths(prev.date, 1) }))}
             >
-              Previous Month
+              <ChevronLeft className="h-4 w-4" />
+              Previous
             </Button>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => setView(prev => ({
-                ...prev,
-                date: new Date(prev.date.getFullYear(), prev.date.getMonth() + 1, 1)
-              }))}
+              onClick={() => setView(prev => ({ ...prev, date: new Date() }))}
             >
-              Next Month
+              Today
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setView(prev => ({ ...prev, date: addMonths(prev.date, 1) }))}
+            >
+              Next
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <Calendar
-          mode="single"
-          selected={selectedDate}
-          onSelect={(date) => date && setSelectedDate(date)}
-          month={view.date}
-          onMonthChange={(month) => setView(prev => ({ ...prev, date: month }))}
-          className="rounded-md border"
-          components={{
-            Day: ({ date, ...props }) => {
-              const dayInspections = filteredInspections.filter(
-                inspection => format(new Date(inspection.scheduledAt), 'yyyy-MM-dd') === format(date, 'yyyy-MM-dd')
+        <div className="border rounded-lg overflow-hidden bg-white">
+          {/* Calendar Header */}
+          <div className="grid grid-cols-7 border-b bg-gray-50">
+            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+              <div key={day} className="p-3 text-center text-sm font-medium text-gray-600">
+                {day}
+              </div>
+            ))}
+          </div>
+
+          {/* Calendar Body */}
+          <div className="grid grid-cols-7 auto-rows-fr min-h-[600px]">
+            {calendarDays.map((day, dayIdx) => {
+              const dayEvents = calendarEvents.filter(event =>
+                isSameDay(event.date, day)
               );
+              const isCurrentMonth = isSameMonth(day, view.date);
+              const isSelected = isSameDay(day, selectedDate);
+              const isCurrentDay = isToday(day);
 
               return (
-                <div className="relative p-2 text-center">
-                  <div {...props} />
-                  {dayInspections.length > 0 && (
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                        {dayInspections.length}
-                      </div>
-                    </div>
+                <div
+                  key={day.toString()}
+                  className={cn(
+                    "border-r border-b p-2 min-h-[120px] cursor-pointer hover:bg-gray-50",
+                    !isCurrentMonth && "bg-gray-50 text-gray-400",
+                    isSelected && "bg-blue-50 border-blue-200",
+                    isCurrentDay && "bg-yellow-50"
                   )}
+                  onClick={() => setSelectedDate(day)}
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <span className={cn(
+                      "text-sm font-medium",
+                      isCurrentDay && "bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                    )}>
+                      {format(day, 'd')}
+                    </span>
+                    {dayEvents.length > 3 && (
+                      <span className="text-xs text-gray-500">
+                        +{dayEvents.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="space-y-1">
+                    {dayEvents.slice(0, 3).map((event) => (
+                      <div
+                        key={event.id}
+                        className={cn(
+                          "text-xs p-1 rounded text-white truncate cursor-pointer hover:opacity-80",
+                          event.color
+                        )}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const inspection = inspections.find(i => i.id === event.id);
+                          if (inspection) {
+                            setSelectedInspection(inspection);
+                            setShowEditDialog(true);
+                          }
+                        }}
+                      >
+                        <div className="font-medium truncate">
+                          {event.startTime} {event.customer}
+                        </div>
+                        <div className="truncate opacity-90">
+                          {event.suburb}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               );
-            },
-          }}
-        />
+            })}
+          </div>
+        </div>
+
+        {/* Melbourne Suburbs Legend */}
+        <div className="flex flex-wrap gap-2 text-sm">
+          <Badge variant="outline">Carlton</Badge>
+          <Badge variant="outline">Richmond</Badge>
+          <Badge variant="outline">Fitzroy</Badge>
+          <Badge variant="outline">Toorak</Badge>
+          <Badge variant="outline">Brighton</Badge>
+          <Badge variant="secondary">+50 Melbourne Suburbs</Badge>
+        </div>
+      </div>
+    );
+  };
+
+  // Technician Availability Calendar (calendar-14 style)
+  const renderAvailabilityCalendar = () => {
+    const monthStart = startOfMonth(view.date);
+    const monthEnd = endOfMonth(view.date);
+    const calendarDays = eachDay({ start: monthStart, end: monthEnd });
+
+    return (
+      <div className="space-y-6">
+        <div className="flex justify-between items-center">
+          <h3 className="text-lg font-semibold">
+            Technician Availability - {format(view.date, 'MMMM yyyy')}
+          </h3>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setView(prev => ({ ...prev, date: subMonths(prev.date, 1) }))}
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setView(prev => ({ ...prev, date: addMonths(prev.date, 1) }))}
+            >
+              Next
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Technician Schedule Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {technicianSchedules.map((schedule) => (
+            <Card key={schedule.technician.id} className="overflow-hidden">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <Avatar className="h-10 w-10">
+                    <AvatarFallback>
+                      {schedule.technician.name.split(' ').map(n => n[0]).join('')}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <CardTitle className="text-base">{schedule.technician.name}</CardTitle>
+                    <CardDescription>
+                      {schedule.technician.territories.join(', ')} •
+                      {schedule.workingHours.start}-{schedule.workingHours.end}
+                    </CardDescription>
+                  </div>
+                  <div className="ml-auto">
+                    <Badge variant={schedule.isAvailable ? "default" : "secondary"}>
+                      {schedule.isAvailable ? "Available" : "Unavailable"}
+                    </Badge>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent>
+                <div className="grid grid-cols-7 gap-1 mb-4">
+                  {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, idx) => (
+                    <div key={idx} className="text-center text-xs font-medium text-gray-500 p-1">
+                      {day}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-7 gap-1">
+                  {calendarDays.map((day) => {
+                    const dayEvents = schedule.events.filter(event =>
+                      isSameDay(event.date, day)
+                    );
+                    const isBooked = dayEvents.length > 0;
+                    const dayOfWeek = format(day, 'EEEE').toLowerCase();
+                    const dayHours = schedule.technician.workingHours[dayOfWeek as keyof typeof schedule.technician.workingHours];
+                    const isWorkingDay = dayHours?.available || false;
+
+                    return (
+                      <div
+                        key={day.toString()}
+                        className={cn(
+                          "aspect-square flex items-center justify-center text-xs rounded cursor-pointer relative",
+                          isBooked && isWorkingDay && "bg-red-500 text-white",
+                          !isBooked && isWorkingDay && "bg-green-500 text-white hover:bg-green-600",
+                          !isWorkingDay && "bg-gray-200 text-gray-400",
+                          isToday(day) && "ring-2 ring-blue-600"
+                        )}
+                        title={`${format(day, 'MMM d')} - ${isBooked ? 'Booked' : isWorkingDay ? 'Available' : 'Not working'}`}
+                      >
+                        {format(day, 'd')}
+                        {dayEvents.length > 0 && (
+                          <div className="absolute -top-1 -right-1 bg-yellow-400 text-black rounded-full w-4 h-4 flex items-center justify-center text-xs font-bold">
+                            {dayEvents.length}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Today's Schedule */}
+                {schedule.events.filter(event => isToday(event.date)).length > 0 && (
+                  <div className="mt-4 pt-3 border-t">
+                    <h4 className="text-sm font-medium mb-2">Today's Schedule</h4>
+                    <div className="space-y-1">
+                      {schedule.events
+                        .filter(event => isToday(event.date))
+                        .map((event) => (
+                          <div key={event.id} className="text-xs flex justify-between">
+                            <span>{event.startTime} - {event.customer}</span>
+                            <span className="text-gray-500">{event.suburb}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Legend */}
+        <div className="flex items-center gap-6 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 bg-green-500 rounded"></div>
+            <span>Available</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 bg-red-500 rounded"></div>
+            <span>Booked</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 bg-gray-200 rounded"></div>
+            <span>Not Working</span>
+          </div>
+        </div>
       </div>
     );
   };
@@ -530,18 +925,27 @@ export function InspectionCalendar() {
     <AdminLayout>
       <div className="space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold">Inspection Calendar</h1>
-          <p className="text-gray-600">Schedule and manage mould inspections</p>
+          <div className="flex items-center gap-3">
+            <CalendarIconSolid className="h-8 w-8 text-blue-600" />
+            <div>
+              <h1 className="text-2xl font-bold">Melbourne Inspection Calendar</h1>
+              <p className="text-gray-600">Schedule and manage mould inspections across Melbourne suburbs</p>
+            </div>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <Badge variant="outline" className="text-center">
+            {technicians.length} Technicians Active
+          </Badge>
           <Button
             variant="outline"
             size="sm"
             onClick={handleSyncWithGoogleCalendar}
             disabled={syncingCalendar}
+            className="w-full sm:w-auto"
           >
             {syncingCalendar ? <RefreshCw className="h-4 w-4 animate-spin mr-2" /> : <Upload className="h-4 w-4 mr-2" />}
             Sync Calendar
@@ -744,12 +1148,14 @@ export function InspectionCalendar() {
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Tabs value={view.type} onValueChange={(value) =>
-            setView(prev => ({ ...prev, type: value as 'day' | 'week' | 'month' }))
+            setView(prev => ({ ...prev, type: value as CalendarView['type'] }))
           }>
-            <TabsList>
+            <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="day">Day</TabsTrigger>
               <TabsTrigger value="week">Week</TabsTrigger>
               <TabsTrigger value="month">Month</TabsTrigger>
+              <TabsTrigger value="events">Events</TabsTrigger>
+              <TabsTrigger value="availability">Availability</TabsTrigger>
             </TabsList>
           </Tabs>
 
@@ -797,40 +1203,53 @@ export function InspectionCalendar() {
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <RefreshCw className="h-8 w-8 animate-spin text-gray-400" />
+              <p className="ml-2 text-gray-500">Loading Melbourne inspection schedules...</p>
             </div>
           ) : (
             <>
               {view.type === 'day' && renderDayView()}
               {view.type === 'week' && renderWeekView()}
-              {view.type === 'month' && renderMonthView()}
+              {view.type === 'month' && (
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={(date) => date && setSelectedDate(date)}
+                  month={view.date}
+                  onMonthChange={(month) => setView(prev => ({ ...prev, date: month }))}
+                  className="rounded-md border"
+                />
+              )}
+              {view.type === 'events' && renderEventsCalendar()}
+              {view.type === 'availability' && renderAvailabilityCalendar()}
             </>
           )}
         </CardContent>
       </Card>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
+      {/* Melbourne Field Statistics */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <Card className="hover:shadow-md transition-shadow">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mb-2">
               <CalendarIcon className="h-4 w-4 text-blue-600" />
-              <span className="text-sm font-medium">Today's Inspections</span>
+              <span className="text-sm font-medium">Today</span>
             </div>
-            <p className="text-2xl font-bold mt-2">
+            <p className="text-2xl font-bold text-blue-600">
               {filteredInspections.filter(i =>
                 format(new Date(i.scheduledAt), 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd')
               ).length}
             </p>
+            <p className="text-xs text-gray-500 mt-1">Melbourne inspections</p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="hover:shadow-md transition-shadow">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mb-2">
               <Clock className="h-4 w-4 text-green-600" />
               <span className="text-sm font-medium">This Week</span>
             </div>
-            <p className="text-2xl font-bold mt-2">
+            <p className="text-2xl font-bold text-green-600">
               {filteredInspections.filter(i => {
                 const inspectionDate = new Date(i.scheduledAt);
                 const weekStart = startOfWeek(new Date());
@@ -838,31 +1257,77 @@ export function InspectionCalendar() {
                 return inspectionDate >= weekStart && inspectionDate <= weekEnd;
               }).length}
             </p>
+            <p className="text-xs text-gray-500 mt-1">Scheduled appointments</p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="hover:shadow-md transition-shadow">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+            <div className="flex items-center gap-2 mb-2">
+              <CheckCircle className="h-4 w-4 text-emerald-600" />
               <span className="text-sm font-medium">Completed</span>
             </div>
-            <p className="text-2xl font-bold mt-2">
+            <p className="text-2xl font-bold text-emerald-600">
               {filteredInspections.filter(i => i.status === 'COMPLETED').length}
             </p>
+            <p className="text-xs text-gray-500 mt-1">Successful reports</p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="hover:shadow-md transition-shadow">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-yellow-600" />
-              <span className="text-sm font-medium">Conflicts</span>
+            <div className="flex items-center gap-2 mb-2">
+              <User className="h-4 w-4 text-purple-600" />
+              <span className="text-sm font-medium">Available</span>
             </div>
-            <p className="text-2xl font-bold mt-2">{conflicts.length}</p>
+            <p className="text-2xl font-bold text-purple-600">
+              {technicianSchedules.filter(s => s.isAvailable).length}
+            </p>
+            <p className="text-xs text-gray-500 mt-1">Technicians ready</p>
           </CardContent>
         </Card>
       </div>
+
+      {/* Quick Access for Field Technicians */}
+      <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+        <CardContent className="p-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="font-semibold text-blue-900">Field Technician Quick Access</h3>
+              <p className="text-sm text-blue-700">Switch to mobile-optimized views for on-site work</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setView({ type: 'day', date: new Date() })}
+                className="bg-white hover:bg-blue-50"
+              >
+                <Clock className="h-4 w-4 mr-1" />
+                Today's Schedule
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setView({ type: 'availability', date: new Date() })}
+                className="bg-white hover:bg-blue-50"
+              >
+                <User className="h-4 w-4 mr-1" />
+                Team Availability
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setView({ type: 'events', date: new Date() })}
+                className="bg-white hover:bg-blue-50"
+              >
+                <CalendarIcon className="h-4 w-4 mr-1" />
+                Full Calendar
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Edit Inspection Dialog */}
       <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
