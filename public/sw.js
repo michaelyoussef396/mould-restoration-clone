@@ -70,6 +70,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
+  // Skip chrome-extension and other non-http schemes
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+    return;
+  }
+
   // Skip non-GET requests
   if (request.method !== 'GET') {
     // Handle POST requests for offline queue
@@ -158,39 +163,52 @@ async function handleAPIRequest(request) {
 // Handle POST requests for offline queue
 async function handleOfflinePost(request) {
   try {
-    // Try network first
-    const networkResponse = await fetch(request);
+    // Clone the request to avoid "body stream already read" errors
+    const requestClone = request.clone();
 
+    // Try network first
+    const networkResponse = await fetch(requestClone);
+
+    // Check if response is successful (status 200-299)
     if (networkResponse.ok) {
+      console.log('[SW] POST request successful, status:', networkResponse.status);
       notifyClientsOfNetworkStatus(true);
       return networkResponse;
     }
 
-    throw new Error('Network request failed');
+    // If response is not ok but network reached server, don't queue
+    console.log('[SW] POST request failed with status:', networkResponse.status);
+    return networkResponse;
 
   } catch (error) {
-    console.log('[SW] POST request failed, queuing for later...');
+    console.log('[SW] POST request network error, queuing for later...', error.message);
 
-    // Store request for later sync
-    await queueOfflineRequest(request);
+    // Only queue if it's a network error, not a server error
+    if (error.name === 'TypeError' || error.message.includes('fetch')) {
+      // Store request for later sync
+      await queueOfflineRequest(request);
 
-    // Return optimistic response
-    return new Response(
-      JSON.stringify({
-        success: true,
-        queued: true,
-        message: 'Request queued for when connection is restored',
-        timestamp: new Date().toISOString()
-      }),
-      {
-        status: 202,
-        statusText: 'Accepted - Queued for Sync',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Queued-Offline': 'true'
+      // Return optimistic response
+      return new Response(
+        JSON.stringify({
+          success: true,
+          queued: true,
+          message: 'Request queued for when connection is restored',
+          timestamp: new Date().toISOString()
+        }),
+        {
+          status: 202,
+          statusText: 'Accepted - Queued for Sync',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Queued-Offline': 'true'
+          }
         }
-      }
-    );
+      );
+    }
+
+    // Re-throw other errors
+    throw error;
   }
 }
 

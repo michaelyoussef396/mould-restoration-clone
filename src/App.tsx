@@ -40,12 +40,20 @@ const Malvern = lazy(() => import("./pages/locations/Malvern").then(module => ({
 const AdminLogin = lazy(() => import("./pages/admin/Login").then(module => ({ default: module.AdminLogin })));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard").then(module => ({ default: module.AdminDashboard })));
 const LeadsPage = lazy(() => import("./pages/admin/Leads").then(module => ({ default: module.LeadsPage })));
+const LeadEdit = lazy(() => import("./pages/admin/LeadEdit"));
+const LeadNew = lazy(() => import("./pages/admin/LeadNew"));
 
-// Phase 2B: Advanced Lead Management - Optimized Version
-const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanbanOptimized").then(module => ({ default: module.LeadsKanbanOptimized })));
+// Phase 2B: Advanced Lead Management - Fixed Version with better drag and drop
+const LeadsKanban = lazy(() => import("./pages/admin/LeadsKanbanFixed").then(module => ({ default: module.LeadsKanbanFixed })));
 
-// Fallback to original if needed
+// Previous versions for fallback
+const LeadsKanbanOptimized = lazy(() => import("./pages/admin/LeadsKanbanOptimized").then(module => ({ default: module.LeadsKanbanOptimized })));
 const LeadsKanbanOriginal = lazy(() => import("./pages/admin/LeadsKanban").then(module => ({ default: module.LeadsKanban })));
+
+// Phase 2B+: Advanced CRM Features
+const InspectionCalendar = lazy(() => import("./components/admin/InspectionCalendar").then(module => ({ default: module.InspectionCalendar })));
+const AnalyticsDashboard = lazy(() => import("./components/admin/AnalyticsDashboard").then(module => ({ default: module.AnalyticsDashboard })));
+const CommunicationHub = lazy(() => import("./components/admin/CommunicationHub").then(module => ({ default: module.CommunicationHub })));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -147,11 +155,22 @@ const App = () => (
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/leads" element={<LeadsPage />} />
+            <Route path="/admin/leads/edit/:id" element={<LeadEdit />} />
+            <Route path="/admin/leads/new" element={<LeadNew />} />
 
             {/* Phase 2B: Advanced Lead Management */}
             <Route path="/admin/leads-kanban" element={<LeadsKanban />} />
             <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
+            <Route path="/admin/leads/kanban-optimized" element={<LeadsKanbanOptimized />} />
             <Route path="/admin/leads/kanban-original" element={<LeadsKanbanOriginal />} />
+
+            {/* Phase 2B+: Advanced CRM Features */}
+            <Route path="/admin/calendar" element={<InspectionCalendar />} />
+            <Route path="/admin/inspections" element={<InspectionCalendar />} />
+            <Route path="/admin/analytics" element={<AnalyticsDashboard />} />
+            <Route path="/admin/reports" element={<AnalyticsDashboard />} />
+            <Route path="/admin/communication" element={<CommunicationHub />} />
+            <Route path="/admin/templates" element={<CommunicationHub />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
