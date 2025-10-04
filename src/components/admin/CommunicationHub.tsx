@@ -485,7 +485,7 @@ export function CommunicationHub() {
           <div>
             <h3 className="text-lg font-semibold mb-2">Connection Error</h3>
             <p className="text-muted-foreground mb-4">{error}</p>
-            <Button onClick={() => window.location.reload()}>
+            <Button onClick={() => setError(null)}>
               <RefreshCw className="h-4 w-4 mr-2" />
               Retry Connection
             </Button>

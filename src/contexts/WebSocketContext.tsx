@@ -65,8 +65,18 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
   // Connect when user is authenticated
   useEffect(() => {
+    // CRITICAL FIX: Check if WebSocket is enabled before attempting connection
+    const WS_ENABLED = import.meta.env.VITE_WS_ENABLED === 'true';
+
+    if (!WS_ENABLED) {
+      console.log('[WebSocketContext] WebSocket disabled via VITE_WS_ENABLED environment variable');
+      setConnectionState('disconnected');
+      setIsConnected(false);
+      return;
+    }
+
     if (isAuthenticated && user) {
-      connect(); // Will be disabled by VITE_WS_ENABLED flag
+      connect();
     } else {
       disconnect();
     }

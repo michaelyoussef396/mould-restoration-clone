@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Dashboard should remain stable for 60+ seconds without auto-refresh', async ({ page }) => {
+  test.setTimeout(90000); // 90 second timeout for 60 second stability test
   console.log('🔍 Starting dashboard stability test...');
 
   // Track page reloads
@@ -21,14 +22,14 @@ test('Dashboard should remain stable for 60+ seconds without auto-refresh', asyn
 
   // Navigate to login
   console.log('🔐 Navigating to login page...');
-  await page.goto('http://localhost:8086/admin/login');
+  await page.goto('http://localhost:8085/admin/login');
   await page.waitForLoadState('networkidle');
 
   // Login
   console.log('📝 Logging in...');
-  await page.fill('input[name="email"]', 'admin@mouldandrestoration.com.au');
-  await page.fill('input[name="password"]', 'admin123');
-  await page.click('button[type="submit"]');
+  await page.fill('input[placeholder="admin@mouldandrestoration.com.au"]', 'admin@mouldandrestoration.com.au');
+  await page.fill('input[placeholder="Enter your password"]', 'admin123');
+  await page.click('button:has-text("Sign In")');
 
   // Wait for dashboard to load
   console.log('⏳ Waiting for dashboard to load...');

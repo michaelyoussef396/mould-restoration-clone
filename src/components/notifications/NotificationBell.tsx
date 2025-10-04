@@ -46,18 +46,19 @@ export function NotificationBell({ className }: NotificationBellProps) {
     }
   }, [isConnected, unreadNotifications]);
 
-  // Refresh count every 30 seconds only when WebSocket is disconnected
-  useEffect(() => {
-    if (!isConnected) {
-      const interval = setInterval(() => {
-        if (!isOpen) {
-          fetchUnreadCount();
-        }
-      }, 30000);
-
-      return () => clearInterval(interval);
-    }
-  }, [isOpen, isConnected]);
+  // DISABLED: Polling removed to prevent auto-refresh issues
+  // Notifications will only update on user interaction or WebSocket events
+  // useEffect(() => {
+  //   if (!isConnected) {
+  //     const interval = setInterval(() => {
+  //       if (!isOpen) {
+  //         fetchUnreadCount();
+  //       }
+  //     }, 30000);
+  //
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [isOpen, isConnected]);
 
   // Handle notification read - use WebSocket when connected
   const handleNotificationRead = () => {

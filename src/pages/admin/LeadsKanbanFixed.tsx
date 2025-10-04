@@ -409,9 +409,10 @@ export function LeadsKanbanFixed() {
 
   useEffect(() => {
     loadLeads();
-    // Poll for updates every 30 seconds
-    const interval = setInterval(loadLeads, 30000);
-    return () => clearInterval(interval);
+    // DISABLED: Polling removed to prevent auto-refresh issues
+    // Use manual refresh button or WebSocket updates instead
+    // const interval = setInterval(loadLeads, 30000);
+    // return () => clearInterval(interval);
   }, [loadLeads]);
 
   // Optimized filtering

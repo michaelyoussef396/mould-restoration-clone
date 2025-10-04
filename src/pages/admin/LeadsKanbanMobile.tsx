@@ -354,9 +354,10 @@ export function LeadsKanbanMobile() {
   useEffect(() => {
     loadLeads();
 
-    // Poll for updates every 60 seconds on mobile to save battery
-    const interval = setInterval(loadLeads, 60000);
-    return () => clearInterval(interval);
+    // DISABLED: Polling removed to prevent auto-refresh issues
+    // Use manual refresh button or WebSocket updates instead
+    // const interval = setInterval(loadLeads, 60000);
+    // return () => clearInterval(interval);
   }, [loadLeads]);
 
   // Optimized filtering with debouncing
