@@ -41,7 +41,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
     return () => {
       disconnect();
     };
-  }, [isAuthenticated, user]);
+  }, [isAuthenticated, user, connect, disconnect]);
 
   // Connection management
   const connect = useCallback(async () => {
@@ -92,10 +92,14 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
   // Track page changes for user activity
   useEffect(() => {
-    if (isConnected) {
-      sendUserActivity('viewing_page', window.location.pathname);
-    }
-  }, [isConnected, sendUserActivity, window.location.pathname]);
+    if (!isConnected) return;
+
+    // Send initial page view
+    sendUserActivity('viewing_page', window.location.pathname);
+
+    // Note: pathname changes are handled by router navigation
+    // This effect only runs when connection state changes
+  }, [isConnected, sendUserActivity]);
 
   // Subscribe to WebSocket events
   useEffect(() => {
