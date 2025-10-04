@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { DatePickerWithRange } from '@/components/ui/date-range-picker';
+import { Label } from '@/components/ui/label';
 import {
   BarChart,
   Bar,
@@ -572,10 +573,47 @@ export function AnalyticsDashboard() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-96">
-        <RefreshCw className="h-8 w-8 animate-spin text-gray-400" />
-        <span className="ml-2 text-gray-600">Loading analytics...</span>
-      </div>
+      <AdminLayout>
+        <div className="flex items-center justify-center h-96">
+          <RefreshCw className="h-8 w-8 animate-spin text-gray-400" />
+          <span className="ml-2 text-gray-600">Loading analytics...</span>
+        </div>
+      </AdminLayout>
+    );
+  }
+
+  // Show error state if analytics failed to load
+  if (!analytics) {
+    return (
+      <AdminLayout>
+        <div className="space-y-6">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-bold">Business Analytics</h1>
+              <p className="text-gray-600">Comprehensive insights into your business performance</p>
+            </div>
+          </div>
+
+          <Card>
+            <CardContent className="p-12 text-center">
+              <AlertTriangle className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
+              <h2 className="text-xl font-semibold mb-2">No Analytics Data Available</h2>
+              <p className="text-gray-600 mb-4">
+                Unable to load analytics data. This could be because:
+              </p>
+              <ul className="text-sm text-gray-600 mb-6 text-left max-w-md mx-auto space-y-2">
+                <li>• The API backend is not running</li>
+                <li>• No data exists for the selected period</li>
+                <li>• There was a connection error</li>
+              </ul>
+              <Button onClick={loadAnalyticsData}>
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Try Again
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </AdminLayout>
     );
   }
 

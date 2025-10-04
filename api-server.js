@@ -5,6 +5,7 @@ import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { sendBookingConfirmation, retryEmailSend } from './services/emailService.js';
 
 const app = express();
 const PORT = process.env.API_PORT || 3001;
@@ -453,6 +454,63 @@ app.put('/api/leads/:id', authenticateToken, async (req, res) => {
       updateData.convertedAt = new Date();
     }
 
+    // Email automation trigger - send booking confirmation when status changes to CONTACTED
+    console.log('[EMAIL DEBUG] Lead update received:', {
+      leadId: id,
+      status: req.body.status,
+      inspectionDate: updateData.inspectionDate,
+      inspectionTime: updateData.inspectionTime,
+      emailSent: updateData.emailSent,
+      hasEmail: !!req.body.email
+    });
+
+    const shouldSendEmail = (
+      req.body.status === 'CONTACTED' &&
+      updateData.inspectionDate &&
+      updateData.inspectionTime &&
+      !updateData.emailSent // Prevent duplicate sends
+    );
+
+    console.log('[EMAIL DEBUG] Should send email?', shouldSendEmail);
+
+    if (shouldSendEmail) {
+      console.log('[EMAIL TRIGGER] Conditions met for booking confirmation');
+
+      // Get current lead data to access email address
+      const currentLead = await prisma.lead.findUnique({
+        where: { id },
+        include: { assignedTo: true }
+      });
+
+      if (currentLead && currentLead.email) {
+        // Send email with retry logic
+        const emailResult = await retryEmailSend(
+          () => sendBookingConfirmation(
+            { ...currentLead, ...updateData },
+            {
+              inspectionDate: updateData.inspectionDate,
+              inspectionTime: updateData.inspectionTime,
+              technicianName: currentLead.assignedTo?.name || updateData.assignedTo?.name || 'To be assigned'
+            }
+          )
+        );
+
+        // Update lead with email tracking data
+        if (emailResult.success) {
+          updateData.emailSent = true;
+          updateData.emailSentAt = new Date();
+          updateData.emailDeliveryId = emailResult.messageId;
+          updateData.emailStatus = 'sent';
+          console.log('[EMAIL TRIGGER] ✅ Booking confirmation sent successfully');
+        } else {
+          updateData.emailStatus = 'failed';
+          console.error('[EMAIL TRIGGER] ❌ Failed to send booking confirmation');
+        }
+      } else {
+        console.log('[EMAIL TRIGGER] Skipping - no email address on lead');
+      }
+    }
+
     const lead = await prisma.lead.update({
       where: { id },
       data: updateData,
@@ -685,7 +743,47 @@ app.get('/api/inspections/calendar', authenticateToken, async (req, res) => {
       }
     }));
 
-    res.json(apiResponse.success(calendarEvents, 'Calendar events retrieved successfully'));
+    // Get all technicians for calendar view
+    const technicians = await prisma.user.findMany({
+      where: { role: 'TECHNICIAN' },
+      select: {
+        id: true,
+        name: true,
+        email: true
+      }
+    });
+
+    // Calculate workload (simple aggregation by technician and date)
+    const workload = [];
+    const technicianWorkload = {};
+
+    inspections.forEach(inspection => {
+      const dateKey = inspection.scheduledAt.toISOString().split('T')[0];
+      const techId = inspection.technicianId;
+      const key = `${techId}_${dateKey}`;
+
+      if (!technicianWorkload[key]) {
+        technicianWorkload[key] = {
+          technicianId: techId,
+          date: dateKey,
+          inspections: 0,
+          hoursBooked: 0
+        };
+      }
+
+      technicianWorkload[key].inspections += 1;
+      technicianWorkload[key].hoursBooked += 2; // Assume 2 hours per inspection
+    });
+
+    Object.values(technicianWorkload).forEach(item => workload.push(item));
+
+    // Return comprehensive calendar data
+    res.json(apiResponse.success({
+      inspections: calendarEvents,
+      technicians: technicians,
+      conflicts: [], // No conflict detection for now
+      workload: workload
+    }, 'Calendar data retrieved successfully'));
   } catch (error) {
     console.error('Get calendar inspections error:', error);
     const errorResponse = handleDatabaseError(error, 'fetching calendar inspections');

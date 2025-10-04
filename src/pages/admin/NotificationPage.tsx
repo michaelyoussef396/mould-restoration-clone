@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { ProtectedRoute } from '@/contexts/AuthContext';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -223,96 +223,92 @@ export function NotificationPage() {
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
   return (
-    <ProtectedRoute requiredRole="admin">
-      <div className="min-h-screen bg-gray-50">
+    <AdminLayout>
+      <div>
         {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Bell className="h-6 w-6 text-blue-600" />
-                <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Notifications</h1>
-                  <p className="text-sm text-gray-600">
-                    {total} total • {unreadCount} unread
-                  </p>
-                </div>
+        <div className="mb-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <Bell className="h-6 w-6 text-blue-600" />
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Notifications</h1>
+                <p className="text-sm text-gray-600">
+                  {total} total • {unreadCount} unread
+                </p>
               </div>
-              <div className="flex items-center space-x-2">
+            </div>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => fetchNotifications(page, true)}
+                disabled={isLoading}
+              >
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Refresh
+              </Button>
+              {unreadCount > 0 && (
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => fetchNotifications(page, true)}
-                  disabled={isLoading}
+                  onClick={handleMarkAllAsRead}
                 >
-                  <RefreshCw className="h-4 w-4 mr-2" />
-                  Refresh
+                  <Check className="h-4 w-4 mr-2" />
+                  Mark all read
                 </Button>
-                {unreadCount > 0 && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handleMarkAllAsRead}
-                  >
-                    <Check className="h-4 w-4 mr-2" />
-                    Mark all read
-                  </Button>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center space-x-4">
-              <div className="flex-1">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                  <Input
-                    placeholder="Search notifications..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
-                  />
-                </div>
+        <div className="bg-white border rounded-lg mb-6 p-4">
+          <div className="flex items-center space-x-4">
+            <div className="flex-1">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  placeholder="Search notifications..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
               </div>
-              <div className="flex items-center space-x-2">
-                <Filter className="h-4 w-4 text-gray-500" />
-                <Select value={typeFilter} onValueChange={setTypeFilter}>
-                  <SelectTrigger className="w-40">
-                    <SelectValue placeholder="Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Types</SelectItem>
-                    <SelectItem value="NEW_LEAD">New Lead</SelectItem>
-                    <SelectItem value="BOOKING_CONFIRMED">Booking Confirmed</SelectItem>
-                    <SelectItem value="SCHEDULE_CHANGE">Schedule Change</SelectItem>
-                    <SelectItem value="URGENT_LEAD">Urgent Lead</SelectItem>
-                    <SelectItem value="SYSTEM_ALERT">System Alert</SelectItem>
-                    <SelectItem value="MESSAGE">Message</SelectItem>
-                    <SelectItem value="PAYMENT">Payment</SelectItem>
-                    <SelectItem value="REVIEW">Review</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select value={statusFilter} onValueChange={setStatusFilter}>
-                  <SelectTrigger className="w-32">
-                    <SelectValue placeholder="Status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All</SelectItem>
-                    <SelectItem value="unread">Unread</SelectItem>
-                    <SelectItem value="read">Read</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Filter className="h-4 w-4 text-gray-500" />
+              <Select value={typeFilter} onValueChange={setTypeFilter}>
+                <SelectTrigger className="w-40">
+                  <SelectValue placeholder="Type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Types</SelectItem>
+                  <SelectItem value="NEW_LEAD">New Lead</SelectItem>
+                  <SelectItem value="BOOKING_CONFIRMED">Booking Confirmed</SelectItem>
+                  <SelectItem value="SCHEDULE_CHANGE">Schedule Change</SelectItem>
+                  <SelectItem value="URGENT_LEAD">Urgent Lead</SelectItem>
+                  <SelectItem value="SYSTEM_ALERT">System Alert</SelectItem>
+                  <SelectItem value="MESSAGE">Message</SelectItem>
+                  <SelectItem value="PAYMENT">Payment</SelectItem>
+                  <SelectItem value="REVIEW">Review</SelectItem>
+                </SelectContent>
+              </Select>
+              <Select value={statusFilter} onValueChange={setStatusFilter}>
+                <SelectTrigger className="w-32">
+                  <SelectValue placeholder="Status" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All</SelectItem>
+                  <SelectItem value="unread">Unread</SelectItem>
+                  <SelectItem value="read">Read</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 py-6">
+        <div>
           {isLoading ? (
             <div className="flex items-center justify-center py-12">
               <Loader2 className="h-8 w-8 animate-spin text-gray-500" />
@@ -460,7 +456,7 @@ export function NotificationPage() {
           )}
         </div>
       </div>
-    </ProtectedRoute>
+    </AdminLayout>
   );
 }
 

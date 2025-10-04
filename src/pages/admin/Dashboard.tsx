@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,14 +9,11 @@ import {
   Phone,
   Mail,
   MapPin,
-  LogOut,
-  Plus,
   Search
 } from 'lucide-react';
-import { ProtectedRoute } from '@/contexts/AuthContext';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { useNavigate } from 'react-router-dom';
-import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 interface DashboardStats {
   totalLeads: number;
@@ -46,36 +42,7 @@ const formatServiceType = (serviceType: string) => {
     .join(' ');
 };
 
-function DashboardHeader() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  return (
-    <div className="bg-white border-b border-gray-200 px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">CRM Dashboard</h1>
-          <p className="text-gray-600">Welcome back, {user?.name}</p>
-        </div>
-        <div className="flex items-center space-x-4">
-          <OfflineIndicator className="mr-2" />
-          <Button variant="default" size="sm" onClick={() => navigate('/admin/leads?phoneEntry=true')} className="bg-green-600 hover:bg-green-700">
-            <Phone className="h-4 w-4 mr-2" />
-            Phone Lead
-          </Button>
-          <Button variant="outline" size="sm" onClick={() => navigate('/admin/leads')}>
-            <Users className="h-4 w-4 mr-2" />
-            Manage Leads
-          </Button>
-          <Button variant="ghost" size="sm" onClick={logout}>
-            <LogOut className="h-4 w-4 mr-2" />
-            Logout
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
+// DashboardHeader removed - now using AdminLayout navigation
 
 function StatsCards({ stats }: { stats: DashboardStats | null }) {
   if (!stats) {
@@ -284,14 +251,9 @@ export function AdminDashboard() {
   }, []);
 
   return (
-    <ProtectedRoute requireAdmin>
-      <div className="min-h-screen bg-gray-50">
-        <DashboardHeader />
-        <div className="p-6">
-          <StatsCards stats={stats} />
-          <RecentLeads leads={recentLeads} />
-        </div>
-      </div>
-    </ProtectedRoute>
+    <AdminLayout>
+      <StatsCards stats={stats} />
+      <RecentLeads leads={recentLeads} />
+    </AdminLayout>
   );
 }

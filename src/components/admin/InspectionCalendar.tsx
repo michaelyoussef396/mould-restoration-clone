@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { AdminLayout } from './AdminLayout';
 import { Calendar } from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
@@ -87,6 +88,7 @@ interface TechnicianSchedule {
 }
 
 export function InspectionCalendar() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [view, setView] = useState<CalendarView>({ type: 'events', date: new Date() });
   const [inspections, setInspections] = useState<Inspection[]>([]);
   const [technicians, setTechnicians] = useState<Technician[]>([]);
@@ -118,6 +120,23 @@ export function InspectionCalendar() {
     },
   });
 
+  // Handle query parameters
+  useEffect(() => {
+    const createParam = searchParams.get('create');
+    const viewParam = searchParams.get('view');
+
+    if (createParam === 'true') {
+      setShowCreateDialog(true);
+      // Clean up URL after opening dialog
+      searchParams.delete('create');
+      setSearchParams(searchParams, { replace: true });
+    }
+
+    if (viewParam === 'routes') {
+      setView({ type: 'week', date: new Date() });
+    }
+  }, [searchParams, setSearchParams]);
+
   useEffect(() => {
     loadCalendarData();
     loadTechnicians();
@@ -132,13 +151,17 @@ export function InspectionCalendar() {
 
   useEffect(() => {
     // Transform inspections to calendar events
-    const events = inspections.map(inspection => transformInspectionToEvent(inspection));
-    setCalendarEvents(events);
+    if (inspections && Array.isArray(inspections)) {
+      const events = inspections.map(inspection => transformInspectionToEvent(inspection));
+      setCalendarEvents(events);
+    } else {
+      setCalendarEvents([]);
+    }
   }, [inspections]);
 
   useEffect(() => {
     // Create technician schedules
-    if (technicians.length > 0 && calendarEvents.length > 0) {
+    if (technicians && Array.isArray(technicians) && technicians.length > 0 && calendarEvents && Array.isArray(calendarEvents) && calendarEvents.length > 0) {
       const schedules = technicians.map(tech => createTechnicianSchedule(tech, calendarEvents));
       setTechnicianSchedules(schedules);
     }
@@ -240,7 +263,7 @@ export function InspectionCalendar() {
 
   const loadLeads = async () => {
     try {
-      const leadList = await LeadService.getLeads();
+      const leadList = await LeadService.getAllLeads();
       // Ensure leadList is an array before filtering
       const leads = Array.isArray(leadList) ? leadList : [];
       setLeads(leads.filter(lead => lead.status !== 'CONVERTED' && lead.status !== 'CLOSED_LOST'));
@@ -354,11 +377,15 @@ export function InspectionCalendar() {
   const handleSyncWithGoogleCalendar = async () => {
     setSyncingCalendar(true);
     try {
-      const syncPromises = inspections.map(inspection =>
-        inspectionService.syncWithGoogleCalendar(inspection.id)
-      );
-      await Promise.allSettled(syncPromises);
-      toast.success('Calendar sync completed');
+      if (inspections && Array.isArray(inspections) && inspections.length > 0) {
+        const syncPromises = inspections.map(inspection =>
+          inspectionService.syncWithGoogleCalendar(inspection.id)
+        );
+        await Promise.allSettled(syncPromises);
+        toast.success('Calendar sync completed');
+      } else {
+        toast.info('No inspections to sync');
+      }
     } catch (error) {
       toast.error('Calendar sync failed');
     } finally {
@@ -980,11 +1007,17 @@ export function InspectionCalendar() {
                         <SelectValue placeholder="Select customer" />
                       </SelectTrigger>
                       <SelectContent>
-                        {leads.map(lead => (
-                          <SelectItem key={lead.id} value={lead.id}>
-                            {lead.firstName} {lead.lastName} - {lead.suburb}
+                        {leads && leads.length > 0 ? (
+                          leads.map(lead => (
+                            <SelectItem key={lead.id} value={lead.id}>
+                              {lead.firstName} {lead.lastName} - {lead.suburb}
+                            </SelectItem>
+                          ))
+                        ) : (
+                          <SelectItem value="no-leads" disabled>
+                            No leads available
                           </SelectItem>
-                        ))}
+                        )}
                       </SelectContent>
                     </Select>
                   </div>
@@ -998,11 +1031,17 @@ export function InspectionCalendar() {
                         <SelectValue placeholder="Select technician" />
                       </SelectTrigger>
                       <SelectContent>
-                        {technicians.map(tech => (
-                          <SelectItem key={tech.id} value={tech.id}>
-                            {tech.name} {tech.territories.length > 0 && `(${tech.territories.join(', ')})`}
+                        {technicians && technicians.length > 0 ? (
+                          technicians.map(tech => (
+                            <SelectItem key={tech.id} value={tech.id}>
+                              {tech.name} {tech.territories && tech.territories.length > 0 && `(${tech.territories.join(', ')})`}
+                            </SelectItem>
+                          ))
+                        ) : (
+                          <SelectItem value="no-technicians" disabled>
+                            No technicians available
                           </SelectItem>
-                        ))}
+                        )}
                       </SelectContent>
                     </Select>
                   </div>
@@ -1091,23 +1130,13 @@ export function InspectionCalendar() {
                     </div>
                     <div className="flex items-center space-x-2">
                       <Switch
-                        checked={formData.reminderSettings.sms1h}
-                        onCheckedChange={(checked) => setFormData(prev => ({
-                          ...prev,
-                          reminderSettings: { ...prev.reminderSettings, sms1h: checked }
-                        }))}
-                      />
-                      <Label className="text-sm">SMS 1h before</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Switch
                         checked={formData.reminderSettings.customerReminders}
                         onCheckedChange={(checked) => setFormData(prev => ({
                           ...prev,
                           reminderSettings: { ...prev.reminderSettings, customerReminders: checked }
                         }))}
                       />
-                      <Label className="text-sm">Customer reminders</Label>
+                      <Label className="text-sm">Customer Confirmation Email</Label>
                     </div>
                   </div>
                 </div>
@@ -1176,7 +1205,7 @@ export function InspectionCalendar() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Technicians</SelectItem>
-              {technicians.map(tech => (
+              {technicians && technicians.length > 0 && technicians.map(tech => (
                 <SelectItem key={tech.id} value={tech.id}>{tech.name}</SelectItem>
               ))}
             </SelectContent>
@@ -1364,9 +1393,15 @@ export function InspectionCalendar() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {technicians.map(tech => (
-                        <SelectItem key={tech.id} value={tech.id}>{tech.name}</SelectItem>
-                      ))}
+                      {technicians && technicians.length > 0 ? (
+                        technicians.map(tech => (
+                          <SelectItem key={tech.id} value={tech.id}>{tech.name}</SelectItem>
+                        ))
+                      ) : (
+                        <SelectItem value="no-technicians" disabled>
+                          No technicians available
+                        </SelectItem>
+                      )}
                     </SelectContent>
                   </Select>
                 </div>

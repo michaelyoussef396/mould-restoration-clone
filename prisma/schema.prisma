@@ -50,6 +50,14 @@ model Lead {
   notes        String?
   estimatedValue Float?
   bookingDates String?    // JSON string array of available booking dates
+  inspectionDate String?  // Confirmed inspection date (YYYY-MM-DD)
+  inspectionTime String?  // Confirmed inspection time (HH:MM)
+
+  // Email tracking fields
+  emailSent       Boolean   @default(false)
+  emailSentAt     DateTime?
+  emailDeliveryId String?   // Resend delivery ID for tracking
+  emailStatus     String    @default("pending") // pending, sent, failed, bounced
 
   // Timestamps
   createdAt    DateTime   @default(now())

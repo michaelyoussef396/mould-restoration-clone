@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ProtectedRoute } from '@/contexts/AuthContext';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 import { LeadService } from '@/lib/services/leadService';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from '@/hooks/use-toast';
-import { ArrowLeft, Save, Loader2, Phone, Mail, MapPin, DollarSign, AlertCircle, Plus } from 'lucide-react';
+import { ArrowLeft, Save, Loader2, Phone, Mail, MapPin, DollarSign, AlertCircle, Plus, Calendar, Clock } from 'lucide-react';
 import { ServiceType, LeadStatus, LeadSource, Urgency } from '@prisma/client';
 
 export function LeadNew() {
@@ -28,6 +28,8 @@ export function LeadNew() {
     source: 'WEBSITE' as LeadSource,
     status: 'NEW' as LeadStatus,
     notes: '',
+    inspectionDate: '',
+    inspectionTime: '',
   });
 
   // Handle form input changes
@@ -107,50 +109,48 @@ export function LeadNew() {
   };
 
   return (
-    <ProtectedRoute requiredRole="admin">
-      <div className="min-h-screen bg-gray-50">
+    <AdminLayout>
+      <div>
         {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => navigate('/admin/leads/kanban')}
-                >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Leads
-                </Button>
-                <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Create New Lead</h1>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Enter lead information to add to the pipeline
-                  </p>
-                </div>
-              </div>
+        <div className="mb-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
               <Button
-                onClick={handleSubmit}
-                disabled={isSaving}
+                variant="ghost"
+                size="sm"
+                onClick={() => navigate('/admin/leads/kanban')}
               >
-                {isSaving ? (
-                  <>
-                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                    Creating...
-                  </>
-                ) : (
-                  <>
-                    <Plus className="h-4 w-4 mr-2" />
-                    Create Lead
-                  </>
-                )}
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Leads
               </Button>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Create New Lead</h1>
+                <p className="text-sm text-gray-600 mt-1">
+                  Enter lead information to add to the pipeline
+                </p>
+              </div>
             </div>
+            <Button
+              onClick={handleSubmit}
+              disabled={isSaving}
+            >
+              {isSaving ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  Creating...
+                </>
+              ) : (
+                <>
+                  <Plus className="h-4 w-4 mr-2" />
+                  Create Lead
+                </>
+              )}
+            </Button>
           </div>
         </div>
 
         {/* Form */}
-        <div className="container mx-auto px-4 py-6">
+        <div>
           <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-6">
             {/* Basic Information */}
             <Card>
@@ -314,43 +314,89 @@ export function LeadNew() {
                 <CardTitle>Lead Management</CardTitle>
                 <CardDescription>Lead status and source information</CardDescription>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="status">Initial Status</Label>
-                  <Select
-                    value={formData.status}
-                    onValueChange={(value) => handleSelectChange('status', value)}
-                  >
-                    <SelectTrigger id="status">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {Object.values(LeadStatus).map(status => (
-                        <SelectItem key={status} value={status}>
-                          {formatEnumValue(status)}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="status">Initial Status</Label>
+                    <Select
+                      value={formData.status}
+                      onValueChange={(value) => handleSelectChange('status', value)}
+                    >
+                      <SelectTrigger id="status">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {Object.values(LeadStatus).map(status => (
+                          <SelectItem key={status} value={status}>
+                            {formatEnumValue(status)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label htmlFor="source">Lead Source</Label>
+                    <Select
+                      value={formData.source}
+                      onValueChange={(value) => handleSelectChange('source', value)}
+                    >
+                      <SelectTrigger id="source">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {Object.values(LeadSource).map(source => (
+                          <SelectItem key={source} value={source}>
+                            {formatEnumValue(source)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
-                <div>
-                  <Label htmlFor="source">Lead Source</Label>
-                  <Select
-                    value={formData.source}
-                    onValueChange={(value) => handleSelectChange('source', value)}
-                  >
-                    <SelectTrigger id="source">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {Object.values(LeadSource).map(source => (
-                        <SelectItem key={source} value={source}>
-                          {formatEnumValue(source)}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+
+                {/* Inspection Booking - Shown when status is CONTACTED */}
+                {formData.status === 'CONTACTED' && (
+                  <div className="border-t pt-4 mt-4">
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-900 flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-blue-600" />
+                        Schedule Inspection
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Book the inspection date and time for this lead
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="inspectionDate">
+                          <Calendar className="h-3 w-3 inline mr-1" />
+                          Inspection Date
+                        </Label>
+                        <Input
+                          id="inspectionDate"
+                          name="inspectionDate"
+                          type="date"
+                          value={formData.inspectionDate}
+                          onChange={handleInputChange}
+                          min={new Date().toISOString().split('T')[0]}
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="inspectionTime">
+                          <Clock className="h-3 w-3 inline mr-1" />
+                          Inspection Time
+                        </Label>
+                        <Input
+                          id="inspectionTime"
+                          name="inspectionTime"
+                          type="time"
+                          value={formData.inspectionTime}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
@@ -401,7 +447,7 @@ export function LeadNew() {
           </form>
         </div>
       </div>
-    </ProtectedRoute>
+    </AdminLayout>
   );
 }
 

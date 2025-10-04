@@ -21,6 +21,20 @@ export default defineConfig(({ mode }) => ({
     fs: {
       strict: false
     },
+    watch: {
+      // CRITICAL FIX: Exclude test results and other non-source files from HMR
+      ignored: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/playwright-report/**',
+        '**/test-results/**',
+        '**/.playwright/**',
+        '**/coverage/**',
+        '**/*.spec.ts',
+        '**/*.test.ts',
+        '**/*.md'
+      ]
+    },
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',

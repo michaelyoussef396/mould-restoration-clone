@@ -49,7 +49,7 @@ import {
 // Lazy load mobile components for performance
 const MobileLeadDrawer = lazy(() => import('@/components/mobile/MobileLeadDrawer').then(module => ({ default: module.MobileLeadDrawer })));
 const LeadsKanbanMobile = lazy(() => import('./LeadsKanbanMobile'));
-import { ProtectedRoute } from '@/contexts/AuthContext';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 import { LeadService, LeadWithRelations } from '@/lib/services/leadService';
 import { LeadStatus } from '@prisma/client';
 import { useNavigate } from 'react-router-dom';
@@ -541,20 +541,22 @@ export function LeadsKanbanFixed() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading leads...</p>
+      <AdminLayout>
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Loading leads...</p>
+          </div>
         </div>
-      </div>
+      </AdminLayout>
     );
   }
 
   return (
-    <ProtectedRoute requiredRole="admin">
-      <div className="min-h-screen bg-gray-50">
+    <AdminLayout>
+      <div>
         {/* Header */}
-        <div className="bg-white shadow-sm border-b sticky top-0 z-40">
+        <div className="bg-white shadow-sm border-b sticky top-0 z-40 -mx-4 -mt-6 px-4 py-4 mb-6">
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-4">
@@ -687,6 +689,6 @@ export function LeadsKanbanFixed() {
           </Suspense>
         )}
       </div>
-    </ProtectedRoute>
+    </AdminLayout>
   );
 }

@@ -167,6 +167,13 @@ export function AdminNavigation() {
       ],
     },
     {
+      id: 'notifications',
+      label: 'Notifications',
+      href: '/admin/notifications',
+      icon: <Bell className="h-4 w-4" />,
+      description: 'View and manage all notifications',
+    },
+    {
       id: 'analytics',
       label: 'Analytics & Reports',
       href: '/admin/analytics',
@@ -221,7 +228,7 @@ export function AdminNavigation() {
           <DropdownMenuTrigger asChild>
             <Button
               variant={isActive ? "secondary" : "ghost"}
-              className={`w-full justify-start gap-2 h-10 ${level > 0 ? 'pl-6' : ''}`}
+              className={`w-full justify-start gap-2 min-h-[48px] h-auto py-3 ${level > 0 ? 'pl-6' : ''}`}
             >
               {item.icon}
               <span className="flex-1 text-left">{item.label}</span>
@@ -254,7 +261,7 @@ export function AdminNavigation() {
     return (
       <Button
         variant={isActive ? "secondary" : "ghost"}
-        className={`w-full justify-start gap-2 h-10 ${level > 0 ? 'pl-6' : ''}`}
+        className={`w-full justify-start gap-2 min-h-[48px] h-auto py-3 ${level > 0 ? 'pl-6' : ''}`}
         onClick={() => handleNavigation(item.href)}
       >
         {item.icon}
@@ -341,7 +348,7 @@ export function AdminNavigation() {
                 <Menu className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80">
+            <SheetContent side="right" className="w-full sm:w-80 sm:max-w-md">
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
                   <div className="h-6 w-6 bg-blue-600 rounded flex items-center justify-center">

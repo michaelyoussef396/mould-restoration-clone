@@ -428,9 +428,41 @@ class InspectionService {
     }
 
     const result = await response.json();
-    // Transform API calendar events to inspection format
-    const calendarEvents = result.data || result;
-    const inspections = Array.isArray(calendarEvents) ? calendarEvents.map((event: any) => ({
+    // New API returns structured data: { inspections, technicians, conflicts, workload }
+    const data = result.data || result;
+
+    // Handle both old array format and new object format
+    if (Array.isArray(data)) {
+      // Old format - transform to new structure
+      const inspections = data.map((event: any) => ({
+        id: event.id,
+        leadId: event.lead?.id || '',
+        technicianId: event.technician?.id || '',
+        scheduledAt: event.start,
+        status: event.status?.toUpperCase() || 'SCHEDULED',
+        customerName: `${event.lead?.firstName || ''} ${event.lead?.lastName || ''}`.trim(),
+        customerPhone: event.lead?.phone || '',
+        address: event.lead?.address || '',
+        suburb: event.lead?.suburb || '',
+        serviceType: event.lead?.serviceType || 'Mould Inspection',
+        estimatedCost: event.inspection?.estimatedCost || 0,
+        finalCost: event.inspection?.finalCost || 0,
+        findings: event.inspection?.findings || '',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }));
+
+      return {
+        inspections,
+        technicians: [],
+        conflicts: [],
+        workload: []
+      };
+    }
+
+    // New format - extract and transform
+    const calendarEvents = data.inspections || [];
+    const inspections = calendarEvents.map((event: any) => ({
       id: event.id,
       leadId: event.lead?.id || '',
       technicianId: event.technician?.id || '',
@@ -446,13 +478,13 @@ class InspectionService {
       findings: event.inspection?.findings || '',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-    })) : [];
+    }));
 
     return {
       inspections,
-      technicians: [],
-      conflicts: [],
-      workload: []
+      technicians: data.technicians || [],
+      conflicts: data.conflicts || [],
+      workload: data.workload || []
     };
   }
 

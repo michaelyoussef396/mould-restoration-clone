@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
 import { Phone, User, Mail, MapPin, Clock, FileText, Calendar } from 'lucide-react';
 import { CreateLeadData, LeadService } from '@/lib/services/leadService';
 import { ServiceType, Urgency } from '@prisma/client';
@@ -33,7 +32,6 @@ const MELBOURNE_SUBURBS = [
 export function PhoneLeadDialog({ open, onOpenChange, onLeadCreated }: PhoneLeadDialogProps) {
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedDates, setSelectedDates] = useState<string[]>([]);
   const [formData, setFormData] = useState<Partial<CreateLeadData>>({
     firstName: '',
     lastName: '',
@@ -44,6 +42,8 @@ export function PhoneLeadDialog({ open, onOpenChange, onLeadCreated }: PhoneLead
     serviceType: ServiceType.MOULD_INSPECTION,
     urgency: Urgency.MEDIUM,
     notes: '',
+    inspectionDate: '',
+    inspectionTime: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,11 +52,14 @@ export function PhoneLeadDialog({ open, onOpenChange, onLeadCreated }: PhoneLead
 
     setIsLoading(true);
     try {
+      // If inspection date and time are set, mark as QUALIFIED (inspection confirmed)
+      const hasBooking = formData.inspectionDate && formData.inspectionTime;
+
       await LeadService.createLead({
         ...formData,
         source: 'PHONE', // Force source to PHONE
+        status: hasBooking ? 'QUALIFIED' : 'CONTACTED', // Auto-confirm if booking set
         createdById: user.id,
-        bookingDates: selectedDates,
       } as CreateLeadData);
 
       onLeadCreated();
@@ -73,8 +76,9 @@ export function PhoneLeadDialog({ open, onOpenChange, onLeadCreated }: PhoneLead
         serviceType: ServiceType.MOULD_INSPECTION,
         urgency: Urgency.MEDIUM,
         notes: '',
+        inspectionDate: '',
+        inspectionTime: '',
       });
-      setSelectedDates([]);
     } catch (error) {
       console.error('Failed to create phone lead:', error);
     } finally {
@@ -242,19 +246,56 @@ export function PhoneLeadDialog({ open, onOpenChange, onLeadCreated }: PhoneLead
             </div>
           </div>
 
-          {/* Available Dates */}
+          {/* Inspection Booking */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 mb-3">
-              <Calendar className="h-4 w-4 text-gray-500" />
-              <Label className="text-base font-medium">Available Dates</Label>
+              <Calendar className="h-4 w-4 text-blue-600" />
+              <Label className="text-base font-medium">Schedule Inspection</Label>
+            </div>
+            <p className="text-sm text-gray-500 mb-3">
+              Book the inspection while on the phone - lead will be automatically marked as confirmed
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="inspectionDate">
+                  <Calendar className="h-3 w-3 inline mr-1" />
+                  Inspection Date
+                </Label>
+                <Input
+                  id="inspectionDate"
+                  type="date"
+                  value={formData.inspectionDate || ''}
+                  onChange={(e) => updateFormData('inspectionDate', e.target.value)}
+                  min={new Date().toISOString().split('T')[0]}
+                  className="mt-1"
+                />
+              </div>
+              <div>
+                <Label htmlFor="inspectionTime">
+                  <Clock className="h-3 w-3 inline mr-1" />
+                  Inspection Time
+                </Label>
+                <Input
+                  id="inspectionTime"
+                  type="time"
+                  value={formData.inspectionTime || ''}
+                  onChange={(e) => updateFormData('inspectionTime', e.target.value)}
+                  className="mt-1"
+                />
+              </div>
             </div>
 
-            <DatePickerMultiple
-              selectedDates={selectedDates}
-              onDatesChange={setSelectedDates}
-              placeholder="When are you available for inspection?"
-              maxDates={5}
-            />
+            {formData.inspectionDate && formData.inspectionTime && (
+              <div className="flex items-center gap-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                <Badge className="bg-blue-100 text-blue-800 border-blue-300">
+                  ✓ Inspection Confirmed
+                </Badge>
+                <span className="text-sm text-blue-700">
+                  Lead will be marked as QUALIFIED with inspection booked
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Notes */}

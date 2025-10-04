@@ -21,9 +21,10 @@ import {
   Edit,
   Eye,
   Trash2,
-  MoreHorizontal
+  MoreHorizontal,
+  Kanban
 } from 'lucide-react';
-import { ProtectedRoute } from '@/contexts/AuthContext';
+import { AdminLayout } from '@/components/admin/AdminLayout';
 import { LeadService, LeadWithRelations, CreateLeadData, UpdateLeadData } from '@/lib/services/leadService';
 import { ServiceType, LeadStatus, LeadSource, Urgency } from '@prisma/client';
 import { useAuth } from '@/contexts/AuthContext';
@@ -31,7 +32,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { PhoneLeadDialog } from '@/components/PhoneLeadDialog';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DatePickerMultiple } from '@/components/ui/date-picker-multiple';
-import { Kanban } from 'lucide-react';
 
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
@@ -809,32 +809,30 @@ export function LeadsPage() {
 
   if (isLoading) {
     return (
-      <ProtectedRoute requireAdmin>
-        <div className="min-h-screen bg-gray-50 p-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-8">
-              <div className="h-8 w-48 bg-gray-200 rounded animate-pulse mb-2" />
-              <div className="h-4 w-96 bg-gray-200 rounded animate-pulse" />
-            </div>
-            <Card>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className="h-16 bg-gray-200 rounded animate-pulse" />
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+      <AdminLayout>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <div className="h-8 w-48 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-4 w-96 bg-gray-200 rounded animate-pulse" />
           </div>
+          <Card>
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="h-16 bg-gray-200 rounded animate-pulse" />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </ProtectedRoute>
+      </AdminLayout>
     );
   }
 
   return (
-    <ProtectedRoute requireAdmin>
-      <div className="min-h-screen bg-gray-50">
-        <div className="border-b border-gray-200 bg-white px-6 py-4">
+    <AdminLayout>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Lead Management</h1>
@@ -857,8 +855,7 @@ export function LeadsPage() {
           </div>
         </div>
 
-        <div className="p-6">
-          <div className="max-w-7xl mx-auto">
+        <div>
             {/* Filters */}
             <Card className="mb-6">
               <CardContent className="p-4">
@@ -1101,31 +1098,30 @@ export function LeadsPage() {
           </div>
         </div>
 
-        <CreateLeadDialog
-          open={createDialogOpen}
-          onOpenChange={setCreateDialogOpen}
-          onLeadCreated={loadLeads}
-        />
+      <CreateLeadDialog
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        onLeadCreated={loadLeads}
+      />
 
-        <PhoneLeadDialog
-          open={phoneDialogOpen}
-          onOpenChange={setPhoneDialogOpen}
-          onLeadCreated={loadLeads}
-        />
+      <PhoneLeadDialog
+        open={phoneDialogOpen}
+        onOpenChange={setPhoneDialogOpen}
+        onLeadCreated={loadLeads}
+      />
 
-        <ViewLeadDialog
-          lead={selectedLead}
-          open={viewDialogOpen}
-          onOpenChange={setViewDialogOpen}
-        />
+      <ViewLeadDialog
+        lead={selectedLead}
+        open={viewDialogOpen}
+        onOpenChange={setViewDialogOpen}
+      />
 
-        <EditLeadDialog
-          lead={selectedLead}
-          open={editDialogOpen}
-          onOpenChange={setEditDialogOpen}
-          onLeadUpdated={loadLeads}
-        />
-      </div>
-    </ProtectedRoute>
+      <EditLeadDialog
+        lead={selectedLead}
+        open={editDialogOpen}
+        onOpenChange={setEditDialogOpen}
+        onLeadUpdated={loadLeads}
+      />
+    </AdminLayout>
   );
 }
