@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { WebSocketProvider } from "@/contexts/WebSocketContext";
 // TEMPORARILY DISABLED: import { useServiceWorker } from "@/hooks/useServiceWorker";
 import { initPerformanceObserver } from "@/hooks/usePerformanceMonitor";
 import Index from "./pages/Index"; // Keep homepage non-lazy for fastest initial load
@@ -58,6 +59,9 @@ const InspectionCalendar = lazy(() => import("./components/admin/InspectionCalen
 const AnalyticsDashboard = lazy(() => import("./components/admin/AnalyticsDashboard").then(module => ({ default: module.AnalyticsDashboard })));
 const CommunicationHub = lazy(() => import("./components/admin/CommunicationHub").then(module => ({ default: module.CommunicationHub })));
 
+// Phase 2C: Notification & Calendar System
+const NotificationPage = lazy(() => import("./pages/admin/NotificationPage").then(module => ({ default: module.NotificationPage })));
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -110,81 +114,86 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <AuthProvider>
-        <ServiceWorkerProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter
-            future={{
-              v7_startTransition: true,
-              v7_relativeSplatPath: true,
-            }}
-          >
-        <Suspense fallback={<LoadingFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/areas" element={<Areas />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
-            <Route path="/contact" element={<ContactOptimized />} />
-            <Route path="/services/professional-mould-inspections" element={<ProfessionalMouldInspections />} />
-            <Route path="/services/complete-material-removal" element={<CompleteMaterialRemoval />} />
-            <Route path="/services/advanced-fogging-sanitisation" element={<AdvancedFoggingSanitisation />} />
-            <Route path="/services/comprehensive-mould-removal" element={<ComprehensiveMouldRemoval />} />
-            <Route path="/services/subfloor-mould-remediation" element={<SubfloorMouldRemediation />} />
-            {/* Location Routes - New Structure */}
-            <Route path="/locations/carlton" element={<Carlton />} />
-            <Route path="/locations/toorak" element={<Toorak />} />
-            <Route path="/locations/brighton" element={<Brighton />} />
-            <Route path="/locations/south-yarra" element={<SouthYarra />} />
-            <Route path="/locations/richmond" element={<Richmond />} />
-            <Route path="/locations/fitzroy" element={<Fitzroy />} />
-            <Route path="/locations/prahran" element={<Prahran />} />
-            <Route path="/locations/malvern" element={<Malvern />} />
+        <WebSocketProvider>
+          <ServiceWorkerProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter
+              future={{
+                v7_startTransition: true,
+                v7_relativeSplatPath: true,
+              }}
+            >
+              <Suspense fallback={<LoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/areas" element={<Areas />} />
+                  <Route path="/case-studies" element={<CaseStudies />} />
+                  <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+                  <Route path="/contact" element={<ContactOptimized />} />
+                  <Route path="/services/professional-mould-inspections" element={<ProfessionalMouldInspections />} />
+                  <Route path="/services/complete-material-removal" element={<CompleteMaterialRemoval />} />
+                  <Route path="/services/advanced-fogging-sanitisation" element={<AdvancedFoggingSanitisation />} />
+                  <Route path="/services/comprehensive-mould-removal" element={<ComprehensiveMouldRemoval />} />
+                  <Route path="/services/subfloor-mould-remediation" element={<SubfloorMouldRemediation />} />
+                  {/* Location Routes - New Structure */}
+                  <Route path="/locations/carlton" element={<Carlton />} />
+                  <Route path="/locations/toorak" element={<Toorak />} />
+                  <Route path="/locations/brighton" element={<Brighton />} />
+                  <Route path="/locations/south-yarra" element={<SouthYarra />} />
+                  <Route path="/locations/richmond" element={<Richmond />} />
+                  <Route path="/locations/fitzroy" element={<Fitzroy />} />
+                  <Route path="/locations/prahran" element={<Prahran />} />
+                  <Route path="/locations/malvern" element={<Malvern />} />
 
-            {/* Legacy Routes - Redirect to New Structure */}
-            <Route path="/services/mold-removal-carlton" element={<Carlton />} />
-            <Route path="/services/mold-removal-toorak" element={<Toorak />} />
-            <Route path="/services/mold-removal-brighton" element={<Brighton />} />
-            <Route path="/services/mold-removal-south-yarra" element={<SouthYarra />} />
-            <Route path="/services/mold-removal-richmond" element={<Richmond />} />
-            <Route path="/services/mold-removal-fitzroy" element={<Fitzroy />} />
-            <Route path="/services/mold-removal-prahran" element={<Prahran />} />
-            <Route path="/services/mold-removal-malvern" element={<Malvern />} />
+                  {/* Legacy Routes - Redirect to New Structure */}
+                  <Route path="/services/mold-removal-carlton" element={<Carlton />} />
+                  <Route path="/services/mold-removal-toorak" element={<Toorak />} />
+                  <Route path="/services/mold-removal-brighton" element={<Brighton />} />
+                  <Route path="/services/mold-removal-south-yarra" element={<SouthYarra />} />
+                  <Route path="/services/mold-removal-richmond" element={<Richmond />} />
+                  <Route path="/services/mold-removal-fitzroy" element={<Fitzroy />} />
+                  <Route path="/services/mold-removal-prahran" element={<Prahran />} />
+                  <Route path="/services/mold-removal-malvern" element={<Malvern />} />
 
-            {/* Dynamic Location Route - Handles all 100+ suburbs */}
-            <Route path="/locations/:suburb" element={<DynamicLocationPage />} />
+                  {/* Dynamic Location Route - Handles all 100+ suburbs */}
+                  <Route path="/locations/:suburb" element={<DynamicLocationPage />} />
 
-            {/* Phase 2A: Admin CRM Routes */}
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="/admin/leads" element={<LeadsPage />} />
-            <Route path="/admin/leads/edit/:id" element={<LeadEdit />} />
-            <Route path="/admin/leads/new" element={<LeadNew />} />
+                  {/* Phase 2A: Admin CRM Routes */}
+                  <Route path="/admin/login" element={<AdminLogin />} />
+                  <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                  <Route path="/admin/leads" element={<LeadsPage />} />
+                  <Route path="/admin/leads/edit/:id" element={<LeadEdit />} />
+                  <Route path="/admin/leads/new" element={<LeadNew />} />
 
-            {/* Phase 2B: Advanced Lead Management */}
-            <Route path="/admin/leads-kanban" element={<LeadsKanban />} />
-            <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
-            <Route path="/admin/leads-mobile" element={<LeadsKanbanMobile />} />
-            <Route path="/admin/leads/kanban-mobile" element={<LeadsKanbanMobile />} />
-            <Route path="/admin/leads/kanban-optimized" element={<LeadsKanbanOptimized />} />
-            <Route path="/admin/leads/kanban-original" element={<LeadsKanbanOriginal />} />
+                  {/* Phase 2B: Advanced Lead Management */}
+                  <Route path="/admin/leads-kanban" element={<LeadsKanban />} />
+                  <Route path="/admin/leads/kanban" element={<LeadsKanban />} />
+                  <Route path="/admin/leads-mobile" element={<LeadsKanbanMobile />} />
+                  <Route path="/admin/leads/kanban-mobile" element={<LeadsKanbanMobile />} />
+                  <Route path="/admin/leads/kanban-optimized" element={<LeadsKanbanOptimized />} />
+                  <Route path="/admin/leads/kanban-original" element={<LeadsKanbanOriginal />} />
 
-            {/* Phase 2B+: Advanced CRM Features */}
-            <Route path="/admin/calendar" element={<InspectionCalendar />} />
-            <Route path="/admin/inspections" element={<InspectionCalendar />} />
-            <Route path="/admin/analytics" element={<AnalyticsDashboard />} />
-            <Route path="/admin/reports" element={<AnalyticsDashboard />} />
-            <Route path="/admin/communication" element={<CommunicationHub />} />
-            <Route path="/admin/templates" element={<CommunicationHub />} />
+                  {/* Phase 2B+: Advanced CRM Features */}
+                  <Route path="/admin/calendar" element={<InspectionCalendar />} />
+                  <Route path="/admin/inspections" element={<InspectionCalendar />} />
+                  <Route path="/admin/analytics" element={<AnalyticsDashboard />} />
+                  <Route path="/admin/reports" element={<AnalyticsDashboard />} />
+                  <Route path="/admin/communication" element={<CommunicationHub />} />
+                  <Route path="/admin/templates" element={<CommunicationHub />} />
 
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          </Suspense>
-        </BrowserRouter>
-        </ServiceWorkerProvider>
+                  {/* Phase 2C: Notification & Calendar System */}
+                  <Route path="/admin/notifications" element={<NotificationPage />} />
+
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+          </ServiceWorkerProvider>
+        </WebSocketProvider>
       </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>

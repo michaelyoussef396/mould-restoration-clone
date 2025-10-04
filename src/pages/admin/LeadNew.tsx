@@ -28,7 +28,6 @@ export function LeadNew() {
     source: 'WEBSITE' as LeadSource,
     status: 'NEW' as LeadStatus,
     notes: '',
-    estimatedValue: 0
   });
 
   // Handle form input changes
@@ -36,7 +35,7 @@ export function LeadNew() {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'estimatedValue' ? parseFloat(value) || 0 : value
+      [name]: value
     }));
   };
 
@@ -305,22 +304,6 @@ export function LeadNew() {
                       ))}
                     </SelectContent>
                   </Select>
-                </div>
-                <div>
-                  <Label htmlFor="estimatedValue">
-                    <DollarSign className="h-3 w-3 inline mr-1" />
-                    Estimated Value ($)
-                  </Label>
-                  <Input
-                    id="estimatedValue"
-                    name="estimatedValue"
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={formData.estimatedValue}
-                    onChange={handleInputChange}
-                    placeholder="1500"
-                  />
                 </div>
               </CardContent>
             </Card>

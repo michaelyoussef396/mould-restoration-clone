@@ -30,20 +30,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   const [onlineUsers, setOnlineUsers] = useState<Array<{ userId: string; name: string; role: string; page?: string }>>([]);
   const [unreadNotifications, setUnreadNotifications] = useState(0);
 
-  // Connect when user is authenticated
-  useEffect(() => {
-    if (isAuthenticated && user) {
-      connect();
-    } else {
-      disconnect();
-    }
-
-    return () => {
-      disconnect();
-    };
-  }, [isAuthenticated, user, connect, disconnect]);
-
-  // Connection management
+  // Connection management - DECLARE BEFORE USING IN USEEFFECT
   const connect = useCallback(async () => {
     try {
       setConnectionState('connecting');
@@ -59,7 +46,8 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
         description: 'You will receive live notifications and updates.',
       });
     } catch (error) {
-      console.error('WebSocket connection failed:', error);
+      console.warn('[WebSocket] Connection failed (optional feature):', error);
+      // Don't show error toast - WebSocket is optional
       setIsConnected(false);
       setConnectionState('error');
     }
@@ -74,6 +62,20 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
     setConnectionState('disconnected');
     setOnlineUsers([]);
   }, [ws, isConnected]);
+
+  // Connect when user is authenticated
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      connect(); // Will be disabled by VITE_WS_ENABLED flag
+    } else {
+      disconnect();
+    }
+
+    return () => {
+      disconnect();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated, user]); // Only depend on auth state, not connect/disconnect functions
 
   // Activity tracking
   const sendUserActivity = useCallback((action: 'online' | 'offline' | 'viewing_page', page?: string) => {
@@ -99,7 +101,8 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
     // Note: pathname changes are handled by router navigation
     // This effect only runs when connection state changes
-  }, [isConnected, sendUserActivity]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected]); // Only depend on connection state, sendUserActivity is stable
 
   // Subscribe to WebSocket events
   useEffect(() => {
@@ -238,7 +241,8 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, [isConnected, sendUserActivity]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected]); // Only depend on connection state
 
   // Beforeunload handling
   useEffect(() => {
@@ -250,7 +254,8 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [isConnected, sendUserActivity]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected]); // Only depend on connection state
 
   // Auto-reconnection on network recovery
   useEffect(() => {
@@ -274,7 +279,8 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
     };
-  }, [isConnected, isAuthenticated, connect]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected, isAuthenticated]); // Only depend on state, not connect function
 
   // Helper function to play notification sound
   const playNotificationSound = useCallback(() => {

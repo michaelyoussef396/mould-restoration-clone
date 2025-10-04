@@ -30,13 +30,12 @@ export function LeadEdit() {
     urgency: 'MEDIUM' as Urgency,
     source: 'WEBSITE' as LeadSource,
     status: 'NEW' as LeadStatus,
-    notes: '',
-    estimatedValue: 0
+    notes: ''
   });
 
-  // Load lead data
+  // Load lead data with retry logic
   useEffect(() => {
-    const loadLead = async () => {
+    const loadLead = async (retryCount = 0) => {
       if (!id) {
         navigate('/admin/leads');
         return;
@@ -59,8 +58,7 @@ export function LeadEdit() {
             urgency: data.urgency || 'MEDIUM',
             source: data.source || 'WEBSITE',
             status: data.status || 'NEW',
-            notes: data.notes || '',
-            estimatedValue: data.estimatedValue || 0
+            notes: data.notes || ''
           });
         } else {
           toast({
@@ -70,15 +68,48 @@ export function LeadEdit() {
           });
           navigate('/admin/leads');
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to load lead:', error);
-        toast({
-          title: "Error",
-          description: "Failed to load lead data. Please try again.",
-          variant: "destructive"
-        });
-      } finally {
+
+        // Check if it's a network/server error and retry
+        if (retryCount < 3 && (error.message?.includes('503') || error.message?.includes('Failed to fetch'))) {
+          toast({
+            title: "Connection Error",
+            description: `Backend server not responding. Retrying... (${retryCount + 1}/3)`,
+          });
+          // Retry after 2 seconds
+          setTimeout(() => loadLead(retryCount + 1), 2000);
+        } else {
+          // Show specific error message based on error type
+          let errorMessage = "Failed to load lead data.";
+          if (error.message?.includes('503')) {
+            errorMessage = "Backend server is not running. Please ensure the API server is running on port 3001.";
+          } else if (error.message?.includes('404')) {
+            errorMessage = "Lead not found. It may have been deleted.";
+          } else if (error.message?.includes('network')) {
+            errorMessage = "Network error. Please check your connection.";
+          }
+
+          toast({
+            title: "Error",
+            description: errorMessage,
+            variant: "destructive",
+            action: (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => loadLead(0)}
+              >
+                Retry
+              </Button>
+            )
+          });
+        }
         setIsLoading(false);
+      } finally {
+        if (retryCount === 0) {
+          setIsLoading(false);
+        }
       }
     };
 
@@ -90,7 +121,7 @@ export function LeadEdit() {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'estimatedValue' ? parseFloat(value) || 0 : value
+      [name]: value
     }));
   };
 
@@ -364,21 +395,6 @@ export function LeadEdit() {
                       ))}
                     </SelectContent>
                   </Select>
-                </div>
-                <div>
-                  <Label htmlFor="estimatedValue">
-                    <DollarSign className="h-3 w-3 inline mr-1" />
-                    Estimated Value ($)
-                  </Label>
-                  <Input
-                    id="estimatedValue"
-                    name="estimatedValue"
-                    type="number"
-                    min="0"
-                    step="100"
-                    value={formData.estimatedValue}
-                    onChange={handleInputChange}
-                  />
                 </div>
               </CardContent>
             </Card>

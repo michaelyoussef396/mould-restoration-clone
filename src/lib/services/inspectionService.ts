@@ -189,7 +189,8 @@ class InspectionService {
       throw new Error(error.message || 'Failed to create inspection');
     }
 
-    return response.json();
+    const result = await response.json();
+    return result.data || result;
   }
 
   async updateInspection(id: string, data: z.infer<typeof UpdateInspectionSchema>): Promise<Inspection> {
@@ -241,7 +242,9 @@ class InspectionService {
       throw new Error('Failed to fetch technicians');
     }
 
-    return response.json();
+    const result = await response.json();
+    // Handle API response format (data.data for success responses)
+    return result.data || result;
   }
 
   async getAvailableTimeSlots(
@@ -264,7 +267,8 @@ class InspectionService {
       throw new Error('Failed to fetch available time slots');
     }
 
-    return response.json();
+    const result = await response.json();
+    return result.data || result;
   }
 
   async checkSchedulingConflicts(
@@ -292,7 +296,8 @@ class InspectionService {
       throw new Error('Failed to check scheduling conflicts');
     }
 
-    return response.json();
+    const result = await response.json();
+    return result.data?.conflicts || result.conflicts || [];
   }
 
   // Travel time optimization for Melbourne suburbs
@@ -330,7 +335,8 @@ class InspectionService {
       throw new Error('Failed to get optimal technician assignment');
     }
 
-    return response.json();
+    const result = await response.json();
+    return result.data || result;
   }
 
   // Google Calendar integration
@@ -421,7 +427,33 @@ class InspectionService {
       throw new Error('Failed to fetch calendar data');
     }
 
-    return response.json();
+    const result = await response.json();
+    // Transform API calendar events to inspection format
+    const calendarEvents = result.data || result;
+    const inspections = Array.isArray(calendarEvents) ? calendarEvents.map((event: any) => ({
+      id: event.id,
+      leadId: event.lead?.id || '',
+      technicianId: event.technician?.id || '',
+      scheduledAt: event.start,
+      status: event.status?.toUpperCase() || 'SCHEDULED',
+      customerName: `${event.lead?.firstName || ''} ${event.lead?.lastName || ''}`.trim(),
+      customerPhone: event.lead?.phone || '',
+      address: event.lead?.address || '',
+      suburb: event.lead?.suburb || '',
+      serviceType: event.lead?.serviceType || 'Mould Inspection',
+      estimatedCost: event.inspection?.estimatedCost || 0,
+      finalCost: event.inspection?.finalCost || 0,
+      findings: event.inspection?.findings || '',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    })) : [];
+
+    return {
+      inspections,
+      technicians: [],
+      conflicts: [],
+      workload: []
+    };
   }
 
   // Generate inspection schedule optimization report

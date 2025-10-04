@@ -26,12 +26,24 @@ export default defineConfig(({ mode }) => ({
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     },
-    // Fix CSS MIME type issues
+    // Handle MIME types correctly for different resource types
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url?.endsWith('.css')) {
+        const url = req.url || '';
+
+        // CSS files requested directly (not as modules) should be served as CSS
+        if (url.endsWith('.css') && !url.includes('?')) {
           res.setHeader('Content-Type', 'text/css');
         }
+        // JavaScript files and CSS imports (Vite transforms CSS to JS modules)
+        else if (url.endsWith('.js') || url.endsWith('.jsx') ||
+                 url.endsWith('.ts') || url.endsWith('.tsx') ||
+                 url.includes('.js?') || url.includes('.tsx?') ||
+                 url.includes('main.tsx') || url.includes('App.tsx') ||
+                 url.includes('.css') /* CSS imports are JS modules in dev */) {
+          res.setHeader('Content-Type', 'text/javascript');
+        }
+
         next();
       });
     }

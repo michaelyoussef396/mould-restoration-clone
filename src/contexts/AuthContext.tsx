@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { User, LoginCredentials, AuthService } from '@/lib/auth';
 
 interface AuthContextType {
@@ -86,9 +87,8 @@ export function ProtectedRoute({
   }
 
   if (!isAuthenticated) {
-    // Redirect to login page
-    window.location.href = '/admin/login';
-    return null;
+    // Use React Router Navigate instead of window.location to prevent page refresh
+    return <Navigate to="/admin/login" replace />;
   }
 
   if (requireAdmin && !isAdmin) {

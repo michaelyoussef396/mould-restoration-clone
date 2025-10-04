@@ -17,11 +17,19 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  // Technician-specific fields
+  phone         String?
+  territories   String? // JSON array of Melbourne suburbs
+  workingHours  String? // JSON object of working hours by day
+  isActive      Boolean @default(true)
+
   // Relationships
   leadsCreated Lead[] @relation("CreatedBy")
   leadsAssigned Lead[] @relation("AssignedTo")
   inspections  Inspection[]
   activities   Activity[]
+  notifications Notification[]
+  bookings     Booking[] @relation("TechnicianBookings")
 
   @@map("users")
 }
@@ -58,6 +66,8 @@ model Lead {
 
   inspections  Inspection[]
   activities   Activity[]
+  notifications Notification[]
+  bookings     Booking[]
 
   @@map("leads")
 }
@@ -170,4 +180,79 @@ enum ActivityType {
   PAYMENT_RECEIVED
   NOTE_ADDED
   STATUS_CHANGED
+}
+
+// Notification System Models
+model Notification {
+  id               String           @id @default(cuid())
+  userId           String
+  user             User             @relation(fields: [userId], references: [id])
+  type             NotificationType
+  title            String
+  message          String
+  relatedEntityType String?         // 'lead', 'booking', 'payment'
+  relatedEntityId  String?
+  leadId           String?
+  lead             Lead?            @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  bookingId        String?
+  booking          Booking?         @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  isRead           Boolean          @default(false)
+  priority         NotificationPriority @default(NORMAL)
+  createdAt        DateTime         @default(now())
+  readAt           DateTime?
+
+  @@map("notifications")
+}
+
+model Booking {
+  id                String         @id @default(cuid())
+  leadId            String
+  lead              Lead           @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  technicianId      String
+  technician        User           @relation("TechnicianBookings", fields: [technicianId], references: [id])
+  scheduledDate     DateTime
+  scheduledTime     String         // Store as string for time only
+  durationMinutes   Int            @default(60)
+  status            BookingStatus  @default(PENDING)
+  customerPreferredDates String?   // JSON array of preferred datetime options
+  confirmedDatetime DateTime?
+  propertyAddress   String
+  melbourneSuburb   String
+  estimatedTravelTime Int?         // minutes from previous job
+  notes             String?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  // Relationships
+  notifications     Notification[]
+
+  @@map("bookings")
+}
+
+// Notification Enums
+enum NotificationType {
+  NEW_LEAD
+  BOOKING_CONFIRMED
+  SCHEDULE_CHANGE
+  URGENT_LEAD
+  SYSTEM_ALERT
+  MESSAGE
+  PAYMENT
+  REVIEW
+}
+
+enum NotificationPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+// Booking Enums
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
 }

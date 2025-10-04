@@ -95,6 +95,16 @@ export class WebSocketService {
   // Connect to WebSocket server
   public connect(): Promise<void> {
     return new Promise((resolve, reject) => {
+      // EMERGENCY FIX: Disable WebSocket until server is configured
+      const WS_ENABLED = import.meta.env.VITE_WS_ENABLED === 'true';
+
+      if (!WS_ENABLED) {
+        console.log('[WebSocket] Connection disabled (set VITE_WS_ENABLED=true to enable)');
+        this.connectionState = 'disconnected';
+        resolve(); // Resolve without error to prevent refresh loops
+        return;
+      }
+
       if (this.socket && this.socket.readyState === WebSocket.OPEN) {
         resolve();
         return;
