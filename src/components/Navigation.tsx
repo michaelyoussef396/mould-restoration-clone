@@ -473,17 +473,16 @@ export const Navigation = () => {
                     </a>
                   </Button>
                   <Button
-                    variant="outline"
-                    className="w-full border-white/20 text-white hover:bg-white/10"
+                    className="w-full bg-white text-primary-600 hover:bg-white/90 font-medium border-2 border-white min-h-[48px]"
                     asChild
                   >
                     <a href="tel:1800954117" onClick={() => setIsOpen(false)}>
-                      <Phone className="w-4 h-4 mr-2" />
+                      <Phone className="w-5 h-5 mr-2" />
                       Call Now: 1800 954 117
                     </a>
                   </Button>
                 </div>
-                <div className="text-center text-xs text-white/60 mt-3">
+                <div className="text-center text-xs text-white/80 mt-3">
                   Professional service • 7 days a week • Melbourne-wide
                 </div>
               </div>
