@@ -62,10 +62,20 @@ const CommunicationHub = lazy(() => import("./components/admin/CommunicationHub"
 // Phase 2C: Notification & Calendar System
 const NotificationPage = lazy(() => import("./pages/admin/NotificationPage").then(module => ({ default: module.NotificationPage })));
 
+// Phase 3: Mobile Inspection Form
+const InspectionWizard = lazy(() => import("./pages/mobile/InspectionWizard"));
+const InspectionDetail = lazy(() => import("./pages/admin/InspectionDetail"));
+
+// User Profile
+const ProfilePage = lazy(() => import("./pages/admin/Profile").then(module => ({ default: module.ProfilePage })));
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 5 * 60 * 1000, // 5 minutes
+      refetchOnWindowFocus: false, // Prevent auto-refresh when window regains focus
+      refetchOnMount: false, // Don't refetch on component mount if data exists
+      refetchOnReconnect: false, // Don't refetch on network reconnect
       retry: (failureCount, error) => {
         // Don't retry on 4xx errors except 408 (timeout)
         if (error?.status >= 400 && error?.status < 500 && error?.status !== 408) {
@@ -164,6 +174,7 @@ const App = () => (
                   {/* Phase 2A: Admin CRM Routes */}
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                  <Route path="/admin/profile" element={<ProfilePage />} />
                   <Route path="/admin/leads" element={<LeadsPage />} />
                   <Route path="/admin/leads/edit/:id" element={<LeadEdit />} />
                   <Route path="/admin/leads/new" element={<LeadNew />} />
@@ -186,6 +197,10 @@ const App = () => (
 
                   {/* Phase 2C: Notification & Calendar System */}
                   <Route path="/admin/notifications" element={<NotificationPage />} />
+
+                  {/* Phase 3: Mobile Inspection Form */}
+                  <Route path="/mobile/inspection/:inspectionId" element={<InspectionWizard />} />
+                  <Route path="/admin/inspections/:inspectionId" element={<InspectionDetail />} />
 
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />

@@ -27,6 +27,7 @@ model User {
   leadsCreated Lead[] @relation("CreatedBy")
   leadsAssigned Lead[] @relation("AssignedTo")
   inspections  Inspection[]
+  inspectionsAsInspector Inspection[] @relation("InspectorInspections")
   activities   Activity[]
   notifications Notification[]
   bookings     Booking[] @relation("TechnicianBookings")
@@ -82,28 +83,101 @@ model Lead {
 
 model Inspection {
   id          String           @id @default(cuid())
+
+  // SECTION 1: AUTO-GENERATED HEADER
+  jobNumber       String?      @unique // Auto-generated: "MRC-2025-0001"
+  triage          String?      // Job description (from lead)
+  address         String?      // Property address (from lead)
+  inspectorId     String?      // Selected technician
+  inspector       User?        @relation("InspectorInspections", fields: [inspectorId], references: [id])
+  requestedBy     String?      // Original inquiry contact
+  attentionTo     String?      // On-site contact name/company
+  inspectionDate  DateTime?    // Default: today, editable
+
+  // SECTION 2: PROPERTY INFORMATION
+  propertyOccupation PropertyOccupation? // Tenanted, Vacant, Owner occupied, Tenants vacating
+  dwellingType       DwellingType?       // House, Units, Apartment, etc.
+
+  // SECTION 4: SUBFLOOR (toggle on/off)
+  subfloorEnabled         Boolean  @default(false)
+  subfloorObservations    String?  // Textarea → AI processed
+  subfloorLandscape       SubfloorLandscape? // Flat/Sloping
+  subfloorComments        String?  // Textarea → AI processed
+  subfloorPhotos          String?  // JSON array of photo URLs (max 20)
+  subfloorSanitation      Boolean  @default(false) // Future PDF flag
+  subfloorRacking         Boolean  @default(false) // Future PDF flag
+  subfloorTreatmentTime   Int?     // Minutes
+
+  // SECTION 5: OUTDOOR INFORMATION
+  outdoorTemperature  Float?
+  outdoorHumidity     Float?
+  outdoorDewPoint     Float?   // Auto-calculated
+  outdoorComments     String?
+  frontDoorPhoto      String?
+  frontHousePhoto     String?
+  mailboxPhoto        String?
+  streetPhoto         String?
+  directionPhotosEnabled Boolean @default(false)
+  directionPhotos     String?  // JSON array, unlimited when enabled
+
+  // SECTION 6: WASTE DISPOSAL
+  wasteDisposalEnabled Boolean @default(false)
+  wasteDisposalAmount  WasteAmount? // Small, Medium, Large, Extra large
+
+  // SECTION 7: WORK PROCEDURE
+  hepaVac                    Boolean @default(false)
+  antimicrobial              Boolean @default(false)
+  stainRemovingAntimicrobial Boolean @default(false)
+  homeSanitationFogging      Boolean @default(false)
+  dryingEquipmentEnabled     Boolean @default(false)
+  dehumidifierQty            Int     @default(0)
+  airMoverQty                Int     @default(0)
+  rcdBoxQty                  Int     @default(0)
+
+  // SECTION 8: JOB SUMMARY
+  recommendDehumidifier      Boolean @default(false)
+  dehumidifierSize           DehumidifierSize? // Small, Medium, Large
+  causeOfMould               String?  // AI-generated, editable
+  causeOfMouldOriginal       String?  // Store AI original
+  additionalInfoTechnician   String?
+  additionalEquipmentComments String?
+  parkingOptions             ParkingOption?
+
+  // COST CALCULATION (auto-calculated)
+  labourCost      Float?
+  equipmentCost   Float?
+  subtotal        Float?
+  gst             Float?
+  totalCost       Float?
+  workType        WorkType?  // Surface, Demo, Construction, Subfloor
+  totalHours      Float?
+  discountPercent Float?
+
+  // Existing fields
   scheduledAt DateTime
   completedAt DateTime?
+  startedAt   DateTime?  // When technician starts form
+  arrivedAt   DateTime?  // When technician arrives on site
   status      InspectionStatus @default(SCHEDULED)
   findings    String?
   recommendations String?
-  photos      String? // JSON string array of photo URLs
+  photos      String? // JSON string array of photo URLs (legacy)
   reportUrl   String?
-
-  // Cost information
   estimatedCost Float?
   finalCost     Float?
-
-  // Timestamps
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   // Relationships
-  leadId      String
-  lead        Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  leadId       String
+  lead         Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
   technicianId String
-  technician  User     @relation(fields: [technicianId], references: [id])
-  activities  Activity[]
+  technician   User     @relation(fields: [technicianId], references: [id])
+  activities   Activity[]
+
+  // New relationships
+  areas            InspectionArea[]
+  subfloorReadings SubfloorReading[]
 
   @@map("inspections")
 }
@@ -162,6 +236,7 @@ enum LeadSource {
 enum LeadStatus {
   NEW
   CONTACTED
+  FORM_COMPLETED
   QUALIFIED
   QUOTED
   CONVERTED
@@ -237,6 +312,98 @@ model Booking {
   @@map("bookings")
 }
 
+// SECTION 3: INSPECTION AREA MODEL (Repeatable room/area assessments)
+model InspectionArea {
+  id           String     @id @default(cuid())
+  inspectionId String
+  inspection   Inspection @relation(fields: [inspectionId], references: [id], onDelete: Cascade)
+
+  // Area identification
+  areaName     String     // e.g., "Master Bedroom"
+  orderIndex   Int        // For maintaining area order
+
+  // Mould visibility (JSON array of selected options)
+  mouldVisibility String   // JSON: ["Ceiling", "Windows", "Walls"]
+  // Options: Ceiling, Cornice, Windows, Window furnishings, Walls,
+  //          Skirting, Flooring, Wardrobe, Cupboard, Contents,
+  //          Grout/silicone, No mould visible
+
+  // Environmental readings
+  temperature  Float?
+  humidity     Float?
+  dewPoint     Float?     // Auto-calculated from temp + humidity
+
+  // AI-generated comments
+  commentsGenerated String? // AI-generated paragraph
+  commentsEdited    String? // Technician-edited version (saves this)
+  commentsApproved  Boolean @default(false)
+
+  // Moisture reading section (toggle)
+  moistureReadingEnabled Boolean @default(false)
+
+  // Internal notes (admin only, not in customer report)
+  internalNotes String?
+
+  // Room view photos (exactly 3 required)
+  roomPhoto1 String?
+  roomPhoto2 String?
+  roomPhoto3 String?
+
+  // Infrared section (toggle)
+  infraredEnabled     Boolean @default(false)
+  infraredPhoto       String?
+  infraredNaturalPhoto String?
+  infraredObservation InfraredObservation?
+
+  // Time tracking for cost calculation
+  jobTime        Int     // Minutes without demolition
+  demolitionRequired Boolean @default(false)
+  demolitionTime     Int?    // Minutes for demolition
+
+  // AI-generated demolition description
+  demolitionDescGenerated String? // AI-generated list
+  demolitionDescEdited    String? // Technician-edited version
+  demolitionDescApproved  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  moistureReadings MoistureReading[]
+
+  @@map("inspection_areas")
+}
+
+// Moisture Reading Model (Nested in Area)
+model MoistureReading {
+  id     String @id @default(cuid())
+  areaId String
+  area   InspectionArea @relation(fields: [areaId], references: [id], onDelete: Cascade)
+
+  title  String // Location description (e.g., "North wall corner")
+  photos String // JSON array of photo URLs (unlimited)
+
+  orderIndex Int // For maintaining reading order
+  createdAt  DateTime @default(now())
+
+  @@map("moisture_readings")
+}
+
+// Subfloor Reading Model (Section 4)
+model SubfloorReading {
+  id           String     @id @default(cuid())
+  inspectionId String
+  inspection   Inspection @relation(fields: [inspectionId], references: [id], onDelete: Cascade)
+
+  moistureValue Float  // Moisture reading percentage
+  location      String // Reading location description
+
+  orderIndex Int
+  createdAt  DateTime @default(now())
+
+  @@map("subfloor_readings")
+}
+
 // Notification Enums
 enum NotificationType {
   NEW_LEAD
@@ -263,4 +430,65 @@ enum BookingStatus {
   IN_PROGRESS
   COMPLETED
   CANCELLED
+}
+
+// INSPECTION FORM ENUMS
+
+enum PropertyOccupation {
+  TENANTED
+  VACANT
+  OWNER_OCCUPIED
+  TENANTS_VACATING
+}
+
+enum DwellingType {
+  HOUSE
+  UNITS
+  APARTMENT
+  DUPLEX
+  TOWNHOUSE
+  COMMERCIAL
+  CONSTRUCTION
+  INDUSTRIAL
+}
+
+enum SubfloorLandscape {
+  FLAT_BLOCK
+  SLOPING_BLOCK
+}
+
+enum WasteAmount {
+  SMALL        // Disposal bags
+  MEDIUM       // Fill van
+  LARGE        // Fill 2 vans
+  EXTRA_LARGE  // Fill skip
+}
+
+enum DehumidifierSize {
+  SMALL   // 1 dehumidifier
+  MEDIUM  // 2 dehumidifiers
+  LARGE   // Home built-in dehumidifier
+}
+
+enum ParkingOption {
+  DRIVEWAY
+  STREET
+  CARPARK
+  VISITOR_CAR_PARK
+  NO_NEARBY_PARKING
+}
+
+enum InfraredObservation {
+  NO_ACTIVE_WATER_INFILTRATION
+  EVIDENCE_WATER_INFILTRATION
+  INDICATIONS_PAST_WATER_INGRESS
+  POSSIBLE_CONDENSATION_VARIATIONS
+  SUSPECTED_MISSING_INSULATION
+}
+
+enum WorkType {
+  SURFACE       // Type 1 - No demolition
+  DEMOLITION    // Type 2 - With demolition
+  CONSTRUCTION  // Type 3 - Construction
+  SUBFLOOR      // Type 4 - Subfloor work
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { AdminLayout } from './AdminLayout';
 import { Calendar } from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
@@ -37,7 +37,8 @@ import {
   ChevronLeft,
   ChevronRight,
   MoreHorizontal,
-  Calendar as CalendarIconSolid
+  Calendar as CalendarIconSolid,
+  Play
 } from 'lucide-react';
 import { format, addDays, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, startOfMonth, endOfMonth, eachDayOfInterval as eachDay, isSameMonth, isToday, getDay, addWeeks, subWeeks, addMonths, subMonths } from 'date-fns';
 import { inspectionService, Inspection, Technician, TimeSlot, SchedulingConflict } from '@/lib/services/inspectionService';
@@ -89,6 +90,7 @@ interface TechnicianSchedule {
 
 export function InspectionCalendar() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [view, setView] = useState<CalendarView>({ type: 'events', date: new Date() });
   const [inspections, setInspections] = useState<Inspection[]>([]);
   const [technicians, setTechnicians] = useState<Technician[]>([]);
@@ -191,7 +193,7 @@ export function InspectionCalendar() {
   const createTechnicianSchedule = (technician: Technician, events: CalendarEvent[]): TechnicianSchedule => {
     const techEvents = events.filter(event => event.technician === technician.id);
     const today = format(selectedDate, 'EEEE').toLowerCase();
-    const todayHours = technician.workingHours[today as keyof typeof technician.workingHours];
+    const todayHours = technician.workingHours?.[today as keyof typeof technician.workingHours];
 
     return {
       technician,
@@ -200,7 +202,7 @@ export function InspectionCalendar() {
         start: todayHours?.start || '07:00',
         end: todayHours?.end || '19:00',
       },
-      isAvailable: todayHours?.available || false,
+      isAvailable: todayHours?.available !== false, // Default to available if not specified
     };
   };
 
@@ -970,6 +972,16 @@ export function InspectionCalendar() {
           <Button
             variant="outline"
             size="sm"
+            onClick={() => loadCalendarData()}
+            disabled={loading}
+            className="w-full sm:w-auto"
+          >
+            <RefreshCw className={cn("h-4 w-4 mr-2", loading && "animate-spin")} />
+            Refresh
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
             onClick={handleSyncWithGoogleCalendar}
             disabled={syncingCalendar}
             className="w-full sm:w-auto"
@@ -1424,13 +1436,24 @@ export function InspectionCalendar() {
               </div>
 
               <div className="flex justify-between">
-                <Button
-                  variant="destructive"
-                  onClick={() => handleDeleteInspection(selectedInspection.id)}
-                >
-                  <Trash2 className="h-4 w-4 mr-2" />
-                  Cancel Inspection
-                </Button>
+                <div className="flex gap-2">
+                  {selectedInspection.status === 'SCHEDULED' && (
+                    <Button
+                      onClick={() => navigate(`/mobile/inspection/${selectedInspection.id}`)}
+                      className="bg-green-600 hover:bg-green-700"
+                    >
+                      <Play className="h-4 w-4 mr-2" />
+                      Start Inspection
+                    </Button>
+                  )}
+                  <Button
+                    variant="destructive"
+                    onClick={() => handleDeleteInspection(selectedInspection.id)}
+                  >
+                    <Trash2 className="h-4 w-4 mr-2" />
+                    Cancel Inspection
+                  </Button>
+                </div>
 
                 <div className="flex gap-2">
                   <Button variant="outline" onClick={() => setShowEditDialog(false)}>

@@ -9,12 +9,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8085, // FIXED: Consistent port configuration
-    hmr: {
-      overlay: false,
-      port: 8085 // Ensure HMR uses same port
-    },
+    hmr: false, // COMPLETELY DISABLE HMR to stop auto-refresh
     open: false,
-    force: true, // Force dependency re-optimization
+    force: false, // CHANGED: Disable forced re-optimization to prevent refreshes
     clearScreen: false,
     // Fix MIME type issues for module scripts
     middlewareMode: false,
@@ -32,8 +29,16 @@ export default defineConfig(({ mode }) => ({
         '**/coverage/**',
         '**/*.spec.ts',
         '**/*.test.ts',
-        '**/*.md'
-      ]
+        '**/*.md',
+        '**/prisma/**',
+        '**/*.db',
+        '**/*.db-journal',
+        '**/*.log',
+        '**/.git/**'
+      ],
+      // Disable polling to prevent unnecessary file system checks
+      usePolling: false,
+      interval: 10000 // If polling is needed, check every 10 seconds max
     },
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -188,7 +193,7 @@ export default defineConfig(({ mode }) => ({
       '@radix-ui/react-dropdown-menu'
     ],
     exclude: ['lovable-tagger'],
-    force: true // Force re-optimization in development
+    force: false // CHANGED: Disable forced re-optimization to prevent refreshes
   },
   // Critical: Define asset handling for consistent paths
   define: {

@@ -2,8 +2,86 @@ import { PrismaClient, Role, ServiceType, LeadStatus, LeadSource, Urgency, Inspe
 
 const prisma = new PrismaClient();
 
+// REAL EMAIL - Only one we're testing with
+const REAL_EMAIL = 'michaelyoussef396@gmail.com';
+
+// Realistic Melbourne suburbs for each technician's territory
+const melbourneSuburbs = {
+  innerCity: ['Carlton', 'Fitzroy', 'Richmond', 'South Yarra', 'Prahran', 'Windsor', 'St Kilda', 'Collingwood', 'Abbotsford'],
+  eastMelb: ['Brighton', 'Camberwell', 'Hawthorn', 'Kew', 'Malvern', 'Armadale', 'Toorak', 'Glen Iris', 'Balwyn', 'Canterbury'],
+  outerEast: ['Box Hill', 'Ringwood', 'Blackburn', 'Doncaster', 'Templestowe', 'Eltham', 'Diamond Creek', 'Croydon', 'Mitcham'],
+  north: ['Heidelberg', 'Ivanhoe', 'Preston', 'Northcote', 'Thornbury', 'Brunswick', 'Coburg', 'Reservoir', 'Bundoora'],
+  west: ['Werribee', 'Hoppers Crossing', 'Point Cook', 'Williams Landing', 'Newport', 'Footscray', 'Yarraville', 'Altona', 'Sunshine']
+};
+
+// Realistic Australian names
+const firstNames = ['Sarah', 'Michael', 'Emma', 'James', 'Sophie', 'David', 'Lisa', 'Robert', 'Anna', 'Tom', 'Jessica', 'Daniel', 'Michelle', 'Andrew', 'Rachel', 'Chris', 'Amanda', 'Peter', 'Jennifer', 'Mark', 'Karen', 'Steven', 'Nicole', 'Paul', 'Kelly'];
+const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller', 'Davis', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Thompson', 'Garcia', 'Martinez', 'Robinson', 'Clark', 'Rodriguez', 'Lewis', 'Lee', 'Walker'];
+
+// Realistic mould issue notes
+const mouldIssues = [
+  'Black spots appearing on bathroom ceiling after recent heavy rain',
+  'Musty smell throughout house, especially in bedrooms',
+  'Visible mould growth behind bedroom furniture',
+  'Water damage from roof leak, concerned about mould',
+  'Tenant reporting mould in rental property',
+  'Recently purchased property, noticed mould in corners',
+  'Mould spreading rapidly in ensuite bathroom',
+  'Subfloor area has strong musty odor',
+  'Window condensation causing mould on frames',
+  'Previous mould treatment unsuccessful, recurring problem',
+  'Health concerns for family, need urgent assessment',
+  'Landlord requires professional mould inspection report',
+  'Noticed mould after extended period of closed windows',
+  'Bathroom exhaust fan not working, mould appearing',
+  'Wardrobe has mould on back wall',
+  'Kitchen cupboards have mould underneath sink',
+  'Laundry area constantly damp with mould growth',
+  'Ceiling mould near air conditioning unit',
+  'Grout and silicone in shower turning black',
+  'Wall behind washing machine covered in mould',
+  'Basement storage room has extensive mould',
+  'Child\'s bedroom has mould, asthma concerns',
+  'Office space needs mould assessment before sale',
+  'Flood damage - immediate mould remediation required',
+  'Investment property requires mould clearance certificate'
+];
+
+function randomItem<T>(array: T[]): T {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function randomPhone(): string {
+  const prefixes = ['0412', '0423', '0434', '0445', '0456', '0467', '0478', '0489', '0490'];
+  const prefix = randomItem(prefixes);
+  const remaining = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+  return `${prefix} ${remaining.slice(0, 3)} ${remaining.slice(3)}`;
+}
+
+function randomAddress(suburb: string): string {
+  const streetNumbers = [12, 23, 45, 67, 89, 123, 156, 234, 345, 456, 567, 678, 789];
+  const streetNames = ['Smith St', 'Main Rd', 'High St', 'Victoria St', 'Church St', 'Station St', 'Chapel St', 'Burke Rd', 'Toorak Rd', 'Bridge Rd', 'Commercial Rd', 'Glenferrie Rd'];
+  return `${randomItem(streetNumbers)} ${randomItem(streetNames)}`;
+}
+
+function getPostcode(suburb: string): string {
+  const postcodes: { [key: string]: string } = {
+    'Carlton': '3053', 'Fitzroy': '3065', 'Richmond': '3121', 'South Yarra': '3141',
+    'Prahran': '3181', 'Windsor': '3181', 'St Kilda': '3182', 'Collingwood': '3066',
+    'Brighton': '3186', 'Camberwell': '3124', 'Hawthorn': '3122', 'Kew': '3101',
+    'Malvern': '3144', 'Armadale': '3143', 'Toorak': '3142', 'Glen Iris': '3146',
+    'Box Hill': '3128', 'Ringwood': '3134', 'Blackburn': '3130', 'Doncaster': '3108',
+    'Templestowe': '3106', 'Eltham': '3095', 'Diamond Creek': '3089',
+    'Heidelberg': '3084', 'Ivanhoe': '3079', 'Preston': '3072', 'Northcote': '3070',
+    'Thornbury': '3071', 'Brunswick': '3056', 'Coburg': '3058',
+    'Werribee': '3030', 'Hoppers Crossing': '3029', 'Point Cook': '3030',
+    'Newport': '3015', 'Footscray': '3011', 'Yarraville': '3013'
+  };
+  return postcodes[suburb] || '3000';
+}
+
 async function main() {
-  console.log('🌱 Seeding database...');
+  console.log('🌱 Seeding database with realistic Melbourne leads...');
 
   // Create admin user
   const adminUser = await prisma.user.upsert({
@@ -16,7 +94,7 @@ async function main() {
     },
   });
 
-  // Create Melbourne technicians with working hours and territories
+  // Create Melbourne technicians with territories
   const technicianJohn = await prisma.user.upsert({
     where: { email: 'john.thompson@mouldandrestoration.com.au' },
     update: {},
@@ -25,7 +103,7 @@ async function main() {
       name: 'John Thompson',
       role: Role.TECHNICIAN,
       phone: '+61 412 345 678',
-      territories: JSON.stringify(['Carlton', 'Fitzroy', 'Richmond', 'South Yarra', 'Prahran', 'Windsor', 'St Kilda']),
+      territories: JSON.stringify(melbourneSuburbs.innerCity),
       workingHours: JSON.stringify({
         monday: { start: '07:00', end: '19:00', available: true },
         tuesday: { start: '07:00', end: '19:00', available: true },
@@ -47,7 +125,7 @@ async function main() {
       name: 'Mike Wilson',
       role: Role.TECHNICIAN,
       phone: '+61 423 456 789',
-      territories: JSON.stringify(['Brighton', 'Camberwell', 'Hawthorn', 'Kew', 'Malvern', 'Armadale', 'Toorak', 'Glen Iris']),
+      territories: JSON.stringify(melbourneSuburbs.eastMelb),
       workingHours: JSON.stringify({
         monday: { start: '07:00', end: '19:00', available: true },
         tuesday: { start: '07:00', end: '19:00', available: true },
@@ -69,7 +147,7 @@ async function main() {
       name: 'Sarah Martinez',
       role: Role.TECHNICIAN,
       phone: '+61 434 567 890',
-      territories: JSON.stringify(['Box Hill', 'Ringwood', 'Blackburn', 'Doncaster', 'Templestowe', 'Eltham', 'Diamond Creek']),
+      territories: JSON.stringify(melbourneSuburbs.outerEast),
       workingHours: JSON.stringify({
         monday: { start: '08:00', end: '18:00', available: true },
         tuesday: { start: '08:00', end: '18:00', available: true },
@@ -91,7 +169,7 @@ async function main() {
       name: 'David Brown',
       role: Role.TECHNICIAN,
       phone: '+61 445 678 901',
-      territories: JSON.stringify(['Heidelberg', 'Ivanhoe', 'Preston', 'Northcote', 'Thornbury', 'Brunswick', 'Coburg']),
+      territories: JSON.stringify(melbourneSuburbs.north),
       workingHours: JSON.stringify({
         monday: { start: '07:00', end: '19:00', available: true },
         tuesday: { start: '07:00', end: '19:00', available: true },
@@ -99,7 +177,7 @@ async function main() {
         thursday: { start: '07:00', end: '19:00', available: true },
         friday: { start: '07:00', end: '19:00', available: true },
         saturday: { start: '08:00', end: '18:00', available: true },
-        sunday: { start: '09:00', end: '17:00', available: false } // Off Sundays
+        sunday: { start: '09:00', end: '17:00', available: false }
       }),
       isActive: true,
     },
@@ -113,7 +191,7 @@ async function main() {
       name: 'Emma Taylor',
       role: Role.TECHNICIAN,
       phone: '+61 456 789 012',
-      territories: JSON.stringify(['Werribee', 'Hoppers Crossing', 'Point Cook', 'Williams Landing', 'Newport', 'Footscray', 'Yarraville']),
+      territories: JSON.stringify(melbourneSuburbs.west),
       workingHours: JSON.stringify({
         monday: { start: '07:30', end: '18:30', available: true },
         tuesday: { start: '07:30', end: '18:30', available: true },
@@ -128,358 +206,160 @@ async function main() {
   });
 
   const technicians = [technicianJohn, technicianMike, technicianSarah, technicianDavid, technicianEmma];
+  const allSuburbs = [...melbourneSuburbs.innerCity, ...melbourneSuburbs.eastMelb, ...melbourneSuburbs.outerEast, ...melbourneSuburbs.north, ...melbourneSuburbs.west];
 
   console.log('✅ Created users:', { adminUser, technicians: technicians.length });
 
-  // Create realistic Melbourne leads across different suburbs and technician territories
-  const leads = await Promise.all([
-    prisma.lead.create({
-      data: {
-        firstName: 'Sarah',
-        lastName: 'Johnson',
-        email: 'sarah.j@example.com',
-        phone: '0412 345 678',
-        suburb: 'Carlton',
-        address: '123 Smith Street',
-        postcode: '3053',
-        serviceType: ServiceType.MOULD_INSPECTION,
-        urgency: Urgency.MEDIUM,
-        source: LeadSource.WEBSITE,
-        status: LeadStatus.NEW,
-        notes: 'Noticed black spots on bathroom ceiling after recent rain',
-        estimatedValue: 500,
-        createdById: adminUser.id,
-        assignedToId: technicianJohn.id, // Carlton is in John's territory
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'Michael',
-        lastName: 'Chen',
-        email: 'chen.michael@example.com',
-        phone: '0423 456 789',
-        suburb: 'Toorak',
-        address: '456 Burke Road',
-        postcode: '3142',
-        serviceType: ServiceType.COMPLETE_REMOVAL,
-        urgency: Urgency.HIGH,
-        source: LeadSource.PHONE,
-        status: LeadStatus.QUALIFIED,
-        notes: 'Large mould growth in basement after flooding',
-        estimatedValue: 2500,
-        createdById: adminUser.id,
-        assignedToId: technicianMike.id, // Toorak is in Mike's territory
-        contactedAt: new Date(),
-        qualifiedAt: new Date(),
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'Emma',
-        lastName: 'Wilson',
-        email: 'emma.wilson@example.com',
-        phone: '0434 567 890',
-        suburb: 'Brighton',
-        address: '789 Bay Street',
-        postcode: '3186',
-        serviceType: ServiceType.ADVANCED_FOGGING,
-        urgency: Urgency.MEDIUM,
-        source: LeadSource.GOOGLE_ADS,
-        status: LeadStatus.CONTACTED,
-        notes: 'Musty smell throughout house, needs professional assessment',
-        estimatedValue: 800,
-        createdById: adminUser.id,
-        contactedAt: new Date(),
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'David',
-        lastName: 'Thompson',
-        email: 'david.t@example.com',
-        phone: '0445 678 901',
-        suburb: 'Richmond',
-        address: '321 Swan Street',
-        postcode: '3121',
-        serviceType: ServiceType.COMPREHENSIVE_REMOVAL,
-        urgency: Urgency.URGENT,
-        source: LeadSource.REFERRAL,
-        status: LeadStatus.QUOTED,
-        notes: 'Extensive mould in rental property, tenant health concerns',
-        estimatedValue: 3200,
-        createdById: adminUser.id,
-        assignedToId: technicianJohn.id, // Richmond is in John's territory
-        contactedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago
-        qualifiedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'Lisa',
-        lastName: 'Martinez',
-        email: 'lisa.m@example.com',
-        phone: '0456 789 012',
-        suburb: 'Fitzroy',
-        address: '654 Brunswick Street',
-        postcode: '3065',
-        serviceType: ServiceType.SUBFLOOR_REMEDIATION,
-        urgency: Urgency.HIGH,
-        source: LeadSource.FACEBOOK,
-        status: LeadStatus.CONVERTED,
-        notes: 'Subfloor mould discovered during renovation',
-        estimatedValue: 1800,
-        createdById: adminUser.id,
-        assignedToId: technicianJohn.id, // Fitzroy is in John's territory
-        contactedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000), // 5 days ago
-        qualifiedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000), // 4 days ago
-        convertedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
-      },
-    }),
-    // Additional leads across all technician territories
-    prisma.lead.create({
-      data: {
-        firstName: 'Robert',
-        lastName: 'Kim',
-        email: 'robert.kim@example.com',
-        phone: '0467 890 123',
-        suburb: 'Brighton',
-        address: '88 Beach Road',
-        postcode: '3186',
-        serviceType: ServiceType.MOULD_INSPECTION,
-        urgency: Urgency.LOW,
-        source: LeadSource.GOOGLE_ADS,
-        status: LeadStatus.NEW,
-        notes: 'Prevention assessment requested after neighbor had mould issues',
-        estimatedValue: 450,
-        createdById: adminUser.id,
-        assignedToId: technicianMike.id, // Brighton is in Mike's territory
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'Anna',
-        lastName: 'Petrov',
-        email: 'anna.petrov@example.com',
-        phone: '0478 901 234',
-        suburb: 'Box Hill',
-        address: '123 Whitehorse Road',
-        postcode: '3128',
-        serviceType: ServiceType.EMERGENCY_RESPONSE,
-        urgency: Urgency.URGENT,
-        source: LeadSource.PHONE,
-        status: LeadStatus.CONTACTED,
-        notes: 'Water damage from burst pipe, immediate mould assessment needed',
-        estimatedValue: 1200,
-        createdById: adminUser.id,
-        assignedToId: technicianSarah.id, // Box Hill is in Sarah's territory
-        contactedAt: new Date(),
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'James',
-        lastName: 'O\'Connor',
-        email: 'james.oconnor@example.com',
-        phone: '0489 012 345',
-        suburb: 'Northcote',
-        address: '456 High Street',
-        postcode: '3070',
-        serviceType: ServiceType.ADVANCED_FOGGING,
-        urgency: Urgency.MEDIUM,
-        source: LeadSource.REFERRAL,
-        status: LeadStatus.QUALIFIED,
-        notes: 'Persistent mould smell, previous treatment unsuccessful',
-        estimatedValue: 950,
-        createdById: adminUser.id,
-        assignedToId: technicianDavid.id, // Northcote is in David's territory
-        contactedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
-        qualifiedAt: new Date(),
-      },
-    }),
-    prisma.lead.create({
-      data: {
-        firstName: 'Sophie',
-        lastName: 'Nguyen',
-        email: 'sophie.nguyen@example.com',
-        phone: '0490 123 456',
-        suburb: 'Footscray',
-        address: '789 Nicholson Street',
-        postcode: '3011',
-        serviceType: ServiceType.COMPLETE_REMOVAL,
-        urgency: Urgency.HIGH,
-        source: LeadSource.WEBSITE,
-        status: LeadStatus.QUOTED,
-        notes: 'Extensive bathroom mould, health concerns for young children',
-        estimatedValue: 1600,
-        createdById: adminUser.id,
-        assignedToId: technicianEmma.id, // Footscray is in Emma's territory
-        contactedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
-        qualifiedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
-      },
-    }),
-  ]);
+  // Generate 50+ realistic leads across all statuses
+  const leadStatuses = [
+    { status: LeadStatus.NEW, count: 12 },
+    { status: LeadStatus.CONTACTED, count: 10 },
+    { status: LeadStatus.FORM_COMPLETED, count: 8 },
+    { status: LeadStatus.QUALIFIED, count: 7 },
+    { status: LeadStatus.QUOTED, count: 6 },
+    { status: LeadStatus.CONVERTED, count: 5 },
+    { status: LeadStatus.CLOSED_LOST, count: 3 },
+    { status: LeadStatus.FOLLOW_UP, count: 4 },
+  ];
 
-  console.log('✅ Created leads:', leads.length);
+  const serviceTypes = [
+    ServiceType.MOULD_INSPECTION,
+    ServiceType.COMPLETE_REMOVAL,
+    ServiceType.ADVANCED_FOGGING,
+    ServiceType.COMPREHENSIVE_REMOVAL,
+    ServiceType.SUBFLOOR_REMEDIATION,
+    ServiceType.EMERGENCY_RESPONSE
+  ];
 
-  // Create realistic Melbourne inspection schedule
+  const sources = [LeadSource.WEBSITE, LeadSource.PHONE, LeadSource.REFERRAL, LeadSource.GOOGLE_ADS, LeadSource.FACEBOOK];
+  const urgencies = [Urgency.LOW, Urgency.MEDIUM, Urgency.HIGH, Urgency.URGENT];
+
+  let leadCounter = 0;
+  const allLeads: any[] = [];
+
+  for (const statusConfig of leadStatuses) {
+    for (let i = 0; i < statusConfig.count; i++) {
+      leadCounter++;
+      const suburb = randomItem(allSuburbs);
+      const firstName = randomItem(firstNames);
+      const lastName = randomItem(lastNames);
+      const serviceType = randomItem(serviceTypes);
+      const urgency = randomItem(urgencies);
+      const source = randomItem(sources);
+
+      // Determine technician based on suburb
+      let assignedTech = null;
+      if (melbourneSuburbs.innerCity.includes(suburb)) assignedTech = technicianJohn;
+      else if (melbourneSuburbs.eastMelb.includes(suburb)) assignedTech = technicianMike;
+      else if (melbourneSuburbs.outerEast.includes(suburb)) assignedTech = technicianSarah;
+      else if (melbourneSuburbs.north.includes(suburb)) assignedTech = technicianDavid;
+      else if (melbourneSuburbs.west.includes(suburb)) assignedTech = technicianEmma;
+
+      // Estimate cost based on service type
+      const estimatedValues: { [key in ServiceType]: number } = {
+        [ServiceType.MOULD_INSPECTION]: 400 + Math.floor(Math.random() * 300),
+        [ServiceType.COMPLETE_REMOVAL]: 1200 + Math.floor(Math.random() * 1500),
+        [ServiceType.ADVANCED_FOGGING]: 700 + Math.floor(Math.random() * 600),
+        [ServiceType.COMPREHENSIVE_REMOVAL]: 2000 + Math.floor(Math.random() * 2000),
+        [ServiceType.SUBFLOOR_REMEDIATION]: 1500 + Math.floor(Math.random() * 1800),
+        [ServiceType.EMERGENCY_RESPONSE]: 1000 + Math.floor(Math.random() * 1200),
+      };
+
+      const leadData: any = {
+        firstName,
+        lastName,
+        email: REAL_EMAIL, // All leads use the real email for testing
+        phone: randomPhone(),
+        suburb,
+        address: randomAddress(suburb),
+        postcode: getPostcode(suburb),
+        serviceType,
+        urgency,
+        source,
+        status: statusConfig.status,
+        notes: randomItem(mouldIssues),
+        estimatedValue: estimatedValues[serviceType],
+        createdById: adminUser.id,
+        assignedToId: assignedTech?.id,
+      };
+
+      // Add timestamps based on status
+      const now = Date.now();
+      const daysAgo = (days: number) => new Date(now - days * 24 * 60 * 60 * 1000);
+
+      if ([LeadStatus.CONTACTED, LeadStatus.FORM_COMPLETED, LeadStatus.QUALIFIED, LeadStatus.QUOTED, LeadStatus.CONVERTED].includes(statusConfig.status)) {
+        leadData.contactedAt = daysAgo(Math.floor(Math.random() * 7) + 1);
+      }
+      if ([LeadStatus.QUALIFIED, LeadStatus.QUOTED, LeadStatus.CONVERTED].includes(statusConfig.status)) {
+        leadData.qualifiedAt = daysAgo(Math.floor(Math.random() * 5) + 1);
+      }
+      if (statusConfig.status === LeadStatus.CONVERTED) {
+        leadData.convertedAt = daysAgo(Math.floor(Math.random() * 3));
+      }
+
+      // Add inspection date for CONTACTED and FORM_COMPLETED leads
+      if ([LeadStatus.CONTACTED, LeadStatus.FORM_COMPLETED].includes(statusConfig.status)) {
+        const futureDate = new Date(now + (Math.floor(Math.random() * 14) + 1) * 24 * 60 * 60 * 1000);
+        leadData.inspectionDate = futureDate.toISOString().split('T')[0];
+        leadData.inspectionTime = ['09:00', '10:30', '13:00', '14:30', '16:00'][Math.floor(Math.random() * 5)];
+      }
+
+      const lead = await prisma.lead.create({ data: leadData });
+      allLeads.push(lead);
+    }
+  }
+
+  console.log(`✅ Created ${allLeads.length} realistic leads across all statuses`);
+
+  // Create inspections for CONTACTED and FORM_COMPLETED leads
   const today = new Date();
-  const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
-  const dayAfterTomorrow = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000);
-  const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+  let inspectionCount = 0;
 
-  const inspections = await Promise.all([
-    // Today's inspections - showing active scheduling
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 0), // Today 9 AM
-        status: InspectionStatus.IN_PROGRESS,
-        estimatedCost: 1200,
-        leadId: leads[6].id, // Anna Petrov - Emergency response
-        technicianId: technicianSarah.id,
-      },
-    }),
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 11, 30), // Today 11:30 AM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 500,
-        leadId: leads[0].id, // Sarah Johnson - Carlton
-        technicianId: technicianJohn.id,
-      },
-    }),
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 14, 0), // Today 2 PM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 450,
-        leadId: leads[5].id, // Robert Kim - Brighton
-        technicianId: technicianMike.id,
-      },
-    }),
+  for (const lead of allLeads) {
+    if ([LeadStatus.CONTACTED, LeadStatus.FORM_COMPLETED].includes(lead.status as LeadStatus) && lead.inspectionDate && lead.inspectionTime && lead.assignedToId) {
+      const [hours, minutes] = lead.inspectionTime.split(':');
+      const [year, month, day] = lead.inspectionDate.split('-');
+      const scheduledAt = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hours), parseInt(minutes));
 
-    // Tomorrow's inspections - demonstrating travel optimization
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 8, 30), // Tomorrow 8:30 AM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 950,
-        leadId: leads[7].id, // James O'Connor - Northcote
-        technicianId: technicianDavid.id,
-      },
-    }),
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 10, 30), // Tomorrow 10:30 AM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 3200,
-        leadId: leads[3].id, // David Thompson - Richmond
-        technicianId: technicianJohn.id, // John can travel from Northcote to Richmond efficiently
-      },
-    }),
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 13, 0), // Tomorrow 1 PM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 1600,
-        leadId: leads[8].id, // Sophie Nguyen - Footscray
-        technicianId: technicianEmma.id,
-      },
-    }),
+      await prisma.inspection.create({
+        data: {
+          scheduledAt,
+          status: InspectionStatus.SCHEDULED,
+          estimatedCost: lead.estimatedValue || 500,
+          leadId: lead.id,
+          technicianId: lead.assignedToId,
+        },
+      });
+      inspectionCount++;
+    }
+  }
 
-    // Day after tomorrow - showing conflicts and optimal scheduling
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(dayAfterTomorrow.getFullYear(), dayAfterTomorrow.getMonth(), dayAfterTomorrow.getDate(), 9, 0), // Day after tomorrow 9 AM
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 2500,
-        leadId: leads[1].id, // Michael Chen - Toorak
-        technicianId: technicianMike.id,
-      },
-    }),
+  // Create some completed inspections for CONVERTED leads
+  const convertedLeads = allLeads.filter(l => l.status === LeadStatus.CONVERTED);
+  for (const lead of convertedLeads.slice(0, 3)) {
+    if (lead.assignedToId) {
+      const completedDate = new Date(Date.now() - Math.floor(Math.random() * 14) * 24 * 60 * 60 * 1000);
 
-    // Completed inspection (yesterday) for reporting
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(today.getTime() - 24 * 60 * 60 * 1000), // Yesterday
-        completedAt: new Date(today.getTime() - 24 * 60 * 60 * 1000 + 2.5 * 60 * 60 * 1000), // Yesterday + 2.5 hours
-        status: InspectionStatus.COMPLETED,
-        findings: 'Significant mould growth found in subfloor area due to poor ventilation and moisture buildup. Black mould species identified in bathroom ceiling corners.',
-        recommendations: 'Immediate subfloor remediation required. Install subfloor ventilation system. Replace affected ceiling tiles. Apply antimicrobial treatment to prevent recurrence.',
-        photos: JSON.stringify(['subfloor_mould_1.jpg', 'bathroom_ceiling_mould.jpg', 'ventilation_assessment.jpg']),
-        estimatedCost: 1800,
-        finalCost: 1650,
-        leadId: leads[4].id, // Lisa Martinez - Fitzroy (converted lead)
-        technicianId: technicianJohn.id,
-      },
-    }),
+      await prisma.inspection.create({
+        data: {
+          scheduledAt: completedDate,
+          completedAt: new Date(completedDate.getTime() + 2.5 * 60 * 60 * 1000),
+          status: InspectionStatus.COMPLETED,
+          findings: 'Mould growth identified and documented. Full assessment report provided to client.',
+          recommendations: 'Complete mould remediation recommended. Professional treatment and preventive measures outlined.',
+          estimatedCost: lead.estimatedValue || 1500,
+          finalCost: (lead.estimatedValue || 1500) * 0.95,
+          leadId: lead.id,
+          technicianId: lead.assignedToId,
+        },
+      });
+      inspectionCount++;
+    }
+  }
 
-    // Next week inspection
-    prisma.inspection.create({
-      data: {
-        scheduledAt: new Date(nextWeek.getFullYear(), nextWeek.getMonth(), nextWeek.getDate(), 10, 0), // Next week
-        status: InspectionStatus.SCHEDULED,
-        estimatedCost: 800,
-        leadId: leads[2].id, // Emma Wilson - Brighton
-        technicianId: technicianMike.id,
-      },
-    }),
-  ]);
-
-  console.log('✅ Created inspections:', inspections.length);
-
-  // Create sample activities
-  const activities = await Promise.all([
-    prisma.activity.create({
-      data: {
-        type: ActivityType.CALL,
-        description: 'Initial contact call',
-        notes: 'Customer very concerned about health impacts. Scheduled inspection for next week.',
-        userId: adminUser.id,
-        leadId: leads[0].id,
-      },
-    }),
-    prisma.activity.create({
-      data: {
-        type: ActivityType.INSPECTION_COMPLETED,
-        description: 'Mould inspection completed',
-        notes: 'Found extensive mould in basement. Customer agreed to full remediation quote.',
-        userId: technicianJohn.id,
-        leadId: leads[1].id,
-        inspectionId: inspections[1].id,
-      },
-    }),
-    prisma.activity.create({
-      data: {
-        type: ActivityType.QUOTE_SENT,
-        description: 'Quote sent via email',
-        notes: 'Comprehensive removal quote for $2,200 sent. Customer has 7 days to respond.',
-        userId: adminUser.id,
-        leadId: leads[1].id,
-      },
-    }),
-    prisma.activity.create({
-      data: {
-        type: ActivityType.EMAIL,
-        description: 'Follow-up email sent',
-        notes: 'Sent additional information about mould health risks and remediation process.',
-        userId: adminUser.id,
-        leadId: leads[2].id,
-      },
-    }),
-    prisma.activity.create({
-      data: {
-        type: ActivityType.PAYMENT_RECEIVED,
-        description: 'Payment received for remediation work',
-        notes: 'Full payment of $1,800 received. Work completed successfully.',
-        userId: adminUser.id,
-        leadId: leads[4].id,
-      },
-    }),
-  ]);
-
-  console.log('✅ Created activities:', activities.length);
-
-  console.log('🎉 Database seeding completed successfully!');
+  console.log(`✅ Created ${inspectionCount} inspections`);
+  console.log('🎉 Database seeded successfully with realistic Melbourne leads!');
+  console.log(`📧 All leads use email: ${REAL_EMAIL}`);
 }
 
 main()

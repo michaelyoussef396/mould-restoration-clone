@@ -43,7 +43,9 @@ import {
   MoreVertical,
   ArrowLeft,
   Smartphone,
-  Zap
+  Zap,
+  Play,
+  FileText
 } from 'lucide-react';
 
 // Lazy load mobile components for performance
@@ -64,6 +66,7 @@ const getStatusColor = (status: string) => {
     new: 'bg-blue-100 text-blue-800 border-blue-300',
     qualified: 'bg-green-100 text-green-800 border-green-300',
     contacted: 'bg-orange-100 text-orange-800 border-orange-300',
+    form_completed: 'bg-teal-100 text-teal-800 border-teal-300',
     quoted: 'bg-purple-100 text-purple-800 border-purple-300',
     converted: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     closed_lost: 'bg-red-100 text-red-800 border-red-300',
@@ -76,6 +79,7 @@ const getStatusColor = (status: string) => {
 const LEAD_COLUMNS = [
   { id: 'NEW', title: 'New', color: 'bg-blue-50 border-blue-200' },
   { id: 'CONTACTED', title: 'Contacted', color: 'bg-orange-50 border-orange-200' },
+  { id: 'FORM_COMPLETED', title: 'Form Completed', color: 'bg-teal-50 border-teal-200' },
   { id: 'QUALIFIED', title: 'Qualified', color: 'bg-green-50 border-green-200' },
   { id: 'QUOTED', title: 'Quoted', color: 'bg-purple-50 border-purple-200' },
   { id: 'CONVERTED', title: 'Converted', color: 'bg-emerald-50 border-emerald-200' }
@@ -87,13 +91,15 @@ const LeadCard = memo(({
   onStatusChange,
   onEdit,
   isDragging,
-  isOverlay = false
+  isOverlay = false,
+  navigate
 }: {
   lead: LeadWithRelations;
   onStatusChange?: (leadId: string, status: LeadStatus) => void;
   onEdit?: (lead: LeadWithRelations) => void;
   isDragging?: boolean;
   isOverlay?: boolean;
+  navigate?: any;
 }) => {
   const {
     attributes,
@@ -213,28 +219,65 @@ const LeadCard = memo(({
 
           {/* Action Buttons - Larger touch targets for mobile */}
           {!isOverlay && (
-            <div className="flex gap-2 pt-2">
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={(e) => handleActionClick(e, 'edit')}
-                className="flex-1 h-9"
-              >
-                <Edit className="h-3 w-3 mr-1" />
-                Edit
-              </Button>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 h-9"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <MessageSquare className="h-3 w-3 mr-1" />
-                    Contact
-                  </Button>
-                </DropdownMenuTrigger>
+            <div className="flex flex-col gap-2 pt-2">
+              {/* Start Inspection Button - Only for CONTACTED leads with scheduled inspections */}
+              {lead.status === 'CONTACTED' && lead.inspections && lead.inspections.length > 0 && lead.inspections.some(i => i.status === 'SCHEDULED') && navigate && (
+                <Button
+                  size="sm"
+                  className="w-full h-9 bg-green-600 hover:bg-green-700"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const scheduledInspection = lead.inspections.find(i => i.status === 'SCHEDULED');
+                    if (scheduledInspection) {
+                      navigate(`/mobile/inspection/${scheduledInspection.id}`);
+                    }
+                  }}
+                >
+                  <Play className="h-3 w-3 mr-1" />
+                  Start Inspection
+                </Button>
+              )}
+
+              {/* View Inspection Details Button - For FORM_COMPLETED and CONVERTED leads */}
+              {['FORM_COMPLETED', 'CONVERTED'].includes(lead.status) && lead.inspections && lead.inspections.length > 0 && lead.inspections.some(i => i.status === 'COMPLETED') && navigate && (
+                <Button
+                  size="sm"
+                  className="w-full h-9 bg-blue-600 hover:bg-blue-700"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const completedInspection = lead.inspections.find(i => i.status === 'COMPLETED');
+                    if (completedInspection) {
+                      navigate(`/admin/inspections/${completedInspection.id}`);
+                    }
+                  }}
+                >
+                  <FileText className="h-3 w-3 mr-1" />
+                  View Inspection
+                </Button>
+              )}
+
+              <div className="flex gap-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={(e) => handleActionClick(e, 'edit')}
+                  className="flex-1 h-9"
+                >
+                  <Edit className="h-3 w-3 mr-1" />
+                  Edit
+                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 h-9"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <MessageSquare className="h-3 w-3 mr-1" />
+                      Contact
+                    </Button>
+                  </DropdownMenuTrigger>
                 <DropdownMenuContent align="center">
                   {lead.phone && (
                     <DropdownMenuItem
@@ -266,6 +309,7 @@ const LeadCard = memo(({
                   )}
                 </DropdownMenuContent>
               </DropdownMenu>
+              </div>
             </div>
           )}
         </div>
@@ -279,12 +323,14 @@ const KanbanColumn = memo(({
   column,
   leads,
   onStatusChange,
-  onEdit
+  onEdit,
+  navigate
 }: {
   column: typeof LEAD_COLUMNS[0];
   leads: LeadWithRelations[];
   onStatusChange: (leadId: string, status: LeadStatus) => void;
   onEdit: (lead: LeadWithRelations) => void;
+  navigate: any;
 }) => {
   const { isOver, setNodeRef } = useDroppable({
     id: column.id,
@@ -331,6 +377,7 @@ const KanbanColumn = memo(({
                 lead={lead}
                 onStatusChange={onStatusChange}
                 onEdit={onEdit}
+                navigate={navigate}
               />
             ))}
           </SortableContext>
@@ -651,6 +698,7 @@ export function LeadsKanbanFixed() {
                   leads={groupedLeads[column.id] || []}
                   onStatusChange={handleStatusChange}
                   onEdit={handleEdit}
+                  navigate={navigate}
                 />
               ))}
             </div>

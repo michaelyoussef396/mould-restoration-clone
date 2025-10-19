@@ -6,6 +6,7 @@ import { PrismaClient } from '@prisma/client';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { sendBookingConfirmation, retryEmailSend } from './services/emailService.js';
+import { registerMobileInspectionRoutes } from './api-routes/mobile-inspection.js';
 
 const app = express();
 const PORT = process.env.API_PORT || 3001;
@@ -310,6 +311,105 @@ app.get('/api/auth/me', authenticateToken, async (req, res) => {
   }
 });
 
+// User Profile Routes
+app.get('/api/users/profile', authenticateToken, async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user.id },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      createdAt: user.createdAt,
+    });
+  } catch (error) {
+    console.error('Get profile error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.put('/api/users/profile', authenticateToken, async (req, res) => {
+  try {
+    const { name, email } = req.body;
+
+    // Check if email is already taken by another user
+    if (email) {
+      const existingUser = await prisma.user.findUnique({
+        where: { email },
+      });
+
+      if (existingUser && existingUser.id !== req.user.id) {
+        return res.status(400).json({ error: 'Email already in use by another account' });
+      }
+    }
+
+    const user = await prisma.user.update({
+      where: { id: req.user.id },
+      data: {
+        ...(name && { name }),
+        ...(email && { email }),
+      },
+    });
+
+    res.json({
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+    });
+  } catch (error) {
+    console.error('Update profile error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.put('/api/users/change-password', authenticateToken, async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ error: 'Current password and new password are required' });
+    }
+
+    // Get user from database
+    const user = await prisma.user.findUnique({
+      where: { id: req.user.id },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Verify current password (using demo password system)
+    const demoPassword = userPasswords[user.email];
+    if (!demoPassword || demoPassword !== currentPassword) {
+      return res.status(401).json({ error: 'Current password is incorrect' });
+    }
+
+    // In a real system, you would hash the password with bcrypt
+    // For demo, we'll update the in-memory password store
+    userPasswords[user.email] = newPassword;
+
+    // Note: In production, you would update a hashed password in the database
+    // await prisma.user.update({
+    //   where: { id: req.user.id },
+    //   data: { password: await bcryptjs.hash(newPassword, 10) }
+    // });
+
+    res.json({ message: 'Password changed successfully' });
+  } catch (error) {
+    console.error('Change password error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Lead Routes
 app.get('/api/leads', authenticateToken, async (req, res) => {
   try {
@@ -521,6 +621,26 @@ app.put('/api/leads/:id', authenticateToken, async (req, res) => {
         activities: true,
       },
     });
+
+    // If inspection date/time changed, update the related inspection's scheduledAt
+    if ((updateData.inspectionDate || updateData.inspectionTime) && lead.inspections && lead.inspections.length > 0) {
+      const scheduledInspection = lead.inspections.find(i => i.status === 'SCHEDULED');
+      if (scheduledInspection) {
+        const dateStr = updateData.inspectionDate || lead.inspectionDate;
+        const timeStr = updateData.inspectionTime || lead.inspectionTime;
+
+        if (dateStr && timeStr) {
+          const scheduledAt = new Date(`${dateStr}T${timeStr}:00`);
+
+          await prisma.inspection.update({
+            where: { id: scheduledInspection.id },
+            data: { scheduledAt }
+          });
+
+          console.log(`[INSPECTION UPDATE] Updated inspection ${scheduledInspection.id} scheduledAt to ${scheduledAt.toISOString()}`);
+        }
+      }
+    }
 
     res.json(lead);
   } catch (error) {
@@ -2884,6 +3004,9 @@ const getTemplates = async () => {
     { id: '6', name: '1 Hour SMS Reminder', type: 'SMS' }
   ];
 };
+
+// Register mobile inspection routes
+registerMobileInspectionRoutes(app, authenticateToken);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

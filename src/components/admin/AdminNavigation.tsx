@@ -46,6 +46,7 @@ import {
   Activity
 } from 'lucide-react';
 import { NotificationBell } from '@/components/notifications/NotificationBell';
+import { UserProfileDropdown } from '@/components/layout/UserProfileDropdown';
 
 interface NavigationItem {
   id: string;
@@ -134,71 +135,11 @@ export function AdminNavigation() {
       ],
     },
     {
-      id: 'communication',
-      label: 'Communication',
-      href: '/admin/communication',
-      icon: <MessageSquare className="h-4 w-4" />,
-      description: 'Templates, automation, and messaging',
-      children: [
-        {
-          id: 'templates',
-          label: 'Templates',
-          href: '/admin/communication?tab=templates',
-          icon: <FileText className="h-3 w-3" />,
-        },
-        {
-          id: 'automation',
-          label: 'Automation Rules',
-          href: '/admin/communication?tab=automation',
-          icon: <Zap className="h-3 w-3" />,
-        },
-        {
-          id: 'send-message',
-          label: 'Send Message',
-          href: '/admin/communication?action=send',
-          icon: <Mail className="h-3 w-3" />,
-        },
-        {
-          id: 'logs',
-          label: 'Communication Logs',
-          href: '/admin/communication?tab=logs',
-          icon: <Activity className="h-3 w-3" />,
-        },
-      ],
-    },
-    {
       id: 'notifications',
       label: 'Notifications',
       href: '/admin/notifications',
       icon: <Bell className="h-4 w-4" />,
       description: 'View and manage all notifications',
-    },
-    {
-      id: 'analytics',
-      label: 'Analytics & Reports',
-      href: '/admin/analytics',
-      icon: <BarChart3 className="h-4 w-4" />,
-      description: 'Business insights and performance metrics',
-      children: [
-        {
-          id: 'business-overview',
-          label: 'Business Overview',
-          href: '/admin/analytics?tab=overview',
-          icon: <TrendingUp className="h-3 w-3" />,
-        },
-        {
-          id: 'performance',
-          label: 'Performance',
-          href: '/admin/analytics?tab=performance',
-          icon: <Target className="h-3 w-3" />,
-        },
-        {
-          id: 'geography',
-          label: 'Geographic Analysis',
-          href: '/admin/analytics?tab=geography',
-          icon: <MapPin className="h-3 w-3" />,
-        },
-      ],
     },
   ];
 
@@ -301,32 +242,7 @@ export function AdminNavigation() {
 
           <NotificationBell />
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="gap-2">
-                <User className="h-4 w-4" />
-                <span className="hidden sm:inline">{user?.name || 'Admin'}</span>
-                <ChevronDown className="h-3 w-3" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>
-                <div className="flex flex-col">
-                  <span>{user?.name || 'Admin User'}</span>
-                  <span className="text-xs text-muted-foreground">{user?.email || 'admin@mouldandrestoration.com.au'}</span>
-                </div>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <Settings className="h-4 w-4 mr-2" />
-                Settings
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={logout}>
-                <LogOut className="h-4 w-4 mr-2" />
-                Logout
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {user && <UserProfileDropdown user={user} />}
         </div>
       </div>
 
@@ -379,11 +295,11 @@ export function AdminNavigation() {
               <Separator className="my-6" />
 
               <div className="space-y-1">
-                <Button variant="ghost" className="w-full justify-start gap-2">
-                  <Settings className="h-4 w-4" />
-                  Settings
+                <Button variant="ghost" className="w-full justify-start gap-2" onClick={() => handleNavigation('/admin/profile')}>
+                  <User className="h-4 w-4" />
+                  Profile
                 </Button>
-                <Button variant="ghost" className="w-full justify-start gap-2" onClick={logout}>
+                <Button variant="ghost" className="w-full justify-start gap-2 text-red-600 hover:text-red-600" onClick={logout}>
                   <LogOut className="h-4 w-4" />
                   Logout
                 </Button>
